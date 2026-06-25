@@ -37,14 +37,24 @@ Then open <http://localhost:5173>.
 
 ## Data storage
 
-All your entries are stored in the browser's **localStorage** (keys prefixed
-`nah:`). Data stays on your device. Nothing is uploaded.
+By default, all entries are stored in the browser's **localStorage** (keys
+prefixed `nah:`) — instant, offline, on your device.
 
-> The brief also describes an option to store data as JSON files in the GitHub
-> repo. That's intentionally **not** wired up yet — localStorage is the current
-> source of truth, as requested. The data is already shaped as the JSON files
-> described in the brief (`timeline`, `glossary`, `projects-metadata`, etc.), so
-> swapping in a GitHub-backed store later is a contained change in `js/core.js`.
+### Cross-device sync (optional)
+
+Turn on sync (the **cloud button** in the sidebar) to store your data as JSON
+files in the **`zvcodez/neil-ai-hub`** repo under `data/`. Then your phone and
+your laptop read/write the same files, so edits flow between devices.
+
+- **Keep the repo private** — your notes/contacts live in it.
+- Create a **fine-grained personal access token** (github.com → Settings →
+  Developer settings → fine-grained tokens) scoped to **only the `neil-ai-hub`
+  repo** with **Repository permissions → Contents: Read and write**. Paste it
+  into the sync dialog and click **Enable sync**. The token is stored only in
+  your browser.
+- How it works: localStorage stays the live cache; the app **pushes** changes to
+  the repo (debounced, one small commit per change) and **pulls** on focus / every
+  60s. Conflicts resolve last-write-wins per file (`js/sync.js`).
 
 ## GitHub integration
 

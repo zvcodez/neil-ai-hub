@@ -25,6 +25,8 @@ const ICON_PATHS = {
   flag: '<path d="M4 22V4h13l-2 4 2 4H4"/>',
   refresh: '<path d="M21 2v6h-6M3 22v-6h6"/><path d="M21 8a9 9 0 0 0-15-3L3 8M3 16a9 9 0 0 0 15 3l3-3"/>',
   alert: '<circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/>',
+  cloud: '<path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6.5 19z"/>',
+  'cloud-off': '<path d="M3 3l18 18"/><path d="M17.5 19a4.5 4.5 0 0 0 2.9-7.9M8.3 6.3A6 6 0 0 1 18 10a4.5 4.5 0 0 1 .5 9H7"/>',
 };
 
 export function Icon({ name, size = 18, fill = false }) {

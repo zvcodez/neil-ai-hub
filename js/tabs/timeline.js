@@ -1,4 +1,4 @@
-import { html, fmtDate, loadStore, saveStore, uid } from '../core.js';
+import { html, fmtDate, loadStore, saveStore, uid, emitStoreChange } from '../core.js';
 import { CollectionTab } from '../collection.js';
 
 const CATEGORIES = ['Project Launch', 'Learning', 'Achievement', 'Milestone'];
@@ -26,7 +26,9 @@ export function addTimelineEntry({ title, description, date, category = 'Project
   const items = loadStore('timeline', SEED);
   if (items.some((it) => it.title === title && it.category === category)) return false;
   const entry = { id: uid(), title, description, date, category, _created: new Date().toISOString() };
-  saveStore('timeline', [entry, ...items]);
+  const next = [entry, ...items];
+  saveStore('timeline', next);
+  emitStoreChange('timeline', next, { external: false });
   return true;
 }
 

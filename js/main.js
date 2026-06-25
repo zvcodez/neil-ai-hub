@@ -1,6 +1,7 @@
 // App shell: navigation, theme, routing.
 import { html, ReactDOM, useState, useEffect, loadStore, saveStore } from './core.js';
 import { Icon } from './components.js';
+import { SyncButton, initSync } from './sync.js';
 
 import { ProjectsTab } from './tabs/projects.js';
 import { TimelineTab } from './tabs/timeline.js';
@@ -71,6 +72,7 @@ function App() {
         )}
       </nav>
       <div class="sidebar-foot">
+        <${SyncButton} />
         <button class="theme-toggle" onClick=${() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           title=${`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
           <${Icon} name=${theme === 'dark' ? 'sun' : 'moon'} size=${17} />
@@ -85,10 +87,13 @@ function App() {
           <${Icon} name=${tab.icon} size=${22} />
           <h1>${tab.label}</h1>
         </div>
-        <button class="theme-toggle compact" onClick=${() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          title=${`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
-          <${Icon} name=${theme === 'dark' ? 'sun' : 'moon'} size=${18} />
-        </button>
+        <div class="head-actions">
+          <${SyncButton} compact=${true} />
+          <button class="theme-toggle compact" onClick=${() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            title=${`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
+            <${Icon} name=${theme === 'dark' ? 'sun' : 'moon'} size=${18} />
+          </button>
+        </div>
       </header>
       <div class="content-body">
         <${Active} accent=${tab.accent} />
@@ -112,6 +117,9 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(html`<${App} />`);
+
+// Start the cross-device sync engine (no-op until the user enables it).
+initSync();
 
 // Register service worker for offline/PWA support.
 if ('serviceWorker' in navigator) {
