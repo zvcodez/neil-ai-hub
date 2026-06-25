@@ -1,6 +1,14 @@
 {
-  "updatedAt": "2026-06-25T05:53:44.529Z",
+  "updatedAt": "2026-06-25T14:26:29.076Z",
   "data": [
+    {
+      "id": "mqtli5p0ji4b68",
+      "_created": "2026-06-25T14:26:29.076Z",
+      "term": "SaaS",
+      "definition": "Software as a Service - online platform hosted by a server for users to access. (Microsoft office, Netflix)",
+      "category": "AI",
+      "dateAdded": "2026-06-25"
+    },
     {
       "id": "seed-llm",
       "term": "LLM",
