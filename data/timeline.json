@@ -1,0 +1,13 @@
+{
+  "updatedAt": "2026-06-25T05:53:44.529Z",
+  "data": [
+    {
+      "id": "seed-portfolio",
+      "date": "2026-06-24",
+      "title": "Launched neil-portfolio",
+      "description": "Shipped my first portfolio site — the official start of my AI learning journey.",
+      "category": "Project Launch",
+      "_created": "2026-06-24T00:00:00.000Z"
+    }
+  ]
+}
