@@ -1,0 +1,13 @@
+{
+  "updatedAt": "2026-06-25T05:53:44.529Z",
+  "data": [
+    {
+      "id": "seed-llm",
+      "term": "LLM",
+      "definition": "Large Language Model — an AI trained on huge amounts of text that predicts the next word to generate human-like responses.",
+      "category": "AI",
+      "dateAdded": "2026-06-24",
+      "_created": "2026-06-24T00:00:00.000Z"
+    }
+  ]
+}
