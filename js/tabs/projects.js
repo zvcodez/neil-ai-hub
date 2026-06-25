@@ -9,6 +9,16 @@ const STATUSES = ['In Progress', 'Live', 'Paused'];
 const statusOptions = STATUSES.map((s) => ({ value: s, label: s }));
 const statusColor = { 'In Progress': '#2563eb', Live: '#10b981', Paused: '#94a3b8' };
 
+// Turn a GitHub repo slug into a readable title: dashes/underscores -> spaces,
+// then title-case each word. e.g. "neil-portfolio" -> "Neil Portfolio".
+function prettify(slug) {
+  return (slug || '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export function ProjectsTab({ accent }) {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,6 +49,8 @@ export function ProjectsTab({ accent }) {
 
   const metaFor = (repo) => meta[repo.name] || {};
   const statusOf = (repo) => metaFor(repo).status || (repo.homepage ? 'Live' : 'In Progress');
+  // Display name: manual override if set, otherwise the prettified repo slug.
+  const displayNameOf = (repo) => (metaFor(repo).displayName || '').trim() || prettify(repo.name);
 
   const saveMeta = (values) => {
     setMeta({ ...meta, [editing.name]: { ...metaFor(editing), ...values } });
@@ -57,10 +69,10 @@ export function ProjectsTab({ accent }) {
 
   const visible = useMemo(() => {
     let list = repos.filter((r) =>
-      matchesQuery(query, r.name, r.description, (metaFor(r).notes || ''))
+      matchesQuery(query, displayNameOf(r), r.name, r.description, (metaFor(r).notes || ''))
     );
     if (statusFilter !== 'all') list = list.filter((r) => statusOf(r) === statusFilter);
-    if (sort === 'name') list = [...list].sort((a, b) => a.name.localeCompare(b.name));
+    if (sort === 'name') list = [...list].sort((a, b) => displayNameOf(a).localeCompare(displayNameOf(b)));
     else list = [...list].sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
     return list;
   }, [repos, query, sort, statusFilter, meta]);
@@ -120,9 +132,13 @@ export function ProjectsTab({ accent }) {
             <${IconButton} name="edit" title="Edit URL, status & notes" onClick=${() => setEditing(repo)} />
           </div>
           <div class="card-head">
-            <a class="card-link" href=${repo.htmlUrl} target="_blank" rel="noreferrer">
-              ${repo.name}<${Icon} name="external" size=${14} />
-            </a>
+            <div class="project-title">
+              <a class="card-link" href=${repo.htmlUrl} target="_blank" rel="noreferrer">
+                ${displayNameOf(repo)}<${Icon} name="external" size=${14} />
+              </a>
+              ${displayNameOf(repo) !== repo.name &&
+              html`<span class="repo-slug mono">${repo.name}</span>`}
+            </div>
             <${Badge} color=${statusColor[status]}>${status}<//>
           </div>
           <p class="muted-text">${repo.description || 'No description on GitHub.'}</p>
@@ -148,9 +164,12 @@ export function ProjectsTab({ accent }) {
     </div>`}
 
     ${editing &&
-    html`<${Modal} title=${`${editing.name} — details`} accent=${accent} onClose=${() => setEditing(null)}>
+    html`<${Modal} title=${`${displayNameOf(editing)} — details`} accent=${accent} onClose=${() => setEditing(null)}>
       <${Form}
         fields=${[
+          { name: 'displayName', label: 'Display name', full: true,
+            placeholder: prettify(editing.name),
+            help: `Shown on the card. Leave blank to use "${prettify(editing.name)}". The GitHub repo (${editing.name}) is never renamed.` },
           { name: 'liveUrl', label: 'Live URL', type: 'url', placeholder: 'https://...' },
           { name: 'status', label: 'Status', type: 'select', options: statusOptions, default: statusOf(editing) },
           { name: 'notes', label: 'Personal notes', type: 'textarea', rows: 4 },

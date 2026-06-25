@@ -1,5 +1,5 @@
 // Service worker for Neil AI Hub — offline app shell caching.
-const CACHE = 'neil-ai-hub-v1';
+const CACHE = 'neil-ai-hub-v2';
 const ASSETS = [
   './',
   './index.html',
