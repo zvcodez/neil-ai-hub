@@ -31,6 +31,8 @@ export function ProjectsTab({ accent }) {
 
   const fields = [
     { name: 'name', label: 'Project name', required: true },
+    { name: 'description', label: 'Short description', placeholder: 'One line: what this project is',
+      help: 'Shown prominently on the card so it’s easy to identify at a glance.' },
     { name: 'stage', label: 'Stage', type: 'select', options: stageOptions },
     { name: 'nextStep', label: 'Next step', placeholder: 'The next concrete thing to do' },
     { name: 'chatUrl', label: 'Claude chat link', type: 'url', placeholder: 'https://claude.ai/chat/…',
@@ -87,7 +89,12 @@ export function ProjectsTab({ accent }) {
 
       ${showStage && html`<div><${Badge} color=${stageColor[stage]}>${stage}<//></div>`}
 
-      <${InlineNext} value=${p.nextStep} onSave=${(v) => patchProject(p.id, { nextStep: v })} />
+      <${InlineText} variant="desc" value=${p.description}
+        placeholder="One line: what this project is" addLabel="+ Add description"
+        onSave=${(v) => patchProject(p.id, { description: v })} />
+      <${InlineText} variant="next" label="Next" value=${p.nextStep}
+        placeholder="What's the next step?" addLabel="+ Add next step"
+        onSave=${(v) => patchProject(p.id, { nextStep: v })} />
       ${p.notes && html`<p class="ppl-notes">${p.notes}</p>`}
 
       ${p.folder && html`<a class="ppl-launch" href=${launchUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
@@ -143,9 +150,9 @@ export function ProjectsTab({ accent }) {
   </div>`;
 }
 
-// Click-to-edit "Next step" right on the card (no menu digging). Empty cards
-// show a subtle "+ Add next step" affordance instead.
-function InlineNext({ value, onSave }) {
+// Click-to-edit text right on the card (no menu digging). Used for both the
+// description and the Next step. Empty fields show a subtle "+ Add …" prompt.
+function InlineText({ value, onSave, label, placeholder, addLabel, variant }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value || '');
   const inputRef = useRef(null);
@@ -160,10 +167,10 @@ function InlineNext({ value, onSave }) {
   };
 
   if (editing) {
-    return html`<div class="ppl-next editing">
-      <span class="ppl-next-label">Next</span>
-      <input ref=${inputRef} class="ppl-next-input" value=${draft} draggable=${false}
-        placeholder="What's the next step?"
+    return html`<div class=${`ppl-inline ${variant} editing`}>
+      ${label && html`<span class="ppl-next-label">${label}</span>`}
+      <input ref=${inputRef} class="ppl-inline-input" value=${draft} draggable=${false}
+        placeholder=${placeholder}
         onMouseDown=${(e) => e.stopPropagation()}
         onInput=${(e) => setDraft(e.target.value)}
         onBlur=${commit}
@@ -174,10 +181,10 @@ function InlineNext({ value, onSave }) {
     </div>`;
   }
   if (!value) {
-    return html`<button class="ppl-next-add" onClick=${() => setEditing(true)}>+ Add next step</button>`;
+    return html`<button class=${`ppl-add ${variant}`} onClick=${() => setEditing(true)}>${addLabel}</button>`;
   }
-  return html`<div class="ppl-next" title="Click to edit" onClick=${() => setEditing(true)}>
-    <span class="ppl-next-label">Next</span>${value}
+  return html`<div class=${`ppl-inline ${variant}`} title="Click to edit" onClick=${() => setEditing(true)}>
+    ${label && html`<span class="ppl-next-label">${label}</span>`}${value}
   </div>`;
 }
 

@@ -439,19 +439,26 @@ select, .sort select {
 .ppl-card:active { cursor: grabbing; }
 .ppl-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
 .ppl-title { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.25; }
-.ppl-next { font-size: 13.5px; line-height: 1.45; background: var(--surface-2); border-radius: 10px; padding: 9px 11px; cursor: text; transition: background 0.12s; }
-.ppl-next:hover { background: color-mix(in srgb, var(--text) 7%, var(--surface-2)); }
-.ppl-next.editing { display: flex; align-items: center; cursor: default; }
+/* Inline editable fields (description + next step) */
+.ppl-inline { border-radius: 10px; cursor: text; transition: background 0.12s; }
+.ppl-inline.editing { display: flex; align-items: center; cursor: default; }
+.ppl-inline-input { flex: 1 1 auto; min-width: 0; border: none; background: transparent; color: inherit; font: inherit; padding: 0; outline: none; }
 .ppl-next-label {
   display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
   color: var(--stage, var(--accent)); margin-right: 7px; vertical-align: 1px; flex: none;
 }
-.ppl-next-input { flex: 1 1 auto; min-width: 0; border: none; background: transparent; color: var(--text); font: inherit; padding: 0; outline: none; }
-.ppl-next-add {
+/* Description: a clear, readable one-liner under the title. */
+.ppl-inline.desc { font-size: 14px; line-height: 1.45; color: var(--text); padding: 2px; margin-top: -2px; }
+.ppl-inline.desc:hover { background: color-mix(in srgb, var(--text) 6%, transparent); }
+/* Next step: highlighted chip. */
+.ppl-inline.next { font-size: 13.5px; line-height: 1.45; background: var(--surface-2); padding: 9px 11px; }
+.ppl-inline.next:hover { background: color-mix(in srgb, var(--text) 7%, var(--surface-2)); }
+/* "+ Add …" prompts for empty fields. */
+.ppl-add {
   align-self: flex-start; background: none; border: 1px dashed var(--border); color: var(--text-muted);
   font-size: 12.5px; font-weight: 500; padding: 7px 12px; border-radius: 10px; cursor: pointer; transition: color 0.12s, border-color 0.12s;
 }
-.ppl-next-add:hover { color: var(--text); border-color: var(--accent); }
+.ppl-add:hover { color: var(--text); border-color: var(--accent); }
 .ppl-notes { margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 .ppl-launch {
   display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
