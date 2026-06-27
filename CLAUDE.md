@@ -49,6 +49,19 @@ GitHub username: **zvcodez**. Live at **https://zvcodez.github.io/neil-ai-hub/**
   timestamp. See `js/sync.js`. The user enables it via the cloud button with a
   fine-grained token (Contents: read/write).
 
+## Adding a project from a Claude Code session
+The Projects tab's **"New with Claude"** button opens Claude Code in this repo
+seeded with a prompt to interview Neil and then file the project. To add it:
+1. Read `data/projects.json`. Shape: `{ "updatedAt": <ISO>, "data": [ <project>, … ] }`.
+2. Append a project object to `data` with these fields (omit/blank what's unknown):
+   `id` (unique string), `_created` (ISO now), `name`, `description`, `stage`
+   (one of: Idea, Discussing, Planning, Building, Live), `folder` (e.g.
+   `~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep`, `notes`.
+3. Set the top-level `updatedAt` to the current ISO timestamp (must be newer than
+   before, or the hub's last-write-wins sync won't adopt it).
+4. `git add data/projects.json && git commit && git push`. The hub pulls on
+   focus/60s and the card appears. No code changes needed — it's pure data.
+
 ## Open items / TODO
 1. **Sync must be enabled on each device** (token pasted per device) for true
    two-way sync. It's confirmed working (repo has `data/*.json`).

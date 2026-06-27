@@ -21,6 +21,19 @@ function shellCommand(folder) {
   return `cd "${(folder || '').trim()}" && claude`;
 }
 
+// "New with Claude": open Claude Code in the hub repo, pre-seeded to interview
+// you about a project and write it into data/projects.json (sync surfaces it).
+const HUB_FOLDER = '~/Claude/neil-ai-hub';
+const NEW_PROJECT_PROMPT =
+  "Let's add a new project to the Neil AI Hub. Interview me one question at a time to collect: " +
+  'the project name, a one-line description, its stage (Idea, Discussing, Planning, Building, or Live), ' +
+  'the local folder path, the GitHub repo URL, the live URL, and the immediate next step — I can skip any. ' +
+  'Then add it to data/projects.json and commit & push, following the ' +
+  '"Adding a project from a Claude Code session" instructions in CLAUDE.md.';
+function discussUrl() {
+  return launchUrl(HUB_FOLDER) + '?prompt=' + encodeURIComponent(NEW_PROJECT_PROMPT);
+}
+
 export function ProjectsTab({ accent }) {
   const [projects, setProjects] = useStore('projects', []);
   const [query, setQuery] = useState('');
@@ -116,7 +129,10 @@ export function ProjectsTab({ accent }) {
       <${Segmented} options=${[{ value: 'pipeline', label: 'Pipeline' }, { value: 'grid', label: 'Grid' }]}
         value=${view} onChange=${setView} />
       <div class="toolbar-spacer"></div>
-      <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add project<//>
+      <${Button} variant="ghost" icon="plus" onClick=${() => setModal({ editing: null })}>Add manually<//>
+      <a class="btn btn-primary" href=${discussUrl()} title="Open Claude Code and talk through a new project — it files it for you">
+        <${Icon} name="shortcuts" size=${15} /> New with Claude
+      </a>
     </div>
 
     ${projects.length === 0 &&
