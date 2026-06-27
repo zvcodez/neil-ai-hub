@@ -20,7 +20,8 @@ $PB -c "Add :CFBundleURLTypes:0:CFBundleURLName string com.neil.claudecode" "$PL
 $PB -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes array" "$PLIST"
 $PB -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string claudecode" "$PLIST"
 $PB -c "Add :LSUIElement bool true" "$PLIST"
-$PB -c "Set :CFBundleIdentifier com.neil.claudecodeopener" "$PLIST"
+$PB -c "Set :CFBundleIdentifier com.neil.claudecodeopener" "$PLIST" 2>/dev/null \
+  || $PB -c "Add :CFBundleIdentifier string com.neil.claudecodeopener" "$PLIST"
 
 "$LSREGISTER" -f "$APP"
 echo "✅ Installed: $APP"
