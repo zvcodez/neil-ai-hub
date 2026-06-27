@@ -1,7 +1,7 @@
 // Projects pipeline: every project (even ones still in planning/discussion with
-// Claude) tracked as a card that moves across stages. Each card can deep-link to
-// its Claude chat and launch Claude Code in its local folder on this Mac.
-import { html, useState, useMemo, useStore, uid, fmtDate, matchesQuery } from '../core.js';
+// Claude) tracked as a card that flows left→right across stages. Each card can
+// deep-link to its Claude chat and launch Claude Code in its local folder.
+import { html, useState, useMemo, useEffect, useRef, useStore, uid, fmtDate, matchesQuery } from '../core.js';
 import {
   Button, Badge, Icon, IconButton, SearchBox, Segmented, Modal, Form, EmptyState, useConfirm,
 } from '../components.js';
@@ -32,13 +32,13 @@ export function ProjectsTab({ accent }) {
   const fields = [
     { name: 'name', label: 'Project name', required: true },
     { name: 'stage', label: 'Stage', type: 'select', options: stageOptions },
+    { name: 'nextStep', label: 'Next step', placeholder: 'The next concrete thing to do' },
     { name: 'chatUrl', label: 'Claude chat link', type: 'url', placeholder: 'https://claude.ai/chat/…',
       help: 'Paste the URL from the address bar of the Claude conversation. Clicking reopens it.' },
     { name: 'folder', label: 'Local folder', placeholder: '~/Claude/my-project', mono: true,
       help: 'Path on this Mac. Powers the "Open in Claude Code" button.' },
     { name: 'repoUrl', label: 'GitHub repo', type: 'url', placeholder: 'https://github.com/…' },
     { name: 'liveUrl', label: 'Live URL', type: 'url', placeholder: 'https://…' },
-    { name: 'nextStep', label: 'Next step', placeholder: 'The next concrete thing to do' },
     { name: 'notes', label: 'Notes', type: 'textarea', rows: 4 },
   ];
 
@@ -61,34 +61,49 @@ export function ProjectsTab({ accent }) {
     [projects, query]
   );
 
-  const card = (p) => html`<div
-    class="app-card project-pipe-card" key=${p.id} draggable=${view === 'pipeline'}
-    onDragStart=${() => setDragId(p.id)} onDragEnd=${() => setDragId(null)}
-    onClick=${() => setModal({ editing: p })}
-  >
-    <div class="app-card-head">
-      <strong>${p.name}</strong>
-      <button class="icon-btn danger" title="Delete" onClick=${(e) => { e.stopPropagation(); remove(p); }}>×</button>
-    </div>
-    ${view === 'list' && html`<${Badge} color=${stageColor[p.stage]}>${p.stage || 'Idea'}<//>`}
-    ${p.nextStep && html`<div class="project-next"><span class="next-label">Next</span> ${p.nextStep}</div>`}
-    ${p.notes && html`<p class="muted-text project-pipe-notes">${p.notes}</p>`}
-    <div class="project-links" onClick=${(e) => e.stopPropagation()}>
-      ${p.chatUrl && html`<a class="proj-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
-        <${Icon} name="ideas" size=${13} /> Chat<//>`}
-      ${p.folder && html`<${LaunchControls} folder=${p.folder} />`}
-      ${p.repoUrl && html`<a class="proj-link" href=${p.repoUrl} target="_blank" rel="noreferrer">
-        <${Icon} name="github" size=${13} /> Repo<//>`}
-      ${p.liveUrl && html`<a class="proj-link" href=${p.liveUrl} target="_blank" rel="noreferrer">
-        <${Icon} name="external" size=${13} /> Live<//>`}
-    </div>
-    ${p._created && html`<div class="app-foot"><span class="muted-text">Added ${fmtDate(p._created)}</span></div>`}
-  </div>`;
+  const card = (p, showStage) => {
+    const stage = p.stage || 'Idea';
+    const menuItems = [
+      p.repoUrl && { label: 'Open repo on GitHub', icon: 'github', onClick: () => window.open(p.repoUrl, '_blank', 'noreferrer') },
+      p.folder && { label: 'Copy terminal command', icon: 'shortcuts', onClick: () => navigator.clipboard?.writeText(shellCommand(p.folder)) },
+      { label: 'Edit', icon: 'edit', onClick: () => setModal({ editing: p }) },
+      { label: 'Delete', icon: 'trash', danger: true, onClick: () => remove(p) },
+      p._created && { divider: true },
+      p._created && { info: `Added ${fmtDate(p._created)}` },
+    ].filter(Boolean);
+
+    return html`<div
+      class="ppl-card" key=${p.id} style=${{ '--stage': stageColor[stage] }}
+      draggable=${view === 'pipeline'}
+      onDragStart=${() => setDragId(p.id)} onDragEnd=${() => setDragId(null)}
+    >
+      <div class="ppl-head">
+        <h3 class="ppl-title">${p.name}</h3>
+        <${CardMenu} items=${menuItems} />
+      </div>
+
+      ${showStage && html`<div><${Badge} color=${stageColor[stage]}>${stage}<//></div>`}
+
+      ${p.nextStep && html`<div class="ppl-next"><span class="ppl-next-label">Next</span>${p.nextStep}</div>`}
+      ${p.notes && html`<p class="ppl-notes">${p.notes}</p>`}
+
+      ${p.folder && html`<a class="ppl-launch" href=${launchUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
+        <${Icon} name="shortcuts" size=${16} /> Open in Claude Code
+      </a>`}
+
+      ${(p.chatUrl || p.liveUrl) && html`<div class="ppl-secondary">
+        ${p.chatUrl && html`<a class="ppl-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
+          <${Icon} name="ideas" size=${14} /> Chat<//>`}
+        ${p.liveUrl && html`<a class="ppl-link" href=${p.liveUrl} target="_blank" rel="noreferrer">
+          <${Icon} name="external" size=${14} /> Live<//>`}
+      </div>`}
+    </div>`;
+  };
 
   return html`<div class="collection" style=${{ '--accent': accent }}>
     <div class="toolbar">
       <${SearchBox} value=${query} onChange=${setQuery} placeholder="Search projects..." />
-      <${Segmented} options=${[{ value: 'pipeline', label: 'Pipeline' }, { value: 'list', label: 'List' }]}
+      <${Segmented} options=${[{ value: 'pipeline', label: 'Pipeline' }, { value: 'grid', label: 'Grid' }]}
         value=${view} onChange=${setView} />
       <div class="toolbar-spacer"></div>
       <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add project<//>
@@ -96,25 +111,27 @@ export function ProjectsTab({ accent }) {
 
     ${projects.length === 0 &&
     html`<${EmptyState} icon="projects" text="No projects yet."
-      hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards across the pipeline as they progress." />`}
+      hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards left→right as they progress." />`}
 
     ${projects.length > 0 && view === 'pipeline' &&
-    html`<div class="kanban">
+    html`<div class=${`projects-pipeline ${dragId ? 'dragging' : ''}`}>
       ${STAGES.map((stage) => {
         const col = filtered.filter((p) => (p.stage || 'Idea') === stage);
-        return html`<div class=${`kanban-col ${dragId ? 'droppable' : ''}`} key=${stage}
+        const empty = col.length === 0;
+        return html`<div class=${`ppl-col ${empty ? 'empty' : ''}`} key=${stage}
+          style=${{ '--stage': stageColor[stage] }}
           onDragOver=${(e) => e.preventDefault()}
           onDrop=${() => { if (dragId) moveTo(dragId, stage); setDragId(null); }}>
-          <div class="kanban-head" style=${{ '--col': stageColor[stage] }}>
-            <span class="kanban-dot"></span>${stage}<span class="kanban-count">${col.length}</span>
+          <div class="ppl-col-head">
+            <span class="dot"></span>${stage}<span class="ppl-col-count">${col.length || ''}</span>
           </div>
-          <div class="kanban-cards">${col.map(card)}</div>
+          <div class="ppl-col-cards">${col.map((p) => card(p, false))}</div>
         </div>`;
       })}
     </div>`}
 
-    ${projects.length > 0 && view === 'list' &&
-    html`<div class="cards-grid">${filtered.map(card)}</div>`}
+    ${projects.length > 0 && view === 'grid' &&
+    html`<div class="cards-grid ppl-grid">${filtered.map((p) => card(p, true))}</div>`}
 
     ${modal &&
     html`<${Modal} title=${modal.editing ? 'Edit project' : 'New project'} accent=${accent} onClose=${() => setModal(null)}>
@@ -123,22 +140,28 @@ export function ProjectsTab({ accent }) {
   </div>`;
 }
 
-// "Open in Claude Code" (one-click via the local launcher) + a copy-command
-// fallback that works anywhere, even without the launcher installed.
-function LaunchControls({ folder }) {
-  const [copied, setCopied] = useState(false);
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(shellCommand(folder));
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch (e) { /* clipboard blocked; the launch link still works */ }
-  };
-  return html`<span class="launch-group">
-    <a class="proj-link launch" href=${launchUrl(folder)} title=${`Open ${folder} in Claude Code`}>
-      <${Icon} name="shortcuts" size=${13} /> Open in Claude Code<//>
-    <button class="icon-btn" title="Copy terminal command" onClick=${copy}>
-      <${Icon} name=${copied ? 'check' : 'edit'} size=${13} />
-    </button>
-  </span>`;
+// Small "⋯" overflow menu for the rarely-used / maintenance actions.
+function CardMenu({ items }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDoc = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, [open]);
+
+  return html`<div class="card-menu" ref=${ref}>
+    <button class="icon-btn" title="More" onClick=${() => setOpen((o) => !o)}>⋯</button>
+    ${open && html`<div class="card-menu-pop">
+      ${items.map((it, i) =>
+        it.divider ? html`<div class="menu-div" key=${'d' + i}></div>`
+        : it.info ? html`<div class="menu-info" key=${'i' + i}>${it.info}</div>`
+        : html`<button key=${it.label} class=${`menu-item ${it.danger ? 'danger' : ''}`}
+            onClick=${() => { setOpen(false); it.onClick(); }}>
+            <${Icon} name=${it.icon} size=${14} /> ${it.label}
+          </button>`
+      )}
+    </div>`}
+  </div>`;
 }
