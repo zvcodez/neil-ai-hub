@@ -30,6 +30,15 @@ GitHub username: **zvcodez**. Live at **https://zvcodez.github.io/neil-ai-hub/**
 - `js/sync.js` — cross-device sync engine + Sync UI.
 - `js/main.js` — app shell: sidebar/bottom nav, theme, routing.
 - `js/tabs/*.js` — the 8 tabs (career.js has 5 sub-tabs incl. kanban).
+- `js/tabs/projects.js` — **Projects pipeline** (kanban over store key `projects`).
+  Manual cards at any stage (Idea→Discussing→Planning→Building→Live), each with a
+  Claude chat link, GitHub repo/live links, and an **Open in Claude Code** launch
+  button. Self-contained (no longer uses `github.js`/repo auto-fetch).
+- `launcher/` — `ClaudeCodeOpener.app` source + `install.sh`. Registers a
+  `claudecode://` URL scheme so the launch button opens Terminal in a project's
+  folder running `claude`. Built with osacompile/PlistBuddy (no Node). The built
+  app lives in `~/Applications` (not committed); re-run `launcher/install.sh` to
+  rebuild. Mac-only; button is a no-op on phone/other devices.
 - `sw.js` — service worker (network-first; bump CACHE version on changes).
 
 ## Data + sync
@@ -52,3 +61,7 @@ GitHub username: **zvcodez**. Live at **https://zvcodez.github.io/neil-ai-hub/**
 ## Conventions
 - Match the existing buildless, vendored-module style. No new dependencies.
 - Bump the `sw.js` CACHE version whenever assets change so updates ship.
+- **When Neil signs off** ("okay that's all for now", "okay bye", or anything that
+  means he's leaving to continue later), update the **Open items / TODO** section
+  above with exactly where we left off and the next step, so the next fresh session
+  picks up cleanly without re-explaining.
