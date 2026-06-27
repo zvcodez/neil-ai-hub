@@ -8,3 +8,6 @@
 
 # Logs
 *.log
+
+# Personal local launcher (not part of the app)
+Open in Claude.command
