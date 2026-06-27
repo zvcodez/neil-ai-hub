@@ -54,6 +54,9 @@ export function ProjectsTab({ accent }) {
   const moveTo = (id, stage) =>
     setProjects(projects.map((p) => (p.id === id && p.stage !== stage ? { ...p, stage } : p)));
 
+  const patchProject = (id, patch) =>
+    setProjects(projects.map((p) => (p.id === id ? { ...p, ...patch } : p)));
+
   const remove = (p) => confirm(`Delete "${p.name}"?`, () => setProjects(projects.filter((x) => x.id !== p.id)));
 
   const filtered = useMemo(
@@ -84,7 +87,7 @@ export function ProjectsTab({ accent }) {
 
       ${showStage && html`<div><${Badge} color=${stageColor[stage]}>${stage}<//></div>`}
 
-      ${p.nextStep && html`<div class="ppl-next"><span class="ppl-next-label">Next</span>${p.nextStep}</div>`}
+      <${InlineNext} value=${p.nextStep} onSave=${(v) => patchProject(p.id, { nextStep: v })} />
       ${p.notes && html`<p class="ppl-notes">${p.notes}</p>`}
 
       ${p.folder && html`<a class="ppl-launch" href=${launchUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
@@ -137,6 +140,44 @@ export function ProjectsTab({ accent }) {
     html`<${Modal} title=${modal.editing ? 'Edit project' : 'New project'} accent=${accent} onClose=${() => setModal(null)}>
       <${Form} fields=${fields} initial=${modal.editing} onSubmit=${save} onCancel=${() => setModal(null)} />
     <//>`}
+  </div>`;
+}
+
+// Click-to-edit "Next step" right on the card (no menu digging). Empty cards
+// show a subtle "+ Add next step" affordance instead.
+function InlineNext({ value, onSave }) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(value || '');
+  const inputRef = useRef(null);
+
+  useEffect(() => { if (!editing) setDraft(value || ''); }, [value, editing]);
+  useEffect(() => { if (editing && inputRef.current) inputRef.current.focus(); }, [editing]);
+
+  const commit = () => {
+    setEditing(false);
+    const next = draft.trim();
+    if (next !== (value || '')) onSave(next);
+  };
+
+  if (editing) {
+    return html`<div class="ppl-next editing">
+      <span class="ppl-next-label">Next</span>
+      <input ref=${inputRef} class="ppl-next-input" value=${draft} draggable=${false}
+        placeholder="What's the next step?"
+        onMouseDown=${(e) => e.stopPropagation()}
+        onInput=${(e) => setDraft(e.target.value)}
+        onBlur=${commit}
+        onKeyDown=${(e) => {
+          if (e.key === 'Enter') { e.preventDefault(); commit(); }
+          else if (e.key === 'Escape') { setDraft(value || ''); setEditing(false); }
+        }} />
+    </div>`;
+  }
+  if (!value) {
+    return html`<button class="ppl-next-add" onClick=${() => setEditing(true)}>+ Add next step</button>`;
+  }
+  return html`<div class="ppl-next" title="Click to edit" onClick=${() => setEditing(true)}>
+    <span class="ppl-next-label">Next</span>${value}
   </div>`;
 }
 
