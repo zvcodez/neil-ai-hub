@@ -412,28 +412,14 @@ select, .sort select {
 
 /* Projects pipeline ---------------------------------------------------------*/
 .projects-pipeline { display: flex; gap: 14px; align-items: flex-start; overflow-x: auto; padding-bottom: 10px; }
-.ppl-col {
-  flex: 1 1 300px; min-width: 280px; max-width: 420px;
-  display: flex; flex-direction: column; gap: 12px; transition: flex-basis 0.18s, min-width 0.18s;
-}
+.ppl-col { flex: 1 1 0; min-width: 250px; display: flex; flex-direction: column; gap: 12px; }
 .ppl-col-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text); padding: 2px 2px 0; }
 .ppl-col-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--stage); }
 .ppl-col-count { margin-left: auto; color: var(--text-muted); font-size: 12px; min-width: 12px; text-align: right; }
-.ppl-col-cards { display: flex; flex-direction: column; gap: 12px; min-height: 24px; }
-
-/* Empty stages collapse to a slim labeled rail so real cards get the room. */
-.ppl-col.empty { flex: 0 0 42px; min-width: 42px; max-width: 42px; }
-.ppl-col.empty .ppl-col-head {
-  writing-mode: vertical-rl; height: 150px; justify-content: flex-start;
-  color: var(--text-muted); margin: 0 auto; gap: 9px; font-size: 12px;
-}
-.ppl-col.empty .ppl-col-count { display: none; }
-.ppl-col.empty .ppl-col-cards { display: none; }
-/* While dragging, expand the rails so you can drop into any stage. */
-.projects-pipeline.dragging .ppl-col.empty { flex: 1 1 180px; min-width: 170px; max-width: 320px; }
-.projects-pipeline.dragging .ppl-col.empty .ppl-col-head { writing-mode: horizontal-tb; height: auto; margin: 0; }
-.projects-pipeline.dragging .ppl-col.empty .ppl-col-cards { display: flex; }
-.projects-pipeline.dragging .ppl-col-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 55%, transparent); outline-offset: 5px; border-radius: 10px; }
+.ppl-col-cards { display: flex; flex-direction: column; gap: 12px; min-height: 80px; }
+/* Empty lanes read as subtle drop zones rather than blank space. */
+.ppl-col.empty .ppl-col-cards { border: 1.5px dashed var(--border); border-radius: 12px; }
+.projects-pipeline.dragging .ppl-col-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 50%, transparent); outline-offset: 4px; border-radius: 12px; }
 
 /* Card */
 .ppl-card {
