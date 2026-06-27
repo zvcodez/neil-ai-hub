@@ -14,7 +14,7 @@ const BRANCH = 'main';
 
 // Data stores that sync (UI prefs like theme/active tab stay local).
 export const SYNC_KEYS = [
-  'timeline', 'glossary', 'shortcuts', 'resources', 'ideas', 'projects-metadata',
+  'timeline', 'glossary', 'shortcuts', 'resources', 'ideas', 'projects',
   'career-roles', 'career-companies', 'career-applications', 'career-networking',
   'career-interview-prep', 'skills',
 ];
@@ -103,7 +103,7 @@ async function putFile(key, value, updatedAt, sha, keepalive = false) {
 async function pushKey(key, keepalive = false) {
   const meta = getMeta();
   const updatedAt = (meta[key] && meta[key].updatedAt) || new Date().toISOString();
-  const value = loadStore(key, key === 'projects-metadata' ? {} : []);
+  const value = loadStore(key, []);
   const newSha = await putFile(key, value, updatedAt, meta[key] && meta[key].sha, keepalive);
   const m = getMeta();
   m[key] = { updatedAt, sha: newSha };

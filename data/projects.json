@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-06-27T21:22:21Z",
+  "data": [
+    {
+      "id": "6a403f0da1",
+      "_created": "2026-06-27T21:22:21Z",
+      "name": "Neil AI Hub",
+      "stage": "Live",
+      "chatUrl": "",
+      "folder": "~/Claude/neil-ai-hub",
+      "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
+      "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
+      "nextStep": "Make repo private (split into public app + private data repo)",
+      "notes": "Centralized hub for all AI-related projects."
+    },
+    {
+      "id": "6a403f0db2",
+      "_created": "2026-06-27T21:22:21Z",
+      "name": "Neil Portfolio",
+      "stage": "Building",
+      "chatUrl": "",
+      "folder": "~/Claude/neil-portfolio",
+      "repoUrl": "https://github.com/zvcodez/neil-portfolio",
+      "liveUrl": "https://zvcodez.github.io/neil-portfolio/",
+      "nextStep": "",
+      "notes": ""
+    }
+  ]
+}
