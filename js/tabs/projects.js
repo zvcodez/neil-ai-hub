@@ -35,6 +35,19 @@ function discussUrl() {
   return launchUrl(HUB_FOLDER) + '?prompt=' + encodeURIComponent(NEW_PROJECT_PROMPT);
 }
 
+// "Open in Claude Code" on a card: launch a fresh session pre-seeded to catch
+// itself up from the project's own files before doing anything, so picking a
+// project back up lands you in a session that already knows where things stand.
+const RESUME_PROMPT =
+  'This is a fresh Claude Code session for a project tracked in the Neil AI Hub. ' +
+  "Before anything else, read this project's CLAUDE.md (and README if present) to catch up on " +
+  'what’s been built and the current state. Then give me a short summary of where things stand and ' +
+  'what the next step is, and we’ll continue from there. Keep the project’s CLAUDE.md and its Hub ' +
+  'card (lastDid / nextStep) up to date as we work, per the instructions in CLAUDE.md.';
+function resumeUrl(folder) {
+  return launchUrl(folder) + '?prompt=' + encodeURIComponent(RESUME_PROMPT);
+}
+
 export function ProjectsTab({ accent }) {
   const [projects, setProjects] = useStore('projects', []);
   const [query, setQuery] = useState('');
@@ -61,16 +74,22 @@ export function ProjectsTab({ accent }) {
   ];
 
   const save = (values) => {
+    const now = new Date().toISOString();
     if (modal.editing) {
-      setProjects(projects.map((p) => (p.id === modal.editing.id ? { ...p, ...values } : p)));
+      const prev = modal.editing;
+      const next = { ...prev, ...values };
+      if (values.stage && values.stage !== prev.stage) next._stagedAt = now;
+      setProjects(projects.map((p) => (p.id === prev.id ? next : p)));
     } else {
-      setProjects([{ id: uid(), _created: new Date().toISOString(), ...values }, ...projects]);
+      setProjects([{ id: uid(), _created: now, _stagedAt: now, ...values }, ...projects]);
     }
     setModal(null);
   };
 
+  // Record when a project entered its current stage so we can order within it.
   const moveTo = (id, stage) =>
-    setProjects(projects.map((p) => (p.id === id && p.stage !== stage ? { ...p, stage } : p)));
+    setProjects(projects.map((p) =>
+      (p.id === id && p.stage !== stage ? { ...p, stage, _stagedAt: new Date().toISOString() } : p)));
 
   const patchProject = (id, patch) =>
     setProjects(projects.map((p) => (p.id === id ? { ...p, ...patch } : p)));
@@ -81,6 +100,12 @@ export function ProjectsTab({ accent }) {
     () => projects.filter((p) => matchesQuery(query, p.name, p.notes, p.nextStep)),
     [projects, query]
   );
+
+  // Projects in a stage, ordered by when they entered it (oldest → newest).
+  const inStage = (stage) =>
+    filtered
+      .filter((p) => (p.stage || 'Idea') === stage)
+      .sort((a, b) => (a._stagedAt || a._created || '').localeCompare(b._stagedAt || b._created || ''));
 
   const card = (p, showStage) => {
     const stage = p.stage || 'Idea';
@@ -116,7 +141,7 @@ export function ProjectsTab({ accent }) {
         onSave=${(v) => patchProject(p.id, { lastDid: v })} />
       ${p.notes && html`<p class="ppl-notes">${p.notes}</p>`}
 
-      ${p.folder && html`<a class="ppl-launch" href=${launchUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
+      ${p.folder && html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
         <${Icon} name="shortcuts" size=${16} /> Open in Claude Code
       </a>`}
 
