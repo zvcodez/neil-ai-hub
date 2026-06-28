@@ -49,18 +49,34 @@ GitHub username: **zvcodez**. Live at **https://zvcodez.github.io/neil-ai-hub/**
   timestamp. See `js/sync.js`. The user enables it via the cloud button with a
   fine-grained token (Contents: read/write).
 
-## Adding a project from a Claude Code session
-The Projects tab's **"New with Claude"** button opens Claude Code in this repo
-seeded with a prompt to interview Neil and then file the project. To add it:
-1. Read `data/projects.json`. Shape: `{ "updatedAt": <ISO>, "data": [ <project>, … ] }`.
-2. Append a project object to `data` with these fields (omit/blank what's unknown):
-   `id` (unique string), `_created` (ISO now), `name`, `description`, `stage`
-   (one of: Idea, Discussing, Planning, Building, Live), `folder` (e.g.
-   `~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep`, `notes`.
-3. Set the top-level `updatedAt` to the current ISO timestamp (must be newer than
-   before, or the hub's last-write-wins sync won't adopt it).
+## Adding & updating a project from a Claude Code session
+The Projects tab's **"New with Claude"** button opens Claude Code in this repo to
+*talk through* an idea (a conversation, not an interview — Neil often won't have
+full scope yet). Help him think it through; as soon as the basics are clear,
+**create the project early** with whatever's known and keep refining it as you
+talk. The hub is just data — edit `data/projects.json`, no code changes.
+
+Project shape (omit/blank what's unknown):
+`id` (unique string), `_created` (ISO), `name`, `description` (one-line),
+`stage` (Idea | Discussing | Planning | Building | Live), `folder` (e.g.
+`~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep` ("what's next"),
+`lastDid` ("what we just did"), `notes`.
+
+To write a change:
+1. Read `data/projects.json` (shape `{ "updatedAt": <ISO>, "data": [ … ] }`).
+2. Add a new project, or find the existing one (match `id`, or `folder`/`name`)
+   and update its fields — especially **`nextStep`**, **`lastDid`**, and `stage`
+   to reflect where things stand.
+3. Set top-level `updatedAt` to current ISO (must be newer, or last-write-wins
+   sync won't adopt it).
 4. `git add data/projects.json && git commit && git push`. The hub pulls on
-   focus/60s and the card appears. No code changes needed — it's pure data.
+   focus/60s and the card updates.
+
+**Keeping projects current:** at a natural stopping point in any session that's
+working on a hub-tracked project (its `folder` matches the cwd, even if that's a
+different repo — use `git -C ~/Claude/neil-ai-hub …` to commit/push the hub),
+update that project's `lastDid` (what we just did) and `nextStep` (what's next),
+and bump `stage` if it changed. That's what makes the hub a live mission-control.
 
 ## Open items / TODO
 1. **Sync must be enabled on each device** (token pasted per device) for true

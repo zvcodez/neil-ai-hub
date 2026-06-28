@@ -453,6 +453,10 @@ select, .sort select {
 /* Next step: highlighted chip. */
 .ppl-inline.next { font-size: 13.5px; line-height: 1.45; background: var(--surface-2); padding: 9px 11px; }
 .ppl-inline.next:hover { background: color-mix(in srgb, var(--text) 7%, var(--surface-2)); }
+/* "Just did": recent progress chip, green accent. */
+.ppl-inline.did { font-size: 13px; line-height: 1.45; background: color-mix(in srgb, #10b981 9%, var(--surface-2)); padding: 9px 11px; }
+.ppl-inline.did:hover { background: color-mix(in srgb, #10b981 16%, var(--surface-2)); }
+.ppl-inline.did .ppl-next-label { color: #10b981; }
 /* "+ Add …" prompts for empty fields. */
 .ppl-add {
   align-self: flex-start; background: none; border: 1px dashed var(--border); color: var(--text-muted);

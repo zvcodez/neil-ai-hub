@@ -25,11 +25,12 @@ function shellCommand(folder) {
 // you about a project and write it into data/projects.json (sync surfaces it).
 const HUB_FOLDER = '~/Claude/neil-ai-hub';
 const NEW_PROJECT_PROMPT =
-  "Let's add a new project to the Neil AI Hub. Interview me one question at a time to collect: " +
-  'the project name, a one-line description, its stage (Idea, Discussing, Planning, Building, or Live), ' +
-  'the local folder path, the GitHub repo URL, the live URL, and the immediate next step — I can skip any. ' +
-  'Then add it to data/projects.json and commit & push, following the ' +
-  '"Adding a project from a Claude Code session" instructions in CLAUDE.md.';
+  "I've got a new project idea I want to talk through with you — I might not have the full scope yet, " +
+  'so help me think it through as a conversation and tell me how you and Claude Code can help me build it. ' +
+  'As soon as you understand the basics, create an entry for it in the Neil AI Hub (data/projects.json) ' +
+  'with whatever we know so far, and keep it updated as we talk — especially the description, ' +
+  'what’s next, and what we just did — following the "Adding & updating a project" instructions in CLAUDE.md. ' +
+  'Start by asking me what the idea is.';
 function discussUrl() {
   return launchUrl(HUB_FOLDER) + '?prompt=' + encodeURIComponent(NEW_PROJECT_PROMPT);
 }
@@ -48,6 +49,8 @@ export function ProjectsTab({ accent }) {
       help: 'Shown prominently on the card so it’s easy to identify at a glance.' },
     { name: 'stage', label: 'Stage', type: 'select', options: stageOptions },
     { name: 'nextStep', label: 'Next step', placeholder: 'The next concrete thing to do' },
+    { name: 'lastDid', label: 'What we just did', placeholder: 'Most recent progress',
+      help: 'Auto-updated by Claude Code as you work; shown on the card.' },
     { name: 'chatUrl', label: 'Claude chat link', type: 'url', placeholder: 'https://claude.ai/chat/…',
       help: 'Paste the URL from the address bar of the Claude conversation. Clicking reopens it.' },
     { name: 'folder', label: 'Local folder', placeholder: '~/Claude/my-project', mono: true,
@@ -108,6 +111,9 @@ export function ProjectsTab({ accent }) {
       <${InlineText} variant="next" label="Next" value=${p.nextStep}
         placeholder="What's the next step?" addLabel="+ Add next step"
         onSave=${(v) => patchProject(p.id, { nextStep: v })} />
+      <${InlineText} variant="did" label="Just did" value=${p.lastDid} hideWhenEmpty=${true}
+        placeholder="Most recent progress"
+        onSave=${(v) => patchProject(p.id, { lastDid: v })} />
       ${p.notes && html`<p class="ppl-notes">${p.notes}</p>`}
 
       ${p.folder && html`<a class="ppl-launch" href=${launchUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
@@ -168,7 +174,7 @@ export function ProjectsTab({ accent }) {
 
 // Click-to-edit text right on the card (no menu digging). Used for both the
 // description and the Next step. Empty fields show a subtle "+ Add …" prompt.
-function InlineText({ value, onSave, label, placeholder, addLabel, variant }) {
+function InlineText({ value, onSave, label, placeholder, addLabel, variant, hideWhenEmpty }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value || '');
   const inputRef = useRef(null);
@@ -197,6 +203,7 @@ function InlineText({ value, onSave, label, placeholder, addLabel, variant }) {
     </div>`;
   }
   if (!value) {
+    if (hideWhenEmpty) return null;
     return html`<button class=${`ppl-add ${variant}`} onClick=${() => setEditing(true)}>${addLabel}</button>`;
   }
   return html`<div class=${`ppl-inline ${variant}`} title="Click to edit" onClick=${() => setEditing(true)}>
