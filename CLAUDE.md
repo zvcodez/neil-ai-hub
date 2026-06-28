@@ -58,7 +58,9 @@ talk. The hub is just data — edit `data/projects.json`, no code changes.
 
 Project shape (omit/blank what's unknown):
 `id` (unique string), `_created` (ISO), `name`, `description` (one-line),
-`stage` (Idea | Discussing | Planning | Building | Live), `folder` (e.g.
+`stage` (Idea | Discussing | Planning | Building | Live), `_stagedAt` (ISO the
+project entered its current stage — set this to now whenever you change `stage`,
+so the hub orders projects within a stage chronologically), `folder` (e.g.
 `~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep` ("what's next"),
 `lastDid` ("what we just did"), `notes`.
 

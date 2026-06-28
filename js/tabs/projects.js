@@ -171,19 +171,20 @@ export function ProjectsTab({ accent }) {
       hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards left→right as they progress." />`}
 
     ${projects.length > 0 && view === 'pipeline' &&
-    html`<div class=${`projects-pipeline ${dragId ? 'dragging' : ''}`}>
+    html`<div class=${`projects-stages ${dragId ? 'dragging' : ''}`}>
       ${STAGES.map((stage) => {
-        const col = filtered.filter((p) => (p.stage || 'Idea') === stage);
-        const empty = col.length === 0;
-        return html`<div class=${`ppl-col ${empty ? 'empty' : ''}`} key=${stage}
+        const col = inStage(stage);
+        // Hide empty stages normally; reveal them while dragging so they're drop targets.
+        if (col.length === 0 && !dragId) return null;
+        return html`<section class="stage-section" key=${stage}
           style=${{ '--stage': stageColor[stage] }}
           onDragOver=${(e) => e.preventDefault()}
           onDrop=${() => { if (dragId) moveTo(dragId, stage); setDragId(null); }}>
-          <div class="ppl-col-head">
-            <span class="dot"></span>${stage}<span class="ppl-col-count">${col.length || ''}</span>
+          <div class="stage-head">
+            <span class="dot"></span>${stage}<span class="stage-count">${col.length || ''}</span>
           </div>
-          <div class="ppl-col-cards">${col.map((p) => card(p, false))}</div>
-        </div>`;
+          <div class=${`stage-row ${col.length === 0 ? 'empty' : ''}`}>${col.map((p) => card(p, false))}</div>
+        </section>`;
       })}
     </div>`}
 

@@ -411,20 +411,16 @@ select, .sort select {
 .app-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 12px; }
 
 /* Projects pipeline ---------------------------------------------------------*/
-.projects-pipeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: start; padding-bottom: 10px; }
-.ppl-col { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
-/* On narrow screens (phone), fall back to a horizontal swipe of bigger cards. */
-@media (max-width: 900px) {
-  .projects-pipeline { display: flex; grid-template-columns: none; overflow-x: auto; }
-  .ppl-col { flex: 0 0 80%; min-width: 240px; }
-}
-.ppl-col-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text); padding: 2px 2px 0; }
-.ppl-col-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--stage); }
-.ppl-col-count { margin-left: auto; color: var(--text-muted); font-size: 12px; min-width: 12px; text-align: right; }
-.ppl-col-cards { display: flex; flex-direction: column; gap: 12px; min-height: 80px; }
-/* Empty lanes read as subtle drop zones rather than blank space. */
-.ppl-col.empty .ppl-col-cards { border: 1.5px dashed var(--border); border-radius: 12px; }
-.projects-pipeline.dragging .ppl-col-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 50%, transparent); outline-offset: 4px; border-radius: 12px; }
+/* Stages stack vertically; projects within a stage sit side by side (wrapping). */
+.projects-stages { display: flex; flex-direction: column; gap: 22px; padding-bottom: 10px; }
+.stage-section { display: flex; flex-direction: column; gap: 12px; }
+.stage-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text); padding: 0 2px; }
+.stage-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--stage); }
+.stage-count { color: var(--text-muted); font-size: 12px; }
+.stage-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
+.stage-row .ppl-card { flex: 1 1 280px; max-width: 360px; }
+.stage-row.empty { min-height: 46px; border: 1.5px dashed var(--border); border-radius: 12px; }
+.projects-stages.dragging .stage-row { outline: 1.5px dashed color-mix(in srgb, var(--stage) 45%, transparent); outline-offset: 5px; border-radius: 12px; min-height: 46px; }
 
 /* Card */
 .ppl-card {
