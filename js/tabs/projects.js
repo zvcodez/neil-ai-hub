@@ -171,19 +171,17 @@ export function ProjectsTab({ accent }) {
       hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards left→right as they progress." />`}
 
     ${projects.length > 0 && view === 'pipeline' &&
-    html`<div class=${`projects-stages ${dragId ? 'dragging' : ''}`}>
+    html`<div class=${`projects-board ${dragId ? 'dragging' : ''}`}>
       ${STAGES.map((stage) => {
         const col = inStage(stage);
-        // Hide empty stages normally; reveal them while dragging so they're drop targets.
-        if (col.length === 0 && !dragId) return null;
-        return html`<section class="stage-section" key=${stage}
+        return html`<section class=${`stage-group ${col.length === 0 ? 'empty' : ''}`} key=${stage}
           style=${{ '--stage': stageColor[stage] }}
           onDragOver=${(e) => e.preventDefault()}
           onDrop=${() => { if (dragId) moveTo(dragId, stage); setDragId(null); }}>
           <div class="stage-head">
             <span class="dot"></span>${stage}<span class="stage-count">${col.length || ''}</span>
           </div>
-          <div class=${`stage-row ${col.length === 0 ? 'empty' : ''}`}>${col.map((p) => card(p, false))}</div>
+          <div class="stage-cards">${col.map((p) => card(p, false))}</div>
         </section>`;
       })}
     </div>`}

@@ -411,16 +411,20 @@ select, .sort select {
 .app-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 12px; }
 
 /* Projects pipeline ---------------------------------------------------------*/
-/* Stages stack vertically; projects within a stage sit side by side (wrapping). */
-.projects-stages { display: flex; flex-direction: column; gap: 22px; padding-bottom: 10px; }
-.stage-section { display: flex; flex-direction: column; gap: 12px; }
-.stage-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text); padding: 0 2px; }
+/* Horizontal board: stages left→right, projects within a stage side by side.
+   The board scrolls horizontally — no vertical page scrolling. */
+.projects-board { display: flex; align-items: flex-start; overflow-x: auto; padding-bottom: 12px; }
+.stage-group { display: flex; flex-direction: column; gap: 12px; padding: 0 16px; }
+.stage-group:first-child { padding-left: 2px; }
+.stage-group + .stage-group { border-left: 1px solid var(--border); }
+.stage-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; }
 .stage-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--stage); }
 .stage-count { color: var(--text-muted); font-size: 12px; }
-.stage-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
-.stage-row .ppl-card { flex: 1 1 280px; max-width: 360px; }
-.stage-row.empty { min-height: 46px; border: 1.5px dashed var(--border); border-radius: 12px; }
-.projects-stages.dragging .stage-row { outline: 1.5px dashed color-mix(in srgb, var(--stage) 45%, transparent); outline-offset: 5px; border-radius: 12px; min-height: 46px; }
+.stage-cards { display: flex; flex-direction: row; gap: 14px; align-items: flex-start; min-height: 60px; }
+.stage-cards .ppl-card { width: 300px; flex: none; }
+.stage-group.empty { min-width: 132px; }
+.stage-group.empty .stage-cards { width: 100px; border: 1.5px dashed var(--border); border-radius: 12px; }
+.projects-board.dragging .stage-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 45%, transparent); outline-offset: 5px; border-radius: 12px; }
 
 /* Card */
 .ppl-card {
