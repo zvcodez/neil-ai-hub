@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-06-27T22:21:12.289Z",
+  "updatedAt": "2026-06-28T21:40:46Z",
   "data": [
+    {
+      "id": "7b51e2c9f4",
+      "_created": "2026-06-28T21:40:46Z",
+      "name": "ZV's Edge",
+      "description": "AI-powered sports betting PWA (mobile-first for iPhone) — FastAPI backend + React/Vite frontend.",
+      "stage": "Building",
+      "chatUrl": "",
+      "folder": "~/zvs-edge",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "Build the first real betting feature on top of the scaffold",
+      "lastDid": "Added the project to the Hub; scaffold in place (runnable PWA shell + hello-world FastAPI endpoint)",
+      "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far — no betting features yet. No git remote set up."
+    },
     {
       "id": "6a403f0da1",
       "_created": "2026-06-27T21:22:21Z",
