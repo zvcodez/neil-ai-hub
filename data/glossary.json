@@ -1,188 +1,211 @@
 {
-  "updatedAt": "2026-06-29T00:20:02.000Z",
+  "updatedAt": "2026-06-29T00:40:00.000Z",
   "data": [
     {
       "id": "mqtli5p0ji4b68",
       "_created": "2026-06-25T14:26:29.076Z",
       "term": "SaaS",
       "definition": "Software as a Service - online platform hosted by a server for users to access. (Microsoft office, Netflix)",
+      "example": "Instead of buying and installing software, you log into Netflix or Gmail in your browser and pay a subscription — the company runs it for you.",
       "category": "AI",
-      "dateAdded": "2026-06-25"
+      "section": "Core concepts"
     },
     {
       "id": "seed-llm",
       "term": "LLM",
       "definition": "Large Language Model — an AI trained on huge amounts of text that predicts the next word to generate human-like responses.",
+      "example": "When you chat with Claude or ChatGPT, an LLM is what reads your message and writes the reply.",
       "category": "AI",
-      "dateAdded": "2026-06-24",
+      "section": "Core concepts",
       "_created": "2026-06-24T00:00:00.000Z"
     },
     {
       "id": "cmd-clear",
       "term": "/clear",
       "definition": "Wipes conversation history, keeps file edits. Use when context is getting large.",
+      "example": "You've finished a feature and the chat is huge — type /clear to start fresh while keeping all your saved files.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Context management",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-compact",
       "term": "/compact",
       "definition": "Smarter version of /clear; compresses history instead of deleting it, preserves key info. Better default than /clear for mid-session use.",
+      "example": "Mid-build and context is filling up — /compact frees space but still remembers what you're working on.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Context management",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-rewind",
       "term": "/rewind",
       "definition": "Can restore context even after a /clear if you regret it.",
+      "example": "You ran /clear then realized you needed that earlier discussion — /rewind brings it back.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Context management",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-plan",
       "term": "/plan [task]",
       "definition": "Claude thinks through the approach before touching any files. Critical for large tasks to avoid compounding mistakes.",
+      "example": "Before a big refactor: /plan refactor the login system — Claude maps out the steps before changing anything.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Before big changes",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-diff",
       "term": "/diff",
       "definition": "Shows exactly what changed before you commit, so nothing surprises you.",
+      "example": "Right before committing: /diff to eyeball every change Claude made.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Before big changes",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-goal",
       "term": "/goal [outcome]",
       "definition": "Sets a target Claude works toward across many turns. Good for \"finish the backend\" type sessions.",
+      "example": "/goal finish and test the payment backend — keeps Claude pointed at that across many messages.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Staying on track",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-btw",
       "term": "/btw [question]",
       "definition": "Ask a side question without polluting the main task context. Useful when you're curious about something mid-build.",
+      "example": "/btw what does CORS mean? — get a quick answer without derailing the task you're in.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Staying on track",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-resume",
       "term": "/resume",
       "definition": "Picks up a previous session.",
+      "example": "Open your laptop the next day and /resume to continue right where yesterday's session left off.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Navigation",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-branch",
       "term": "/branch",
       "definition": "Forks the conversation into a separate session for experimenting without messing up your main thread.",
+      "example": "Want to try a risky approach — /branch to experiment in a copy without touching your main thread.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Navigation",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-cost",
       "term": "/cost",
       "definition": "Shows how many tokens you've used and what it's costing.",
+      "example": "Wondering if you're spending too much — /cost shows tokens used and the running bill.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-model",
       "term": "/model",
       "definition": "Switch models mid-session (e.g. drop to Sonnet for boilerplate, use Opus for hard problems).",
+      "example": "Writing boring boilerplate — /model to switch to Sonnet, then back to Opus for the hard part.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-effort",
       "term": "/effort",
       "definition": "Adjusts reasoning depth. Lower effort = faster/cheaper.",
+      "example": "Simple task — lower /effort for a faster, cheaper reply; raise it for a tricky bug.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-doctor",
-      "term": "/doctor",
-      "definition": "Checks for config issues.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-help",
-      "term": "/help",
-      "definition": "Lists everything available in your current version.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-init",
-      "term": "/init",
-      "definition": "Run once in a new project; generates a CLAUDE.md file that keeps Claude oriented every time you start a new session.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-config",
-      "term": "/config",
-      "definition": "Opens settings to change theme, default model, and other Claude Code options.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-memory",
-      "term": "/memory",
-      "definition": "Edit your CLAUDE.md memory files directly, so you can tweak the instructions Claude reads each session.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-agents",
-      "term": "/agents",
-      "definition": "Create and manage custom subagents — specialized helpers Claude can hand specific tasks to.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-review",
-      "term": "/review",
-      "definition": "Reviews a GitHub pull request and reports issues it finds.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
-      "_created": "2026-06-29T00:20:02.000Z"
-    },
-    {
-      "id": "cmd-security-review",
-      "term": "/security-review",
-      "definition": "Runs a security review of the pending changes on your current branch.",
-      "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
     {
       "id": "cmd-fast",
       "term": "/fast",
       "definition": "Toggles Fast mode — same Opus model, faster output. Handy when you want quick responses.",
+      "example": "Want snappier replies without dropping to a weaker model — /fast toggles faster Opus output.",
       "category": "Terminal",
-      "dateAdded": "2026-06-28",
+      "section": "Cost & performance",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-doctor",
+      "term": "/doctor",
+      "definition": "Checks for config issues.",
+      "example": "Something feels off with your setup — /doctor scans for configuration problems.",
+      "category": "Terminal",
+      "section": "Diagnostics",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-help",
+      "term": "/help",
+      "definition": "Lists everything available in your current version.",
+      "example": "Forgot which commands exist — /help lists everything your version supports.",
+      "category": "Terminal",
+      "section": "Diagnostics",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-init",
+      "term": "/init",
+      "definition": "Run once in a new project; generates a CLAUDE.md file that keeps Claude oriented every time you start a new session.",
+      "example": "Starting a brand-new project — run /init once to create the CLAUDE.md that orients Claude each session.",
+      "category": "Terminal",
+      "section": "Setup & config",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-config",
+      "term": "/config",
+      "definition": "Opens settings to change theme, default model, and other Claude Code options.",
+      "example": "Want dark mode or a different default model — /config opens the settings.",
+      "category": "Terminal",
+      "section": "Setup & config",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-memory",
+      "term": "/memory",
+      "definition": "Edit your CLAUDE.md memory files directly, so you can tweak the instructions Claude reads each session.",
+      "example": "Claude keeps forgetting a preference — /memory to edit the instructions it reads every time.",
+      "category": "Terminal",
+      "section": "Setup & config",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-agents",
+      "term": "/agents",
+      "definition": "Create and manage custom subagents — specialized helpers Claude can hand specific tasks to.",
+      "example": "Want a dedicated code-reviewer helper — /agents to create and manage one.",
+      "category": "Terminal",
+      "section": "Setup & config",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-review",
+      "term": "/review",
+      "definition": "Reviews a GitHub pull request and reports issues it finds.",
+      "example": "Opened a PR on GitHub — /review <PR-url> to get Claude's feedback before merging.",
+      "category": "Terminal",
+      "section": "Code review",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-security-review",
+      "term": "/security-review",
+      "definition": "Runs a security review of the pending changes on your current branch.",
+      "example": "Before merging sensitive changes — /security-review scans your diff for security issues.",
+      "category": "Terminal",
+      "section": "Code review",
       "_created": "2026-06-29T00:20:02.000Z"
     }
   ]
