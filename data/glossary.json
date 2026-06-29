@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T14:26:29.076Z",
+  "updatedAt": "2026-06-29T00:20:02.000Z",
   "data": [
     {
       "id": "mqtli5p0ji4b68",
@@ -16,6 +16,174 @@
       "category": "AI",
       "dateAdded": "2026-06-24",
       "_created": "2026-06-24T00:00:00.000Z"
+    },
+    {
+      "id": "cmd-clear",
+      "term": "/clear",
+      "definition": "Wipes conversation history, keeps file edits. Use when context is getting large.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-compact",
+      "term": "/compact",
+      "definition": "Smarter version of /clear; compresses history instead of deleting it, preserves key info. Better default than /clear for mid-session use.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-rewind",
+      "term": "/rewind",
+      "definition": "Can restore context even after a /clear if you regret it.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-plan",
+      "term": "/plan [task]",
+      "definition": "Claude thinks through the approach before touching any files. Critical for large tasks to avoid compounding mistakes.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-diff",
+      "term": "/diff",
+      "definition": "Shows exactly what changed before you commit, so nothing surprises you.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-goal",
+      "term": "/goal [outcome]",
+      "definition": "Sets a target Claude works toward across many turns. Good for \"finish the backend\" type sessions.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-btw",
+      "term": "/btw [question]",
+      "definition": "Ask a side question without polluting the main task context. Useful when you're curious about something mid-build.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-resume",
+      "term": "/resume",
+      "definition": "Picks up a previous session.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-branch",
+      "term": "/branch",
+      "definition": "Forks the conversation into a separate session for experimenting without messing up your main thread.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-cost",
+      "term": "/cost",
+      "definition": "Shows how many tokens you've used and what it's costing.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-model",
+      "term": "/model",
+      "definition": "Switch models mid-session (e.g. drop to Sonnet for boilerplate, use Opus for hard problems).",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-effort",
+      "term": "/effort",
+      "definition": "Adjusts reasoning depth. Lower effort = faster/cheaper.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-doctor",
+      "term": "/doctor",
+      "definition": "Checks for config issues.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-help",
+      "term": "/help",
+      "definition": "Lists everything available in your current version.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-init",
+      "term": "/init",
+      "definition": "Run once in a new project; generates a CLAUDE.md file that keeps Claude oriented every time you start a new session.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-config",
+      "term": "/config",
+      "definition": "Opens settings to change theme, default model, and other Claude Code options.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-memory",
+      "term": "/memory",
+      "definition": "Edit your CLAUDE.md memory files directly, so you can tweak the instructions Claude reads each session.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-agents",
+      "term": "/agents",
+      "definition": "Create and manage custom subagents — specialized helpers Claude can hand specific tasks to.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-review",
+      "term": "/review",
+      "definition": "Reviews a GitHub pull request and reports issues it finds.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-security-review",
+      "term": "/security-review",
+      "definition": "Runs a security review of the pending changes on your current branch.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
+    },
+    {
+      "id": "cmd-fast",
+      "term": "/fast",
+      "definition": "Toggles Fast mode — same Opus model, faster output. Handy when you want quick responses.",
+      "category": "Terminal",
+      "dateAdded": "2026-06-28",
+      "_created": "2026-06-29T00:20:02.000Z"
     }
   ]
 }
