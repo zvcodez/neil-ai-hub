@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T00:39:44.998682+00:00",
+  "updatedAt": "2026-06-29T04:42:37.208743+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Parlay logic (true joint probability of two flagged picks vs the book's combined payout), then results auto-settlement + P&L + CLV, and the backend feature endpoints (/picks, /bets, /tracker, /bracket).",
-      "lastDid": "Added the calibration guardrail to pick generation: blends the model toward the vig-free market in log-odds space before measuring edge (default model_weight=0.5). Live, this cut flagged bets from 20 to 6 and removed/demoted the fake +1000 longshot edges caused by ridge shrinkage; POTD is now Germany/Paraguay BTTS Yes at a realistic +7.2%. Engine + guardrail verified offline and run live.",
+      "nextStep": "Results auto-settlement + P&L + CLV: grade finished picks from the football-data results feed, track My vs Model P&L, and pull Pinnacle closing lines (OddsPapi) for CLV. Then the backend feature endpoints (/picks, /bets, /tracker, /bracket, /analysis).",
+      "lastDid": "Built parlay logic (picks.suggest_parlays): true joint probability = product of calibrated legs vs the single-book combined payout. Correctness guards: legs must be from different matches (same-match legs are correlated and excluded), all priced at one common book, EV + true-probability gates so it never suggests just because plays are strong. 0.5u stake. Verified offline + run live.",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far \u2014 no betting features yet. No git remote set up."
     },
     {
