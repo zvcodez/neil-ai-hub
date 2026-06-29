@@ -479,6 +479,8 @@ select, .sort select {
 }
 .ppl-add:hover { color: var(--text); border-color: var(--accent); }
 .ppl-notes { margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.5; white-space: pre-wrap; }
+.ppl-notes-list { white-space: normal; list-style: disc; padding-left: 18px; display: flex; flex-direction: column; gap: 3px; }
+.ppl-notes-list li { overflow-wrap: anywhere; }
 .ppl-launch {
   display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
   padding: 11px; font-size: 14px; font-weight: 650; border-radius: 10px; text-decoration: none;

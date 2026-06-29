@@ -139,7 +139,7 @@ export function ProjectsTab({ accent }) {
       <${InlineText} variant="did" label="Just did" value=${p.lastDid} hideWhenEmpty=${true}
         placeholder="Most recent progress"
         onSave=${(v) => patchProject(p.id, { lastDid: v })} />
-      ${p.notes && html`<p class="ppl-notes">${p.notes}</p>`}
+      ${p.notes && html`<${Notes} text=${p.notes} />`}
 
       ${p.folder && html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
         <${Icon} name="shortcuts" size=${16} /> Open in Claude Code
@@ -233,6 +233,19 @@ function InlineText({ value, onSave, label, placeholder, addLabel, variant, hide
   return html`<div class=${`ppl-inline ${variant}`} title="Click to edit" onClick=${() => setEditing(true)}>
     ${label && html`<span class="ppl-next-label">${label}</span>`}${value}
   </div>`;
+}
+
+// Notes render as a bulleted list when they're multi-line (each line a point);
+// a single line stays a plain paragraph.
+function Notes({ text }) {
+  const lines = (text || '')
+    .split('\n')
+    .map((l) => l.replace(/^\s*[•\-*]\s*/, '').trim())
+    .filter(Boolean);
+  if (lines.length <= 1) return html`<p class="ppl-notes">${text}</p>`;
+  return html`<ul class="ppl-notes ppl-notes-list">
+    ${lines.map((l, i) => html`<li key=${i}>${l}</li>`)}
+  </ul>`;
 }
 
 // Small "⋯" overflow menu for the rarely-used / maintenance actions.
