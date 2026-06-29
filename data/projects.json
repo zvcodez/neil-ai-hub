@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T05:25:34.741459+00:00",
+  "updatedAt": "2026-06-29T05:52:56.275067+00:00",
   "data": [
     {
       "id": "idea-mithoo",
@@ -73,7 +73,19 @@
       "liveUrl": "",
       "nextStep": "Get the app online: I log into the two hosting accounts and follow the setup guide, then turn on phone notifications and live odds.",
       "lastDid": "Got everything ready to put the app online — set up the hosting files and wrote a step-by-step guide for launching it.",
-      "notes": "Just the basic skeleton so far — no betting features built yet."
+      "notes": "Just the basic skeleton so far — no betting features built yet.",
+      "log": [
+        {
+          "id": "log-zve-2",
+          "ts": "2026-06-28T22:30:00+00:00",
+          "text": "Got everything ready to put the app online — set up the hosting files and wrote a step-by-step guide for launching it. Still just the basic skeleton at this point: no betting features built yet, and no GitHub repo connected."
+        },
+        {
+          "id": "log-zve-1",
+          "ts": "2026-06-28T21:40:46+00:00",
+          "text": "Started the project — an AI sports betting app for my iPhone to help spot good bets. Scaffolded the app structure to build on."
+        }
+      ]
     },
     {
       "id": "6a403f0da1",
@@ -86,7 +98,24 @@
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
       "nextStep": "Make the project private so my personal notes aren't public.",
-      "notes": "One place to keep an eye on all my AI projects."
+      "notes": "One place to keep an eye on all my AI projects.",
+      "log": [
+        {
+          "id": "log-hub-3",
+          "ts": "2026-06-29T05:25:00+00:00",
+          "text": "Big cleanup session. Removed the standalone Ideas tab (ideas now live in Projects), changed the logo from NAH to NP, and rewrote all the project text in plain, everyday language. Added a stage filter at the top, a 'move to stage' option in each card's menu, bulleted notes, and a new 'open details' view with a journal. Also trimmed the stages down to just Idea / Building / Live, and added four new ideas (Mithoo game, runner game for my girlfriend, AI newsletter, algo trading)."
+        },
+        {
+          "id": "log-hub-2",
+          "ts": "2026-06-28T00:00:00+00:00",
+          "text": "Cross-device sync working — each device pulls and pushes its data through GitHub, so the hub stays in sync between my phone and Mac."
+        },
+        {
+          "id": "log-hub-1",
+          "ts": "2026-06-27T21:22:21+00:00",
+          "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
+        }
+      ]
     },
     {
       "id": "6a403f0db2",
@@ -100,7 +129,19 @@
       "liveUrl": "https://zvcodez.github.io/neil-portfolio/",
       "lastDid": "Checked that the site is live and working, and tidied up its info here.",
       "nextStep": "Pick a few finishing touches: a smarter chat bot, a downloadable resume, or fixing a location link that doesn't go anywhere.",
-      "notes": ""
+      "notes": "",
+      "log": [
+        {
+          "id": "log-port-2",
+          "ts": "2026-06-28T00:00:00+00:00",
+          "text": "Confirmed the site is live and working on GitHub Pages, and tidied up its info here in the hub. Ideas for finishing touches: a smarter chat bot, a downloadable resume, or fixing a location link that goes nowhere."
+        },
+        {
+          "id": "log-port-1",
+          "ts": "2026-06-27T21:22:21+00:00",
+          "text": "Built my personal portfolio site — about me, experience, skills, education, and a little Q&A chat bot. Launched it on GitHub Pages."
+        }
+      ]
     }
   ]
 }
