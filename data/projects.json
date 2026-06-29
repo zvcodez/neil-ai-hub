@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T00:31:47.126420+00:00",
+  "updatedAt": "2026-06-29T00:39:44.998682+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Add a calibration guardrail (blend model with market-implied / cap model-vs-market divergence / recalibrate tails) so picks don't over-flag longshots, then re-run live.",
-      "lastDid": "Built pick generation (picks.py + run_picks.py): vig removal, 5% edge threshold, edge ranking into POTD + Next Best, FD/DK line shopping, push-aware EV, 'no play'. Verified offline + run live. Found the model over-flags longshots (ridge shrinkage compresses fav/dog gap) \u2014 needs a calibration guardrail.",
+      "nextStep": "Parlay logic (true joint probability of two flagged picks vs the book's combined payout), then results auto-settlement + P&L + CLV, and the backend feature endpoints (/picks, /bets, /tracker, /bracket).",
+      "lastDid": "Added the calibration guardrail to pick generation: blends the model toward the vig-free market in log-odds space before measuring edge (default model_weight=0.5). Live, this cut flagged bets from 20 to 6 and removed/demoted the fake +1000 longshot edges caused by ridge shrinkage; POTD is now Germany/Paraguay BTTS Yes at a realistic +7.2%. Engine + guardrail verified offline and run live.",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far \u2014 no betting features yet. No git remote set up."
     },
     {
