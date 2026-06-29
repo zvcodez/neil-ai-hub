@@ -52,6 +52,7 @@ export function ProjectsTab({ accent }) {
   const [projects, setProjects] = useStore('projects', []);
   const [query, setQuery] = useState('');
   const [view, setView] = useState('pipeline');
+  const [stageFilter, setStageFilter] = useState('All');
   const [modal, setModal] = useState(null); // { editing }
   const [dragId, setDragId] = useState(null);
   const confirm = useConfirm();
@@ -97,9 +98,27 @@ export function ProjectsTab({ accent }) {
   const remove = (p) => confirm(`Delete "${p.name}"?`, () => setProjects(projects.filter((x) => x.id !== p.id)));
 
   const filtered = useMemo(
-    () => projects.filter((p) => matchesQuery(query, p.name, p.notes, p.nextStep)),
-    [projects, query]
+    () => projects.filter((p) =>
+      (stageFilter === 'All' || (p.stage || 'Idea') === stageFilter) &&
+      matchesQuery(query, p.name, p.notes, p.nextStep)),
+    [projects, query, stageFilter]
   );
+
+  // Count per stage (ignores the stage filter, respects the search box) for the
+  // little badges on the filter chips.
+  const stageCounts = useMemo(() => {
+    const counts = { All: 0 };
+    STAGES.forEach((s) => { counts[s] = 0; });
+    projects.forEach((p) => {
+      if (!matchesQuery(query, p.name, p.notes, p.nextStep)) return;
+      counts.All += 1;
+      counts[p.stage || 'Idea'] = (counts[p.stage || 'Idea'] || 0) + 1;
+    });
+    return counts;
+  }, [projects, query]);
+  const stageFilterOptions = ['All', ...STAGES].map((s) => ({
+    value: s, label: stageCounts[s] ? `${s} ${stageCounts[s]}` : s,
+  }));
 
   // Projects in a stage, ordered by when they entered it (oldest → newest).
   const inStage = (stage) =>
@@ -166,13 +185,18 @@ export function ProjectsTab({ accent }) {
       </a>
     </div>
 
+    ${projects.length > 0 && html`<div class="filter-group ppl-stage-filter">
+      <span class="filter-label">Stage</span>
+      <${Segmented} options=${stageFilterOptions} value=${stageFilter} onChange=${setStageFilter} />
+    </div>`}
+
     ${projects.length === 0 &&
     html`<${EmptyState} icon="projects" text="No projects yet."
       hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards left→right as they progress." />`}
 
     ${projects.length > 0 && view === 'pipeline' &&
     html`<div class=${`projects-board ${dragId ? 'dragging' : ''}`}>
-      ${STAGES.map((stage) => {
+      ${STAGES.filter((stage) => stageFilter === 'All' || stage === stageFilter).map((stage) => {
         const col = inStage(stage);
         return html`<section class=${`stage-group ${col.length === 0 ? 'empty' : ''}`} key=${stage}
           style=${{ '--stage': stageColor[stage] }}
