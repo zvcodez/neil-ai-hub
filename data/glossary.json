@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T00:40:00.000Z",
+  "updatedAt": "2026-06-29T04:58:42.000Z",
   "data": [
     {
       "id": "mqtli5p0ji4b68",
@@ -7,7 +7,7 @@
       "term": "SaaS",
       "definition": "Software as a Service - online platform hosted by a server for users to access. (Microsoft office, Netflix)",
       "example": "Instead of buying and installing software, you log into Netflix or Gmail in your browser and pay a subscription — the company runs it for you.",
-      "category": "AI",
+      "category": "Concepts",
       "section": "Core concepts"
     },
     {
@@ -15,7 +15,7 @@
       "term": "LLM",
       "definition": "Large Language Model — an AI trained on huge amounts of text that predicts the next word to generate human-like responses.",
       "example": "When you chat with Claude or ChatGPT, an LLM is what reads your message and writes the reply.",
-      "category": "AI",
+      "category": "Concepts",
       "section": "Core concepts",
       "_created": "2026-06-24T00:00:00.000Z"
     },
@@ -24,7 +24,7 @@
       "term": "/clear",
       "definition": "Wipes conversation history, keeps file edits. Use when context is getting large.",
       "example": "You've finished a feature and the chat is huge — type /clear to start fresh while keeping all your saved files.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Context management",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -33,7 +33,7 @@
       "term": "/compact",
       "definition": "Smarter version of /clear; compresses history instead of deleting it, preserves key info. Better default than /clear for mid-session use.",
       "example": "Mid-build and context is filling up — /compact frees space but still remembers what you're working on.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Context management",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -42,7 +42,7 @@
       "term": "/rewind",
       "definition": "Can restore context even after a /clear if you regret it.",
       "example": "You ran /clear then realized you needed that earlier discussion — /rewind brings it back.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Context management",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -51,7 +51,7 @@
       "term": "/plan [task]",
       "definition": "Claude thinks through the approach before touching any files. Critical for large tasks to avoid compounding mistakes.",
       "example": "Before a big refactor: /plan refactor the login system — Claude maps out the steps before changing anything.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Before big changes",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -60,7 +60,7 @@
       "term": "/diff",
       "definition": "Shows exactly what changed before you commit, so nothing surprises you.",
       "example": "Right before committing: /diff to eyeball every change Claude made.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Before big changes",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -69,7 +69,7 @@
       "term": "/goal [outcome]",
       "definition": "Sets a target Claude works toward across many turns. Good for \"finish the backend\" type sessions.",
       "example": "/goal finish and test the payment backend — keeps Claude pointed at that across many messages.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Staying on track",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -78,7 +78,7 @@
       "term": "/btw [question]",
       "definition": "Ask a side question without polluting the main task context. Useful when you're curious about something mid-build.",
       "example": "/btw what does CORS mean? — get a quick answer without derailing the task you're in.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Staying on track",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -87,7 +87,7 @@
       "term": "/resume",
       "definition": "Picks up a previous session.",
       "example": "Open your laptop the next day and /resume to continue right where yesterday's session left off.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Navigation",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -96,7 +96,7 @@
       "term": "/branch",
       "definition": "Forks the conversation into a separate session for experimenting without messing up your main thread.",
       "example": "Want to try a risky approach — /branch to experiment in a copy without touching your main thread.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Navigation",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -105,7 +105,7 @@
       "term": "/cost",
       "definition": "Shows how many tokens you've used and what it's costing.",
       "example": "Wondering if you're spending too much — /cost shows tokens used and the running bill.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -114,7 +114,7 @@
       "term": "/model",
       "definition": "Switch models mid-session (e.g. drop to Sonnet for boilerplate, use Opus for hard problems).",
       "example": "Writing boring boilerplate — /model to switch to Sonnet, then back to Opus for the hard part.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -123,7 +123,7 @@
       "term": "/effort",
       "definition": "Adjusts reasoning depth. Lower effort = faster/cheaper.",
       "example": "Simple task — lower /effort for a faster, cheaper reply; raise it for a tricky bug.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -132,7 +132,7 @@
       "term": "/fast",
       "definition": "Toggles Fast mode — same Opus model, faster output. Handy when you want quick responses.",
       "example": "Want snappier replies without dropping to a weaker model — /fast toggles faster Opus output.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Cost & performance",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -141,7 +141,7 @@
       "term": "/doctor",
       "definition": "Checks for config issues.",
       "example": "Something feels off with your setup — /doctor scans for configuration problems.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Diagnostics",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -150,7 +150,7 @@
       "term": "/help",
       "definition": "Lists everything available in your current version.",
       "example": "Forgot which commands exist — /help lists everything your version supports.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Diagnostics",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -159,7 +159,7 @@
       "term": "/init",
       "definition": "Run once in a new project; generates a CLAUDE.md file that keeps Claude oriented every time you start a new session.",
       "example": "Starting a brand-new project — run /init once to create the CLAUDE.md that orients Claude each session.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Setup & config",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -168,7 +168,7 @@
       "term": "/config",
       "definition": "Opens settings to change theme, default model, and other Claude Code options.",
       "example": "Want dark mode or a different default model — /config opens the settings.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Setup & config",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -177,7 +177,7 @@
       "term": "/memory",
       "definition": "Edit your CLAUDE.md memory files directly, so you can tweak the instructions Claude reads each session.",
       "example": "Claude keeps forgetting a preference — /memory to edit the instructions it reads every time.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Setup & config",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -186,7 +186,7 @@
       "term": "/agents",
       "definition": "Create and manage custom subagents — specialized helpers Claude can hand specific tasks to.",
       "example": "Want a dedicated code-reviewer helper — /agents to create and manage one.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Setup & config",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -195,7 +195,7 @@
       "term": "/review",
       "definition": "Reviews a GitHub pull request and reports issues it finds.",
       "example": "Opened a PR on GitHub — /review <PR-url> to get Claude's feedback before merging.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Code review",
       "_created": "2026-06-29T00:20:02.000Z"
     },
@@ -204,7 +204,7 @@
       "term": "/security-review",
       "definition": "Runs a security review of the pending changes on your current branch.",
       "example": "Before merging sensitive changes — /security-review scans your diff for security issues.",
-      "category": "Terminal",
+      "category": "Shortcuts",
       "section": "Code review",
       "_created": "2026-06-29T00:20:02.000Z"
     }

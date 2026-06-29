@@ -2,7 +2,7 @@ import { html } from '../core.js';
 import { Badge, IconButton } from '../components.js';
 import { CollectionTab } from '../collection.js';
 
-const CATEGORIES = ['AI', 'Terminal', 'GitHub', 'Web', 'General', 'Other'];
+const CATEGORIES = ['Concepts', 'Shortcuts', 'Terminal', 'GitHub', 'Web', 'Other'];
 const catOptions = CATEGORIES.map((c) => ({ value: c, label: c }));
 
 // Order section headings render in. Anything not listed falls to the end (A→Z).
@@ -25,7 +25,7 @@ const SEED = [
     definition:
       'Large Language Model — an AI trained on huge amounts of text that predicts the next word to generate human-like responses.',
     example: 'When you chat with Claude or ChatGPT, an LLM is what reads your message and writes the reply.',
-    category: 'AI',
+    category: 'Concepts',
     section: 'Core concepts',
     _created: '2026-06-24T00:00:00.000Z',
   },

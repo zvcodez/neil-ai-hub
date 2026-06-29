@@ -6,7 +6,6 @@ import { SyncButton, initSync } from './sync.js';
 import { ProjectsTab } from './tabs/projects.js';
 import { TimelineTab } from './tabs/timeline.js';
 import { GlossaryTab } from './tabs/glossary.js';
-import { ShortcutsTab } from './tabs/shortcuts.js';
 import { ResourcesTab } from './tabs/resources.js';
 import { IdeasTab } from './tabs/ideas.js';
 import { CareerTab } from './tabs/career.js';
@@ -16,7 +15,6 @@ const TABS = [
   { id: 'projects', label: 'Projects', icon: 'projects', accent: '#2563eb', component: ProjectsTab },
   { id: 'timeline', label: 'Timeline', icon: 'timeline', accent: '#f59e0b', component: TimelineTab },
   { id: 'glossary', label: 'Glossary', icon: 'glossary', accent: '#a855f7', component: GlossaryTab },
-  { id: 'shortcuts', label: 'Shortcuts', icon: 'shortcuts', accent: '#06b6d4', component: ShortcutsTab },
   { id: 'resources', label: 'Resources', icon: 'resources', accent: '#10b981', component: ResourcesTab },
   { id: 'ideas', label: 'Ideas', icon: 'ideas', accent: '#f97316', component: IdeasTab },
   { id: 'career', label: 'Career', icon: 'career', accent: '#2563eb', component: CareerTab },
