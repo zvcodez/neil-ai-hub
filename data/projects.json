@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T04:42:37.208743+00:00",
+  "updatedAt": "2026-06-29T05:05:26.286687+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Results auto-settlement + P&L + CLV: grade finished picks from the football-data results feed, track My vs Model P&L, and pull Pinnacle closing lines (OddsPapi) for CLV. Then the backend feature endpoints (/picks, /bets, /tracker, /bracket, /analysis).",
-      "lastDid": "Built parlay logic (picks.suggest_parlays): true joint probability = product of calibrated legs vs the single-book combined payout. Correctness guards: legs must be from different matches (same-match legs are correlated and excluded), all priced at one common book, EV + true-probability gates so it never suggests just because plays are strong. 0.5u stake. Verified offline + run live.",
+      "nextStep": "Deploy (needs Neil's Railway + Vercel accounts), then Web Push notifications (needs VAPID keys + the HTTPS deploy), and wire live OddsPapi Pinnacle closing lines for CLV (needs OddsPapi API docs). Optional: Elo-as-prior in Dixon-Coles.",
+      "lastDid": "Built out the entire remaining backend (settlement with pure grading, SQLite bet persistence, My-vs-Model P&L + CLV + bankroll tracker, team analysis, live reassessment alerts, cached model/bracket services, gated APScheduler, and all feature endpoints) plus the full 5-tab frontend PWA (Home/Tracker/Lines/Bracket/Analysis) with the design system, glossary, tooltips and Yes/No bet logging. Backend live E2E tested; frontend builds clean.",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far \u2014 no betting features yet. No git remote set up."
     },
     {
