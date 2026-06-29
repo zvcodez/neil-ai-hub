@@ -514,6 +514,10 @@ select, .sort select {
 .menu-item.danger { color: #ef4444; }
 .menu-div { height: 1px; background: var(--border); margin: 5px 4px; }
 .menu-info { font-size: 12px; color: var(--text-muted); padding: 6px 10px; }
+.menu-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.menu-stage.current { color: var(--text-muted); cursor: default; }
+.menu-stage.current:hover { background: none; }
+.menu-check { margin-left: auto; color: var(--text-muted); }
 
 /* Interview prep */
 .q-text { font-size: 15px; line-height: 1.45; padding-right: 0; }

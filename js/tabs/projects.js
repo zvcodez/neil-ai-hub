@@ -132,6 +132,13 @@ export function ProjectsTab({ accent }) {
       p.repoUrl && { label: 'Open repo on GitHub', icon: 'github', onClick: () => window.open(p.repoUrl, '_blank', 'noreferrer') },
       p.folder && { label: 'Copy terminal command', icon: 'shortcuts', onClick: () => navigator.clipboard?.writeText(shellCommand(p.folder)) },
       { label: 'Edit', icon: 'edit', onClick: () => setModal({ editing: p }) },
+      { divider: true },
+      { info: 'Move to' },
+      ...STAGES.map((s) => ({
+        label: s, dot: stageColor[s], current: s === stage,
+        onClick: () => moveTo(p.id, s),
+      })),
+      { divider: true },
       { label: 'Delete', icon: 'trash', danger: true, onClick: () => remove(p) },
       p._created && { divider: true },
       p._created && { info: `Added ${fmtDate(p._created)}` },
@@ -289,6 +296,12 @@ function CardMenu({ items }) {
       ${items.map((it, i) =>
         it.divider ? html`<div class="menu-div" key=${'d' + i}></div>`
         : it.info ? html`<div class="menu-info" key=${'i' + i}>${it.info}</div>`
+        : it.dot ? html`<button key=${it.label} class=${`menu-item menu-stage ${it.current ? 'current' : ''}`}
+            disabled=${it.current}
+            onClick=${() => { setOpen(false); it.onClick(); }}>
+            <span class="menu-dot" style=${{ background: it.dot }}></span>${it.label}
+            ${it.current && html`<span class="menu-check">✓</span>`}
+          </button>`
         : html`<button key=${it.label} class=${`menu-item ${it.danger ? 'danger' : ''}`}
             onClick=${() => { setOpen(false); it.onClick(); }}>
             <${Icon} name=${it.icon} size=${14} /> ${it.label}
