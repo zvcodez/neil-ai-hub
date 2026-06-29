@@ -1,7 +1,7 @@
 // Service worker for Neil AI Hub.
 // Network-first for app assets so deployed updates show up immediately when
 // online, with a cached fallback so the app still works offline.
-const CACHE = 'neil-ai-hub-v18';
+const CACHE = 'neil-ai-hub-v19';
 const ASSETS = [
   './',
   './index.html',
@@ -21,7 +21,6 @@ const ASSETS = [
   './js/tabs/timeline.js',
   './js/tabs/glossary.js',
   './js/tabs/resources.js',
-  './js/tabs/ideas.js',
   './js/tabs/career.js',
   './js/tabs/skills.js',
 ];

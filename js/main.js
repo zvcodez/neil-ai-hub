@@ -7,7 +7,6 @@ import { ProjectsTab } from './tabs/projects.js';
 import { TimelineTab } from './tabs/timeline.js';
 import { GlossaryTab } from './tabs/glossary.js';
 import { ResourcesTab } from './tabs/resources.js';
-import { IdeasTab } from './tabs/ideas.js';
 import { CareerTab } from './tabs/career.js';
 import { SkillsTab } from './tabs/skills.js';
 
@@ -16,7 +15,6 @@ const TABS = [
   { id: 'timeline', label: 'Timeline', icon: 'timeline', accent: '#f59e0b', component: TimelineTab },
   { id: 'glossary', label: 'Glossary', icon: 'glossary', accent: '#a855f7', component: GlossaryTab },
   { id: 'resources', label: 'Resources', icon: 'resources', accent: '#10b981', component: ResourcesTab },
-  { id: 'ideas', label: 'Ideas', icon: 'ideas', accent: '#f97316', component: IdeasTab },
   { id: 'career', label: 'Career', icon: 'career', accent: '#2563eb', component: CareerTab },
   { id: 'skills', label: 'Skills', icon: 'skills', accent: '#14b8a6', component: SkillsTab },
 ];
@@ -50,7 +48,7 @@ function App() {
   return html`<div class="app" style=${{ '--accent': tab.accent }}>
     <aside class="sidebar">
       <div class="brand">
-        <span class="brand-mark">NAH</span>
+        <span class="brand-mark">NP</span>
         <div class="brand-text">
           <strong>Neil AI Hub</strong>
           <small>Mission control</small>

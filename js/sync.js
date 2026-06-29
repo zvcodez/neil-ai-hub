@@ -14,7 +14,7 @@ const BRANCH = 'main';
 
 // Data stores that sync (UI prefs like theme/active tab stay local).
 export const SYNC_KEYS = [
-  'timeline', 'glossary', 'resources', 'ideas', 'projects',
+  'timeline', 'glossary', 'resources', 'projects',
   'career-roles', 'career-companies', 'career-applications', 'career-networking',
   'career-interview-prep', 'skills',
 ];

@@ -1,44 +1,45 @@
 {
-  "updatedAt": "2026-06-29T05:08:59.445463+00:00",
+  "updatedAt": "2026-06-29T05:10:15.000000+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
-      "description": "AI-powered sports betting PWA (mobile-first for iPhone) \u2014 FastAPI backend + React/Vite frontend.",
+      "description": "An AI sports betting app for my iPhone that helps spot good bets to make.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Neil runs the Railway + Vercel logins/deploys per DEPLOY.md (needs his accounts), then we wire Web Push (VAPID + HTTPS) and live OddsPapi CLV (needs docs).",
-      "lastDid": "Prepared deployment: env-driven CORS, backend Procfile (Railway), frontend vercel.json, and a full step-by-step DEPLOY.md (Railway backend + Vercel frontend, with a /data volume for the SQLite tracker). Verified backend imports with the new CORS config.",
-      "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far \u2014 no betting features yet. No git remote set up."
+      "nextStep": "Get the app online: I log into the two hosting accounts and follow the setup guide, then turn on phone notifications and live odds.",
+      "lastDid": "Got everything ready to put the app online — set up the hosting files and wrote a step-by-step guide for launching it.",
+      "notes": "Just the basic skeleton so far — no betting features built yet."
     },
     {
       "id": "6a403f0da1",
       "_created": "2026-06-27T21:22:21Z",
       "name": "Neil AI Hub",
+      "description": "My personal dashboard that keeps track of all my AI projects in one place.",
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Make repo private (split into public app + private data repo)",
-      "notes": "Centralized hub for all AI-related projects."
+      "nextStep": "Make the project private so my personal notes aren't public.",
+      "notes": "One place to keep an eye on all my AI projects."
     },
     {
       "id": "6a403f0db2",
       "_created": "2026-06-27T21:22:21Z",
       "name": "Neil Portfolio",
-      "description": "Single-page personal portfolio site (static HTML/CSS/JS, no build step). Hero, About, Experience, Skills, Education, Certifications, plus a keyword-matching FAQ chat bot. Live on GitHub Pages.",
+      "description": "My personal portfolio website — about me, experience, skills, education, plus a little Q&A chat bot. It's live online.",
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/neil-portfolio",
       "repoUrl": "https://github.com/zvcodez/neil-portfolio",
       "liveUrl": "https://zvcodez.github.io/neil-portfolio/",
-      "lastDid": "Confirmed site is live on GitHub Pages (HTTP 200); reconciled stale 'not yet hosted' note and filled in the Hub card.",
-      "nextStep": "Decide on polish items: real LLM-backed chat, downloadable resume PDF link, or fix the 'Piscataway, NJ' chip that links to nowhere.",
+      "lastDid": "Checked that the site is live and working, and tidied up its info here.",
+      "nextStep": "Pick a few finishing touches: a smarter chat bot, a downloadable resume, or fixing a location link that doesn't go anywhere.",
       "notes": ""
     }
   ]
