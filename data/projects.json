@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T00:11:35.275351+00:00",
+  "updatedAt": "2026-06-29T00:19:48.770224+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Monte Carlo bracket simulation (10k iterations) over the remaining knockout bracket, then pick generation (vig removal, 5% edge threshold, POTD).",
-      "lastDid": "Wired the real WC2026 group stage into the backtest as the true out-of-sample validation set (committed run_backtest.py). Dixon-Coles RPS 0.2004, beats uniform +8.9% / climatology +5.4% on 49/72 covered games (23 skipped for missing training data).",
+      "nextStep": "Pick generation: pull live FD/DK odds, remove vig, flag bets with edge >5% vs model, rank into Play of the Day + Next Best Plays.",
+      "lastDid": "Built the Monte Carlo bracket sim (model/bracket.py + run_bracket.py): 10k iterations through the remaining WC2026 knockout, fit live on history + 2026 group stage. Spain ~9.5% / Argentina ~8.4% / France ~7.4% to win; sanity exact, reproducible.",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far — no betting features yet. No git remote set up."
     },
     {
