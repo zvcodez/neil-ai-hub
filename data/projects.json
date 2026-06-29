@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T00:06:56.416999+00:00",
+  "updatedAt": "2026-06-29T00:11:35.275351+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Feed the real WC2026 group stage into the backtest as true out-of-sample validation (replacing the 2023-24 proxy), then Monte Carlo bracket sim.",
-      "lastDid": "Added football-data.org token + client; probed coverage (free tier = current season only, so no historical breadth) but unlocked the live WC2026 feed (complete 72-match group stage). Reconciled 40/48 team names to training set.",
+      "nextStep": "Monte Carlo bracket simulation (10k iterations) over the remaining knockout bracket, then pick generation (vig removal, 5% edge threshold, POTD).",
+      "lastDid": "Wired the real WC2026 group stage into the backtest as the true out-of-sample validation set (committed run_backtest.py). Dixon-Coles RPS 0.2004, beats uniform +8.9% / climatology +5.4% on 49/72 covered games (23 skipped for missing training data).",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far — no betting features yet. No git remote set up."
     },
     {
