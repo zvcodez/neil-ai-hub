@@ -54,6 +54,22 @@ function resumeUrl(folder) {
   return launchUrl(folder) + '?prompt=' + encodeURIComponent(RESUME_PROMPT);
 }
 
+// "Start in Claude Code" for a project that has no folder yet (e.g. an idea):
+// launch in the hub repo, seeded with what we already jotted down, so we can
+// start building it right away and file/scaffold it as we go.
+function startUrl(p) {
+  const prompt =
+    `I want to start working on this idea from my Neil AI Hub: "${p.name || 'Untitled'}".\n` +
+    (p.description ? `What it is: ${p.description}\n` : '') +
+    (p.notes ? `My notes so far:\n${p.notes}\n` : '') +
+    'Help me think it through and start building it — talk through the approach with me first. ' +
+    'When we’re ready, set up its project folder and update its card in the Neil AI Hub ' +
+    '(data/projects.json): add the folder, move it from Idea to Building when it makes sense, ' +
+    'and keep nextStep / lastDid and the journal (log) updated as we work, per CLAUDE.md. ' +
+    'Start by asking me how I want to approach it.';
+  return launchUrl(HUB_FOLDER) + '?prompt=' + encodeURIComponent(prompt);
+}
+
 export function ProjectsTab({ accent }) {
   const [projects, setProjects] = useStore('projects', []);
   const [query, setQuery] = useState('');
@@ -179,9 +195,13 @@ export function ProjectsTab({ accent }) {
         onSave=${(v) => patchProject(p.id, { lastDid: v })} />
       ${p.notes && html`<${Notes} text=${p.notes} />`}
 
-      ${p.folder && html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
-        <${Icon} name="shortcuts" size=${16} /> Open in Claude Code
-      </a>`}
+      ${p.folder
+        ? html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
+            <${Icon} name="shortcuts" size=${16} /> Open in Claude Code
+          </a>`
+        : html`<a class="ppl-launch" href=${startUrl(p)} title="Start this in Claude Code (opens in the hub)">
+            <${Icon} name="shortcuts" size=${16} /> Start in Claude Code
+          </a>`}
 
       ${(p.chatUrl || p.liveUrl) && html`<div class="ppl-secondary">
         ${p.chatUrl && html`<a class="ppl-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
@@ -290,16 +310,19 @@ function DetailModal({ project: p, accent, onClose, onEdit, onMove, patch }) {
         <${Notes} text=${p.notes} />
       </div>`}
 
-      ${(p.folder || p.chatUrl || p.repoUrl || p.liveUrl) && html`<div class="pd-links">
-        ${p.folder && html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
-          <${Icon} name="shortcuts" size=${16} /> Open in Claude Code<//>`}
+      <div class="pd-links">
+        ${p.folder
+          ? html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
+              <${Icon} name="shortcuts" size=${16} /> Open in Claude Code<//>`
+          : html`<a class="ppl-launch" href=${startUrl(p)} title="Start this in Claude Code (opens in the hub)">
+              <${Icon} name="shortcuts" size=${16} /> Start in Claude Code<//>`}
         ${p.chatUrl && html`<a class="ppl-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
           <${Icon} name="ideas" size=${14} /> Chat<//>`}
         ${p.repoUrl && html`<a class="ppl-link" href=${p.repoUrl} target="_blank" rel="noreferrer">
           <${Icon} name="github" size=${14} /> Repo<//>`}
         ${p.liveUrl && html`<a class="ppl-link" href=${p.liveUrl} target="_blank" rel="noreferrer">
           <${Icon} name="external" size=${14} /> Live<//>`}
-      </div>`}
+      </div>
 
       ${p.folder && html`<div class="pd-meta-line">${p.folder}</div>`}
       <div class="pd-meta-line">
