@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-06-29T00:19:48.770224+00:00",
+  "updatedAt": "2026-06-29T00:31:47.126420+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
-      "description": "AI-powered sports betting PWA (mobile-first for iPhone) — FastAPI backend + React/Vite frontend.",
+      "description": "AI-powered sports betting PWA (mobile-first for iPhone) \u2014 FastAPI backend + React/Vite frontend.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Pick generation: pull live FD/DK odds, remove vig, flag bets with edge >5% vs model, rank into Play of the Day + Next Best Plays.",
-      "lastDid": "Built the Monte Carlo bracket sim (model/bracket.py + run_bracket.py): 10k iterations through the remaining WC2026 knockout, fit live on history + 2026 group stage. Spain ~9.5% / Argentina ~8.4% / France ~7.4% to win; sanity exact, reproducible.",
-      "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far — no betting features yet. No git remote set up."
+      "nextStep": "Add a calibration guardrail (blend model with market-implied / cap model-vs-market divergence / recalibrate tails) so picks don't over-flag longshots, then re-run live.",
+      "lastDid": "Built pick generation (picks.py + run_picks.py): vig removal, 5% edge threshold, edge ranking into POTD + Next Best, FD/DK line shopping, push-aware EV, 'no play'. Verified offline + run live. Found the model over-flags longshots (ridge shrinkage compresses fav/dog gap) \u2014 needs a calibration guardrail.",
+      "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far \u2014 no betting features yet. No git remote set up."
     },
     {
       "id": "6a403f0da1",
