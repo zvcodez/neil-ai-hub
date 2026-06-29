@@ -58,11 +58,13 @@ talk. The hub is just data — edit `data/projects.json`, no code changes.
 
 Project shape (omit/blank what's unknown):
 `id` (unique string), `_created` (ISO), `name`, `description` (one-line),
-`stage` (Idea | Discussing | Planning | Building | Live), `_stagedAt` (ISO the
+`stage` (Idea | Building | Live), `_stagedAt` (ISO the
 project entered its current stage — set this to now whenever you change `stage`,
 so the hub orders projects within a stage chronologically), `folder` (e.g.
 `~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep` ("what's next"),
-`lastDid` ("what we just did"), `notes`.
+`lastDid` ("what we just did"), `notes`, `log` (journal: array of
+`{ id, ts (ISO), text }`, newest-first — a running history of sessions/progress
+shown in the card's "Open details" view).
 
 To write a change:
 1. Read `data/projects.json` (shape `{ "updatedAt": <ISO>, "data": [ … ] }`).
@@ -78,7 +80,10 @@ To write a change:
 working on a hub-tracked project (its `folder` matches the cwd, even if that's a
 different repo — use `git -C ~/Claude/neil-ai-hub …` to commit/push the hub),
 update that project's `lastDid` (what we just did) and `nextStep` (what's next),
-and bump `stage` if it changed. That's what makes the hub a live mission-control.
+and bump `stage` if it changed. Also **prepend a `log` entry**
+(`{ id, ts, text }`, newest-first) summarizing the session so the detail view
+builds up a real history over time. That's what makes the hub a live
+mission-control.
 
 ## Open items / TODO
 1. **Sync must be enabled on each device** (token pasted per device) for true

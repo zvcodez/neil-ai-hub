@@ -6,11 +6,17 @@ import {
   Button, Badge, Icon, IconButton, SearchBox, Segmented, Modal, Form, EmptyState, useConfirm,
 } from '../components.js';
 
-const STAGES = ['Idea', 'Discussing', 'Planning', 'Building', 'Live'];
-const stageColor = {
-  Idea: '#f59e0b', Discussing: '#06b6d4', Planning: '#a855f7', Building: '#2563eb', Live: '#10b981',
-};
+const STAGES = ['Idea', 'Building', 'Live'];
+const stageColor = { Idea: '#f59e0b', Building: '#2563eb', Live: '#10b981' };
 const stageOptions = STAGES.map((s) => ({ value: s, label: s }));
+
+// Discussing/Planning were removed from the board; fold any legacy cards into
+// the remaining stages so nothing disappears.
+const LEGACY_STAGE = { Discussing: 'Idea', Planning: 'Building' };
+const normStage = (p) => {
+  const s = p.stage || 'Idea';
+  return STAGES.includes(s) ? s : (LEGACY_STAGE[s] || 'Idea');
+};
 
 // Build the claudecode:// link the local launcher app handles. Keep the path
 // readable (slashes intact); only spaces need encoding.
@@ -54,6 +60,7 @@ export function ProjectsTab({ accent }) {
   const [view, setView] = useState('pipeline');
   const [stageFilter, setStageFilter] = useState('All');
   const [modal, setModal] = useState(null); // { editing }
+  const [detailId, setDetailId] = useState(null); // project id for the detail view
   const [dragId, setDragId] = useState(null);
   const confirm = useConfirm();
 
@@ -97,9 +104,11 @@ export function ProjectsTab({ accent }) {
 
   const remove = (p) => confirm(`Delete "${p.name}"?`, () => setProjects(projects.filter((x) => x.id !== p.id)));
 
+  const detailProject = detailId ? projects.find((p) => p.id === detailId) : null;
+
   const filtered = useMemo(
     () => projects.filter((p) =>
-      (stageFilter === 'All' || (p.stage || 'Idea') === stageFilter) &&
+      (stageFilter === 'All' || normStage(p) === stageFilter) &&
       matchesQuery(query, p.name, p.notes, p.nextStep)),
     [projects, query, stageFilter]
   );
@@ -112,7 +121,7 @@ export function ProjectsTab({ accent }) {
     projects.forEach((p) => {
       if (!matchesQuery(query, p.name, p.notes, p.nextStep)) return;
       counts.All += 1;
-      counts[p.stage || 'Idea'] = (counts[p.stage || 'Idea'] || 0) + 1;
+      counts[normStage(p)] = (counts[normStage(p)] || 0) + 1;
     });
     return counts;
   }, [projects, query]);
@@ -123,12 +132,13 @@ export function ProjectsTab({ accent }) {
   // Projects in a stage, ordered by when they entered it (oldest → newest).
   const inStage = (stage) =>
     filtered
-      .filter((p) => (p.stage || 'Idea') === stage)
+      .filter((p) => normStage(p) === stage)
       .sort((a, b) => (a._stagedAt || a._created || '').localeCompare(b._stagedAt || b._created || ''));
 
   const card = (p, showStage) => {
-    const stage = p.stage || 'Idea';
+    const stage = normStage(p);
     const menuItems = [
+      { label: 'Open details', icon: 'external', onClick: () => setDetailId(p.id) },
       p.repoUrl && { label: 'Open repo on GitHub', icon: 'github', onClick: () => window.open(p.repoUrl, '_blank', 'noreferrer') },
       p.folder && { label: 'Copy terminal command', icon: 'shortcuts', onClick: () => navigator.clipboard?.writeText(shellCommand(p.folder)) },
       { label: 'Edit', icon: 'edit', onClick: () => setModal({ editing: p }) },
@@ -150,7 +160,9 @@ export function ProjectsTab({ accent }) {
       onDragStart=${() => setDragId(p.id)} onDragEnd=${() => setDragId(null)}
     >
       <div class="ppl-head">
-        <h3 class="ppl-title">${p.name}</h3>
+        <h3 class="ppl-title ppl-title-link" title="Open details"
+          onClick=${() => setDetailId(p.id)}>${p.name}</h3>
+        <${IconButton} name="expand" title="Open details" onClick=${() => setDetailId(p.id)} />
         <${CardMenu} items=${menuItems} />
       </div>
 
@@ -224,7 +236,101 @@ export function ProjectsTab({ accent }) {
     html`<${Modal} title=${modal.editing ? 'Edit project' : 'New project'} accent=${accent} onClose=${() => setModal(null)}>
       <${Form} fields=${fields} initial=${modal.editing} onSubmit=${save} onCancel=${() => setModal(null)} />
     <//>`}
+
+    ${detailProject &&
+    html`<${DetailModal} project=${detailProject} accent=${accent}
+      onClose=${() => setDetailId(null)}
+      onEdit=${() => { setModal({ editing: detailProject }); setDetailId(null); }}
+      onMove=${(s) => moveTo(detailProject.id, s)}
+      patch=${(patch) => patchProject(detailProject.id, patch)} />`}
   </div>`;
+}
+
+// Deep "open it up" view for a single project: everything about it in one place,
+// plus a running Journal so you can come back weeks later and see exactly what
+// you were doing and where you left off.
+function DetailModal({ project: p, accent, onClose, onEdit, onMove, patch }) {
+  const [draft, setDraft] = useState('');
+  const stage = normStage(p);
+  const log = Array.isArray(p.log) ? p.log : [];
+
+  const addEntry = () => {
+    const text = draft.trim();
+    if (!text) return;
+    patch({ log: [{ id: uid(), ts: new Date().toISOString(), text }, ...log] });
+    setDraft('');
+  };
+  const delEntry = (id) => patch({ log: log.filter((e) => e.id !== id) });
+
+  const field = (label, value) => value && html`<div class="pd-field">
+    <div class="pd-label">${label}</div>
+    <div class="pd-value">${value}</div>
+  </div>`;
+
+  return html`<${Modal} title=${p.name} accent=${accent} onClose=${onClose}>
+    <div class="pd">
+      <div class="pd-toprow">
+        <${Badge} color=${stageColor[stage]}>${stage}<//>
+        <div class="pd-move">
+          ${STAGES.map((s) => html`<button key=${s} type="button"
+            class=${`pd-move-btn ${s === stage ? 'current' : ''}`}
+            style=${{ '--stage': stageColor[s] }}
+            disabled=${s === stage}
+            onClick=${() => onMove(s)}>${s}</button>`)}
+        </div>
+        <div class="pd-top-spacer"></div>
+        <${Button} variant="ghost" icon="edit" onClick=${onEdit}>Edit<//>
+      </div>
+
+      ${field('What it is', p.description)}
+      ${field('Next step', p.nextStep)}
+      ${field('Just did', p.lastDid)}
+      ${p.notes && html`<div class="pd-field">
+        <div class="pd-label">Notes</div>
+        <${Notes} text=${p.notes} />
+      </div>`}
+
+      ${(p.folder || p.chatUrl || p.repoUrl || p.liveUrl) && html`<div class="pd-links">
+        ${p.folder && html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
+          <${Icon} name="shortcuts" size=${16} /> Open in Claude Code<//>`}
+        ${p.chatUrl && html`<a class="ppl-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
+          <${Icon} name="ideas" size=${14} /> Chat<//>`}
+        ${p.repoUrl && html`<a class="ppl-link" href=${p.repoUrl} target="_blank" rel="noreferrer">
+          <${Icon} name="github" size=${14} /> Repo<//>`}
+        ${p.liveUrl && html`<a class="ppl-link" href=${p.liveUrl} target="_blank" rel="noreferrer">
+          <${Icon} name="external" size=${14} /> Live<//>`}
+      </div>`}
+
+      ${p.folder && html`<div class="pd-meta-line">${p.folder}</div>`}
+      <div class="pd-meta-line">
+        ${p._created ? `Added ${fmtDate(p._created)}` : ''}
+        ${p._stagedAt ? ` · In ${stage} since ${fmtDate(p._stagedAt)}` : ''}
+      </div>
+
+      <div class="pd-journal">
+        <div class="pd-label">Journal <span class="pd-count">${log.length || ''}</span></div>
+        <p class="pd-hint">Log what you worked on so you can pick it back up later.</p>
+        <div class="pd-entry-new">
+          <textarea class="pd-textarea" rows=${2} value=${draft}
+            placeholder="What did you do / what's going on with this project?"
+            onInput=${(e) => setDraft(e.target.value)}
+            onKeyDown=${(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); addEntry(); } }} />
+          <${Button} variant="primary" icon="plus" onClick=${addEntry}>Add entry<//>
+        </div>
+        ${log.length === 0
+          ? html`<p class="pd-empty">No entries yet.</p>`
+          : html`<ul class="pd-log">
+            ${log.map((e) => html`<li class="pd-log-item" key=${e.id}>
+              <div class="pd-log-head">
+                <span class="pd-log-date">${fmtDate(e.ts)}</span>
+                <${IconButton} name="trash" title="Delete entry" danger=${true} onClick=${() => delEntry(e.id)} />
+              </div>
+              <div class="pd-log-text">${e.text}</div>
+            </li>`)}
+          </ul>`}
+      </div>
+    </div>
+  <//>`;
 }
 
 // Click-to-edit text right on the card (no menu digging). Used for both the
