@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T21:52:00Z",
+  "updatedAt": "2026-06-29T00:00:34Z",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -31,12 +31,14 @@
       "id": "6a403f0db2",
       "_created": "2026-06-27T21:22:21Z",
       "name": "Neil Portfolio",
-      "stage": "Building",
+      "description": "Single-page personal portfolio site (static HTML/CSS/JS, no build step). Hero, About, Experience, Skills, Education, Certifications, plus a keyword-matching FAQ chat bot. Live on GitHub Pages.",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/neil-portfolio",
       "repoUrl": "https://github.com/zvcodez/neil-portfolio",
       "liveUrl": "https://zvcodez.github.io/neil-portfolio/",
-      "nextStep": "",
+      "lastDid": "Confirmed site is live on GitHub Pages (HTTP 200); reconciled stale 'not yet hosted' note and filled in the Hub card.",
+      "nextStep": "Decide on polish items: real LLM-backed chat, downloadable resume PDF link, or fix the 'Piscataway, NJ' chip that links to nowhere.",
       "notes": ""
     }
   ]
