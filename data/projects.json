@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T05:05:26.286687+00:00",
+  "updatedAt": "2026-06-29T05:08:59.445463+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Deploy (needs Neil's Railway + Vercel accounts), then Web Push notifications (needs VAPID keys + the HTTPS deploy), and wire live OddsPapi Pinnacle closing lines for CLV (needs OddsPapi API docs). Optional: Elo-as-prior in Dixon-Coles.",
-      "lastDid": "Built out the entire remaining backend (settlement with pure grading, SQLite bet persistence, My-vs-Model P&L + CLV + bankroll tracker, team analysis, live reassessment alerts, cached model/bracket services, gated APScheduler, and all feature endpoints) plus the full 5-tab frontend PWA (Home/Tracker/Lines/Bracket/Analysis) with the design system, glossary, tooltips and Yes/No bet logging. Backend live E2E tested; frontend builds clean.",
+      "nextStep": "Neil runs the Railway + Vercel logins/deploys per DEPLOY.md (needs his accounts), then we wire Web Push (VAPID + HTTPS) and live OddsPapi CLV (needs docs).",
+      "lastDid": "Prepared deployment: env-driven CORS, backend Procfile (Railway), frontend vercel.json, and a full step-by-step DEPLOY.md (Railway backend + Vercel frontend, with a /data volume for the SQLite tracker). Verified backend imports with the new CORS config.",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far \u2014 no betting features yet. No git remote set up."
     },
     {
