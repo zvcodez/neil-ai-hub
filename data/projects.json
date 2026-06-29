@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T00:00:34Z",
+  "updatedAt": "2026-06-29T00:06:56.416999+00:00",
   "data": [
     {
       "id": "7b51e2c9f4",
@@ -11,8 +11,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Build the first real betting feature on top of the scaffold",
-      "lastDid": "Added the project to the Hub; scaffold in place (runnable PWA shell + hello-world FastAPI endpoint)",
+      "nextStep": "Feed the real WC2026 group stage into the backtest as true out-of-sample validation (replacing the 2023-24 proxy), then Monte Carlo bracket sim.",
+      "lastDid": "Added football-data.org token + client; probed coverage (free tier = current season only, so no historical breadth) but unlocked the live WC2026 feed (complete 72-match group stage). Reconciled 40/48 team names to training set.",
       "notes": "Buildful stack (Vite/FastAPI), unlike the Hub. Scaffold only so far — no betting features yet. No git remote set up."
     },
     {
