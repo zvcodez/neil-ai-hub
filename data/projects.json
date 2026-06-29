@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T05:52:56.275067+00:00",
+  "updatedAt": "2026-06-29T06:18:56.564725+00:00",
   "data": [
     {
       "id": "idea-mithoo",
@@ -66,15 +66,20 @@
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
       "description": "An AI sports betting app for my iPhone that helps spot good bets to make.",
-      "stage": "Building",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "Get the app online: I log into the two hosting accounts and follow the setup guide, then turn on phone notifications and live odds.",
-      "lastDid": "Got everything ready to put the app online — set up the hosting files and wrote a step-by-step guide for launching it.",
+      "liveUrl": "https://frontend-eight-zeta-45f56eqt1w.vercel.app",
+      "nextStep": "Add the app to my iPhone home screen, then turn on push notifications (needs a couple more setup keys) and the automatic live-odds updates.",
+      "lastDid": "Put the app online and live! The backend brain runs on Railway, the app itself on Vercel — and it’s already showing real picks (Play of the Day: Germany vs Paraguay).",
       "notes": "Just the basic skeleton so far — no betting features built yet.",
       "log": [
+        {
+          "id": "log-zve-3",
+          "ts": "2026-06-29T06:18:56.564725+00:00",
+          "text": "Launched the app live on the internet — backend on Railway, frontend on Vercel, wired together. Hit and fixed a few hosting snags (Python version, packaging). The live app now pulls real World Cup picks from the model (today’s Play of the Day: Germany vs Paraguay, Both Teams To Score). Next: add to iPhone home screen + notifications."
+        },
         {
           "id": "log-zve-2",
           "ts": "2026-06-28T22:30:00+00:00",
