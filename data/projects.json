@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T01:55:32.304Z",
+  "updatedAt": "2026-06-30T01:55:42.928Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -163,7 +163,7 @@
       "_created": "2026-06-27T21:22:21Z",
       "name": "Neil Portfolio",
       "description": "My personal portfolio website — about me, experience, skills, education, plus a little Q&A chat bot. It's live online.",
-      "stage": "Live",
+      "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/neil-portfolio",
       "repoUrl": "https://github.com/zvcodez/neil-portfolio",
@@ -182,7 +182,8 @@
           "ts": "2026-06-27T21:22:21+00:00",
           "text": "Built my personal portfolio site — about me, experience, skills, education, and a little Q&A chat bot. Launched it on GitHub Pages."
         }
-      ]
+      ],
+      "_stagedAt": "2026-06-30T01:55:42.927Z"
     }
   ]
 }
