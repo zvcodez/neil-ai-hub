@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T13:41:15.464932+00:00",
+  "updatedAt": "2026-06-30T14:47:17.447710+00:00",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -86,10 +86,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Neil to decide: for KNOCKOUT games, should the featured pick be 'Match Result' (90-min, loses on a draw even if the team advances on pens — current behavior) or 'To Qualify' (covers ET/penalties)? That's the +260 vs +144 difference he noticed (different markets, not a staleness bug). Also still: reconnect Railway+Vercel GitHub auto-deploy webhooks (Neil's dashboard task).",
-      "lastDid": "Shipped 3 things autonomously while Neil was at work: (1) Tracker model card now shows the model's hypothetical P&L + ROI under its W-L record; (2) settlement now voids CANCELLED matches (were stuck pending forever) and logs/surfaces 'unmatched' bets whose team name never joins a fixture (silent-fail safety net); (3) confirmed today's POTD 'Ivory Coast to win' is a valid bug-free play (Match Result / 90-min market, edge 6.1% apples-to-apples, grades on regulation goals post shootout-fix). All deployed + verified live.",
+      "nextStep": "Neil: close/reopen the PWA to pull the new build (service-worker cache) — then confirm the Parlay + Next Best sections show even when empty. Still open: knockout market choice (Match Result vs To Qualify) + reconnect Railway/Vercel GitHub auto-deploy webhooks.",
+      "lastDid": "Fixed the 'parlay/next-best removed' complaint: the BACKEND was correct (only 3 games left today; just 2 picks clear the 5% edge bar, dark-horse needs >=10% edge, and IC×Sweden joint hit-chance ~4% is below the 10% parlay floor — so the model rightly forced nothing). The bug was the FRONTEND hiding empty sections entirely. Home now always renders Next Best + Parlay with clear empty states ('model won't force one') instead of vanishing. Deployed to Vercel.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260630T144717",
+          "ts": "2026-06-30T14:47:17.447710+00:00",
+          "text": "Parlay/next-best 'disappeared' was a frontend empty-state bug, not data loss. Backend correctly declined to force a parlay (joint prob ~4% < 10% floor) or dark horse (edge < 10%). Home now always shows those sections with an explanation when empty. Deployed."
+        },
         {
           "id": "log-20260630T134115",
           "ts": "2026-06-30T13:41:15.464932+00:00",
