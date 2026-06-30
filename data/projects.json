@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T01:55:42.928Z",
+  "updatedAt": "2026-06-30T02:45:01.454030+00:00",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -86,10 +86,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "VERIFY ENABLE_ALERTS=1 is set on Railway (settlement+alerts only run if so). Then: Neil's Home page edits/fixes (about to discuss). Still parked: scheduled odds ticks (#2), CLV stub (#3, blocked on OddsPapi docs).",
-      "lastDid": "Fixed the #1 backend gap: auto-settlement now runs inside the alert-check loop (every ~20min via ENABLE_ALERTS) instead of being trapped behind the disabled credit-spending scheduler. Bets auto-grade on free football-data results, P&L updates even with no push subscribers, and a 'bet settled' push (won/lost/push + $ P&L) fires for bets Neil placed. Tested, committed, pushed to main (Railway auto-deploys).",
+      "nextStep": "Reconnect the GitHub->Railway and GitHub->Vercel auto-deploy webhooks (both missed the last push); until then deploy via CLI. Then watch tomorrow's POTD harden ~30min before first kickoff (push notification) and confirm the locked board holds all day with next-best/dark-horse/parlay populated.",
+      "lastDid": "Found the real durability bug: Railway had no volume, so the SQLite tracker reset on every deploy. Attached a persistent volume at /data (DB now durable). Also discovered GitHub auto-deploy wasn't firing for either Railway or Vercel — deployed both manually via CLI (board-lock + tracker fixes + soft/hard POTD lifecycle now live). Logged + settled the 6/29 Germany-Paraguay BTTS POTD as a model win -> model record 1-0.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260630T024501",
+          "ts": "2026-06-30T02:45:01.454030+00:00",
+          "text": "Shipped the whole-board lock + tracker fixes to prod. Root-caused the recurring data wipe: no Railway volume — attached one at /data so the DB persists. Caught that neither Railway nor Vercel auto-deployed the last push; deployed both by CLI. Model record seeded 1-0 from the Germany/Paraguay BTTS hit (logged placed=0, settled off the real results feed)."
+        },
         {
           "id": "log-2026-06-30T01:10:48.289544+00:00",
           "ts": "2026-06-30T01:10:48.289544+00:00",
