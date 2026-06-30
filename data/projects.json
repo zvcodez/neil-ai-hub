@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T06:18:56.564725+00:00",
+  "updatedAt": "2026-06-30T00:17:21.117547+00:00",
   "data": [
     {
       "id": "idea-mithoo",
@@ -70,11 +70,16 @@
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "",
-      "liveUrl": "https://frontend-eight-zeta-45f56eqt1w.vercel.app",
-      "nextStep": "Add the app to my iPhone home screen, then turn on push notifications (needs a couple more setup keys) and the automatic live-odds updates.",
-      "lastDid": "Put the app online and live! The backend brain runs on Railway, the app itself on Vercel — and it’s already showing real picks (Play of the Day: Germany vs Paraguay).",
-      "notes": "Just the basic skeleton so far — no betting features built yet.",
+      "liveUrl": "https://zvs-edge.vercel.app",
+      "nextStep": "Create the GitHub repo (empty private 'zvs-edge' under zvcodez) so the code backup can push — remote is already wired. Then on iPhone: add to home screen, tap the bell to turn on notifications + test. Watch the live tracker during tonight's games.",
+      "lastDid": "Big build session post-launch: cleaned the URL to zvs-edge.vercel.app; fixed stale odds (live-on-load, quota-safe) and scoped picks to today's games only; FanDuel-first pricing with a 'better line' flag; concrete pick + parlay reasoning; bankroll onboarding ($400, asks on first launch); 'last updated' freshness; bracket explainer. Then shipped Web Push (notifications + 5 toggles), a LOCKED Play of the Day with an in-app Update/switch section (did-you-place → switch vs cash-out-vs-ride + why-better bullets) and a live in-play tracker (football-data score → how close the bet is). All deployed.",
+      "notes": "Live and feature-rich now (picks, locked POTD + switch flow, live tracker, push). Not yet in GitHub.",
       "log": [
+        {
+          "id": "log-zve-438a81",
+          "ts": "2026-06-30T00:17:21.117547+00:00",
+          "text": "Major post-launch session. Renamed to a clean domain (zvs-edge.vercel.app). Fixed the things Neil flagged: stale odds now refresh on load, picks scoped to TODAY's slate (no more tomorrow's game as POTD), FanDuel price leads with a DraftKings 'better line' flag, concrete bet-specific 'why' + parlay reasoning, bankroll asks on first launch ($400), freshness stamp, bracket explainer. Built Web Push end-to-end (VAPID + 5 toggles + bet-aware alerts). Locked the Play of the Day so it never auto-changes; added an in-app Update section that suggests a stronger play (did-you-place → switch, or cash-out-vs-ride) with why-better bullets and a switch history; and a live in-play tracker showing how close the bet is to hitting. Backend on Railway, frontend on Vercel — all deployed and verified."
+        },
         {
           "id": "log-zve-3",
           "ts": "2026-06-29T06:18:56.564725+00:00",
