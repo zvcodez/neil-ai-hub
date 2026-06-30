@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T00:37:38.264168Z",
+  "updatedAt": "2026-06-30T00:57:26.695766Z",
   "data": [
     {
       "id": "idea-mithoo",
@@ -71,10 +71,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "On iPhone: add zvs-edge.vercel.app to home screen, tap the bell to turn on notifications + test. Watch the live in-play tracker during tonight's games.",
-      "lastDid": "Created the GitHub repo (private zvcodez/zvs-edge) and pushed main — the code is now backed up remotely (remote was already wired via SSH).",
+      "nextStep": "Phase: Home + Tracker only. 1) FIX: fold auto-settlement into the alert_check loop (already running every 20min) so bets auto-grade + P&L updates + 'bet settled' push fires. 2) Decide odds-refresh: keep on-load only vs turn on light scheduled ticks (369 credits left, within free tier; Claude leans light tick). 3) Hide/'coming soon' the dead CLV column on Tracker (blocked on OddsPapi docs). 4) Optional: enable nightly retrain. THEN Neil's Home/Tracker UI/design feedback pass.",
+      "lastDid": "Backed up to GitHub (created private zvcodez/zvs-edge, pushed main) and rewrote the README to match the live app. Then scoped next phase: focus only on Home + Tracker pages (parking Lines/Bracket/Analysis). Audited the live backend — found auto-settlement and scheduled odds ticks are OFF in prod, and CLV is a stub.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-zve-readme",
+          "ts": "2026-06-30T00:57:26.695766Z",
+          "text": "Rewrote the stale 'scaffold only' README to reflect the live feature-complete app (model, picks, push, tracker, deploy) and pushed it. Scoped the next phase with Neil: work ONLY on Home + Tracker, ignore Lines/Bracket/Analysis. Backend audit of the live Railway service found three real gaps that matter for those two pages: auto-settlement isn't running (settle job gated behind disabled scheduler), scheduled odds ticks are off (odds refresh on app-open only), and CLV is a hard stub (NotImplementedError, blocked on OddsPapi API docs). Agreed priority: fix settlement first (fold into the alert loop that's already on), then a Home/Tracker design pass using Neil's feedback."
+        },
         {
           "id": "log-zve-gh1",
           "ts": "2026-06-30T00:37:38.264168Z",
