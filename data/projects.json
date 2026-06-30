@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-06-30T23:48:02.750183Z",
+  "updatedAt": "2026-06-30T23:52:16.294Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
       "_created": "2026-06-30T01:34:00+00:00",
-      "_stagedAt": "2026-06-30T01:34:00+00:00",
+      "_stagedAt": "2026-06-30T23:52:16.293Z",
       "name": "Claude Code chunk-done push notifications",
       "description": "Get a phone push when a Claude Code session finishes a chunk of work, so I can step away from the desk and know exactly when (and which terminal) to come back to.",
-      "stage": "Idea",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "",
       "repoUrl": "",
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 A Stop hook already pings my iPhone via ntfy.sh when a session ends a chunk \u2014 always on, mute from the phone\n\u2022 THE PROBLEM TO SOLVE: every open session pings me, and they all look the same \u2014 I got 'come back' alerts for the AI hub while I was actually working in zvs-edge, with no way to tell sessions apart\n\u2022 Want the alert to show the terminal/chat name (the title the terminal auto-makes from my first message), not just the project folder\n\u2022 Catch: the hook can't read the terminal tab title \u2014 it only gets the folder + session id; need another way to label each session (likely capture its first prompt)\n\u2022 Ideal end state: only the session(s) I care about ping me, each clearly labeled, one mute switch on the phone"
+      "notes": "• A Stop hook already pings my iPhone via ntfy.sh when a session ends a chunk — always on, mute from the phone\n• THE PROBLEM TO SOLVE: every open session pings me, and they all look the same — I got 'come back' alerts for the AI hub while I was actually working in zvs-edge, with no way to tell sessions apart\n• Want the alert to show the terminal/chat name (the title the terminal auto-makes from my first message), not just the project folder\n• Catch: the hook can't read the terminal tab title — it only gets the folder + session id; need another way to label each session (likely capture its first prompt)\n• Ideal end state: only the session(s) I care about ping me, each clearly labeled, one mute switch on the phone"
     },
     {
       "id": "idea-mithoo",
       "_created": "2026-06-29T05:25:25.741459+00:00",
       "_stagedAt": "2026-06-29T05:25:25.741459+00:00",
-      "name": "Mithoo \u2014 Flappy Bird game",
-      "description": "A Flappy Bird\u2013style game made to honor Mithoo, my pet bird.",
+      "name": "Mithoo — Flappy Bird game",
+      "description": "A Flappy Bird–style game made to honor Mithoo, my pet bird.",
       "stage": "Idea",
       "chatUrl": "",
       "folder": "",
@@ -29,13 +29,13 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Tap to flap Mithoo through gaps between obstacles\n\u2022 Built as a little tribute to my bird \u2014 use his real colors/look for the character\n\u2022 Simple one-tap gameplay; score = obstacles passed, best score saved\n\u2022 Fun touches: a chirp sound on each flap, themed backgrounds\n\u2022 Can be a lightweight web/phone game \u2014 no app store needed"
+      "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed"
     },
     {
       "id": "idea-runner",
       "_created": "2026-06-29T05:25:26.741459+00:00",
       "_stagedAt": "2026-06-29T05:25:26.741459+00:00",
-      "name": "Subway Surfers\u2013style runner (for my girlfriend)",
+      "name": "Subway Surfers–style runner (for my girlfriend)",
       "description": "An endless runner game my girlfriend can play offline on her way to work.",
       "stage": "Idea",
       "chatUrl": "",
@@ -44,14 +44,14 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Swipe to dodge obstacles and grab coins; it speeds up as you go\n\u2022 Must work fully offline (no signal on the commute)\n\u2022 Personalize it for her \u2014 character, theme, maybe some inside jokes\n\u2022 Quick pick-up-and-play sessions; high scores saved on the phone\n\u2022 Simple touch controls, designed for holding the phone upright"
+      "notes": "• Swipe to dodge obstacles and grab coins; it speeds up as you go\n• Must work fully offline (no signal on the commute)\n• Personalize it for her — character, theme, maybe some inside jokes\n• Quick pick-up-and-play sessions; high scores saved on the phone\n• Simple touch controls, designed for holding the phone upright"
     },
     {
       "id": "idea-newsletter",
       "_created": "2026-06-29T05:25:27.741459+00:00",
       "_stagedAt": "2026-06-29T05:25:27.741459+00:00",
       "name": "AI beginner journey newsletter",
-      "description": "A newsletter sharing my beginner AI journey with Claude \u2014 and hopefully making some money from it.",
+      "description": "A newsletter sharing my beginner AI journey with Claude — and hopefully making some money from it.",
       "stage": "Idea",
       "chatUrl": "",
       "folder": "",
@@ -59,7 +59,7 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Write articles about learning AI as a beginner, specifically using Claude\n\u2022 Use Claude to help brainstorm, draft, and edit each post\n\u2022 Pick a platform with built-in subscriptions (like Substack or beehiiv)\n\u2022 Make money later through paid subscribers or sponsors once there's an audience\n\u2022 Share real projects (like this hub) as honest behind-the-scenes case studies"
+      "notes": "• Write articles about learning AI as a beginner, specifically using Claude\n• Use Claude to help brainstorm, draft, and edit each post\n• Pick a platform with built-in subscriptions (like Substack or beehiiv)\n• Make money later through paid subscribers or sponsors once there's an audience\n• Share real projects (like this hub) as honest behind-the-scenes case studies"
     },
     {
       "id": "idea-algo-trading",
@@ -74,7 +74,7 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Explore 'algo trading' \u2014 automated, rule-based buy/sell strategies\n\u2022 Use Claude and Claude Code to research, prototype, and test ideas\n\u2022 Start simple and paper-trade (fake money) first to see if it actually works\n\u2022 Learn the basics: where to get data, indicators, and managing risk\n\u2022 Keep it as a learning experiment early on \u2014 real trading carries real risk"
+      "notes": "• Explore 'algo trading' — automated, rule-based buy/sell strategies\n• Use Claude and Claude Code to research, prototype, and test ideas\n• Start simple and paper-trade (fake money) first to see if it actually works\n• Learn the basics: where to get data, indicators, and managing risk\n• Keep it as a learning experiment early on — real trading carries real risk"
     },
     {
       "id": "7b51e2c9f4",
@@ -98,7 +98,7 @@
         {
           "id": "log-20260630T134115",
           "ts": "2026-06-30T13:41:15.464932+00:00",
-          "text": "Model card +P&L, settlement void/unmatched safety nets (audit #1+#2), and POTD validity confirmed. Clarified Neil's odds confusion: app's +260 = Match Result (90-min win); FanDuel's +144 he saw = To Qualify (incl ET/pens) \u2014 different markets. Odds are fetched on-demand (fresh), board hardens ~30min pre-kickoff. Open product decision: knockout market choice (Match Result vs To Qualify)."
+          "text": "Model card +P&L, settlement void/unmatched safety nets (audit #1+#2), and POTD validity confirmed. Clarified Neil's odds confusion: app's +260 = Match Result (90-min win); FanDuel's +144 he saw = To Qualify (incl ET/pens) — different markets. Odds are fetched on-demand (fresh), board hardens ~30min pre-kickoff. Open product decision: knockout market choice (Match Result vs To Qualify)."
         },
         {
           "id": "log-20260630T132913",
@@ -108,7 +108,7 @@
         {
           "id": "log-20260630T024501",
           "ts": "2026-06-30T02:45:01.454030+00:00",
-          "text": "Shipped the whole-board lock + tracker fixes to prod. Root-caused the recurring data wipe: no Railway volume \u2014 attached one at /data so the DB persists. Caught that neither Railway nor Vercel auto-deployed the last push; deployed both by CLI. Model record seeded 1-0 from the Germany/Paraguay BTTS hit (logged placed=0, settled off the real results feed)."
+          "text": "Shipped the whole-board lock + tracker fixes to prod. Root-caused the recurring data wipe: no Railway volume — attached one at /data so the DB persists. Caught that neither Railway nor Vercel auto-deployed the last push; deployed both by CLI. Model record seeded 1-0 from the Germany/Paraguay BTTS hit (logged placed=0, settled off the real results feed)."
         },
         {
           "id": "log-2026-06-30T01:10:48.289544+00:00",
@@ -123,27 +123,27 @@
         {
           "id": "log-zve-gh1",
           "ts": "2026-06-30T00:37:38.264168Z",
-          "text": "Created the private GitHub repo zvcodez/zvs-edge and pushed main. The remote was already wired over SSH, just needed the empty repo on GitHub's side \u2014 code is now versioned and backed up off the machine."
+          "text": "Created the private GitHub repo zvcodez/zvs-edge and pushed main. The remote was already wired over SSH, just needed the empty repo on GitHub's side — code is now versioned and backed up off the machine."
         },
         {
           "id": "log-zve-438a81",
           "ts": "2026-06-30T00:17:21.117547+00:00",
-          "text": "Major post-launch session. Renamed to a clean domain (zvs-edge.vercel.app). Fixed the things Neil flagged: stale odds now refresh on load, picks scoped to TODAY's slate (no more tomorrow's game as POTD), FanDuel price leads with a DraftKings 'better line' flag, concrete bet-specific 'why' + parlay reasoning, bankroll asks on first launch ($400), freshness stamp, bracket explainer. Built Web Push end-to-end (VAPID + 5 toggles + bet-aware alerts). Locked the Play of the Day so it never auto-changes; added an in-app Update section that suggests a stronger play (did-you-place \u2192 switch, or cash-out-vs-ride) with why-better bullets and a switch history; and a live in-play tracker showing how close the bet is to hitting. Backend on Railway, frontend on Vercel \u2014 all deployed and verified."
+          "text": "Major post-launch session. Renamed to a clean domain (zvs-edge.vercel.app). Fixed the things Neil flagged: stale odds now refresh on load, picks scoped to TODAY's slate (no more tomorrow's game as POTD), FanDuel price leads with a DraftKings 'better line' flag, concrete bet-specific 'why' + parlay reasoning, bankroll asks on first launch ($400), freshness stamp, bracket explainer. Built Web Push end-to-end (VAPID + 5 toggles + bet-aware alerts). Locked the Play of the Day so it never auto-changes; added an in-app Update section that suggests a stronger play (did-you-place → switch, or cash-out-vs-ride) with why-better bullets and a switch history; and a live in-play tracker showing how close the bet is to hitting. Backend on Railway, frontend on Vercel — all deployed and verified."
         },
         {
           "id": "log-zve-3",
           "ts": "2026-06-29T06:18:56.564725+00:00",
-          "text": "Launched the app live on the internet \u2014 backend on Railway, frontend on Vercel, wired together. Hit and fixed a few hosting snags (Python version, packaging). The live app now pulls real World Cup picks from the model (today\u2019s Play of the Day: Germany vs Paraguay, Both Teams To Score). Next: add to iPhone home screen + notifications."
+          "text": "Launched the app live on the internet — backend on Railway, frontend on Vercel, wired together. Hit and fixed a few hosting snags (Python version, packaging). The live app now pulls real World Cup picks from the model (today’s Play of the Day: Germany vs Paraguay, Both Teams To Score). Next: add to iPhone home screen + notifications."
         },
         {
           "id": "log-zve-2",
           "ts": "2026-06-28T22:30:00+00:00",
-          "text": "Got everything ready to put the app online \u2014 set up the hosting files and wrote a step-by-step guide for launching it. Still just the basic skeleton at this point: no betting features built yet, and no GitHub repo connected."
+          "text": "Got everything ready to put the app online — set up the hosting files and wrote a step-by-step guide for launching it. Still just the basic skeleton at this point: no betting features built yet, and no GitHub repo connected."
         },
         {
           "id": "log-zve-1",
           "ts": "2026-06-28T21:40:46+00:00",
-          "text": "Started the project \u2014 an AI sports betting app for my iPhone to help spot good bets. Scaffolded the app structure to build on."
+          "text": "Started the project — an AI sports betting app for my iPhone to help spot good bets. Scaffolded the app structure to build on."
         }
       ],
       "_stagedAt": "2026-06-30T01:55:32.304Z"
@@ -169,12 +169,12 @@
         {
           "id": "log-hub-2",
           "ts": "2026-06-28T00:00:00+00:00",
-          "text": "Cross-device sync working \u2014 each device pulls and pushes its data through GitHub, so the hub stays in sync between my phone and Mac."
+          "text": "Cross-device sync working — each device pulls and pushes its data through GitHub, so the hub stays in sync between my phone and Mac."
         },
         {
           "id": "log-hub-1",
           "ts": "2026-06-27T21:22:21+00:00",
-          "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
+          "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ]
     },
@@ -182,7 +182,7 @@
       "id": "6a403f0db2",
       "_created": "2026-06-27T21:22:21Z",
       "name": "Neil Portfolio",
-      "description": "My personal portfolio website \u2014 about me, experience, skills, education, plus a little Q&A chat bot. It's live online.",
+      "description": "My personal portfolio website — about me, experience, skills, education, plus a little Q&A chat bot. It's live online.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/neil-portfolio",
@@ -200,7 +200,7 @@
         {
           "id": "log-port-1",
           "ts": "2026-06-27T21:22:21+00:00",
-          "text": "Built my personal portfolio site \u2014 about me, experience, skills, education, and a little Q&A chat bot. Launched it on GitHub Pages."
+          "text": "Built my personal portfolio site — about me, experience, skills, education, and a little Q&A chat bot. Launched it on GitHub Pages."
         }
       ],
       "_stagedAt": "2026-06-30T01:55:42.927Z"
