@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T00:17:21.117547+00:00",
+  "updatedAt": "2026-06-30T00:37:38.264168Z",
   "data": [
     {
       "id": "idea-mithoo",
@@ -69,12 +69,17 @@
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/zvs-edge",
-      "repoUrl": "",
+      "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Create the GitHub repo (empty private 'zvs-edge' under zvcodez) so the code backup can push — remote is already wired. Then on iPhone: add to home screen, tap the bell to turn on notifications + test. Watch the live tracker during tonight's games.",
-      "lastDid": "Big build session post-launch: cleaned the URL to zvs-edge.vercel.app; fixed stale odds (live-on-load, quota-safe) and scoped picks to today's games only; FanDuel-first pricing with a 'better line' flag; concrete pick + parlay reasoning; bankroll onboarding ($400, asks on first launch); 'last updated' freshness; bracket explainer. Then shipped Web Push (notifications + 5 toggles), a LOCKED Play of the Day with an in-app Update/switch section (did-you-place → switch vs cash-out-vs-ride + why-better bullets) and a live in-play tracker (football-data score → how close the bet is). All deployed.",
-      "notes": "Live and feature-rich now (picks, locked POTD + switch flow, live tracker, push). Not yet in GitHub.",
+      "nextStep": "On iPhone: add zvs-edge.vercel.app to home screen, tap the bell to turn on notifications + test. Watch the live in-play tracker during tonight's games.",
+      "lastDid": "Created the GitHub repo (private zvcodez/zvs-edge) and pushed main — the code is now backed up remotely (remote was already wired via SSH).",
+      "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-zve-gh1",
+          "ts": "2026-06-30T00:37:38.264168Z",
+          "text": "Created the private GitHub repo zvcodez/zvs-edge and pushed main. The remote was already wired over SSH, just needed the empty repo on GitHub's side — code is now versioned and backed up off the machine."
+        },
         {
           "id": "log-zve-438a81",
           "ts": "2026-06-30T00:17:21.117547+00:00",
