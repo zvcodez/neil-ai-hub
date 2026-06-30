@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T01:55:23.433Z",
+  "updatedAt": "2026-06-30T01:55:32.304Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -81,7 +81,7 @@
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
       "description": "An AI sports betting app for my iPhone that helps spot good bets to make.",
-      "stage": "Live",
+      "stage": "Building",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
@@ -125,7 +125,8 @@
           "ts": "2026-06-28T21:40:46+00:00",
           "text": "Started the project — an AI sports betting app for my iPhone to help spot good bets. Scaffolded the app structure to build on."
         }
-      ]
+      ],
+      "_stagedAt": "2026-06-30T01:55:32.304Z"
     },
     {
       "id": "6a403f0da1",
