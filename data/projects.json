@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T02:45:01.454030+00:00",
+  "updatedAt": "2026-06-30T13:29:13.271714+00:00",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -86,10 +86,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Reconnect the GitHub->Railway and GitHub->Vercel auto-deploy webhooks (both missed the last push); until then deploy via CLI. Then watch tomorrow's POTD harden ~30min before first kickoff (push notification) and confirm the locked board holds all day with next-best/dark-horse/parlay populated.",
-      "lastDid": "Found the real durability bug: Railway had no volume, so the SQLite tracker reset on every deploy. Attached a persistent volume at /data (DB now durable). Also discovered GitHub auto-deploy wasn't firing for either Railway or Vercel — deployed both manually via CLI (board-lock + tracker fixes + soft/hard POTD lifecycle now live). Logged + settled the 6/29 Germany-Paraguay BTTS POTD as a model win -> model record 1-0.",
+      "nextStep": "Decide on the remaining silent-failure settlement gaps surfaced in the audit: (2) abandoned/postponed matches stay pending forever (no void path), (3) unmapped team-name spellings never join their result. Both fail silently. Also still: reconnect Railway+Vercel GitHub auto-deploy webhooks, and watch tomorrow's POTD harden ~30min pre-kickoff.",
+      "lastDid": "Found + fixed a settlement bug: football-data.org bundles penalty-shootout kicks into score.fullTime, so the Germany-Paraguay R32 (real 1-1, Paraguay won 4-3 on pens) was ingested as a 4-5 'loss'. _settled_goals now uses score.regularTime for matches past 90min — feed now correctly reads 1-1 and Germany's record corrected to 2-1-1. Deployed via Railway CLI (GitHub auto-deploy still broken). Model record 1-0 intact (BTTS won either way).",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260630T132913",
+          "ts": "2026-06-30T13:29:13.271714+00:00",
+          "text": "Fixed penalty-shootout score ingestion (fullTime included pen kicks -> 1-1 game read as 4-5). Verified live: feed now 1-1, Germany record 2-1-1. Audited the rest of the settlement path; flagged abandoned-match void gap + team-name join failures as the next silent-failure risks."
+        },
         {
           "id": "log-20260630T024501",
           "ts": "2026-06-30T02:45:01.454030+00:00",
