@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-06-30T01:10:48.289544+00:00",
+  "updatedAt": "2026-06-30T01:34:00+00:00",
   "data": [
+    {
+      "id": "idea-cc-push-notify",
+      "_created": "2026-06-30T01:34:00+00:00",
+      "_stagedAt": "2026-06-30T01:34:00+00:00",
+      "name": "Claude Code chunk-done push notifications",
+      "description": "Get a phone push when a Claude Code session finishes a chunk of work, so I can step away from the desk and know exactly when (and which terminal) to come back to.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "",
+      "lastDid": "",
+      "notes": "• A Stop hook already pings my iPhone via ntfy.sh when a session ends a chunk — always on, mute from the phone\n• THE PROBLEM TO SOLVE: every open session pings me, and they all look the same — I got 'come back' alerts for the AI hub while I was actually working in zvs-edge, with no way to tell sessions apart\n• Want the alert to show the terminal/chat name (the title the terminal auto-makes from my first message), not just the project folder\n• Catch: the hook can't read the terminal tab title — it only gets the folder + session id; need another way to label each session (likely capture its first prompt)\n• Ideal end state: only the session(s) I care about ping me, each clearly labeled, one mute switch on the phone"
+    },
     {
       "id": "idea-mithoo",
       "_created": "2026-06-29T05:25:25.741459+00:00",
