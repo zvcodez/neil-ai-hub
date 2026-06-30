@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T00:57:26.695766Z",
+  "updatedAt": "2026-06-30T01:10:48.289544+00:00",
   "data": [
     {
       "id": "idea-mithoo",
@@ -71,10 +71,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Phase: Home + Tracker only. 1) FIX: fold auto-settlement into the alert_check loop (already running every 20min) so bets auto-grade + P&L updates + 'bet settled' push fires. 2) Decide odds-refresh: keep on-load only vs turn on light scheduled ticks (369 credits left, within free tier; Claude leans light tick). 3) Hide/'coming soon' the dead CLV column on Tracker (blocked on OddsPapi docs). 4) Optional: enable nightly retrain. THEN Neil's Home/Tracker UI/design feedback pass.",
-      "lastDid": "Backed up to GitHub (created private zvcodez/zvs-edge, pushed main) and rewrote the README to match the live app. Then scoped next phase: focus only on Home + Tracker pages (parking Lines/Bracket/Analysis). Audited the live backend — found auto-settlement and scheduled odds ticks are OFF in prod, and CLV is a stub.",
+      "nextStep": "VERIFY ENABLE_ALERTS=1 is set on Railway (settlement+alerts only run if so). Then: Neil's Home page edits/fixes (about to discuss). Still parked: scheduled odds ticks (#2), CLV stub (#3, blocked on OddsPapi docs).",
+      "lastDid": "Fixed the #1 backend gap: auto-settlement now runs inside the alert-check loop (every ~20min via ENABLE_ALERTS) instead of being trapped behind the disabled credit-spending scheduler. Bets auto-grade on free football-data results, P&L updates even with no push subscribers, and a 'bet settled' push (won/lost/push + $ P&L) fires for bets Neil placed. Tested, committed, pushed to main (Railway auto-deploys).",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-2026-06-30T01:10:48.289544+00:00",
+          "ts": "2026-06-30T01:10:48.289544+00:00",
+          "text": "Backend session: folded auto-settlement into run_alert_check so finished bets grade automatically (it was stuck behind ENABLE_SCHEDULER, off in prod to save odds credits). Settlement runs first + unconditionally on the free results feed so the Tracker P&L stays current; added a 'bet settled' push for placed bets reusing tracker.bet_profit_units; and made settle_pending short-circuit when nothing's pending. Compile + smoke tested, pushed to main. Open question to confirm: ENABLE_ALERTS must be on in Railway for the loop to run. Next up: Neil's Home page changes."
+        },
         {
           "id": "log-zve-readme",
           "ts": "2026-06-30T00:57:26.695766Z",
