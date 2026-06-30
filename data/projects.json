@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T13:29:13.271714+00:00",
+  "updatedAt": "2026-06-30T13:41:15.464932+00:00",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -86,10 +86,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Decide on the remaining silent-failure settlement gaps surfaced in the audit: (2) abandoned/postponed matches stay pending forever (no void path), (3) unmapped team-name spellings never join their result. Both fail silently. Also still: reconnect Railway+Vercel GitHub auto-deploy webhooks, and watch tomorrow's POTD harden ~30min pre-kickoff.",
-      "lastDid": "Found + fixed a settlement bug: football-data.org bundles penalty-shootout kicks into score.fullTime, so the Germany-Paraguay R32 (real 1-1, Paraguay won 4-3 on pens) was ingested as a 4-5 'loss'. _settled_goals now uses score.regularTime for matches past 90min — feed now correctly reads 1-1 and Germany's record corrected to 2-1-1. Deployed via Railway CLI (GitHub auto-deploy still broken). Model record 1-0 intact (BTTS won either way).",
+      "nextStep": "Neil to decide: for KNOCKOUT games, should the featured pick be 'Match Result' (90-min, loses on a draw even if the team advances on pens — current behavior) or 'To Qualify' (covers ET/penalties)? That's the +260 vs +144 difference he noticed (different markets, not a staleness bug). Also still: reconnect Railway+Vercel GitHub auto-deploy webhooks (Neil's dashboard task).",
+      "lastDid": "Shipped 3 things autonomously while Neil was at work: (1) Tracker model card now shows the model's hypothetical P&L + ROI under its W-L record; (2) settlement now voids CANCELLED matches (were stuck pending forever) and logs/surfaces 'unmatched' bets whose team name never joins a fixture (silent-fail safety net); (3) confirmed today's POTD 'Ivory Coast to win' is a valid bug-free play (Match Result / 90-min market, edge 6.1% apples-to-apples, grades on regulation goals post shootout-fix). All deployed + verified live.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260630T134115",
+          "ts": "2026-06-30T13:41:15.464932+00:00",
+          "text": "Model card +P&L, settlement void/unmatched safety nets (audit #1+#2), and POTD validity confirmed. Clarified Neil's odds confusion: app's +260 = Match Result (90-min win); FanDuel's +144 he saw = To Qualify (incl ET/pens) — different markets. Odds are fetched on-demand (fresh), board hardens ~30min pre-kickoff. Open product decision: knockout market choice (Match Result vs To Qualify)."
+        },
         {
           "id": "log-20260630T132913",
           "ts": "2026-06-30T13:29:13.271714+00:00",
