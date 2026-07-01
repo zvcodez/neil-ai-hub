@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-07-01T03:50:56.000Z",
+  "updatedAt": "2026-07-01T12:00:00+00:00",
   "data": [
+    {
+      "id": "idea-macro-tracker",
+      "_created": "2026-07-01T12:00:00+00:00",
+      "_stagedAt": "2026-07-01T12:00:00+00:00",
+      "name": "Macro Tracker",
+      "description": "A simple app for logging food and tracking macros (calories, protein, carbs, fat) to support gym goals.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "",
+      "lastDid": "",
+      "notes": "• Log meals throughout the day and see running macro totals vs. daily targets\n• Set custom goals (e.g. high protein for muscle gain, calorie deficit for cutting)\n• Quick-add common foods or search a nutrition database\n• Daily/weekly summary so you can see patterns over time\n• Gym-focused: built around hitting protein targets, not just calorie counting"
+    },
+    {
+      "id": "idea-nights-out",
+      "_created": "2026-07-01T12:00:00+00:00",
+      "_stagedAt": "2026-07-01T12:00:00+00:00",
+      "name": "Nights Out memories app",
+      "description": "A shared app for friends to upload photos from a night out, compiled into a per-night gallery to look back on.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "",
+      "lastDid": "",
+      "notes": "• Each night out gets its own album — photos from everyone in the group land in one place\n• Friends can add pics from their phones during or after the night\n• Browse back through past nights like a timeline of memories\n• Simple and social — no faff, just upload and view\n• Could include the date, venue, or a title for each night"
+    },
     {
       "id": "idea-alcohol-scanner",
       "_created": "2026-07-01T00:00:00+00:00",
