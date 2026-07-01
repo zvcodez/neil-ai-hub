@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T23:52:16.294Z",
+  "updatedAt": "2026-07-01T00:15:00.000000Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -19,17 +19,17 @@
     {
       "id": "idea-mithoo",
       "_created": "2026-06-29T05:25:25.741459+00:00",
-      "_stagedAt": "2026-06-29T05:25:25.741459+00:00",
-      "name": "Mithoo — Flappy Bird game",
-      "description": "A Flappy Bird–style game made to honor Mithoo, my pet bird.",
-      "stage": "Idea",
+      "_stagedAt": "2026-07-01T00:15:00.000000Z",
+      "name": "Mithoo's Adventure",
+      "description": "A Flappy Bird\u2013style game made to honor Mithoo, my pet bird.",
+      "stage": "Planning",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/mithoos-adventure",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed"
+      "nextStep": "Plan tech stack and scope, then build playable prototype.",
+      "lastDid": "Set up project folder + launcher; about to plan build approach.",
+      "notes": "\u2022 Tap to flap Mithoo through gaps between obstacles\n\u2022 Built as a little tribute to my bird \u2014 use his real colors/look for the character\n\u2022 Simple one-tap gameplay; score = obstacles passed, best score saved\n\u2022 Fun touches: a chirp sound on each flap, themed backgrounds\n\u2022 Can be a lightweight web/phone game \u2014 no app store needed"
     },
     {
       "id": "idea-runner",
