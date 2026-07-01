@@ -2,6 +2,21 @@
   "updatedAt": "2026-07-01T03:50:56.000Z",
   "data": [
     {
+      "id": "idea-alcohol-scanner",
+      "_created": "2026-07-01T00:00:00+00:00",
+      "_stagedAt": "2026-07-01T00:00:00+00:00",
+      "name": "Alcohol Scanner & Tracker",
+      "description": "Point your phone at any beer or bottle to instantly see its nutrition info, health score, and reviews — and keep a log of everything you've scanned.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "",
+      "lastDid": "",
+      "notes": "• Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n• Personal inventory — everything you scan gets logged so you have a history of what you've tried\n• Health ranking: scores each drink based on how healthy (or not) it is — e.g. low-cal beers rank higher than sugary cocktails\n• Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n• Great use case: standing in the liquor store comparing two bottles — scan both and see which scores better on health and reviews"
+    },
+    {
       "id": "idea-cc-push-notify",
       "_created": "2026-06-30T01:34:00+00:00",
       "_stagedAt": "2026-06-30T23:52:16.293Z",
