@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T03:09:39.360726Z",
+  "updatedAt": "2026-07-01T03:50:56.000Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -76,17 +76,24 @@
     {
       "id": "idea-algo-trading",
       "_created": "2026-06-29T05:25:28.741459+00:00",
-      "_stagedAt": "2026-06-29T05:25:28.741459+00:00",
+      "_stagedAt": "2026-07-01T03:50:56.000Z",
       "name": "Algo trading with Claude",
-      "description": "Work with Claude to build some kind of model to help with the stock market / trading.",
-      "stage": "Idea",
+      "description": "Learning-focused algo trading project: Python pipeline (data -> strategy -> backtest -> paper trade) connected to an Alpaca paper trading account.",
+      "stage": "Building",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/algo-trading",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Explore 'algo trading' — automated, rule-based buy/sell strategies\n• Use Claude and Claude Code to research, prototype, and test ideas\n• Start simple and paper-trade (fake money) first to see if it actually works\n• Learn the basics: where to get data, indicators, and managing risk\n• Keep it as a learning experiment early on — real trading carries real risk"
+      "nextStep": "Test a different strategy family (e.g. trend-following with a volatility filter, or plain buy-and-hold vs. mean reversion) for comparison. Longer term: only after a strategy holds up over real paper-trading time, consider a scheduled Claude Code routine to run it automatically.",
+      "lastDid": "Set up the project (Python venv, git repo) and connected it to a real Alpaca paper trading account ($100k fake money) -- confirmed the connection and placed a real test order end-to-end. Built a data/strategy/backtest pipeline and tested a cross-sectional momentum rotation strategy (SPY/QQQ/IWM/EFA/EEM/TLT/GLD, monthly rebalance) over 19 years of history. Honest result: it underperformed plain buy-and-hold SPY overall (7.98% CAGR vs 10.70%, worse Sharpe) despite much smaller drawdowns in real crashes (2008, 2022) -- it rarely actually held SPY (2.6% of months) and bled value chasing weaker assets (gold/small-cap/EM/bonds) during the long grinding bull years. Good first lesson in why rigorous backtesting matters.",
+      "notes": "• Explore 'algo trading' — automated, rule-based buy/sell strategies\n• Use Claude and Claude Code to research, prototype, and test ideas\n• Start simple and paper-trade (fake money) first to see if it actually works\n• Learn the basics: where to get data, indicators, and managing risk\n• Keep it as a learning experiment early on — real trading carries real risk\n• Alpaca free data plan caps historical bars at ~6 years -- use yfinance for deep backtesting research, Alpaca for the actual paper account/execution",
+      "log": [
+        {
+          "id": "log-algo-1",
+          "ts": "2026-07-01T03:50:56.000Z",
+          "text": "First real build session. Researched how people are actually using Claude Code for trading right now (Alpaca's official MCP server, Robinhood's new Agentic Trading, Claude Code 'Routines' running scheduled research/trade/journal loops) and talked through the fundamentals -- profit vs. beating a benchmark, what algo trading actually means, options/futures risk. Scaffolded the project, connected to a real Alpaca paper account, placed a test order, then built a data -> strategy -> backtest pipeline and ran a first real strategy (cross-sectional momentum rotation across major ETFs). Result: it lost to plain buy-and-hold SPY over 19 years despite better crash protection -- diagnosed exactly why (it almost never actually held SPY, kept rotating into laggards)."
+        }
+      ]
     },
     {
       "id": "7b51e2c9f4",
