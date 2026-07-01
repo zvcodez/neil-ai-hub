@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T02:29:58.721242Z",
+  "updatedAt": "2026-07-01T02:59:46.160726Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -93,10 +93,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Watch the first jackpot/normal parlays actually fire live and settle correctly over the next few slates. Open items still sitting: recalibrating the market-blend weight from real CLV (needs more settled bets), and the knockout market-type product decision (Match Result vs To Qualify) flagged earlier.",
-      "lastDid": "Added a real app icon (gold lightning bolt matching the header's ⚡ mark, flanked by upright \"ZV\"/\"EDGE\" lettering -- replaces the old solid-color placeholder). Then Neil asked how POTD/Next Best/parlays actually get picked. Found Next Best and the parlay had zero odds-range filtering (could show a -400 favorite or +900 longshot). Built: Next Best Plays + a \"normal\" parlay now stay in an everyday-bettable odds band (-110 to +200); added a new \"jackpot\" parlay (2 legs, +400-or-steeper, still genuine 5%+ edge plays, but with the normal parlay's true-probability floor dropped since a low hit chance is the point). POTD stays pure edge-rank, untouched. Also built parlay tracking end-to-end -- new DB table, auto-logged when the day's board locks, model-only (no placed toggle, per Neil's ask), graded by a new settlement path, shown read-only in Tracker with its own P&L. Verified with synthetic end-to-end tests + a live run before deploying to Railway + Vercel.",
+      "nextStep": "Watch the closest-lean fallback and the jackpot/normal parlays actually fire and settle correctly over the next few slates with real games. Open items still sitting: recalibrating the market-blend weight from real CLV (needs more settled bets), and the knockout market-type product decision (Match Result vs To Qualify) flagged earlier.",
+      "lastDid": "Neil asked why the Home tab was showing a blank 'No play' card. Root cause: today's WC2026 slate genuinely had nothing clear the 5% edge bar (best was Senegal +4.4%). He asked whether POTD should also be price-banded like Next Best -- explained the EV math (a fixed edge is worth far more at longshot prices than favorite prices) and recommended leaving POTD on pure edge-rank; he agreed. Then built what he wanted: POTD now always shows something instead of a blank card -- falls back to the single highest-edge pick, flagged red 'Below our bar' instead of gold when nothing clears 5%. Confirmed with him that this sub-bar pick should still count in the model's tracked record (not just cosmetic) -- wired that through confidence tiers, edge coloring, the lock push, and rationale text so nothing overclaims it. Verified live against today's actual board before deploying.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260701T025946.160726Z",
+          "ts": "2026-07-01T02:59:46.160726Z",
+          "text": "Added a closest-lean POTD fallback: when nothing clears 5% edge, shows the highest-edge pick anyway, flagged red instead of a blank card, and it's tracked in the model's record too (Neil's call). Also discussed and decided to keep POTD's odds unconstrained by price, unlike Next Best/parlays. Deployed to Railway + Vercel."
+        },
         {
           "id": "log-20260701T022958.721242Z",
           "ts": "2026-07-01T02:29:58.721242Z",
