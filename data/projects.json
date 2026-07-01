@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T00:30:00.000000Z",
+  "updatedAt": "2026-07-01T02:24:26.107524Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -21,15 +21,22 @@
       "_created": "2026-06-29T05:25:25.741459+00:00",
       "_stagedAt": "2026-07-01T00:15:00.000000Z",
       "name": "Mithoo's Adventure",
-      "description": "A Flappy Bird\u2013style game made to honor Mithoo, my pet bird.",
-      "stage": "Planning",
+      "description": "A Flappy Bird–style game made to honor Mithoo, my pet bird.",
+      "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/mithoos-adventure",
-      "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "Plan tech stack and scope, then build playable prototype.",
-      "lastDid": "Set up project folder + launcher; about to plan build approach.",
-      "notes": "\u2022 Tap to flap Mithoo through gaps between obstacles\n\u2022 Built as a little tribute to my bird \u2014 use his real colors/look for the character\n\u2022 Simple one-tap gameplay; score = obstacles passed, best score saved\n\u2022 Fun touches: a chirp sound on each flap, themed backgrounds\n\u2022 Can be a lightweight web/phone game \u2014 no app store needed"
+      "repoUrl": "https://github.com/zvcodez/Mithoos-Adventure",
+      "liveUrl": "https://zvcodez.github.io/Mithoos-Adventure/",
+      "nextStep": "Get feedback from Diksha after she plays it; possible follow-ups: gameplay juice (particles/screen shake), background music, score history.",
+      "lastDid": "Playable v1 live as an installable iPhone PWA. Fixed a missing-pipes/stale-score bug and a stale-service-worker caching issue. Recolored Mithoo to his real lovebird coloring, reskinned obstacles as flower pots, and added a background parallax layer with a house and two personal figures (non-gameplay, just atmosphere) as a tribute detail.",
+      "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed",
+      "log": [
+        {
+          "id": "7e8c9575-b2f0-4f06-998b-c997c5eb363f",
+          "ts": "2026-07-01T02:24:26.107524Z",
+          "text": "Shipped v1: playable flappy-style PWA installable on iPhone home screen, fully offline. Fixed first-play pipe spawn bug, stale score display bug, and a stale service-worker cache bug. Reskinned bird to Mithoo's real coloring and pipes to flower pots; added a decorative background scene (house + two figures) as a tribute touch."
+        }
+      ]
     },
     {
       "id": "idea-runner",
