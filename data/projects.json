@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-07-01T12:00:00+00:00",
+  "updatedAt": "2026-07-01T12:01:00+00:00",
   "data": [
+    {
+      "id": "idea-gucci-app",
+      "_created": "2026-07-01T12:01:00+00:00",
+      "_stagedAt": "2026-07-01T12:01:00+00:00",
+      "name": "Gucci's App",
+      "description": "A dedicated app for Gucci — snap photos and videos of him anytime, saved and organized into albums so every moment is kept.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "",
+      "lastDid": "",
+      "notes": "• Open the app and instantly take a photo or video of Gucci\n• Everything saves automatically into his personal gallery\n• Organized into albums (e.g. by date, location, or mood/activity)\n• Built entirely around him — his name, his photos, his vibe\n• A dedicated place to collect every cute moment, all in one spot"
+    },
     {
       "id": "idea-macro-tracker",
       "_created": "2026-07-01T12:00:00+00:00",
