@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T00:15:00.000000Z",
+  "updatedAt": "2026-07-01T00:20:00.000000Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -86,10 +86,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "POTD model is in good shape for now; the remaining real levers (broader historical data for thin-sample teams, recalibrating the blend weight from real CLV) are blocked on data Neil doesn't have yet, not on more tuning. Next session: check in with Neil on direction -- let bets/CLV accumulate naturally, or revisit the open knockout market-type product decision (Match Result vs To Qualify) and Railway/Vercel auto-deploy reconnect.",
-      "lastDid": "Investigated Elo-as-prior into Dixon-Coles as a POTD accuracy lever (scoped to model-only, no other tabs per Neil). Built and grid-tested it against the WC2022 held-out set: doesn't help (Elo's fit on the same StatsBomb matches, not new data) -- left in code, off by default, honest negative result documented. Along the way confirmed two things are actually fine: the live model already covers every team left in the tournament (incl. Norway, Bosnia-Herzegovina) via folded-in WC2026 results, and The Odds API's h2h market for knockout games is the correct 3-way Match Result market matching what the model predicts. Checked the tracker: only 2 settled model bets / 0 CLV points so far -- too early to recalibrate the market-blend weight from real results.",
+      "nextStep": "Design/functionality pass continues -- ask Neil what's next now that push, refresh, and the confidence wording are fixed. Open items still sitting: recalibrating the market-blend weight from real CLV (needs more settled bets to accumulate), and the knockout market-type product decision (Match Result vs To Qualify) flagged earlier.",
+      "lastDid": "Neil pivoted from model tuning to design/functionality. Fixed three things he flagged: (1) confidence tier 'Borderline' renamed to 'Lean' (same thresholds, less alarming next to a recommended play) with a new glossary entry + tooltip explaining the tiers; (2) built swipe-down pull-to-refresh for all tabs; (3) push notifications -- root-caused as two real gaps rather than a bug: the brief's 'game starting in 30 min' alert type was never built, and the 'big line moves' toggle did nothing. Built both (kickoff reminder + line-move detection off the active Play of the Day), confirmed via a live test push that the plumbing itself works end-to-end on Neil's phone. Also audited his 2 settled bets live and confirmed both graded correctly (the earlier team-name warning log was a false alarm, not a real bug). Deployed to Railway + Vercel.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260701T001500",
+          "ts": "2026-07-01T00:15:00.000000Z",
+          "text": "Design/functionality session: renamed confidence tier 'Borderline'->'Lean' + added tooltip/glossary entry; built swipe-down pull-to-refresh; built the two missing push alert types (kickoff reminder ~30min pre-match, big line move >=4pt shift) and confirmed live delivery works on Neil's phone. Deployed both services."
+        },
         {
           "id": "log-20260630T144717",
           "ts": "2026-06-30T14:47:17.447710+00:00",
