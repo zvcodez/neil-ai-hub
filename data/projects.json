@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T02:59:46.160726Z",
+  "updatedAt": "2026-07-01T03:09:39.360726Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -27,10 +27,15 @@
       "folder": "~/Claude/mithoos-adventure",
       "repoUrl": "https://github.com/zvcodez/Mithoos-Adventure",
       "liveUrl": "https://zvcodez.github.io/Mithoos-Adventure/",
-      "nextStep": "Get feedback from Diksha after she plays it; possible follow-ups: gameplay juice (particles/screen shake), background music, score history.",
-      "lastDid": "Playable v1 live as an installable iPhone PWA. Fixed a missing-pipes/stale-score bug and a stale-service-worker caching issue. Recolored Mithoo to his real lovebird coloring, reskinned obstacles as flower pots, and added a background parallax layer with a house and two personal figures (non-gameplay, just atmosphere) as a tribute detail.",
+      "nextStep": "Get Diksha's reaction to the personalized version. Possible next: more scenery variety, additional milestones, or calling it done as-is.",
+      "lastDid": "Added personalization (Mithoo's real coloring, flower-pot obstacles Mithoo can fly behind, background cameos of Diksha/Gucci/Pragya/house) plus a big fun pass: particle trail + flap bursts, butterflies, day-to-sunset sky, milestone messages, a crown unlock, lifetime stats, ambient sound with mute, and a share button. Fixed a few real bugs along the way (stale service worker cache, a canvas path bug drawing a line through Pragya's glasses, an uninitialized-variable crash risk on the ready screen).",
       "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed",
       "log": [
+        {
+          "id": "06715a7e-cbe7-4f48-bd49-3d860bd6c237",
+          "ts": "2026-07-01T03:09:39.360726Z",
+          "text": "Personalized the game for Diksha's late bird Mithoo: real lovebird coloring, flower-pot obstacles you can fly behind, and background cameos (her, her sister Pragya, dog Gucci, their house). Then added a fun/polish pass: particle effects, butterflies, sunset sky shift, milestone messages, a cosmetic crown unlock, lifetime stats, ambient sound + mute, and score sharing. Found and fixed a few real bugs along the way via headless-browser testing rather than just eyeballing the code."
+        },
         {
           "id": "7e8c9575-b2f0-4f06-998b-c997c5eb363f",
           "ts": "2026-07-01T02:24:26.107524Z",
