@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T02:24:26.107524Z",
+  "updatedAt": "2026-07-01T02:29:58.721242Z",
   "data": [
     {
       "id": "idea-cc-push-notify",
@@ -93,10 +93,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Design/functionality pass continues -- ask Neil what's next. Open items still sitting: recalibrating the market-blend weight from real CLV (needs more settled bets to accumulate), and the knockout market-type product decision (Match Result vs To Qualify) flagged earlier.",
-      "lastDid": "Neil pivoted from model tuning to design/functionality. Fixed: (1) confidence tier 'Borderline' renamed to 'Lean' (same thresholds, less alarming next to a recommended play) with a new glossary entry; (2) swipe-down pull-to-refresh for all tabs; (3) push notifications -- root-caused as two missing alert types rather than a bug (kickoff reminder + big line move were never wired up), built both, confirmed live delivery works on Neil's phone; (4) bottom nav bar was visibly jumping position when switching to Tracker -- root cause was position:fixed getting detached from the real viewport edge by iOS Safari's chrome animation; switched to a flex-column layout with the nav as position:sticky, which fixed it. Also removed the confidence tooltip icon Neil didn't want (kept the glossary entry). Deployed to Railway + Vercel, confirmed fixed on Neil's phone.",
+      "nextStep": "Watch the first jackpot/normal parlays actually fire live and settle correctly over the next few slates. Open items still sitting: recalibrating the market-blend weight from real CLV (needs more settled bets), and the knockout market-type product decision (Match Result vs To Qualify) flagged earlier.",
+      "lastDid": "Added a real app icon (gold lightning bolt matching the header's ⚡ mark, flanked by upright \"ZV\"/\"EDGE\" lettering -- replaces the old solid-color placeholder). Then Neil asked how POTD/Next Best/parlays actually get picked. Found Next Best and the parlay had zero odds-range filtering (could show a -400 favorite or +900 longshot). Built: Next Best Plays + a \"normal\" parlay now stay in an everyday-bettable odds band (-110 to +200); added a new \"jackpot\" parlay (2 legs, +400-or-steeper, still genuine 5%+ edge plays, but with the normal parlay's true-probability floor dropped since a low hit chance is the point). POTD stays pure edge-rank, untouched. Also built parlay tracking end-to-end -- new DB table, auto-logged when the day's board locks, model-only (no placed toggle, per Neil's ask), graded by a new settlement path, shown read-only in Tracker with its own P&L. Verified with synthetic end-to-end tests + a live run before deploying to Railway + Vercel.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-20260701T022958.721242Z",
+          "ts": "2026-07-01T02:29:58.721242Z",
+          "text": "Added a real app icon (gold bolt + ZV/EDGE wordmark). Added an odds-range filter for Next Best Plays + a normal parlay; added a second \"jackpot\" parlay category (2 legs, +400+, floor-dropped true-prob gate). Built end-to-end parlay tracking (auto-logged, model-only, no placed toggle, graded on settlement, shown in Tracker). Deployed to Railway + Vercel."
+        },
         {
           "id": "log-20260701T003000",
           "ts": "2026-07-01T00:30:00.000000Z",
