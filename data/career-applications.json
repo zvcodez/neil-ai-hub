@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T04:44:05.000Z",
+  "updatedAt": "2026-07-02T05:11:23.286Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -8,6 +8,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T02:05:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-02T05:11:23.277Z"
         }
       ],
       "company": "Citi",
@@ -16,8 +20,8 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Citi.docx",
       "salary": "$78k–$109k",
       "deadline": "2026-07-03",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-02",
+      "status": "Applied",
       "notes": "MOST URGENT — closes Jul 3. Trade-break resolution + reconciliation, 2–5 yrs, no programming required. Maps directly to your Bloomberg recon work. Jersey City = easy commute.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Citi.docx"
     },
