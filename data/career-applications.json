@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T05:18:50.559Z",
+  "updatedAt": "2026-07-02T05:26:56.946Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -56,6 +56,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T02:05:00.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-02T05:26:56.945Z"
         }
       ],
       "company": "Oppenheimer & Co.",
@@ -65,9 +69,11 @@
       "salary": "$70k–$85k",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Highest-probability posting: asks for SMA reconciliation + Bloomberg platform proficiency by name. 141 applicants already — apply fast. Salary slightly under target.",
-      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Oppenheimer.docx"
+      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Oppenheimer.docx",
+      "noApplyReason": "",
+      "noApplyAt": "2026-07-02T05:26:56.945Z"
     },
     {
       "id": "app-goldman-settlements",
