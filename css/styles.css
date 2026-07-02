@@ -46,6 +46,7 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
 }
 a { color: var(--accent); text-decoration: none; }
@@ -58,7 +59,7 @@ h1, h3 { margin: 0; }
 /* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; min-height: 100vh; }
+.app { display: flex; min-height: 100vh; min-height: 100dvh; }
 
 .sidebar {
   width: var(--sidebar-w);
@@ -112,8 +113,9 @@ h1, h3 { margin: 0; }
 .content-head {
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 28px; border-bottom: 1px solid var(--border);
+  padding-top: calc(20px + env(safe-area-inset-top));
   position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 85%, transparent);
-  backdrop-filter: blur(8px); z-index: 5;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); z-index: 5;
 }
 .head-title { display: flex; align-items: center; gap: 11px; color: var(--accent); }
 .head-title h1 { font-size: 21px; color: var(--text); }
@@ -255,8 +257,10 @@ select, .sort select {
    ============================================================ */
 .modal-backdrop {
   position: fixed; inset: 0; background: rgba(8, 8, 20, 0.55);
-  backdrop-filter: blur(3px); display: flex; align-items: flex-start; justify-content: center;
-  padding: 7vh 20px 20px; z-index: 50; overflow-y: auto;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: calc(7vh + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));
+  z-index: 50; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
 }
 .modal {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
@@ -615,13 +619,31 @@ select, .sort select {
 /* ============================================================
    Responsive — mobile
    ============================================================ */
+/* Touch devices: card action buttons can't rely on :hover — keep them visible. */
+@media (hover: none) {
+  .card-actions { opacity: 1; }
+}
+
 @media (max-width: 760px) {
   .sidebar { display: none; }
   .app { flex-direction: column; }
-  .content-body { padding: 18px 16px 90px; }
-  .content-head { padding: 16px; }
+  .content-body { padding: 18px 16px calc(90px + env(safe-area-inset-bottom)); }
+  .content-head { padding: 16px; padding-top: calc(16px + env(safe-area-inset-top)); }
   .content-head .theme-toggle.compact { display: inline-flex; }
   .form-grid { grid-template-columns: 1fr; }
+
+  /* iOS zooms into focused controls whose font-size is under 16px — keep all
+     text controls at 16px on phones so the viewport doesn't jump. */
+  .field input, .field textarea, .field select, .searchbox input,
+  select, .sort select, .app-decline textarea, .pd-textarea {
+    font-size: 16px;
+  }
+
+  /* Modals: use the width, keep clear of the notch and home indicator. */
+  .modal-backdrop {
+    padding: calc(14px + env(safe-area-inset-top)) 12px calc(14px + env(safe-area-inset-bottom));
+  }
+  .modal-body { padding: 16px; }
 
   .bottom-nav {
     display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;

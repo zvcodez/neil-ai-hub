@@ -1,5 +1,5 @@
 // Reusable UI components for Neil AI Hub.
-import { html, useState, useEffect, useRef, today as todayStr } from './core.js';
+import { html, ReactDOM, useState, useEffect, useRef, today as todayStr } from './core.js';
 
 // ---- Icons (feather-style stroke SVGs) -------------------------------------
 const ICON_PATHS = {
@@ -103,31 +103,51 @@ export function EmptyState({ icon = 'ideas', text, hint }) {
 }
 
 // ---- Modal ------------------------------------------------------------------
+// Rendered through a portal onto <body> so no ancestor with backdrop-filter/
+// transform (e.g. the sticky content header) can become the containing block
+// for the fixed backdrop — that trapped modals inside the header on iOS.
 export function Modal({ title, onClose, children, accent }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
     };
     document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
+    // iOS-safe scroll lock: overflow:hidden alone doesn't stop body scroll in
+    // Safari; pinning the body and restoring the scroll offset on close does.
+    const scrollY = window.scrollY;
+    const b = document.body.style;
+    const prev = {
+      position: b.position, top: b.top, left: b.left,
+      right: b.right, width: b.width, overflow: b.overflow,
+    };
+    b.position = 'fixed';
+    b.top = `-${scrollY}px`;
+    b.left = '0';
+    b.right = '0';
+    b.width = '100%';
+    b.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
+      Object.assign(b, prev);
+      window.scrollTo(0, scrollY);
     };
   }, []);
-  return html`<div class="modal-backdrop" onClick=${onClose}>
-    <div
-      class="modal"
-      style=${accent ? { '--accent': accent } : undefined}
-      onClick=${(e) => e.stopPropagation()}
-    >
-      <div class="modal-head">
-        <h3>${title}</h3>
-        <${IconButton} name="close" title="Close" onClick=${onClose} />
+  return ReactDOM.createPortal(
+    html`<div class="modal-backdrop" onClick=${onClose}>
+      <div
+        class="modal"
+        style=${accent ? { '--accent': accent } : undefined}
+        onClick=${(e) => e.stopPropagation()}
+      >
+        <div class="modal-head">
+          <h3>${title}</h3>
+          <${IconButton} name="close" title="Close" onClick=${onClose} />
+        </div>
+        <div class="modal-body">${children}</div>
       </div>
-      <div class="modal-body">${children}</div>
-    </div>
-  </div>`;
+    </div>`,
+    document.body
+  );
 }
 
 // ---- Declarative Form -------------------------------------------------------

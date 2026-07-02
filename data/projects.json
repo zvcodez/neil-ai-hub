@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T04:27:24.000Z",
+  "updatedAt": "2026-07-02T13:01:33.000Z",
   "data": [
     {
       "id": "idea-gucci-app",
@@ -257,9 +257,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Make the project private so my personal notes aren't public.",
+      "nextStep": "Neil re-opens the PWA on his phone to confirm the fix; then make the repo private",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "1fe8ec4ceb",
+          "ts": "2026-07-02T13:01:33.000Z",
+          "text": "Fixed iPhone PWA: modals now portal to <body> (backdrop-filter on the sticky header was trapping the fixed sync dialog inside it), iOS-safe body scroll lock with position restore, safe-area insets for notch/home bar, 16px inputs to stop focus auto-zoom, card actions always visible on touch. Verified on a phone-sized viewport; sw cache v29."
+        },
         {
           "id": "log-hub-3",
           "ts": "2026-06-29T05:25:00+00:00",
@@ -275,7 +280,8 @@
           "ts": "2026-06-27T21:22:21+00:00",
           "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
-      ]
+      ],
+      "lastDid": "Fixed the broken iPhone/PWA experience: sync dialog was trapped inside the sticky header and locked all scrolling"
     },
     {
       "id": "6a403f0db2",
