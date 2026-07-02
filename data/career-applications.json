@@ -1,0 +1,89 @@
+{
+  "updatedAt": "2026-07-02T02:05:00.000Z",
+  "data": [
+    {
+      "id": "app-citi-secderiv",
+      "_created": "2026-07-02T02:05:00.000Z",
+      "statusHistory": [{ "status": "To Apply", "at": "2026-07-02T02:05:00.000Z" }],
+      "company": "Citi",
+      "jobTitle": "Securities & Derivatives Intermediate Analyst (Jersey City)",
+      "link": "https://www.linkedin.com/jobs/view/securities-and-derivatives-intermediate-analyst-at-citi-4410486168",
+      "resume": "Neil_Patel_Resume_Citi.docx",
+      "salary": "$78k–$109k",
+      "deadline": "2026-07-03",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "MOST URGENT — closes Jul 3. Trade-break resolution + reconciliation, 2–5 yrs, no programming required. Maps directly to your Bloomberg recon work. Jersey City = easy commute."
+    },
+    {
+      "id": "app-scr-smaops",
+      "_created": "2026-07-02T02:05:00.000Z",
+      "statusHistory": [{ "status": "To Apply", "at": "2026-07-02T02:05:00.000Z" }],
+      "company": "Social Capital Resources (recruiter)",
+      "jobTitle": "SMA Operations Associate (NYC)",
+      "link": "https://www.linkedin.com/jobs/view/sma-operations-associate-at-social-capital-resources-4434374193",
+      "resume": "Neil_Patel_Resume_SMAOps.docx",
+      "salary": "$100k–$120k",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Literally SMA operations — account setup, restrictions, recon files. Your Bloomberg SMA/CIT work is the exact match. ALSO message the recruiter directly (outreach send #1)."
+    },
+    {
+      "id": "app-oppenheimer-recon",
+      "_created": "2026-07-02T02:05:00.000Z",
+      "statusHistory": [{ "status": "To Apply", "at": "2026-07-02T02:05:00.000Z" }],
+      "company": "Oppenheimer & Co.",
+      "jobTitle": "Reconciliation & Corporate Actions Analyst (NYC)",
+      "link": "https://www.linkedin.com/jobs/view/reconciliation-corporate-actions-analyst-at-oppenheimer-co-inc-4405040511",
+      "resume": "Neil_Patel_Resume_Oppenheimer.docx",
+      "salary": "$70k–$85k",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Highest-probability posting: asks for SMA reconciliation + Bloomberg platform proficiency by name. 141 applicants already — apply fast. Salary slightly under target."
+    },
+    {
+      "id": "app-goldman-settlements",
+      "_created": "2026-07-02T02:05:00.000Z",
+      "statusHistory": [{ "status": "To Apply", "at": "2026-07-02T02:05:00.000Z" }],
+      "company": "Goldman Sachs",
+      "jobTitle": "Associate, Settlements — Global Banking & Markets (NYC)",
+      "link": "https://www.linkedin.com/jobs/view/global-banking-markets-new-york-associate-settlements-9283349-at-goldman-sachs-4432698794",
+      "resume": "Neil_Patel_Resume_GoldmanSachs.docx",
+      "salary": "$97k–$126k",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Stretch: biggest brand, 2+ yrs ops + advanced Excel — you clear both, but settlements itself is new to you."
+    },
+    {
+      "id": "app-lordabbett-gis",
+      "_created": "2026-07-02T02:05:00.000Z",
+      "statusHistory": [{ "status": "To Apply", "at": "2026-07-02T02:05:00.000Z" }],
+      "company": "Lord Abbett",
+      "jobTitle": "Analyst, Global Investor Services – Alternatives (Jersey City)",
+      "link": "https://www.wallstreetcareers.com/jobs/468329164-analyst-global-investor-services-alternatives",
+      "resume": "Neil_Patel_Resume_LordAbbett.docx",
+      "salary": "$80k–$95k",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Early-career investor-ops seat; your Bloomberg PM-support story maps well. Easiest commute of the six. Apply via Lord Abbett careers site."
+    },
+    {
+      "id": "app-neuberger-mo",
+      "_created": "2026-07-02T02:05:00.000Z",
+      "statusHistory": [{ "status": "To Apply", "at": "2026-07-02T02:05:00.000Z" }],
+      "company": "Neuberger Berman",
+      "jobTitle": "Middle Office Operations Senior Analyst/Associate (NYC)",
+      "link": "https://www.linkedin.com/jobs/view/middle-office-operations-senior-analyst-associate-at-neuberger-4415104503",
+      "resume": "Neil_Patel_Resume_Neuberger.docx",
+      "salary": "$75k–$125k",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Stretch — wants derivatives/middle-office experience you don't have yet, but recon + PM point-of-contact fit is real."
+    }
+  ]
+}

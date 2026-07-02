@@ -125,9 +125,9 @@ function CompaniesTab({ accent }) {
 }
 
 // ---- Applications (Kanban pipeline) ----------------------------------------
-const APP_STATUSES = ['Applied', 'Followed Up', 'Interview Scheduled', 'Interview Completed', 'Offer', 'Rejected'];
+const APP_STATUSES = ['To Apply', 'Applied', 'Followed Up', 'Interview Scheduled', 'Interview Completed', 'Offer', 'Rejected'];
 const appStatusColor = {
-  Applied: '#2563eb', 'Followed Up': '#06b6d4', 'Interview Scheduled': '#a855f7',
+  'To Apply': '#f97316', Applied: '#2563eb', 'Followed Up': '#06b6d4', 'Interview Scheduled': '#a855f7',
   'Interview Completed': '#f59e0b', Offer: '#10b981', Rejected: '#94a3b8',
 };
 
@@ -143,6 +143,9 @@ function ApplicationsTab({ accent }) {
     { name: 'company', label: 'Company name', required: true },
     { name: 'jobTitle', label: 'Job title', required: true },
     { name: 'link', label: 'Application link', type: 'url', placeholder: 'https://...' },
+    { name: 'resume', label: 'Resume version (file in ~/Downloads)', placeholder: 'Neil_Patel_Resume_….docx' },
+    { name: 'salary', label: 'Salary range', placeholder: 'e.g. $80k–$110k' },
+    { name: 'deadline', label: 'Application deadline', type: 'date' },
     { name: 'dateApplied', label: 'Date applied', type: 'date', default: 'today' },
     { name: 'status', label: 'Status', type: 'select', options: APP_STATUSES.map((s) => ({ value: s, label: s })) },
     { name: 'notes', label: 'Notes (who you spoke to, next steps)', type: 'textarea', rows: 4 },
@@ -165,7 +168,10 @@ function ApplicationsTab({ accent }) {
 
   const moveTo = (id, status) => setApps(apps.map((a) => {
     if (a.id !== id || a.status === status) return a;
-    return { ...a, status, statusHistory: [...(a.statusHistory || []), { status, at: new Date().toISOString() }] };
+    // Dragging a card into "Applied" stamps the applied date automatically.
+    const dateApplied = status === 'Applied' && !a.dateApplied
+      ? new Date().toISOString().slice(0, 10) : a.dateApplied;
+    return { ...a, status, dateApplied, statusHistory: [...(a.statusHistory || []), { status, at: new Date().toISOString() }] };
   }));
 
   const remove = (app) => confirm('Delete this application?', () => setApps(apps.filter((a) => a.id !== app.id)));
@@ -185,8 +191,11 @@ function ApplicationsTab({ accent }) {
       <button class="icon-btn danger" title="Delete" onClick=${(e) => { e.stopPropagation(); remove(a); }}>×</button>
     </div>
     <div class="app-role">${a.jobTitle}</div>
+    ${a.salary && html`<div class="muted-text">${a.salary}</div>`}
+    ${a.resume && html`<div class="muted-text">📄 ${a.resume}</div>`}
+    ${a.deadline && a.status === 'To Apply' && html`<div class="muted-text"><strong>Due ${fmtDate(a.deadline)}</strong></div>`}
     <div class="app-foot">
-      <span class="muted-text">${fmtDate(a.dateApplied)}</span>
+      <span class="muted-text">${a.status === 'To Apply' ? 'not applied yet' : fmtDate(a.dateApplied)}</span>
       ${a.link && html`<a href=${a.link} target="_blank" rel="noreferrer" onClick=${(e) => e.stopPropagation()}><${Icon} name="external" size=${13} /></a>`}
     </div>
   </div>`;

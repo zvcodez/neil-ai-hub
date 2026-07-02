@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T01:25:56.754900+00:00",
+  "updatedAt": "2026-07-02T03:55:43.725767+00:00",
   "data": [
     {
       "id": "idea-gucci-app",
@@ -310,14 +310,21 @@
       "folder": "~/Claude/job-search",
       "description": "Finance job search: middle-office analyst roles at reputable NYC/Jersey City firms, $80-100K+. Daily cloud digest + tracker + referral outreach.",
       "stage": "Building",
-      "lastDid": "Built the operating system: 6 applications prepped with tailored resumes (Citi closes Jul 3!), daily 8am digest routine live, outreach playbook ready.",
-      "nextStep": "Neil: apply to the 6 prepped roles (Citi first) + send this week's 5 outreach messages.",
+      "lastDid": "Job pipeline now lives in the hub: Career > Applications kanban with To Apply column, resume/salary/deadline on cards; 6 postings seeded; morning routine pushes new ones here daily.",
+      "nextStep": "Apply to the 6 To Apply cards (Citi due Jul 3!), drag each to Applied; send 5 outreach messages.",
       "notes": "",
       "chatUrl": "",
       "liveUrl": "",
       "repoUrl": "",
       "_created": "2026-07-02T01:25:56.754900+00:00",
-      "_stagedAt": "2026-07-02T01:25:56.754900+00:00"
+      "_stagedAt": "2026-07-02T01:25:56.754900+00:00",
+      "log": [
+        {
+          "id": "log-2026-07-02T03:55:43",
+          "ts": "2026-07-02T03:55:43.725767+00:00",
+          "text": "Built hub job pipeline: To Apply column + resume/salary/deadline fields, seeded 6 fully-tailored applications, rewired daily routine to push postings into the hub instead of Gmail drafts."
+        }
+      ]
     }
   ]
 }
