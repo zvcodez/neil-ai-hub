@@ -77,6 +77,11 @@ function RolesTab({ accent }) {
 
 // ---- Companies --------------------------------------------------------------
 const SIZES = ['Small', 'Medium', 'Large', 'Enterprise'];
+const COMPANY_TYPES = [
+  'Bulge-Bracket Bank', 'Boutique / Mid-Market Bank', 'Custody & Asset Servicing',
+  'Asset Manager', 'Alternatives / Hedge Fund', 'Insurer', 'Exchange & Market Infrastructure',
+  'Data & Ratings', 'Fintech / SMA Platforms', 'Broker-Dealer / Wealth',
+];
 const COMPANY_STATUSES = ['Researching', 'Applied', 'Interviewing', 'Offer', 'Passed', 'Rejected'];
 const compStatusColor = {
   Researching: '#2563eb', Applied: '#f59e0b', Interviewing: '#a855f7',
@@ -92,7 +97,7 @@ function CompaniesTab({ accent }) {
     searchKeys=${['name', 'industry', 'why']}
     fields=${[
       { name: 'name', label: 'Company name', required: true },
-      { name: 'industry', label: 'Industry' },
+      { name: 'industry', label: 'Type', type: 'select', options: COMPANY_TYPES.map((t) => ({ value: t, label: t })) },
       { name: 'size', label: 'Company size', type: 'select', options: SIZES.map((s) => ({ value: s, label: s })) },
       { name: 'location', label: 'Location' },
       { name: 'website', label: 'Website', type: 'url', placeholder: 'https://...' },
@@ -101,10 +106,14 @@ function CompaniesTab({ accent }) {
       { name: 'dateAdded', label: 'Date added', type: 'date', default: 'today' },
     ]}
     sortOptions=${[
+      { value: 'type', label: 'By type', cmp: (a, b) => (COMPANY_TYPES.indexOf(a.industry) - COMPANY_TYPES.indexOf(b.industry)) || a.name.localeCompare(b.name) },
       { value: 'az', label: 'A → Z', cmp: (a, b) => a.name.localeCompare(b.name) },
       { value: 'status', label: 'By status', cmp: (a, b) => COMPANY_STATUSES.indexOf(a.status) - COMPANY_STATUSES.indexOf(b.status) },
     ]}
-    filters=${[{ key: 'status', label: 'Status', options: COMPANY_STATUSES.map((s) => ({ value: s, label: s })) }]}
+    filters=${[
+      { key: 'industry', label: 'Type', options: COMPANY_TYPES.map((t) => ({ value: t, label: t })) },
+      { key: 'status', label: 'Status', options: COMPANY_STATUSES.map((s) => ({ value: s, label: s })) },
+    ]}
     emptyText="No companies tracked yet."
     emptyHint="Add companies you'd love to work for."
     renderCard=${(it) => html`<div>
@@ -124,19 +133,64 @@ function CompaniesTab({ accent }) {
   />`;
 }
 
-// ---- Applications (Kanban pipeline) ----------------------------------------
-const APP_STATUSES = ['To Apply', 'Applied', 'Followed Up', 'Interview Scheduled', 'Interview Completed', 'Offer', 'Rejected'];
+// ---- Applications (status accordion, one section open at a time) -----------
+const APP_STATUSES = ['To Apply', 'Applied', 'Did Not Apply', 'Followed Up', 'Interview Scheduled', 'Interview Completed', 'Offer', 'Rejected'];
 const appStatusColor = {
-  'To Apply': '#f97316', Applied: '#2563eb', 'Followed Up': '#06b6d4', 'Interview Scheduled': '#a855f7',
-  'Interview Completed': '#f59e0b', Offer: '#10b981', Rejected: '#94a3b8',
+  'To Apply': '#f97316', Applied: '#2563eb', 'Did Not Apply': '#64748b', 'Followed Up': '#06b6d4',
+  'Interview Scheduled': '#a855f7', 'Interview Completed': '#f59e0b', Offer: '#10b981', Rejected: '#94a3b8',
 };
+
+// Batch = the day the posting landed in the hub (daily digest runs stamp _created).
+const batchOf = (a) => a.batch || (a._created || '').slice(0, 10);
+
+function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline }) {
+  const [declining, setDeclining] = useState(false);
+  const [reason, setReason] = useState('');
+  const meta = [
+    a.salary,
+    a.resume,
+    a.deadline && a.status === 'To Apply' ? `due ${fmtDate(a.deadline)}` : '',
+    a.status !== 'To Apply' && a.dateApplied ? `applied ${fmtDate(a.dateApplied)}` : '',
+  ].filter(Boolean);
+
+  return html`<div class="app-row" onClick=${() => onOpen(a)}>
+    <div class="app-row-main">
+      <div class="app-row-title">
+        <strong>${a.company}</strong><span class="app-row-sep"> — </span>${a.jobTitle}
+      </div>
+      ${meta.length > 0 && html`<div class="app-row-meta">${meta.join(' · ')}</div>`}
+      ${a.status === 'Did Not Apply' && a.noApplyReason && html`<div class="app-row-reason">“${a.noApplyReason}”</div>`}
+    </div>
+    <div class="app-row-actions" onClick=${(e) => e.stopPropagation()}>
+      ${a.link && html`<a class="icon-btn" title="Open posting" href=${a.link} target="_blank" rel="noreferrer"><${Icon} name="external" size=${14} /></a>`}
+      ${a.status !== 'To Apply' && html`<select class="app-status-select" value=${a.status}
+        onChange=${(e) => onMove(a, e.target.value)}>
+        ${statusOptions.map((s) => html`<option key=${s} value=${s}>${s}</option>`)}
+      </select>`}
+      ${a.status === 'To Apply' && !declining && html`<span class="app-applied-q">
+        <span class="app-applied-label">Applied?</span>
+        <button class="app-btn yes" onClick=${() => onMove(a, 'Applied')}>Yes</button>
+        <button class="app-btn no" onClick=${() => setDeclining(true)}>No</button>
+      </span>`}
+      <button class="icon-btn danger" title="Delete" onClick=${() => onRemove(a)}>×</button>
+    </div>
+    ${declining && html`<div class="app-decline" onClick=${(e) => e.stopPropagation()}>
+      <textarea rows="2" placeholder="Why not? (wrong fit, pay, location, bad posting…) — used to tune future postings"
+        value=${reason} onInput=${(e) => setReason(e.target.value)} />
+      <div class="app-decline-actions">
+        <${Button} variant="primary" onClick=${() => { onDecline(a, reason.trim()); setDeclining(false); }}>Move to Did Not Apply<//>
+        <${Button} onClick=${() => setDeclining(false)}>Cancel<//>
+      </div>
+    </div>`}
+  </div>`;
+}
 
 function ApplicationsTab({ accent }) {
   const [apps, setApps] = useStore('career-applications', []);
   const [query, setQuery] = useState('');
-  const [view, setView] = useState('pipeline');
+  const [view, setView] = useState('sections');
+  const [openSection, setOpenSection] = useState('To Apply');
   const [modal, setModal] = useState(null); // { editing }
-  const [dragId, setDragId] = useState(null);
   const confirm = useConfirm();
 
   const fields = [
@@ -148,6 +202,7 @@ function ApplicationsTab({ accent }) {
     { name: 'deadline', label: 'Application deadline', type: 'date' },
     { name: 'dateApplied', label: 'Date applied', type: 'date', default: 'today' },
     { name: 'status', label: 'Status', type: 'select', options: APP_STATUSES.map((s) => ({ value: s, label: s })) },
+    { name: 'noApplyReason', label: "Why you didn't apply (if you passed)", type: 'textarea', rows: 2 },
     { name: 'notes', label: 'Notes (who you spoke to, next steps)', type: 'textarea', rows: 4 },
   ];
 
@@ -166,13 +221,19 @@ function ApplicationsTab({ accent }) {
     setModal(null);
   };
 
-  const moveTo = (id, status) => setApps(apps.map((a) => {
-    if (a.id !== id || a.status === status) return a;
-    // Dragging a card into "Applied" stamps the applied date automatically.
-    const dateApplied = status === 'Applied' && !a.dateApplied
-      ? new Date().toISOString().slice(0, 10) : a.dateApplied;
-    return { ...a, status, dateApplied, statusHistory: [...(a.statusHistory || []), { status, at: new Date().toISOString() }] };
-  }));
+  const stamp = (a, status, extra = {}) => ({
+    ...a, ...extra, status,
+    // Marking "Applied" stamps the applied date automatically.
+    dateApplied: status === 'Applied' && !a.dateApplied ? new Date().toISOString().slice(0, 10) : a.dateApplied,
+    statusHistory: [...(a.statusHistory || []), { status, at: new Date().toISOString() }],
+  });
+  const moveTo = (app, status) => {
+    if (app.status === status) return;
+    setApps(apps.map((a) => (a.id === app.id ? stamp(a, status) : a)));
+  };
+  const decline = (app, reason) => setApps(apps.map((a) => (
+    a.id === app.id ? stamp(a, 'Did Not Apply', { noApplyReason: reason, noApplyAt: new Date().toISOString() }) : a
+  )));
 
   const remove = (app) => confirm('Delete this application?', () => setApps(apps.filter((a) => a.id !== app.id)));
 
@@ -181,47 +242,54 @@ function ApplicationsTab({ accent }) {
     [apps, query]
   );
 
-  const card = (a) => html`<div
-    class="app-card" key=${a.id} draggable=${view === 'pipeline'}
-    onDragStart=${() => setDragId(a.id)} onDragEnd=${() => setDragId(null)}
-    onClick=${() => setModal({ editing: a })}
-  >
-    <div class="app-card-head">
-      <strong>${a.company}</strong>
-      <button class="icon-btn danger" title="Delete" onClick=${(e) => { e.stopPropagation(); remove(a); }}>×</button>
-    </div>
-    <div class="app-role">${a.jobTitle}</div>
-    ${a.salary && html`<div class="muted-text">${a.salary}</div>`}
-    ${a.resume && html`<div class="muted-text">📄 ${a.resume}</div>`}
-    ${a.deadline && a.status === 'To Apply' && html`<div class="muted-text"><strong>Due ${fmtDate(a.deadline)}</strong></div>`}
-    <div class="app-foot">
-      <span class="muted-text">${a.status === 'To Apply' ? 'not applied yet' : fmtDate(a.dateApplied)}</span>
-      ${a.link && html`<a href=${a.link} target="_blank" rel="noreferrer" onClick=${(e) => e.stopPropagation()}><${Icon} name="external" size=${13} /></a>`}
-    </div>
-  </div>`;
+  const card = (a) => html`<${AppCard} key=${a.id} app=${a} statusOptions=${APP_STATUSES}
+    onOpen=${(app) => setModal({ editing: app })} onRemove=${remove} onMove=${moveTo} onDecline=${decline} />`;
+
+  // "To Apply" groups by the day the batch arrived; a date disappears once every
+  // posting in it has been answered yes/no (nothing left with that batch date).
+  const toApplyBatches = (col) => {
+    const groups = new Map();
+    for (const a of col) {
+      const b = batchOf(a) || 'undated';
+      if (!groups.has(b)) groups.set(b, []);
+      groups.get(b).push(a);
+    }
+    return [...groups.entries()].sort((x, y) => y[0].localeCompare(x[0]));
+  };
 
   return html`<div class="collection" style=${{ '--accent': accent }}>
     <div class="toolbar">
       <${SearchBox} value=${query} onChange=${setQuery} placeholder="Search applications..." />
-      <${Segmented} options=${[{ value: 'pipeline', label: 'Pipeline' }, { value: 'list', label: 'List' }]}
+      <${Segmented} options=${[{ value: 'sections', label: 'Pipeline' }, { value: 'list', label: 'List' }]}
         value=${view} onChange=${setView} />
       <div class="toolbar-spacer"></div>
       <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add application<//>
     </div>
 
-    ${apps.length === 0 && html`<${EmptyState} icon="career" text="No applications yet." hint="Track every job you apply to — drag cards across the pipeline as things progress." />`}
+    ${apps.length === 0 && html`<${EmptyState} icon="career" text="No applications yet." hint="New postings land here each morning — answer Applied? Yes/No on each one." />`}
 
-    ${apps.length > 0 && view === 'pipeline' &&
-    html`<div class="kanban">
+    ${apps.length > 0 && view === 'sections' &&
+    html`<div class="app-sections">
       ${APP_STATUSES.map((status) => {
         const col = filtered.filter((a) => a.status === status);
-        return html`<div class=${`kanban-col ${dragId ? 'droppable' : ''}`} key=${status}
-          onDragOver=${(e) => e.preventDefault()}
-          onDrop=${() => { if (dragId) moveTo(dragId, status); setDragId(null); }}>
-          <div class="kanban-head" style=${{ '--col': appStatusColor[status] }}>
-            <span class="kanban-dot"></span>${status}<span class="kanban-count">${col.length}</span>
-          </div>
-          <div class="kanban-cards">${col.map(card)}</div>
+        const isOpen = openSection === status;
+        return html`<div class=${`app-section ${isOpen ? 'open' : ''}`} key=${status}>
+          <button class="app-section-head" style=${{ '--col': appStatusColor[status] }}
+            onClick=${() => setOpenSection(isOpen ? '' : status)}>
+            <span class="kanban-dot"></span>${status}
+            <span class="kanban-count">${col.length}</span>
+            <span class=${`app-chevron ${isOpen ? 'open' : ''}`}>›</span>
+          </button>
+          ${isOpen && html`<div class="app-section-body">
+            ${col.length === 0 && html`<p class="muted-text app-section-empty">Nothing here yet.</p>`}
+            ${status === 'To Apply'
+              ? toApplyBatches(col).map(([date, items]) => html`<div class="app-batch" key=${date}>
+                  <div class="app-batch-head">${date === 'undated' ? 'Undated' : fmtDate(date)}
+                    <span class="kanban-count">${items.length}</span></div>
+                  ${items.map(card)}
+                </div>`)
+              : col.map(card)}
+          </div>`}
         </div>`;
       })}
     </div>`}

@@ -1,0 +1,137 @@
+{
+  "updatedAt": "2026-07-02T05:00:00.000Z",
+  "data": [
+    {
+      "id": "role-recon-analyst",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Reconciliation / Trade Break Analyst",
+      "description": "Investigate and resolve position, cash, and trade breaks between internal systems, custodians, and counterparties. Daily recon cycles, escalation, root-cause fixes.",
+      "salary": "$70k–$95k",
+      "requiredSkills": ["Reconciliation", "Trade breaks", "Excel", "Custodian feeds", "Attention to detail"],
+      "fit": "Great Fit",
+      "why": "Direct match to your Bloomberg recon work (20–25 completed weekly, peak 33). This is your highest-probability lane — search this title first.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-sma-ops",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "SMA / Managed Accounts Operations Analyst",
+      "description": "Account onboarding, restrictions, recon files, and PM/sponsor support for separately managed account and UMA platforms.",
+      "salary": "$85k–$115k",
+      "requiredSkills": ["SMA/UMA platforms", "Account onboarding", "Reconciliation", "Client service"],
+      "fit": "Great Fit",
+      "why": "You supported 650+ SMAs and CITs at Bloomberg — you can claim this experience by name. Best pay-to-fit ratio of any lane.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-trade-support",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Middle Office / Trade Support Analyst",
+      "description": "Trade capture, confirmation, allocation, and lifecycle management between the desk and back office. Fix fails and mismatches before settlement.",
+      "salary": "$80k–$110k",
+      "requiredSkills": ["Trade lifecycle", "Trade capture", "Excel", "Front-to-back workflow"],
+      "fit": "Great Fit",
+      "why": "Natural next step from recon; large seat count at every bank in NYC and Jersey City.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-client-ops",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Client Service / PM-Facing Operations Analyst",
+      "description": "Operational point of contact for portfolio managers, sponsors, or institutional clients — inquiries, onboarding, reporting, issue resolution.",
+      "salary": "$75k–$100k",
+      "requiredSkills": ["Client service", "Portfolio manager support", "Communication", "Workflow management"],
+      "fit": "Great Fit",
+      "why": "You were the point of contact for 400+ institutional PMs — the exact story these roles hire for.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-corp-actions",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Corporate Actions Analyst",
+      "description": "Process mandatory and voluntary corporate actions (dividends, splits, tenders), reconcile entitlements, notify holders.",
+      "salary": "$70k–$95k",
+      "requiredSkills": ["Corporate actions", "Reconciliation", "Deadline management", "DTCC/SWIFT exposure a plus"],
+      "fit": "Great Fit",
+      "why": "Recon-adjacent, detail-driven, and often paired with reconciliation in the same posting (e.g. Oppenheimer).",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-investor-services",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Fund / Investor Services Analyst (incl. Alternatives)",
+      "description": "Investor onboarding, capital calls/distributions, transfers, and reporting for mutual funds, CITs, or private funds.",
+      "salary": "$75k–$100k",
+      "requiredSkills": ["Investor services", "Fund operations", "Client communication", "Excel"],
+      "fit": "Great Fit",
+      "why": "Your CIT experience maps here; alternatives ops (Lord Abbett-style seats) is a growing area with early-career openings.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-custody-ops",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Asset Servicing / Custody Operations Analyst",
+      "description": "Safekeeping, income processing, tax reclaims, and client asset servicing at custody banks.",
+      "salary": "$70k–$90k",
+      "requiredSkills": ["Asset servicing", "Reconciliation", "Client reporting", "Process improvement"],
+      "fit": "Great Fit",
+      "why": "Custody banks (BNY, State Street, Northern Trust) hire this profile in volume — the numbers game works in your favor here.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-settlements",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Settlements Analyst",
+      "description": "Ensure trades settle on time across markets; manage fails, buy-ins, and counterparty communication.",
+      "salary": "$85k–$120k",
+      "requiredSkills": ["Settlements", "Fails management", "Excel", "Counterparty communication"],
+      "fit": "Stretch",
+      "why": "New product knowledge but the same break-resolution muscle; Goldman-tier settlements seats pay near the top of your range.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-product-control",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Product Control / P&L Analyst",
+      "description": "Daily P&L production and validation for a trading desk; explain P&L drivers, reconcile front-to-back.",
+      "salary": "$90k–$125k",
+      "requiredSkills": ["P&L analysis", "Reconciliation", "Accounting basics", "Excel"],
+      "fit": "Stretch",
+      "why": "Higher pay and a real trajectory (desk-facing finance). Your MBA + recon background gets you in the interview; prep the accounting story.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-valuations",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Valuations / Pricing Analyst (IPV)",
+      "description": "Independent price verification of positions; source vendor prices, investigate stale/broken marks.",
+      "salary": "$90k–$125k",
+      "requiredSkills": ["Pricing/valuation", "Market data vendors", "Excel", "Analytical rigor"],
+      "fit": "Stretch",
+      "why": "Bloomberg market-data fluency is a genuine edge; avoid the deeply quant versions (non-linear rates etc.).",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-risk-analyst",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Market / Counterparty Risk Analyst",
+      "description": "Monitor exposures, margin, and limits; produce risk reporting for trading businesses.",
+      "salary": "$90k–$120k",
+      "requiredSkills": ["Risk reporting", "Excel", "Product knowledge", "Communication"],
+      "fit": "Stretch",
+      "why": "Pays well and values process discipline; skip postings that require heavy SQL/Python.",
+      "dateAdded": "2026-07-02"
+    },
+    {
+      "id": "role-ops-transformation",
+      "_created": "2026-07-02T05:00:00.000Z",
+      "title": "Operations Transformation / Process Automation Analyst",
+      "description": "Improve and automate operations workflows — low-code tools, AI adoption, process redesign inside ops teams.",
+      "salary": "$85k–$115k",
+      "requiredSkills": ["Process improvement", "Excel", "Low-code/AI tools", "Stakeholder management"],
+      "fit": "Exploring",
+      "why": "Your stated preference — the AI/automation angle. Fewer postings, but your MBA analytics concentration + ops background is the intended profile.",
+      "dateAdded": "2026-07-02"
+    }
+  ]
+}

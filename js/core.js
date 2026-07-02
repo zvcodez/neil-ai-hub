@@ -101,7 +101,9 @@ export function today() {
 
 export function fmtDate(d) {
   if (!d) return '';
-  const date = new Date(d);
+  // Date-only strings parse as UTC midnight, which renders as the previous
+  // day in western timezones — pin them to local noon instead.
+  const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(d) ? d + 'T12:00:00' : d);
   if (isNaN(date)) return d;
   return date.toLocaleDateString(undefined, {
     year: 'numeric',

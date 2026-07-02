@@ -398,32 +398,61 @@ select, .sort select {
 .company-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 .needs-followup { }
 
-/* Kanban */
-.kanban { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; align-items: flex-start; }
-.kanban-col {
-  flex: 1; min-width: 220px; background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 12px; transition: border-color 0.15s, background 0.15s;
+/* Applications — status accordion (one section open at a time) */
+.kanban-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--col, var(--accent)); flex: none; }
+.kanban-count { background: var(--surface-2); color: var(--text-muted); border-radius: 999px; padding: 1px 8px; font-size: 12px; font-weight: 600; }
+.app-sections { display: flex; flex-direction: column; gap: 10px; }
+.app-section { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.app-section-head {
+  display: flex; align-items: center; gap: 9px; width: 100%; border: none; background: none; text-align: left;
+  color: var(--text); font: inherit; font-size: 14px; font-weight: 700; padding: 12px 14px; cursor: pointer;
 }
-.kanban-col.droppable { border-style: dashed; }
-.kanban-col.droppable:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, var(--bg-2)); }
-.kanban-head {
-  display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700;
-  color: var(--text); margin-bottom: 12px; padding: 0 2px;
+.app-section-head:hover { background: color-mix(in srgb, var(--col, var(--accent)) 5%, transparent); }
+.app-section.open > .app-section-head { border-bottom: 1px solid var(--border); }
+.app-chevron { margin-left: auto; color: var(--text-muted); font-size: 18px; line-height: 1; transition: transform 0.15s; }
+.app-chevron.open { transform: rotate(90deg); }
+.app-section-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; }
+.app-section-empty { margin: 0; font-size: 13px; }
+.app-batch { display: flex; flex-direction: column; gap: 8px; }
+.app-batch + .app-batch { margin-top: 12px; }
+.app-batch-head {
+  display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
 }
-.kanban-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--col); }
-.kanban-count { margin-left: auto; background: var(--surface-2); color: var(--text-muted); border-radius: 999px; padding: 1px 8px; font-size: 12px; }
-.kanban-cards { display: flex; flex-direction: column; gap: 9px; min-height: 24px; }
-.app-card {
-  position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 12px; cursor: grab; box-shadow: var(--shadow-sm); transition: box-shadow 0.15s, transform 0.1s;
+
+/* Compact application row */
+.app-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 10px 12px; cursor: pointer; box-shadow: var(--shadow-sm); transition: box-shadow 0.15s;
 }
-.app-card:active { cursor: grabbing; }
-.app-card:hover { box-shadow: var(--shadow); }
-.app-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-.app-card-head .icon-btn { opacity: 0; width: 22px; height: 22px; margin: -3px -3px 0 0; }
-.app-card:hover .icon-btn { opacity: 1; }
-.app-role { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
-.app-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 12px; }
+.app-row:hover { box-shadow: var(--shadow); }
+.app-row-main { flex: 1; min-width: 230px; }
+.app-row-title { font-size: 14px; line-height: 1.35; overflow-wrap: anywhere; }
+.app-row-sep { color: var(--text-muted); }
+.app-row-meta { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; overflow-wrap: anywhere; }
+.app-row-reason { font-size: 12.5px; color: var(--text-muted); font-style: italic; margin-top: 3px; }
+.app-row-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.app-row-actions a.icon-btn { display: inline-flex; align-items: center; justify-content: center; }
+.app-applied-q { display: flex; align-items: center; gap: 6px; }
+.app-applied-label { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.app-btn {
+  border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+  font: inherit; font-size: 12.5px; font-weight: 600; border-radius: 8px; padding: 5px 13px; cursor: pointer;
+}
+.app-btn.yes { background: #10b981; border-color: #10b981; color: #fff; }
+.app-btn.yes:hover { filter: brightness(1.07); }
+.app-btn.no:hover { border-color: #94a3b8; }
+.app-status-select {
+  border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+  font: inherit; font-size: 12px; border-radius: 8px; padding: 4px 6px; cursor: pointer; max-width: 160px;
+}
+.app-decline { flex-basis: 100%; display: flex; flex-direction: column; gap: 8px; cursor: default; }
+.app-decline textarea {
+  width: 100%; box-sizing: border-box; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg-2); color: var(--text); font: inherit; font-size: 13px; padding: 8px 10px; resize: vertical;
+}
+.app-decline-actions { display: flex; gap: 8px; }
 
 /* Projects pipeline ---------------------------------------------------------*/
 /* Horizontal board: stages left→right, projects within a stage side by side.
@@ -608,4 +637,14 @@ select, .sort select {
   .tl-row { grid-template-columns: 84px 24px 1fr; }
   .tl-date { font-size: 12px; }
   .searchbox { max-width: none; }
+
+  /* Career / applications on phones */
+  .subtab { padding: 10px 12px; font-size: 13.5px; }
+  .app-row { padding: 10px 12px; }
+  .app-row-main { min-width: 0; flex-basis: 100%; }
+  .app-row-actions { width: 100%; margin-left: 0; justify-content: flex-end; }
+  .app-btn { padding: 8px 18px; font-size: 13.5px; }   /* comfortable tap targets */
+  .app-status-select { padding: 7px 8px; font-size: 13px; }
+  .app-section-head { padding: 13px 14px; }
+  .app-section-body { padding: 10px 10px 12px; }
 }
