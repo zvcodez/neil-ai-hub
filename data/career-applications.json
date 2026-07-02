@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T05:11:23.286Z",
+  "updatedAt": "2026-07-02T05:16:13.897Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -32,6 +32,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T02:05:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-02T05:16:13.896Z"
         }
       ],
       "company": "Social Capital Resources (recruiter)",
@@ -40,8 +44,8 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SMAOps.docx",
       "salary": "$100k–$120k",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-02",
+      "status": "Applied",
       "notes": "Literally SMA operations — account setup, restrictions, recon files. Your Bloomberg SMA/CIT work is the exact match. ALSO message the recruiter directly (outreach send #1).",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SMAOps.docx"
     },
