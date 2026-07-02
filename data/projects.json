@@ -1,66 +1,6 @@
 {
-  "updatedAt": "2026-07-01T12:01:00+00:00",
+  "updatedAt": "2026-07-02T00:20:50.515581+00:00",
   "data": [
-    {
-      "id": "idea-gucci-app",
-      "_created": "2026-07-01T12:01:00+00:00",
-      "_stagedAt": "2026-07-01T12:01:00+00:00",
-      "name": "Gucci's App",
-      "description": "A dedicated app for Gucci — snap photos and videos of him anytime, saved and organized into albums so every moment is kept.",
-      "stage": "Idea",
-      "chatUrl": "",
-      "folder": "",
-      "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Open the app and instantly take a photo or video of Gucci\n• Everything saves automatically into his personal gallery\n• Organized into albums (e.g. by date, location, or mood/activity)\n• Built entirely around him — his name, his photos, his vibe\n• A dedicated place to collect every cute moment, all in one spot"
-    },
-    {
-      "id": "idea-macro-tracker",
-      "_created": "2026-07-01T12:00:00+00:00",
-      "_stagedAt": "2026-07-01T12:00:00+00:00",
-      "name": "Macro Tracker",
-      "description": "A simple app for logging food and tracking macros (calories, protein, carbs, fat) to support gym goals.",
-      "stage": "Idea",
-      "chatUrl": "",
-      "folder": "",
-      "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Log meals throughout the day and see running macro totals vs. daily targets\n• Set custom goals (e.g. high protein for muscle gain, calorie deficit for cutting)\n• Quick-add common foods or search a nutrition database\n• Daily/weekly summary so you can see patterns over time\n• Gym-focused: built around hitting protein targets, not just calorie counting"
-    },
-    {
-      "id": "idea-nights-out",
-      "_created": "2026-07-01T12:00:00+00:00",
-      "_stagedAt": "2026-07-01T12:00:00+00:00",
-      "name": "Nights Out memories app",
-      "description": "A shared app for friends to upload photos from a night out, compiled into a per-night gallery to look back on.",
-      "stage": "Idea",
-      "chatUrl": "",
-      "folder": "",
-      "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Each night out gets its own album — photos from everyone in the group land in one place\n• Friends can add pics from their phones during or after the night\n• Browse back through past nights like a timeline of memories\n• Simple and social — no faff, just upload and view\n• Could include the date, venue, or a title for each night"
-    },
-    {
-      "id": "idea-alcohol-scanner",
-      "_created": "2026-07-01T00:00:00+00:00",
-      "_stagedAt": "2026-07-01T00:00:00+00:00",
-      "name": "Alcohol Scanner & Tracker",
-      "description": "Point your phone at any beer or bottle to instantly see its nutrition info, health score, and reviews — and keep a log of everything you've scanned.",
-      "stage": "Idea",
-      "chatUrl": "",
-      "folder": "",
-      "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n• Personal inventory — everything you scan gets logged so you have a history of what you've tried\n• Health ranking: scores each drink based on how healthy (or not) it is — e.g. low-cal beers rank higher than sugary cocktails\n• Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n• Great use case: standing in the liquor store comparing two bottles — scan both and see which scores better on health and reviews"
-    },
     {
       "id": "idea-cc-push-notify",
       "_created": "2026-06-30T01:34:00+00:00",
@@ -165,8 +105,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Watch the closest-lean fallback and the jackpot/normal parlays actually fire and settle correctly over the next few slates with real games. Open items still sitting: recalibrating the market-blend weight from real CLV (needs more settled bets), and the knockout market-type product decision (Match Result vs To Qualify) flagged earlier.",
-      "lastDid": "Neil asked why the Home tab was showing a blank 'No play' card. Root cause: today's WC2026 slate genuinely had nothing clear the 5% edge bar (best was Senegal +4.4%). He asked whether POTD should also be price-banded like Next Best -- explained the EV math (a fixed edge is worth far more at longshot prices than favorite prices) and recommended leaving POTD on pure edge-rank; he agreed. Then built what he wanted: POTD now always shows something instead of a blank card -- falls back to the single highest-edge pick, flagged red 'Below our bar' instead of gold when nothing clears 5%. Confirmed with him that this sub-bar pick should still count in the model's tracked record (not just cosmetic) -- wired that through confidence tiers, edge coloring, the lock push, and rationale text so nothing overclaims it. Verified live against today's actual board before deploying.",
+      "nextStep": "Watch the growth-ranked POTD over the next few slates (tomorrow: Switzerland/Algeria Over 2.5 +116 is the lone flagged play under the new weights). Still open: recalibrate blend weights from real CLV once OddsPapi closing lines are wired and enough bets settle.",
+      "lastDid": "Full model review + output optimization for the Play of the Day. Ran the validation the backtest never did: scored the model's totals/BTTS probabilities on the real WC2026 group stage -- 1X2 skill re-confirmed, but totals/BTTS showed no skill beyond the base rate, and the feared knockout scoring bias turned out not to exist. Shipped two changes: per-market calibration weights (Match Result keeps 0.5 model weight; totals/BTTS drop to 0.35 so the market gets more of the vote where the model hasn't proven itself), and -- Neil's pick from three options -- POTD ranking switched from raw edge to a growth score (EV / (decimal-1), the Kelly fraction): same 5% edge bar to qualify, but at similar value the likelier winner ranks first, so the record converges positive faster if the edge is real. Verified synthetically + against the live board, deployed to Railway.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
         {
