@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T05:17:41.553Z",
+  "updatedAt": "2026-07-02T05:18:08.020Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -96,6 +96,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T02:05:00.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-02T05:18:08.020Z"
         }
       ],
       "company": "Lord Abbett",
@@ -105,9 +109,11 @@
       "salary": "$80k–$95k",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Early-career investor-ops seat; your Bloomberg PM-support story maps well. Easiest commute of the six. Apply via Lord Abbett careers site.",
-      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_LordAbbett.docx"
+      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_LordAbbett.docx",
+      "noApplyReason": "it says the job posting is closed, please do not apply.",
+      "noApplyAt": "2026-07-02T05:18:08.020Z"
     },
     {
       "id": "app-neuberger-mo",
