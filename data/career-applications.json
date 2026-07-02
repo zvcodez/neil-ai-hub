@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T05:18:08.020Z",
+  "updatedAt": "2026-07-02T05:18:50.559Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -76,6 +76,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T02:05:00.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-02T05:18:50.559Z"
         }
       ],
       "company": "Goldman Sachs",
@@ -85,9 +89,11 @@
       "salary": "$97k–$126k",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Stretch: biggest brand, 2+ yrs ops + advanced Excel — you clear both, but settlements itself is new to you.",
-      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_GoldmanSachs.docx"
+      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_GoldmanSachs.docx",
+      "noApplyReason": "it says: Prior experience must include two (2) years with: trade booking reviews; validating trade information (including asset class- and region-specific trade information), streamlining essential reporting, and knowledge sharing; communicating complex issues and concepts to a wide array of internal partners with differing levels of product experience",
+      "noApplyAt": "2026-07-02T05:18:50.559Z"
     },
     {
       "id": "app-lordabbett-gis",
