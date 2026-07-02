@@ -1,124 +1,252 @@
 {
-  "updatedAt": "2026-07-02T03:57:05.989610+00:00",
-  "data": [
-    {
-      "id": "4410486168",
-      "company": "Citi",
-      "title": "Securities & Derivatives Intermediate Analyst",
-      "url": "https://www.linkedin.com/jobs/view/4410486168",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4434374193",
-      "company": "Social Capital Resources",
-      "title": "SMA Operations Associate",
-      "url": "https://www.linkedin.com/jobs/view/4434374193",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4405040511",
-      "company": "Oppenheimer & Co.",
-      "title": "Reconciliation & Corporate Actions Analyst",
-      "url": "https://www.linkedin.com/jobs/view/4405040511",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4432698794",
-      "company": "Goldman Sachs",
-      "title": "Associate, Settlements GBM",
-      "url": "https://www.linkedin.com/jobs/view/4432698794",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "wsc-468329164",
-      "company": "Lord Abbett",
-      "title": "Analyst, Global Investor Services - Alternatives",
-      "url": "https://www.wallstreetcareers.com/jobs/468329164-analyst-global-investor-services-alternatives",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4415104503",
-      "company": "Neuberger Berman",
-      "title": "Middle Office Ops Senior Analyst/Associate",
-      "url": "https://www.linkedin.com/jobs/view/4415104503",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4424738805",
-      "company": "TD",
-      "title": "Fixed Income DTC Settlement Analyst",
-      "url": "https://www.linkedin.com/jobs/view/4424738805",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4368670761",
-      "company": "JPMorgan",
-      "title": "Valuation Control Group Non-Linear Rates Associate",
-      "url": "https://www.linkedin.com/jobs/view/4368670761",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4403775067",
-      "company": "Goldman Sachs",
-      "title": "Controllers, Private Valuation Oversight/Product Control Associate",
-      "url": "https://www.linkedin.com/jobs/view/4403775067",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4425280081",
-      "company": "Millennium",
-      "title": "Portfolio Pricing and Valuations Analyst",
-      "url": "https://www.linkedin.com/jobs/view/4425280081",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4430123576",
-      "company": "SS&C",
-      "title": "Associate, Middle Office Operations",
-      "url": "https://www.linkedin.com/jobs/view/4430123576",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4434079609",
-      "company": "Schroders",
-      "title": "Middle Office Analyst",
-      "url": "https://www.linkedin.com/jobs/view/4434079609",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4423054747",
-      "company": "Cohen & Steers",
-      "title": "Associate, Investment Operations",
-      "url": "https://www.linkedin.com/jobs/view/4423054747",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4432212610",
-      "company": "JPMorgan",
-      "title": "Alternative Investments Support Specialist",
-      "url": "https://www.linkedin.com/jobs/view/4432212610",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4426154620",
-      "company": "Apollo",
-      "title": "Product Control Associate, Asset Backed Finance",
-      "url": "https://www.linkedin.com/jobs/view/4426154620",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4434678765",
-      "company": "ING",
-      "title": "Associate, Treasury Product Control",
-      "url": "https://www.linkedin.com/jobs/view/4434678765",
-      "date": "2026-07-01"
-    },
-    {
-      "id": "4429105176",
-      "company": "Waterfall Asset Management",
-      "title": "Valuations Analyst",
-      "url": "https://www.linkedin.com/jobs/view/4429105176",
-      "date": "2026-07-01"
-    }
-  ]
+ "updatedAt": "2026-07-02T13:52:29.000Z",
+ "data": [
+  {
+   "id": "4410486168",
+   "company": "Citi",
+   "title": "Securities & Derivatives Intermediate Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4410486168",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4434374193",
+   "company": "Social Capital Resources",
+   "title": "SMA Operations Associate",
+   "url": "https://www.linkedin.com/jobs/view/4434374193",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4405040511",
+   "company": "Oppenheimer & Co.",
+   "title": "Reconciliation & Corporate Actions Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4405040511",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4432698794",
+   "company": "Goldman Sachs",
+   "title": "Associate, Settlements GBM",
+   "url": "https://www.linkedin.com/jobs/view/4432698794",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "wsc-468329164",
+   "company": "Lord Abbett",
+   "title": "Analyst, Global Investor Services - Alternatives",
+   "url": "https://www.wallstreetcareers.com/jobs/468329164-analyst-global-investor-services-alternatives",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4415104503",
+   "company": "Neuberger Berman",
+   "title": "Middle Office Ops Senior Analyst/Associate",
+   "url": "https://www.linkedin.com/jobs/view/4415104503",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4424738805",
+   "company": "TD",
+   "title": "Fixed Income DTC Settlement Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4424738805",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4368670761",
+   "company": "JPMorgan",
+   "title": "Valuation Control Group Non-Linear Rates Associate",
+   "url": "https://www.linkedin.com/jobs/view/4368670761",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4403775067",
+   "company": "Goldman Sachs",
+   "title": "Controllers, Private Valuation Oversight/Product Control Associate",
+   "url": "https://www.linkedin.com/jobs/view/4403775067",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4425280081",
+   "company": "Millennium",
+   "title": "Portfolio Pricing and Valuations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4425280081",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4430123576",
+   "company": "SS&C",
+   "title": "Associate, Middle Office Operations",
+   "url": "https://www.linkedin.com/jobs/view/4430123576",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4434079609",
+   "company": "Schroders",
+   "title": "Middle Office Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4434079609",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4423054747",
+   "company": "Cohen & Steers",
+   "title": "Associate, Investment Operations",
+   "url": "https://www.linkedin.com/jobs/view/4423054747",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4432212610",
+   "company": "JPMorgan",
+   "title": "Alternative Investments Support Specialist",
+   "url": "https://www.linkedin.com/jobs/view/4432212610",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4426154620",
+   "company": "Apollo",
+   "title": "Product Control Associate, Asset Backed Finance",
+   "url": "https://www.linkedin.com/jobs/view/4426154620",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4434678765",
+   "company": "ING",
+   "title": "Associate, Treasury Product Control",
+   "url": "https://www.linkedin.com/jobs/view/4434678765",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4429105176",
+   "company": "Waterfall Asset Management",
+   "title": "Valuations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4429105176",
+   "date": "2026-07-01"
+  },
+  {
+   "id": "4434357231",
+   "company": "Neuberger Berman",
+   "title": "Client Analyst, Institutional Client Group",
+   "url": "https://www.linkedin.com/jobs/view/client-analyst-at-neuberger-4434357231",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4426369902",
+   "company": "DTCC",
+   "title": "Corporate Actions Senior Analyst",
+   "url": "https://www.linkedin.com/jobs/view/corporate-actions-senior-analyst-at-the-depository-trust-clearing-corporation-dtcc-4426369902",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4434751183",
+   "company": "DTCC",
+   "title": "Treasury Senior Analyst",
+   "url": "https://www.linkedin.com/jobs/view/treasury-senior-analyst-at-the-depository-trust-clearing-corporation-dtcc-4434751183",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4423338999",
+   "company": "JPMorganChase",
+   "title": "External Reporting Controller, Analyst",
+   "url": "https://www.linkedin.com/jobs/view/external-reporting-controller-analyst-at-jpmorganchase-4423338999",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4435889867",
+   "company": "Blue Owl Capital",
+   "title": "Global Client Engagement Analyst",
+   "url": "https://www.linkedin.com/jobs/view/global-client-engagement-%E2%80%93-analyst-at-blue-owl-capital-4435889867",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4433516263",
+   "company": "SMBC Group",
+   "title": "Cash Management Business Analyst, Associate",
+   "url": "https://www.linkedin.com/jobs/view/cash-management-business-analyst-associate-level-at-smbc-group-4433516263",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4434371158",
+   "company": "Social Capital Resources (recruiter)",
+   "title": "Hedge Fund Client Services Analyst",
+   "url": "https://www.linkedin.com/jobs/view/hedge-fund-client-services-analyst-at-social-capital-resources-4434371158",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4434790402",
+   "company": "Atlantic Group (recruiter, $20B multi-manager HF)",
+   "title": "Middle Office Analyst",
+   "url": "https://www.linkedin.com/jobs/view/middle-office-analyst-at-atlantic-group-4434790402",
+   "date": "2026-07-02"
+  },
+  {
+   "id": "4423535664",
+   "company": "Fidelity Investments",
+   "title": "Associate Analyst, Corporate Actions (JC)",
+   "url": "https://www.linkedin.com/jobs/view/4423535664",
+   "date": "2026-07-02",
+   "note": "dropped: requires 3 yrs corporate actions"
+  },
+  {
+   "id": "4425631112",
+   "company": "SS&C",
+   "title": "Associate Manager, Middle Office Ops",
+   "url": "https://www.linkedin.com/jobs/view/4425631112",
+   "date": "2026-07-02",
+   "note": "dropped: 4+ yrs required"
+  },
+  {
+   "id": "4433326386",
+   "company": "Selby Jennings",
+   "title": "Middle Office Specialist",
+   "url": "https://www.linkedin.com/jobs/view/4433326386",
+   "date": "2026-07-02",
+   "note": "dropped: 3+ yrs, $160k+ senior"
+  },
+  {
+   "id": "4435816808",
+   "company": "MUFG",
+   "title": "Derivatives Middle Office Trade Support",
+   "url": "https://www.linkedin.com/jobs/view/4435816808",
+   "date": "2026-07-02",
+   "note": "dropped: 5-10+ yrs"
+  },
+  {
+   "id": "4433558307",
+   "company": "Polymer Capital",
+   "title": "Associate, Middle Office",
+   "url": "https://www.linkedin.com/jobs/view/4433558307",
+   "date": "2026-07-02",
+   "note": "dropped: 5 yrs"
+  },
+  {
+   "id": "4415111654",
+   "company": "Daiwa",
+   "title": "Asset Services Specialist",
+   "url": "https://www.linkedin.com/jobs/view/4415111654",
+   "date": "2026-07-02",
+   "note": "dropped: 5+ yrs corporate actions"
+  },
+  {
+   "id": "4425549376",
+   "company": "Stifel",
+   "title": "Fund Banking Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4425549376",
+   "date": "2026-07-02",
+   "note": "dropped: $55-65k below band"
+  },
+  {
+   "id": "4434454414",
+   "company": "Insight Investment",
+   "title": "Market Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/4434454414",
+   "date": "2026-07-02",
+   "note": "dropped: loan closing expertise required"
+  },
+  {
+   "id": "4436198531",
+   "company": "JPMorganChase",
+   "title": "Trade Support Associate I",
+   "url": "https://www.linkedin.com/jobs/view/4436198531",
+   "date": "2026-07-02",
+   "note": "dropped: requires trading desk support experience"
+  }
+ ]
 }
