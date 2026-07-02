@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T05:16:13.897Z",
+  "updatedAt": "2026-07-02T05:17:41.553Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -116,6 +116,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T02:05:00.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-02T05:17:41.553Z"
         }
       ],
       "company": "Neuberger Berman",
@@ -125,9 +129,11 @@
       "salary": "$75k–$125k",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Stretch — wants derivatives/middle-office experience you don't have yet, but recon + PM point-of-contact fit is real.",
-      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Neuberger.docx"
+      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Neuberger.docx",
+      "noApplyReason": "it literally says: Preferred:\n\nKnowledge of technical side of new accounts, reporting and onboarding.\nStrong knowledge of BlackRock Aladdin.\nFamiliarity with SWIFT messaging and Eze.",
+      "noApplyAt": "2026-07-02T05:17:41.553Z"
     }
   ]
 }
