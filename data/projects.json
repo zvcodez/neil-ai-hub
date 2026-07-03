@@ -1,65 +1,93 @@
 {
-  "updatedAt": "2026-07-02T18:30:00.000Z",
+  "updatedAt": "2026-07-02T19:35:00.000Z",
   "data": [
     {
       "id": "idea-movie-taste",
       "_created": "2026-07-02T18:30:00.000Z",
-      "_stagedAt": "2026-07-02T18:30:00.000Z",
-      "name": "Personalized movie/TV app (Letterboxd, but for you)",
-      "description": "A film and TV tracking app like Letterboxd, but built around your personal taste — it learns what you love and tailors everything to you instead of just being a shared social diary.",
-      "stage": "Idea",
+      "_stagedAt": "2026-07-02T19:30:00.000Z",
+      "name": "Reel — personalized movie/TV app (Letterboxd, but for you)",
+      "description": "A film and TV tracking app like Letterboxd, but built around your personal taste — rate what you've seen and it learns your leanings, then ranks everything unseen against your profile with a 'why we picked this' reason.",
+      "stage": "Building",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/movie-taste",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
-      "notes": "• Log, rate and review the movies/shows you watch, like Letterboxd — but the whole app bends around your taste\n• Builds a real taste profile from your ratings (favourite genres, directors, actors, moods, decades) and gets sharper over time\n• Tailored recommendations: 'what to watch tonight' picks that actually fit you, not generic trending lists\n• Mood/context aware — tell it you want something light, a rainy-day rewatch, or a 90-min film and it filters to that\n• Could use AI to explain WHY it thinks you'll like something ('because you rated X and Y highly')\n• Still keep the fun social bits (friends, watchlists, reviews) but personalization is the headline\n• Open question: pull data from a public film DB (e.g. TMDB) for posters/metadata"
+      "nextStep": "Neil: open ~/Claude/movie-taste/index.html and rate a few films to see the tailored picks. Then decide: wire the live TMDB catalogue (free API key) for the full library + real posters, or keep refining the taste engine.",
+      "lastDid": "Built a working v1 single-file web app 'Reel' and verified it in-browser: a curated 52-title offline library, a real taste engine (each rating pushes/pulls the genres, moods, decades & directors it carries; unseen titles scored by profile match), a For You ranking with match % + 'because you rate X highly' explanations, mood + film/series filters, a Your Taste visual panel, Browse and Watchlist. Confirmed: rating 3 dark/cerebral crime titles surfaced Fight Club, Dark, No Country, The Wire, Get Out at the top.",
+      "notes": "• Log, rate and review the movies/shows you watch, like Letterboxd — but the whole app bends around your taste\n• Builds a real taste profile from your ratings (favourite genres, directors, moods, decades) and gets sharper over time\n• Tailored recommendations: 'what to watch tonight' picks that actually fit you, not generic trending lists\n• Mood/context aware — pick a mood (cozy, intense, cerebral…) and it filters to that\n• Explains WHY it thinks you'll like something ('because you rate X and Y highly')\n• Still keep the fun social bits (friends, watchlists, reviews) but personalization is the headline\n• BUILT (v1): working offline prototype, no API key needed. Next: pull a live film DB (e.g. TMDB) for the full catalogue + posters",
+      "log": [
+        {
+          "id": "log-reel-1",
+          "ts": "2026-07-02T19:30:00.000Z",
+          "text": "Built and browser-verified a working v1 ('Reel'): curated offline library + a genuine taste engine that learns from your star ratings and ranks unseen titles by profile match, each with a match % and a plain-English reason. Includes mood/type filters, a taste-profile visualizer, browse and watchlist. Single self-contained HTML file — double-click to run, ratings persist locally. Git repo initialized."
+        }
+      ]
     },
     {
       "id": "idea-going-out",
       "_created": "2026-07-02T18:29:00.000Z",
-      "_stagedAt": "2026-07-02T18:29:00.000Z",
-      "name": "Going-out app (nights at the bars with mates)",
-      "description": "An app for when you and your friends head out — bars, drinks, a night on the town. The exact hook isn't nailed down yet, but there's a real 'group night out' idea in here worth digging into.",
-      "stage": "Idea",
+      "_stagedAt": "2026-07-02T19:30:00.000Z",
+      "name": "Rally — going-out app (nights at the bars with mates)",
+      "description": "The live, during-the-night companion for going out with your friends: one shared board showing who's in, where everyone is, and where you're heading next — instead of 40 unread group texts.",
+      "stage": "Building",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/going-out",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Talk through the core hook — what's the ONE thing it does that the group WhatsApp doesn't (coordination? live location? bar/deal discovery? a game?).",
-      "lastDid": "",
-      "notes": "• Core seed: something for the actual night out with your friends — bars, drinks, being out together (not memories after the fact, that's the separate Nights Out app)\n• Direction still open — a few angles worth exploring:\n  – Coordination: where's everyone, who's in tonight, which bar next, live 'meet here' pin\n  – Discovery: nearby bars, happy-hour deals, how busy a place is right now\n  – Social game layer: dares, challenges, group scorecards to make the night more fun\n  – Round/tab tracking: whose round is it, split the bill\n• Feels closely related to [[idea-nights-out]] (memories) and could share a group — this one is the LIVE, during-the-night companion\n• Next: pick the single strongest hook before building anything"
+      "nextStep": "Neil: read ~/Claude/going-out/BRIEF.md and try the prototype (index.html) — then confirm the hook. Is the live 'crew board' the right wedge, or did you picture discovery (finding the bar) or a game layer? (See the 3 open questions at the end of the brief.)",
+      "lastDid": "Since the hook wasn't nailed yet, I wrote a product brief that PICKS one: the app is the live during-the-night crew board (who's in · where you are · where next), deliberately NOT another photos-after app (that's the separate Nights Out idea). Then built a working prototype 'Rally' and verified it: create tonight, add your crew, per-person live status (In/Maybe/On my way/Done), propose + vote venues with a computed 'Next stop', and a live activity feed. Parked the discovery/game/rounds layers as v2.",
+      "notes": "• The wedge: the group chat is bad at the one thing that matters in the moment — who's actually out, where is everyone, where next. This app is that one glanceable screen.\n• HOOK PICKED (v1): the live crew board — statuses, venue voting → 'Next stop', activity pulse. Useful the first night, needs no seed content, and it's the thing the group chat can't do.\n• Deliberately NOT the memories app — this is the LIVE companion; it could hand off to [[idea-nights-out]] at the end of the night.\n• Parked for v2+: bar discovery/deals (needs a places API), a social game/dares layer, rounds/split-the-tab.\n• BUILT: working single-device prototype + full product brief (BRIEF.md). Next: confirm the hook with Neil, then real multi-device sync.",
+      "log": [
+        {
+          "id": "log-rally-1",
+          "ts": "2026-07-02T19:30:00.000Z",
+          "text": "Turned the fuzzy 'something for going out' idea into a decision: wrote a product brief that picks the hook (the live during-the-night crew board) over the alternatives (discovery / game / rounds), with a comparison table and open questions. Then built and browser-verified a working prototype 'Rally': tonight's board with per-person live status, venue proposals + voting that compute a 'Next stop', and an activity feed. Single-file HTML, git repo initialized. Needs Neil to confirm the hook, then real multi-device sync."
+        }
+      ]
     },
     {
       "id": "idea-spotify-dj",
       "_created": "2026-07-02T18:28:00.000Z",
-      "_stagedAt": "2026-07-02T18:28:00.000Z",
-      "name": "Spotify DJ / vibe-based queue app",
-      "description": "An app where you 'DJ' your own Spotify — queue up tracks and get recommendations based on the vibe you're feeling, possibly by wiring Claude up to a Spotify connector to drive the playback.",
-      "stage": "Idea",
+      "_stagedAt": "2026-07-02T19:30:00.000Z",
+      "name": "Vibe DJ — Spotify vibe-based queue app",
+      "description": "An app where you 'DJ' your own Spotify by feel — pick a vibe and it auto-builds a queue that flows, with recommendations that match the mood; the dream version lets you just talk to it via a Claude + Spotify connector.",
+      "stage": "Building",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/spotify-dj",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Check whether a Spotify connector/MCP exists that can control playback + queue, and what the API allows (queue control needs Spotify Premium).",
-      "lastDid": "",
-      "notes": "• 'DJ from the app': control your Spotify — queue songs, skip, build the set on the fly\n• Vibe-based recommendations: describe the mood ('late-night chill', 'hype pre-game', 'sunny drive') and it suggests/queues tracks that match\n• Dream version: Claude connected to Spotify via a connector so you can just talk to it — 'keep this energy going', 'something slower next' — and it manages the queue\n• Could read the current song/audio features and extend the vibe automatically (seamless auto-DJ)\n• Great for parties, pre-drinks, background at home — hands-off but still YOUR taste\n• Technical notes to confirm: Spotify Web API can add-to-queue and read now-playing but queue control needs Premium; there may be an existing Spotify MCP/connector to build on\n• Nice tie-in with the going-out / nights ecosystem"
+      "nextStep": "NEEDS NEIL (the one blocker): create a free Spotify Developer app + confirm you have Premium, then send me the Client ID — full steps in ~/Claude/spotify-dj/SETUP.md. Meanwhile the demo (index.html) is playable now. Then I wire PKCE auth + real audio features + playback.",
+      "lastDid": "Built a working demo 'Vibe DJ' and verified it in-browser: 8 vibe tiles (Chill/Hype/Focus/Party/Sunset/Late night/In my feels/Throwback) that each auto-build a ~12-track set ordered to flow (ease in → peak → cool down), a now-playing bar with simulated playback + transport, 'recommend one more', a searchable library to queue from, and conversational vibe-shift buttons (↑Energy / ↓Calm / Happier / Moodier). The engine uses energy/valence scoring — exactly Spotify's own audio-feature fields — so it ports straight over. Also wrote SETUP.md: the exact real-Spotify path (PKCE auth, /recommendations with target features, Web Playback SDK/Connect, and the Claude-connector 'talk to it' version).",
+      "notes": "• 'DJ from the app': pick a vibe, it builds and plays a set; skip/queue/shift on the fly\n• Vibe-based: choose a mood and it queues tracks that match, ordered to flow\n• Dream version: Claude + a Spotify connector so you just talk to it ('keep this energy', 'something slower next') and it manages the queue — SETUP.md sketches this\n• BUILT: a fully interactive DEMO (real vibe engine + queue + recommendations; simulated playback + local library). The engine's energy/valence fields ARE Spotify's audio-feature names, so it swaps in directly.\n• ONE BLOCKER only Neil can clear: a Spotify Developer app (free) + Premium (needed to control playback). Steps in SETUP.md.\n• Nice tie-in with the going-out / nights ecosystem",
+      "log": [
+        {
+          "id": "log-vibedj-1",
+          "ts": "2026-07-02T19:30:00.000Z",
+          "text": "Built and browser-verified a working DEMO ('Vibe DJ'): 8 vibe tiles that each auto-build a ~12-track set ordered to flow, simulated now-playing + transport, recommend-one-more, a searchable queue library, and conversational vibe-shift controls. The scoring runs on energy/valence — Spotify's own audio-feature fields — so it ports straight to the real API. Also wrote SETUP.md documenting the exact real-Spotify wiring (PKCE auth, /recommendations with target features, Web Playback SDK vs Connect, and the Claude-connector 'just talk to it' version). Blocked only on Neil creating a Spotify dev app + Premium; demo is playable now. Git repo initialized."
+        }
+      ]
     },
     {
       "id": "idea-wedding-wagers",
       "_created": "2026-07-02T18:27:00.000Z",
-      "_stagedAt": "2026-07-02T18:27:00.000Z",
-      "name": "Wedding wagers (guest betting) — with Amar",
-      "description": "A wedding-industry app (idea with Amar) that lets guests place friendly bets/wagers on how the day unfolds — e.g. 'will the bride cry?' — to make the celebration more interactive and fun.",
-      "stage": "Idea",
+      "_stagedAt": "2026-07-02T19:30:00.000Z",
+      "name": "Vow Bets — wedding guest wagers (with Amar)",
+      "description": "A wedding-industry app (idea with Amar) that lets guests place friendly play-money bets on how the day unfolds — 'will the bride cry?', 'speech over 5 min?' — a shared game with a live leaderboard that makes the celebration more fun.",
+      "stage": "Building",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/wedding-wagers",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Decide the model: fun/free 'for bragging rights' (simplest, no legal/gambling issues) vs. real-money wagering (regulated gambling — big legal hurdle). Recommend starting play-money.",
-      "lastDid": "",
-      "notes": "• Idea co-owned with Amar — for the wedding industry\n• Guests place bets on outcomes during the wedding day to make it more entertaining\n• Example markets: 'will the bride cry at any point?', 'will the best man's speech run over X minutes?', 'first dance song?', 'who catches the bouquet?', 'will the couple be late?'\n• The couple (or organiser) could set up custom prop bets for their specific day; guests join via a code/QR at the reception\n• Live leaderboard through the night; reveal results as things happen — a shared game everyone at the wedding plays\n• KEY DECISION — money model:\n  – Play-money / points only = pure fun, bragging rights, no gambling regulation (recommended v1)\n  – Real-money wagers = actual gambling, heavily regulated by state/country, needs licensing — treat as a much later, much bigger step\n• Monetisation ideas (non-gambling): couples pay to host, premium market packs, sponsor prizes\n• Fits the wedding market alongside registries/planners as an 'entertainment add-on'"
+      "nextStep": "Neil: try ~/Claude/wedding-wagers/index.html (place a bet, flip on Host mode, resolve it). Then loop in Amar on which half he wants to own. Product call to lock: keep v1 play-money only (recommended — no gambling regulation). Build step: real multi-device rooms (join by code/QR).",
+      "lastDid": "Built a working v1 prototype 'Vow Bets' and verified the full loop end-to-end in-browser: create the book (couple/date/host) which seeds 8 classic wedding prop bets with decimal odds, add guests with 1000 play chips each, 'pass the phone' to switch bettor, place bets with live payout preview (chips deduct), and Host mode → resolve a market → winners auto-paid. Confirmed: 100 chips @ 1.40× took the balance 1000 → 900 → 1040 on a win. Also supports adding custom prop bets, a leaderboard, and a My Bets view. Deliberately play-money only (no gambling/regulation).",
+      "notes": "• Idea co-owned with Amar — for the wedding industry\n• Guests place bets on outcomes during the day to make it more entertaining; live leaderboard; results revealed as things happen\n• Example markets (8 seeded): bride cries, best man's speech over 5 min, who cries first, first dance flawless/fumble, couple late, bouquet catcher, surprise announcement, total speech time\n• Couple/organiser sets up custom prop bets; guests would join via code/QR at the reception (multi-device is the next build)\n• KEY DECISION — money model (v1 answered: PLAY-MONEY):\n  – Play-money / chips = pure fun, bragging rights, NO gambling regulation → this is what's built\n  – Real-money = actual gambling, heavily regulated, needs licensing — separate much-bigger later step, NOT a v1 toggle\n• Monetisation (non-gambling): couples pay to host, premium market packs, sponsor prizes\n• BUILT: working play-money prototype, full bet→resolve→payout loop verified. Next: real multi-device rooms; talk to Amar.",
+      "log": [
+        {
+          "id": "log-vowbets-1",
+          "ts": "2026-07-02T19:30:00.000Z",
+          "text": "Built and browser-verified a working v1 ('Vow Bets', play-money): setup seeds 8 classic wedding prop bets with odds; add guests with 1000 chips; pass-the-phone bettor switch; place bets with live payout preview; Host mode resolves a market and auto-pays winners. Verified the full loop (100 @ 1.40x → 1000→900→1040 on a win). Custom markets, leaderboard, My Bets all work. Single-file HTML, git repo initialized. Deliberately play-money to avoid gambling regulation. Next: multi-device rooms + loop in Amar."
+        }
+      ]
     },
     {
       "id": "idea-gucci-app",
