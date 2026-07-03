@@ -316,50 +316,175 @@ function ApplicationsTab({ accent }) {
   </div>`;
 }
 
-// ---- Networking -------------------------------------------------------------
-const MET_WAYS = ['LinkedIn', 'Referral', 'Event', 'Cold outreach', 'Other'];
+// ---- Networking (one outreach target per application) -----------------------
+const NET_STATUSES = ['To Contact', 'Contacted', 'Did Not Contact'];
+const netStatusColor = { 'To Contact': '#f97316', Contacted: '#10b981', 'Did Not Contact': '#94a3b8' };
+const DEFAULT_CADENCE = 'Send Tue to Thu morning. If no reply, one polite bump after 5 to 7 days, then stop. Never attach the resume in the first message.';
+const netStatusOf = (c) => (NET_STATUSES.includes(c.status) ? c.status : 'To Contact');
+
+function CopyBtn({ text }) {
+  const [done, setDone] = useState(false);
+  const copy = (e) => {
+    e.stopPropagation();
+    navigator.clipboard?.writeText(text).then(() => {
+      setDone(true);
+      setTimeout(() => setDone(false), 1500);
+    });
+  };
+  return html`<button class=${`net-copy ${done ? 'done' : ''}`} onClick=${copy}>${done ? 'Copied' : 'Copy'}</button>`;
+}
+
+function NetRow({ contact: c, onOpen, onRemove, onMove, onDecline }) {
+  const [declining, setDeclining] = useState(false);
+  const [reason, setReason] = useState('');
+  const status = netStatusOf(c);
+  const hasContact = Boolean((c.contactName || '').trim());
+  const contactHref = c.contactUrl && (c.contactUrl.includes('@') ? `mailto:${c.contactUrl}` : c.contactUrl);
+
+  return html`<div class="app-row" onClick=${() => onOpen(c)}>
+    <div class="app-row-main">
+      <div class="app-row-title">
+        <strong>${c.role || c.jobTitle || 'Outreach'}</strong><span class="app-row-sep"> · </span>${c.company}
+      </div>
+      <div class="app-row-meta" onClick=${(e) => e.stopPropagation()}>
+        ${hasContact
+          ? html`Contact: ${contactHref
+              ? html`<a href=${contactHref} target="_blank" rel="noreferrer">${c.contactName}</a>`
+              : c.contactName}`
+          : html`No contact yet${c.whoToFind ? ` · look for: ${c.whoToFind}` : ''}
+            ${c.findUrl && html` · <a href=${c.findUrl} target="_blank" rel="noreferrer">find on LinkedIn</a>`}`}
+      </div>
+      <div class="company-meta">
+        <span class="chip">Tue to Thu morning</span>
+        <span class="chip">bump once after 5 to 7 days</span>
+        ${status === 'Contacted' && c.contactedAt && html`<span class="chip">contacted ${fmtDate(c.contactedAt)}</span>`}
+      </div>
+      ${status === 'Did Not Contact' && c.noContactReason && html`<div class="app-row-reason">“${c.noContactReason}”</div>`}
+      ${(c.message || c.messageLong) && html`<details class="net-msg" onClick=${(e) => e.stopPropagation()}>
+        <summary>Outreach message</summary>
+        ${c.message && html`<div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">Connection note · send with the request</span><${CopyBtn} text=${c.message} /></div>
+          <p>${c.message}</p>
+        </div>`}
+        ${c.messageLong && html`<div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">Longer version · InMail or email</span><${CopyBtn} text=${c.messageLong} /></div>
+          <p>${c.messageLong}</p>
+        </div>`}
+        <div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">Cadence</span></div>
+          <p>${c.cadence || DEFAULT_CADENCE}</p>
+        </div>
+      </details>`}
+    </div>
+    <div class="app-row-actions" onClick=${(e) => e.stopPropagation()}>
+      ${c.appLink && html`<a class="icon-btn" title="Open job posting" href=${c.appLink} target="_blank" rel="noreferrer"><${Icon} name="external" size=${14} /></a>`}
+      ${status !== 'To Contact' && html`<select class="app-status-select" value=${status}
+        onChange=${(e) => onMove(c, e.target.value)}>
+        ${NET_STATUSES.map((s) => html`<option key=${s} value=${s}>${s}</option>`)}
+      </select>`}
+      ${status === 'To Contact' && !declining && html`<span class="app-applied-q">
+        <span class="app-applied-label">Contacted?</span>
+        <button class="app-btn yes" onClick=${() => onMove(c, 'Contacted')}>Yes</button>
+        <button class="app-btn no" onClick=${() => setDeclining(true)}>No</button>
+      </span>`}
+      <button class="icon-btn danger" title="Delete" onClick=${() => onRemove(c)}>×</button>
+    </div>
+    ${declining && html`<div class="app-decline" onClick=${(e) => e.stopPropagation()}>
+      <textarea rows="2" placeholder="Why no outreach? (no good contact, applied without it, role closed…)"
+        value=${reason} onInput=${(e) => setReason(e.target.value)} />
+      <div class="app-decline-actions">
+        <${Button} variant="primary" onClick=${() => { onDecline(c, reason.trim()); setDeclining(false); }}>Move to Did Not Contact<//>
+        <${Button} onClick=${() => setDeclining(false)}>Cancel<//>
+      </div>
+    </div>`}
+  </div>`;
+}
 
 function NetworkingTab({ accent }) {
-  return html`<${CollectionTab}
-    storeKey="career-networking"
-    accent=${accent}
-    newLabel="Add contact"
-    modalTitle="contact"
-    searchKeys=${['name', 'company', 'jobTitle']}
-    fields=${[
-      { name: 'name', label: "Person's name", required: true },
-      { name: 'company', label: 'Company' },
-      { name: 'jobTitle', label: 'Job title' },
-      { name: 'howMet', label: 'How you met', type: 'select', options: MET_WAYS.map((m) => ({ value: m, label: m })) },
-      { name: 'contact', label: 'Email or LinkedIn URL' },
-      { name: 'lastContacted', label: 'Last contacted', type: 'date', default: 'today' },
-      { name: 'notes', label: 'Relationship notes', type: 'textarea' },
-      { name: 'followUp', label: 'Needs follow-up', type: 'checkbox', checkboxLabel: 'Flag for follow-up' },
-    ]}
-    sortOptions=${[
-      { value: 'recent', label: 'Recently contacted', cmp: (a, b) => (b.lastContacted || '').localeCompare(a.lastContacted || '') },
-      { value: 'az', label: 'A → Z', cmp: (a, b) => a.name.localeCompare(b.name) },
-    ]}
-    filters=${[
-      { key: 'howMet', label: 'How met', options: MET_WAYS.map((m) => ({ value: m, label: m })) },
-      { key: 'followUp', label: 'Follow-up', allLabel: 'Everyone', options: [{ value: true, label: 'Needs follow-up' }] },
-    ]}
-    emptyText="No contacts yet."
-    emptyHint="Track the people in your professional network."
-    renderCard=${(it) => html`<div class=${it.followUp ? 'needs-followup' : ''}>
-      <div class="card-head">
-        <h3>${it.name}</h3>
-        ${it.followUp && html`<${Badge} color="#f97316"><${Icon} name="flag" size=${12} /> Follow up<//>`}
-      </div>
-      <div class="muted-text">${[it.jobTitle, it.company].filter(Boolean).join(' · ')}</div>
-      <div class="company-meta">
-        ${it.howMet && html`<span class="chip">${it.howMet}</span>`}
-        ${it.lastContacted && html`<span class="chip">last: ${fmtDate(it.lastContacted)}</span>`}
-      </div>
-      ${it.contact && html`<a class="card-link" href=${it.contact.includes('@') ? 'mailto:' + it.contact : it.contact} target="_blank" rel="noreferrer">${it.contact}</a>`}
-      ${it.notes && html`<p class="muted-text">${it.notes}</p>`}
+  const [contacts, setContacts] = useStore('career-networking', []);
+  const [query, setQuery] = useState('');
+  const [openSection, setOpenSection] = useState('To Contact');
+  const [modal, setModal] = useState(null); // { editing }
+  const confirm = useConfirm();
+
+  const fields = [
+    { name: 'company', label: 'Company', required: true },
+    { name: 'role', label: 'Job role this outreach is for' },
+    { name: 'appLink', label: 'Job posting link', type: 'url', placeholder: 'https://...' },
+    { name: 'contactName', label: 'Contact name (blank if none yet)' },
+    { name: 'contactUrl', label: 'Contact LinkedIn URL or email' },
+    { name: 'whoToFind', label: 'Who to look for (if no contact yet)' },
+    { name: 'findUrl', label: 'Where to find them (LinkedIn search link)', type: 'url' },
+    { name: 'message', label: 'Connection note (under 300 chars)', type: 'textarea', rows: 3 },
+    { name: 'messageLong', label: 'Longer version (InMail or email)', type: 'textarea', rows: 5 },
+    { name: 'cadence', label: 'Cadence', type: 'textarea', rows: 2 },
+    { name: 'status', label: 'Status', type: 'select', options: NET_STATUSES.map((s) => ({ value: s, label: s })) },
+    { name: 'noContactReason', label: 'Why no outreach (if you passed)', type: 'textarea', rows: 2 },
+  ];
+
+  const save = (values) => {
+    const v = { ...values, cadence: values.cadence || DEFAULT_CADENCE, status: values.status || 'To Contact' };
+    if (modal.editing) {
+      setContacts(contacts.map((c) => (c.id === modal.editing.id ? { ...modal.editing, ...v } : c)));
+    } else {
+      setContacts([{ id: uid(), _created: new Date().toISOString(), ...v }, ...contacts]);
+    }
+    setModal(null);
+  };
+
+  const stamp = (c, status, extra = {}) => ({
+    ...c, ...extra, status,
+    // Marking "Contacted" stamps the date so the 5 to 7 day bump can be timed.
+    contactedAt: status === 'Contacted' && !c.contactedAt ? new Date().toISOString().slice(0, 10) : c.contactedAt,
+  });
+  const moveTo = (c, status) => {
+    if (netStatusOf(c) === status && c.status === status) return;
+    setContacts(contacts.map((x) => (x.id === c.id ? stamp(x, status) : x)));
+  };
+  const decline = (c, reason) => setContacts(contacts.map((x) => (
+    x.id === c.id ? stamp(x, 'Did Not Contact', { noContactReason: reason }) : x
+  )));
+  const remove = (c) => confirm('Delete this outreach entry?', () => setContacts(contacts.filter((x) => x.id !== c.id)));
+
+  const filtered = useMemo(
+    () => contacts.filter((c) => matchesQuery(query, c.company, c.role, c.jobTitle, c.contactName)),
+    [contacts, query]
+  );
+
+  return html`<div class="collection" style=${{ '--accent': accent }}>
+    <div class="toolbar">
+      <${SearchBox} value=${query} onChange=${setQuery} placeholder="Search outreach..." />
+      <div class="toolbar-spacer"></div>
+      <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add outreach<//>
+    </div>
+
+    ${contacts.length === 0 && html`<${EmptyState} icon="career" text="No outreach targets yet."
+      hint="Every application gets a matching outreach entry here — answer Contacted? Yes/No on each one." />`}
+
+    ${contacts.length > 0 && html`<div class="app-sections">
+      ${NET_STATUSES.map((status) => {
+        const col = filtered.filter((c) => netStatusOf(c) === status);
+        const isOpen = openSection === status;
+        return html`<div class=${`app-section ${isOpen ? 'open' : ''}`} key=${status}>
+          <button class="app-section-head" style=${{ '--col': netStatusColor[status] }}
+            onClick=${() => setOpenSection(isOpen ? '' : status)}>
+            <span class="kanban-dot"></span>${status}
+            <span class="kanban-count">${col.length}</span>
+            <span class=${`app-chevron ${isOpen ? 'open' : ''}`}>›</span>
+          </button>
+          ${isOpen && html`<div class="app-section-body">
+            ${col.length === 0 && html`<p class="muted-text app-section-empty">Nothing here yet.</p>`}
+            ${col.map((c) => html`<${NetRow} key=${c.id} contact=${c}
+              onOpen=${(x) => setModal({ editing: x })} onRemove=${remove} onMove=${moveTo} onDecline=${decline} />`)}
+          </div>`}
+        </div>`;
+      })}
     </div>`}
-  />`;
+
+    ${modal && html`<${Modal} title=${modal.editing ? 'Edit outreach' : 'New outreach'} accent=${accent} onClose=${() => setModal(null)}>
+      <${Form} fields=${fields} initial=${modal.editing} onSubmit=${save} onCancel=${() => setModal(null)} />
+    <//>`}
+  </div>`;
 }
 
 // ---- Interview Prep ---------------------------------------------------------
