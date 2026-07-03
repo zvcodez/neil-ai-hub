@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T13:05:00.000Z",
+  "updatedAt": "2026-07-03T13:40:00.000Z",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -48,7 +48,7 @@
     {
       "id": "idea-spotify-dj",
       "_created": "2026-07-02T18:28:00.000Z",
-      "_stagedAt": "2026-07-03T13:05:00.000Z",
+      "_stagedAt": "2026-07-03T13:40:00.000Z",
       "name": "Vibe DJ — Spotify vibe-based queue app",
       "description": "An app where you 'DJ' your own Spotify by feel — pick a vibe and it auto-builds a queue that flows, with recommendations that match the mood; the dream version lets you just talk to it via a Claude + Spotify connector.",
       "stage": "Building",
@@ -56,10 +56,15 @@
       "folder": "~/Claude/spotify-dj",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "NEEDS NEIL (only blocker): 1) create a Spotify app at developer.spotify.com/dashboard, redirect URI EXACTLY http://127.0.0.1:5599/spotify-dj/index.html (Spotify banned localhost — must be the 127.0.0.1 loopback), tick Web API + Web Playback SDK; 2) send Claude the Client ID + confirm Premium. Then Claude drops the ID in and we test the live connect together. Run it via: cd ~/Claude && python3 -m http.server 5599 --bind 127.0.0.1 then open http://127.0.0.1:5599/spotify-dj/index.html . Full guide in SETUP.md. v2 dream = talk-to-it via Claude+Spotify connector.",
-      "lastDid": "Turned Vibe DJ from a demo into a real Spotify app (index.html), keeping the demo as demo.html. Discovered + worked around a big platform change: Spotify killed /audio-features and /recommendations for newly-created apps in Nov 2024 (they 403, still no replacement in 2026). So the vibe engine (energy/valence) now lives locally in the app and Spotify is used only for what still works on a new app: real SEARCH (resolve each seed track to a real track + album art) and real PLAYBACK (queue/play/skip to your devices via Web Playback SDK + Connect API, Premium). Wired full PKCE auth (no backend/secret), profile + Premium detection, a device picker, live search, real transport + vibe-shift, with graceful fallback to simulated playback when not connected. Verified the preview/offline path in-browser with a clean console; the live path is written but needs Neils account to test.",
+      "nextStep": "Working end-to-end locally. Options when Neil wants more: (1) expand the local energy/valence seed library beyond ~44 songs for more range per vibe; (2) build the talk-to-it v2 on the Claude+Spotify connector for open-ended recommendations (replaces the dead /recommendations endpoint); (3) host it (HTTPS) so it works on his phone away from the laptop server. Run locally: cd ~/Claude && python3 -m http.server 5599 --bind 127.0.0.1 then http://127.0.0.1:5599/spotify-dj/index.html . Client ID lives in index.html (public/safe).",
+      "lastDid": "LIVE AND WORKING on Spotify. Neil created the Spotify app, sent the Client ID, connected via the in-app PKCE flow (detected neilzv, Premium), and picking the Chill vibe built a 12-track set, resolved every seed track to a real Spotify track (with real album art), and actually played through his Echo Dot with true playback state (real durations, live progress) mirrored in the app. Verified in-browser, clean console, no 403s. Real search box, device picker (Echo/this-browser/phone), transport and vibe-shift buttons all drive real playback.",
       "notes": "• 'DJ from the app': pick a vibe, it builds and plays a set; skip/queue/shift on the fly\n• Vibe-based: choose a mood and it queues tracks that match, ordered to flow\n• Dream version: Claude + a Spotify connector so you just talk to it ('keep this energy', 'something slower next') and it manages the queue — SETUP.md sketches this\n• BUILT: a fully interactive DEMO (real vibe engine + queue + recommendations; simulated playback + local library). The engine's energy/valence fields ARE Spotify's audio-feature names, so it swaps in directly.\n• ONE BLOCKER only Neil can clear: a Spotify Developer app (free) + Premium (needed to control playback). Steps in SETUP.md.\n• Nice tie-in with the going-out / nights ecosystem",
       "log": [
+        {
+          "id": "log-vdj-live-2026-07-03T13:40:00.000Z",
+          "ts": "2026-07-03T13:40:00.000Z",
+          "text": "Connected to Spotify and confirmed live: vibe -> real set -> real playback on his Echo Dot with album art + true playback state. Fully working."
+        },
         {
           "id": "log-vdj-2026-07-03T13:05:00.000Z",
           "ts": "2026-07-03T13:05:00.000Z",
