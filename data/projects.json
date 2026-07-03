@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T19:35:00.000Z",
+  "updatedAt": "2026-07-03T13:05:00.000Z",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -48,7 +48,7 @@
     {
       "id": "idea-spotify-dj",
       "_created": "2026-07-02T18:28:00.000Z",
-      "_stagedAt": "2026-07-02T19:30:00.000Z",
+      "_stagedAt": "2026-07-03T13:05:00.000Z",
       "name": "Vibe DJ — Spotify vibe-based queue app",
       "description": "An app where you 'DJ' your own Spotify by feel — pick a vibe and it auto-builds a queue that flows, with recommendations that match the mood; the dream version lets you just talk to it via a Claude + Spotify connector.",
       "stage": "Building",
@@ -56,10 +56,15 @@
       "folder": "~/Claude/spotify-dj",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "NEEDS NEIL (the one blocker): create a free Spotify Developer app + confirm you have Premium, then send me the Client ID — full steps in ~/Claude/spotify-dj/SETUP.md. Meanwhile the demo (index.html) is playable now. Then I wire PKCE auth + real audio features + playback.",
-      "lastDid": "Built a working demo 'Vibe DJ' and verified it in-browser: 8 vibe tiles (Chill/Hype/Focus/Party/Sunset/Late night/In my feels/Throwback) that each auto-build a ~12-track set ordered to flow (ease in → peak → cool down), a now-playing bar with simulated playback + transport, 'recommend one more', a searchable library to queue from, and conversational vibe-shift buttons (↑Energy / ↓Calm / Happier / Moodier). The engine uses energy/valence scoring — exactly Spotify's own audio-feature fields — so it ports straight over. Also wrote SETUP.md: the exact real-Spotify path (PKCE auth, /recommendations with target features, Web Playback SDK/Connect, and the Claude-connector 'talk to it' version).",
+      "nextStep": "NEEDS NEIL (only blocker): 1) create a Spotify app at developer.spotify.com/dashboard, redirect URI EXACTLY http://127.0.0.1:5599/spotify-dj/index.html (Spotify banned localhost — must be the 127.0.0.1 loopback), tick Web API + Web Playback SDK; 2) send Claude the Client ID + confirm Premium. Then Claude drops the ID in and we test the live connect together. Run it via: cd ~/Claude && python3 -m http.server 5599 --bind 127.0.0.1 then open http://127.0.0.1:5599/spotify-dj/index.html . Full guide in SETUP.md. v2 dream = talk-to-it via Claude+Spotify connector.",
+      "lastDid": "Turned Vibe DJ from a demo into a real Spotify app (index.html), keeping the demo as demo.html. Discovered + worked around a big platform change: Spotify killed /audio-features and /recommendations for newly-created apps in Nov 2024 (they 403, still no replacement in 2026). So the vibe engine (energy/valence) now lives locally in the app and Spotify is used only for what still works on a new app: real SEARCH (resolve each seed track to a real track + album art) and real PLAYBACK (queue/play/skip to your devices via Web Playback SDK + Connect API, Premium). Wired full PKCE auth (no backend/secret), profile + Premium detection, a device picker, live search, real transport + vibe-shift, with graceful fallback to simulated playback when not connected. Verified the preview/offline path in-browser with a clean console; the live path is written but needs Neils account to test.",
       "notes": "• 'DJ from the app': pick a vibe, it builds and plays a set; skip/queue/shift on the fly\n• Vibe-based: choose a mood and it queues tracks that match, ordered to flow\n• Dream version: Claude + a Spotify connector so you just talk to it ('keep this energy', 'something slower next') and it manages the queue — SETUP.md sketches this\n• BUILT: a fully interactive DEMO (real vibe engine + queue + recommendations; simulated playback + local library). The engine's energy/valence fields ARE Spotify's audio-feature names, so it swaps in directly.\n• ONE BLOCKER only Neil can clear: a Spotify Developer app (free) + Premium (needed to control playback). Steps in SETUP.md.\n• Nice tie-in with the going-out / nights ecosystem",
       "log": [
+        {
+          "id": "log-vdj-2026-07-03T13:05:00.000Z",
+          "ts": "2026-07-03T13:05:00.000Z",
+          "text": "Built real Spotify integration (PKCE auth, live search, real playback via Web Playback SDK + Connect). Worked around Spotify's 2024 removal of audio-features/recommendations by keeping the vibe engine local. Preview path verified; live path awaits Neil's Client ID + Premium."
+        },
         {
           "id": "log-vibedj-1",
           "ts": "2026-07-02T19:30:00.000Z",
