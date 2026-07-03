@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T13:40:00.000Z",
+  "updatedAt": "2026-07-03T14:30:00.000Z",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -48,7 +48,7 @@
     {
       "id": "idea-spotify-dj",
       "_created": "2026-07-02T18:28:00.000Z",
-      "_stagedAt": "2026-07-03T13:40:00.000Z",
+      "_stagedAt": "2026-07-03T14:30:00.000Z",
       "name": "Vibe DJ — Spotify vibe-based queue app",
       "description": "An app where you 'DJ' your own Spotify by feel — pick a vibe and it auto-builds a queue that flows, with recommendations that match the mood; the dream version lets you just talk to it via a Claude + Spotify connector.",
       "stage": "Building",
@@ -56,10 +56,15 @@
       "folder": "~/Claude/spotify-dj",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Working end-to-end locally. Options when Neil wants more: (1) expand the local energy/valence seed library beyond ~44 songs for more range per vibe; (2) build the talk-to-it v2 on the Claude+Spotify connector for open-ended recommendations (replaces the dead /recommendations endpoint); (3) host it (HTTPS) so it works on his phone away from the laptop server. Run locally: cd ~/Claude && python3 -m http.server 5599 --bind 127.0.0.1 then http://127.0.0.1:5599/spotify-dj/index.html . Client ID lives in index.html (public/safe).",
-      "lastDid": "LIVE AND WORKING on Spotify. Neil created the Spotify app, sent the Client ID, connected via the in-app PKCE flow (detected neilzv, Premium), and picking the Chill vibe built a 12-track set, resolved every seed track to a real Spotify track (with real album art), and actually played through his Echo Dot with true playback state (real durations, live progress) mirrored in the app. Verified in-browser, clean console, no 403s. Real search box, device picker (Echo/this-browser/phone), transport and vibe-shift buttons all drive real playback.",
+      "nextStep": "Working and personalized end-to-end. Real remaining limit: Spotify killed audio-features, recommendations AND artist genres for new apps, so true open-ended mood recommendations across his taste need the Claude+Spotify connector version (v2 dream) rather than Spotify data. Options when he wants more: (1) build that talk-to-it v2; (2) host on HTTPS so it runs on his phone off the laptop server; (3) add saved-tracks/playlist sources. Run: cd ~/Claude && python3 -m http.server 5599 --bind 127.0.0.1 then http://127.0.0.1:5599/spotify-dj/index.html .",
+      "lastDid": "Made Vibe DJ genuinely personalized to Neils real listening (he pushed back that the mood tiles felt random). Rebuilt the connected experience around Spotify data that still works on a new app: Your rotation (On repeat 4wk / Recently played / Your top 6mo / All-time from /me/top + recently-played) and Your top artists (tap Drake / AP Dhillon / Diljit etc to build a set from their catalogue + his own tracks by them), plus More-like-this that extends the current song with more from the same artist. Discovered along the way that Spotify also returns EMPTY artist genres on this tier (not just audio-features/recommendations), so pivoted from genre chips to artist chips. Verified live: picked AP Dhillon -> real 10-track set on his Echo with album art, More-like-this added his collabs, clean console.",
       "notes": "• 'DJ from the app': pick a vibe, it builds and plays a set; skip/queue/shift on the fly\n• Vibe-based: choose a mood and it queues tracks that match, ordered to flow\n• Dream version: Claude + a Spotify connector so you just talk to it ('keep this energy', 'something slower next') and it manages the queue — SETUP.md sketches this\n• BUILT: a fully interactive DEMO (real vibe engine + queue + recommendations; simulated playback + local library). The engine's energy/valence fields ARE Spotify's audio-feature names, so it swaps in directly.\n• ONE BLOCKER only Neil can clear: a Spotify Developer app (free) + Premium (needed to control playback). Steps in SETUP.md.\n• Nice tie-in with the going-out / nights ecosystem",
       "log": [
+        {
+          "id": "log-vdj-personal-2026-07-03T14:30:00.000Z",
+          "ts": "2026-07-03T14:30:00.000Z",
+          "text": "Repersonalized to real listening: Your rotation + top-artist sets + more-like-this, all from live Spotify data. Verified on his account (AP Dhillon set on the Echo)."
+        },
         {
           "id": "log-vdj-live-2026-07-03T13:40:00.000Z",
           "ts": "2026-07-03T13:40:00.000Z",
