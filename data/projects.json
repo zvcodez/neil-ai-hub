@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T07:01:18.952590+00:00",
+  "updatedAt": "2026-07-04T17:45:03.524266+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -160,8 +160,8 @@
       "folder": "~/Claude/alcohol-scanner",
       "repoUrl": "",
       "liveUrl": "https://alcohol-scanner.vercel.app",
-      "nextStep": "Add ANTHROPIC_API_KEY in Vercel env (vercel env add) and redeploy so the label-photo fallback works, then test camera/barcode scan on phone.",
-      "lastDid": "Built v1: barcode scan (ZXing + Open Food Facts) + Claude-vision label-photo fallback for wine/spirits, health-score heuristic, localStorage history, compare view. Deployed to Vercel.",
+      "nextStep": "Test barcode scanning on phone (Add to Home Screen). Optionally add ANTHROPIC_API_KEY later to flip on label-photo scanning for wine/spirits.",
+      "lastDid": "Barcode scanning is LIVE and free (Open Food Facts, no key). Label-photo AI fallback built but disabled (LABEL_SCAN_ENABLED=false in js/app.js) since Anthropic API is pay-per-use and Neil held off on a key.",
       "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews"
     },
     {
