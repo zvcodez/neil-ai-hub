@@ -321,6 +321,9 @@ const NET_STATUSES = ['To Contact', 'Contacted', 'Did Not Contact'];
 const netStatusColor = { 'To Contact': '#f97316', Contacted: '#10b981', 'Did Not Contact': '#94a3b8' };
 const DEFAULT_CADENCE = 'Send Tue to Thu morning. If no reply, one polite bump after 5 to 7 days, then stop. Never attach the resume in the first message.';
 const netStatusOf = (c) => (NET_STATUSES.includes(c.status) ? c.status : 'To Contact');
+// Applications you're no longer chasing don't need outreach.
+const DEAD_APP_STATUSES = ['Did Not Apply', 'Rejected'];
+const normco = (s) => (s || '').toLowerCase().replace(/\(.*?\)/g, '').replace(/[^a-z0-9]/g, '');
 
 function CopyBtn({ text }) {
   const [done, setDone] = useState(false);
@@ -404,8 +407,24 @@ function NetworkingTab({ accent }) {
   const [contacts, setContacts] = useStore('career-networking', []);
   const [query, setQuery] = useState('');
   const [openSection, setOpenSection] = useState('To Contact');
-  const [modal, setModal] = useState(null); // { editing }
+  const [modal, setModal] = useState(null); // { editing } | { prefill }
   const confirm = useConfirm();
+
+  // Coverage: every application you're still chasing should have an outreach
+  // entry (Neil's standing mandate). Read applications once, then flag any that
+  // no contact covers yet — matched by posting link or company. Recomputes when
+  // contacts change, so adding one here clears it from the list immediately.
+  const apps = useMemo(() => loadStore('career-applications', []), []);
+  const uncovered = useMemo(() => {
+    const active = apps.filter((a) => a.company && !DEAD_APP_STATUSES.includes(a.status));
+    return active.filter((a) => !contacts.some((c) =>
+      (a.link && c.appLink && a.link === c.appLink) || normco(c.company) === normco(a.company)
+    ));
+  }, [apps, contacts]);
+  const activeCount = useMemo(
+    () => apps.filter((a) => a.company && !DEAD_APP_STATUSES.includes(a.status)).length,
+    [apps]
+  );
 
   const fields = [
     { name: 'company', label: 'Company', required: true },
@@ -458,6 +477,24 @@ function NetworkingTab({ accent }) {
       <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add outreach<//>
     </div>
 
+    ${uncovered.length > 0 && html`<div class="net-coverage">
+      <div class="net-coverage-head">
+        <strong>${uncovered.length} application${uncovered.length > 1 ? 's' : ''} without outreach yet</strong>
+        <span>Every role you're chasing should have a contact plan. Add one in a tap.</span>
+      </div>
+      <div class="net-coverage-list">
+        ${uncovered.map((a) => html`<div class="net-coverage-item" key=${a.id || a.link}>
+          <div class="net-coverage-role"><strong>${a.company}</strong>${a.jobTitle ? html`<span class="app-row-sep"> · </span>${a.jobTitle}` : ''}</div>
+          <${Button} onClick=${() => setModal({ editing: null, prefill: {
+            company: a.company, role: a.jobTitle || '', appLink: a.link || '', status: 'To Contact',
+          } })}>Add outreach<//>
+        </div>`)}
+      </div>
+    </div>`}
+    ${uncovered.length === 0 && activeCount > 0 && html`<div class="net-coverage all-clear">
+      <span>✓ All ${activeCount} active application${activeCount > 1 ? 's have' : ' has'} an outreach entry.</span>
+    </div>`}
+
     ${contacts.length === 0 && html`<${EmptyState} icon="career" text="No outreach targets yet."
       hint="Every application gets a matching outreach entry here — answer Contacted? Yes/No on each one." />`}
 
@@ -482,7 +519,7 @@ function NetworkingTab({ accent }) {
     </div>`}
 
     ${modal && html`<${Modal} title=${modal.editing ? 'Edit outreach' : 'New outreach'} accent=${accent} onClose=${() => setModal(null)}>
-      <${Form} fields=${fields} initial=${modal.editing} onSubmit=${save} onCancel=${() => setModal(null)} />
+      <${Form} fields=${fields} initial=${modal.editing || modal.prefill} onSubmit=${save} onCancel=${() => setModal(null)} />
     <//>`}
   </div>`;
 }
