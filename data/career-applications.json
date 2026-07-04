@@ -1,6 +1,146 @@
 {
-  "updatedAt": "2026-07-04T17:34:16.505Z",
+  "updatedAt": "2026-07-04T17:55:50.000Z",
   "data": [
+    {
+      "id": "app-blackstone-invops",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "Blackstone",
+      "jobTitle": "Strategic Partners Finance, Investment Operations Analyst (New York)",
+      "link": "https://www.linkedin.com/jobs/view/2026-blackstone-finance-%E2%80%93-strategic-partners-finance-%E2%80%93-investment-operations-analyst-at-blackstone-4435227813",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_Blackstone.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_Blackstone.docx",
+      "salary": "$90,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-02, 0-1 yr required, entry level. Top-tier brand (Blackstone Strategic Partners, $1.3T AUM). Maps to Bloomberg onboarding/data control for 400+ PMs and 650+ accounts. Private equity is a new asset class, owned honestly in the letter."
+    },
+    {
+      "id": "app-jpm-tradesupport",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "JPMorganChase",
+      "jobTitle": "Analyst, Trade Support (New York)",
+      "link": "https://www.linkedin.com/jobs/view/analyst-trade-support-at-jpmorganchase-4427194404",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_JPM_TradeSupport.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_JPM_TradeSupport.docx",
+      "salary": "not disclosed in posting",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 7 hours before sourcing (very fresh), 115 applicants already. No years of experience required, entry-friendly. Maps to Bloomberg SMA reconciliation and daily deadline-driven processing."
+    },
+    {
+      "id": "app-jpm-tradingservices",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "JPMorganChase",
+      "jobTitle": "Trading Services Analyst, Whole Loans Securitized Products (New York)",
+      "link": "https://www.linkedin.com/jobs/view/trading-services-analyst-at-jpmorganchase-4436911886",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_JPM_TradingServices.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_JPM_TradingServices.docx",
+      "salary": "not disclosed in posting",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "STRETCH: mortgage/securitization is a new asset class for Neil, owned honestly in the letter. No years required. Posted 14 hours before sourcing, 33 applicants. Reconciliation/data-normalization mechanics transfer from Bloomberg."
+    },
+    {
+      "id": "app-brownadvisory-odd",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "Brown Advisory",
+      "jobTitle": "Operational Due Diligence Analyst (New York)",
+      "link": "https://www.linkedin.com/jobs/view/operational-due-diligence-analyst-at-brown-advisory-4416905177",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_BrownAdvisory.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_BrownAdvisory.docx",
+      "salary": "$90,000–$130,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "1-5 yrs required, entry level tag. Strong fit: documentation/due-diligence review background plus MBA AI/ML coursework matches their explicit \"leverage AI tools\" requirement. Employee-owned, client-first culture."
+    },
+    {
+      "id": "app-usbank-altinv",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "U.S. Bank",
+      "jobTitle": "Alternative Investments Accountant (Hackensack, NJ)",
+      "link": "https://www.linkedin.com/jobs/view/alternative-investments-accountant-at-u-s-bank-4375849291",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_USBank.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_USBank.docx",
+      "salary": "$81,345–$95,700",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "2-5 yrs preferred (not hard required), entry level tag. Hackensack NJ is a short commute from Piscataway. GL/NAV accounting would be new; letter owns that honestly and leans on the genuine reconciliation/corporate-action overlap."
+    },
+    {
+      "id": "app-affirm-capitalops",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "Affirm",
+      "jobTitle": "Capital Operations Analyst, Treasury (New York / remote-eligible)",
+      "link": "https://www.linkedin.com/jobs/view/capital-operations-analyst-at-affirm-4426632750",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_Affirm.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_Affirm.docx",
+      "salary": "$90,000–$110,000 (NY/NJ band)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "2+ yrs Treasury/capital markets/investment ops required, SQL/Python only \"a strong plus.\" Recognizable fintech (Affirm). Reconciliation and audit-support background maps well; consumer lending capital markets is new territory, owned in the letter."
+    },
+    {
+      "id": "app-willowwealth-investorsupport",
+      "_created": "2026-07-04T17:55:50.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-04T17:55:50.000Z"
+        }
+      ],
+      "company": "Willow Wealth",
+      "jobTitle": "Investor Support Associate (New York)",
+      "link": "https://www.linkedin.com/jobs/view/associate-investor-support-at-willow-wealth-4427132896",
+      "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_WillowWealth.docx",
+      "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_WillowWealth.docx",
+      "salary": "$85,000–$95,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "2-5+ yrs client-facing experience required. Maps to Bloomberg client support for 400+ institutional PMs. Direct HNW/private-markets client work is new, owned honestly in the letter."
+    },
     {
       "id": "app-citi-secderiv",
       "_created": "2026-07-02T02:05:00.000Z",

@@ -1,6 +1,510 @@
 {
- "updatedAt": "2026-07-02T13:52:29.000Z",
+ "updatedAt": "2026-07-04T17:57:56.000Z",
  "data": [
+  {
+   "id": "4436427152",
+   "company": "Net2Source (N2S)",
+   "title": "Mergers & Acquisitions Business Analyst",
+   "url": "https://www.linkedin.com/jobs/view/mergers-acquisitions-business-analyst-at-net2source-n2s-4436427152",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4345698231",
+   "company": "Charlie Health",
+   "title": "Strategy & Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/strategy-operations-analyst-at-charlie-health-4345698231",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435269032",
+   "company": "Social Capital Resources",
+   "title": "Compliance Business Analyst",
+   "url": "https://www.linkedin.com/jobs/view/compliance-business-analyst-at-social-capital-resources-4435269032",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436138006",
+   "company": "Skill",
+   "title": "Business Analyst [211104]",
+   "url": "https://www.linkedin.com/jobs/view/business-analyst-211104-at-skill-4436138006",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4415095514",
+   "company": "Korn Ferry",
+   "title": "Research Analyst",
+   "url": "https://www.linkedin.com/jobs/view/research-analyst-at-korn-ferry-4415095514",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4432779860",
+   "company": "AppCard, Inc.",
+   "title": "CPG Business Analyst",
+   "url": "https://www.linkedin.com/jobs/view/cpg-business-analyst-at-appcard-inc-4432779860",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436429145",
+   "company": "TalentAlly",
+   "title": "Business Analyst",
+   "url": "https://www.linkedin.com/jobs/view/business-analyst-at-talentally-4436429145",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436388902",
+   "company": "Robert Half",
+   "title": "Business Analyst",
+   "url": "https://www.linkedin.com/jobs/view/business-analyst-at-robert-half-4436388902",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4418084977",
+   "company": "Sanofi",
+   "title": "Digital R&D Strategy and Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/digital-r-d-strategy-and-operations-analyst-at-sanofi-4418084977",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435454398",
+   "company": "Judi Health",
+   "title": "Business Analyst",
+   "url": "https://www.linkedin.com/jobs/view/business-analyst-at-judi-health-4435454398",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436922691",
+   "company": "Better Tomorrow Ventures",
+   "title": "Investment Operations Associate",
+   "url": "https://www.linkedin.com/jobs/view/investment-operations-associate-at-better-tomorrow-ventures-4436922691",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3+ years running fund/RIA transaction ops"
+  },
+  {
+   "id": "4436120337",
+   "company": "Atlantic Group",
+   "title": "Senior Operations Associate",
+   "url": "https://www.linkedin.com/jobs/view/senior-operations-associate-at-atlantic-group-4436120337",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435245573",
+   "company": "Social Capital Resources",
+   "title": "Portfolio Operations Associate",
+   "url": "https://www.linkedin.com/jobs/view/portfolio-operations-associate-at-social-capital-resources-4435245573",
+   "date": "2026-07-04",
+   "note": "dropped: requires 4-9 years portfolio operations experience"
+  },
+  {
+   "id": "4284459317",
+   "company": "Arrow Search Partners",
+   "title": "Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/operations-analyst-at-arrow-search-partners-4284459317",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435267117",
+   "company": "Social Capital Resources",
+   "title": "Investment Management Operations Specialist (AVP)",
+   "url": "https://www.linkedin.com/jobs/view/investment-management-operations-specialist-avp-at-social-capital-resources-4435267117",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435899906",
+   "company": "WhiteCap Search",
+   "title": "Cash Management Analyst",
+   "url": "https://www.linkedin.com/jobs/view/cash-management-analyst-at-whitecap-search-4435899906",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4416905177",
+   "company": "Brown Advisory",
+   "title": "Operational Due Diligence Analyst",
+   "url": "https://www.linkedin.com/jobs/view/operational-due-diligence-analyst-at-brown-advisory-4416905177",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, Brown Advisory ODD Analyst"
+  },
+  {
+   "id": "4436939055",
+   "company": "Safir Securities LLC",
+   "title": "Operations Analyst – SSL",
+   "url": "https://www.linkedin.com/jobs/view/operations-analyst-%E2%80%93-ssl-at-safir-securities-llc-4436939055",
+   "date": "2026-07-04",
+   "note": "dropped: requires in-depth Broadridge BPS platform experience + self-clearing broker-dealer background, not held"
+  },
+  {
+   "id": "4435894585",
+   "company": "WhiteCap Search",
+   "title": "Management Associate",
+   "url": "https://www.linkedin.com/jobs/view/management-associate-at-whitecap-search-4435894585",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436420091",
+   "company": "Abacus Group, LLC",
+   "title": "Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/operations-analyst-at-abacus-group-llc-4436420091",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3+ years operations/middle office/settlements experience"
+  },
+  {
+   "id": "4305918283",
+   "company": "Obra Capital",
+   "title": "Associate, Derivative Operations",
+   "url": "https://www.linkedin.com/jobs/view/associate-derivative-operations-at-obra-capital-4305918283",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3-6 years relevant middle/back office experience"
+  },
+  {
+   "id": "4362701675",
+   "company": "RQD* Clearing",
+   "title": "Junior Margin/Risk Analyst",
+   "url": "https://www.linkedin.com/jobs/view/junior-margin-risk-analyst-at-rqd-clearing-4362701675",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3-5 years + active Series 7 required"
+  },
+  {
+   "id": "4436445504",
+   "company": "HSBC",
+   "title": "Analyst, Prime Risk",
+   "url": "https://www.linkedin.com/jobs/view/analyst-prime-risk-at-hsbc-4436445504",
+   "date": "2026-07-04",
+   "note": "dropped: specialized derivatives margining/risk model role, no realistic bridge to background"
+  },
+  {
+   "id": "4427194404",
+   "company": "JPMorganChase",
+   "title": "Analyst - Trade Support",
+   "url": "https://www.linkedin.com/jobs/view/analyst-trade-support-at-jpmorganchase-4427194404",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, JPM Analyst Trade Support"
+  },
+  {
+   "id": "4428964191",
+   "company": "Soho Square Solutions",
+   "title": "Trade Application Support Analyst",
+   "url": "https://www.linkedin.com/jobs/view/trade-application-support-analyst-at-soho-square-solutions-4428964191",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436172493",
+   "company": "Neuberger",
+   "title": "Senior Analyst - Neuberger Wealth Operations",
+   "url": "https://www.linkedin.com/jobs/view/senior-analyst-neuberger-wealth-operations-at-neuberger-4436172493",
+   "date": "2026-07-04",
+   "note": "dropped: salary $65k-$80k below target; redundant with existing Neuberger Client Analyst card"
+  },
+  {
+   "id": "4436116018",
+   "company": "Marchon Partners",
+   "title": "Technical Data Analyst",
+   "url": "https://www.linkedin.com/jobs/view/technical-data-analyst-at-marchon-partners-4436116018",
+   "date": "2026-07-04",
+   "note": "dropped: contract role, requires experienced MDM SME, too senior/technical"
+  },
+  {
+   "id": "4435446844",
+   "company": "Judi Health",
+   "title": "Analyst, Data Exchange - Eligibility",
+   "url": "https://www.linkedin.com/jobs/view/analyst-data-exchange-eligibility-at-judi-health-4435446844",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436406270",
+   "company": "WhiteCap Search",
+   "title": "Analyst - Fund Accounting - Direct Lending/Private Credit",
+   "url": "https://www.linkedin.com/jobs/view/analyst-fund-accounting-direct-lending-private-credit-at-whitecap-search-4436406270",
+   "date": "2026-07-04",
+   "note": "dropped: requires 2-4 yrs applied private credit fund accounting, not held"
+  },
+  {
+   "id": "4427028239",
+   "company": "Daley And Associates, LLC",
+   "title": "Fund Accountant",
+   "url": "https://www.linkedin.com/jobs/view/fund-accountant-at-daley-and-associates-llc-4427028239",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436111161",
+   "company": "SS&C Technologies",
+   "title": "Senior Associate, Hedge Fund Accounting",
+   "url": "https://www.linkedin.com/jobs/view/senior-associate-hedge-fund-accounting-at-ss-c-technologies-4436111161",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436441383",
+   "company": "Atlantic Group",
+   "title": "Fund Accountant & Operations Associate - Top PE Leader",
+   "url": "https://www.linkedin.com/jobs/view/fund-accountant-operations-associate-top-pe-leader-at-atlantic-group-4436441383",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4375849291",
+   "company": "U.S. Bank",
+   "title": "Alternative Investments Accountant",
+   "url": "https://www.linkedin.com/jobs/view/alternative-investments-accountant-at-u-s-bank-4375849291",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, US Bank Alternative Investments Accountant"
+  },
+  {
+   "id": "4436429835",
+   "company": "Atlantic Group",
+   "title": "Private Equity Fund Accountant - Top PE Firm (AUM & Growing)",
+   "url": "https://www.linkedin.com/jobs/view/private-equity-fund-accountant-top-pe-firm-aum-growing-at-atlantic-group-4436429835",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4429469906",
+   "company": "E-Frontiers",
+   "title": "Fund Accountant",
+   "url": "https://www.linkedin.com/jobs/view/fund-accountant-at-e-frontiers-4429469906",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436478911",
+   "company": "TRD Advisors LLC",
+   "title": "Fund Accountant (Salary $125k - $175k)",
+   "url": "https://www.linkedin.com/jobs/view/fund-accountant-salary-%24125k-%24175k-at-trd-advisors-llc-4436478911",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4414030967",
+   "company": "Gen II Fund Services",
+   "title": "Senior Fund Accountant",
+   "url": "https://www.linkedin.com/jobs/view/senior-fund-accountant-at-gen-ii-fund-services-4414030967",
+   "date": "2026-07-04",
+   "note": "dropped: requires 2+ yrs hedge fund accounting/PE auditing experience, not held"
+  },
+  {
+   "id": "4436455846",
+   "company": "IQ-EQ",
+   "title": "Senior Associate - Private Equity Fund Accounting",
+   "url": "https://www.linkedin.com/jobs/view/senior-associate-private-equity-fund-accounting-at-iq-eq-4436455846",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436911886",
+   "company": "JPMorganChase",
+   "title": "Trading Services Analyst",
+   "url": "https://www.linkedin.com/jobs/view/trading-services-analyst-at-jpmorganchase-4436911886",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, JPM Trading Services Analyst (Whole Loans)"
+  },
+  {
+   "id": "4432361295",
+   "company": "Barclays",
+   "title": "Utilities Trading Assistant",
+   "url": "https://www.linkedin.com/jobs/view/utilities-trading-assistant-at-barclays-4432361295",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435260066",
+   "company": "Social Capital Resources",
+   "title": "Hedge Fund Trade Support Associate",
+   "url": "https://www.linkedin.com/jobs/view/hedge-fund-trade-support-associate-at-social-capital-resources-4435260066",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4434667582",
+   "company": "MUFG",
+   "title": "SPG/MBS Operations",
+   "url": "https://www.linkedin.com/jobs/view/spg-mbs-operations-at-mufg-4434667582",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436359895",
+   "company": "Abacus Group, LLC",
+   "title": "Operations Associate",
+   "url": "https://www.linkedin.com/jobs/view/operations-associate-at-abacus-group-llc-4436359895",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3+ years operations/middle office/settlements experience"
+  },
+  {
+   "id": "4427616202",
+   "company": "Valcor Engineering Corporation",
+   "title": "ERP BUSINESS ANALYST / DEVELOPER",
+   "url": "https://www.linkedin.com/jobs/view/erp-business-analyst-developer-at-valcor-engineering-corporation-4427616202",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4427132896",
+   "company": "Willow Wealth",
+   "title": "Associate, Investor Support",
+   "url": "https://www.linkedin.com/jobs/view/associate-investor-support-at-willow-wealth-4427132896",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, Willow Wealth Investor Support Associate"
+  },
+  {
+   "id": "4427607297",
+   "company": "American Century Investments",
+   "title": "National Account Client Service Associate",
+   "url": "https://www.linkedin.com/jobs/view/national-account-client-service-associate-at-american-century-investments-4427607297",
+   "date": "2026-07-04",
+   "note": "dropped: salary $65k-$70k, below $75k target"
+  },
+  {
+   "id": "4435271033",
+   "company": "Social Capital Resources",
+   "title": "Investment Advisory Client Services Associate",
+   "url": "https://www.linkedin.com/jobs/view/investment-advisory-client-services-associate-at-social-capital-resources-4435271033",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4427637072",
+   "company": "Bernstein Private Wealth Management",
+   "title": "Associate",
+   "url": "https://www.linkedin.com/jobs/view/associate-at-bernstein-private-wealth-management-4427637072",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436908256",
+   "company": "Commonfund",
+   "title": "Business Technology Analyst",
+   "url": "https://www.linkedin.com/jobs/view/business-technology-analyst-at-commonfund-4436908256",
+   "date": "2026-07-04",
+   "note": "dropped: requires 2-4 yrs in a technology-focused role + demonstrated professional AI tool use; academic-only AI exposure does not meet bar"
+  },
+  {
+   "id": "4432394990",
+   "company": "Bessemer Trust",
+   "title": "Associate Client Advisor",
+   "url": "https://www.linkedin.com/jobs/view/associate-client-advisor-at-bessemer-trust-4432394990",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435031522",
+   "company": "Morgan Stanley",
+   "title": "Private Wealth Management Portfolio Management Associate",
+   "url": "https://www.linkedin.com/jobs/view/private-wealth-management-portfolio-management-associate-at-morgan-stanley-4435031522",
+   "date": "2026-07-04",
+   "note": "dropped: requires active Series 7/66 or 63/65 licenses now, Neil only willing to obtain upon hire"
+  },
+  {
+   "id": "4387144702",
+   "company": "Quantinno Capital Management",
+   "title": "Portfolio Strategist",
+   "url": "https://www.linkedin.com/jobs/view/portfolio-strategist-at-quantinno-capital-management-4387144702",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4436914712",
+   "company": "JPMorganChase",
+   "title": "J.P. Morgan Wealth Management - Private Client Investment Associate - Midtown Manhattan",
+   "url": "https://www.linkedin.com/jobs/view/j-p-morgan-wealth-management-private-client-investment-associate-midtown-manhattan-at-jpmorganchase-4436914712",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435252359",
+   "company": "Social Capital Resources",
+   "title": "Hedge Fund Middle Office Associate",
+   "url": "https://www.linkedin.com/jobs/view/hedge-fund-middle-office-associate-at-social-capital-resources-4435252359",
+   "date": "2026-07-04",
+   "note": "dropped: requires 5+ years middle office experience"
+  },
+  {
+   "id": "4406908176",
+   "company": "Millennium",
+   "title": "Portfolio Pricing and Valuations Specialist",
+   "url": "https://www.linkedin.com/jobs/view/portfolio-pricing-and-valuations-specialist-at-millennium-4406908176",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3-7 years + solid Python required (not academic-plus)"
+  },
+  {
+   "id": "4436110257",
+   "company": "Cross River",
+   "title": "Analyst, Operations",
+   "url": "https://www.linkedin.com/jobs/view/analyst-operations-at-cross-river-4436110257",
+   "date": "2026-07-04",
+   "note": "dropped: requires 2 yrs ACH/RTP/Wire ops specifically (niche not held); salary tops out at $80k"
+  },
+  {
+   "id": "4427627368",
+   "company": "Valley Bank",
+   "title": "Reconciliation Specialist - Deposit Operations",
+   "url": "https://www.linkedin.com/jobs/view/reconciliation-specialist-deposit-operations-at-valley-bank-4427627368",
+   "date": "2026-07-04",
+   "note": "dropped: requires 3+ years finance/accounting experience"
+  },
+  {
+   "id": "4426632750",
+   "company": "Affirm",
+   "title": "Capital Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/capital-operations-analyst-at-affirm-4426632750",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, Affirm Capital Operations Analyst"
+  },
+  {
+   "id": "4387600284",
+   "company": "Ramp",
+   "title": "Risk Operations Specialist, Payments",
+   "url": "https://www.linkedin.com/jobs/view/risk-operations-specialist-payments-at-ramp-4387600284",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435257177",
+   "company": "Social Capital Resources",
+   "title": "Trading Operations Specialist (Equity)",
+   "url": "https://www.linkedin.com/jobs/view/trading-operations-specialist-equity-at-social-capital-resources-4435257177",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4435227813",
+   "company": "Blackstone",
+   "title": "2026 Blackstone Finance – Strategic Partners Finance – Investment Operations Analyst",
+   "url": "https://www.linkedin.com/jobs/view/2026-blackstone-finance-%E2%80%93-strategic-partners-finance-%E2%80%93-investment-operations-analyst-at-blackstone-4435227813",
+   "date": "2026-07-04",
+   "note": "KEPT: To Apply, Blackstone Investment Operations Analyst"
+  },
+  {
+   "id": "4436124057",
+   "company": "Atlantic Group",
+   "title": "Asset Management Analyst (Temporary)",
+   "url": "https://www.linkedin.com/jobs/view/asset-management-analyst-temporary-at-atlantic-group-4436124057",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
+  {
+   "id": "4414049080",
+   "company": "Gen II Fund Services",
+   "title": "Senior Fund Accountant",
+   "url": "https://www.linkedin.com/jobs/view/senior-fund-accountant-at-gen-ii-fund-services-4414049080",
+   "date": "2026-07-04",
+   "note": "not fetched this run (card only); re-evaluate if it reappears"
+  },
   {
    "id": "4410486168",
    "company": "Citi",
