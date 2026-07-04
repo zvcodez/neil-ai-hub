@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:25:17.642Z",
+  "updatedAt": "2026-07-04T17:25:32.579Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -312,6 +312,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T13:52:29.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-04T17:25:32.578Z"
         }
       ],
       "company": "Social Capital Resources (recruiter)",
@@ -321,8 +325,10 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SCR_ClientServices.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SCR_ClientServices.docx",
       "salary": "TBD (recruiter)",
-      "status": "To Apply",
-      "notes": "Posted 06/30, accepting as of 07/02. Recruiter Neil ALREADY has a live application with (SMA Ops role) — warm channel. Asks 1 to 5 years similar experience; Advent APX/Salesforce preferred only."
+      "status": "Did Not Apply",
+      "notes": "Posted 06/30, accepting as of 07/02. Recruiter Neil ALREADY has a live application with (SMA Ops role) — warm channel. Asks 1 to 5 years similar experience; Advent APX/Salesforce preferred only.",
+      "noApplyReason": "job position closed",
+      "noApplyAt": "2026-07-04T17:25:32.578Z"
     },
     {
       "id": "app-atlanticgroup",
