@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:25:32.579Z",
+  "updatedAt": "2026-07-04T17:34:16.505Z",
   "data": [
     {
       "id": "app-citi-secderiv",
@@ -274,6 +274,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T13:52:29.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-04T17:34:16.501Z"
         }
       ],
       "company": "Blue Owl Capital",
@@ -283,8 +287,9 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_BlueOwl.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_BlueOwl.docx",
       "salary": "$85k–$100k",
-      "status": "To Apply",
-      "notes": "Posted 07/01, VERIFIED LIVE on Blue Owl Workday 07/02 (posted yesterday there). 2 to 3 years preferred with investment products focus; salary $85k to $100k plus bonus. Fast-growing alternatives brand."
+      "status": "Applied",
+      "notes": "Posted 07/01, VERIFIED LIVE on Blue Owl Workday 07/02 (posted yesterday there). 2 to 3 years preferred with investment products focus; salary $85k to $100k plus bonus. Fast-growing alternatives brand.",
+      "dateApplied": "2026-07-04"
     },
     {
       "id": "app-smbc",
