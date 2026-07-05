@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T04:55:50.026420+00:00",
+  "updatedAt": "2026-07-05T04:57:56.418305+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -160,8 +160,8 @@
       "folder": "~/Claude/alcohol-scanner",
       "repoUrl": "",
       "liveUrl": "https://alcohol-scanner.vercel.app",
-      "nextStep": "Neil to test v2 on phone: check the new Logged tab layout, score breakdown panel, and richer result cards on a few real scans. Camera-permission-reprompt issue (item 1) still needs info: is he opening via Home Screen icon or fresh Safari tab each time?",
-      "lastDid": "Shipped v2: richer nutrient data (protein/fat/fiber/sodium) + plain-language overview per drink, transparent score breakdown panel, Logged tab (Recent-3 + expand + Top Options ranked by score), PROOF rebrand, dynamic stat tiles ranked by %DV. Fixed barcode detection (format hints + higher-res camera) after live phone testing confirmed it works.",
+      "nextStep": "Neil to retest v2 on phone after these fixes. Camera-permission-reprompt (item 1) still open: his screenshot shows a normal Safari tab (not installed to Home Screen), which changes the earlier iOS-standalone-PWA theory \u2014 worth a fresh look if he brings it up again.",
+      "lastDid": "Fixed 3 real issues from live phone testing: header/scroll jump on tab switch (page didn't reset scroll position), Top Options section wrongly hidden for <=3 scans, and missing overview text for entries scanned before that field existed. v2 feature set (richer info, score breakdown, Logged tab, rebrand, dynamic tiles) is confirmed working live.",
       "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews"
     },
     {
