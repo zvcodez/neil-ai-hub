@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T04:38:50.490066+00:00",
+  "updatedAt": "2026-07-05T04:55:50.026420+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -217,8 +217,8 @@
       "folder": "~/Claude/gucci-run",
       "repoUrl": "",
       "liveUrl": "https://gucci-run.vercel.app",
-      "nextStep": "Open the live URL on the iPhone, Add to Home Screen, and let Diksha play. Optional next: finish-line milestone moment, power-ups (bone magnet / zoomies dash), or real landmarks from the commute.",
-      "lastDid": "Built the full game (canvas endless runner, swipe controls, offline PWA, day/night, sound) and deployed to production on Vercel.",
+      "nextStep": "Have Diksha (or Neil) play it on the actual iPhone and confirm the dizziness is gone in real hand-held play. Tunable knobs are documented at the top of game.js and in HANDOFF.md if it still needs adjusting.",
+      "lastDid": "Diagnosed why the road felt dizzying/flat (a single power-curve hack instead of real perspective) and rewrote the whole renderer: true 1/depth perspective, segmented rumble-strip road, gentle procedural curves/hills, real parallax (skyline/buildings/road at different speeds), speed-coupled clouds, and a world lean/bank on lane changes. Verified in-browser (no errors across long fast-forwarded runs), redeployed to production.",
       "notes": "\u2022 Swipe to dodge obstacles and grab coins; it speeds up as you go\n\u2022 Must work fully offline (no signal on the commute)\n\u2022 Personalize it for her \u2014 character, theme, maybe some inside jokes\n\u2022 Quick pick-up-and-play sessions; high scores saved on the phone\n\u2022 Simple touch controls, designed for holding the phone upright"
     },
     {
