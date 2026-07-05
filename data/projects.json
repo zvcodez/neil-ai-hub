@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:45:03.524266+00:00",
+  "updatedAt": "2026-07-05T04:18:05.913224+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -212,13 +212,13 @@
       "_stagedAt": "2026-06-29T05:25:26.741459+00:00",
       "name": "Subway Surfers\u2013style runner (for my girlfriend)",
       "description": "An endless runner game my girlfriend can play offline on her way to work.",
-      "stage": "Idea",
+      "stage": "Live",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/gucci-run",
       "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "",
-      "lastDid": "",
+      "liveUrl": "https://gucci-run.vercel.app",
+      "nextStep": "Open the live URL on the iPhone, Add to Home Screen, and let Diksha play. Optional next: finish-line milestone moment, power-ups (bone magnet / zoomies dash), or real landmarks from the commute.",
+      "lastDid": "Built the full game (canvas endless runner, swipe controls, offline PWA, day/night, sound) and deployed to production on Vercel.",
       "notes": "\u2022 Swipe to dodge obstacles and grab coins; it speeds up as you go\n\u2022 Must work fully offline (no signal on the commute)\n\u2022 Personalize it for her \u2014 character, theme, maybe some inside jokes\n\u2022 Quick pick-up-and-play sessions; high scores saved on the phone\n\u2022 Simple touch controls, designed for holding the phone upright"
     },
     {
