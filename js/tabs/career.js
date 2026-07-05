@@ -142,6 +142,7 @@ const appStatusColor = {
 
 // Batch = the day the posting landed in the hub (daily digest runs stamp _created).
 const batchOf = (a) => a.batch || (a._created || '').slice(0, 10);
+const splitLines = (s) => (s || '').split('\n').map((x) => x.trim()).filter(Boolean);
 
 function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline }) {
   const [declining, setDeclining] = useState(false);
@@ -160,6 +161,25 @@ function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline })
       </div>
       ${meta.length > 0 && html`<div class="app-row-meta">${meta.join(' · ')}</div>`}
       ${a.status === 'Did Not Apply' && a.noApplyReason && html`<div class="app-row-reason">“${a.noApplyReason}”</div>`}
+      ${(a.skills?.length > 0 || a.bulletsTD || a.bulletsBloomberg || a.bulletsBC) && html`<details class="net-msg" onClick=${(e) => e.stopPropagation()}>
+        <summary>Skills & resume bullets (for Workday)</summary>
+        ${a.skills?.length > 0 && html`<div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">Skills — best fit first, then reach skills</span><${CopyBtn} text=${a.skills.join(', ')} /></div>
+          <div class="project-tags">${a.skills.map((s, i) => html`<span class="chip" key=${i}>${s}</span>`)}</div>
+        </div>`}
+        ${a.bulletsTD && html`<div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">TD Bank bullets</span><${CopyBtn} text=${a.bulletsTD} /></div>
+          <ul class="bullet-list">${splitLines(a.bulletsTD).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
+        </div>`}
+        ${a.bulletsBloomberg && html`<div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">Bloomberg bullets</span><${CopyBtn} text=${a.bulletsBloomberg} /></div>
+          <ul class="bullet-list">${splitLines(a.bulletsBloomberg).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
+        </div>`}
+        ${a.bulletsBC && html`<div class="net-msg-block">
+          <div class="net-msg-head"><span class="net-label">B&C Enterprise bullets</span><${CopyBtn} text=${a.bulletsBC} /></div>
+          <ul class="bullet-list">${splitLines(a.bulletsBC).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
+        </div>`}
+      </details>`}
     </div>
     <div class="app-row-actions" onClick=${(e) => e.stopPropagation()}>
       ${a.link && html`<a class="icon-btn" title="Open posting" href=${a.link} target="_blank" rel="noreferrer"><${Icon} name="external" size=${14} /></a>`}
@@ -204,6 +224,10 @@ function ApplicationsTab({ accent }) {
     { name: 'status', label: 'Status', type: 'select', options: APP_STATUSES.map((s) => ({ value: s, label: s })) },
     { name: 'noApplyReason', label: "Why you didn't apply (if you passed)", type: 'textarea', rows: 2 },
     { name: 'notes', label: 'Notes (who you spoke to, next steps)', type: 'textarea', rows: 4 },
+    { name: 'skills', label: 'Skills for Workday (best fit first, then reach skills)', type: 'tags', placeholder: 'Add a skill, press Enter', full: true },
+    { name: 'bulletsTD', label: 'TD Bank resume bullets (one per line)', type: 'textarea', rows: 5, full: true },
+    { name: 'bulletsBloomberg', label: 'Bloomberg resume bullets (one per line)', type: 'textarea', rows: 5, full: true },
+    { name: 'bulletsBC', label: 'B&C Enterprise resume bullets (one per line)', type: 'textarea', rows: 2, full: true },
   ];
 
   const save = (values) => {

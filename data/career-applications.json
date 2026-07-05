@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:55:50.000Z",
+  "updatedAt": "2026-07-05T21:21:01.000Z",
   "data": [
     {
       "id": "app-blackstone-invops",
@@ -19,7 +19,27 @@
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "Posted 2026-07-02, 0-1 yr required, entry level. Top-tier brand (Blackstone Strategic Partners, $1.3T AUM). Maps to Bloomberg onboarding/data control for 400+ PMs and 650+ accounts. Private equity is a new asset class, owned honestly in the letter."
+      "notes": "Posted 2026-07-02, 0-1 yr required, entry level. Top-tier brand (Blackstone Strategic Partners, $1.3T AUM). Maps to Bloomberg onboarding/data control for 400+ PMs and 650+ accounts. Private equity is a new asset class, owned honestly in the letter.",
+      "skills": [
+        "Account & Transactional Data Onboarding",
+        "Cash & Custody Reconciliation",
+        "Investor Reporting",
+        "Risk Identification & Escalation",
+        "Stakeholder Coordination",
+        "Microsoft Excel",
+        "Bloomberg Terminal",
+        "Data Integrity & QC",
+        "Microsoft Office Suite",
+        "Legal Entity Onboarding",
+        "Fund Accounting",
+        "Private Equity Fund Operations",
+        "Sigma",
+        "PowerPoint",
+        "Financial Modeling"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-jpm-tradesupport",
@@ -39,7 +59,27 @@
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "Posted 7 hours before sourcing (very fresh), 115 applicants already. No years of experience required, entry-friendly. Maps to Bloomberg SMA reconciliation and daily deadline-driven processing."
+      "notes": "Posted 7 hours before sourcing (very fresh), 115 applicants already. No years of experience required, entry-friendly. Maps to Bloomberg SMA reconciliation and daily deadline-driven processing.",
+      "skills": [
+        "Trade Level Data & Settlement Support",
+        "Cross System Reconciliation",
+        "Exception Investigation",
+        "Change Management",
+        "Process Improvement",
+        "Stakeholder Management",
+        "Microsoft Excel",
+        "Data Analysis",
+        "Bloomberg Terminal",
+        "Order Execution",
+        "Trade Settlement",
+        "Trading Services",
+        "Risk Monitoring",
+        "Automation Tools",
+        "Financial Markets"
+      ],
+      "bulletsTD": "Identify and monitor operational and regulatory risk indicators across flagged accounts, completing detailed investigations weekly (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, applying data analysis to flag discrepancies before they reach downstream reporting.\nCoordinate with Compliance and Operations stakeholders to resolve exceptions, building productive working relationships across teams.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team through a major process change under deadline.\nAuthor training guides and process documentation, proposing workflow improvements later adopted by new analysts.",
+      "bulletsBloomberg": "Reconcile trade level position data for 650+ SMAs and CITs against custodian and administrator records, ensuring seamless flow to downstream reporting.\nServe as primary point of contact for 400+ institutional portfolio managers, validating and onboarding data onto a new platform, a hands on change management effort.\nDiagnose and resolve data upload exceptions including formatting and missing field errors, minimizing disruption during the platform transition.\nAnalyze monthly performance and holdings data using Excel, identifying inefficiencies and proposing process improvements adopted by the team.\nAdjust account records for corporate actions including stock splits and dividend reinvestments to keep downstream data accurate.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-jpm-tradingservices",
@@ -59,7 +99,25 @@
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "STRETCH: mortgage/securitization is a new asset class for Neil, owned honestly in the letter. No years required. Posted 14 hours before sourcing, 33 applicants. Reconciliation/data-normalization mechanics transfer from Bloomberg."
+      "notes": "STRETCH: mortgage/securitization is a new asset class for Neil, owned honestly in the letter. No years required. Posted 14 hours before sourcing, 33 applicants. Reconciliation/data-normalization mechanics transfer from Bloomberg.",
+      "skills": [
+        "Trade & Position Reconciliation",
+        "Data Normalization",
+        "Controls & Audit Documentation",
+        "Microsoft Excel",
+        "Deadline Driven Execution",
+        "Ad Hoc Reporting",
+        "Attention to Detail",
+        "Trade Booking",
+        "Mortgage & Securitized Products",
+        "Loan Data Processing",
+        "Front to Back Trade Processing",
+        "Metrics & Management Reporting",
+        "Time Management"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts under a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, maintaining a clear and controls focused audit trail.\nBuild a transaction tracker in Excel per case, normalizing raw account data into a reviewable format to support findings.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly under pressure to meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, reinforcing a controls focused workflow.",
+      "bulletsBloomberg": "Reconcile trade level position data for 650+ SMAs and CITs against custodian and administrator records, maintaining a controls focused audit trail.\nServe as primary point of contact for 400+ institutional portfolio managers, diagnosing and correcting data formatting errors before upload.\nUse Excel to normalize and analyze monthly performance and holdings data, generating ad hoc reports for internal stakeholders.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, keeping downstream calculations accurate.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-brownadvisory-odd",
@@ -75,11 +133,31 @@
       "link": "https://www.linkedin.com/jobs/view/operational-due-diligence-analyst-at-brown-advisory-4416905177",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_BrownAdvisory.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_BrownAdvisory.docx",
-      "salary": "$90,000–$130,000",
+      "salary": "$90,000\u2013$130,000",
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "1-5 yrs required, entry level tag. Strong fit: documentation/due-diligence review background plus MBA AI/ML coursework matches their explicit \"leverage AI tools\" requirement. Employee-owned, client-first culture."
+      "notes": "1-5 yrs required, entry level tag. Strong fit: documentation/due-diligence review background plus MBA AI/ML coursework matches their explicit \"leverage AI tools\" requirement. Employee-owned, client-first culture.",
+      "skills": [
+        "Investigation & Documentation",
+        "Operational Risk Assessment",
+        "Financial Record Review",
+        "Fund/Custodian Coordination",
+        "Stakeholder Communication",
+        "Microsoft Excel",
+        "Microsoft Word",
+        "Operational Due Diligence",
+        "Hedge Fund Operations",
+        "Private Equity Fund Structures",
+        "AI Tools for Research & Workflow",
+        "CAIA",
+        "CFA",
+        "Legal Agreement Review",
+        "Compliance Documentation Review"
+      ],
+      "bulletsTD": "Conduct end to end investigations of flagged accounts, producing full documentation covering KYC, related parties, transaction history, analysis, and conclusion across roughly 1,000 cases to date.\nIdentify reasonable grounds for suspicion across typologies including structuring and high risk jurisdiction activity, making independent filing decisions with real account level consequences.\nCoordinate with Compliance and Operations stakeholders to resolve exceptions, maintaining a clear and audit ready record.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and reference documentation adopted by new analysts, improving team wide consistency.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, coordinating directly with PMs and internal teams to resolve data issues.\nReconcile cash, custody, and trade level data for 650+ SMAs and CITs against custodian and administrator records.\nAnalyze monthly performance and holdings data, applying MBA coursework in AI/ML and business analytics to improve review efficiency.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate documentation.\nExpand the SMA strategy library by 800+ investment strategies through direct outreach to portfolio managers.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-usbank-altinv",
@@ -95,11 +173,29 @@
       "link": "https://www.linkedin.com/jobs/view/alternative-investments-accountant-at-u-s-bank-4375849291",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_USBank.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_USBank.docx",
-      "salary": "$81,345–$95,700",
+      "salary": "$81,345\u2013$95,700",
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "2-5 yrs preferred (not hard required), entry level tag. Hackensack NJ is a short commute from Piscataway. GL/NAV accounting would be new; letter owns that honestly and leans on the genuine reconciliation/corporate-action overlap."
+      "notes": "2-5 yrs preferred (not hard required), entry level tag. Hackensack NJ is a short commute from Piscataway. GL/NAV accounting would be new; letter owns that honestly and leans on the genuine reconciliation/corporate-action overlap.",
+      "skills": [
+        "Cash & Custody Reconciliation",
+        "Corporate Actions Processing",
+        "Trade & Transaction Recording",
+        "Custodian/Administrator Coordination",
+        "Financial & Managerial Accounting",
+        "Microsoft Excel",
+        "Microsoft Office",
+        "GAAP",
+        "NAV Calculation",
+        "Portfolio & Partnership Accounting",
+        "General Ledger Entries",
+        "Prime Broker Reconciliation",
+        "SEC Compliance"
+      ],
+      "bulletsTD": "Validate account and transactional records against internal control standards under a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, maintaining GAAP consistent documentation.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving accuracy and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, supporting accurate valuation and performance calculations.\nAnalyze monthly performance and holdings data, preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-affirm-capitalops",
@@ -115,11 +211,30 @@
       "link": "https://www.linkedin.com/jobs/view/capital-operations-analyst-at-affirm-4426632750",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_Affirm.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_Affirm.docx",
-      "salary": "$90,000–$110,000 (NY/NJ band)",
+      "salary": "$90,000\u2013$110,000 (NY/NJ band)",
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "2+ yrs Treasury/capital markets/investment ops required, SQL/Python only \"a strong plus.\" Recognizable fintech (Affirm). Reconciliation and audit-support background maps well; consumer lending capital markets is new territory, owned in the letter."
+      "notes": "2+ yrs Treasury/capital markets/investment ops required, SQL/Python only \"a strong plus.\" Recognizable fintech (Affirm). Reconciliation and audit-support background maps well; consumer lending capital markets is new territory, owned in the letter.",
+      "skills": [
+        "Reconciliation & Audit Support",
+        "Investor & Regulatory Reporting",
+        "Data Validation & Documentation",
+        "Stakeholder Coordination",
+        "Microsoft Excel",
+        "Financial Modeling",
+        "Treasury Operations",
+        "Capital Markets",
+        "Loan Lifecycle Management",
+        "Asset Backed Financing",
+        "Liquidity Management",
+        "SQL",
+        "Python",
+        "Workflow Automation"
+      ],
+      "bulletsTD": "Identify and monitor operational and regulatory risk across flagged accounts, completing detailed investigations weekly (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, supporting internal audit and regulatory exam requests.\nCompile comprehensive investigation documents used for audit review, ensuring data validation and clear documentation.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks against daily deadlines.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nPrepare monthly performance and holdings reporting for internal stakeholders, mirroring the cadence of recurring investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream reporting.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-willowwealth-investorsupport",
@@ -135,11 +250,28 @@
       "link": "https://www.linkedin.com/jobs/view/associate-investor-support-at-willow-wealth-4427132896",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_WillowWealth.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_WillowWealth.docx",
-      "salary": "$85,000–$95,000",
+      "salary": "$85,000\u2013$95,000",
       "deadline": "",
       "dateApplied": "",
       "status": "To Apply",
-      "notes": "2-5+ yrs client-facing experience required. Maps to Bloomberg client support for 400+ institutional PMs. Direct HNW/private-markets client work is new, owned honestly in the letter."
+      "notes": "2-5+ yrs client-facing experience required. Maps to Bloomberg client support for 400+ institutional PMs. Direct HNW/private-markets client work is new, owned honestly in the letter.",
+      "skills": [
+        "Institutional Client & PM Support",
+        "Inquiry Resolution",
+        "Portfolio & Account Communication",
+        "Escalation Handling",
+        "Cross Team Coordination",
+        "Microsoft Excel",
+        "Client Service",
+        "Investor Relations",
+        "High Net Worth Client Management",
+        "Private Markets Knowledge",
+        "Emotional Intelligence",
+        "Relationship Management"
+      ],
+      "bulletsTD": "Investigate flagged account activity and communicate findings clearly to stakeholders, completing detailed reviews weekly (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions.\nCompile comprehensive investigation documents that give stakeholders a clear, accurate view of account status and findings.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving onboarding speed and consistency.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, fielding roughly 10-20 inquiries daily and resolving them by email or scheduled meeting.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records.\nGuided portfolio managers through a new data platform migration, translating a technical format change into plain, actionable steps.\nAnalyze monthly performance and holdings data, preparing clear account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct relationship building with portfolio managers.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-citi-secderiv",
@@ -158,11 +290,11 @@
       "jobTitle": "Securities & Derivatives Intermediate Analyst (Jersey City)",
       "link": "https://www.linkedin.com/jobs/view/securities-and-derivatives-intermediate-analyst-at-citi-4410486168",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Citi.docx",
-      "salary": "$78k–$109k",
+      "salary": "$78k\u2013$109k",
       "deadline": "2026-07-03",
       "dateApplied": "2026-07-02",
       "status": "Applied",
-      "notes": "MOST URGENT — closes Jul 3. Trade-break resolution + reconciliation, 2–5 yrs, no programming required. Maps directly to your Bloomberg recon work. Jersey City = easy commute.",
+      "notes": "MOST URGENT \u2014 closes Jul 3. Trade-break resolution + reconciliation, 2\u20135 yrs, no programming required. Maps directly to your Bloomberg recon work. Jersey City = easy commute.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Citi.docx"
     },
     {
@@ -182,11 +314,11 @@
       "jobTitle": "SMA Operations Associate (NYC)",
       "link": "https://www.linkedin.com/jobs/view/sma-operations-associate-at-social-capital-resources-4434374193",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SMAOps.docx",
-      "salary": "$100k–$120k",
+      "salary": "$100k\u2013$120k",
       "deadline": "",
       "dateApplied": "2026-07-02",
       "status": "Applied",
-      "notes": "Literally SMA operations — account setup, restrictions, recon files. Your Bloomberg SMA/CIT work is the exact match. ALSO message the recruiter directly (outreach send #1).",
+      "notes": "Literally SMA operations \u2014 account setup, restrictions, recon files. Your Bloomberg SMA/CIT work is the exact match. ALSO message the recruiter directly (outreach send #1).",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SMAOps.docx"
     },
     {
@@ -206,11 +338,11 @@
       "jobTitle": "Reconciliation & Corporate Actions Analyst (NYC)",
       "link": "https://www.linkedin.com/jobs/view/reconciliation-corporate-actions-analyst-at-oppenheimer-co-inc-4405040511",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Oppenheimer.docx",
-      "salary": "$70k–$85k",
+      "salary": "$70k\u2013$85k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
-      "notes": "Highest-probability posting: asks for SMA reconciliation + Bloomberg platform proficiency by name. 141 applicants already — apply fast. Salary slightly under target.",
+      "notes": "Highest-probability posting: asks for SMA reconciliation + Bloomberg platform proficiency by name. 141 applicants already \u2014 apply fast. Salary slightly under target.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Oppenheimer.docx",
       "noApplyReason": "",
       "noApplyAt": "2026-07-02T05:26:56.945Z"
@@ -229,14 +361,14 @@
         }
       ],
       "company": "Goldman Sachs",
-      "jobTitle": "Associate, Settlements — Global Banking & Markets (NYC)",
+      "jobTitle": "Associate, Settlements \u2014 Global Banking & Markets (NYC)",
       "link": "https://www.linkedin.com/jobs/view/global-banking-markets-new-york-associate-settlements-9283349-at-goldman-sachs-4432698794",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_GoldmanSachs.docx",
-      "salary": "$97k–$126k",
+      "salary": "$97k\u2013$126k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
-      "notes": "Stretch: biggest brand, 2+ yrs ops + advanced Excel — you clear both, but settlements itself is new to you.",
+      "notes": "Stretch: biggest brand, 2+ yrs ops + advanced Excel \u2014 you clear both, but settlements itself is new to you.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_GoldmanSachs.docx",
       "noApplyReason": "it says: Prior experience must include two (2) years with: trade booking reviews; validating trade information (including asset class- and region-specific trade information), streamlining essential reporting, and knowledge sharing; communicating complex issues and concepts to a wide array of internal partners with differing levels of product experience",
       "noApplyAt": "2026-07-02T05:18:50.559Z"
@@ -255,10 +387,10 @@
         }
       ],
       "company": "Lord Abbett",
-      "jobTitle": "Analyst, Global Investor Services – Alternatives (Jersey City)",
+      "jobTitle": "Analyst, Global Investor Services \u2013 Alternatives (Jersey City)",
       "link": "https://www.wallstreetcareers.com/jobs/468329164-analyst-global-investor-services-alternatives",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_LordAbbett.docx",
-      "salary": "$80k–$95k",
+      "salary": "$80k\u2013$95k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
@@ -284,11 +416,11 @@
       "jobTitle": "Middle Office Operations Senior Analyst/Associate (NYC)",
       "link": "https://www.linkedin.com/jobs/view/middle-office-operations-senior-analyst-associate-at-neuberger-4415104503",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Neuberger.docx",
-      "salary": "$75k–$125k",
+      "salary": "$75k\u2013$125k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
-      "notes": "Stretch — wants derivatives/middle-office experience you don't have yet, but recon + PM point-of-contact fit is real.",
+      "notes": "Stretch \u2014 wants derivatives/middle-office experience you don't have yet, but recon + PM point-of-contact fit is real.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Neuberger.docx",
       "noApplyReason": "it literally says: Preferred:\n\nKnowledge of technical side of new accounts, reporting and onboarding.\nStrong knowledge of BlackRock Aladdin.\nFamiliarity with SWIFT messaging and Eze.",
       "noApplyAt": "2026-07-02T05:17:41.553Z"
@@ -308,9 +440,31 @@
       "companyLink": "https://nb.wd1.myworkdayjobs.com/en-US/NBCareers/job/New-York-NY/Client-Associate_R0012334",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_NeubergerClient.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_NeubergerClient.docx",
-      "salary": "$80k–$100k",
+      "salary": "$80k\u2013$100k",
       "status": "To Apply",
-      "notes": "TOP PICK. Posted 06/30, VERIFIED LIVE on NB Workday 07/02. Wants exactly 1 to 2 years experience; licenses sponsored in year one (resume already says willing). Institutional Client Group, RM/RFP support."
+      "notes": "TOP PICK. Posted 06/30, VERIFIED LIVE on NB Workday 07/02. Wants exactly 1 to 2 years experience; licenses sponsored in year one (resume already says willing). Institutional Client Group, RM/RFP support.",
+      "skills": [
+        "Institutional Client & PM Support",
+        "RFP & Presentation Support",
+        "CRM & Consultant Data Maintenance",
+        "Escalation Handling",
+        "Cross Team Coordination",
+        "Microsoft Excel",
+        "Microsoft Word",
+        "Microsoft PowerPoint",
+        "CRM Platforms",
+        "Asset Management",
+        "Consultant Relations",
+        "FINRA SIE",
+        "FINRA Series 7",
+        "FINRA Series 66",
+        "FINRA Series 31",
+        "CAIA",
+        "CFA"
+      ],
+      "bulletsTD": "Investigate high volume account activity and financial records to identify discrepancies and risk indicators, completing detailed reviews weekly (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and gather relevant information across systems, comparable to preparing materials for a presentation or RFP.\nCoordinate with Compliance and Operations stakeholders to resolve escalations within tight turnaround windows.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
+      "bulletsBloomberg": "Serve as a day to day operational contact for 400+ institutional portfolio managers across onboarding, account servicing, and issue resolution.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records.\nSchedule and run meetings with portfolio managers and internal teams to resolve data issues, maintaining consultant style coverage notes.\nAnalyze monthly performance and holdings data supporting client reporting cycles across multiple investment platforms.\nExpand the SMA strategy library by 800+ investment strategies through direct outreach to portfolio managers.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-dtcc_corpactions",
@@ -327,9 +481,24 @@
       "companyLink": "https://www.dtcc.com/careers/job-search",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_DTCC_CorpActions.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_DTCC_CorpActions.docx",
-      "salary": "TBD (DTCC band; Treasury peer role $90k–$115k)",
+      "salary": "TBD (DTCC band; Treasury peer role $90k\u2013$115k)",
       "status": "To Apply",
-      "notes": "Posted 07/01 (yesterday), accepting as of 07/02. Requires only a minimum of 2 years related experience, Bachelor preferred. Direct match to Bloomberg corporate actions bullet."
+      "notes": "Posted 07/01 (yesterday), accepting as of 07/02. Requires only a minimum of 2 years related experience, Bachelor preferred. Direct match to Bloomberg corporate actions bullet.",
+      "skills": [
+        "Corporate Actions Processing",
+        "Exception Resolution & Workflow Processing",
+        "Risk & Control Monitoring",
+        "Client Service & Inquiry Response",
+        "Training & Mentoring",
+        "Microsoft Excel",
+        "Documented Procedure Execution",
+        "Metrics & Benchmark Delivery",
+        "Stakeholder Relationship Management",
+        "Reconciliation"
+      ],
+      "bulletsTD": "Execute documented investigation procedures, resolving complex inquiries and exceptions under a 20 case weekly quota (20-25 completed, peak of 33).\nAlign risk and control processes into daily case work, identifying reasonable grounds for suspicion across recurring typologies.\nMaintain client service focus, responding to internal stakeholder inquiries timely and accurately with full documentation.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nFacilitate training sessions for new analysts, authoring guides and process documentation adopted team wide.",
+      "bulletsBloomberg": "Adjust account records for corporate actions including stock splits and dividend reinvestments across 650+ SMAs and CITs, ensuring accurate downstream calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving inquiries timely and accurately.\nReconcile cash, custody, and trade level position data against custodian and administrator records, building strong stakeholder relationships.\nAnalyze monthly performance and holdings data, preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-dtcc_treasury",
@@ -346,9 +515,25 @@
       "companyLink": "https://www.dtcc.com/careers/job-search",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_DTCC_Treasury.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_DTCC_Treasury.docx",
-      "salary": "$90k–$115k",
+      "salary": "$90k\u2013$115k",
       "status": "To Apply",
-      "notes": "Posted 06/29, accepting as of 07/02. Requires minimum 2 years treasury OR finance experience (he clears the finance bar). $90k to $115k posted band."
+      "notes": "Posted 06/29, accepting as of 07/02. Requires minimum 2 years treasury OR finance experience (he clears the finance bar). $90k to $115k posted band.",
+      "skills": [
+        "Daily Cash & Account Reconciliation",
+        "Liquidity & Risk Escalation",
+        "Stakeholder Coordination",
+        "Regulatory Reporting Exposure",
+        "Process Improvement",
+        "Microsoft Excel",
+        "Treasury Cash Management Systems",
+        "Foreign Exchange",
+        "Digital Assets / Blockchain",
+        "Counterparty Risk Monitoring",
+        "Bank Reconciliation"
+      ],
+      "bulletsTD": "Investigate flagged transactions for suspicious activity, escalating risk indicators under a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, maintaining an accurate and audit ready record.\nSend formal requests for information to source teams and make independent filing decisions with real account level consequences.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks against daily deadlines.\nServe as primary point of contact for 400+ institutional portfolio managers, escalating data discrepancies to the right internal team.\nAnalyze monthly performance and holdings data, identifying key drivers of change ahead of investor reporting cycles.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-jpm_reporting",
@@ -365,9 +550,27 @@
       "companyLink": "https://careers.jpmorgan.com/us/en/search-results",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_JPM_Reporting.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_JPM_Reporting.docx",
-      "salary": "$100.7k–$145k",
+      "salary": "$100.7k\u2013$145k",
       "status": "To Apply",
-      "notes": "Posted 06/30, accepting as of 07/02. Requires 2+ years finance incl. exposure to accounting/financial statements/regulatory reporting; his TD regulatory casework + Bloomberg reporting cycles cover the exposure bar."
+      "notes": "Posted 06/30, accepting as of 07/02. Requires 2+ years finance incl. exposure to accounting/financial statements/regulatory reporting; his TD regulatory casework + Bloomberg reporting cycles cover the exposure bar.",
+      "skills": [
+        "Regulatory Filing & Reconciliation",
+        "Variance & Exception Analysis",
+        "Accounting Fundamentals",
+        "Cross Team Coordination",
+        "Deadline Driven Delivery",
+        "Microsoft Excel (Advanced)",
+        "Regulatory Reporting",
+        "Call Report",
+        "FR Y-9C",
+        "Pillar 3",
+        "SEC Reporting (10-Q/10-K)",
+        "Financial Statement Analysis",
+        "Governance & Controls"
+      ],
+      "bulletsTD": "Investigate flagged accounts and file regulatory reports based on independent findings, completing detailed reviews weekly (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, executing procedures comparable to regulatory filing reconciliation.\nCompile comprehensive investigation documents with clear variance and exception analysis for stakeholders.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
+      "bulletsBloomberg": "Prepare monthly performance and holdings reporting for 650+ SMAs and CITs, mirroring the cadence of recurring investor and regulatory reporting cycles.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference data.\nReconcile cash, custody, and trade level position data against custodian and administrator records ahead of reporting deadlines.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream reporting.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-jpm_altinv",
@@ -386,7 +589,25 @@
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_JPM_AltInv.docx",
       "salary": "TBD (JPM band)",
       "status": "To Apply",
-      "notes": "Posted 06/30, accepting as of 07/02. Only hard requirement is a Bachelor degree; the 2 years alternatives experience is PREFERRED, and his CIT/SMA work is adjacent. Series 99/7 optional."
+      "notes": "Posted 06/30, accepting as of 07/02. Only hard requirement is a Bachelor degree; the 2 years alternatives experience is PREFERRED, and his CIT/SMA work is adjacent. Series 99/7 optional.",
+      "skills": [
+        "Fund Administrator Coordination",
+        "Cash & Position Reconciliation",
+        "Pricing Support",
+        "Client/PM Relationship Management",
+        "Deadline Driven Processing",
+        "Microsoft Excel (Advanced)",
+        "Alternative Investments",
+        "Hedge Fund Operations",
+        "Private Equity Operations",
+        "Subscriptions & Redemptions",
+        "Capital Calls & Distributions",
+        "Series 99",
+        "Series 7"
+      ],
+      "bulletsTD": "Identify and monitor operational and regulatory risk across flagged accounts, completing detailed investigations weekly (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving onboarding speed.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, cultivating relationships and resolving data requests.\nSupport pricing accuracy by adjusting account records for corporate actions including stock splits and dividend reinvestments.\nAnalyze monthly performance and holdings data, generating ad hoc reports for internal stakeholders.\nExpand the SMA strategy library by 800+ investment strategies through direct fund manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-schroders",
@@ -403,9 +624,27 @@
       "companyLink": "https://www.schroders.com/en-us/us/institutional/about-us/careers/",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Schroders.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Schroders.docx",
-      "salary": "$110k–$125k",
+      "salary": "$110k\u2013$125k",
       "status": "To Apply",
-      "notes": "Posted 06/27, accepting as of 07/02 (46 applicants). No hard years requirement (\"previous operational experience\"). Rare posting where his KYC background is an explicit asset. Newly established team."
+      "notes": "Posted 06/27, accepting as of 07/02 (46 applicants). No hard years requirement (\"previous operational experience\"). Rare posting where his KYC background is an explicit asset. Newly established team.",
+      "skills": [
+        "KYC & Counterparty Due Diligence",
+        "Custody & Settlement Support",
+        "Cash & Position Reconciliation",
+        "Data Governance & Reporting",
+        "Stakeholder Coordination",
+        "Microsoft Excel",
+        "Middle Office Operations",
+        "Private Debt & Credit Operations",
+        "Valuation & Pricing Oversight",
+        "Aladdin",
+        "eFront",
+        "Qualified Accountant",
+        "Fund Launch Support"
+      ],
+      "bulletsTD": "Perform KYC and counterparty due diligence reviews, including ownership and related party analysis on complex account structures (20-25 cases weekly, peak of 33).\nIdentify reasonable grounds for suspicion across typologies including structuring and high risk jurisdiction activity, aligning risk and control processes into daily work.\nCompile comprehensive due diligence documentation and serve as point of contact for stakeholders requesting case status.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, supporting data governance and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving settlement queries daily.\nServe as primary point of contact for 400+ institutional portfolio managers, acting as a central contact for account inquiries.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, supporting valuation and performance oversight.\nAnalyze monthly performance and holdings data, maintaining accurate internal system records ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-blueowl",
@@ -426,7 +665,7 @@
       "companyLink": "https://blueowl.wd1.myworkdayjobs.com/blueowl/job/New-York-City-NY/Global-Client-Engagement---Analyst_R-102270-1",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_BlueOwl.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_BlueOwl.docx",
-      "salary": "$85k–$100k",
+      "salary": "$85k\u2013$100k",
       "status": "Applied",
       "notes": "Posted 07/01, VERIFIED LIVE on Blue Owl Workday 07/02 (posted yesterday there). 2 to 3 years preferred with investment products focus; salary $85k to $100k plus bonus. Fast-growing alternatives brand.",
       "dateApplied": "2026-07-04"
@@ -446,9 +685,28 @@
       "companyLink": "https://careers.smbcgroup.com/",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SMBC.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SMBC.docx",
-      "salary": "$80k–$115k",
+      "salary": "$80k\u2013$115k",
       "status": "To Apply",
-      "notes": "Posted 06/25, accepting as of 07/02. \"Recommended\" 3 years (not required); JIRA/Agile explicitly wanted and he has JIRA Service Management on his real skill list. $80k to $115k."
+      "notes": "Posted 06/25, accepting as of 07/02. \"Recommended\" 3 years (not required); JIRA/Agile explicitly wanted and he has JIRA Service Management on his real skill list. $80k to $115k.",
+      "skills": [
+        "Banking Compliance & Regulatory Experience",
+        "Requirements Documentation",
+        "Data Analysis & Reporting",
+        "Cross Team Collaboration",
+        "Process Improvement",
+        "JIRA",
+        "Microsoft Excel",
+        "Cash Management",
+        "Treasury Industry Knowledge",
+        "Agile Methodology",
+        "Confluence",
+        "Miro",
+        "User Story Writing",
+        "Business Requirements Analysis"
+      ],
+      "bulletsTD": "Investigate flagged account activity for banking compliance and regulatory purposes, completing detailed reviews weekly (20-25 completed, peak of 33).\nTranslate case findings into clear requirements and documentation for Compliance and Operations stakeholders.\nReconcile transaction and account data against internal and external sources, applying data analysis to flag discrepancies.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
+      "bulletsBloomberg": "Used JIRA to manage workflow for PM data requests and issue resolution as primary point of contact for 400+ institutional portfolio managers.\nTranslated portfolio manager needs into clear formatting requirements for a new data platform, supporting a major system migration.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records.\nAnalyze monthly performance and holdings data, extracting insights for internal reporting cycles.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-scr_clientservices",
@@ -471,7 +729,7 @@
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SCR_ClientServices.docx",
       "salary": "TBD (recruiter)",
       "status": "Did Not Apply",
-      "notes": "Posted 06/30, accepting as of 07/02. Recruiter Neil ALREADY has a live application with (SMA Ops role) — warm channel. Asks 1 to 5 years similar experience; Advent APX/Salesforce preferred only.",
+      "notes": "Posted 06/30, accepting as of 07/02. Recruiter Neil ALREADY has a live application with (SMA Ops role) \u2014 warm channel. Asks 1 to 5 years similar experience; Advent APX/Salesforce preferred only.",
       "noApplyReason": "job position closed",
       "noApplyAt": "2026-07-04T17:25:32.578Z"
     },
@@ -494,7 +752,7 @@
       "companyLink": "https://www.linkedin.com/jobs/view/middle-office-analyst-at-atlantic-group-4434790402",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_AtlanticGroup.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_AtlanticGroup.docx",
-      "salary": "$115k–$150k + 20-25% bonus",
+      "salary": "$115k\u2013$150k + 20-25% bonus",
       "status": "Did Not Apply",
       "notes": "STRETCH, labeled honestly. Posted 06/29, accepting as of 07/02 (108 applicants). Range is 2 to 7 years and he sits at the floor; derivatives preferred not required. Recruiter channel, so worth the shot at $115k+.",
       "noApplyReason": "job position has  closed",
