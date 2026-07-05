@@ -170,15 +170,15 @@ function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline })
         </div>`}
         ${a.bulletsTD && html`<div class="net-msg-block">
           <div class="net-msg-head"><span class="net-label">TD Bank bullets</span><${CopyBtn} text=${bulletText(a.bulletsTD)} /></div>
-          <ul class="bullet-list">${splitLines(a.bulletsTD).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
+          <div class="bullet-list">${splitLines(a.bulletsTD).map((b, i) => html`<div class="bullet-line" key=${i}>• ${b}</div>`)}</div>
         </div>`}
         ${a.bulletsBloomberg && html`<div class="net-msg-block">
           <div class="net-msg-head"><span class="net-label">Bloomberg bullets</span><${CopyBtn} text=${bulletText(a.bulletsBloomberg)} /></div>
-          <ul class="bullet-list">${splitLines(a.bulletsBloomberg).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
+          <div class="bullet-list">${splitLines(a.bulletsBloomberg).map((b, i) => html`<div class="bullet-line" key=${i}>• ${b}</div>`)}</div>
         </div>`}
         ${a.bulletsBC && html`<div class="net-msg-block">
           <div class="net-msg-head"><span class="net-label">B&C Enterprise bullets</span><${CopyBtn} text=${bulletText(a.bulletsBC)} /></div>
-          <ul class="bullet-list">${splitLines(a.bulletsBC).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
+          <div class="bullet-list">${splitLines(a.bulletsBC).map((b, i) => html`<div class="bullet-line" key=${i}>• ${b}</div>`)}</div>
         </div>`}
       </details>`}
     </div>
