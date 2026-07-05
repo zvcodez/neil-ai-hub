@@ -143,6 +143,7 @@ const appStatusColor = {
 // Batch = the day the posting landed in the hub (daily digest runs stamp _created).
 const batchOf = (a) => a.batch || (a._created || '').slice(0, 10);
 const splitLines = (s) => (s || '').split('\n').map((x) => x.trim()).filter(Boolean);
+const bulletText = (s) => splitLines(s).map((b) => `• ${b}`).join('\n');
 
 function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline }) {
   const [declining, setDeclining] = useState(false);
@@ -168,15 +169,15 @@ function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline })
           <div class="project-tags">${a.skills.map((s, i) => html`<span class="chip" key=${i}>${s}</span>`)}</div>
         </div>`}
         ${a.bulletsTD && html`<div class="net-msg-block">
-          <div class="net-msg-head"><span class="net-label">TD Bank bullets</span><${CopyBtn} text=${a.bulletsTD} /></div>
+          <div class="net-msg-head"><span class="net-label">TD Bank bullets</span><${CopyBtn} text=${bulletText(a.bulletsTD)} /></div>
           <ul class="bullet-list">${splitLines(a.bulletsTD).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
         </div>`}
         ${a.bulletsBloomberg && html`<div class="net-msg-block">
-          <div class="net-msg-head"><span class="net-label">Bloomberg bullets</span><${CopyBtn} text=${a.bulletsBloomberg} /></div>
+          <div class="net-msg-head"><span class="net-label">Bloomberg bullets</span><${CopyBtn} text=${bulletText(a.bulletsBloomberg)} /></div>
           <ul class="bullet-list">${splitLines(a.bulletsBloomberg).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
         </div>`}
         ${a.bulletsBC && html`<div class="net-msg-block">
-          <div class="net-msg-head"><span class="net-label">B&C Enterprise bullets</span><${CopyBtn} text=${a.bulletsBC} /></div>
+          <div class="net-msg-head"><span class="net-label">B&C Enterprise bullets</span><${CopyBtn} text=${bulletText(a.bulletsBC)} /></div>
           <ul class="bullet-list">${splitLines(a.bulletsBC).map((b, i) => html`<li key=${i}>${b}</li>`)}</ul>
         </div>`}
       </details>`}
