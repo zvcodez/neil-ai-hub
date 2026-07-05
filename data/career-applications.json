@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T21:27:52.022Z",
+  "updatedAt": "2026-07-05T22:31:04.799Z",
   "data": [
     {
       "id": "app-blackstone-invops",
@@ -620,6 +620,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T13:52:29.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-05T22:31:04.797Z"
         }
       ],
       "company": "Schroders",
@@ -629,7 +633,7 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Schroders.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Schroders.docx",
       "salary": "$110k–$125k",
-      "status": "To Apply",
+      "status": "Applied",
       "notes": "Posted 06/27, accepting as of 07/02 (46 applicants). No hard years requirement (\"previous operational experience\"). Rare posting where his KYC background is an explicit asset. Newly established team.",
       "skills": [
         "KYC & Counterparty Due Diligence",
@@ -648,7 +652,8 @@
       ],
       "bulletsTD": "Perform KYC and counterparty due diligence reviews, including ownership and related party analysis on complex account structures (20-25 cases weekly, peak of 33).\nIdentify reasonable grounds for suspicion across typologies including structuring and high risk jurisdiction activity, aligning risk and control processes into daily work.\nCompile comprehensive due diligence documentation and serve as point of contact for stakeholders requesting case status.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, supporting data governance and consistency.",
       "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving settlement queries daily.\nServe as primary point of contact for 400+ institutional portfolio managers, acting as a central contact for account inquiries.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, supporting valuation and performance oversight.\nAnalyze monthly performance and holdings data, maintaining accurate internal system records ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "dateApplied": "2026-07-05"
     },
     {
       "id": "app-blueowl",
