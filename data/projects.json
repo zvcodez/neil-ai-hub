@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:45:03.524266+00:00",
+  "updatedAt": "2026-07-05T01:30:00.000000+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -160,9 +160,16 @@
       "folder": "~/Claude/alcohol-scanner",
       "repoUrl": "",
       "liveUrl": "https://alcohol-scanner.vercel.app",
-      "nextStep": "Test barcode scanning on phone (Add to Home Screen). Optionally add ANTHROPIC_API_KEY later to flip on label-photo scanning for wine/spirits.",
-      "lastDid": "Barcode scanning is LIVE and free (Open Food Facts, no key). Label-photo AI fallback built but disabled (LABEL_SCAN_ENABLED=false in js/app.js) since Anthropic API is pay-per-use and Neil held off on a key.",
-      "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews"
+      "nextStep": "From the Mac: open a Claude Code session in ~/Claude/alcohol-scanner and fix camera barcode scanning on iPhone Safari \u2014 likely needs a BarcodeDetector polyfill or a library like @zxing/browser, since Safari has no native BarcodeDetector support. Also worth pushing this project to a real GitHub repo (currently local-only, deployed straight to Vercel) so it's reachable from a remote/phone session next time.",
+      "lastDid": "Neil reported barcode scanning not working on iPhone while pointing the camera at a label. Diagnosed remotely (no code access \u2014 project has no GitHub repo, deployed local-to-Vercel, and this session's network is GitHub-only): iOS Safari doesn't support the native BarcodeDetector API, so if the scanner calls it directly, the camera opens but detection silently never fires on iPhone. Not yet fixed \u2014 needs the actual Mac session to patch and redeploy.",
+      "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews",
+      "log": [
+        {
+          "id": "log-alcoholscanner-1",
+          "ts": "2026-07-05T00:00:00.000Z",
+          "text": "Neil reported barcode scanning broken on iPhone (camera opens, never detects). Investigated remotely from the hub session but hit a dead end: no GitHub repo exists for this project (deployed local Mac \u2192 Vercel directly), and the sandbox's network only reaches GitHub, so the live Vercel site couldn't be fetched either. Best diagnosis without seeing the code: Safari lacks the native BarcodeDetector API that the scanner most likely calls directly \u2014 works on Chrome/Android, silently no-ops on iPhone. Needs fixing from the Mac session (~/Claude/alcohol-scanner), ideally with a real git repo set up so future issues are fixable remotely."
+        }
+      ]
     },
     {
       "id": "idea-cc-push-notify",
