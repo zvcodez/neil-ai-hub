@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T05:48:43.274Z",
+  "updatedAt": "2026-07-06T05:52:55.373Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -828,6 +828,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T13:52:29.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-06T05:52:55.371Z"
         }
       ],
       "company": "DTCC",
@@ -837,7 +841,7 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_DTCC_CorpActions.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_DTCC_CorpActions.docx",
       "salary": "TBD (DTCC band; Treasury peer role $90k–$115k)",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Posted 07/01 (yesterday), accepting as of 07/02. Requires only a minimum of 2 years related experience, Bachelor preferred. Direct match to Bloomberg corporate actions bullet.",
       "skills": [
         "Corporate Actions Processing",
@@ -853,7 +857,9 @@
       ],
       "bulletsTD": "Execute documented investigation procedures, resolving complex inquiries and exceptions under a 20 case weekly quota (20-25 completed, peak of 33).\nAlign risk and control processes into daily case work, identifying reasonable grounds for suspicion across recurring typologies.\nMaintain client service focus, responding to internal stakeholder inquiries timely and accurately with full documentation.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nFacilitate training sessions for new analysts, authoring guides and process documentation adopted team wide.",
       "bulletsBloomberg": "Adjust account records for corporate actions including stock splits and dividend reinvestments across 650+ SMAs and CITs, ensuring accurate downstream calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving inquiries timely and accurately.\nReconcile cash, custody, and trade level position data against custodian and administrator records, building strong stakeholder relationships.\nAnalyze monthly performance and holdings data, preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "noApplyReason": "senior analyst - no way i could even be considered i think",
+      "noApplyAt": "2026-07-06T05:52:55.371Z"
     },
     {
       "id": "app-dtcc_treasury",
