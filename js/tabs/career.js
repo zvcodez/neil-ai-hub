@@ -212,7 +212,12 @@ function ApplicationsTab({ accent }) {
   const [view, setView] = useState('sections');
   const [openSection, setOpenSection] = useState('To Apply');
   const [modal, setModal] = useState(null); // { editing }
+  const [closedBatches, setClosedBatches] = useStore('career-closed-batches', []);
   const confirm = useConfirm();
+
+  const toggleBatch = (date) => setClosedBatches((prev) => (
+    prev.includes(date) ? prev.filter((d) => d !== date) : [...prev, date]
+  ));
 
   const fields = [
     { name: 'company', label: 'Company name', required: true },
@@ -308,11 +313,17 @@ function ApplicationsTab({ accent }) {
           ${isOpen && html`<div class="app-section-body">
             ${col.length === 0 && html`<p class="muted-text app-section-empty">Nothing here yet.</p>`}
             ${status === 'To Apply'
-              ? toApplyBatches(col).map(([date, items]) => html`<div class="app-batch" key=${date}>
-                  <div class="app-batch-head">${date === 'undated' ? 'Undated' : fmtDate(date)}
-                    <span class="kanban-count">${items.length}</span></div>
-                  ${items.map(card)}
-                </div>`)
+              ? toApplyBatches(col).map(([date, items]) => {
+                  const batchOpen = !closedBatches.includes(date);
+                  return html`<div class="app-batch" key=${date}>
+                    <button class="app-batch-head" onClick=${() => toggleBatch(date)}>
+                      <span class=${`app-chevron ${batchOpen ? 'open' : ''}`}>›</span>
+                      ${date === 'undated' ? 'Undated' : fmtDate(date)}
+                      <span class="kanban-count">${items.length}</span>
+                    </button>
+                    ${batchOpen && items.map(card)}
+                  </div>`;
+                })
               : col.map(card)}
           </div>`}
         </div>`;

@@ -422,7 +422,11 @@ select, .sort select {
 .app-batch-head {
   display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
   color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+  width: 100%; border: none; background: none; font-family: inherit; padding: 4px 0; cursor: pointer;
 }
+.app-batch-head:hover { color: var(--text); }
+.app-batch-head .app-chevron { margin-left: 0; font-size: 15px; text-transform: none; letter-spacing: normal; }
+.app-batch-head .kanban-count { margin-left: auto; }
 
 /* Compact application row */
 .app-row {
