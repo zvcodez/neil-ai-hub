@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T05:52:55.373Z",
+  "updatedAt": "2026-07-06T05:53:00.008Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -860,41 +860,6 @@
       "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
       "noApplyReason": "senior analyst - no way i could even be considered i think",
       "noApplyAt": "2026-07-06T05:52:55.371Z"
-    },
-    {
-      "id": "app-dtcc_treasury",
-      "_created": "2026-07-02T13:52:29.000Z",
-      "statusHistory": [
-        {
-          "status": "To Apply",
-          "at": "2026-07-02T13:52:29.000Z"
-        }
-      ],
-      "company": "DTCC",
-      "jobTitle": "Treasury Senior Analyst (Jersey City)",
-      "link": "https://www.linkedin.com/jobs/view/treasury-senior-analyst-at-the-depository-trust-clearing-corporation-dtcc-4434751183",
-      "companyLink": "https://www.dtcc.com/careers/job-search",
-      "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_DTCC_Treasury.docx",
-      "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_DTCC_Treasury.docx",
-      "salary": "$90k–$115k",
-      "status": "To Apply",
-      "notes": "Posted 06/29, accepting as of 07/02. Requires minimum 2 years treasury OR finance experience (he clears the finance bar). $90k to $115k posted band.",
-      "skills": [
-        "Daily Cash & Account Reconciliation",
-        "Liquidity & Risk Escalation",
-        "Stakeholder Coordination",
-        "Regulatory Reporting Exposure",
-        "Process Improvement",
-        "Microsoft Excel",
-        "Treasury Cash Management Systems",
-        "Foreign Exchange",
-        "Digital Assets / Blockchain",
-        "Counterparty Risk Monitoring",
-        "Bank Reconciliation"
-      ],
-      "bulletsTD": "Investigate flagged transactions for suspicious activity, escalating risk indicators under a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, maintaining an accurate and audit ready record.\nSend formal requests for information to source teams and make independent filing decisions with real account level consequences.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
-      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks against daily deadlines.\nServe as primary point of contact for 400+ institutional portfolio managers, escalating data discrepancies to the right internal team.\nAnalyze monthly performance and holdings data, identifying key drivers of change ahead of investor reporting cycles.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
     },
     {
       "id": "app-jpm_reporting",
