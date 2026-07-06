@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T19:30:54.231Z",
+  "updatedAt": "2026-07-06T22:23:20.000Z",
   "data": [
     {
       "id": "mr9m80ieftt8it",
@@ -390,9 +390,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Neil re-opens the PWA on his phone to confirm the fix; then make the repo private",
+      "nextStep": "Run /jobs to source today's batch (routine is now off); eyeball new resumes/letters, then apply from the hub",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-jobs-command",
+          "ts": "2026-07-06T22:23:20.000Z",
+          "text": "Root-caused the recurring “no new postings” gap: the Claude cloud routine's own hosted sandbox intermittently 403s every job-board domain at the network policy level, not a search-logic bug. Disabled the routine (trig_015uLUA1KJDwh46qALfPMQHq) rather than patch it again, and built ~/.claude/commands/jobs.md, a global /jobs command that runs the full sourcing-to-hub pipeline locally on demand (no sandbox network restrictions there)."
+        },
         {
           "id": "log-hub-networking-per-day",
           "ts": "2026-07-06T01:00:00.000Z",
@@ -429,7 +434,7 @@
           "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Networking outreach now batches per day by the linked application's posting date (not contact-created date), with the same collapsible chevron UI as Applications"
+      "lastDid": "Diagnosed why job postings kept failing to auto-appear (the cloud sourcing routine's sandbox intermittently 403s all job-board domains); disabled that routine and replaced it with a local /jobs slash command that sources, filters, tailors, and pushes new postings into this hub in one step"
     },
     {
       "id": "6a403f0db2",
