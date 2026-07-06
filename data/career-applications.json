@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:33:54.609Z",
+  "updatedAt": "2026-07-06T06:34:17.532Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -521,6 +521,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-04T17:55:50.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-06T06:34:17.531Z"
         }
       ],
       "company": "U.S. Bank",
@@ -531,7 +535,7 @@
       "salary": "$81,345–$95,700",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "2-5 yrs preferred (not hard required), entry level tag. Hackensack NJ is a short commute from Piscataway. GL/NAV accounting would be new; letter owns that honestly and leans on the genuine reconciliation/corporate-action overlap.",
       "skills": [
         "Cash & Custody Reconciliation",
@@ -550,7 +554,9 @@
       ],
       "bulletsTD": "Validate account and transactional records against internal control standards under a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, maintaining GAAP consistent documentation.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving accuracy and consistency.",
       "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, supporting accurate valuation and performance calculations.\nAnalyze monthly performance and holdings data, preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "noApplyReason": "calls for accounting degree specifically.",
+      "noApplyAt": "2026-07-06T06:34:17.531Z"
     },
     {
       "id": "app-affirm-capitalops",
