@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T22:23:20.000Z",
+  "updatedAt": "2026-07-06T23:00:00.000Z",
   "data": [
     {
       "id": "mr9m80ieftt8it",
@@ -390,9 +390,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Run /jobs to source today's batch (routine is now off); eyeball new resumes/letters, then apply from the hub",
+      "nextStep": "Run /jobs — it now also checks Gmail for replies on sent applications each time it runs. Watch the first real run to confirm the outcome classification (Rejected/Follow Up/Will Be In Touch) reads real emails sensibly before trusting it fully.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-received-response-gmail",
+          "ts": "2026-07-06T23:00:00.000Z",
+          "text": "Added a new 'Received Response' status to the Applications pipeline (sits right after Applied), populated by a new step 5 in ~/.claude/commands/jobs.md: every /jobs run now searches Gmail (search_threads + get_thread) for replies on any 'Applied' or already-flagged 'Received Response' card, classifies the outcome (Rejected/Follow Up/Will Be In Touch, first-match-wins keyword rules), and writes gmailOutcome/gmailSubject/gmailSummary/gmailThreadId/gmailCheckedAt onto the card. Frontend: a colored badge (red/green/amber) shows the outcome before you even open anything, plus a 'Gmail update' dropdown with the subject/summary/checked-date and an Open in Gmail link. Batched per day using the same original posting date as To Apply. Re-checks already-flagged cards each run so an outcome can be superseded later. Verified the full UI with seeded Rejected/Follow Up/Will Be In Touch cards in-browser; the actual Gmail-search step itself will get its first real test on the next /jobs run. sw cache v37."
+        },
         {
           "id": "log-hub-jobs-command",
           "ts": "2026-07-06T22:23:20.000Z",
