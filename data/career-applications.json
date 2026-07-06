@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:54:42.523Z",
+  "updatedAt": "2026-07-06T06:55:25.131Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -116,6 +116,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:55:25.129Z"
         }
       ],
       "company": "WhiteCap Search",
@@ -125,8 +129,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_WhiteCapInvOps.docx",
       "salary": "not disclosed in posting",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "1 to 3 years experience in investment operations/fund accounting required. Recruiter posting for a multi-billion dollar family office style portfolio. NAV/IRR marking, Burgiss/MSCI tools, and CLOs are new, owned honestly in the letter.",
       "skills": [
         "Cash & Position Reconciliation",
