@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:55:25.131Z",
+  "updatedAt": "2026-07-06T06:57:51.226Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -80,6 +80,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:57:51.224Z"
         }
       ],
       "company": "Optiver",
@@ -89,8 +93,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_Optiver.docx",
       "salary": "$110,000-$133,500",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "2+ years trade support/operations experience (ETF/cash equities preferred, not hard required), Entry level tag. Elite prop trading firm. ETF/cash equities specifics are new, owned honestly in the letter.",
       "skills": [
         "Trade Lifecycle Support",
