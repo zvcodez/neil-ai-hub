@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T05:00:00.000000+00:00",
+  "updatedAt": "2026-07-06T05:30:00.000000+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -364,6 +364,11 @@
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
         {
+          "id": "log-hub-applied-per-day",
+          "ts": "2026-07-06T00:30:00.000Z",
+          "text": "Extended per-day grouping beyond To Apply: Applied now batches by the actual dateApplied, and Did Not Apply batches by the day it was declined (noApplyAt) — so answering Yes/No on a posting gives an accurate day-by-day record instead of one flat list. Same collapsible chevron UI, batch keys namespaced per status. Verified both Yes and No flows in-browser. sw cache v35."
+        },
+        {
           "id": "log-hub-batch-collapse",
           "ts": "2026-07-06T00:00:00.000Z",
           "text": "Added a per-day collapse toggle to the Career > Applications > To Apply batches (chevron button, state persisted in localStorage so it survives reload). Verified in-browser with seeded test data across two dates, then cleaned it up. sw cache v34."
@@ -389,7 +394,7 @@
           "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Added a per-day collapse/expand toggle to the To Apply batches in Career > Applications, so daily posting groups can be closed once handled"
+      "lastDid": "Applied and Did Not Apply now also group per day (by dateApplied / decline date), matching the To Apply collapse-by-day UI, so answering Yes/No gives an accurate daily record"
     },
     {
       "id": "6a403f0db2",
