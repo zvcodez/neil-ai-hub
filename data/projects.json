@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T23:00:00.000Z",
+  "updatedAt": "2026-07-06T23:35:00.000000+00:00",
   "data": [
     {
       "id": "mr9m80ieftt8it",
@@ -390,9 +390,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Run /jobs — it now also checks Gmail for replies on sent applications each time it runs. Watch the first real run to confirm the outcome classification (Rejected/Follow Up/Will Be In Touch) reads real emails sensibly before trusting it fully.",
+      "nextStep": "Keep running /jobs day to day; the Gmail-check step now reads full email bodies (not snippets) after catching and fixing a real misclassification (Willow Wealth rejection read as Will Be In Touch on 2026-07-06).",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-received-response-polish",
+          "ts": "2026-07-06T23:30:00.000Z",
+          "text": "Fixed a real Gmail-check bug Neil caught live: a Willow Wealth rejection was misclassified as 'Will Be In Touch' because only the truncated search snippet was read instead of the full email body. Corrected that card, re-verified all 17 other Received Response cards by reading full bodies (all were actually correct), and hardened /jobs step 5 with a hard no-exceptions rule (full body required, citing this incident) plus a standing memory. Also polished the UI per Neil's follow-up ask: Received Response cards now sort Follow Up (green) before Will Be In Touch (amber) before Rejected (red) within each day, and every status section plus every day-batch across Applications and Networking now defaults collapsed instead of one section auto-opening. sw cache v38."
+        },
         {
           "id": "log-hub-received-response-gmail",
           "ts": "2026-07-06T23:00:00.000Z",
@@ -439,7 +444,7 @@
           "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Diagnosed why job postings kept failing to auto-appear (the cloud sourcing routine's sandbox intermittently 403s all job-board domains); disabled that routine and replaced it with a local /jobs slash command that sources, filters, tailors, and pushes new postings into this hub in one step"
+      "lastDid": "Caught and fixed a live Gmail-classification bug (Willow Wealth rejection misread as pending), hardened the /jobs Gmail-check step against reading snippets instead of full bodies, and polished Received Response ordering (Follow Up before Will Be In Touch before Rejected) plus made every section/day-batch default collapsed."
     },
     {
       "id": "6a403f0db2",
