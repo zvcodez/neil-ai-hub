@@ -1,6 +1,455 @@
 {
-  "updatedAt": "2026-07-06T06:57:51.226Z",
+  "updatedAt": "2026-07-06T15:00:00.000Z",
   "data": [
+    {
+      "id": "app-goldmansachs0",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Goldman Sachs",
+      "jobTitle": "Controllers, Funding Product Controllers, Analyst (Jersey City, NJ)",
+      "link": "https://www.linkedin.com/jobs/view/4407964813",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_GoldmanSachsControllers.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_GoldmanSachsControllers.docx",
+      "salary": "$75,000-$100,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-05. Treasury Controllers, Corporate Treasury business, price verification and P&L work is a strong parallel to Bloomberg custodian reconciliation and TD case documentation. Jersey City is a manageable commute from Piscataway.",
+      "skills": [
+        "Balance Sheet & Trade Reconciliation",
+        "Price Verification (IPV)",
+        "Accounting Fundamentals",
+        "Documentation & Exception Review",
+        "Cross Team Coordination",
+        "Microsoft Excel",
+        "Bloomberg Terminal",
+        "SAS/Oracle Systems",
+        "P&L Analysis",
+        "Corporate Treasury Concepts"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-bessemertrust1",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Bessemer Trust",
+      "jobTitle": "Consolidated Reporting Analyst (Woodbridge, NJ)",
+      "link": "https://www.linkedin.com/jobs/view/4425733799",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_BessemerConsolidatedReporting.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_BessemerConsolidatedReporting.docx",
+      "salary": "$75,000-$115,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Woodbridge NJ office, same town as Neil's current TD Bank job, real commute win. Family Office consolidated reporting matches Bloomberg's monthly performance/holdings analysis directly.",
+      "skills": [
+        "Client Data Reconciliation",
+        "Consolidated Performance Reporting",
+        "Documentation & Process Training",
+        "Cross Team Coordination",
+        "Microsoft Excel",
+        "Bloomberg Terminal",
+        "SAS/Oracle Systems",
+        "Investment Aggregation Concepts",
+        "ROI/IRR Familiarity"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-bankofchinausa2",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Bank of China USA",
+      "jobTitle": "Operation Service Department, Custody Associate (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4433982309",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_BankOfChinaCustody.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_BankOfChinaCustody.docx",
+      "salary": "$42,000-$90,000 (range widens with experience)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. 2 years experience required, direct fit. Custody reconciliation, corporate actions, tax withholding all map to Bloomberg custodian/administrator work.",
+      "skills": [
+        "Securities Settlement Reconciliation",
+        "Corporate Actions Processing",
+        "Custodian Coordination",
+        "Regulatory Compliance Awareness",
+        "Documentation & Exception Review",
+        "Microsoft Excel",
+        "Bloomberg Terminal",
+        "SAS/Oracle Systems"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-cerberuscapitalmanag3",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Cerberus Capital Management",
+      "jobTitle": "Finance & Operations Analyst, CABO (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4437409310",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_CerberusFinanceOps.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_CerberusFinanceOps.docx",
+      "salary": "$90,000-$130,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Role explicitly wants an early-career AI automation champion for books/records and reporting. Strong genuine match given Neil's hands-on Claude Code project. Great brand (Cerberus, ~$70B AUM).",
+      "skills": [
+        "Books & Records Reconciliation",
+        "AI Assisted Automation",
+        "Process Documentation",
+        "Financial Projections Support",
+        "Cross Team Coordination",
+        "Claude / Claude Code",
+        "Microsoft Excel",
+        "Bloomberg Terminal"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-tremendous4",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Tremendous",
+      "jobTitle": "Operations Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4437454604",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_TremendousOperations.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_TremendousOperations.docx",
+      "salary": "$95,000-$105,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Fintech (global payouts platform), 2+ years ops/compliance role required, direct fit. Heavy emphasis on pairing human judgment with AI tools, matches Neil's actual project experience honestly.",
+      "skills": [
+        "Transaction Investigation",
+        "Anomaly & Fraud Pattern Review",
+        "Escalation & Decisioning",
+        "AI Assisted Analysis",
+        "Regulatory Awareness",
+        "Claude / Claude Code",
+        "Microsoft Excel"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-whitecapsearch5",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "WhiteCap Search",
+      "jobTitle": "Associate, CLO Operations (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4437193968",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_WhiteCapCLO.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_WhiteCapCLO.docx",
+      "salary": "$100,000-$150,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. 2-5 years experience, CLO/loan systems preferred not required, Bloomberg mentioned as a plus. Recruiter posting (WhiteCap Search).",
+      "skills": [
+        "Trade & Position Reconciliation",
+        "Corporate Actions Processing",
+        "Custodian Coordination",
+        "Fixed Income Product Exposure",
+        "Documentation & Exception Review",
+        "Bloomberg Terminal",
+        "Microsoft Excel"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-whitecapsearch6",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "WhiteCap Search",
+      "jobTitle": "Operations Associate (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4437172864",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_WhiteCapOpsAssociate.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_WhiteCapOpsAssociate.docx",
+      "salary": "$85,000-$150,000 (band varies by product coverage)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Public securities trade lifecycle ops, explicitly lists AI tool experience as a requirement, strong genuine match. Recruiter posting (WhiteCap Search).",
+      "skills": [
+        "Post Execution Reconciliation",
+        "Settlement Break Resolution",
+        "AI Assisted Workflow Tools",
+        "Custodian Coordination",
+        "Claude / Claude Code",
+        "Bloomberg Terminal",
+        "Microsoft Excel"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-mufg7",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "MUFG",
+      "jobTitle": "GCIB, Credit Portfolio Management, Enterprise Valuation Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4436242552",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_MUFGEnterpriseValuation.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_MUFGEnterpriseValuation.docx",
+      "salary": "$90,000-$105,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Stretch: DCF/precedent transaction valuation modeling is new, honestly owned in the letter. 1-3 years banking with credit underwriting exposure required, fits. Major bank brand.",
+      "skills": [
+        "Account & Transaction Analysis",
+        "Portfolio Review Support",
+        "Accounting Fundamentals",
+        "Documentation & Presentation Prep",
+        "Microsoft Excel",
+        "Bloomberg Terminal",
+        "Credit Underwriting Exposure"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-santanderus8",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Santander US",
+      "jobTitle": "CIB, Structured Finance Strategy & Business Development Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4407263690",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_SantanderStructuredFinance.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_SantanderStructuredFinance.docx",
+      "salary": "$90,000-$125,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-05. 2+ years general finance/BD/strategy role qualifies (OR condition in posting), not structured-finance-specific. Major bank brand, mentions AI tool use for reporting.",
+      "skills": [
+        "Pipeline & Reporting Support",
+        "Market & Performance Analysis",
+        "Presentation Material Development",
+        "Process Improvement",
+        "Microsoft Excel",
+        "Bloomberg Terminal"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-jpmorganchase9",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "JPMorganChase",
+      "jobTitle": "Private Client Investment Associate, J.P. Morgan Wealth Management (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4436926354",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_JPMorganPrivateClient.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_JPMorganPrivateClient.docx",
+      "salary": "$150,000-$165,000 (posted band, likely includes broader banding)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-04. Requires Series 7 (obtainable within 120 days) and Series 66/63/65 plus Life & Health within 120 days, matches Neil's willing-to-obtain status. Only card in this batch needing the FINRA line.",
+      "skills": [
+        "Know Your Customer Procedures",
+        "Account Opening & Money Movement Support",
+        "Client Relationship Support",
+        "Documentation & Compliance",
+        "Microsoft Excel",
+        "Bloomberg Terminal"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-bessemertrust10",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Bessemer Trust",
+      "jobTitle": "Bank Operations Analyst, Recurring Payments (Woodbridge, NJ)",
+      "link": "https://www.linkedin.com/jobs/view/4425718856",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_BessemerRecurringPayments.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_BessemerRecurringPayments.docx",
+      "salary": "$60,000-$80,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Salary runs a bit under the usual $75k+ floor at the low end but tops out at $80k; Woodbridge NJ location (same town as Neil's current job) makes it worth including. 1-3 years fits.",
+      "skills": [
+        "Cash Transaction Processing",
+        "Check & Wire Reconciliation",
+        "Regulatory & Audit Compliance",
+        "Documentation & Exception Review",
+        "Microsoft Excel",
+        "Bloomberg Terminal"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-natixiscorporateinve11",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Natixis Corporate & Investment Banking",
+      "jobTitle": "Trade Support Analyst, Equity Derivatives (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4437444698",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_NatixisTradeSupport.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_NatixisTradeSupport.docx",
+      "salary": "$105,000-$120,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. 2+ years general trade support/middle office/operations experience required, fits. Sophis/Summit listed as preferred not required.",
+      "skills": [
+        "Trade Booking Discrepancy Resolution",
+        "Lifecycle Event Monitoring",
+        "P&L Break Investigation",
+        "Front to Back Coordination",
+        "Bloomberg Terminal",
+        "Microsoft Excel"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-bankofamerica12",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "Bank of America",
+      "jobTitle": "GCIB Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4437471840",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_BankOfAmericaGCIB.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_BankOfAmericaGCIB.docx",
+      "salary": "$88,350-$120,500",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-06. Stretch: bulge-bracket IB analyst deal work, no professional financial modeling experience, honestly owned in the letter. Included per Neil's explicit-stretch precedent.",
+      "skills": [
+        "Financial & Data Analysis",
+        "Presentation & Documentation Prep",
+        "Due Diligence Support (developing)",
+        "Cross Team Coordination",
+        "Microsoft Excel",
+        "Bloomberg Terminal"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-pwc13",
+      "_created": "2026-07-06T15:00:00.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-06T15:00:00.000Z"
+        }
+      ],
+      "company": "PwC",
+      "jobTitle": "Deals, Deal Valuation, Experienced Associate (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4416705220",
+      "resume": "Job Applications/2026-07-06/Neil_Patel_Resume_PwCDealValuation.docx",
+      "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_PwCDealValuation.docx",
+      "salary": "$63,000-$140,000 (location banded)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-04. Stretch: no prior valuation engagement experience, but only 1 year of experience required and Big 4 training infrastructure is a real draw. Honest gap noted in letter.",
+      "skills": [
+        "Financial & Data Analysis",
+        "Accounting Fundamentals",
+        "Client Facing Documentation",
+        "Deadline Driven Delivery",
+        "Microsoft Excel",
+        "Bloomberg Terminal"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
+      "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
     {
       "id": "app-tdsecurities",
       "_created": "2026-07-05T23:19:22.000Z",
