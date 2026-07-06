@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T04:57:56.418305+00:00",
+  "updatedAt": "2026-07-06T05:00:00.000000+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -364,6 +364,11 @@
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
         {
+          "id": "log-hub-batch-collapse",
+          "ts": "2026-07-06T00:00:00.000Z",
+          "text": "Added a per-day collapse toggle to the Career > Applications > To Apply batches (chevron button, state persisted in localStorage so it survives reload). Verified in-browser with seeded test data across two dates, then cleaned it up. sw cache v34."
+        },
+        {
           "id": "1fe8ec4ceb",
           "ts": "2026-07-02T13:01:33.000Z",
           "text": "Fixed iPhone PWA: modals now portal to <body> (backdrop-filter on the sticky header was trapping the fixed sync dialog inside it), iOS-safe body scroll lock with position restore, safe-area insets for notch/home bar, 16px inputs to stop focus auto-zoom, card actions always visible on touch. Verified on a phone-sized viewport; sw cache v29."
@@ -384,7 +389,7 @@
           "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Fixed the broken iPhone/PWA experience: sync dialog was trapped inside the sticky header and locked all scrolling"
+      "lastDid": "Added a per-day collapse/expand toggle to the To Apply batches in Career > Applications, so daily posting groups can be closed once handled"
     },
     {
       "id": "6a403f0db2",
