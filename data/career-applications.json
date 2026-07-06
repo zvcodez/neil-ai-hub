@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:30:12.755Z",
+  "updatedAt": "2026-07-06T06:33:54.609Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -559,6 +559,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-04T17:55:50.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:33:54.607Z"
         }
       ],
       "company": "Affirm",
@@ -568,8 +572,8 @@
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_Affirm.docx",
       "salary": "$90,000–$110,000 (NY/NJ band)",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "2+ yrs Treasury/capital markets/investment ops required, SQL/Python only \"a strong plus.\" Recognizable fintech (Affirm). Reconciliation and audit-support background maps well; consumer lending capital markets is new territory, owned in the letter.",
       "skills": [
         "Reconciliation & Audit Support",
