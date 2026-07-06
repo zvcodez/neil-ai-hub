@@ -452,13 +452,21 @@ function NetworkingTab({ accent }) {
   const [query, setQuery] = useState('');
   const [openSection, setOpenSection] = useState('To Contact');
   const [modal, setModal] = useState(null); // { editing } | { prefill }
+  const [closedBatches, setClosedBatches] = useStore('career-networking-closed-batches', []);
   const confirm = useConfirm();
+
+  const toggleBatch = (batchKey) => setClosedBatches((prev) => (
+    prev.includes(batchKey) ? prev.filter((k) => k !== batchKey) : [...prev, batchKey]
+  ));
 
   // Coverage: every application you're still chasing should have an outreach
   // entry (Neil's standing mandate). Read applications once, then flag any that
   // no contact covers yet — matched by posting link or company. Recomputes when
   // contacts change, so adding one here clears it from the list immediately.
   const apps = useMemo(() => loadStore('career-applications', []), []);
+  const matchApp = (c) => apps.find((a) =>
+    (a.link && c.appLink && a.link === c.appLink) || normco(c.company) === normco(a.company)
+  );
   const uncovered = useMemo(() => {
     const active = apps.filter((a) => a.company && !DEAD_APP_STATUSES.includes(a.status));
     return active.filter((a) => !contacts.some((c) =>
@@ -469,6 +477,21 @@ function NetworkingTab({ accent }) {
     () => apps.filter((a) => a.company && !DEAD_APP_STATUSES.includes(a.status)).length,
     [apps]
   );
+
+  // Batch outreach by the day the linked application's posting arrived (same
+  // batch date as the Applications pipeline), so outreach follows the same
+  // daily rhythm as the postings it's chasing. Falls back to 'undated' when no
+  // matching application is found (manually added outreach with no posting).
+  const dateBatches = (col) => {
+    const groups = new Map();
+    for (const c of col) {
+      const match = matchApp(c);
+      const b = (match && batchOf(match)) || 'undated';
+      if (!groups.has(b)) groups.set(b, []);
+      groups.get(b).push(c);
+    }
+    return [...groups.entries()].sort((x, y) => y[0].localeCompare(x[0]));
+  };
 
   const fields = [
     { name: 'company', label: 'Company', required: true },
@@ -555,8 +578,19 @@ function NetworkingTab({ accent }) {
           </button>
           ${isOpen && html`<div class="app-section-body">
             ${col.length === 0 && html`<p class="muted-text app-section-empty">Nothing here yet.</p>`}
-            ${col.map((c) => html`<${NetRow} key=${c.id} contact=${c}
-              onOpen=${(x) => setModal({ editing: x })} onRemove=${remove} onMove=${moveTo} onDecline=${decline} />`)}
+            ${dateBatches(col).map(([date, items]) => {
+              const batchKey = `${status}|${date}`;
+              const batchOpen = !closedBatches.includes(batchKey);
+              return html`<div class="app-batch" key=${batchKey}>
+                <button class="app-batch-head" onClick=${() => toggleBatch(batchKey)}>
+                  <span class=${`app-chevron ${batchOpen ? 'open' : ''}`}>›</span>
+                  ${date === 'undated' ? 'Undated' : fmtDate(date)}
+                  <span class="kanban-count">${items.length}</span>
+                </button>
+                ${batchOpen && items.map((c) => html`<${NetRow} key=${c.id} contact=${c}
+                  onOpen=${(x) => setModal({ editing: x })} onRemove=${remove} onMove=${moveTo} onDecline=${decline} />`)}
+              </div>`;
+            })}
           </div>`}
         </div>`;
       })}
