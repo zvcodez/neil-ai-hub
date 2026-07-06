@@ -215,8 +215,8 @@ function ApplicationsTab({ accent }) {
   const [closedBatches, setClosedBatches] = useStore('career-closed-batches', []);
   const confirm = useConfirm();
 
-  const toggleBatch = (date) => setClosedBatches((prev) => (
-    prev.includes(date) ? prev.filter((d) => d !== date) : [...prev, date]
+  const toggleBatch = (batchKey) => setClosedBatches((prev) => (
+    prev.includes(batchKey) ? prev.filter((k) => k !== batchKey) : [...prev, batchKey]
   ));
 
   const fields = [
@@ -275,12 +275,19 @@ function ApplicationsTab({ accent }) {
   const card = (a) => html`<${AppCard} key=${a.id} app=${a} statusOptions=${APP_STATUSES}
     onOpen=${(app) => setModal({ editing: app })} onRemove=${remove} onMove=${moveTo} onDecline=${decline} />`;
 
-  // "To Apply" groups by the day the batch arrived; a date disappears once every
-  // posting in it has been answered yes/no (nothing left with that batch date).
-  const toApplyBatches = (col) => {
+  // Date-grouped statuses: "To Apply" by the day the posting batch arrived,
+  // "Applied"/"Did Not Apply" by the day Yes/No was answered — so each keeps an
+  // accurate per-day record instead of one flat list.
+  const DATE_GROUPED_STATUSES = ['To Apply', 'Applied', 'Did Not Apply'];
+  const dateKeyFor = (status, a) => {
+    if (status === 'Applied') return (a.dateApplied || '').slice(0, 10) || 'undated';
+    if (status === 'Did Not Apply') return (a.noApplyAt || a.dateApplied || '').slice(0, 10) || 'undated';
+    return batchOf(a) || 'undated';
+  };
+  const dateBatches = (status, col) => {
     const groups = new Map();
     for (const a of col) {
-      const b = batchOf(a) || 'undated';
+      const b = dateKeyFor(status, a);
       if (!groups.has(b)) groups.set(b, []);
       groups.get(b).push(a);
     }
@@ -312,11 +319,12 @@ function ApplicationsTab({ accent }) {
           </button>
           ${isOpen && html`<div class="app-section-body">
             ${col.length === 0 && html`<p class="muted-text app-section-empty">Nothing here yet.</p>`}
-            ${status === 'To Apply'
-              ? toApplyBatches(col).map(([date, items]) => {
-                  const batchOpen = !closedBatches.includes(date);
-                  return html`<div class="app-batch" key=${date}>
-                    <button class="app-batch-head" onClick=${() => toggleBatch(date)}>
+            ${DATE_GROUPED_STATUSES.includes(status)
+              ? dateBatches(status, col).map(([date, items]) => {
+                  const batchKey = `${status}|${date}`;
+                  const batchOpen = !closedBatches.includes(batchKey);
+                  return html`<div class="app-batch" key=${batchKey}>
+                    <button class="app-batch-head" onClick=${() => toggleBatch(batchKey)}>
                       <span class=${`app-chevron ${batchOpen ? 'open' : ''}`}>›</span>
                       ${date === 'undated' ? 'Undated' : fmtDate(date)}
                       <span class="kanban-count">${items.length}</span>
