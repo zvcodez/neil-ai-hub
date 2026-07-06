@@ -225,12 +225,12 @@ function ApplicationsTab({ accent }) {
   const [apps, setApps] = useStore('career-applications', []);
   const [query, setQuery] = useState('');
   const [view, setView] = useState('sections');
-  const [openSection, setOpenSection] = useState('To Apply');
+  const [openSection, setOpenSection] = useState('');
   const [modal, setModal] = useState(null); // { editing }
-  const [closedBatches, setClosedBatches] = useStore('career-closed-batches', []);
+  const [openBatches, setOpenBatches] = useStore('career-open-batches', []);
   const confirm = useConfirm();
 
-  const toggleBatch = (batchKey) => setClosedBatches((prev) => (
+  const toggleBatch = (batchKey) => setOpenBatches((prev) => (
     prev.includes(batchKey) ? prev.filter((k) => k !== batchKey) : [...prev, batchKey]
   ));
 
@@ -309,6 +309,16 @@ function ApplicationsTab({ accent }) {
     return [...groups.entries()].sort((x, y) => y[0].localeCompare(x[0]));
   };
 
+  // Within "Received Response", surface actionable outcomes first: Follow Up
+  // (green, needs action) before Will Be In Touch (amber, just waiting)
+  // before Rejected (red, already resolved) — per day.
+  const GMAIL_OUTCOME_ORDER = ['Follow Up', 'Will Be In Touch', 'Rejected'];
+  const outcomeRank = (a) => {
+    const i = GMAIL_OUTCOME_ORDER.indexOf(a.gmailOutcome);
+    return i === -1 ? GMAIL_OUTCOME_ORDER.length : i;
+  };
+  const sortByOutcome = (items) => [...items].sort((a, b) => outcomeRank(a) - outcomeRank(b));
+
   return html`<div class="collection" style=${{ '--accent': accent }}>
     <div class="toolbar">
       <${SearchBox} value=${query} onChange=${setQuery} placeholder="Search applications..." />
@@ -337,14 +347,15 @@ function ApplicationsTab({ accent }) {
             ${DATE_GROUPED_STATUSES.includes(status)
               ? dateBatches(status, col).map(([date, items]) => {
                   const batchKey = `${status}|${date}`;
-                  const batchOpen = !closedBatches.includes(batchKey);
+                  const batchOpen = openBatches.includes(batchKey);
+                  const orderedItems = status === 'Received Response' ? sortByOutcome(items) : items;
                   return html`<div class="app-batch" key=${batchKey}>
                     <button class="app-batch-head" onClick=${() => toggleBatch(batchKey)}>
                       <span class=${`app-chevron ${batchOpen ? 'open' : ''}`}>›</span>
                       ${date === 'undated' ? 'Undated' : fmtDate(date)}
                       <span class="kanban-count">${items.length}</span>
                     </button>
-                    ${batchOpen && items.map(card)}
+                    ${batchOpen && orderedItems.map(card)}
                   </div>`;
                 })
               : col.map(card)}
@@ -465,12 +476,12 @@ function NetRow({ contact: c, onOpen, onRemove, onMove, onDecline }) {
 function NetworkingTab({ accent }) {
   const [contacts, setContacts] = useStore('career-networking', []);
   const [query, setQuery] = useState('');
-  const [openSection, setOpenSection] = useState('To Contact');
+  const [openSection, setOpenSection] = useState('');
   const [modal, setModal] = useState(null); // { editing } | { prefill }
-  const [closedBatches, setClosedBatches] = useStore('career-networking-closed-batches', []);
+  const [openBatches, setOpenBatches] = useStore('career-networking-open-batches', []);
   const confirm = useConfirm();
 
-  const toggleBatch = (batchKey) => setClosedBatches((prev) => (
+  const toggleBatch = (batchKey) => setOpenBatches((prev) => (
     prev.includes(batchKey) ? prev.filter((k) => k !== batchKey) : [...prev, batchKey]
   ));
 
@@ -595,7 +606,7 @@ function NetworkingTab({ accent }) {
             ${col.length === 0 && html`<p class="muted-text app-section-empty">Nothing here yet.</p>`}
             ${dateBatches(col).map(([date, items]) => {
               const batchKey = `${status}|${date}`;
-              const batchOpen = !closedBatches.includes(batchKey);
+              const batchOpen = openBatches.includes(batchKey);
               return html`<div class="app-batch" key=${batchKey}>
                 <button class="app-batch-head" onClick=${() => toggleBatch(batchKey)}>
                   <span class=${`app-chevron ${batchOpen ? 'open' : ''}`}>›</span>
