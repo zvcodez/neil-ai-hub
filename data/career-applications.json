@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:34:17.532Z",
+  "updatedAt": "2026-07-06T06:38:20.018Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -399,6 +399,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-04T17:55:50.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:38:20.016Z"
         }
       ],
       "company": "JPMorganChase",
@@ -408,8 +412,8 @@
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_JPM_TradeSupport.docx",
       "salary": "not disclosed in posting",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "Posted 7 hours before sourcing (very fresh), 115 applicants already. No years of experience required, entry-friendly. Maps to Bloomberg SMA reconciliation and daily deadline-driven processing.",
       "skills": [
         "Trade Level Data & Settlement Support",
