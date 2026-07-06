@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:38:20.018Z",
+  "updatedAt": "2026-07-06T06:40:39.901Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -443,6 +443,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-04T17:55:50.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:40:39.900Z"
         }
       ],
       "company": "JPMorganChase",
@@ -452,8 +456,8 @@
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_JPM_TradingServices.docx",
       "salary": "not disclosed in posting",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "STRETCH: mortgage/securitization is a new asset class for Neil, owned honestly in the letter. No years required. Posted 14 hours before sourcing, 33 applicants. Reconciliation/data-normalization mechanics transfer from Bloomberg.",
       "skills": [
         "Trade & Position Reconciliation",
