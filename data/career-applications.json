@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T05:53:26.729Z",
+  "updatedAt": "2026-07-06T05:58:38.298Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -868,6 +868,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T13:52:29.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T05:58:38.296Z"
         }
       ],
       "company": "JPMorganChase",
@@ -877,7 +881,7 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_JPM_Reporting.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_JPM_Reporting.docx",
       "salary": "$100.7k–$145k",
-      "status": "To Apply",
+      "status": "Applied",
       "notes": "Posted 06/30, accepting as of 07/02. Requires 2+ years finance incl. exposure to accounting/financial statements/regulatory reporting; his TD regulatory casework + Bloomberg reporting cycles cover the exposure bar.",
       "skills": [
         "Regulatory Filing & Reconciliation",
@@ -896,7 +900,8 @@
       ],
       "bulletsTD": "Investigate flagged accounts and file regulatory reports based on independent findings, completing detailed reviews weekly (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, executing procedures comparable to regulatory filing reconciliation.\nCompile comprehensive investigation documents with clear variance and exception analysis for stakeholders.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
       "bulletsBloomberg": "Prepare monthly performance and holdings reporting for 650+ SMAs and CITs, mirroring the cadence of recurring investor and regulatory reporting cycles.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference data.\nReconcile cash, custody, and trade level position data against custodian and administrator records ahead of reporting deadlines.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream reporting.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "dateApplied": "2026-07-06"
     },
     {
       "id": "app-jpm_altinv",
