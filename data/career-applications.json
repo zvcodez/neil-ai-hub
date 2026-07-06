@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:18:31.414Z",
+  "updatedAt": "2026-07-06T06:30:12.755Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -598,6 +598,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-04T17:55:50.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:30:12.750Z"
         }
       ],
       "company": "Willow Wealth",
@@ -607,8 +611,8 @@
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_WillowWealth.docx",
       "salary": "$85,000–$95,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "2-5+ yrs client-facing experience required. Maps to Bloomberg client support for 400+ institutional PMs. Direct HNW/private-markets client work is new, owned honestly in the letter.",
       "skills": [
         "Institutional Client & PM Support",
