@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:47:30.913Z",
+  "updatedAt": "2026-07-06T06:50:04.005Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -219,6 +219,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:50:04.003Z"
         }
       ],
       "company": "Soros Fund Management",
@@ -228,8 +232,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_Soros.docx",
       "salary": "$100,000-$135,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "STRETCH: posting wants 3 to 7 years, Neil has roughly 2.3 combined. Included anyway given elite brand and this is literally the Valuations/IPV target lane, Bloomberg Terminal fluency is a real edge. Gap owned honestly in the letter.",
       "skills": [
         "Performance & Holdings Analysis",
