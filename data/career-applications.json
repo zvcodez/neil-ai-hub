@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:53:03.423Z",
+  "updatedAt": "2026-07-06T06:54:42.523Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -152,6 +152,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:54:42.520Z"
         }
       ],
       "company": "Talan",
@@ -161,8 +165,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_Talan.docx",
       "salary": "not disclosed in posting",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "2 years trade support experience preferred (not hard required), Entry level tag. Consulting/staffing firm placing onto an equities trading desk. No visa sponsorship (fine, Neil is a US citizen).",
       "skills": [
         "Trade Support",
