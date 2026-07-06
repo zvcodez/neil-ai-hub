@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:45:11.601Z",
+  "updatedAt": "2026-07-06T06:47:30.913Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -253,6 +253,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:47:30.911Z"
         }
       ],
       "company": "Carisbrook Partners (recruiter, top global hedge fund)",
@@ -262,8 +266,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_Carisbrook.docx",
       "salary": "not disclosed in posting",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "STRETCH: posting wants 2 to 8 years, Neil sits near the floor. Recruiter-mediated (often more flexible screening than direct-apply). Front-office-facing middle office seat at an unnamed top hedge fund.",
       "skills": [
         "Trade Capture & Lifecycle Support",
