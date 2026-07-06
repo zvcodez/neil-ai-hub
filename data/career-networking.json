@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T23:20:10.000Z",
+  "updatedAt": "2026-07-06T06:44:29.183Z",
   "data": [
     {
       "id": "net-tdsecurities",
@@ -167,8 +167,8 @@
       "message": "Hi <name>, I just applied for the Operations Analyst role you have posted for a systematic trading desk. I build Excel macros to automate reconciliation work and would love 15 minutes on the role. Thanks, Neil",
       "messageLong": "Hi <name>, I applied this week for the Operations / Middle Office Analyst role Mondrian Alpha is recruiting for. At Bloomberg I built macros to speed up monthly reconciliation across 650+ managed accounts, and my MBA coursework in AI and machine learning backs up the process automation focus of the role. I would value 15 minutes on what the hiring team is looking for. Either way, thanks for reading.",
       "cadence": "send Tue to Thu morning. If no reply, one polite bump after 5 to 7 days, then stop. Never attach the resume in the first message.",
-      "status": "To Contact",
-      "contactedAt": "",
+      "status": "Contacted",
+      "contactedAt": "2026-07-06",
       "noContactReason": ""
     },
     {
