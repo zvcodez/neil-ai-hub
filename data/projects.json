@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-07-06T19:30:46.418Z",
+  "updatedAt": "2026-07-06T19:30:54.231Z",
   "data": [
+    {
+      "id": "mr9m80ieftt8it",
+      "_created": "2026-07-06T19:30:54.230Z",
+      "_stagedAt": "2026-07-06T19:30:54.230Z",
+      "name": "Shortcut for ideas",
+      "description": "",
+      "stage": "Idea",
+      "nextStep": "",
+      "lastDid": "",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "notes": ""
+    },
     {
       "id": "mr9m7uhem4636x",
       "_created": "2026-07-06T19:30:46.418Z",
