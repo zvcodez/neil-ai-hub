@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:41:49.628Z",
+  "updatedAt": "2026-07-06T06:45:11.601Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -289,6 +289,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:45:11.599Z"
         }
       ],
       "company": "Mondrian Alpha (recruiter, multi-strategy hedge fund)",
@@ -298,8 +302,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_MondrianTradeSupport.docx",
       "salary": "~$150,000+ TC (year one)",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "STRETCH: posting wants 2 to 5 years ideally, Neil sits near the floor. Recruiter-mediated, exceptional year-one comp for the level. Cross asset class exposure (equities, fixed income, derivatives, FX) required, owned honestly.",
       "skills": [
         "Trade Capture & Allocations",
