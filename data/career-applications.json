@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:50:04.005Z",
+  "updatedAt": "2026-07-06T06:53:03.423Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -185,6 +185,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:53:03.422Z"
         }
       ],
       "company": "Enstar Group",
@@ -194,8 +198,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_Enstar.docx",
       "salary": "not disclosed in posting",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "2 to 4 years experience in due diligence/monitoring/reporting of external managers required. Strong thematic fit with TD Bank investigation/documentation background and the Brown Advisory ODD resume built same week. Open to remote for East Coast candidates.",
       "skills": [
         "Due Diligence Documentation",
