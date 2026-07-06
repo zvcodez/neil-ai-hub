@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T05:30:00.000000+00:00",
+  "updatedAt": "2026-07-06T06:00:00.000000+00:00",
   "data": [
     {
       "id": "idea-movie-taste",
@@ -364,6 +364,11 @@
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
         {
+          "id": "log-hub-networking-per-day",
+          "ts": "2026-07-06T01:00:00.000Z",
+          "text": "Networking outreach now batches per day too, but by the linked application's posting date (matched via job link or company name against career-applications), not the contact's own created date — so outreach follows the same daily rhythm as the pipeline it's chasing. Falls back to an 'Undated' group for manually added contacts with no matching application. Same collapsible chevron UI, own localStorage key (career-networking-closed-batches). Verified in-browser with link-matched, company-matched, and unmatched contacts. sw cache v36."
+        },
+        {
           "id": "log-hub-applied-per-day",
           "ts": "2026-07-06T00:30:00.000Z",
           "text": "Extended per-day grouping beyond To Apply: Applied now batches by the actual dateApplied, and Did Not Apply batches by the day it was declined (noApplyAt) — so answering Yes/No on a posting gives an accurate day-by-day record instead of one flat list. Same collapsible chevron UI, batch keys namespaced per status. Verified both Yes and No flows in-browser. sw cache v35."
@@ -394,7 +399,7 @@
           "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Applied and Did Not Apply now also group per day (by dateApplied / decline date), matching the To Apply collapse-by-day UI, so answering Yes/No gives an accurate daily record"
+      "lastDid": "Networking outreach now batches per day by the linked application's posting date (not contact-created date), with the same collapsible chevron UI as Applications"
     },
     {
       "id": "6a403f0db2",
