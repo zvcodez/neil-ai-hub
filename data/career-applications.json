@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T05:58:38.298Z",
+  "updatedAt": "2026-07-06T06:06:07.189Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -1019,6 +1019,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-02T13:52:29.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:06:07.187Z"
         }
       ],
       "company": "SMBC Group",
@@ -1028,7 +1032,7 @@
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SMBC.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SMBC.docx",
       "salary": "$80k–$115k",
-      "status": "To Apply",
+      "status": "Applied",
       "notes": "Posted 06/25, accepting as of 07/02. \"Recommended\" 3 years (not required); JIRA/Agile explicitly wanted and he has JIRA Service Management on his real skill list. $80k to $115k.",
       "skills": [
         "Banking Compliance & Regulatory Experience",
@@ -1048,7 +1052,8 @@
       ],
       "bulletsTD": "Investigate flagged account activity for banking compliance and regulatory purposes, completing detailed reviews weekly (20-25 completed, peak of 33).\nTranslate case findings into clear requirements and documentation for Compliance and Operations stakeholders.\nReconcile transaction and account data against internal and external sources, applying data analysis to flag discrepancies.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide consistency.",
       "bulletsBloomberg": "Used JIRA to manage workflow for PM data requests and issue resolution as primary point of contact for 400+ institutional portfolio managers.\nTranslated portfolio manager needs into clear formatting requirements for a new data platform, supporting a major system migration.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records.\nAnalyze monthly performance and holdings data, extracting insights for internal reporting cycles.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "dateApplied": "2026-07-06"
     },
     {
       "id": "app-scr_clientservices",
