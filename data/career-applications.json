@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T06:40:39.901Z",
+  "updatedAt": "2026-07-06T06:41:49.628Z",
   "data": [
     {
       "id": "app-tdsecurities",
@@ -322,6 +322,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-05T23:19:22.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-06T06:41:49.626Z"
         }
       ],
       "company": "Mondrian Alpha (recruiter, quant/systematic prop trading firm)",
@@ -331,8 +335,8 @@
       "coverLetter": "Job Applications/2026-07-05/Neil_Patel_CoverLetter_MondrianMOAnalyst.docx",
       "salary": "~$200,000+ TC (year one, performance dependent)",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-06",
+      "status": "Applied",
       "notes": "STRETCH: no explicit years stated; role teaches SQL/Python/VBA on the job rather than requiring it upfront. Recruiter-mediated, exceptional comp. Quant/systematic prop trading is a new environment, owned honestly.",
       "skills": [
         "Data Analysis & Process Automation",
