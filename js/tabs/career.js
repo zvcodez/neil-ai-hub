@@ -134,11 +134,16 @@ function CompaniesTab({ accent }) {
 }
 
 // ---- Applications (status accordion, one section open at a time) -----------
-const APP_STATUSES = ['To Apply', 'Applied', 'Did Not Apply', 'Followed Up', 'Interview Scheduled', 'Interview Completed', 'Offer', 'Rejected'];
+const APP_STATUSES = ['To Apply', 'Applied', 'Received Response', 'Did Not Apply', 'Followed Up', 'Interview Scheduled', 'Interview Completed', 'Offer', 'Rejected'];
 const appStatusColor = {
-  'To Apply': '#f97316', Applied: '#2563eb', 'Did Not Apply': '#64748b', 'Followed Up': '#06b6d4',
+  'To Apply': '#f97316', Applied: '#2563eb', 'Received Response': '#0ea5e9', 'Did Not Apply': '#64748b', 'Followed Up': '#06b6d4',
   'Interview Scheduled': '#a855f7', 'Interview Completed': '#f59e0b', Offer: '#10b981', Rejected: '#94a3b8',
 };
+
+// Gmail-detected outcome on a "Received Response" card — shown as a colored
+// badge before the details dropdown is even opened, per Neil's /jobs Gmail
+// check (see ~/.claude/commands/jobs.md step 5).
+const gmailOutcomeColor = { Rejected: '#ef4444', 'Follow Up': '#10b981', 'Will Be In Touch': '#f59e0b' };
 
 // Batch = the day the posting landed in the hub (daily digest runs stamp _created).
 const batchOf = (a) => a.batch || (a._created || '').slice(0, 10);
@@ -159,9 +164,19 @@ function AppCard({ app: a, statusOptions, onOpen, onRemove, onMove, onDecline })
     <div class="app-row-main">
       <div class="app-row-title">
         <strong>${a.company}</strong><span class="app-row-sep"> — </span>${a.jobTitle}
+        ${a.gmailOutcome && html`<${Badge} color=${gmailOutcomeColor[a.gmailOutcome]}>${a.gmailOutcome}<//>`}
       </div>
       ${meta.length > 0 && html`<div class="app-row-meta">${meta.join(' · ')}</div>`}
       ${a.status === 'Did Not Apply' && a.noApplyReason && html`<div class="app-row-reason">“${a.noApplyReason}”</div>`}
+      ${a.gmailOutcome && html`<details class="net-msg" onClick=${(e) => e.stopPropagation()}>
+        <summary>Gmail update</summary>
+        <div class="net-msg-block">
+          ${a.gmailSubject && html`<div class="net-msg-head"><span class="net-label">Subject</span></div><p>${a.gmailSubject}</p>`}
+          ${a.gmailSummary && html`<p>${a.gmailSummary}</p>`}
+          <p class="muted-text">${[a.gmailCheckedAt && `Checked ${fmtDate(a.gmailCheckedAt)}`].filter(Boolean).join(' · ')}</p>
+          ${a.gmailThreadId && html`<a href=${`https://mail.google.com/mail/u/0/#all/${a.gmailThreadId}`} target="_blank" rel="noreferrer">Open in Gmail →</a>`}
+        </div>
+      </details>`}
       ${(a.skills?.length > 0 || a.bulletsTD || a.bulletsBloomberg || a.bulletsBC) && html`<details class="net-msg" onClick=${(e) => e.stopPropagation()}>
         <summary>Skills & resume bullets (for Workday)</summary>
         ${a.skills?.length > 0 && html`<div class="net-msg-block">
@@ -275,10 +290,10 @@ function ApplicationsTab({ accent }) {
   const card = (a) => html`<${AppCard} key=${a.id} app=${a} statusOptions=${APP_STATUSES}
     onOpen=${(app) => setModal({ editing: app })} onRemove=${remove} onMove=${moveTo} onDecline=${decline} />`;
 
-  // Date-grouped statuses: "To Apply" by the day the posting batch arrived,
-  // "Applied"/"Did Not Apply" by the day Yes/No was answered — so each keeps an
-  // accurate per-day record instead of one flat list.
-  const DATE_GROUPED_STATUSES = ['To Apply', 'Applied', 'Did Not Apply'];
+  // Date-grouped statuses: "To Apply" and "Received Response" by the day the
+  // posting batch arrived, "Applied"/"Did Not Apply" by the day Yes/No was
+  // answered — so each keeps an accurate per-day record instead of one flat list.
+  const DATE_GROUPED_STATUSES = ['To Apply', 'Applied', 'Received Response', 'Did Not Apply'];
   const dateKeyFor = (status, a) => {
     if (status === 'Applied') return (a.dateApplied || '').slice(0, 10) || 'undated';
     if (status === 'Did Not Apply') return (a.noApplyAt || a.dateApplied || '').slice(0, 10) || 'undated';
