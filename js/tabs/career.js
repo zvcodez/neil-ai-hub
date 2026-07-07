@@ -319,6 +319,42 @@ function ApplicationsTab({ accent }) {
   };
   const sortByOutcome = (items) => [...items].sort((a, b) => outcomeRank(a) - outcomeRank(b));
 
+  // Per-day outcome breakdown for Received Response batch headers — always
+  // visible, even while the batch is collapsed, so the mix is readable at a
+  // glance without opening every day.
+  const outcomeBreakdown = (items) => {
+    const counts = {};
+    for (const a of items) {
+      const key = a.gmailOutcome || 'Other';
+      counts[key] = (counts[key] || 0) + 1;
+    }
+    return [...GMAIL_OUTCOME_ORDER, 'Other']
+      .filter((k) => counts[k])
+      .map((k) => ({ label: k, count: counts[k], color: gmailOutcomeColor[k] || '#94a3b8' }));
+  };
+
+  // Overall funnel tracker: lifetime totals across every application ever
+  // submitted, independent of search/filter/section state, so it reads the
+  // same the moment the tab opens. Recomputes whenever apps changes (e.g.
+  // right after /jobs pushes new statuses).
+  const isRejectedApp = (a) => a.status === 'Rejected' || (a.status === 'Received Response' && a.gmailOutcome === 'Rejected');
+  const summary = useMemo(() => {
+    const submitted = apps.filter((a) => a.status !== 'To Apply' && a.status !== 'Did Not Apply');
+    const waitingOn = submitted.filter((a) => a.status !== 'Offer' && !isRejectedApp(a));
+    const heardBack = submitted.filter((a) => a.status !== 'Applied');
+    const rejected = submitted.filter(isRejectedApp);
+    const startDate = submitted
+      .map((a) => a.dateApplied || batchOf(a))
+      .filter(Boolean)
+      .sort()[0];
+    const contacts = loadStore('career-networking', []);
+    const reachedOutTo = contacts.filter((c) => netStatusOf(c) === 'Contacted').length;
+    return {
+      total: submitted.length, waitingOn: waitingOn.length, heardBack: heardBack.length,
+      rejected: rejected.length, reachedOutTo, startDate,
+    };
+  }, [apps]);
+
   return html`<div class="collection" style=${{ '--accent': accent }}>
     <div class="toolbar">
       <${SearchBox} value=${query} onChange=${setQuery} placeholder="Search applications..." />
@@ -327,6 +363,19 @@ function ApplicationsTab({ accent }) {
       <div class="toolbar-spacer"></div>
       <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add application<//>
     </div>
+
+    ${summary.total > 0 && html`<div class="app-tracker">
+      <div class="app-tracker-total">
+        <strong>${summary.total}</strong> total applied
+        ${summary.startDate && html`<span class="muted-text"> since ${fmtDate(summary.startDate)}</span>`}
+      </div>
+      <div class="app-tracker-stats">
+        <span class="app-tracker-stat" style=${{ '--col': '#f59e0b' }}><strong>${summary.waitingOn}</strong> waiting on</span>
+        <span class="app-tracker-stat" style=${{ '--col': '#0ea5e9' }}><strong>${summary.heardBack}</strong> heard back</span>
+        <span class="app-tracker-stat" style=${{ '--col': '#ef4444' }}><strong>${summary.rejected}</strong> rejected</span>
+        <span class="app-tracker-stat" style=${{ '--col': '#10b981' }}><strong>${summary.reachedOutTo}</strong> reached out to</span>
+      </div>
+    </div>`}
 
     ${apps.length === 0 && html`<${EmptyState} icon="career" text="No applications yet." hint="New postings land here each morning — answer Applied? Yes/No on each one." />`}
 
@@ -353,7 +402,11 @@ function ApplicationsTab({ accent }) {
                     <button class="app-batch-head" onClick=${() => toggleBatch(batchKey)}>
                       <span class=${`app-chevron ${batchOpen ? 'open' : ''}`}>›</span>
                       ${date === 'undated' ? 'Undated' : fmtDate(date)}
-                      <span class="kanban-count">${items.length}</span>
+                      ${status === 'Received Response'
+                        ? html`<span class="outcome-breakdown">
+                            ${outcomeBreakdown(items).map((o) => html`<span class="outcome-chip" style=${{ '--col': o.color }} key=${o.label}>${o.label} ${o.count}</span>`)}
+                          </span>`
+                        : html`<span class="kanban-count">${items.length}</span>`}
                     </button>
                     ${batchOpen && orderedItems.map(card)}
                   </div>`;
