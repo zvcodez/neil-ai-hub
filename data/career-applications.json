@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:42:38.512Z",
+  "updatedAt": "2026-07-07T01:43:04.196Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -175,6 +175,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-07T01:43:04.193Z"
         }
       ],
       "company": "WhiteCap Search",
@@ -184,8 +188,8 @@
       "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_WhiteCapCLO.docx",
       "salary": "$100,000-$150,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-07",
+      "status": "Applied",
       "notes": "Posted 2026-07-06. 2-5 years experience, CLO/loan systems preferred not required, Bloomberg mentioned as a plus. Recruiter posting (WhiteCap Search).",
       "skills": [
         "Trade & Position Reconciliation",
