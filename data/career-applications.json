@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:31:13.385Z",
+  "updatedAt": "2026-07-07T01:31:29.285Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -333,6 +333,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-07T01:31:29.283Z"
         }
       ],
       "company": "Bessemer Trust",
@@ -343,7 +347,7 @@
       "salary": "$60,000-$80,000",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Posted 2026-07-06. Salary runs a bit under the usual $75k+ floor at the low end but tops out at $80k; Woodbridge NJ location (same town as Neil's current job) makes it worth including. 1-3 years fits.",
       "skills": [
         "Cash Transaction Processing",
@@ -355,7 +359,9 @@
       ],
       "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
       "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "noApplyReason": "not looking to work in woodbridge",
+      "noApplyAt": "2026-07-07T01:31:29.283Z"
     },
     {
       "id": "app-natixiscorporateinve11",
