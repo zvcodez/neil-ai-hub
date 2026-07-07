@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T00:06:28.306032Z",
+  "updatedAt": "2026-07-07T00:32:21.630316Z",
   "data": [
     {
       "id": "mr9m80ieftt8it",
@@ -390,9 +390,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Run /jobs and confirm the new Excel tracker output looks right end to end; otherwise keep using the hub day to day.",
+      "nextStep": "Click the Tracker button once in a real (non-automated) Chrome session and choose Always allow, same one-time step as the existing Open in Claude Code button.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-tracker-button",
+          "ts": "2026-07-07T00:32:21.629943Z",
+          "text": "Answered where the new Excel tracker lives by adding a green Tracker button to the Applications toolbar. Since a browser cannot open local files directly, extended the existing ClaudeCodeOpener.app (originally built for the claudecode:// Open in Claude Code button) to also handle a neilhub:// scheme; neilhub://open-tracker runs open -R on the tracker file to reveal+select it in Finder. Chose reveal over open deliberately: this Mac has no Excel or Numbers installed (checked via mdfind), so a plain open would silently fail with zero feedback, whereas Finder reveal always works and spacebar Quick Look previews the xlsx with no app needed. Verified end to end: rebuilt/registered the app, triggered the scheme from Terminal and from an actual button click in the browser, confirmed Finder opened to Downloads both times. install.sh and the README now document both schemes. sw cache v40."
+        },
         {
           "id": "log-hub-tracker-and-xlsx",
           "ts": "2026-07-07T00:06:28.304117Z",
@@ -449,7 +454,7 @@
           "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Added an overall applications funnel tracker (total applied since start date, waiting on / heard back / rejected / reached out to) above the pipeline, per-day outcome breakdown chips on Received Response batches (visible while collapsed), and an auto-regenerating Excel tracker (~/Downloads/Neil_Job_Tracker.xlsx) wired into /jobs step 6."
+      "lastDid": "Added a green Tracker button to Applications that reveals ~/Downloads/Neil_Job_Tracker.xlsx in Finder — extended the existing ClaudeCodeOpener launcher app with a second URL scheme (neilhub://open-tracker) since this Mac has no Excel/Numbers installed, so reveal+Quick Look beats a plain open."
     },
     {
       "id": "6a403f0db2",
