@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:35:02.002Z",
+  "updatedAt": "2026-07-07T01:42:06.333Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -239,6 +239,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-07T01:42:06.325Z"
         }
       ],
       "company": "MUFG",
@@ -248,8 +252,8 @@
       "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_MUFGEnterpriseValuation.docx",
       "salary": "$90,000-$105,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-07",
+      "status": "Applied",
       "notes": "Posted 2026-07-06. Stretch: DCF/precedent transaction valuation modeling is new, honestly owned in the letter. 1-3 years banking with credit underwriting exposure required, fits. Major bank brand.",
       "skills": [
         "Account & Transaction Analysis",
