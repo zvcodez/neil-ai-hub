@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:42:06.333Z",
+  "updatedAt": "2026-07-07T01:42:38.512Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -207,6 +207,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-07T01:42:38.510Z"
         }
       ],
       "company": "WhiteCap Search",
@@ -216,8 +220,8 @@
       "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_WhiteCapOpsAssociate.docx",
       "salary": "$85,000-$150,000 (band varies by product coverage)",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-07",
+      "status": "Applied",
       "notes": "Posted 2026-07-06. Public securities trade lifecycle ops, explicitly lists AI tool experience as a requirement, strong genuine match. Recruiter posting (WhiteCap Search).",
       "skills": [
         "Post Execution Reconciliation",
