@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:30:13.114Z",
+  "updatedAt": "2026-07-07T01:31:13.385Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -364,6 +364,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-07T01:31:13.383Z"
         }
       ],
       "company": "Natixis Corporate & Investment Banking",
@@ -373,8 +377,8 @@
       "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_NatixisTradeSupport.docx",
       "salary": "$105,000-$120,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-07",
+      "status": "Applied",
       "notes": "Posted 2026-07-06. 2+ years general trade support/middle office/operations experience required, fits. Sophis/Summit listed as preferred not required.",
       "skills": [
         "Trade Booking Discrepancy Resolution",
