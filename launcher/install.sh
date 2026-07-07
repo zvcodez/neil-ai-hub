@@ -1,8 +1,9 @@
 #!/bin/zsh
 # Builds ClaudeCodeOpener.app from launcher.applescript and registers the
-# claudecode:// URL scheme so the hub's "Open in Claude Code" buttons work.
-# Uses only built-in macOS tools (osacompile, PlistBuddy, lsregister) — no
-# Node/Homebrew. Re-run this any time (new Mac, app deleted, script changed).
+# claudecode:// and neilhub:// URL schemes so the hub's "Open in Claude Code"
+# and "Tracker" buttons work. Uses only built-in macOS tools (osacompile,
+# PlistBuddy, lsregister) — no Node/Homebrew. Re-run this any time (new Mac,
+# app deleted, script changed).
 set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"
 APP="$HOME/Applications/ClaudeCodeOpener.app"
@@ -19,10 +20,11 @@ $PB -c "Add :CFBundleURLTypes:0 dict" "$PLIST"
 $PB -c "Add :CFBundleURLTypes:0:CFBundleURLName string com.neil.claudecode" "$PLIST"
 $PB -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes array" "$PLIST"
 $PB -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string claudecode" "$PLIST"
+$PB -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes:1 string neilhub" "$PLIST"
 $PB -c "Add :LSUIElement bool true" "$PLIST"
 $PB -c "Set :CFBundleIdentifier com.neil.claudecodeopener" "$PLIST" 2>/dev/null \
   || $PB -c "Add :CFBundleIdentifier string com.neil.claudecodeopener" "$PLIST"
 
 "$LSREGISTER" -f "$APP"
 echo "✅ Installed: $APP"
-echo "   Click an 'Open in Claude Code' button in the hub and choose 'Always allow' the first time."
+echo "   Click an 'Open in Claude Code' or 'Tracker' button in the hub and choose 'Always allow' the first time."

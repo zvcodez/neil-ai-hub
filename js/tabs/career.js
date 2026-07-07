@@ -361,6 +361,9 @@ function ApplicationsTab({ accent }) {
       <${Segmented} options=${[{ value: 'sections', label: 'Pipeline' }, { value: 'list', label: 'List' }]}
         value=${view} onChange=${setView} />
       <div class="toolbar-spacer"></div>
+      <a class="btn btn-success" href="neilhub://open-tracker" title="Reveal Neil_Job_Tracker.xlsx in Finder (this Mac only)">
+        <${Icon} name="sheet" size=${15} /> Tracker
+      </a>
       <${Button} variant="primary" icon="plus" onClick=${() => setModal({ editing: null })}>Add application<//>
     </div>
 

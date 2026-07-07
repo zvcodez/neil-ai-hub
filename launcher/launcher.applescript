@@ -1,12 +1,18 @@
--- ClaudeCodeOpener: handles claudecode:// links from the Neil AI Hub.
+-- ClaudeCodeOpener: handles claudecode:// and neilhub:// links from the hub.
 --   claudecode:///Users/neil/Claude/foo            -> open Claude Code there
 --   claudecode://~/Claude/foo?prompt=<urlencoded>  -> ...and seed an opening prompt
+--   neilhub://open-tracker                         -> open the Excel tracker
 --
 -- Opens a NEW Terminal window in the folder and starts Claude Code. It avoids
 -- Apple Events to Terminal (which a background app can't get permission for) by
 -- writing a one-shot .command and opening it with `open -a Terminal`.
 
 on open location this_URL
+	if this_URL starts with "neilhub://" then
+		my handleNeilHub(this_URL)
+		return
+	end if
+
 	set thePath to my pathFromURL(this_URL)
 	if thePath is "" then return
 	set thePrompt to my promptFromURL(this_URL)
@@ -41,6 +47,25 @@ on open location this_URL
 	do shell script "chmod +x " & quoted form of tmpFile
 	do shell script "open -a Terminal " & quoted form of tmpFile
 end open location
+
+-- Handle neilhub://<action> links. Only "open-tracker" exists today; reveals
+-- ~/Downloads/Neil_Job_Tracker.xlsx selected in Finder (not "open" with the
+-- default app — this Mac has no Excel/Numbers installed, so a plain open
+-- would silently fail with no feedback; Finder reveal always works, and
+-- spacebar Quick Look previews an .xlsx with no app needed).
+on handleNeilHub(theURL)
+	set theAction to text 11 thru -1 of theURL -- strip "neilhub://"
+	if theAction contains "?" then
+		set AppleScript's text item delimiters to "?"
+		set theAction to text item 1 of theAction
+		set AppleScript's text item delimiters to ""
+	end if
+	if theAction is "open-tracker" then
+		set homePath to POSIX path of (path to home folder) -- ends with "/"
+		set trackerPath to homePath & "Downloads/Neil_Job_Tracker.xlsx"
+		do shell script "open -R " & quoted form of trackerPath
+	end if
+end handleNeilHub
 
 -- Strip the scheme + any query string; percent-decode spaces.
 on pathFromURL(theURL)

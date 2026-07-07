@@ -175,6 +175,8 @@ select, .sort select {
 .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-primary:hover { filter: brightness(1.08); background: var(--accent); }
 .btn-ghost { background: none; }
+.btn-success { background: #10b981; border-color: #10b981; color: #fff; }
+.btn-success:hover { filter: brightness(1.08); background: #10b981; }
 .btn:disabled { opacity: 0.5; cursor: default; }
 
 .icon-btn {
