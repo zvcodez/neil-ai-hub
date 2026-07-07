@@ -1,6 +1,76 @@
 {
-  "updatedAt": "2026-07-07T01:47:50.897Z",
+  "updatedAt": "2026-07-07T04:24:49.000Z",
   "data": [
+    {
+      "id": "app-pwc14",
+      "_created": "2026-07-07T04:24:49.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-07T04:24:49.000Z"
+        }
+      ],
+      "company": "PwC",
+      "jobTitle": "Acceleration Center, Agentic AI and Machine Learning Developer, Experienced Associate (New York, NY)",
+      "link": "https://jobs.us.pwc.com/job/new-york/acceleration-center-agentic-ai-and-machine-learning-developer-experienced-associate/932/95591450096",
+      "resume": "Job Applications/2026-07-07/Neil_Patel_Resume_PwCAgenticAI.docx",
+      "coverLetter": "Job Applications/2026-07-07/Neil_Patel_CoverLetter_PwCAgenticAI.docx",
+      "salary": "$61,000-$100,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Found by hand browsing PwC's own careers site (missed by /jobs sourcing, which was keyword/company-list bound until this session's fix). Formal bar is just a Bachelor's degree, no years listed, but real day to day is Python/Java/TensorFlow/Scikit-Learn/NLP, a genuine stretch. Neil's real match: pattern recognition and data quality work from TD/Bloomberg, plus a hands on AI-assisted dev project (Claude, Claude Code) added to the resume per playbook rule. Cover letter owns the Java/TensorFlow gap directly rather than papering over it.",
+      "skills": [
+        "Pattern Recognition & Anomaly Detection",
+        "Data Wrangling & Quality Assessment",
+        "AI Assisted Development (Claude, Claude Code)",
+        "Client Facing Data Delivery",
+        "Cross Team Coordination",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "SAS & Oracle Based Systems",
+        "SQL",
+        "Python"
+      ],
+      "bulletsTD": "Build a transaction tracker in Excel for each case, pulling and tagging hundreds of records per review and using pivot tables and conditional formatting to surface patterns such as round dollar amounts, repeated counterparties, and volume spikes.\nComplete detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33), applying consistent pattern recognition and data quality checks across every case.\nReconcile transaction and account data against internal and external sources, resolving discrepancies and maintaining a clean, audit ready data trail.\nIdentify emerging typologies and structuring patterns in transaction data, adapting analysis methods as new risk indicators are introduced.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Diagnose data quality issues in a new institutional data upload portal, identifying formatting errors and missing fields, then guide portfolio managers through corrected submissions.\nAnalyze monthly performance and holdings data for 650+ SMAs and CITs, building Excel macros to automate identification of additions, removals, and pattern changes month over month.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving 10 to 20 data and reporting questions daily.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, growing retention 10% and engagement 20%."
+    },
+    {
+      "id": "app-pwc15",
+      "_created": "2026-07-07T04:24:49.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-07T04:24:49.000Z"
+        }
+      ],
+      "company": "PwC",
+      "jobTitle": "Front Office Strategy Consulting, Service & Support Experienced Associate (New York, NY)",
+      "link": "https://jobs.us.pwc.com/job/new-york/front-office-strategy-consulting-service-and-support-experienced-associate/932/96910818128",
+      "resume": "Job Applications/2026-07-07/Neil_Patel_Resume_PwCFrontOfficeStrategy.docx",
+      "coverLetter": "Job Applications/2026-07-07/Neil_Patel_CoverLetter_PwCFrontOfficeStrategy.docx",
+      "salary": "$63,000-$140,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Found by hand browsing PwC's own careers site (missed by /jobs sourcing, which was keyword/company-list bound until this session's fix). Bachelor's + 1 year, strong genuine fit: customer due diligence and related party analysis at TD, 400+ PM point of contact at Bloomberg, and 10%/20% retention and engagement metrics at B&C map almost directly to the posting's customer relationship management and due diligence requirements. Not a stretch role.",
+      "skills": [
+        "Client Relationship Management",
+        "Customer Due Diligence & Analysis",
+        "Sales & Retention Reporting",
+        "Cross Team Coordination",
+        "Deadline Driven Delivery",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "CRM Platforms",
+        "Bloomberg Terminal (BMC certified)",
+        "SAS & Oracle Based Systems",
+        "JIRA"
+      ],
+      "bulletsTD": "Conduct customer due diligence and risk rating on flagged and higher risk accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nServe as point of contact for internal stakeholders requesting case status, findings, and supporting evidence, translating technical findings into clear, decision ready summaries.\nAnalyze related party and ownership structures to assess customer relationships and risk exposure, supporting sound account level decisions.\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, resolving 10 to 20 client questions and requests daily by email and scheduled calls.\nExpand the SMA strategy library by 800+ investment strategies through proactive portfolio manager outreach, deepening client relationships and platform engagement.\nAnalyze monthly performance and holdings data for 650+ SMAs and CITs, preparing account level reporting ahead of investor updates.\nGuide portfolio managers through a new data upload portal, resolving formatting issues and supporting the shift from a manual, email based process.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, growing retention 10% and engagement 20%."
+    },
     {
       "id": "app-goldmansachs0",
       "_created": "2026-07-06T15:00:00.000Z",
