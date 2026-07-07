@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T00:32:21.630316Z",
+  "updatedAt": "2026-07-07T03:14:36.875804Z",
   "data": [
     {
       "id": "mr9m80ieftt8it",
@@ -298,10 +298,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Watch the growth-ranked POTD over the next few slates (tomorrow: Switzerland/Algeria Over 2.5 +116 is the lone flagged play under the new weights). Still open: recalibrate blend weights from real CLV once OddsPapi closing lines are wired and enough bets settle.",
-      "lastDid": "Full model review + output optimization for the Play of the Day. Ran the validation the backtest never did: scored the model's totals/BTTS probabilities on the real WC2026 group stage -- 1X2 skill re-confirmed, but totals/BTTS showed no skill beyond the base rate, and the feared knockout scoring bias turned out not to exist. Shipped two changes: per-market calibration weights (Match Result keeps 0.5 model weight; totals/BTTS drop to 0.35 so the market gets more of the vote where the model hasn't proven itself), and -- Neil's pick from three options -- POTD ranking switched from raw edge to a growth score (EV / (decimal-1), the Kelly fraction): same 5% edge bar to qualify, but at similar value the likelier winner ranks first, so the record converges positive faster if the edge is real. Verified synthetically + against the live board, deployed to Railway.",
+      "nextStep": "Watch the board for the rest of the knockout rounds for any new edge cases now that qualifies is edge-derived everywhere. Longer-term open item unchanged: recalibrate blend weights from real CLV once OddsPapi closing lines are wired and enough bets settle.",
+      "lastDid": "Neil asked why USA (highest first-half-scoring team) still got Under 2.5 as tonight's POTD on the USA-Belgium Round of 16 game. Traced it: the model has no first-half-goals feature at all (fits on full 90-min results only) so that stat was never an input; the Under lean came from the raw model (53%) pulled to 46.18% by the totals/BTTS 0.35 calibration blend. Audit turned up two real bugs while answering that: (1) Pick.qualifies was a mutable field only ever flipped inside generate_picks()'s own fallback branch, so a locked POTD re-priced live via alerts._current_pick_for() kept qualifies=true even after its edge drifted below the 5% bar (served qualifies:true next to confidence:\"Below bar\" for tonight's pick); (2) reasons.py's totals rationale always claimed the combined recent-scoring average \"supports\" whichever side the model picked, regardless of what the number actually said (3.6 combined goals captioned \"supports the under\" at a 2.5 line -- backwards), and its per-team hit-rate bullet used a fixed over-2.5 flag instead of the pick's actual line, so alternate-line totals picks showed the wrong count. Fixed both (qualifies is now a property derived straight from edge > EDGE_THRESHOLD, so it can never go stale relative to confidence_tier), audited the rest of the pick/reprice/alert/settlement/tracker pipeline for similar bugs (none found -- Dixon-Coles math, vig removal, parlay logic, ET/penalty-stripped settlement grading, CLV, quota strategy all check out), verified locally against the live board, then deployed to Railway and pushed to GitHub.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-2026-07-07T03:14:36.875804Z",
+          "ts": "2026-07-07T03:14:36.875804Z",
+          "text": "Fixed two real bugs found while explaining tonight's USA-Belgium Under 2.5 POTD to Neil: a stale qualifies flag (locked POTD re-priced live could keep qualifies=true even after its edge dropped below the 5% bar -- now a property derived straight from edge) and backwards totals rationale text (the \"combined goals\" bullet always claimed to support whichever side was picked instead of comparing the number to the line; also fixed the per-team hit-rate count to use the pick's actual line instead of a hardcoded 2.5, which was silently wrong for any alternate-line pick). Audited the rest of the pick/board/settlement/tracker pipeline for the same class of bug -- clean. Deployed to Railway, pushed to GitHub."
+        },
         {
           "id": "log-20260701T025946.160726Z",
           "ts": "2026-07-01T02:59:46.160726Z",
