@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T23:10:56.160201Z",
+  "updatedAt": "2026-07-07T01:30:13.114Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -395,6 +395,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-07T01:30:13.100Z"
         }
       ],
       "company": "Bank of America",
@@ -404,8 +408,8 @@
       "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_BankOfAmericaGCIB.docx",
       "salary": "$88,350-$120,500",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-07",
+      "status": "Applied",
       "notes": "Posted 2026-07-06. Stretch: bulge-bracket IB analyst deal work, no professional financial modeling experience, honestly owned in the letter. Included per Neil's explicit-stretch precedent.",
       "skills": [
         "Financial & Data Analysis",
