@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-07-07T03:14:36.875804Z",
+  "updatedAt": "2026-07-07T14:49:40.954Z",
   "data": [
+    {
+      "id": "mrarm7oa5obwcb",
+      "_created": "2026-07-07T14:49:40.954Z",
+      "_stagedAt": "2026-07-07T14:49:40.954Z",
+      "name": "Kalshi trading",
+      "description": "",
+      "stage": "Idea",
+      "nextStep": "",
+      "lastDid": "",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "notes": ""
+    },
     {
       "id": "mr9m80ieftt8it",
       "_created": "2026-07-06T19:30:54.230Z",
