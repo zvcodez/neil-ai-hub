@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """Build ~/Downloads/Neil_Job_Tracker.xlsx from the hub's career data.
 
-Reads data/career-applications.json (+ career-networking.json for contact
-info) and writes a single-sheet, one-line-per-field tracker. Re-run any time;
-it always overwrites the same file. Run automatically as the last step of
-/jobs (see ~/.claude/commands/jobs.md).
+Reads data/career-applications.json (+ career-networking.json for contact/
+outreach info) and writes a single-sheet, one-line-per-field tracker ordered
+most-important-info-first: date applied, company, job title, job type,
+company type, status (+date), outcome (+date), salary, contact info, then
+supporting links/notes, with location pushed to the far right column.
+Re-run any time; it always overwrites the same file. Run automatically as the
+last step of /jobs (see ~/.claude/commands/jobs.md).
 """
 import json
 import os
+import re
 from datetime import datetime, timezone
 
 from openpyxl import Workbook
@@ -29,12 +33,157 @@ STATUS_COLOR = {
 }
 OUTCOME_COLOR = {'Rejected': 'EF4444', 'Follow Up': '10B981', 'Will Be In Touch': 'F59E0B'}
 
+# (header, width) in the exact order Neil asked for: most important first,
+# location pushed to the far right since it's the least decision-relevant field.
 COLUMNS = [
-    ('Company', 24), ('Position', 42), ('Status', 17), ('Outcome', 15),
-    ('Date Applied', 12), ('Date Posted', 12), ('Salary', 16),
-    ('Contact Name', 16), ('Contact LinkedIn', 30), ('Job Posting Link', 30),
-    ('Portal / Login Link', 30), ('Gmail Summary', 46), ('Deadline', 12),
+    ('Date Applied', 12), ('Company', 26), ('Job Title', 40), ('Job Type', 24),
+    ('Company Type', 30), ('Status', 17), ('Status Date', 12),
+    ('Outcome', 20), ('Outcome Date', 12), ('Salary', 16),
+    ('Contact Name', 16), ('Contact LinkedIn', 30),
+    ('Outreach Status', 14), ('Outreach Date', 12),
+    ('Date Posted', 12), ('Deadline', 12),
+    ('Job Posting Link', 30), ('Portal / Login Link', 30),
+    ('Why This Role', 46), ('Response Summary', 46), ('Location', 26),
 ]
+
+# --- Company type classification -------------------------------------------------
+
+KNOWN_COMPANY_TYPE = {
+    'goldman sachs': 'Investment Bank',
+    'natixis corporate & investment banking': 'Investment Bank',
+    'td securities': 'Investment Bank',
+    'oppenheimer & co.': 'Investment Bank / Broker-Dealer',
+    'mufg': 'Bank',
+    'santander us': 'Bank',
+    'jpmorganchase': 'Bank',
+    'bank of america': 'Bank',
+    'u.s. bank': 'Bank',
+    'citi': 'Bank',
+    'smbc group': 'Bank',
+    'bank of china usa': 'Bank',
+    'bessemer trust': 'Private Bank / Trust Company',
+    'cerberus capital management': 'Alternative Asset Manager / Private Equity',
+    'vista equity partners': 'Alternative Asset Manager / Private Equity',
+    'blackstone': 'Alternative Asset Manager / Private Equity',
+    'blue owl capital': 'Alternative Asset Manager / Private Credit',
+    'soros fund management': 'Hedge Fund',
+    'brown advisory': 'Asset Manager / Wealth Management',
+    'lord abbett': 'Asset Manager',
+    'neuberger berman': 'Asset Manager',
+    'schroders': 'Asset Manager',
+    'willow wealth': 'Wealth Management Firm',
+    'pwc': 'Consulting Firm (Big 4)',
+    'talan': 'Consulting / Staffing Firm',
+    'optiver': 'Proprietary Trading Firm',
+    'tremendous': 'Fintech Company',
+    'affirm': 'Fintech Company',
+    'dtcc': 'Financial Market Infrastructure',
+    'enstar group': 'Insurance / Reinsurance Group',
+}
+
+# Fallback keyword heuristics for companies not in KNOWN_COMPANY_TYPE (new
+# postings going forward). Checked in order; first hit wins.
+COMPANY_TYPE_KEYWORDS = [
+    ('trust', 'Private Bank / Trust Company'),
+    ('bank', 'Bank'),
+    ('securities', 'Investment Bank'),
+    ('capital management', 'Alternative Asset Manager / Private Equity'),
+    ('equity partners', 'Alternative Asset Manager / Private Equity'),
+    ('search', 'Recruiting / Staffing Firm'),
+    ('partners', 'Asset Manager / Investment Firm'),
+    ('group', 'Financial Services Firm'),
+]
+
+RECRUITER_CLIENT_HINTS = [
+    ('hedge fund', 'hedge fund client'),
+    ('prop trading firm', 'prop trading firm client'),
+    ('prop trading', 'prop trading firm client'),
+    ('family office', 'family office client'),
+    ('private equity', 'private equity client'),
+]
+
+
+def split_company(raw):
+    """Split 'Carisbrook Partners (recruiter, top global hedge fund)' into
+    ('Carisbrook Partners', 'recruiter, top global hedge fund')."""
+    m = re.match(r'^(.*?)\s*\(([^()]+)\)\s*$', raw or '')
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return (raw or '').strip(), ''
+
+
+def classify_company_type(raw_company):
+    name, hint = split_company(raw_company)
+    hint_l = hint.lower()
+    if 'recruiter' in hint_l:
+        label = 'Recruiting / Staffing Firm'
+        for keyword, suffix in RECRUITER_CLIENT_HINTS:
+            if keyword in hint_l:
+                return f'{label} — {suffix}'
+        return label
+
+    name_l = name.lower()
+    if name_l in KNOWN_COMPANY_TYPE:
+        return KNOWN_COMPANY_TYPE[name_l]
+    for keyword, label in COMPANY_TYPE_KEYWORDS:
+        if keyword in name_l:
+            return label
+    return 'Financial Services Firm'
+
+
+# --- Job type classification -----------------------------------------------------
+
+JOB_TYPE_RULES = [
+    ('corporate action', 'Corporate Actions'),
+    ('custody', 'Custody Operations'),
+    ('settlement', 'Settlements'),
+    ('reconciliation', 'Reconciliation'),
+    ('trade finance', 'Trade Finance'),
+    ('trade support', 'Trade Support'),
+    ('trading services', 'Trade Support'),
+    ('middle office', 'Middle Office'),
+    ('due diligence', 'Due Diligence'),
+    ('payments', 'Payments Operations'),
+    ('treasury', 'Treasury Operations'),
+    ('cash management', 'Treasury Operations'),
+    ('capital operations', 'Treasury Operations'),
+    ('valuation', 'Pricing & Valuation'),
+    ('pricing', 'Pricing & Valuation'),
+    ('controller', 'Controllers / Accounting'),
+    ('accountant', 'Fund Accounting'),
+    ('reporting', 'Reporting'),
+    ('clo', 'Structured Products Operations'),
+    ('structured finance', 'Structured Finance'),
+    ('strategy', 'Strategy & Business Development'),
+    ('business development', 'Strategy & Business Development'),
+    ('deal', 'Deal / Valuation Advisory'),
+    ('gcib', 'Corporate & Investment Banking'),
+    ('investment banking', 'Corporate & Investment Banking'),
+    ('wealth', 'Private Wealth / Client Service'),
+    ('private client', 'Private Wealth / Client Service'),
+    ('client', 'Client Service'),
+    ('investor services', 'Client Service'),
+    ('investor support', 'Client Service'),
+    ('alternative investments', 'Alternative Investments Support'),
+    ('investment operations', 'Investment Operations'),
+    ('finance & operations', 'Finance & Operations'),
+]
+
+
+def classify_job_type(job_title):
+    title_l = (job_title or '').lower()
+    for keyword, label in JOB_TYPE_RULES:
+        if keyword in title_l:
+            return label
+    return 'Operations'
+
+
+def extract_location(job_title):
+    """Split 'Custody Associate (New York, NY)' into ('Custody Associate', 'New York, NY')."""
+    m = re.match(r'^(.*?)\s*\(([^()]+)\)\s*$', job_title or '')
+    if m:
+        return m.group(1).strip().rstrip(','), m.group(2).strip()
+    return (job_title or '').strip(), ''
 
 
 def tint(hex_color, amount=0.82):
@@ -54,12 +203,32 @@ def one_line(text, limit=180):
 
 
 def normco(name):
-    import re
     return re.sub(r'[^a-z0-9]', '', re.sub(r'\(.*?\)', '', (name or '').lower()))
 
 
 def batch_of(a):
     return a.get('batch') or (a.get('_created') or '')[:10]
+
+
+def date_only(iso_str):
+    if not iso_str:
+        return ''
+    return str(iso_str)[:10]
+
+
+def status_date(a):
+    history = a.get('statusHistory') or []
+    if history:
+        return date_only(history[-1].get('at'))
+    return date_only(a.get('noApplyAt')) or ''
+
+
+def outcome_and_date(a):
+    if a.get('gmailOutcome'):
+        return a['gmailOutcome'], date_only(a.get('gmailCheckedAt'))
+    if a.get('noApplyReason'):
+        return one_line(a['noApplyReason'], 80), date_only(a.get('noApplyAt'))
+    return '', ''
 
 
 def load(path):
@@ -116,42 +285,57 @@ def main():
         ws.column_dimensions[get_column_letter(i)].width = width
     ws.row_dimensions[header_row].height = 20
 
+    STATUS_COL = 6
+    OUTCOME_COL = 8
+    LINK_COLS = {17: True, 18: True}  # Job Posting Link, Portal / Login Link
+    CONTACT_LINK_COL = 12
+
     for r, a in enumerate(rows, start=header_row + 1):
         status = a.get('status', 'To Apply')
-        outcome = a.get('gmailOutcome', '')
-        contact = match_contact(a, contacts)
+        outcome, outcome_dt = outcome_and_date(a)
+        contact = match_contact(a, contacts) or {}
+        job_title, location = extract_location(a.get('jobTitle', ''))
+        company_name, _ = split_company(a.get('company', ''))
 
         values = [
-            a.get('company', ''),
-            one_line(a.get('jobTitle', '')),
-            status,
-            outcome,
             a.get('dateApplied', ''),
-            batch_of(a),
+            company_name,
+            one_line(job_title),
+            classify_job_type(job_title),
+            classify_company_type(a.get('company', '')),
+            status,
+            status_date(a),
+            outcome,
+            outcome_dt,
             one_line(a.get('salary', '')),
-            (contact or {}).get('contactName', ''),
-            (contact or {}).get('contactUrl', ''),
+            contact.get('contactName', ''),
+            contact.get('contactUrl', ''),
+            contact.get('status', ''),
+            date_only(contact.get('contactedAt', '')),
+            batch_of(a),
+            a.get('deadline', ''),
             a.get('link', ''),
             a.get('portalLink', ''),
+            one_line(a.get('notes', '')),
             one_line(a.get('gmailSummary', '')),
-            a.get('deadline', ''),
+            location,
         ]
         for c, val in enumerate(values, start=1):
             cell = ws.cell(row=r, column=c, value=val)
             cell.alignment = Alignment(horizontal='left', vertical='center', wrap_text=False)
 
-        status_cell = ws.cell(row=r, column=3)
+        status_cell = ws.cell(row=r, column=STATUS_COL)
         status_hex = STATUS_COLOR.get(status, '94A3B8')
         status_cell.fill = PatternFill('solid', fgColor=tint(status_hex))
         status_cell.font = Font(color=status_hex, bold=True)
 
         if outcome:
-            outcome_cell = ws.cell(row=r, column=4)
+            outcome_cell = ws.cell(row=r, column=OUTCOME_COL)
             outcome_hex = OUTCOME_COLOR.get(outcome, '94A3B8')
             outcome_cell.fill = PatternFill('solid', fgColor=tint(outcome_hex))
             outcome_cell.font = Font(color=outcome_hex, bold=True)
 
-        for col_idx in (9, 10, 11):  # Contact LinkedIn, Job Posting Link, Portal Link
+        for col_idx in list(LINK_COLS) + [CONTACT_LINK_COL]:
             cell = ws.cell(row=r, column=col_idx)
             if cell.value:
                 cell.hyperlink = cell.value
