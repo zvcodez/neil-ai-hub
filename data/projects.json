@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T23:35:00.000000+00:00",
+  "updatedAt": "2026-07-07T00:06:28.306032Z",
   "data": [
     {
       "id": "mr9m80ieftt8it",
@@ -390,9 +390,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Keep running /jobs day to day; the Gmail-check step now reads full email bodies (not snippets) after catching and fixing a real misclassification (Willow Wealth rejection read as Will Be In Touch on 2026-07-06).",
+      "nextStep": "Run /jobs and confirm the new Excel tracker output looks right end to end; otherwise keep using the hub day to day.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-tracker-and-xlsx",
+          "ts": "2026-07-07T00:06:28.304117Z",
+          "text": "Built an overall funnel tracker for Applications (total applied + since-date, waiting on, heard back, rejected, reached out to — the last pulled from Networking Contacted count per Neil's call), shown as its own readable bar above the pipeline so nothing has to be searched for. Received Response day-batches now show a live outcome breakdown (e.g. Follow Up 1, Will Be In Touch 2, Rejected 1) right on the collapsed header. Also built scripts/build_tracker_xlsx.py: a color-coded, one-line-per-field Excel export of every application (company, position, status, outcome, dates, salary, contact, links) to ~/Downloads/Neil_Job_Tracker.xlsx, wired in as /jobs step 6 so it regenerates every run. Verified all of it against real data (46 real applications rendered correctly in the xlsx; tracker math hand-checked against seeded data in-browser). sw cache v39."
+        },
         {
           "id": "log-hub-received-response-polish",
           "ts": "2026-07-06T23:30:00.000Z",
@@ -444,7 +449,7 @@
           "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Caught and fixed a live Gmail-classification bug (Willow Wealth rejection misread as pending), hardened the /jobs Gmail-check step against reading snippets instead of full bodies, and polished Received Response ordering (Follow Up before Will Be In Touch before Rejected) plus made every section/day-batch default collapsed."
+      "lastDid": "Added an overall applications funnel tracker (total applied since start date, waiting on / heard back / rejected / reached out to) above the pipeline, per-day outcome breakdown chips on Received Response batches (visible while collapsed), and an auto-regenerating Excel tracker (~/Downloads/Neil_Job_Tracker.xlsx) wired into /jobs step 6."
     },
     {
       "id": "6a403f0db2",
