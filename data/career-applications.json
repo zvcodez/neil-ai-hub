@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:43:04.196Z",
+  "updatedAt": "2026-07-07T01:46:02.775Z",
   "data": [
     {
       "id": "app-goldmansachs0",
@@ -143,6 +143,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-06T15:00:00.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-07T01:46:02.769Z"
         }
       ],
       "company": "Tremendous",
@@ -152,8 +156,8 @@
       "coverLetter": "Job Applications/2026-07-06/Neil_Patel_CoverLetter_TremendousOperations.docx",
       "salary": "$95,000-$105,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-07",
+      "status": "Applied",
       "notes": "Posted 2026-07-06. Fintech (global payouts platform), 2+ years ops/compliance role required, direct fit. Heavy emphasis on pairing human judgment with AI tools, matches Neil's actual project experience honestly.",
       "skills": [
         "Transaction Investigation",
