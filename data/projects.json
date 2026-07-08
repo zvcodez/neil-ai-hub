@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T14:20:27.583Z",
+  "updatedAt": "2026-07-08T14:40:10.737Z",
   "data": [
     {
       "id": "idea-jot",
@@ -574,6 +574,33 @@
           "id": "log-2026-07-02T03:55:43",
           "ts": "2026-07-02T03:55:43.725767+00:00",
           "text": "Built hub job pipeline: To Apply column + resume/salary/deadline fields, seeded 6 fully-tailored applications, rewired daily routine to push postings into the hub instead of Gmail drafts."
+        }
+      ]
+    },
+    {
+      "id": "idea-rendezvous",
+      "_created": "2026-07-08T04:48:10.824Z",
+      "_stagedAt": "2026-07-08T04:48:10.824Z",
+      "name": "Rendezvous — fair meetup finder",
+      "description": "Finds a meetup spot for a friend group that is fair on travel time (not just geographic midpoint), with a fairness % score and review-filtered venue suggestions. Built entirely on free APIs (Nominatim, OpenRouteService, Overpass, Yelp) — no Google Maps, no card required.",
+      "stage": "Live",
+      "chatUrl": "",
+      "folder": "~/Claude/rendezvous",
+      "repoUrl": "",
+      "liveUrl": "https://rendezvous-smoky.vercel.app",
+      "nextStep": "Neil: open https://rendezvous-smoky.vercel.app on your iPhone, add your real friends, and try Find a Spot for real. From there decide whether it needs magic-link auth (currently single-user, no login) before sharing with the friend group.",
+      "lastDid": "Deployed to production. Migrated the DB from local SQLite to a free Neon Postgres (provisioned via Vercel Marketplace) since SQLite can't run on serverless. Added the two free API keys (OpenRouteService, Yelp Fusion) as real Vercel env vars for all environments. Verified the full pipeline live on the production URL: add a friend (geocoded via Nominatim), pick friends + activity, get ranked venues with real driving-time fairness % and Yelp ratings. All working end-to-end.",
+      "notes": "Single-user v1 (no auth yet) — friends are manually added by the owner, no account needed for them, matches the \"works even without a phone\" requirement. Deliberately skipped Postgres/Neon and magic-link auth for now in favor of local SQLite to get a fully working app with zero external account setup; auth + real hosting is a planned next phase once this is validated with the friend group. API keys (ORS + Yelp) are stored as Vercel project env vars and in the local .env.local (gitignored, never in this public repo) — if ever lost, regenerate free at https://openrouteservice.org/dev/#/signup and https://www.yelp.com/developers/v3/manage_app.",
+      "log": [
+        {
+          "id": "log-rendezvous-1",
+          "ts": "2026-07-08T04:48:10.824Z",
+          "text": "Scaffolded and built v1 end-to-end on the free API stack (no Google Maps). Friends CRUD, meetup planner, fairness-scored results with map, all working except the two free API keys (ORS + Yelp) still need to be added."
+        },
+        {
+          "id": "log-rendezvous-2",
+          "ts": "2026-07-08T14:40:10.737Z",
+          "text": "Migrated from local SQLite to free Neon Postgres (Vercel Marketplace) for deployability, wired both API keys as real Vercel env vars, deployed to production, and verified the full add-friend + find-a-spot flow live on the deployed URL."
         }
       ]
     }
