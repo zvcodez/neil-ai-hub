@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T18:00:00.000Z",
+  "updatedAt": "2026-07-08T14:20:27.583Z",
   "data": [
     {
       "id": "idea-jot",
@@ -32,7 +32,7 @@
       "id": "mrb01wndxedb4n",
       "_created": "2026-07-07T18:45:50.089Z",
       "_stagedAt": "2026-07-07T18:45:50.089Z",
-      "name": "LINKS",
+      "name": "LINKS / Rendezvous",
       "description": "Finds a fair middle ground based on friends living in different towns so everyone travels the same amount.",
       "stage": "Idea",
       "nextStep": "",
