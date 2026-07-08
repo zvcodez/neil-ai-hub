@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T04:49:42.361Z",
+  "updatedAt": "2026-07-08T18:00:00.000Z",
   "data": [
     {
       "id": "idea-jot",
@@ -574,28 +574,6 @@
           "id": "log-2026-07-02T03:55:43",
           "ts": "2026-07-02T03:55:43.725767+00:00",
           "text": "Built hub job pipeline: To Apply column + resume/salary/deadline fields, seeded 6 fully-tailored applications, rewired daily routine to push postings into the hub instead of Gmail drafts."
-        }
-      ]
-    },
-    {
-      "id": "idea-rendezvous",
-      "_created": "2026-07-08T04:48:10.824Z",
-      "_stagedAt": "2026-07-08T04:48:10.824Z",
-      "name": "Rendezvous — fair meetup finder",
-      "description": "Finds a meetup spot for a friend group that is fair on travel time (not just geographic midpoint), with a fairness % score and review-filtered venue suggestions. Built entirely on free APIs (Nominatim, OpenRouteService, Overpass, Yelp) — no Google Maps, no card required.",
-      "stage": "Building",
-      "chatUrl": "",
-      "folder": "~/Claude/rendezvous",
-      "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "Neil: sign up for two free API keys (OpenRouteService + Yelp Fusion, both no-card) and drop them in .env.local, then do a real end-to-end test with real friend addresses.",
-      "lastDid": "Built the full v1: Next.js app with a local SQLite/Drizzle friends list (add/delete, geocoded via Nominatim on save), a meetup planner (pick friends + activity), and a find-a-spot pipeline that computes a fairness % per candidate venue from real OpenRouteService driving times, sourcing candidates from Yelp (restaurants/coffee/drinks/activities, with ratings) or OpenStreetMap Overpass (outdoors/parks). Results page shows a Leaflet map + ranked list. Verified friends CRUD and the Overpass path live; typecheck/lint/build all clean. Blocked only on two free API keys before full end-to-end verification.",
-      "notes": "Single-user v1 (no auth yet) — friends are manually added by the owner, no account needed for them, matches the \"works even without a phone\" requirement. Deliberately skipped Postgres/Neon and magic-link auth for now in favor of local SQLite to get a fully working app with zero external account setup; auth + real hosting is a planned next phase once this is validated with the friend group.",
-      "log": [
-        {
-          "id": "log-rendezvous-1",
-          "ts": "2026-07-08T04:48:10.824Z",
-          "text": "Scaffolded and built v1 end-to-end on the free API stack (no Google Maps). Friends CRUD, meetup planner, fairness-scored results with map, all working except the two free API keys (ORS + Yelp) still need to be added."
         }
       ]
     }
