@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T04:05:56.073Z",
+  "updatedAt": "2026-07-08T18:00:00.000Z",
   "data": [
     {
       "id": "idea-jot",
@@ -551,8 +551,8 @@
       "folder": "~/Claude/job-search",
       "description": "Finance job search: middle-office analyst roles at reputable NYC/Jersey City firms, $80-100K+. Daily cloud digest + tracker + referral outreach.",
       "stage": "Building",
-      "lastDid": "Redesigned hub Applications view: accordion, Yes/No apply buttons with Did-Not-Apply reasons, date-batched postings; seeded 12 target roles + 53 target companies; routine v3 (no cap, feedback loop)",
-      "nextStep": "Apply to the 6 To Apply cards (Citi due Jul 3); enable sync on iPhone; verify 8:08am routine pushed to repo",
+      "lastDid": "Daily sourcing routine ran again: 10 new postings found and pushed to To Apply (Alvarez & Marsal AI Tools role, Ramp AI Ops, D.E. Shaw, Amex, JPMorganChase Kinexys, Disney, Fiduciary Trust/Franklin Templeton, Broadridge, a $70B AM recruiter role via Career Group, Roku).",
+      "nextStep": "Review and apply to the 17 cards sitting in To Apply (10 fresh today, incl. the Alvarez & Marsal AI Tools role that's a strong skills match); triage which to pursue vs. mark Did Not Apply.",
       "notes": "",
       "chatUrl": "",
       "liveUrl": "",
@@ -560,6 +560,11 @@
       "_created": "2026-07-02T01:25:56.754900+00:00",
       "_stagedAt": "2026-07-02T01:25:56.754900+00:00",
       "log": [
+        {
+          "id": "log-20260708-sourcing",
+          "ts": "2026-07-08T01:30:00.000Z",
+          "text": "Ran sourcing routine v3: added 10 new target postings (Alvarez & Marsal, Ramp, D.E. Shaw, Amex, JPMorganChase, Disney, Fiduciary Trust, Broadridge, Career Group Search recruiter role, Roku) to the To Apply column."
+        },
         {
           "id": "log-20260702-hubv2",
           "ts": "2026-07-02T04:27:24.000Z",
