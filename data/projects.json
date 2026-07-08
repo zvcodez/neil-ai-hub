@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-08T03:43:36.749Z",
+  "updatedAt": "2026-07-08T04:05:56.073Z",
   "data": [
     {
       "id": "idea-jot",
       "_created": "2026-07-08T03:43:36.749Z",
-      "_stagedAt": "2026-07-08T03:43:36.749Z",
+      "_stagedAt": "2026-07-08T04:05:56.073Z",
       "name": "Jot \u2014 all-in-one capture inbox",
       "description": "One inbox for reminders, Claude ideas, and quick notes instead of three separate iPhone apps \u2014 tag as you type, filter, search.",
       "stage": "Building",
@@ -12,10 +12,15 @@
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
       "liveUrl": "https://zvcodez.github.io/jot/",
-      "nextStep": "Neil: open https://zvcodez.github.io/jot/ on iPhone Safari \u2192 Share \u2192 Add to Home Screen. Try capturing a few real reminders/ideas/notes. If you want cross-device sync, create a private repo 'jot-data' on GitHub, make a fine-grained PAT scoped to it (Contents: read/write), and enable sync via the cloud icon in the app.",
-      "lastDid": "Built and shipped v1: single-file vanilla-JS PWA with a bottom capture bar, tap-to-tag (Reminder/Idea/Note), live-count filter chips, search, done-toggle for reminders, delete, localStorage persistence, and an optional GitHub-based cross-device sync module (data intentionally stored in a separate PRIVATE repo, not this public app repo \u2014 fixes the data-exposure gap still open on the hub itself). Verified every flow in-browser (add/filter/search/done/delete/reload-persistence, no console errors). Created the public zvcodez/jot repo, pushed, enabled GitHub Pages \u2014 confirmed live at zvcodez.github.io/jot/.",
+      "nextStep": "Neil: try the new capture flow on https://zvcodez.github.io/jot/ for a few real days. If the local auto-tagging feels good enough, real Web Push + Claude-powered classification stay deferred; if reminders getting missed when the app's fully closed becomes annoying, that's the trigger to build the Vercel backend (API key + VAPID + cron) discussed but intentionally not built yet.",
+      "lastDid": "Full redesign based on Neil's feedback that v1 looked too much like the hub's dark UI and had the wrong IA. New structure: two pages switched via a floating top pill nav (not touching the edge) \u2014 a Capture home page with a big rotating prompt (\"What's on your mind?\", \"Quick thought?\", etc.) and a single input with zero manual tagging, and a separate Log page with the filtered/searchable/tagged list. Built classify.js: fully local (no server) heuristic that detects dates/times in the text (\"charge my laptop around 5PM\" -> Reminder, due today 5:00 PM) and otherwise keyword-scores Reminder/Idea/Note. Reminders with a parsed time request notification permission and schedule a local alert via the service worker (fires while app open/backgrounded/reopened-after-due; NOT if fully force-quit the whole time -- real Web Push is a deliberate follow-up, discussed and deferred with Neil in favor of shipping the redesign first). Brand new bright warm visual identity (cream/paper background, coral-to-violet gradient, pastel sticky-note-style cards per type) replacing the old dark hub-style theme. Verified end-to-end in-browser: auto-classification on multiple phrasings, filter counts, done/delete, sync panel theming. Deployed to production.",
       "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
+        {
+          "id": "log-jot-2",
+          "ts": "2026-07-08T04:05:56.073Z",
+          "text": "Reworked IA per feedback: capture-only home page (rotating prompt, no visible tag buttons) + separate log page, floating pill nav switcher up top. Added local classify.js for auto-tagging + date/time parsing (no backend) and best-effort local notifications. All-new bright warm visual design distinct from neil-ai-hub. Deployed."
+        },
         {
           "id": "log-jot-1",
           "ts": "2026-07-08T03:43:36.749Z",
