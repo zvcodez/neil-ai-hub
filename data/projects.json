@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-08T18:00:00.000Z",
+  "updatedAt": "2026-07-08T04:36:15.172Z",
   "data": [
     {
       "id": "idea-jot",
       "_created": "2026-07-08T03:43:36.749Z",
-      "_stagedAt": "2026-07-08T04:05:56.073Z",
+      "_stagedAt": "2026-07-08T04:36:15.172Z",
       "name": "Jot \u2014 all-in-one capture inbox",
       "description": "One inbox for reminders, Claude ideas, and quick notes instead of three separate iPhone apps \u2014 tag as you type, filter, search.",
       "stage": "Building",
@@ -12,10 +12,15 @@
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
       "liveUrl": "https://zvcodez.github.io/jot/",
-      "nextStep": "Neil: try the new capture flow on https://zvcodez.github.io/jot/ for a few real days. If the local auto-tagging feels good enough, real Web Push + Claude-powered classification stay deferred; if reminders getting missed when the app's fully closed becomes annoying, that's the trigger to build the Vercel backend (API key + VAPID + cron) discussed but intentionally not built yet.",
-      "lastDid": "Full redesign based on Neil's feedback that v1 looked too much like the hub's dark UI and had the wrong IA. New structure: two pages switched via a floating top pill nav (not touching the edge) \u2014 a Capture home page with a big rotating prompt (\"What's on your mind?\", \"Quick thought?\", etc.) and a single input with zero manual tagging, and a separate Log page with the filtered/searchable/tagged list. Built classify.js: fully local (no server) heuristic that detects dates/times in the text (\"charge my laptop around 5PM\" -> Reminder, due today 5:00 PM) and otherwise keyword-scores Reminder/Idea/Note. Reminders with a parsed time request notification permission and schedule a local alert via the service worker (fires while app open/backgrounded/reopened-after-due; NOT if fully force-quit the whole time -- real Web Push is a deliberate follow-up, discussed and deferred with Neil in favor of shipping the redesign first). Brand new bright warm visual identity (cream/paper background, coral-to-violet gradient, pastel sticky-note-style cards per type) replacing the old dark hub-style theme. Verified end-to-end in-browser: auto-classification on multiple phrasings, filter counts, done/delete, sync panel theming. Deployed to production.",
+      "nextStep": "Neil: use it for real for a few days. Open items to revisit later if he wants them: undo-toast timing (3.2s felt maybe short in one test), and the still-deferred real Web Push + Claude-classification backend.",
+      "lastDid": "Polish pass after Neil tried it: fixed the capture-input cursor sitting mid-placeholder (was center-aligned, causing the caret to land dead-center of \"Type here...\" i.e. right on the h -- switched to left-aligned input text, which also avoids ugly center-wrap on longer notes). Then built the agreed set of improvements: (1) subtle radial-gradient background depth (coral/violet/teal glows) replacing the flat cream; (2) fixed a real sort bug -- reminders now group/sort by DUE DATE (Today/Tomorrow/This week/Later/No due date, done sunk to bottom) instead of just capture recency, other types still group by day captured; (3) swipe-left-to-reveal delete (red trash zone, native-feel gesture) with soft-delete + undo toast + a 'Recently deleted' trash view (30-day retention, restore or purge-forever); (4) tap-to-edit item text inline; (5) time-of-day-aware rotating capture prompts (night/morning/evening flavors). All local JS, zero API/token cost -- confirmed with Neil. Verified every new interaction live in-browser (grouping, swipe reveal+delete+undo, trash restore, inline edit, done-toggle, swipe-right no-op). Fixed two bugs caught during the build: filter counts were including soft-deleted items, and a swipe-close-other-item path would have detached the dragged element mid-gesture. Deployed.",
       "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
+        {
+          "id": "log-jot-3",
+          "ts": "2026-07-08T04:36:15.172Z",
+          "text": "Fixed cursor/placeholder bug (left-aligned capture input). Added background depth, due-date grouping for reminders, swipe-to-delete with undo + recently-deleted trash, tap-to-edit, time-aware prompts. All local JS, no added cost. Verified live, deployed."
+        },
         {
           "id": "log-jot-2",
           "ts": "2026-07-08T04:05:56.073Z",
