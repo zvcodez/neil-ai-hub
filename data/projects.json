@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-09T07:40:00.000Z",
+  "updatedAt": "2026-07-09T22:23:13.000Z",
   "data": [
     {
       "id": "idea-jot",
       "_created": "2026-07-08T03:43:36.749Z",
       "_stagedAt": "2026-07-09T02:48:51.494Z",
-      "name": "Jot \u2014 all-in-one capture inbox",
-      "description": "One inbox for reminders, Claude ideas, and quick notes instead of three separate iPhone apps \u2014 tag as you type, filter, search.",
+      "name": "Jot — all-in-one capture inbox",
+      "description": "One inbox for reminders, Claude ideas, and quick notes instead of three separate iPhone apps — tag as you type, filter, search.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/jot",
@@ -14,7 +14,7 @@
       "liveUrl": "https://zvcodez.github.io/jot/",
       "nextStep": "Neil: reload Jot once on your phone (this will be the last manual reload needed -- auto-update handles it from here on). Check: (1) log page cards have clean rounded corners with no red peeking through, (2) longer notes wrap fully, (3) page doesn't pan/bounce with the keyboard up, (4) no stray floating cursor. Also still pending: real push-notification delivery test (Add to Home Screen first, iOS requires standalone mode for Web Push).",
       "lastDid": "Shipped two more fixes after the visual-bug pass: (1) service worker was letting GitHub Pages' max-age=600 HTTP cache serve stale JS/CSS after a deploy, so Neil sometimes saw old behavior even after reloading -- fixed by bypassing HTTP cache on fetch/install; (2) went further and built proper PWA auto-update (checks for a new service worker on foreground + every 60s, auto-reloads once it takes control) so Neil never has to manually clear cache again for any future update to land. Deployed; both are close-the-loop fixes on top of the red-bleed/text-clipping/scroll-lock bugs from the phone screenshots earlier tonight.",
-      "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
+      "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API — worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
         {
           "id": "log-jot-7",
@@ -139,8 +139,8 @@
       "id": "idea-movie-taste",
       "_created": "2026-07-02T18:30:00.000Z",
       "_stagedAt": "2026-07-02T19:30:00.000Z",
-      "name": "Reel \u2014 personalized movie/TV app (Letterboxd, but for you)",
-      "description": "A film and TV tracking app like Letterboxd, but built around your personal taste \u2014 rate what you've seen and it learns your leanings, then ranks everything unseen against your profile with a 'why we picked this' reason.",
+      "name": "Reel — personalized movie/TV app (Letterboxd, but for you)",
+      "description": "A film and TV tracking app like Letterboxd, but built around your personal taste — rate what you've seen and it learns your leanings, then ranks everything unseen against your profile with a 'why we picked this' reason.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/movie-taste",
@@ -148,12 +148,12 @@
       "liveUrl": "",
       "nextStep": "Neil: open ~/Claude/movie-taste/index.html and rate a few films to see the tailored picks. Then decide: wire the live TMDB catalogue (free API key) for the full library + real posters, or keep refining the taste engine.",
       "lastDid": "Built a working v1 single-file web app 'Reel' and verified it in-browser: a curated 52-title offline library, a real taste engine (each rating pushes/pulls the genres, moods, decades & directors it carries; unseen titles scored by profile match), a For You ranking with match % + 'because you rate X highly' explanations, mood + film/series filters, a Your Taste visual panel, Browse and Watchlist. Confirmed: rating 3 dark/cerebral crime titles surfaced Fight Club, Dark, No Country, The Wire, Get Out at the top.",
-      "notes": "\u2022 Log, rate and review the movies/shows you watch, like Letterboxd \u2014 but the whole app bends around your taste\n\u2022 Builds a real taste profile from your ratings (favourite genres, directors, moods, decades) and gets sharper over time\n\u2022 Tailored recommendations: 'what to watch tonight' picks that actually fit you, not generic trending lists\n\u2022 Mood/context aware \u2014 pick a mood (cozy, intense, cerebral\u2026) and it filters to that\n\u2022 Explains WHY it thinks you'll like something ('because you rate X and Y highly')\n\u2022 Still keep the fun social bits (friends, watchlists, reviews) but personalization is the headline\n\u2022 BUILT (v1): working offline prototype, no API key needed. Next: pull a live film DB (e.g. TMDB) for the full catalogue + posters",
+      "notes": "• Log, rate and review the movies/shows you watch, like Letterboxd — but the whole app bends around your taste\n• Builds a real taste profile from your ratings (favourite genres, directors, moods, decades) and gets sharper over time\n• Tailored recommendations: 'what to watch tonight' picks that actually fit you, not generic trending lists\n• Mood/context aware — pick a mood (cozy, intense, cerebral…) and it filters to that\n• Explains WHY it thinks you'll like something ('because you rate X and Y highly')\n• Still keep the fun social bits (friends, watchlists, reviews) but personalization is the headline\n• BUILT (v1): working offline prototype, no API key needed. Next: pull a live film DB (e.g. TMDB) for the full catalogue + posters",
       "log": [
         {
           "id": "log-reel-1",
           "ts": "2026-07-02T19:30:00.000Z",
-          "text": "Built and browser-verified a working v1 ('Reel'): curated offline library + a genuine taste engine that learns from your star ratings and ranks unseen titles by profile match, each with a match % and a plain-English reason. Includes mood/type filters, a taste-profile visualizer, browse and watchlist. Single self-contained HTML file \u2014 double-click to run, ratings persist locally. Git repo initialized."
+          "text": "Built and browser-verified a working v1 ('Reel'): curated offline library + a genuine taste engine that learns from your star ratings and ranks unseen titles by profile match, each with a match % and a plain-English reason. Includes mood/type filters, a taste-profile visualizer, browse and watchlist. Single self-contained HTML file — double-click to run, ratings persist locally. Git repo initialized."
         }
       ]
     },
@@ -161,16 +161,16 @@
       "id": "idea-going-out",
       "_created": "2026-07-02T18:29:00.000Z",
       "_stagedAt": "2026-07-02T19:30:00.000Z",
-      "name": "Rally \u2014 going-out app (nights at the bars with mates)",
-      "description": "The live, during-the-night companion for going out with your friends: one shared board showing who's in, where everyone is, and where you're heading next \u2014 instead of 40 unread group texts.",
+      "name": "Rally — going-out app (nights at the bars with mates)",
+      "description": "The live, during-the-night companion for going out with your friends: one shared board showing who's in, where everyone is, and where you're heading next — instead of 40 unread group texts.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/going-out",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Neil: read ~/Claude/going-out/BRIEF.md and try the prototype (index.html) \u2014 then confirm the hook. Is the live 'crew board' the right wedge, or did you picture discovery (finding the bar) or a game layer? (See the 3 open questions at the end of the brief.)",
-      "lastDid": "Since the hook wasn't nailed yet, I wrote a product brief that PICKS one: the app is the live during-the-night crew board (who's in \u00b7 where you are \u00b7 where next), deliberately NOT another photos-after app (that's the separate Nights Out idea). Then built a working prototype 'Rally' and verified it: create tonight, add your crew, per-person live status (In/Maybe/On my way/Done), propose + vote venues with a computed 'Next stop', and a live activity feed. Parked the discovery/game/rounds layers as v2.",
-      "notes": "\u2022 The wedge: the group chat is bad at the one thing that matters in the moment \u2014 who's actually out, where is everyone, where next. This app is that one glanceable screen.\n\u2022 HOOK PICKED (v1): the live crew board \u2014 statuses, venue voting \u2192 'Next stop', activity pulse. Useful the first night, needs no seed content, and it's the thing the group chat can't do.\n\u2022 Deliberately NOT the memories app \u2014 this is the LIVE companion; it could hand off to [[idea-nights-out]] at the end of the night.\n\u2022 Parked for v2+: bar discovery/deals (needs a places API), a social game/dares layer, rounds/split-the-tab.\n\u2022 BUILT: working single-device prototype + full product brief (BRIEF.md). Next: confirm the hook with Neil, then real multi-device sync.",
+      "nextStep": "Neil: read ~/Claude/going-out/BRIEF.md and try the prototype (index.html) — then confirm the hook. Is the live 'crew board' the right wedge, or did you picture discovery (finding the bar) or a game layer? (See the 3 open questions at the end of the brief.)",
+      "lastDid": "Since the hook wasn't nailed yet, I wrote a product brief that PICKS one: the app is the live during-the-night crew board (who's in · where you are · where next), deliberately NOT another photos-after app (that's the separate Nights Out idea). Then built a working prototype 'Rally' and verified it: create tonight, add your crew, per-person live status (In/Maybe/On my way/Done), propose + vote venues with a computed 'Next stop', and a live activity feed. Parked the discovery/game/rounds layers as v2.",
+      "notes": "• The wedge: the group chat is bad at the one thing that matters in the moment — who's actually out, where is everyone, where next. This app is that one glanceable screen.\n• HOOK PICKED (v1): the live crew board — statuses, venue voting → 'Next stop', activity pulse. Useful the first night, needs no seed content, and it's the thing the group chat can't do.\n• Deliberately NOT the memories app — this is the LIVE companion; it could hand off to [[idea-nights-out]] at the end of the night.\n• Parked for v2+: bar discovery/deals (needs a places API), a social game/dares layer, rounds/split-the-tab.\n• BUILT: working single-device prototype + full product brief (BRIEF.md). Next: confirm the hook with Neil, then real multi-device sync.",
       "log": [
         {
           "id": "log-rally-1",
@@ -183,8 +183,8 @@
       "id": "idea-spotify-dj",
       "_created": "2026-07-02T18:28:00.000Z",
       "_stagedAt": "2026-07-03T14:30:00.000Z",
-      "name": "Vibe DJ \u2014 Spotify vibe-based queue app",
-      "description": "An app where you 'DJ' your own Spotify by feel \u2014 pick a vibe and it auto-builds a queue that flows, with recommendations that match the mood; the dream version lets you just talk to it via a Claude + Spotify connector.",
+      "name": "Vibe DJ — Spotify vibe-based queue app",
+      "description": "An app where you 'DJ' your own Spotify by feel — pick a vibe and it auto-builds a queue that flows, with recommendations that match the mood; the dream version lets you just talk to it via a Claude + Spotify connector.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/spotify-dj",
@@ -192,7 +192,7 @@
       "liveUrl": "",
       "nextStep": "Working and personalized end-to-end. Real remaining limit: Spotify killed audio-features, recommendations AND artist genres for new apps, so true open-ended mood recommendations across his taste need the Claude+Spotify connector version (v2 dream) rather than Spotify data. Options when he wants more: (1) build that talk-to-it v2; (2) host on HTTPS so it runs on his phone off the laptop server; (3) add saved-tracks/playlist sources. Run: cd ~/Claude && python3 -m http.server 5599 --bind 127.0.0.1 then http://127.0.0.1:5599/spotify-dj/index.html .",
       "lastDid": "Made Vibe DJ genuinely personalized to Neils real listening (he pushed back that the mood tiles felt random). Rebuilt the connected experience around Spotify data that still works on a new app: Your rotation (On repeat 4wk / Recently played / Your top 6mo / All-time from /me/top + recently-played) and Your top artists (tap Drake / AP Dhillon / Diljit etc to build a set from their catalogue + his own tracks by them), plus More-like-this that extends the current song with more from the same artist. Discovered along the way that Spotify also returns EMPTY artist genres on this tier (not just audio-features/recommendations), so pivoted from genre chips to artist chips. Verified live: picked AP Dhillon -> real 10-track set on his Echo with album art, More-like-this added his collabs, clean console.",
-      "notes": "\u2022 'DJ from the app': pick a vibe, it builds and plays a set; skip/queue/shift on the fly\n\u2022 Vibe-based: choose a mood and it queues tracks that match, ordered to flow\n\u2022 Dream version: Claude + a Spotify connector so you just talk to it ('keep this energy', 'something slower next') and it manages the queue \u2014 SETUP.md sketches this\n\u2022 BUILT: a fully interactive DEMO (real vibe engine + queue + recommendations; simulated playback + local library). The engine's energy/valence fields ARE Spotify's audio-feature names, so it swaps in directly.\n\u2022 ONE BLOCKER only Neil can clear: a Spotify Developer app (free) + Premium (needed to control playback). Steps in SETUP.md.\n\u2022 Nice tie-in with the going-out / nights ecosystem",
+      "notes": "• 'DJ from the app': pick a vibe, it builds and plays a set; skip/queue/shift on the fly\n• Vibe-based: choose a mood and it queues tracks that match, ordered to flow\n• Dream version: Claude + a Spotify connector so you just talk to it ('keep this energy', 'something slower next') and it manages the queue — SETUP.md sketches this\n• BUILT: a fully interactive DEMO (real vibe engine + queue + recommendations; simulated playback + local library). The engine's energy/valence fields ARE Spotify's audio-feature names, so it swaps in directly.\n• ONE BLOCKER only Neil can clear: a Spotify Developer app (free) + Premium (needed to control playback). Steps in SETUP.md.\n• Nice tie-in with the going-out / nights ecosystem",
       "log": [
         {
           "id": "log-vdj-personal-2026-07-03T14:30:00.000Z",
@@ -212,7 +212,7 @@
         {
           "id": "log-vibedj-1",
           "ts": "2026-07-02T19:30:00.000Z",
-          "text": "Built and browser-verified a working DEMO ('Vibe DJ'): 8 vibe tiles that each auto-build a ~12-track set ordered to flow, simulated now-playing + transport, recommend-one-more, a searchable queue library, and conversational vibe-shift controls. The scoring runs on energy/valence \u2014 Spotify's own audio-feature fields \u2014 so it ports straight to the real API. Also wrote SETUP.md documenting the exact real-Spotify wiring (PKCE auth, /recommendations with target features, Web Playback SDK vs Connect, and the Claude-connector 'just talk to it' version). Blocked only on Neil creating a Spotify dev app + Premium; demo is playable now. Git repo initialized."
+          "text": "Built and browser-verified a working DEMO ('Vibe DJ'): 8 vibe tiles that each auto-build a ~12-track set ordered to flow, simulated now-playing + transport, recommend-one-more, a searchable queue library, and conversational vibe-shift controls. The scoring runs on energy/valence — Spotify's own audio-feature fields — so it ports straight to the real API. Also wrote SETUP.md documenting the exact real-Spotify wiring (PKCE auth, /recommendations with target features, Web Playback SDK vs Connect, and the Claude-connector 'just talk to it' version). Blocked only on Neil creating a Spotify dev app + Premium; demo is playable now. Git repo initialized."
         }
       ]
     },
@@ -220,21 +220,21 @@
       "id": "idea-wedding-wagers",
       "_created": "2026-07-02T18:27:00.000Z",
       "_stagedAt": "2026-07-02T19:30:00.000Z",
-      "name": "Vow Bets \u2014 wedding guest wagers (with Amar)",
-      "description": "A wedding-industry app (idea with Amar) that lets guests place friendly play-money bets on how the day unfolds \u2014 'will the bride cry?', 'speech over 5 min?' \u2014 a shared game with a live leaderboard that makes the celebration more fun.",
+      "name": "Vow Bets — wedding guest wagers (with Amar)",
+      "description": "A wedding-industry app (idea with Amar) that lets guests place friendly play-money bets on how the day unfolds — 'will the bride cry?', 'speech over 5 min?' — a shared game with a live leaderboard that makes the celebration more fun.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/wedding-wagers",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Neil: try ~/Claude/wedding-wagers/index.html (place a bet, flip on Host mode, resolve it). Then loop in Amar on which half he wants to own. Product call to lock: keep v1 play-money only (recommended \u2014 no gambling regulation). Build step: real multi-device rooms (join by code/QR).",
-      "lastDid": "Built a working v1 prototype 'Vow Bets' and verified the full loop end-to-end in-browser: create the book (couple/date/host) which seeds 8 classic wedding prop bets with decimal odds, add guests with 1000 play chips each, 'pass the phone' to switch bettor, place bets with live payout preview (chips deduct), and Host mode \u2192 resolve a market \u2192 winners auto-paid. Confirmed: 100 chips @ 1.40\u00d7 took the balance 1000 \u2192 900 \u2192 1040 on a win. Also supports adding custom prop bets, a leaderboard, and a My Bets view. Deliberately play-money only (no gambling/regulation).",
-      "notes": "\u2022 Idea co-owned with Amar \u2014 for the wedding industry\n\u2022 Guests place bets on outcomes during the day to make it more entertaining; live leaderboard; results revealed as things happen\n\u2022 Example markets (8 seeded): bride cries, best man's speech over 5 min, who cries first, first dance flawless/fumble, couple late, bouquet catcher, surprise announcement, total speech time\n\u2022 Couple/organiser sets up custom prop bets; guests would join via code/QR at the reception (multi-device is the next build)\n\u2022 KEY DECISION \u2014 money model (v1 answered: PLAY-MONEY):\n  \u2013 Play-money / chips = pure fun, bragging rights, NO gambling regulation \u2192 this is what's built\n  \u2013 Real-money = actual gambling, heavily regulated, needs licensing \u2014 separate much-bigger later step, NOT a v1 toggle\n\u2022 Monetisation (non-gambling): couples pay to host, premium market packs, sponsor prizes\n\u2022 BUILT: working play-money prototype, full bet\u2192resolve\u2192payout loop verified. Next: real multi-device rooms; talk to Amar.",
+      "nextStep": "Neil: try ~/Claude/wedding-wagers/index.html (place a bet, flip on Host mode, resolve it). Then loop in Amar on which half he wants to own. Product call to lock: keep v1 play-money only (recommended — no gambling regulation). Build step: real multi-device rooms (join by code/QR).",
+      "lastDid": "Built a working v1 prototype 'Vow Bets' and verified the full loop end-to-end in-browser: create the book (couple/date/host) which seeds 8 classic wedding prop bets with decimal odds, add guests with 1000 play chips each, 'pass the phone' to switch bettor, place bets with live payout preview (chips deduct), and Host mode → resolve a market → winners auto-paid. Confirmed: 100 chips @ 1.40× took the balance 1000 → 900 → 1040 on a win. Also supports adding custom prop bets, a leaderboard, and a My Bets view. Deliberately play-money only (no gambling/regulation).",
+      "notes": "• Idea co-owned with Amar — for the wedding industry\n• Guests place bets on outcomes during the day to make it more entertaining; live leaderboard; results revealed as things happen\n• Example markets (8 seeded): bride cries, best man's speech over 5 min, who cries first, first dance flawless/fumble, couple late, bouquet catcher, surprise announcement, total speech time\n• Couple/organiser sets up custom prop bets; guests would join via code/QR at the reception (multi-device is the next build)\n• KEY DECISION — money model (v1 answered: PLAY-MONEY):\n  – Play-money / chips = pure fun, bragging rights, NO gambling regulation → this is what's built\n  – Real-money = actual gambling, heavily regulated, needs licensing — separate much-bigger later step, NOT a v1 toggle\n• Monetisation (non-gambling): couples pay to host, premium market packs, sponsor prizes\n• BUILT: working play-money prototype, full bet→resolve→payout loop verified. Next: real multi-device rooms; talk to Amar.",
       "log": [
         {
           "id": "log-vowbets-1",
           "ts": "2026-07-02T19:30:00.000Z",
-          "text": "Built and browser-verified a working v1 ('Vow Bets', play-money): setup seeds 8 classic wedding prop bets with odds; add guests with 1000 chips; pass-the-phone bettor switch; place bets with live payout preview; Host mode resolves a market and auto-pays winners. Verified the full loop (100 @ 1.40x \u2192 1000\u2192900\u21921040 on a win). Custom markets, leaderboard, My Bets all work. Single-file HTML, git repo initialized. Deliberately play-money to avoid gambling regulation. Next: multi-device rooms + loop in Amar."
+          "text": "Built and browser-verified a working v1 ('Vow Bets', play-money): setup seeds 8 classic wedding prop bets with odds; add guests with 1000 chips; pass-the-phone bettor switch; place bets with live payout preview; Host mode resolves a market and auto-pays winners. Verified the full loop (100 @ 1.40x → 1000→900→1040 on a win). Custom markets, leaderboard, My Bets all work. Single-file HTML, git repo initialized. Deliberately play-money to avoid gambling regulation. Next: multi-device rooms + loop in Amar."
         }
       ]
     },
@@ -243,7 +243,7 @@
       "_created": "2026-07-01T12:01:00+00:00",
       "_stagedAt": "2026-07-01T12:01:00+00:00",
       "name": "Gucci's App",
-      "description": "A dedicated app for Gucci \u2014 snap photos and videos of him anytime, saved and organized into albums so every moment is kept.",
+      "description": "A dedicated app for Gucci — snap photos and videos of him anytime, saved and organized into albums so every moment is kept.",
       "stage": "Idea",
       "chatUrl": "",
       "folder": "",
@@ -251,7 +251,7 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Open the app and instantly take a photo or video of Gucci\n\u2022 Everything saves automatically into his personal gallery\n\u2022 Organized into albums (e.g. by date, location, or mood/activity)\n\u2022 Built entirely around him \u2014 his name, his photos, his vibe\n\u2022 A dedicated place to collect every cute moment, all in one spot"
+      "notes": "• Open the app and instantly take a photo or video of Gucci\n• Everything saves automatically into his personal gallery\n• Organized into albums (e.g. by date, location, or mood/activity)\n• Built entirely around him — his name, his photos, his vibe\n• A dedicated place to collect every cute moment, all in one spot"
     },
     {
       "id": "idea-macro-tracker",
@@ -266,7 +266,7 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Log meals throughout the day and see running macro totals vs. daily targets\n\u2022 Set custom goals (e.g. high protein for muscle gain, calorie deficit for cutting)\n\u2022 Quick-add common foods or search a nutrition database\n\u2022 Daily/weekly summary so you can see patterns over time\n\u2022 Gym-focused: built around hitting protein targets, not just calorie counting"
+      "notes": "• Log meals throughout the day and see running macro totals vs. daily targets\n• Set custom goals (e.g. high protein for muscle gain, calorie deficit for cutting)\n• Quick-add common foods or search a nutrition database\n• Daily/weekly summary so you can see patterns over time\n• Gym-focused: built around hitting protein targets, not just calorie counting"
     },
     {
       "id": "idea-nights-out",
@@ -281,22 +281,22 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Each night out gets its own album \u2014 photos from everyone in the group land in one place\n\u2022 Friends can add pics from their phones during or after the night\n\u2022 Browse back through past nights like a timeline of memories\n\u2022 Simple and social \u2014 no faff, just upload and view\n\u2022 Could include the date, venue, or a title for each night"
+      "notes": "• Each night out gets its own album — photos from everyone in the group land in one place\n• Friends can add pics from their phones during or after the night\n• Browse back through past nights like a timeline of memories\n• Simple and social — no faff, just upload and view\n• Could include the date, venue, or a title for each night"
     },
     {
       "id": "idea-alcohol-scanner",
       "_created": "2026-07-01T00:00:00+00:00",
       "_stagedAt": "2026-07-04T07:01:18.952590+00:00",
-      "name": "Proof \u2014 Alcohol Scanner & Tracker",
-      "description": "Point your phone at any beer or bottle to instantly see its nutrition info, health score, and reviews \u2014 and keep a log of everything you've scanned.",
+      "name": "Proof — Alcohol Scanner & Tracker",
+      "description": "Point your phone at any beer or bottle to instantly see its nutrition info, health score, and reviews — and keep a log of everything you've scanned.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/alcohol-scanner",
       "repoUrl": "",
       "liveUrl": "https://alcohol-scanner.vercel.app",
-      "nextStep": "Neil to retest v2 on phone after these fixes. Camera-permission-reprompt (item 1) still open: his screenshot shows a normal Safari tab (not installed to Home Screen), which changes the earlier iOS-standalone-PWA theory \u2014 worth a fresh look if he brings it up again.",
+      "nextStep": "Neil to retest v2 on phone after these fixes. Camera-permission-reprompt (item 1) still open: his screenshot shows a normal Safari tab (not installed to Home Screen), which changes the earlier iOS-standalone-PWA theory — worth a fresh look if he brings it up again.",
       "lastDid": "Fixed 3 real issues from live phone testing: header/scroll jump on tab switch (page didn't reset scroll position), Top Options section wrongly hidden for <=3 scans, and missing overview text for entries scanned before that field existed. v2 feature set (richer info, score breakdown, Logged tab, rebrand, dynamic tiles) is confirmed working live.",
-      "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews"
+      "notes": "• Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n• Personal inventory — everything you scan gets logged so you have a history of what you've tried\n• Health ranking: scores each drink based on how healthy (or not) it is — e.g. low-cal beers rank higher than sugary cocktails\n• Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n• Great use case: standing in the liquor store comparing two bottles — scan both and see which scores better on health and reviews"
     },
     {
       "id": "idea-cc-push-notify",
@@ -311,14 +311,14 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 A Stop hook already pings my iPhone via ntfy.sh when a session ends a chunk \u2014 always on, mute from the phone\n\u2022 THE PROBLEM TO SOLVE: every open session pings me, and they all look the same \u2014 I got 'come back' alerts for the AI hub while I was actually working in zvs-edge, with no way to tell sessions apart\n\u2022 Want the alert to show the terminal/chat name (the title the terminal auto-makes from my first message), not just the project folder\n\u2022 Catch: the hook can't read the terminal tab title \u2014 it only gets the folder + session id; need another way to label each session (likely capture its first prompt)\n\u2022 Ideal end state: only the session(s) I care about ping me, each clearly labeled, one mute switch on the phone"
+      "notes": "• A Stop hook already pings my iPhone via ntfy.sh when a session ends a chunk — always on, mute from the phone\n• THE PROBLEM TO SOLVE: every open session pings me, and they all look the same — I got 'come back' alerts for the AI hub while I was actually working in zvs-edge, with no way to tell sessions apart\n• Want the alert to show the terminal/chat name (the title the terminal auto-makes from my first message), not just the project folder\n• Catch: the hook can't read the terminal tab title — it only gets the folder + session id; need another way to label each session (likely capture its first prompt)\n• Ideal end state: only the session(s) I care about ping me, each clearly labeled, one mute switch on the phone"
     },
     {
       "id": "idea-mithoo",
       "_created": "2026-06-29T05:25:25.741459+00:00",
       "_stagedAt": "2026-07-01T00:15:00.000000Z",
       "name": "Mithoo's Adventure",
-      "description": "A Flappy Bird\u2013style game made to honor Mithoo, my pet bird.",
+      "description": "A Flappy Bird–style game made to honor Mithoo, my pet bird.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/mithoos-adventure",
@@ -326,7 +326,7 @@
       "liveUrl": "https://zvcodez.github.io/Mithoos-Adventure/",
       "nextStep": "Get Diksha's reaction to the personalized version. Possible next: more scenery variety, additional milestones, or calling it done as-is.",
       "lastDid": "Added personalization (Mithoo's real coloring, flower-pot obstacles Mithoo can fly behind, background cameos of Diksha/Gucci/Pragya/house) plus a big fun pass: particle trail + flap bursts, butterflies, day-to-sunset sky, milestone messages, a crown unlock, lifetime stats, ambient sound with mute, and a share button. Fixed a few real bugs along the way (stale service worker cache, a canvas path bug drawing a line through Pragya's glasses, an uninitialized-variable crash risk on the ready screen).",
-      "notes": "\u2022 Tap to flap Mithoo through gaps between obstacles\n\u2022 Built as a little tribute to my bird \u2014 use his real colors/look for the character\n\u2022 Simple one-tap gameplay; score = obstacles passed, best score saved\n\u2022 Fun touches: a chirp sound on each flap, themed backgrounds\n\u2022 Can be a lightweight web/phone game \u2014 no app store needed",
+      "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed",
       "log": [
         {
           "id": "06715a7e-cbe7-4f48-bd49-3d860bd6c237",
@@ -344,7 +344,7 @@
       "id": "idea-runner",
       "_created": "2026-06-29T05:25:26.741459+00:00",
       "_stagedAt": "2026-06-29T05:25:26.741459+00:00",
-      "name": "Subway Surfers\u2013style runner (for my girlfriend)",
+      "name": "Subway Surfers–style runner (for my girlfriend)",
       "description": "An endless runner game my girlfriend can play offline on her way to work.",
       "stage": "Live",
       "chatUrl": "",
@@ -353,14 +353,14 @@
       "liveUrl": "https://gucci-run.vercel.app",
       "nextStep": "Have Diksha (or Neil) play it on the actual iPhone and confirm the dizziness is gone in real hand-held play. Tunable knobs are documented at the top of game.js and in HANDOFF.md if it still needs adjusting.",
       "lastDid": "Diagnosed why the road felt dizzying/flat (a single power-curve hack instead of real perspective) and rewrote the whole renderer: true 1/depth perspective, segmented rumble-strip road, gentle procedural curves/hills, real parallax (skyline/buildings/road at different speeds), speed-coupled clouds, and a world lean/bank on lane changes. Verified in-browser (no errors across long fast-forwarded runs), redeployed to production.",
-      "notes": "\u2022 Swipe to dodge obstacles and grab coins; it speeds up as you go\n\u2022 Must work fully offline (no signal on the commute)\n\u2022 Personalize it for her \u2014 character, theme, maybe some inside jokes\n\u2022 Quick pick-up-and-play sessions; high scores saved on the phone\n\u2022 Simple touch controls, designed for holding the phone upright"
+      "notes": "• Swipe to dodge obstacles and grab coins; it speeds up as you go\n• Must work fully offline (no signal on the commute)\n• Personalize it for her — character, theme, maybe some inside jokes\n• Quick pick-up-and-play sessions; high scores saved on the phone\n• Simple touch controls, designed for holding the phone upright"
     },
     {
       "id": "idea-newsletter",
       "_created": "2026-06-29T05:25:27.741459+00:00",
       "_stagedAt": "2026-06-29T05:25:27.741459+00:00",
       "name": "AI beginner journey newsletter",
-      "description": "A newsletter sharing my beginner AI journey with Claude \u2014 and hopefully making some money from it.",
+      "description": "A newsletter sharing my beginner AI journey with Claude — and hopefully making some money from it.",
       "stage": "Idea",
       "chatUrl": "",
       "folder": "",
@@ -368,7 +368,7 @@
       "liveUrl": "",
       "nextStep": "",
       "lastDid": "",
-      "notes": "\u2022 Write articles about learning AI as a beginner, specifically using Claude\n\u2022 Use Claude to help brainstorm, draft, and edit each post\n\u2022 Pick a platform with built-in subscriptions (like Substack or beehiiv)\n\u2022 Make money later through paid subscribers or sponsors once there's an audience\n\u2022 Share real projects (like this hub) as honest behind-the-scenes case studies"
+      "notes": "• Write articles about learning AI as a beginner, specifically using Claude\n• Use Claude to help brainstorm, draft, and edit each post\n• Pick a platform with built-in subscriptions (like Substack or beehiiv)\n• Make money later through paid subscribers or sponsors once there's an audience\n• Share real projects (like this hub) as honest behind-the-scenes case studies"
     },
     {
       "id": "idea-algo-trading",
@@ -383,7 +383,7 @@
       "liveUrl": "",
       "nextStep": "Test a different strategy family (e.g. trend-following with a volatility filter, or plain buy-and-hold vs. mean reversion) for comparison. Longer term: only after a strategy holds up over real paper-trading time, consider a scheduled Claude Code routine to run it automatically.",
       "lastDid": "Set up the project (Python venv, git repo) and connected it to a real Alpaca paper trading account ($100k fake money) -- confirmed the connection and placed a real test order end-to-end. Built a data/strategy/backtest pipeline and tested a cross-sectional momentum rotation strategy (SPY/QQQ/IWM/EFA/EEM/TLT/GLD, monthly rebalance) over 19 years of history. Honest result: it underperformed plain buy-and-hold SPY overall (7.98% CAGR vs 10.70%, worse Sharpe) despite much smaller drawdowns in real crashes (2008, 2022) -- it rarely actually held SPY (2.6% of months) and bled value chasing weaker assets (gold/small-cap/EM/bonds) during the long grinding bull years. Good first lesson in why rigorous backtesting matters.",
-      "notes": "\u2022 Explore 'algo trading' \u2014 automated, rule-based buy/sell strategies\n\u2022 Use Claude and Claude Code to research, prototype, and test ideas\n\u2022 Start simple and paper-trade (fake money) first to see if it actually works\n\u2022 Learn the basics: where to get data, indicators, and managing risk\n\u2022 Keep it as a learning experiment early on \u2014 real trading carries real risk\n\u2022 Alpaca free data plan caps historical bars at ~6 years -- use yfinance for deep backtesting research, Alpaca for the actual paper account/execution",
+      "notes": "• Explore 'algo trading' — automated, rule-based buy/sell strategies\n• Use Claude and Claude Code to research, prototype, and test ideas\n• Start simple and paper-trade (fake money) first to see if it actually works\n• Learn the basics: where to get data, indicators, and managing risk\n• Keep it as a learning experiment early on — real trading carries real risk\n• Alpaca free data plan caps historical bars at ~6 years -- use yfinance for deep backtesting research, Alpaca for the actual paper account/execution",
       "log": [
         {
           "id": "log-algo-1",
@@ -396,16 +396,21 @@
       "id": "7b51e2c9f4",
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
-      "description": "An AI sports betting app for my iPhone that helps spot good bets to make.",
+      "description": "An AI sports betting app for my iPhone that helps spot good bets to make. Currently focused on building a real MLB prediction model (FIFA is paused).",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Watch the board for the rest of the knockout rounds for any new edge cases now that qualifies is edge-derived everywhere. Longer-term open item unchanged: recalibrate blend weights from real CLV once OddsPapi closing lines are wired and enough bets settle.",
-      "lastDid": "Neil asked why USA (highest first-half-scoring team) still got Under 2.5 as tonight's POTD on the USA-Belgium Round of 16 game. Traced it: the model has no first-half-goals feature at all (fits on full 90-min results only) so that stat was never an input; the Under lean came from the raw model (53%) pulled to 46.18% by the totals/BTTS 0.35 calibration blend. Audit turned up two real bugs while answering that: (1) Pick.qualifies was a mutable field only ever flipped inside generate_picks()'s own fallback branch, so a locked POTD re-priced live via alerts._current_pick_for() kept qualifies=true even after its edge drifted below the 5% bar (served qualifies:true next to confidence:\"Below bar\" for tonight's pick); (2) reasons.py's totals rationale always claimed the combined recent-scoring average \"supports\" whichever side the model picked, regardless of what the number actually said (3.6 combined goals captioned \"supports the under\" at a 2.5 line -- backwards), and its per-team hit-rate bullet used a fixed over-2.5 flag instead of the pick's actual line, so alternate-line totals picks showed the wrong count. Fixed both (qualifies is now a property derived straight from edge > EDGE_THRESHOLD, so it can never go stale relative to confidence_tier), audited the rest of the pick/reprice/alert/settlement/tracker pipeline for similar bugs (none found -- Dixon-Coles math, vig removal, parlay logic, ET/penalty-stripped settlement grading, CLV, quota strategy all check out), verified locally against the live board, then deployed to Railway and pushed to GitHub.",
+      "nextStep": "Decide whether to wire the new standard-odds picks + Yankees section into the actual iPhone app screens (still backend-only right now). Longer-term: build player prop bets if the Yankees section should cover more than just game-level bets; revisit the pick-selection weights once real bets have settled.",
+      "lastDid": "Picked back up the MLB model build after a mid-session restart. Added \"park factors\" so the model accounts for some ballparks being much easier to score in than others (found a real data bug along the way: a few parks got renamed mid-season by sponsors, which was quietly splitting one park's history in two -- fixed it). Locked in the best-performing settings from testing, then changed how picks get picked: now it only surfaces bets it thinks are genuinely more likely than not to win, at normal odds -- no more longshot-chasing -- and added a small \"3 strongest Yankees picks\" section. Ran it against today's real games: honestly, almost nothing qualified today under the stricter bar, which is the expected, correct behavior of being pickier, not a bug.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-zve-mlb-parkfactors",
+          "ts": "2026-07-09T22:23:13.000Z",
+          "text": "MLB model: added park factors (some stadiums inflate/suppress scoring for both teams) after last session's test found the model had basically no real predictive edge without them. Caught and fixed a sneaky data bug where a few ballparks got renamed by sponsors mid-season, which was splitting one park's real history into two thin, unreliable pieces. Locked in the best settings from testing. Changed the picks logic per Neil's request: it now only recommends bets it's genuinely more than 50% confident will win, at normal (not longshot) odds, ranked by confidence rather than payout size -- and added a small Yankees-focused section (3 strongest Yankees bets). Tested against today's real slate: almost nothing cleared the new, stricter bar, which is the intended effect of being pickier. Committed locally, not yet pushed."
+        },
         {
           "id": "log-2026-07-07T03:14:36.875804Z",
           "ts": "2026-07-07T03:14:36.875804Z",
@@ -439,7 +444,7 @@
         {
           "id": "log-20260630T134115",
           "ts": "2026-06-30T13:41:15.464932+00:00",
-          "text": "Model card +P&L, settlement void/unmatched safety nets (audit #1+#2), and POTD validity confirmed. Clarified Neil's odds confusion: app's +260 = Match Result (90-min win); FanDuel's +144 he saw = To Qualify (incl ET/pens) \u2014 different markets. Odds are fetched on-demand (fresh), board hardens ~30min pre-kickoff. Open product decision: knockout market choice (Match Result vs To Qualify)."
+          "text": "Model card +P&L, settlement void/unmatched safety nets (audit #1+#2), and POTD validity confirmed. Clarified Neil's odds confusion: app's +260 = Match Result (90-min win); FanDuel's +144 he saw = To Qualify (incl ET/pens) — different markets. Odds are fetched on-demand (fresh), board hardens ~30min pre-kickoff. Open product decision: knockout market choice (Match Result vs To Qualify)."
         },
         {
           "id": "log-20260630T132913",
@@ -449,7 +454,7 @@
         {
           "id": "log-20260630T024501",
           "ts": "2026-06-30T02:45:01.454030+00:00",
-          "text": "Shipped the whole-board lock + tracker fixes to prod. Root-caused the recurring data wipe: no Railway volume \u2014 attached one at /data so the DB persists. Caught that neither Railway nor Vercel auto-deployed the last push; deployed both by CLI. Model record seeded 1-0 from the Germany/Paraguay BTTS hit (logged placed=0, settled off the real results feed)."
+          "text": "Shipped the whole-board lock + tracker fixes to prod. Root-caused the recurring data wipe: no Railway volume — attached one at /data so the DB persists. Caught that neither Railway nor Vercel auto-deployed the last push; deployed both by CLI. Model record seeded 1-0 from the Germany/Paraguay BTTS hit (logged placed=0, settled off the real results feed)."
         },
         {
           "id": "log-2026-06-30T01:10:48.289544+00:00",
@@ -464,27 +469,27 @@
         {
           "id": "log-zve-gh1",
           "ts": "2026-06-30T00:37:38.264168Z",
-          "text": "Created the private GitHub repo zvcodez/zvs-edge and pushed main. The remote was already wired over SSH, just needed the empty repo on GitHub's side \u2014 code is now versioned and backed up off the machine."
+          "text": "Created the private GitHub repo zvcodez/zvs-edge and pushed main. The remote was already wired over SSH, just needed the empty repo on GitHub's side — code is now versioned and backed up off the machine."
         },
         {
           "id": "log-zve-438a81",
           "ts": "2026-06-30T00:17:21.117547+00:00",
-          "text": "Major post-launch session. Renamed to a clean domain (zvs-edge.vercel.app). Fixed the things Neil flagged: stale odds now refresh on load, picks scoped to TODAY's slate (no more tomorrow's game as POTD), FanDuel price leads with a DraftKings 'better line' flag, concrete bet-specific 'why' + parlay reasoning, bankroll asks on first launch ($400), freshness stamp, bracket explainer. Built Web Push end-to-end (VAPID + 5 toggles + bet-aware alerts). Locked the Play of the Day so it never auto-changes; added an in-app Update section that suggests a stronger play (did-you-place \u2192 switch, or cash-out-vs-ride) with why-better bullets and a switch history; and a live in-play tracker showing how close the bet is to hitting. Backend on Railway, frontend on Vercel \u2014 all deployed and verified."
+          "text": "Major post-launch session. Renamed to a clean domain (zvs-edge.vercel.app). Fixed the things Neil flagged: stale odds now refresh on load, picks scoped to TODAY's slate (no more tomorrow's game as POTD), FanDuel price leads with a DraftKings 'better line' flag, concrete bet-specific 'why' + parlay reasoning, bankroll asks on first launch ($400), freshness stamp, bracket explainer. Built Web Push end-to-end (VAPID + 5 toggles + bet-aware alerts). Locked the Play of the Day so it never auto-changes; added an in-app Update section that suggests a stronger play (did-you-place → switch, or cash-out-vs-ride) with why-better bullets and a switch history; and a live in-play tracker showing how close the bet is to hitting. Backend on Railway, frontend on Vercel — all deployed and verified."
         },
         {
           "id": "log-zve-3",
           "ts": "2026-06-29T06:18:56.564725+00:00",
-          "text": "Launched the app live on the internet \u2014 backend on Railway, frontend on Vercel, wired together. Hit and fixed a few hosting snags (Python version, packaging). The live app now pulls real World Cup picks from the model (today\u2019s Play of the Day: Germany vs Paraguay, Both Teams To Score). Next: add to iPhone home screen + notifications."
+          "text": "Launched the app live on the internet — backend on Railway, frontend on Vercel, wired together. Hit and fixed a few hosting snags (Python version, packaging). The live app now pulls real World Cup picks from the model (today’s Play of the Day: Germany vs Paraguay, Both Teams To Score). Next: add to iPhone home screen + notifications."
         },
         {
           "id": "log-zve-2",
           "ts": "2026-06-28T22:30:00+00:00",
-          "text": "Got everything ready to put the app online \u2014 set up the hosting files and wrote a step-by-step guide for launching it. Still just the basic skeleton at this point: no betting features built yet, and no GitHub repo connected."
+          "text": "Got everything ready to put the app online — set up the hosting files and wrote a step-by-step guide for launching it. Still just the basic skeleton at this point: no betting features built yet, and no GitHub repo connected."
         },
         {
           "id": "log-zve-1",
           "ts": "2026-06-28T21:40:46+00:00",
-          "text": "Started the project \u2014 an AI sports betting app for my iPhone to help spot good bets. Scaffolded the app structure to build on."
+          "text": "Started the project — an AI sports betting app for my iPhone to help spot good bets. Scaffolded the app structure to build on."
         }
       ],
       "_stagedAt": "2026-06-30T01:55:32.304Z"
@@ -510,7 +515,7 @@
         {
           "id": "log-hub-tracker-and-xlsx",
           "ts": "2026-07-07T00:06:28.304117Z",
-          "text": "Built an overall funnel tracker for Applications (total applied + since-date, waiting on, heard back, rejected, reached out to \u2014 the last pulled from Networking Contacted count per Neil's call), shown as its own readable bar above the pipeline so nothing has to be searched for. Received Response day-batches now show a live outcome breakdown (e.g. Follow Up 1, Will Be In Touch 2, Rejected 1) right on the collapsed header. Also built scripts/build_tracker_xlsx.py: a color-coded, one-line-per-field Excel export of every application (company, position, status, outcome, dates, salary, contact, links) to ~/Downloads/Neil_Job_Tracker.xlsx, wired in as /jobs step 6 so it regenerates every run. Verified all of it against real data (46 real applications rendered correctly in the xlsx; tracker math hand-checked against seeded data in-browser). sw cache v39."
+          "text": "Built an overall funnel tracker for Applications (total applied + since-date, waiting on, heard back, rejected, reached out to — the last pulled from Networking Contacted count per Neil's call), shown as its own readable bar above the pipeline so nothing has to be searched for. Received Response day-batches now show a live outcome breakdown (e.g. Follow Up 1, Will Be In Touch 2, Rejected 1) right on the collapsed header. Also built scripts/build_tracker_xlsx.py: a color-coded, one-line-per-field Excel export of every application (company, position, status, outcome, dates, salary, contact, links) to ~/Downloads/Neil_Job_Tracker.xlsx, wired in as /jobs step 6 so it regenerates every run. Verified all of it against real data (46 real applications rendered correctly in the xlsx; tracker math hand-checked against seeded data in-browser). sw cache v39."
         },
         {
           "id": "log-hub-received-response-polish",
@@ -525,17 +530,17 @@
         {
           "id": "log-hub-jobs-command",
           "ts": "2026-07-06T22:23:20.000Z",
-          "text": "Root-caused the recurring \u201cno new postings\u201d gap: the Claude cloud routine's own hosted sandbox intermittently 403s every job-board domain at the network policy level, not a search-logic bug. Disabled the routine (trig_015uLUA1KJDwh46qALfPMQHq) rather than patch it again, and built ~/.claude/commands/jobs.md, a global /jobs command that runs the full sourcing-to-hub pipeline locally on demand (no sandbox network restrictions there)."
+          "text": "Root-caused the recurring “no new postings” gap: the Claude cloud routine's own hosted sandbox intermittently 403s every job-board domain at the network policy level, not a search-logic bug. Disabled the routine (trig_015uLUA1KJDwh46qALfPMQHq) rather than patch it again, and built ~/.claude/commands/jobs.md, a global /jobs command that runs the full sourcing-to-hub pipeline locally on demand (no sandbox network restrictions there)."
         },
         {
           "id": "log-hub-networking-per-day",
           "ts": "2026-07-06T01:00:00.000Z",
-          "text": "Networking outreach now batches per day too, but by the linked application's posting date (matched via job link or company name against career-applications), not the contact's own created date \u2014 so outreach follows the same daily rhythm as the pipeline it's chasing. Falls back to an 'Undated' group for manually added contacts with no matching application. Same collapsible chevron UI, own localStorage key (career-networking-closed-batches). Verified in-browser with link-matched, company-matched, and unmatched contacts. sw cache v36."
+          "text": "Networking outreach now batches per day too, but by the linked application's posting date (matched via job link or company name against career-applications), not the contact's own created date — so outreach follows the same daily rhythm as the pipeline it's chasing. Falls back to an 'Undated' group for manually added contacts with no matching application. Same collapsible chevron UI, own localStorage key (career-networking-closed-batches). Verified in-browser with link-matched, company-matched, and unmatched contacts. sw cache v36."
         },
         {
           "id": "log-hub-applied-per-day",
           "ts": "2026-07-06T00:30:00.000Z",
-          "text": "Extended per-day grouping beyond To Apply: Applied now batches by the actual dateApplied, and Did Not Apply batches by the day it was declined (noApplyAt) \u2014 so answering Yes/No on a posting gives an accurate day-by-day record instead of one flat list. Same collapsible chevron UI, batch keys namespaced per status. Verified both Yes and No flows in-browser. sw cache v35."
+          "text": "Extended per-day grouping beyond To Apply: Applied now batches by the actual dateApplied, and Did Not Apply batches by the day it was declined (noApplyAt) — so answering Yes/No on a posting gives an accurate day-by-day record instead of one flat list. Same collapsible chevron UI, batch keys namespaced per status. Verified both Yes and No flows in-browser. sw cache v35."
         },
         {
           "id": "log-hub-batch-collapse",
@@ -555,21 +560,21 @@
         {
           "id": "log-hub-2",
           "ts": "2026-06-28T00:00:00+00:00",
-          "text": "Cross-device sync working \u2014 each device pulls and pushes its data through GitHub, so the hub stays in sync between my phone and Mac."
+          "text": "Cross-device sync working — each device pulls and pushes its data through GitHub, so the hub stays in sync between my phone and Mac."
         },
         {
           "id": "log-hub-1",
           "ts": "2026-06-27T21:22:21+00:00",
-          "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
+          "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Added a green Tracker button to Applications that reveals ~/Downloads/Neil_Job_Tracker.xlsx in Finder \u2014 extended the existing ClaudeCodeOpener launcher app with a second URL scheme (neilhub://open-tracker) since this Mac has no Excel/Numbers installed, so reveal+Quick Look beats a plain open."
+      "lastDid": "Added a green Tracker button to Applications that reveals ~/Downloads/Neil_Job_Tracker.xlsx in Finder — extended the existing ClaudeCodeOpener launcher app with a second URL scheme (neilhub://open-tracker) since this Mac has no Excel/Numbers installed, so reveal+Quick Look beats a plain open."
     },
     {
       "id": "6a403f0db2",
       "_created": "2026-06-27T21:22:21Z",
       "name": "Neil Portfolio",
-      "description": "My personal portfolio website \u2014 about me, experience, skills, education, plus a little Q&A chat bot. It's live online.",
+      "description": "My personal portfolio website — about me, experience, skills, education, plus a little Q&A chat bot. It's live online.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/neil-portfolio",
@@ -587,7 +592,7 @@
         {
           "id": "log-port-1",
           "ts": "2026-06-27T21:22:21+00:00",
-          "text": "Built my personal portfolio site \u2014 about me, experience, skills, education, and a little Q&A chat bot. Launched it on GitHub Pages."
+          "text": "Built my personal portfolio site — about me, experience, skills, education, and a little Q&A chat bot. Launched it on GitHub Pages."
         }
       ],
       "_stagedAt": "2026-06-30T01:55:42.927Z"
@@ -638,8 +643,8 @@
       "id": "idea-rendezvous",
       "_created": "2026-07-08T04:48:10.824Z",
       "_stagedAt": "2026-07-08T04:48:10.824Z",
-      "name": "Rendezvous \u2014 fair meetup finder",
-      "description": "Finds a meetup spot for a friend group that is fair on travel time (not just geographic midpoint), with a fairness % score and review-filtered venue suggestions. Built entirely on free APIs (Nominatim, OpenRouteService, Overpass, Yelp) \u2014 no Google Maps, no card required.",
+      "name": "Rendezvous — fair meetup finder",
+      "description": "Finds a meetup spot for a friend group that is fair on travel time (not just geographic midpoint), with a fairness % score and review-filtered venue suggestions. Built entirely on free APIs (Nominatim, OpenRouteService, Overpass, Yelp) — no Google Maps, no card required.",
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/rendezvous",
@@ -647,7 +652,7 @@
       "liveUrl": "https://rendezvous-smoky.vercel.app",
       "nextStep": "Neil: open https://rendezvous-smoky.vercel.app on your iPhone, add your real friends, and try Find a Spot for real. From there decide whether it needs magic-link auth (currently single-user, no login) before sharing with the friend group.",
       "lastDid": "Deployed to production. Migrated the DB from local SQLite to a free Neon Postgres (provisioned via Vercel Marketplace) since SQLite can't run on serverless. Added the two free API keys (OpenRouteService, Yelp Fusion) as real Vercel env vars for all environments. Verified the full pipeline live on the production URL: add a friend (geocoded via Nominatim), pick friends + activity, get ranked venues with real driving-time fairness % and Yelp ratings. All working end-to-end.",
-      "notes": "Single-user v1 (no auth yet) \u2014 friends are manually added by the owner, no account needed for them, matches the \"works even without a phone\" requirement. Deliberately skipped Postgres/Neon and magic-link auth for now in favor of local SQLite to get a fully working app with zero external account setup; auth + real hosting is a planned next phase once this is validated with the friend group. API keys (ORS + Yelp) are stored as Vercel project env vars and in the local .env.local (gitignored, never in this public repo) \u2014 if ever lost, regenerate free at https://openrouteservice.org/dev/#/signup and https://www.yelp.com/developers/v3/manage_app.",
+      "notes": "Single-user v1 (no auth yet) — friends are manually added by the owner, no account needed for them, matches the \"works even without a phone\" requirement. Deliberately skipped Postgres/Neon and magic-link auth for now in favor of local SQLite to get a fully working app with zero external account setup; auth + real hosting is a planned next phase once this is validated with the friend group. API keys (ORS + Yelp) are stored as Vercel project env vars and in the local .env.local (gitignored, never in this public repo) — if ever lost, regenerate free at https://openrouteservice.org/dev/#/signup and https://www.yelp.com/developers/v3/manage_app.",
       "log": [
         {
           "id": "log-rendezvous-1",
