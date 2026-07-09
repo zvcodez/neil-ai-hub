@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-08T21:20:00.000Z",
+  "updatedAt": "2026-07-09T02:31:45.633Z",
   "data": [
     {
       "id": "idea-jot",
       "_created": "2026-07-08T03:43:36.749Z",
-      "_stagedAt": "2026-07-08T04:05:56.073Z",
+      "_stagedAt": "2026-07-09T02:31:45.633Z",
       "name": "Jot \u2014 all-in-one capture inbox",
       "description": "One inbox for reminders, Claude ideas, and quick notes instead of three separate iPhone apps \u2014 tag as you type, filter, search.",
       "stage": "Building",
@@ -12,10 +12,15 @@
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
       "liveUrl": "https://zvcodez.github.io/jot/",
-      "nextStep": "Neil: try the new capture flow on https://zvcodez.github.io/jot/ for a few real days. If the local auto-tagging feels good enough, real Web Push + Claude-powered classification stay deferred; if reminders getting missed when the app's fully closed becomes annoying, that's the trigger to build the Vercel backend (API key + VAPID + cron) discussed but intentionally not built yet.",
-      "lastDid": "Full redesign based on Neil's feedback that v1 looked too much like the hub's dark UI and had the wrong IA. New structure: two pages switched via a floating top pill nav (not touching the edge) \u2014 a Capture home page with a big rotating prompt (\"What's on your mind?\", \"Quick thought?\", etc.) and a single input with zero manual tagging, and a separate Log page with the filtered/searchable/tagged list. Built classify.js: fully local (no server) heuristic that detects dates/times in the text (\"charge my laptop around 5PM\" -> Reminder, due today 5:00 PM) and otherwise keyword-scores Reminder/Idea/Note. Reminders with a parsed time request notification permission and schedule a local alert via the service worker (fires while app open/backgrounded/reopened-after-due; NOT if fully force-quit the whole time -- real Web Push is a deliberate follow-up, discussed and deferred with Neil in favor of shipping the redesign first). Brand new bright warm visual identity (cream/paper background, coral-to-violet gradient, pastel sticky-note-style cards per type) replacing the old dark hub-style theme. Verified end-to-end in-browser: auto-classification on multiple phrasings, filter counts, done/delete, sync panel theming. Deployed to production.",
+      "nextStep": "Neil: test on iPhone -- open https://zvcodez.github.io/jot/ in Safari, Add to Home Screen, open from the icon, capture a reminder a few minutes out, allow notifications, lock the phone, and confirm the push arrives within ~2-4 min. Report back pass/fail.",
+      "lastDid": "Built the real Web Push backend after Neil hit the local-timer's ~1min drift on a locked-screen reminder. New repo zvcodez/jot-push (public, Vercel serverless: /api/subscribe, /api/reminder, /api/check) storing state in data/push-queue.json in the private jot-data repo (separate from the client's own items.json sync file). Since Vercel Hobby cron only runs daily, a GitHub Actions workflow in jot-push pings /api/check every 2 minutes instead (CRON_SECRET as a proper GitHub Actions repo secret, not hardcoded). Client (jot repo): added push.js (subscribe + sync reminders to the backend) and a push/notificationclick handler in sw.js. Hit and fixed two real bugs during setup: the jot-data repo was completely empty (no commits ever), so GitHub's Contents API had no branch to write to -- fixed by seeding a README to create main. And the GITHUB_TOKEN PAT was scoped to the wrong repo (zvcodez/jot, not zvcodez/jot-data) -- fixed by editing the token's repository access. Verified the full write path with a debug POST (200, confirmed the commit landed in jot-data) and the full cron path (manually ran the GitHub Action, succeeded end-to-end hitting the live check endpoint). Could not verify actual push delivery via browser automation -- Notification.requestPermission() blocks on a native OS-level dialog outside tool reach -- so handed off to Neil to test for real on his iPhone (Add to Home Screen is required first; iOS only delivers Web Push to installed PWAs, not plain Safari tabs).",
       "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
+        {
+          "id": "log-jot-4",
+          "ts": "2026-07-09T02:31:45.633Z",
+          "text": "Built and deployed the real Web Push backend (jot-push on Vercel + GitHub Actions cron every 2 min) to fix the local-timer notification drift Neil hit. Fixed two config bugs (empty jot-data repo, misscoped GitHub token). Server-side verified end-to-end; live phone test pending."
+        },
         {
           "id": "log-jot-2",
           "ts": "2026-07-08T04:05:56.073Z",
