@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T14:41:38.000Z",
+  "updatedAt": "2026-07-08T15:05:00.000Z",
   "data": [
     {
       "id": "app-bofa-equity-research-transport-shipping",
@@ -891,6 +891,10 @@
         {
           "status": "Applied",
           "at": "2026-07-07T01:46:02.769Z"
+        },
+        {
+          "status": "Received Response",
+          "at": "2026-07-08T15:00:00.000Z"
         }
       ],
       "company": "Tremendous",
@@ -901,7 +905,7 @@
       "salary": "$95,000-$105,000",
       "deadline": "",
       "dateApplied": "2026-07-07",
-      "status": "Applied",
+      "status": "Received Response",
       "notes": "Posted 2026-07-06. Fintech (global payouts platform), 2+ years ops/compliance role required, direct fit. Heavy emphasis on pairing human judgment with AI tools, matches Neil's actual project experience honestly.",
       "skills": [
         "Transaction Investigation",
@@ -914,7 +918,12 @@
       ],
       "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
       "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "gmailOutcome": "Will Be In Touch",
+      "gmailSubject": "Application Received - Thank you for your interest in Tremendous",
+      "gmailSummary": "Ashby (Tremendous's ATS) confirmed the application was received and said they'll reach out to schedule a conversation if the background is a fit.",
+      "gmailThreadId": "19f3a40f02f007e9",
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-whitecapsearch5",
@@ -927,6 +936,10 @@
         {
           "status": "Applied",
           "at": "2026-07-07T01:43:04.193Z"
+        },
+        {
+          "status": "Received Response",
+          "at": "2026-07-08T15:00:00.000Z"
         }
       ],
       "company": "WhiteCap Search",
@@ -937,7 +950,7 @@
       "salary": "$100,000-$150,000",
       "deadline": "",
       "dateApplied": "2026-07-07",
-      "status": "Applied",
+      "status": "Received Response",
       "notes": "Posted 2026-07-06. 2-5 years experience, CLO/loan systems preferred not required, Bloomberg mentioned as a plus. Recruiter posting (WhiteCap Search).",
       "skills": [
         "Trade & Position Reconciliation",
@@ -950,7 +963,13 @@
       ],
       "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
       "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "gmailOutcome": "Will Be In Touch",
+      "gmailSubject": "Welcome to Whitecap! We've received your application for Associate - CLO Operations",
+      "gmailSummary": "WhiteCap Search confirmed receipt of the Associate, CLO Operations application and sent JobDiva candidate-portal login details to track status.",
+      "gmailThreadId": "19f3a3fef1c86fad",
+      "gmailCheckedAt": "2026-07-08",
+      "portalLink": "https://www2.jobdiva.com/candidates/login.jsp?from=MYPROFILE&login=Neilpatel360@gmail.com"
     },
     {
       "id": "app-whitecapsearch6",
@@ -963,6 +982,10 @@
         {
           "status": "Applied",
           "at": "2026-07-07T01:42:38.510Z"
+        },
+        {
+          "status": "Received Response",
+          "at": "2026-07-08T15:00:00.000Z"
         }
       ],
       "company": "WhiteCap Search",
@@ -973,7 +996,7 @@
       "salary": "$85,000-$150,000 (band varies by product coverage)",
       "deadline": "",
       "dateApplied": "2026-07-07",
-      "status": "Applied",
+      "status": "Received Response",
       "notes": "Posted 2026-07-06. Public securities trade lifecycle ops, explicitly lists AI tool experience as a requirement, strong genuine match. Recruiter posting (WhiteCap Search).",
       "skills": [
         "Post Execution Reconciliation",
@@ -986,7 +1009,13 @@
       ],
       "bulletsTD": "Reconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
       "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "gmailOutcome": "Will Be In Touch",
+      "gmailSubject": "Welcome to Whitecap! We've received your application for Operations Associate",
+      "gmailSummary": "WhiteCap Search confirmed receipt of the Operations Associate application and sent JobDiva candidate-portal login details to track status.",
+      "gmailThreadId": "19f3a3fee9c8c63f",
+      "gmailCheckedAt": "2026-07-08",
+      "portalLink": "https://www2.jobdiva.com/candidates/login.jsp?from=MYPROFILE&login=Neilpatel360@gmail.com"
     },
     {
       "id": "app-mufg7",
@@ -999,6 +1028,10 @@
         {
           "status": "Applied",
           "at": "2026-07-07T01:42:06.325Z"
+        },
+        {
+          "status": "Received Response",
+          "at": "2026-07-08T15:00:00.000Z"
         }
       ],
       "company": "MUFG",
@@ -1009,7 +1042,7 @@
       "salary": "$90,000-$105,000",
       "deadline": "",
       "dateApplied": "2026-07-07",
-      "status": "Applied",
+      "status": "Received Response",
       "notes": "Posted 2026-07-06. Stretch: DCF/precedent transaction valuation modeling is new, honestly owned in the letter. 1-3 years banking with credit underwriting exposure required, fits. Major bank brand.",
       "skills": [
         "Account & Transaction Analysis",
@@ -1022,7 +1055,12 @@
       ],
       "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
       "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "gmailOutcome": "Will Be In Touch",
+      "gmailSubject": "Thank You for Applying to 10077664-WD GCIB - Credit Portfolio Management - Enterprise Valuation Analyst at MUFG",
+      "gmailSummary": "MUFG's Workday system confirmed the application is under review and said Talent Acquisition will follow up if chosen to advance.",
+      "gmailThreadId": "19f3a3d15354153e",
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-santanderus8",
@@ -1175,6 +1213,10 @@
         {
           "status": "Applied",
           "at": "2026-07-07T01:30:13.100Z"
+        },
+        {
+          "status": "Received Response",
+          "at": "2026-07-08T15:00:00.000Z"
         }
       ],
       "company": "Bank of America",
@@ -1185,7 +1227,7 @@
       "salary": "$88,350-$120,500",
       "deadline": "",
       "dateApplied": "2026-07-07",
-      "status": "Applied",
+      "status": "Received Response",
       "notes": "Posted 2026-07-06. Stretch: bulge-bracket IB analyst deal work, no professional financial modeling experience, honestly owned in the letter. Included per Neil's explicit-stretch precedent.",
       "skills": [
         "Financial & Data Analysis",
@@ -1197,7 +1239,13 @@
       ],
       "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team meet a critical regulatory deadline.",
       "bulletsBloomberg": "Analyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
-      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
+      "gmailOutcome": "Will Be In Touch",
+      "gmailSubject": "ACTION NEEDED: We've received your application for the GCIB Analyst position at Bank of America",
+      "gmailSummary": "Bank of America confirmed receipt of the GCIB Analyst application. The 'action needed' is only an optional voluntary EEO self-identification form in the candidate portal, not a real next step in the process.",
+      "gmailThreadId": "19f3a32825c3a970",
+      "gmailCheckedAt": "2026-07-08",
+      "portalLink": "https://careers.bankofamerica.com/en-us"
     },
     {
       "id": "app-pwc13",
@@ -1349,7 +1397,7 @@
       "gmailSubject": "Thank you for applying to Optiver",
       "gmailSummary": "Automated confirmation that Optiver received your application \u2014 no decision yet.",
       "gmailThreadId": "19f363844900fa8f",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-whitecap-invops",
@@ -1398,7 +1446,7 @@
       "gmailSubject": "Welcome to Whitecap! We've received your application for Investment Operations Associate",
       "gmailSummary": "Automated ATS confirmation that Whitecap Search received your Investment Operations Associate application \u2014 no decision yet.",
       "gmailThreadId": "19f36372284dddff",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-talan",
@@ -1444,7 +1492,7 @@
       "gmailSubject": "Your Application : Talan - Trade Support Assistant",
       "gmailSummary": "Automated confirmation your application was received; they say they'll be in touch soon.",
       "gmailThreadId": "19f3635367dc566a",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-enstar",
@@ -1491,7 +1539,7 @@
       "gmailSubject": "Thank you for applying to Enstar Group",
       "gmailSummary": "Automated confirmation; they say they'll endeavor to be in touch shortly.",
       "gmailThreadId": "19f3633c135f60e1",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-soros",
@@ -1538,7 +1586,7 @@
       "gmailSubject": "Thank you for applying to Soros Fund Management",
       "gmailSummary": "Automated Greenhouse confirmation; application is under review, no decision yet.",
       "gmailThreadId": "19f3630ed0552583",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-carisbrook",
@@ -1587,7 +1635,7 @@
       "gmailSubject": "Your application was viewed by Carisbrook Partners",
       "gmailSummary": "No email reply yet, but LinkedIn shows a recruiter at Carisbrook Partners actually opened/viewed your application on Jul 6 \u2014 a real engagement signal, though no decision yet.",
       "gmailThreadId": "19f3708d1e8189fd",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-mondrian-tradesupport",
@@ -1714,7 +1762,7 @@
       "gmailSubject": "Follow up on your job application",
       "gmailSummary": "Blackstone needs action from you: complete a candidate questionnaire/task on their Workday site to continue processing your Investment Operations Analyst application.",
       "gmailThreadId": "19f381abf2c27c5e",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-jpm-tradesupport",
@@ -1767,7 +1815,7 @@
       "gmailSubject": "We received your job application (Job Number: 210756786)",
       "gmailSummary": "Automated JPMorganChase confirmation for Analyst - Trade Support; application submitted and under review.",
       "gmailThreadId": "19f362611dc334f6",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-jpm-tradingservices",
@@ -1818,7 +1866,7 @@
       "gmailSubject": "We received your job application (Job Number: 210762086)",
       "gmailSummary": "Automated JPMorganChase confirmation for Trading Services Analyst; application submitted and under review.",
       "gmailThreadId": "19f3628419f59230",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-brownadvisory-odd",
@@ -1871,7 +1919,7 @@
       "gmailSubject": "Thank You For Applying!",
       "gmailSummary": "Automated Workday confirmation for the Operational Due Diligence Analyst role, no decision yet.",
       "gmailThreadId": "19f35f88dc955fb8",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-usbank-altinv",
@@ -1967,7 +2015,7 @@
       "gmailSubject": "We've received your application for Capital Operations Analyst at Affirm",
       "gmailSummary": "Automated Greenhouse confirmation, high applicant volume noted, no decision yet.",
       "gmailThreadId": "19f3622499984055",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-willowwealth-investorsupport",
@@ -2017,7 +2065,7 @@
       "gmailSubject": "Willow Wealth | Associate, Investor Support",
       "gmailSummary": "Rejected. \"After careful consideration, we've decided not to move forward with your application for this role.\" They said they were impressed with your background and would keep you in mind for future openings.",
       "gmailThreadId": "19f3976428ce269d",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-citi-secderiv",
@@ -2050,7 +2098,7 @@
       "gmailSubject": "Thank you for your interest in Citi!",
       "gmailSummary": "Automated Workday confirmation for Securities and Derivatives Intermediate Analyst-26959841, no decision yet.",
       "gmailThreadId": "19f213ceb5e0b2e3",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-scr-smaops",
@@ -2233,7 +2281,7 @@
       "gmailSubject": "Application Received for Client Analyst at Neuberger",
       "gmailSummary": "Automated Workday confirmation, application under review by recruiting.",
       "gmailThreadId": "19f361411fb8d8fb",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-dtcc_corpactions",
@@ -2324,7 +2372,7 @@
       "gmailSubject": "We received your job application (Job Number: 210754399)",
       "gmailSummary": "Automated JPMorganChase confirmation for External Reporting Controller - Analyst; application submitted and under review.",
       "gmailThreadId": "19f3601e19b4eee2",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-jpm_altinv",
@@ -2418,7 +2466,7 @@
       "gmailSubject": "Your recent job application for Middle Office Analyst - 1558",
       "gmailSummary": "Automated Oracle recruiting confirmation, no decision yet.",
       "gmailThreadId": "19f3467b0c6a8c0c",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-blueowl",
@@ -2451,7 +2499,7 @@
       "gmailSubject": "Application Received for Global Client Engagement \u2013 Analyst",
       "gmailSummary": "Automated Workday confirmation, application is being processed.",
       "gmailThreadId": "19f2e31b949ef4ff",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-smbc",
@@ -2503,7 +2551,7 @@
       "gmailSubject": "Thank you for applying to Sumitomo Mitsui Banking Corporation",
       "gmailSummary": "Automated SuccessFactors confirmation for Cash Management Business Analyst - Associate level (7785), no decision yet.",
       "gmailThreadId": "19f36089ff997046",
-      "gmailCheckedAt": "2026-07-06"
+      "gmailCheckedAt": "2026-07-08"
     },
     {
       "id": "app-scr_clientservices",
