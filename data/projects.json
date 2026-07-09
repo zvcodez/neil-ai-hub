@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T22:34:44.702105Z",
+  "updatedAt": "2026-07-09T22:42:45.056952Z",
   "data": [
     {
       "id": "idea-jot",
@@ -294,8 +294,8 @@
       "folder": "~/Claude/alcohol-scanner",
       "repoUrl": "",
       "liveUrl": "https://alcohol-scanner.vercel.app",
-      "nextStep": "Neil to retest live on phone \u2014 confirm scan screen fits with no scroll, and try scanning a bottled water to see the new mineral tile.",
-      "lastDid": "Fixed the scan screen scrolling off the bottom of the phone screen (camera box now fills remaining space instead of using a fixed aspect ratio; header/tabs stay fixed app-shell style). Removed the unread hint paragraph and all emoji. Added a highlighted water mineral-content tile (mg/L) for water scans \u2014 verified the math against Evian real label numbers; pH isn't available in the free database so that was skipped rather than faked. Deployed to production.",
+      "nextStep": "Neil to retest: rescan Poland Spring (should now show mineral tile) and rescan a water bottle a few times to confirm barcode reads are clean.",
+      "lastDid": "Fixed 2 bugs found in live phone testing: water category regex (\\bwater\\b) never matched OFF's plural tags (en:waters), so Poland Spring/Evian never got the mineral tile; and barcode scanning had Codabar/Code39 formats enabled, which caused a blurry live UPC-A read to misdecode as garbage Codabar text. Narrowed formats to retail-only + added 2-read confirmation before acting on a scan. Deployed.",
       "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews"
     },
     {
@@ -504,9 +504,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Click the Tracker button once in a real (non-automated) Chrome session and choose Always allow, same one-time step as the existing Open in Claude Code button.",
+      "nextStep": "Neil to try the new Home/Business/Growth tabs live (phone + Mac, both themes) and say what to adjust \u2014 he mentioned there's more redesign/IA discussion still to come.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-redesign-v1",
+          "ts": "2026-07-09T22:41:22.000Z",
+          "text": "Kicked off the visual redesign Neil asked for. Mocked up 4 style directions (ambient glass / command-center / minimal editorial / neumorphic) as a side-by-side artifact so he could pick before any code changed \u2014 he chose ambient glass for a new Home tab, but wanted regular tabs to stay plain white/black per theme with just light glass touches (soft card glow, gradient buttons, shared blue/violet/amber/teal accent trio) rather than full glass everywhere. Shipped: a new Home tab (time-aware greeting, live counts, quick-select into Projects/Career/Business, theme-adaptive blob background); a new Business tab (Overview roll-up + Ventures pipeline, store key business-ventures, now synced) for side-venture ideas separate from the Projects pipeline; a combined Growth tab folding Timeline/Skills/Glossary/Resources into one set of sub-tabs. Nav reordered: sidebar is Home/Projects/Career/Business/Growth, mobile bottom bar is Projects/Career/Home(center)/Business/Growth. Verified in headless Chrome across light/dark and desktop/mobile widths \u2014 no console errors, no overflow bugs. sw cache v41."
+        },
         {
           "id": "log-hub-tracker-button",
           "ts": "2026-07-07T00:32:21.629943Z",
@@ -568,7 +573,7 @@
           "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Added a green Tracker button to Applications that reveals ~/Downloads/Neil_Job_Tracker.xlsx in Finder \u2014 extended the existing ClaudeCodeOpener launcher app with a second URL scheme (neilhub://open-tracker) since this Mac has no Excel/Numbers installed, so reveal+Quick Look beats a plain open."
+      "lastDid": "Shipped redesign v1: ambient-glass Home tab, new Business tab (Overview + Ventures), and a combined Growth tab (Timeline/Skills/Glossary/Resources). Regular tabs stayed plain white/black per theme with just light glass touches, per Neil's call."
     },
     {
       "id": "6a403f0db2",
