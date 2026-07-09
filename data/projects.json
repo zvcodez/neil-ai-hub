@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T22:42:45.056952Z",
+  "updatedAt": "2026-07-09T22:53:19.000Z",
   "data": [
     {
       "id": "idea-jot",
@@ -504,13 +504,13 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Neil to try the new Home/Business/Growth tabs live (phone + Mac, both themes) and say what to adjust \u2014 he mentioned there's more redesign/IA discussion still to come.",
+      "nextStep": "Neil has more redesign/IA changes he wants to discuss (specifics not given yet) \u2014 ask him what's next rather than assuming.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
         {
           "id": "log-hub-redesign-v1",
           "ts": "2026-07-09T22:41:22.000Z",
-          "text": "Kicked off the visual redesign Neil asked for. Mocked up 4 style directions (ambient glass / command-center / minimal editorial / neumorphic) as a side-by-side artifact so he could pick before any code changed \u2014 he chose ambient glass for a new Home tab, but wanted regular tabs to stay plain white/black per theme with just light glass touches (soft card glow, gradient buttons, shared blue/violet/amber/teal accent trio) rather than full glass everywhere. Shipped: a new Home tab (time-aware greeting, live counts, quick-select into Projects/Career/Business, theme-adaptive blob background); a new Business tab (Overview roll-up + Ventures pipeline, store key business-ventures, now synced) for side-venture ideas separate from the Projects pipeline; a combined Growth tab folding Timeline/Skills/Glossary/Resources into one set of sub-tabs. Nav reordered: sidebar is Home/Projects/Career/Business/Growth, mobile bottom bar is Projects/Career/Home(center)/Business/Growth. Verified in headless Chrome across light/dark and desktop/mobile widths \u2014 no console errors, no overflow bugs. sw cache v41."
+          "text": "Kicked off the visual redesign Neil asked for. Mocked up 4 style directions (ambient glass / command-center / minimal editorial / neumorphic) as a side-by-side artifact so he could pick before any code changed \u2014 he chose ambient glass for a new Home tab, but wanted regular tabs to stay plain white/black per theme with just light glass touches (soft card glow, gradient buttons, shared blue/violet/amber/teal accent trio) rather than full glass everywhere. Shipped: a new Home tab (time-aware greeting, live counts, quick-select into Projects/Career/Business, theme-adaptive blob background); a new Business tab (Overview roll-up + Ventures pipeline, store key business-ventures, now synced) for side-venture ideas separate from the Projects pipeline; a combined Growth tab folding Timeline/Skills/Glossary/Resources into one set of sub-tabs. Nav reordered: sidebar is Home/Projects/Career/Business/Growth, mobile bottom bar is Projects/Career/Home(center)/Business/Growth. Verified in headless Chrome across light/dark and desktop/mobile widths \u2014 no console errors, no overflow bugs. sw cache v41. Neil reviewed it locally on his Mac and phone (over LAN, after a stale service-worker-on-5173 snag from an unrelated Vite project) and approved it \u2014 deployed live to GitHub Pages. He mentioned there's more redesign/IA discussion still to come, no specifics yet."
         },
         {
           "id": "log-hub-tracker-button",
@@ -573,7 +573,7 @@
           "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Shipped redesign v1: ambient-glass Home tab, new Business tab (Overview + Ventures), and a combined Growth tab (Timeline/Skills/Glossary/Resources). Regular tabs stayed plain white/black per theme with just light glass touches, per Neil's call."
+      "lastDid": "Shipped and deployed redesign v1: ambient-glass Home tab, new Business tab (Overview + Ventures), and a combined Growth tab (Timeline/Skills/Glossary/Resources). Neil reviewed on Mac + phone and approved."
     },
     {
       "id": "6a403f0db2",

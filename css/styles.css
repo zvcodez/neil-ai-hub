@@ -2,10 +2,15 @@
    Neil AI Hub — styles
    ============================================================ */
 :root {
-  --accent: #2563eb;
-  --gold: #f59e0b;
-  --radius: 14px;
-  --radius-sm: 9px;
+  /* Accent trio carried over from the ambient-glass Home screen — each tab
+     picks one of these (see js/main.js TABS) so the whole app reads as one
+     family even though only Home shows the full glass treatment. */
+  --accent: #4f7cff;
+  --violet: #9b6bff;
+  --gold: #f7b955;
+  --teal: #14b8a6;
+  --radius: 16px;
+  --radius-sm: 10px;
   --shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
   --sidebar-w: 232px;
@@ -15,15 +20,27 @@
 
 /* ---- Themes ---- */
 [data-theme='dark'] {
-  --bg: #14142a;
-  --bg-2: #1a1a2e;
-  --surface: #20203c;
-  --surface-2: #272749;
-  --border: #32325a;
-  --text: #e9e9f5;
+  --bg: #0e0e1a;
+  --bg-2: #15152a;
+  --surface: #1b1b34;
+  --surface-2: #23233f;
+  --border: #2f2f52;
+  --text: #eef0ff;
   --text-muted: #a3a3c2;
   --input-bg: #181830;
+  --card-edge: rgba(255, 255, 255, 0.05);
   color-scheme: dark;
+
+  /* Home screen — dark ambient glass */
+  --home-bg: #0b0e1c;
+  --home-text: #f2f4ff;
+  --home-muted: #a7aed6;
+  --home-blue: #4f7cff;
+  --home-violet: #9b6bff;
+  --home-amber: #f7b955;
+  --home-blob-opacity: 0.55;
+  --home-glass: rgba(255, 255, 255, 0.07);
+  --home-glass-brd: rgba(255, 255, 255, 0.16);
 }
 [data-theme='light'] {
   --bg: #f1f3f7;
@@ -36,11 +53,23 @@
   --input-bg: #ffffff;
   --shadow: 0 6px 22px rgba(40, 60, 100, 0.1);
   --shadow-sm: 0 2px 8px rgba(40, 60, 100, 0.08);
+  --card-edge: rgba(255, 255, 255, 0.7);
   color-scheme: light;
+
+  /* Home screen — light ambient glass: same atmosphere, paper-bright ground */
+  --home-bg: #f5f6fb;
+  --home-text: #1a1a2e;
+  --home-muted: #66708f;
+  --home-blue: #6f93ff;
+  --home-violet: #ab84ff;
+  --home-amber: #f7b955;
+  --home-blob-opacity: 0.32;
+  --home-glass: rgba(255, 255, 255, 0.55);
+  --home-glass-brd: rgba(255, 255, 255, 0.9);
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+html, body { height: 100%; margin: 0; overflow-x: hidden; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -126,6 +155,69 @@ h1, h3 { margin: 0; }
 .bottom-nav { display: none; }
 
 /* ============================================================
+   Home screen — ambient glass landing page (the one place that gets
+   the full "AI hub" atmosphere; every other tab stays plain +
+   theme-solid, just borrowing its shapes/accents — see .card etc above).
+   ============================================================ */
+.content-body.home-active { padding: 0; }
+.home {
+  position: relative; min-height: 100%; overflow: hidden;
+  background: var(--home-bg); color: var(--home-text);
+  display: flex; flex-direction: column;
+}
+.home-blob {
+  position: absolute; border-radius: 50%; filter: blur(60px);
+  opacity: var(--home-blob-opacity); z-index: 0; pointer-events: none;
+}
+.home-blob.b1 { width: 46vw; max-width: 420px; height: 46vw; max-height: 420px; background: var(--home-blue); top: -12%; left: -10%; }
+.home-blob.b2 { width: 40vw; max-width: 380px; height: 40vw; max-height: 380px; background: var(--home-violet); bottom: 8%; right: -8%; }
+.home-blob.b3 { width: 30vw; max-width: 300px; height: 30vw; max-height: 300px; background: var(--home-amber); bottom: -10%; left: 12%; opacity: calc(var(--home-blob-opacity) * 0.7); }
+@media (prefers-reduced-motion: no-preference) {
+  .home-blob { animation: home-drift 10s ease-in-out infinite alternate; }
+  .home-blob.b2 { animation-duration: 13s; }
+  .home-blob.b3 { animation-duration: 16s; }
+}
+@keyframes home-drift { from { transform: translateY(0) scale(1); } to { transform: translateY(-18px) scale(1.07); } }
+
+.home-body {
+  position: relative; z-index: 1; flex: 1; width: 100%; max-width: 460px; min-width: 0; margin: 0 auto;
+  display: flex; flex-direction: column; justify-content: center; gap: 32px;
+  padding: calc(40px + env(safe-area-inset-top)) 24px calc(40px + env(safe-area-inset-bottom));
+}
+.home-greet-eyebrow {
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--home-muted);
+  text-align: center; margin: 0;
+}
+.home-greet-h {
+  font-size: clamp(24px, 4vw, 30px); font-weight: 650; text-align: center; margin: 6px 0 0;
+  letter-spacing: -0.01em; overflow-wrap: break-word;
+}
+.home-greet-sub { font-size: 14.5px; color: var(--home-muted); text-align: center; margin: 0; }
+
+.home-quick { display: flex; flex-direction: column; gap: 11px; min-width: 0; }
+.home-quick button {
+  display: flex; align-items: center; gap: 13px; padding: 15px 17px; border-radius: 18px;
+  background: var(--home-glass); border: 1px solid var(--home-glass-brd); color: var(--home-text);
+  font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; min-width: 0;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+.home-quick button:hover {
+  background: color-mix(in srgb, var(--home-glass) 70%, var(--home-text) 8%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.home-quick button .icon { color: var(--qcolor, var(--home-blue)); flex: none; }
+.home-quick button .home-arrow { margin-left: auto; opacity: 0.45; flex: none; }
+.home-quick-label { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; min-width: 0; overflow-wrap: break-word; }
+.home-quick-label small { font-weight: 500; font-size: 12px; color: var(--home-muted); }
+
+/* Desktop already has theme/sync controls in the sidebar footer — Home's own
+   footer only needs to appear where the sidebar is hidden (mobile). */
+.home-foot { display: none; }
+
+/* ============================================================
    Toolbar / filters
    ============================================================ */
 .collection { display: flex; flex-direction: column; gap: 16px; }
@@ -167,13 +259,17 @@ select, .sort select {
    ============================================================ */
 .btn {
   display: inline-flex; align-items: center; gap: 7px;
-  border-radius: 9px; padding: 9px 15px; font: inherit; font-size: 14px; font-weight: 500;
+  border-radius: 11px; padding: 9px 15px; font: inherit; font-size: 14px; font-weight: 500;
   cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text);
-  transition: filter 0.15s, background 0.15s; white-space: nowrap;
+  transition: filter 0.15s, background 0.15s, box-shadow 0.15s; white-space: nowrap;
 }
 .btn:hover { background: var(--surface-2); }
-.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn-primary:hover { filter: brightness(1.08); background: var(--accent); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 75%, var(--violet)));
+  border-color: var(--accent); color: #fff;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.btn-primary:hover { filter: brightness(1.08); box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 45%, transparent); }
 .btn-ghost { background: none; }
 .btn-success { background: #10b981; border-color: #10b981; color: #fff; }
 .btn-success:hover { filter: brightness(1.08); background: #10b981; }
@@ -209,10 +305,13 @@ select, .sort select {
 }
 .card {
   position: relative; background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm), inset 0 1px 0 var(--card-edge);
   transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
 }
-.card:hover { box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
+.card:hover {
+  box-shadow: var(--shadow), inset 0 1px 0 var(--card-edge), 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
 .card-actions {
   position: absolute; top: 12px; right: 12px; display: flex; gap: 2px; opacity: 0;
   transition: opacity 0.15s;
@@ -400,6 +499,39 @@ select, .sort select {
 .subtab:hover { color: var(--text); }
 .subtab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
+/* ============================================================
+   Business
+   ============================================================ */
+.biz-overview { display: flex; flex-direction: column; gap: 20px; }
+.biz-stats {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px;
+}
+.biz-stat-total { font-size: 14px; white-space: nowrap; }
+.biz-stat-total strong { font-size: 18px; color: var(--accent); }
+.biz-stat-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.biz-stat {
+  display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; font-weight: 600;
+  color: var(--col); background: color-mix(in srgb, var(--col) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--col) 30%, transparent);
+  border-radius: 999px; padding: 4px 12px; white-space: nowrap;
+}
+.biz-stat strong { font-size: 14px; }
+.biz-rank { display: flex; flex-direction: column; gap: 8px; }
+.biz-rank-row {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--stage, var(--accent));
+  border-radius: var(--radius-sm); padding: 10px 14px; font: inherit; color: var(--text); cursor: pointer;
+  box-shadow: var(--shadow-sm); transition: box-shadow 0.15s;
+}
+.biz-rank-row:hover { box-shadow: var(--shadow); }
+.biz-rank-name { font-weight: 600; font-size: 14px; }
+.biz-rank-rev { margin-left: auto; font-weight: 700; font-size: 13.5px; color: #10b981; white-space: nowrap; }
+.biz-metrics { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; font-weight: 600; }
+.biz-metric { display: inline-flex; align-items: center; gap: 5px; }
+.biz-metrics-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 760px) { .biz-metrics-detail { grid-template-columns: 1fr 1fr; } }
+
 .role-salary { color: var(--gold); font-weight: 700; font-size: 14px; margin-top: 6px; }
 .company-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 .needs-followup { }
@@ -510,12 +642,14 @@ select, .sort select {
 .ppl-card {
   position: relative; background: var(--surface); border: 1px solid var(--border);
   border-top: 3px solid var(--stage, var(--accent)); border-radius: var(--radius);
-  padding: 15px 16px; cursor: grab; box-shadow: var(--shadow-sm);
+  padding: 15px 16px; cursor: grab; box-shadow: var(--shadow-sm), inset 0 1px 0 var(--card-edge);
   display: flex; flex-direction: column; gap: 12px; transition: box-shadow 0.15s;
   min-width: 0;
 }
 .ppl-title, .ppl-next, .ppl-notes { overflow-wrap: anywhere; }
-.ppl-card:hover { box-shadow: var(--shadow); }
+.ppl-card:hover {
+  box-shadow: var(--shadow), inset 0 1px 0 var(--card-edge), 0 0 0 1px color-mix(in srgb, var(--stage, var(--accent)) 18%, transparent);
+}
 .ppl-card:active { cursor: grabbing; }
 .ppl-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; }
 .ppl-title { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.25; flex: 1; min-width: 0; }
@@ -551,10 +685,12 @@ select, .sort select {
 .ppl-notes-list li { overflow-wrap: anywhere; }
 .ppl-launch {
   display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
-  padding: 11px; font-size: 14px; font-weight: 650; border-radius: 10px; text-decoration: none;
-  color: #fff; background: var(--accent); border: 1px solid var(--accent); transition: filter 0.12s;
+  padding: 11px; font-size: 14px; font-weight: 650; border-radius: 12px; text-decoration: none;
+  color: #fff; background: linear-gradient(135deg, var(--stage, var(--accent)), color-mix(in srgb, var(--stage, var(--accent)) 70%, var(--violet)));
+  border: 1px solid var(--stage, var(--accent)); transition: filter 0.12s, box-shadow 0.12s;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--stage, var(--accent)) 30%, transparent);
 }
-.ppl-launch:hover { filter: brightness(1.09); }
+.ppl-launch:hover { filter: brightness(1.09); box-shadow: 0 4px 16px color-mix(in srgb, var(--stage, var(--accent)) 40%, transparent); }
 .ppl-secondary { display: flex; flex-wrap: wrap; gap: 8px; }
 .ppl-link {
   display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600;
@@ -681,6 +817,13 @@ select, .sort select {
     display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
     background: var(--bg-2); border-top: 1px solid var(--border);
     padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); overflow-x: auto;
+  }
+  /* Home has no content-head, so it needs its own clearance above the fixed
+     bottom nav (everything else gets it from .content-body's padding). */
+  .home-body { padding-bottom: 12px; }
+  .home-foot {
+    display: flex; position: relative; z-index: 1; justify-content: center;
+    align-items: center; gap: 10px; padding: 0 24px calc(96px + env(safe-area-inset-bottom));
   }
   .bottom-item {
     flex: 1; min-width: 60px; display: flex; flex-direction: column; align-items: center; gap: 3px;

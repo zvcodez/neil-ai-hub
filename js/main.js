@@ -3,21 +3,27 @@ import { html, ReactDOM, useState, useEffect, loadStore, saveStore } from './cor
 import { Icon } from './components.js';
 import { SyncButton, initSync } from './sync.js';
 
+import { HomeTab } from './tabs/home.js';
 import { ProjectsTab } from './tabs/projects.js';
-import { TimelineTab } from './tabs/timeline.js';
-import { GlossaryTab } from './tabs/glossary.js';
-import { ResourcesTab } from './tabs/resources.js';
 import { CareerTab } from './tabs/career.js';
-import { SkillsTab } from './tabs/skills.js';
+import { BusinessTab } from './tabs/business.js';
+import { GrowthTab } from './tabs/growth.js';
 
+// Canonical order — used for the sidebar (desktop) and as the source of truth
+// for every tab's identity/accent/icon.
 const TABS = [
-  { id: 'projects', label: 'Projects', icon: 'projects', accent: '#2563eb', component: ProjectsTab },
-  { id: 'timeline', label: 'Timeline', icon: 'timeline', accent: '#f59e0b', component: TimelineTab },
-  { id: 'glossary', label: 'Glossary', icon: 'glossary', accent: '#a855f7', component: GlossaryTab },
-  { id: 'resources', label: 'Resources', icon: 'resources', accent: '#10b981', component: ResourcesTab },
-  { id: 'career', label: 'Career', icon: 'career', accent: '#2563eb', component: CareerTab },
-  { id: 'skills', label: 'Skills', icon: 'skills', accent: '#14b8a6', component: SkillsTab },
+  { id: 'home', label: 'Home', icon: 'home', accent: '#4f7cff', component: HomeTab },
+  { id: 'projects', label: 'Projects', icon: 'projects', accent: '#4f7cff', component: ProjectsTab },
+  { id: 'career', label: 'Career', icon: 'career', accent: '#9b6bff', component: CareerTab },
+  { id: 'business', label: 'Business', icon: 'business', accent: '#f7b955', component: BusinessTab },
+  { id: 'growth', label: 'Growth', icon: 'skills', accent: '#14b8a6', component: GrowthTab },
 ];
+
+// Mobile bottom nav gets its own order: Home sits center, Projects/Career to
+// its left, Business/Growth to its right (per Neil's layout — the sidebar
+// doesn't have a "center", so it just uses the canonical order above).
+const BOTTOM_ORDER = ['projects', 'career', 'home', 'business', 'growth'];
+const BOTTOM_TABS = BOTTOM_ORDER.map((id) => TABS.find((t) => t.id === id));
 
 function useTheme() {
   const [theme, setTheme] = useState(() => {
@@ -36,14 +42,15 @@ function useTheme() {
 
 function App() {
   const [active, setActive] = useState(() => {
-    const saved = loadStore('activeTab', 'projects');
-    return TABS.some((t) => t.id === saved) ? saved : 'projects';
+    const saved = loadStore('activeTab', 'home');
+    return TABS.some((t) => t.id === saved) ? saved : 'home';
   });
   const [theme, setTheme] = useTheme();
   useEffect(() => saveStore('activeTab', active), [active]);
 
   const tab = TABS.find((t) => t.id === active) || TABS[0];
   const Active = tab.component;
+  const isHome = tab.id === 'home';
 
   return html`<div class="app" style=${{ '--accent': tab.accent }}>
     <aside class="sidebar">
@@ -78,7 +85,7 @@ function App() {
     </aside>
 
     <main class="content">
-      <header class="content-head">
+      ${!isHome && html`<header class="content-head">
         <div class="head-title" style=${{ '--accent': tab.accent }}>
           <${Icon} name=${tab.icon} size=${22} />
           <h1>${tab.label}</h1>
@@ -90,14 +97,14 @@ function App() {
             <${Icon} name=${theme === 'dark' ? 'sun' : 'moon'} size=${18} />
           </button>
         </div>
-      </header>
-      <div class="content-body">
-        <${Active} accent=${tab.accent} />
+      </header>`}
+      <div class=${`content-body ${isHome ? 'home-active' : ''}`}>
+        <${Active} accent=${tab.accent} onNavigate=${setActive} theme=${theme} setTheme=${setTheme} />
       </div>
     </main>
 
     <nav class="bottom-nav">
-      ${TABS.map(
+      ${BOTTOM_TABS.map(
         (t) => html`<button
           key=${t.id}
           class=${`bottom-item ${t.id === active ? 'active' : ''}`}

@@ -16,7 +16,7 @@ const BRANCH = 'main';
 export const SYNC_KEYS = [
   'timeline', 'glossary', 'resources', 'projects',
   'career-roles', 'career-companies', 'career-applications', 'career-networking',
-  'career-interview-prep', 'skills',
+  'career-interview-prep', 'skills', 'business-ventures',
 ];
 
 const ENABLED_KEY = 'nah:sync-enabled';

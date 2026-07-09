@@ -1,7 +1,7 @@
 // Service worker for Neil AI Hub.
 // Network-first for app assets so deployed updates show up immediately when
 // online, with a cached fallback so the app still works offline.
-const CACHE = 'neil-ai-hub-v40';
+const CACHE = 'neil-ai-hub-v41';
 const ASSETS = [
   './',
   './index.html',
@@ -17,12 +17,15 @@ const ASSETS = [
   './js/github.js',
   './js/sync.js',
   './js/main.js',
+  './js/tabs/home.js',
   './js/tabs/projects.js',
   './js/tabs/timeline.js',
   './js/tabs/glossary.js',
   './js/tabs/resources.js',
   './js/tabs/career.js',
   './js/tabs/skills.js',
+  './js/tabs/business.js',
+  './js/tabs/growth.js',
 ];
 
 self.addEventListener('install', (e) => {
