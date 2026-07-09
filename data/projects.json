@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T15:10:00.000Z",
+  "updatedAt": "2026-07-08T21:20:00.000Z",
   "data": [
     {
       "id": "idea-jot",
@@ -551,8 +551,8 @@
       "folder": "~/Claude/job-search",
       "description": "Finance job search: middle-office analyst roles at reputable NYC/Jersey City firms, $80-100K+. Daily cloud digest + tracker + referral outreach.",
       "stage": "Building",
-      "lastDid": "Finished the /jobs run that started this morning: checked Gmail on all 28 sent applications (5 got a real employer acknowledgment today - Tremendous, WhiteCap x2, MUFG, Bank of America; the other 23 unchanged), regenerated the Excel tracker, and pushed both.",
-      "nextStep": "24 cards sitting in To Apply and 60 networking messages built but unsent - outreach is still the biggest lever on the response-rate problem. Next /jobs run should also check Cerberus, Natixis and both Mondrian Alpha applications, which only ever got LinkedIn's own confirmation, not a real employer reply.",
+      "lastDid": "Finished this morning's /jobs run (Gmail check + tracker regen), but the Gmail check had a bug: it missed 2 real rejections (Citi, Brown Advisory) because they arrived as brand-new email threads rather than replies, and the re-check only looked at each card's already-known thread. Neil caught it manually. Fixed both cards in the hub, fixed the /jobs playbook so re-checks always re-search instead of re-fetching a stale thread ID.",
+      "nextStep": "24 cards in To Apply, 60 unsent networking messages - outreach is still the biggest lever. Also check Cerberus/Natixis/both Mondrian Alpha applications next run (only ever got LinkedIn's own confirmation, never a real employer reply), and check whether the newly-sourced Fiduciary Trust/Franklin Templeton Client Onboarding card is a dupe of an already-rejected 2026-07-03 application.",
       "notes": "",
       "chatUrl": "",
       "liveUrl": "",
@@ -560,6 +560,11 @@
       "_created": "2026-07-02T01:25:56.754900+00:00",
       "_stagedAt": "2026-07-02T01:25:56.754900+00:00",
       "log": [
+        {
+          "id": "log-20260708-gmailcheck-fix",
+          "ts": "2026-07-08T21:20:00.000Z",
+          "text": "Neil caught 2 rejections (Citi, Brown Advisory) my Gmail check missed - they came as new threads, not replies. Fixed both cards and the /jobs step 5 process so re-checks re-search instead of re-fetching a stale thread ID."
+        },
         {
           "id": "log-20260708-gmailcheck",
           "ts": "2026-07-08T15:10:00.000Z",
