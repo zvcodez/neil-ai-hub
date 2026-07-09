@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T02:48:51.494Z",
+  "updatedAt": "2026-07-09T07:40:00.000Z",
   "data": [
     {
       "id": "idea-jot",
@@ -12,10 +12,20 @@
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
       "liveUrl": "https://zvcodez.github.io/jot/",
-      "nextStep": "Neil: reload Jot on your phone (force-close/reopen) and check: (1) log page cards have clean rounded corners with no red peeking through at rest, (2) longer notes wrap fully instead of getting cut off, (3) the page no longer pans/bounces when the keyboard is up, (4) that floating stray-cursor glitch is gone. Also still pending: real push-notification delivery test (Add to Home Screen first, iOS requires standalone mode for Web Push).",
-      "lastDid": "Fixed 3 visual/feel bugs Neil found from real phone screenshots: (1) red delete-swipe backdrop was bleeding through the rounded corners of every card at rest, not just the one being swiped -- root-caused to the legacy -webkit-overflow-scrolling:touch property (notorious for exactly this class of WebKit compositing/clipping bug, now obsolete since modern iOS has native momentum scroll) plus added isolation:isolate + matching border-radius on the delete layer as defensive fixes; (2) same root cause was very likely clipping some cards' wrapped multi-line text; (3) a floating cursor detached from the visible input, and Neil's separate complaint that the page could be swiped up/down behind the keyboard -- both traced to the page not actually being locked from iOS's native scroll/bounce (overflow:hidden alone isn't enough), fixed with position:fixed + overscroll-behavior:none on html/body and touch-action:none on the capture page specifically. Verified no functional regressions in Chrome (capture, swipe-reveal, multi-line wrap all still work) but the underlying bugs are iOS-Safari-specific rendering behavior I can't reproduce/prove locally -- deployed and awaiting Neil's phone confirmation.",
+      "nextStep": "Neil: reload Jot once on your phone (this will be the last manual reload needed -- auto-update handles it from here on). Check: (1) log page cards have clean rounded corners with no red peeking through, (2) longer notes wrap fully, (3) page doesn't pan/bounce with the keyboard up, (4) no stray floating cursor. Also still pending: real push-notification delivery test (Add to Home Screen first, iOS requires standalone mode for Web Push).",
+      "lastDid": "Shipped two more fixes after the visual-bug pass: (1) service worker was letting GitHub Pages' max-age=600 HTTP cache serve stale JS/CSS after a deploy, so Neil sometimes saw old behavior even after reloading -- fixed by bypassing HTTP cache on fetch/install; (2) went further and built proper PWA auto-update (checks for a new service worker on foreground + every 60s, auto-reloads once it takes control) so Neil never has to manually clear cache again for any future update to land. Deployed; both are close-the-loop fixes on top of the red-bleed/text-clipping/scroll-lock bugs from the phone screenshots earlier tonight.",
       "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
+        {
+          "id": "log-jot-7",
+          "ts": "2026-07-09T03:40:01.000Z",
+          "text": "Added proper PWA auto-update: checks for a new service worker on foreground and every 60s, auto-reloads once it takes control. No more manual cache-clearing needed for any future update."
+        },
+        {
+          "id": "log-jot-6",
+          "ts": "2026-07-09T02:59:43.000Z",
+          "text": "Fixed stale content after deploys: service worker now bypasses GitHub Pages' 10-min HTTP cache on fetch/install instead of silently serving old JS/CSS."
+        },
         {
           "id": "log-jot-5",
           "ts": "2026-07-09T02:48:51.494Z",
@@ -42,16 +52,43 @@
       "id": "mrb01wndxedb4n",
       "_created": "2026-07-07T18:45:50.089Z",
       "_stagedAt": "2026-07-07T18:45:50.089Z",
-      "name": "LINKS / Rendezvous",
-      "description": "Finds a fair middle ground based on friends living in different towns so everyone travels the same amount.",
-      "stage": "Idea",
-      "nextStep": "",
-      "lastDid": "",
+      "name": "Rendezvous",
+      "description": "Finds a fair meetup spot for friends coming from different towns so everyone travels a similar distance -- pick friends' addresses and a category, get venue options ranked by fairness, rating, or distance, on an interactive map.",
+      "stage": "Building",
+      "nextStep": "Push the local repo to GitHub (currently local-only, no remote configured) and confirm/share the live Vercel URL. Then have Neil run the full flow end-to-end on the actual deployed link: add friends' addresses, pick a category, check the map + sort options, and try the share button.",
+      "lastDid": "Built Rendezvous end-to-end over the last two days: v1 with Nominatim geocoding, Overpass venue search, ORS travel times, and Yelp ratings on Neon Postgres; then a full warm/friendly visual redesign (fixed a broken font fallback, lucide icons) restructuring the flow into homepage -> friend selection -> category planner with address autocomplete and sortable results; then map polish (clustered pins, auto-fit, a 'Let's go' native-share button, Closest sort, Yelp price level) plus a real map-crash fix; then homepage copy cleanup (dropped the how-it-works section, expanded and sharpened the rotating headlines). Deployed to Vercel (project 'rendezvous') but not yet pushed to a GitHub repo.",
       "chatUrl": "",
-      "folder": "",
+      "folder": "~/Claude/rendezvous",
       "repoUrl": "",
       "liveUrl": "",
-      "notes": ""
+      "notes": "Stack: Next.js on Vercel, Neon Postgres, Nominatim (geocoding/autocomplete), Overpass (venue search), OpenRouteService (travel times), Yelp (ratings/price). Vercel project name is 'rendezvous'. Not yet pushed to GitHub -- only exists as a local git repo right now.",
+      "log": [
+        {
+          "id": "log-rdv-5",
+          "ts": "2026-07-09T07:32:09.000Z",
+          "text": "Expanded rotating homepage headlines (no immediate repeats) and sharpened copy."
+        },
+        {
+          "id": "log-rdv-4",
+          "ts": "2026-07-09T07:20:23.000Z",
+          "text": "Dropped the how-it-works section from the homepage and vertically centered the hero for a faster tap-to-enter landing."
+        },
+        {
+          "id": "log-rdv-3",
+          "ts": "2026-07-09T03:22:44.000Z",
+          "text": "Clustered overlapping map pins, auto-fit the map to friends+venues, added Closest sort and Yelp price level to result cards, added a 'Let's go' native-share button, and fixed a real map crash from a race between the auto-fit effect and the clustering plugin."
+        },
+        {
+          "id": "log-rdv-2",
+          "ts": "2026-07-09T02:35:56.000Z",
+          "text": "Warm/friendly visual redesign (fixed a broken font variable that was silently falling back to serif, lucide icons replacing emoji). Restructured the flow into homepage -> friend selection -> category planner, added address autocomplete, made results sortable by fairness or rating."
+        },
+        {
+          "id": "log-rdv-1",
+          "ts": "2026-07-08T14:35:10.000Z",
+          "text": "Built Rendezvous v1: fair meetup finder using Nominatim geocoding, Overpass venue search, ORS travel times, and Yelp ratings on Neon Postgres."
+        }
+      ]
     },
     {
       "id": "mrarm7oa5obwcb",
