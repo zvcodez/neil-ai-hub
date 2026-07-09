@@ -4,10 +4,10 @@
     {
       "id": "idea-jot",
       "_created": "2026-07-08T03:43:36.749Z",
-      "_stagedAt": "2026-07-09T02:48:51.494Z",
+      "_stagedAt": "2026-07-09T07:40:38.880Z",
       "name": "Jot — all-in-one capture inbox",
       "description": "One inbox for reminders, Claude ideas, and quick notes instead of three separate iPhone apps — tag as you type, filter, search.",
-      "stage": "Building",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
