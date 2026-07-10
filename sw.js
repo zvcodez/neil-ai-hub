@@ -1,12 +1,15 @@
 // Service worker for Neil AI Hub.
 // Network-first for app assets so deployed updates show up immediately when
 // online, with a cached fallback so the app still works offline.
-const CACHE = 'neil-ai-hub-v41';
+const CACHE = 'neil-ai-hub-v42';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './css/styles.css',
+  './fonts/Sora-500.woff',
+  './fonts/Sora-600.woff',
+  './fonts/Sora-700.woff',
   './vendor/react.production.min.js',
   './vendor/react-dom.production.min.js',
   './vendor/htm.umd.js',

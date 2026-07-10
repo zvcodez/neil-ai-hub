@@ -53,9 +53,18 @@ function App() {
   const isHome = tab.id === 'home';
 
   return html`<div class="app" style=${{ '--accent': tab.accent }}>
+    <div class="ambient"><span class="a1"></span><span class="a2"></span></div>
     <aside class="sidebar">
       <div class="brand">
-        <span class="brand-mark">NP</span>
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 40 40">
+          <rect x="1" y="1" width="38" height="38" rx="11" fill="var(--surface-2)" stroke="var(--border)" />
+          <line x1="13" y1="15" x2="27" y2="13" stroke="var(--text-muted)" stroke-width="1.2" opacity="0.5" />
+          <line x1="13" y1="15" x2="20" y2="27" stroke="var(--text-muted)" stroke-width="1.2" opacity="0.5" />
+          <line x1="27" y1="13" x2="20" y2="27" stroke="var(--text-muted)" stroke-width="1.2" opacity="0.5" />
+          <circle cx="13" cy="15" r="4.2" fill="var(--accent)" />
+          <circle cx="27" cy="13" r="3.4" fill="var(--violet)" />
+          <circle cx="20" cy="27" r="3.6" fill="var(--gold)" />
+        </svg>
         <div class="brand-text">
           <strong>Neil AI Hub</strong>
           <small>Mission control</small>

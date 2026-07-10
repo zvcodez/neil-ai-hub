@@ -31,6 +31,7 @@ const ICON_PATHS = {
   alert: '<circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/>',
   cloud: '<path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6.5 19z"/>',
   'cloud-off': '<path d="M3 3l18 18"/><path d="M17.5 19a4.5 4.5 0 0 0 2.9-7.9M8.3 6.3A6 6 0 0 1 18 10a4.5 4.5 0 0 1 .5 9H7"/>',
+  back: '<path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>',
 };
 
 export function Icon({ name, size = 18, fill = false }) {
@@ -286,4 +287,24 @@ export function useConfirm() {
   return (msg, fn) => {
     if (window.confirm(msg)) fn();
   };
+}
+
+// ---- Mission-control stat primitives ----------------------------------------
+// Big number + label, for "at a glance" facts (project age, journal count...).
+export function StatTile({ value, label, color }) {
+  return html`<div class="stat-tile" style=${color ? { '--stat-color': color } : undefined}>
+    <div class="stat-num">${value}</div>
+    <div class="stat-lbl">${label}</div>
+  </div>`;
+}
+
+// Tiny inline bar chart from an array of numbers — no dependency, pure SVG-free
+// divs so it inherits theme colors for free. Renders nothing for <2 points
+// (no fake-looking flat line off a single data point).
+export function Sparkline({ data = [], color }) {
+  if (data.length < 2) return null;
+  const max = Math.max(1, ...data);
+  return html`<div class="spark" style=${color ? { '--stat-color': color } : undefined}>
+    ${data.map((v, i) => html`<i key=${i} style=${{ height: `${Math.max(6, (v / max) * 100)}%` }}></i>`)}
+  </div>`;
 }

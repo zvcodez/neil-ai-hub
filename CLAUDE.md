@@ -50,10 +50,29 @@ GitHub username: **zvcodez**. Live at **https://zvcodez.github.io/neil-ai-hub/**
   gets its own compact theme/sync footer since the sidebar is hidden there.
 - `js/tabs/*.js` — one file per tab, plus `home.js`, `growth.js` (career.js and
   growth.js each render sub-tabs; business.js has its own Overview + Ventures).
-- `js/tabs/projects.js` — **Projects pipeline** (kanban over store key `projects`).
-  Manual cards at any stage (Idea→Discussing→Planning→Building→Live), each with a
-  Claude chat link, GitHub repo/live links, and an **Open in Claude Code** launch
-  button. Self-contained (no longer uses `github.js`/repo auto-fetch).
+- `js/tabs/projects.js` — **Projects** (store key `projects`). Two views via the
+  toolbar `Segmented`: **Pipeline** (3 fixed-width columns, Idea/Building/Live,
+  cards stacked *downward* within each column — each column scrolls
+  independently on desktop, capped to the viewport, so a big stage doesn't push
+  Live off the bottom of the page) and **All Apps** (flat alphabetical list of
+  every project regardless of stage — the "find this one by name" view).
+  Board/list cards are deliberately light — name + one-line description + an
+  **Open in Claude Code** launch button if `folder` is set — click anywhere else
+  on a card/row to open the full **detail view** (`ProjectDetail`, same
+  component from either entry point). Detail is a full `content-body` takeover
+  (not a modal) with a `← Back to Projects` button; opening/closing it uses the
+  native View Transitions API (`document.startViewTransition` +
+  `ReactDOM.flushSync`, see `runTransition` in `projects.js`) so the clicked
+  card visibly morphs into the hero title — falls back to an instant swap if
+  unsupported or the user has reduced-motion on. Detail content order: stage +
+  version pills → name → description → **live URL** (prominent, right after the
+  description) grouped with Open-in-Claude-Code/repo/chat as one actions row →
+  next step / just did (inline-editable, same click-to-edit pattern the card
+  used to have) → **stats** (`StatTile`/`Sparkline` from `components.js`: days
+  old, days in current stage, journal count, last touched, weekly activity
+  sparkline — all derived from `_created`/`_stagedAt`/`log`, nothing new to keep
+  in sync) → notes → journal log. Self-contained (no longer uses
+  `github.js`/repo auto-fetch).
 - `js/tabs/business.js` — **Business** tab (store key `business-ventures`), for
   side-venture ideas separate from the Projects pipeline — money-focused (monthly
   revenue/cost, customers) rather than build-focused. **Overview** sub-tab rolls up
@@ -72,6 +91,23 @@ GitHub username: **zvcodez**. Live at **https://zvcodez.github.io/neil-ai-hub/**
   app lives in `~/Applications` (not committed); re-run `launcher/install.sh` to
   rebuild. Mac-only; button is a no-op on phone/other devices.
 - `sw.js` — service worker (network-first; bump CACHE version on changes).
+
+## Design system
+- **Display font**: Sora (self-hosted, `fonts/Sora-{500,600,700}.woff`,
+  `@font-face` in `css/styles.css`, `--font-display` var). Used for headlines/
+  titles/stat numbers only (`h1`, `.ppl-title`, `.pd-hero-name`, `.stat-num`,
+  `.brand-text strong`) — body text stays on the system font stack.
+- **Ambient layer**: a fixed, very-low-opacity two-blob gradient wash
+  (`.ambient`, rendered once in `main.js`'s app shell) carries Home's
+  atmosphere through every tab, not just the landing screen. `--amb-op` is the
+  opacity knob (light/dark themes set it separately).
+- **Brand mark**: inline SVG node-cluster mark (three dots in the accent trio,
+  thin connecting lines) in `.brand`, replacing the old flat "NP" square.
+- **Mission-control stat primitives**: `StatTile`/`Sparkline` in
+  `components.js` — big Sora numbers + sparkline bars, pure CSS/SVG-free (divs
+  sized by inline `height%`), no charting dependency. Currently only consumed
+  by the Projects detail view; reuse them if Home/Business ever want the same
+  treatment.
 
 ## Data + sync
 - Data lives in **localStorage** (keys prefixed `nah:`) as the live cache.
@@ -92,11 +128,13 @@ Project shape (omit/blank what's unknown):
 `id` (unique string), `_created` (ISO), `name`, `description` (one-line),
 `stage` (Idea | Building | Live), `_stagedAt` (ISO the
 project entered its current stage — set this to now whenever you change `stage`,
-so the hub orders projects within a stage chronologically), `folder` (e.g.
-`~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep` ("what's next"),
-`lastDid` ("what we just did"), `notes`, `log` (journal: array of
-`{ id, ts (ISO), text }`, newest-first — a running history of sessions/progress
-shown in the card's "Open details" view).
+so the hub orders projects within a stage chronologically), `version` (free
+text, e.g. "v1.2" or "MVP" — shown as a small tag on the detail view, optional),
+`folder` (e.g. `~/Claude/foo`), `chatUrl`, `repoUrl`, `liveUrl`, `nextStep`
+("what's next"), `lastDid` ("what we just did"), `notes`, `log` (journal: array
+of `{ id, ts (ISO), text }`, newest-first — a running history of
+sessions/progress shown in the project's detail view, and the source of the
+"last touched" stat and activity sparkline there).
 
 To write a change:
 1. Read `data/projects.json` (shape `{ "updatedAt": <ISO>, "data": [ … ] }`).
@@ -125,13 +163,27 @@ mission-control.
    table: split into a **public app repo + separate private data repo** (small
    change in `js/sync.js` to point at the private repo for data).
 3. PNG app icons are generated by a pure-Python script (no PIL); SVG is primary.
-4. **Redesign v1 shipped 2026-07-09** (see Structure section for what changed:
-   Home/Business/Growth tabs, new accent trio + light-glass touches). Neil
-   reviewed it locally (Mac + phone over LAN) and approved; it's deployed live.
-   He said explicitly there's **more redesign/IA discussion still to come** but
-   hadn't gotten into specifics yet when this session ended — next session
-   should ask him what's next rather than assuming, don't just keep iterating
-   on the same four tabs unprompted.
+4. **Redesign v1 shipped 2026-07-09** (Home/Business/Growth tabs, new accent
+   trio + light-glass touches). Approved and deployed.
+5. **Redesign v2 shipped 2026-07-09** (same day, second session) — Neil said v1
+   still felt "low-budget, like Notion." This pass added the identity layer
+   (Sora font, brand mark, ambient wash — see Design system section) and
+   rebuilt Projects: simplified cards, a new alphabetical **All Apps** view,
+   and the modal detail view replaced with a full drill-in screen using the
+   View Transitions API for a "card expands into itself" animation. Iterated
+   twice on layout before landing: first tried a single-page stacked-sections
+   layout (rejected — Neil didn't want to scroll past all of Building to reach
+   Live), landed back on 3 fixed-width kanban columns but fixed so cards stack
+   *downward* per column with independent capped scroll (the original bug:
+   `.stage-cards` was `flex-direction: row`, so a stage like Building with 11
+   cards rendered ~3400px wide in one row — that's why "will I scroll right"
+   was a real concern, not hypothetical). Only Projects got the IA rework this
+   pass — Home/Career/Business/Growth still use the v1 layout, just inherit the
+   new font/ambient/brand automatically since those are global. Next session
+   should ask before touching those other tabs' structure.
+6. Confirm on Neil's next visit that the Sora font and ambient wash render
+   correctly on iPhone Safari (tested locally on Mac before shipping; phone
+   verification over LAN didn't happen this session).
 
 ## Conventions
 - Match the existing buildless, vendored-module style. No new dependencies.

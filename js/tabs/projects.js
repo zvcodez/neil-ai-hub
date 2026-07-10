@@ -1,9 +1,9 @@
 // Projects pipeline: every project (even ones still in planning/discussion with
 // Claude) tracked as a card that flows left→right across stages. Each card can
 // deep-link to its Claude chat and launch Claude Code in its local folder.
-import { html, useState, useMemo, useEffect, useRef, useStore, uid, fmtDate, matchesQuery } from '../core.js';
+import { html, useState, useMemo, useEffect, useRef, useStore, uid, fmtDate, relativeDate, matchesQuery, ReactDOM } from '../core.js';
 import {
-  Button, Badge, Icon, IconButton, SearchBox, Segmented, Modal, Form, EmptyState, useConfirm,
+  Button, Badge, Icon, IconButton, SearchBox, Segmented, Modal, Form, EmptyState, useConfirm, StatTile, Sparkline,
 } from '../components.js';
 
 const STAGES = ['Idea', 'Building', 'Live'];
@@ -25,6 +25,49 @@ function launchUrl(folder) {
 }
 function shellCommand(folder) {
   return `cd "${(folder || '').trim()}" && claude`;
+}
+
+// Strip the scheme (and trailing slash) off a URL for compact display, e.g.
+// "https://zvcodez.github.io/jot/" -> "zvcodez.github.io/jot".
+function prettyUrl(url) {
+  try {
+    const u = new URL(url);
+    const path = u.pathname === '/' ? '' : u.pathname.replace(/\/$/, '');
+    return u.host + path;
+  } catch (e) {
+    return url;
+  }
+}
+
+// Age / activity facts for the detail view's stat tiles — derived from data
+// that's already there (_created, _stagedAt, log) rather than tracked
+// separately, so there's nothing new to keep in sync.
+function computeStats(p) {
+  const day = 86400000;
+  const now = Date.now();
+  const log = Array.isArray(p.log) ? p.log : [];
+  const created = p._created ? new Date(p._created).getTime() : null;
+  const staged = p._stagedAt ? new Date(p._stagedAt).getTime() : created;
+  const daysOld = created != null && !isNaN(created) ? Math.max(0, Math.floor((now - created) / day)) : '—';
+  const daysInStage = staged != null && !isNaN(staged) ? Math.max(0, Math.floor((now - staged) / day)) : '—';
+  const lastTs = log[0]?.ts || p._stagedAt || p._created;
+  const lastTouched = lastTs ? relativeDate(lastTs) : '—';
+
+  // Weekly journal-entry counts, last 8 weeks — only shown once there's
+  // enough history to look like a real trend rather than one lonely bar.
+  let sparkline = null;
+  if (log.length >= 2) {
+    const weeks = new Array(8).fill(0);
+    let any = false;
+    log.forEach((e) => {
+      const t = new Date(e.ts).getTime();
+      if (isNaN(t)) return;
+      const weeksAgo = Math.floor((now - t) / (7 * day));
+      if (weeksAgo >= 0 && weeksAgo < 8) { weeks[7 - weeksAgo] += 1; any = true; }
+    });
+    if (any) sparkline = weeks;
+  }
+  return { daysOld, daysInStage, lastTouched, sparkline };
 }
 
 // "New with Claude": open Claude Code in the hub repo, pre-seeded to interview
@@ -70,24 +113,29 @@ function startUrl(p) {
   return launchUrl(HUB_FOLDER) + '?prompt=' + encodeURIComponent(prompt);
 }
 
+const REDUCE_MOTION = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export function ProjectsTab({ accent }) {
   const [projects, setProjects] = useStore('projects', []);
   const [query, setQuery] = useState('');
-  const [view, setView] = useState('pipeline');
+  const [view, setView] = useState('pipeline'); // 'pipeline' | 'apps'
   const [stageFilter, setStageFilter] = useState('All');
   const [modal, setModal] = useState(null); // { editing }
   const [detailId, setDetailId] = useState(null); // project id for the detail view
+  const [transitionId, setTransitionId] = useState(null); // id morphing between card <-> hero
   const [dragId, setDragId] = useState(null);
   const confirm = useConfirm();
 
   const fields = [
     { name: 'name', label: 'Project name', required: true },
     { name: 'description', label: 'Short description', placeholder: 'One line: what this project is',
-      help: 'Shown prominently on the card so it’s easy to identify at a glance.' },
+      help: 'Shown on the card and at the top of the expanded view.' },
     { name: 'stage', label: 'Stage', type: 'select', options: stageOptions },
+    { name: 'version', label: 'Version', placeholder: 'v1.2 or "MVP"',
+      help: 'Shown as a small tag on the expanded view. Free text, optional.' },
     { name: 'nextStep', label: 'Next step', placeholder: 'The next concrete thing to do' },
     { name: 'lastDid', label: 'What we just did', placeholder: 'Most recent progress',
-      help: 'Auto-updated by Claude Code as you work; shown on the card.' },
+      help: 'Auto-updated by Claude Code as you work; shown on the expanded view.' },
     { name: 'chatUrl', label: 'Claude chat link', type: 'url', placeholder: 'https://claude.ai/chat/…',
       help: 'Paste the URL from the address bar of the Claude conversation. Clicking reopens it.' },
     { name: 'folder', label: 'Local folder', placeholder: '~/Claude/my-project', mono: true,
@@ -120,6 +168,22 @@ export function ProjectsTab({ accent }) {
 
   const remove = (p) => confirm(`Delete "${p.name}"?`, () => setProjects(projects.filter((x) => x.id !== p.id)));
 
+  // Expand/collapse a card into the full detail screen with a native "shared
+  // element" morph (View Transitions API) — the clicked card's title and the
+  // detail hero share a view-transition-name for one frame so the browser
+  // animates between them. No-op fallback (instant swap) if unsupported or
+  // the user has reduced motion on.
+  const runTransition = (fn) => {
+    if (!REDUCE_MOTION() && document.startViewTransition) {
+      const t = document.startViewTransition(() => ReactDOM.flushSync(fn));
+      t.finished.catch(() => {}).finally(() => setTransitionId(null));
+    } else {
+      fn();
+    }
+  };
+  const openDetail = (id) => { setTransitionId(id); runTransition(() => setDetailId(id)); };
+  const closeDetail = () => { setTransitionId(detailId); runTransition(() => setDetailId(null)); };
+
   const detailProject = detailId ? projects.find((p) => p.id === detailId) : null;
 
   const filtered = useMemo(
@@ -151,10 +215,21 @@ export function ProjectsTab({ accent }) {
       .filter((p) => normStage(p) === stage)
       .sort((a, b) => (a._stagedAt || a._created || '').localeCompare(b._stagedAt || b._created || ''));
 
-  const card = (p, showStage) => {
+  // Everything, alphabetically — the "find this one by name" view once the
+  // count grows past what a board scan is good for.
+  const allSorted = useMemo(
+    () => [...projects]
+      .filter((p) => matchesQuery(query, p.name, p.notes, p.nextStep))
+      .sort((a, b) => (a.name || '').toLowerCase().localeCompare((b.name || '').toLowerCase())),
+    [projects, query]
+  );
+
+  // Simplified board card: name + one-line description + (if it has a folder)
+  // the one-tap launch button. Everything else — editing, links, stats,
+  // journal — lives in the expanded detail view a click away.
+  const card = (p) => {
     const stage = normStage(p);
     const menuItems = [
-      { label: 'Open details', icon: 'external', onClick: () => setDetailId(p.id) },
       p.repoUrl && { label: 'Open repo on GitHub', icon: 'github', onClick: () => window.open(p.repoUrl, '_blank', 'noreferrer') },
       p.folder && { label: 'Copy terminal command', icon: 'shortcuts', onClick: () => navigator.clipboard?.writeText(shellCommand(p.folder)) },
       { label: 'Edit', icon: 'edit', onClick: () => setModal({ editing: p }) },
@@ -172,68 +247,50 @@ export function ProjectsTab({ accent }) {
 
     return html`<div
       class="ppl-card" key=${p.id} style=${{ '--stage': stageColor[stage] }}
-      draggable=${view === 'pipeline'}
+      draggable=${true} tabindex="0"
       onDragStart=${() => setDragId(p.id)} onDragEnd=${() => setDragId(null)}
+      onClick=${(e) => { if (e.target.closest('.ppl-launch, .card-menu')) return; openDetail(p.id); }}
+      onKeyDown=${(e) => { if (e.key === 'Enter' && !e.target.closest('.ppl-launch, .card-menu')) openDetail(p.id); }}
     >
       <div class="ppl-head">
-        <h3 class="ppl-title ppl-title-link" title="Open details"
-          onClick=${() => setDetailId(p.id)}>${p.name}</h3>
-        <${IconButton} name="expand" title="Open details" onClick=${() => setDetailId(p.id)} />
+        <h3 class="ppl-title" style=${transitionId === p.id ? { viewTransitionName: 'project-hero' } : undefined}>${p.name}</h3>
         <${CardMenu} items=${menuItems} />
       </div>
 
-      ${showStage && html`<div><${Badge} color=${stageColor[stage]}>${stage}<//></div>`}
-
-      <${InlineText} variant="desc" value=${p.description}
-        placeholder="One line: what this project is" addLabel="+ Add description"
-        onSave=${(v) => patchProject(p.id, { description: v })} />
-      <${InlineText} variant="next" label="Next" value=${p.nextStep}
-        placeholder="What's the next step?" addLabel="+ Add next step"
-        onSave=${(v) => patchProject(p.id, { nextStep: v })} />
-      <${InlineText} variant="did" label="Just did" value=${p.lastDid} hideWhenEmpty=${true}
-        placeholder="Most recent progress"
-        onSave=${(v) => patchProject(p.id, { lastDid: v })} />
-      ${p.notes && html`<${Notes} text=${p.notes} />`}
+      <p class=${`ppl-card-desc ${p.description ? '' : 'empty'}`}>${p.description || 'No description yet'}</p>
 
       ${p.folder
-        ? html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
-            <${Icon} name="shortcuts" size=${16} /> Open in Claude Code
+        ? html`<a class="ppl-launch" href=${resumeUrl(p.folder)} onClick=${(e) => e.stopPropagation()} title=${`Open ${p.folder} in Claude Code`}>
+            <${Icon} name="shortcuts" size=${14} /> Open in Claude Code
           </a>`
-        : html`<a class="ppl-launch" href=${startUrl(p)} title="Start this in Claude Code (opens in the hub)">
-            <${Icon} name="shortcuts" size=${16} /> Start in Claude Code
+        : html`<a class="ppl-launch" href=${startUrl(p)} onClick=${(e) => e.stopPropagation()} title="Start this in Claude Code (opens in the hub)">
+            <${Icon} name="shortcuts" size=${14} /> Start in Claude Code
           </a>`}
-
-      ${(p.chatUrl || p.liveUrl) && html`<div class="ppl-secondary">
-        ${p.chatUrl && html`<a class="ppl-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
-          <${Icon} name="ideas" size=${14} /> Chat<//>`}
-        ${p.liveUrl && html`<a class="ppl-link" href=${p.liveUrl} target="_blank" rel="noreferrer">
-          <${Icon} name="external" size=${14} /> Live<//>`}
-      </div>`}
     </div>`;
   };
 
   return html`<div class="collection" style=${{ '--accent': accent }}>
-    <div class="toolbar">
+    ${!detailProject && html`<div class="toolbar">
       <${SearchBox} value=${query} onChange=${setQuery} placeholder="Search projects..." />
-      <${Segmented} options=${[{ value: 'pipeline', label: 'Pipeline' }, { value: 'grid', label: 'Grid' }]}
+      <${Segmented} options=${[{ value: 'pipeline', label: 'Pipeline' }, { value: 'apps', label: 'All Apps' }]}
         value=${view} onChange=${setView} />
       <div class="toolbar-spacer"></div>
       <${Button} variant="ghost" icon="plus" onClick=${() => setModal({ editing: null })}>Add manually<//>
       <a class="btn btn-primary" href=${discussUrl()} title="Open Claude Code and talk through a new project — it files it for you">
         <${Icon} name="shortcuts" size=${15} /> New with Claude
       </a>
-    </div>
+    </div>`}
 
-    ${projects.length > 0 && html`<div class="filter-group ppl-stage-filter">
+    ${!detailProject && projects.length > 0 && view === 'pipeline' && html`<div class="filter-group ppl-stage-filter">
       <span class="filter-label">Stage</span>
       <${Segmented} options=${stageFilterOptions} value=${stageFilter} onChange=${setStageFilter} />
     </div>`}
 
-    ${projects.length === 0 &&
+    ${!detailProject && projects.length === 0 &&
     html`<${EmptyState} icon="projects" text="No projects yet."
-      hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards left→right as they progress." />`}
+      hint="Add a project at any stage — even one that's just an idea or a Claude chat. Drag cards up/down to reorder, or use the menu to move stages." />`}
 
-    ${projects.length > 0 && view === 'pipeline' &&
+    ${!detailProject && projects.length > 0 && view === 'pipeline' &&
     html`<div class=${`projects-board ${dragId ? 'dragging' : ''}`}>
       ${STAGES.filter((stage) => stageFilter === 'All' || stage === stageFilter).map((stage) => {
         const col = inStage(stage);
@@ -244,35 +301,51 @@ export function ProjectsTab({ accent }) {
           <div class="stage-head">
             <span class="dot"></span>${stage}<span class="stage-count">${col.length || ''}</span>
           </div>
-          <div class="stage-cards">${col.map((p) => card(p, false))}</div>
+          <div class="stage-cards">${col.map((p) => card(p))}</div>
         </section>`;
       })}
     </div>`}
 
-    ${projects.length > 0 && view === 'grid' &&
-    html`<div class="cards-grid ppl-grid">${filtered.map((p) => card(p, true))}</div>`}
+    ${!detailProject && projects.length > 0 && view === 'apps' &&
+    html`<div class="apps-list">
+      ${allSorted.map((p) => {
+        const stage = normStage(p);
+        return html`<div class="apps-row" key=${p.id} tabindex="0"
+          onClick=${() => openDetail(p.id)}
+          onKeyDown=${(e) => { if (e.key === 'Enter') openDetail(p.id); }}>
+          <span class="dot" style=${{ background: stageColor[stage] }}></span>
+          <span class="aname">${p.name}</span>
+          <span class=${`adesc ${p.description ? '' : 'empty'}`}>${p.description || 'No description yet'}</span>
+          <span class="aarrow"><${Icon} name="back" size=${14} /></span>
+        </div>`;
+      })}
+      ${allSorted.length === 0 && html`<p class="app-section-empty muted-text" style=${{ padding: '18px' }}>No projects match “${query}”.</p>`}
+    </div>`}
+
+    ${detailProject &&
+    html`<${ProjectDetail} project=${detailProject} accent=${accent}
+      heroTransitioning=${transitionId === detailProject.id}
+      onClose=${closeDetail}
+      onEdit=${() => setModal({ editing: detailProject })}
+      onMove=${(s) => moveTo(detailProject.id, s)}
+      patch=${(patch) => patchProject(detailProject.id, patch)} />`}
 
     ${modal &&
     html`<${Modal} title=${modal.editing ? 'Edit project' : 'New project'} accent=${accent} onClose=${() => setModal(null)}>
       <${Form} fields=${fields} initial=${modal.editing} onSubmit=${save} onCancel=${() => setModal(null)} />
     <//>`}
-
-    ${detailProject &&
-    html`<${DetailModal} project=${detailProject} accent=${accent}
-      onClose=${() => setDetailId(null)}
-      onEdit=${() => { setModal({ editing: detailProject }); setDetailId(null); }}
-      onMove=${(s) => moveTo(detailProject.id, s)}
-      patch=${(patch) => patchProject(detailProject.id, patch)} />`}
   </div>`;
 }
 
-// Deep "open it up" view for a single project: everything about it in one place,
-// plus a running Journal so you can come back weeks later and see exactly what
-// you were doing and where you left off.
-function DetailModal({ project: p, accent, onClose, onEdit, onMove, patch }) {
+// Full drill-in detail screen (not a modal) for a single project: everything
+// about it in one place — live link right after the description, version/
+// stage at the top, stats/trends, and a running Journal so you can come back
+// weeks later and see exactly what you were doing and where you left off.
+function ProjectDetail({ project: p, accent, heroTransitioning, onClose, onEdit, onMove, patch }) {
   const [draft, setDraft] = useState('');
   const stage = normStage(p);
   const log = Array.isArray(p.log) ? p.log : [];
+  const stats = useMemo(() => computeStats(p), [p]);
 
   const addEntry = () => {
     const text = draft.trim();
@@ -282,78 +355,97 @@ function DetailModal({ project: p, accent, onClose, onEdit, onMove, patch }) {
   };
   const delEntry = (id) => patch({ log: log.filter((e) => e.id !== id) });
 
-  const field = (label, value) => value && html`<div class="pd-field">
-    <div class="pd-label">${label}</div>
-    <div class="pd-value">${value}</div>
-  </div>`;
+  return html`<div class="pd" style=${{ '--stage': stageColor[stage], '--accent': accent }}>
+    <button class="pd-back" onClick=${onClose}><${Icon} name="back" size=${15} /> Back to Projects</button>
 
-  return html`<${Modal} title=${p.name} accent=${accent} onClose=${onClose}>
-    <div class="pd">
-      <div class="pd-toprow">
-        <${Badge} color=${stageColor[stage]}>${stage}<//>
-        <div class="pd-move">
-          ${STAGES.map((s) => html`<button key=${s} type="button"
-            class=${`pd-move-btn ${s === stage ? 'current' : ''}`}
-            style=${{ '--stage': stageColor[s] }}
-            disabled=${s === stage}
-            onClick=${() => onMove(s)}>${s}</button>`)}
-        </div>
-        <div class="pd-top-spacer"></div>
-        <${Button} variant="ghost" icon="edit" onClick=${onEdit}>Edit<//>
-      </div>
-
-      ${field('What it is', p.description)}
-      ${field('Next step', p.nextStep)}
-      ${field('Just did', p.lastDid)}
-      ${p.notes && html`<div class="pd-field">
-        <div class="pd-label">Notes</div>
-        <${Notes} text=${p.notes} />
-      </div>`}
-
-      <div class="pd-links">
-        ${p.folder
-          ? html`<a class="ppl-launch" href=${resumeUrl(p.folder)} title=${`Open ${p.folder} in Claude Code`}>
-              <${Icon} name="shortcuts" size=${16} /> Open in Claude Code<//>`
-          : html`<a class="ppl-launch" href=${startUrl(p)} title="Start this in Claude Code (opens in the hub)">
-              <${Icon} name="shortcuts" size=${16} /> Start in Claude Code<//>`}
-        ${p.chatUrl && html`<a class="ppl-link chat" href=${p.chatUrl} target="_blank" rel="noreferrer">
-          <${Icon} name="ideas" size=${14} /> Chat<//>`}
-        ${p.repoUrl && html`<a class="ppl-link" href=${p.repoUrl} target="_blank" rel="noreferrer">
-          <${Icon} name="github" size=${14} /> Repo<//>`}
-        ${p.liveUrl && html`<a class="ppl-link" href=${p.liveUrl} target="_blank" rel="noreferrer">
-          <${Icon} name="external" size=${14} /> Live<//>`}
-      </div>
-
-      ${p.folder && html`<div class="pd-meta-line">${p.folder}</div>`}
-      <div class="pd-meta-line">
-        ${p._created ? `Added ${fmtDate(p._created)}` : ''}
-        ${p._stagedAt ? ` · In ${stage} since ${fmtDate(p._stagedAt)}` : ''}
-      </div>
-
-      <div class="pd-journal">
-        <div class="pd-label">Journal <span class="pd-count">${log.length || ''}</span></div>
-        <p class="pd-hint">Log what you worked on so you can pick it back up later.</p>
-        <div class="pd-entry-new">
-          <textarea class="pd-textarea" rows=${2} value=${draft}
-            placeholder="What did you do / what's going on with this project?"
-            onInput=${(e) => setDraft(e.target.value)}
-            onKeyDown=${(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); addEntry(); } }} />
-          <${Button} variant="primary" icon="plus" onClick=${addEntry}>Add entry<//>
-        </div>
-        ${log.length === 0
-          ? html`<p class="pd-empty">No entries yet.</p>`
-          : html`<ul class="pd-log">
-            ${log.map((e) => html`<li class="pd-log-item" key=${e.id}>
-              <div class="pd-log-head">
-                <span class="pd-log-date">${fmtDate(e.ts)}</span>
-                <${IconButton} name="trash" title="Delete entry" danger=${true} onClick=${() => delEntry(e.id)} />
-              </div>
-              <div class="pd-log-text">${e.text}</div>
-            </li>`)}
-          </ul>`}
+    <div class="pd-toppills">
+      <${Badge} color=${stageColor[stage]}>${stage}<//>
+      ${p.version && html`<span class="pd-pill version">${p.version}</span>`}
+      <div class="pd-move">
+        ${STAGES.map((s) => html`<button key=${s} type="button"
+          class=${`pd-move-btn ${s === stage ? 'current' : ''}`}
+          style=${{ '--stage': stageColor[s] }}
+          disabled=${s === stage}
+          onClick=${() => onMove(s)}>${s}</button>`)}
       </div>
     </div>
-  <//>`;
+
+    <h1 class="pd-hero-name" style=${heroTransitioning ? { viewTransitionName: 'project-hero' } : undefined}>${p.name}</h1>
+    ${p.description
+      ? html`<p class="pd-hero-desc">${p.description}</p>`
+      : html`<p class="pd-hero-desc muted-text">No description yet.</p>`}
+
+    <div class="pd-actions">
+      ${p.liveUrl && html`<a class="pd-abtn live" href=${p.liveUrl} target="_blank" rel="noreferrer">
+        <${Icon} name="external" size=${15} /> ${prettyUrl(p.liveUrl)}<//>`}
+      ${p.folder
+        ? html`<a class="pd-abtn launch" href=${resumeUrl(p.folder)}><${Icon} name="shortcuts" size=${15} /> Open in Claude Code<//>`
+        : html`<a class="pd-abtn launch" href=${startUrl(p)}><${Icon} name="shortcuts" size=${15} /> Start in Claude Code<//>`}
+      ${p.repoUrl && html`<a class="pd-abtn" href=${p.repoUrl} target="_blank" rel="noreferrer"><${Icon} name="github" size=${15} /> Repo<//>`}
+      ${p.chatUrl && html`<a class="pd-abtn" href=${p.chatUrl} target="_blank" rel="noreferrer"><${Icon} name="ideas" size=${15} /> Chat<//>`}
+      <button class="pd-abtn" onClick=${onEdit}><${Icon} name="edit" size=${15} /> Edit</button>
+    </div>
+
+    <div class="pd-grid">
+      <div>
+        <div class="pd-field">
+          <div class="pd-label">Next step</div>
+          <${InlineText} variant="next" value=${p.nextStep}
+            placeholder="What's the next step?" addLabel="+ Add next step"
+            onSave=${(v) => patch({ nextStep: v })} />
+        </div>
+        <div class="pd-field">
+          <div class="pd-label">Just did</div>
+          <${InlineText} variant="did" value=${p.lastDid}
+            placeholder="Most recent progress" addLabel="+ Add what you just did"
+            onSave=${(v) => patch({ lastDid: v })} />
+        </div>
+        ${p.notes && html`<div class="pd-field">
+          <div class="pd-label">Notes</div>
+          <${Notes} text=${p.notes} />
+        </div>`}
+        ${p.folder && html`<div class="pd-meta-line">${p.folder}</div>`}
+        <div class="pd-meta-line">
+          ${p._created ? `Added ${fmtDate(p._created)}` : ''}
+          ${p._stagedAt ? ` · In ${stage} since ${fmtDate(p._stagedAt)}` : ''}
+        </div>
+      </div>
+
+      <div class="pd-stats">
+        <${StatTile} value=${stats.daysOld} label="Days old" />
+        <${StatTile} value=${stats.daysInStage} label=${`Days in ${stage}`} />
+        <${StatTile} value=${log.length} label="Journal entries" />
+        <${StatTile} value=${stats.lastTouched} label="Last touched" />
+        ${stats.sparkline && html`<div class="spark-card">
+          <div class="stat-lbl">Activity, last 8 weeks</div>
+          <${Sparkline} data=${stats.sparkline} />
+        </div>`}
+      </div>
+    </div>
+
+    <div class="pd-journal">
+      <div class="pd-label">Journal <span class="pd-count">${log.length || ''}</span></div>
+      <p class="pd-hint">Log what you worked on so you can pick it back up later.</p>
+      <div class="pd-entry-new">
+        <textarea class="pd-textarea" rows=${2} value=${draft}
+          placeholder="What did you do / what's going on with this project?"
+          onInput=${(e) => setDraft(e.target.value)}
+          onKeyDown=${(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); addEntry(); } }} />
+        <${Button} variant="primary" icon="plus" onClick=${addEntry}>Add entry<//>
+      </div>
+      ${log.length === 0
+        ? html`<p class="pd-empty">No entries yet.</p>`
+        : html`<ul class="pd-log">
+          ${log.map((e) => html`<li class="pd-log-item" key=${e.id}>
+            <div class="pd-log-head">
+              <span class="pd-log-date">${fmtDate(e.ts)}</span>
+              <${IconButton} name="trash" title="Delete entry" danger=${true} onClick=${() => delEntry(e.id)} />
+            </div>
+            <div class="pd-log-text">${e.text}</div>
+          </li>`)}
+        </ul>`}
+    </div>
+  </div>`;
 }
 
 // Click-to-edit text right on the card (no menu digging). Used for both the
@@ -419,7 +511,7 @@ function CardMenu({ items }) {
     return () => document.removeEventListener('mousedown', onDoc);
   }, [open]);
 
-  return html`<div class="card-menu" ref=${ref}>
+  return html`<div class="card-menu" ref=${ref} onClick=${(e) => e.stopPropagation()}>
     <button class="icon-btn" title="More" onClick=${() => setOpen((o) => !o)}>⋯</button>
     ${open && html`<div class="card-menu-pop">
       ${items.map((it, i) =>

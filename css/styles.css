@@ -1,6 +1,32 @@
 /* ============================================================
    Neil AI Hub — styles
    ============================================================ */
+
+/* Self-hosted display face (vendored like React/htm — no CDN, no build step).
+   Used for headlines/titles/stat numbers only; body text stays on the system
+   stack for readability. */
+@font-face {
+  font-family: 'Sora';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Sora-500.woff') format('woff');
+}
+@font-face {
+  font-family: 'Sora';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Sora-600.woff') format('woff');
+}
+@font-face {
+  font-family: 'Sora';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Sora-700.woff') format('woff');
+}
+
 :root {
   /* Accent trio carried over from the ambient-glass Home screen — each tab
      picks one of these (see js/main.js TABS) so the whole app reads as one
@@ -15,7 +41,9 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
   --sidebar-w: 232px;
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Sora', var(--font);
   --mono: 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  --amb-op: 0.055;
 }
 
 /* ---- Themes ---- */
@@ -41,6 +69,7 @@
   --home-blob-opacity: 0.55;
   --home-glass: rgba(255, 255, 255, 0.07);
   --home-glass-brd: rgba(255, 255, 255, 0.16);
+  --amb-op: 0.1;
 }
 [data-theme='light'] {
   --bg: #f1f3f7;
@@ -81,14 +110,25 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1, h3 { margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 700; }
 .icon { display: block; flex: none; }
 .muted-text { color: var(--text-muted); margin: 6px 0 0; font-size: 14px; word-break: break-word; }
 .mono { font-family: var(--mono); }
 
 /* ============================================================
+   Ambient identity layer — the atmosphere that used to live only on Home,
+   now a very low-opacity wash behind the whole shell so every tab reads as
+   one family instead of "nice landing page, generic app behind it."
+   ============================================================ */
+.ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.ambient span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: var(--amb-op); }
+.ambient .a1 { width: 36vw; height: 36vw; max-width: 460px; max-height: 460px; background: var(--accent); top: -12%; left: -8%; }
+.ambient .a2 { width: 30vw; height: 30vw; max-width: 380px; max-height: 380px; background: var(--violet); bottom: -14%; right: -6%; }
+
+/* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; min-height: 100vh; min-height: 100dvh; }
+.app { display: flex; min-height: 100vh; min-height: 100dvh; position: relative; z-index: 1; }
 
 .sidebar {
   width: var(--sidebar-w);
@@ -103,13 +143,9 @@ h1, h3 { margin: 0; }
   height: 100vh;
 }
 .brand { display: flex; align-items: center; gap: 11px; padding: 6px 8px 18px; }
-.brand-mark {
-  font-weight: 800; font-size: 15px; letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #2563eb, #f59e0b);
-  color: #fff; padding: 9px 10px; border-radius: 10px; line-height: 1;
-}
+.brand-mark { flex: none; display: block; }
 .brand-text { display: flex; flex-direction: column; }
-.brand-text strong { font-size: 15px; }
+.brand-text strong { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
 .brand-text small { color: var(--text-muted); font-size: 12px; }
 
 .nav { display: flex; flex-direction: column; gap: 3px; flex: 1; }
@@ -625,18 +661,25 @@ select, .sort select {
 /* Projects pipeline ---------------------------------------------------------*/
 /* Horizontal board: stages left→right, projects within a stage side by side.
    The board scrolls horizontally — no vertical page scrolling. */
-.projects-board { display: flex; align-items: flex-start; overflow-x: auto; padding-bottom: 12px; }
-.stage-group { display: flex; flex-direction: column; gap: 12px; padding: 0 16px; }
+/* Three fixed-width columns, cards stacked downward within each — each column
+   scrolls independently (capped to the viewport on desktop) so a big stage
+   (e.g. 11 in Building) grows a scrollbar, not an ever-taller page, and Live
+   stays one glance away instead of a scroll away. */
+.projects-board { display: flex; align-items: flex-start; overflow-x: auto; padding-bottom: 4px; }
+.stage-group { display: flex; flex-direction: column; gap: 12px; padding: 0 16px; width: 280px; flex: none; }
 .stage-group:first-child { padding-left: 2px; }
 .stage-group + .stage-group { border-left: 1px solid var(--border); }
 .stage-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; }
 .stage-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--stage); }
 .stage-count { color: var(--text-muted); font-size: 12px; }
-.stage-cards { display: flex; flex-direction: row; gap: 14px; align-items: flex-start; min-height: 60px; }
-.stage-cards .ppl-card { width: 300px; flex: none; }
+.stage-cards { display: flex; flex-direction: column; gap: 12px; min-height: 60px; }
+.stage-cards .ppl-card { width: auto; flex: none; }
 .stage-group.empty { min-width: 132px; }
-.stage-group.empty .stage-cards { width: 100px; border: 1.5px dashed var(--border); border-radius: 12px; }
+.stage-group.empty .stage-cards { min-height: 90px; border: 1.5px dashed var(--border); border-radius: 12px; }
 .projects-board.dragging .stage-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 45%, transparent); outline-offset: 5px; border-radius: 12px; }
+@media (min-width: 761px) {
+  .stage-cards { max-height: calc(100vh - 300px); overflow-y: auto; overflow-x: hidden; padding-right: 6px; padding-bottom: 4px; }
+}
 
 /* Card */
 .ppl-card {
@@ -652,9 +695,11 @@ select, .sort select {
 }
 .ppl-card:active { cursor: grabbing; }
 .ppl-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; }
-.ppl-title { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.25; flex: 1; min-width: 0; }
+.ppl-title { margin: 0; font-family: var(--font-display); font-size: 16px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; flex: 1; min-width: 0; }
 .ppl-title-link { cursor: pointer; }
 .ppl-title-link:hover { color: var(--accent); }
+.ppl-card-desc { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+.ppl-card-desc.empty { font-style: italic; opacity: 0.6; }
 /* Inline editable fields (description + next step) */
 .ppl-inline { border-radius: 10px; cursor: text; transition: background 0.12s; }
 .ppl-inline.editing { display: flex; align-items: center; cursor: default; }
@@ -700,6 +745,25 @@ select, .sort select {
 .ppl-link:hover { color: var(--text); border-color: var(--accent); }
 .ppl-link.chat:hover { color: #f97316; border-color: #f97316; }
 
+/* All Apps — flat alphabetical index of every project, any stage. Best for
+   "find this one by name" once the count grows past what a board scan is
+   good for. */
+.apps-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.apps-row { display: flex; align-items: center; gap: 14px; padding: 12px 18px; cursor: pointer; border-bottom: 1px solid var(--border); }
+.apps-row:last-child { border-bottom: none; }
+.apps-row:hover { background: var(--surface-2); }
+.apps-row .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.apps-row .aname { font-family: var(--font-display); font-weight: 600; font-size: 14px; flex: 0 0 240px; overflow-wrap: anywhere; }
+.apps-row .adesc { font-size: 12.5px; color: var(--text-muted); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.apps-row .adesc.empty { font-style: italic; opacity: 0.6; }
+.apps-row .aarrow { color: var(--text-muted); opacity: 0.5; flex: none; transform: rotate(180deg); }
+@media (max-width: 760px) {
+  .apps-row { flex-wrap: wrap; gap: 4px 14px; }
+  .apps-row .aname { flex: 1 1 100%; }
+  .apps-row .adesc { flex: 1 1 100%; white-space: normal; }
+  .apps-row .aarrow { display: none; }
+}
+
 /* Overflow / maintenance menu */
 .card-menu { position: relative; flex: none; }
 .card-menu > .icon-btn { font-size: 18px; line-height: 1; font-weight: 700; }
@@ -723,12 +787,22 @@ select, .sort select {
 .menu-check { margin-left: auto; color: var(--text-muted); }
 
 /* ============================================================
-   Project detail / journal view
+   Project detail — full drill-in screen (not a modal). Replaces the old
+   small centered dialog: a "← Back" screen the expand transition grows
+   into, so it reads as the card itself opening up, not a popup.
    ============================================================ */
-.pd { display: flex; flex-direction: column; gap: 16px; }
-.pd-toprow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
-.pd-top-spacer { flex: 1; }
-.pd-move { display: flex; gap: 4px; flex-wrap: wrap; }
+.pd { display: flex; flex-direction: column; gap: 0; max-width: 900px; }
+.pd-back {
+  display: inline-flex; align-items: center; gap: 6px; border: none; background: none; color: var(--text-muted);
+  font-size: 13.5px; font-weight: 600; cursor: pointer; padding: 6px 2px; margin-bottom: 16px; align-self: flex-start;
+}
+.pd-back:hover { color: var(--text); }
+
+.pd-toppills { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.pd-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; padding: 4px 11px; border-radius: 999px; }
+.pd-pill.stage { color: var(--stage, var(--accent)); background: color-mix(in srgb, var(--stage, var(--accent)) 15%, transparent); border: 1px solid color-mix(in srgb, var(--stage, var(--accent)) 38%, transparent); }
+.pd-pill.version { color: var(--text-muted); background: var(--surface-2); border: 1px solid var(--border); font-family: var(--font-display); font-weight: 600; }
+.pd-move { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
 .pd-move-btn {
   font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; cursor: pointer;
   background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border);
@@ -738,12 +812,38 @@ select, .sort select {
   background: color-mix(in srgb, var(--stage) 18%, transparent);
   color: var(--stage); border-color: color-mix(in srgb, var(--stage) 40%, transparent); cursor: default;
 }
-.pd-field { display: flex; flex-direction: column; gap: 4px; }
-.pd-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+.pd-hero-name { font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.015em; margin: 0 0 10px; overflow-wrap: anywhere; }
+.pd-hero-desc { font-size: 15px; line-height: 1.6; color: var(--text); max-width: 620px; margin: 0 0 20px; overflow-wrap: anywhere; }
+
+.pd-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.pd-abtn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 10px 17px; border-radius: 12px;
+  font-size: 13.5px; font-weight: 650; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.pd-abtn:hover { background: var(--surface-2); text-decoration: none; }
+.pd-abtn.live { background: linear-gradient(135deg, #10b981, color-mix(in srgb, #10b981 70%, var(--accent))); border-color: #10b981; color: #fff; box-shadow: 0 3px 14px color-mix(in srgb, #10b981 35%, transparent); }
+.pd-abtn.launch { background: linear-gradient(135deg, var(--stage, var(--accent)), color-mix(in srgb, var(--stage, var(--accent)) 70%, var(--violet))); border-color: var(--stage, var(--accent)); color: #fff; box-shadow: 0 3px 14px color-mix(in srgb, var(--stage, var(--accent)) 35%, transparent); }
+
+.pd-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 34px; align-items: start; }
+@media (max-width: 860px) { .pd-grid { grid-template-columns: 1fr; } }
+
+.pd-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.stat-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.stat-num { font-family: var(--font-display); font-weight: 700; font-size: 25px; font-variant-numeric: tabular-nums; line-height: 1; color: var(--stat-color, var(--text)); }
+.stat-lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+.spark-card { grid-column: 1 / -1; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px 12px; }
+.spark-card .stat-lbl { margin-bottom: 10px; }
+.spark { display: flex; align-items: flex-end; gap: 5px; height: 40px; }
+.spark i { flex: 1; border-radius: 3px 3px 1px 1px; background: color-mix(in srgb, var(--stat-color, var(--accent)) 55%, transparent); }
+.spark i:last-child { background: var(--stat-color, var(--accent)); }
+
+.pd-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; }
+.pd-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .pd-value { font-size: 14px; line-height: 1.5; color: var(--text); overflow-wrap: anywhere; }
-.pd-links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.pd-meta-line { font-size: 12px; color: var(--text-muted); overflow-wrap: anywhere; }
-.pd-journal { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.pd-meta-line { font-size: 12px; color: var(--text-muted); overflow-wrap: anywhere; margin-top: 4px; }
+.pd-journal { border-top: 1px solid var(--border); padding-top: 20px; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 .pd-count { color: var(--text-muted); font-weight: 500; }
 .pd-hint { margin: 0; font-size: 12px; color: var(--text-muted); }
 .pd-entry-new { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
