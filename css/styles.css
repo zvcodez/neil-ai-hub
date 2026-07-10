@@ -98,7 +98,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; overflow-x: hidden; }
+html, body { height: 100%; margin: 0; overflow-x: hidden; overscroll-behavior-y: none; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -936,6 +936,18 @@ select, .sort select {
   .searchbox { max-width: none; }
 
   /* Career / applications on phones */
+  /* Projects pipeline: the desktop board is a horizontal row of fixed-width
+     columns you glance across side by side — on a phone screen there's no
+     "glance across," so that just becomes an awkward sideways scroll on top
+     of each column's own vertical scroll. Stack stages full-width instead:
+     one scroll direction (down), and the Stage chips above become the
+     "jump to one list" control (still a stack of 1 when a single stage is
+     selected instead of "All"). */
+  .projects-board { flex-direction: column; overflow-x: hidden; align-items: stretch; }
+  .stage-group { width: 100%; padding: 0; }
+  .stage-group:first-child { padding-left: 0; }
+  .stage-group + .stage-group { border-left: none; border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px; }
+
   .subtab { padding: 10px 12px; font-size: 13.5px; }
   .app-row { padding: 10px 12px; }
   .app-row-main { min-width: 0; flex-basis: 100%; }
