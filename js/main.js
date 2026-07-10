@@ -133,9 +133,25 @@ ReactDOM.createRoot(document.getElementById('root')).render(html`<${App} />`);
 // Start the cross-device sync engine (no-op until the user enables it).
 initSync();
 
-// Register service worker for offline/PWA support.
+// Register service worker for offline/PWA support. iOS home-screen apps are
+// unreliable about ever checking for a new sw.js on their own — force a check
+// every time the app is foregrounded (covers "swipe away, tap icon again"),
+// and once a new worker takes over, reload once so the update actually shows.
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW failed', e));
+    navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+      .then((reg) => {
+        reg.update();
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') reg.update();
+        });
+      })
+      .catch((e) => console.warn('SW failed', e));
+  });
+  let reloadedForUpdate = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (reloadedForUpdate) return;
+    reloadedForUpdate = true;
+    window.location.reload();
   });
 }
