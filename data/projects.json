@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T00:54:49.970338+00:00",
+  "updatedAt": "2026-07-10T01:47:00.000Z",
   "data": [
     {
       "id": "idea-jot",
@@ -509,9 +509,14 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "nextStep": "Neil has more redesign/IA changes he wants to discuss (specifics not given yet) \u2014 ask him what's next rather than assuming.",
+      "nextStep": "Neil: check redesign v2 on Mac + phone \u2014 confirm Sora/ambient wash render correctly, the Pipeline board's independent-scroll columns feel right with the real 23 projects, the expand animation plays smoothly (and degrades gracefully on iOS Safari if View Transitions isn't supported there), and the new All Apps view is useful. Home/Career/Business/Growth still use the v1 layout by design \u2014 ask him before touching those.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-redesign-v2",
+          "ts": "2026-07-10T01:47:00.000Z",
+          "text": "Shipped and deployed redesign v2 (same day, second pass \u2014 v1 still felt \u201clow-budget, like Notion\u201d). Added an app-wide identity layer: self-hosted Sora as the display face (headlines/titles/stat numbers), a low-opacity ambient gradient wash behind the whole shell instead of just Home, an inline SVG brand mark replacing the flat \u201cNP\u201d square, and StatTile/Sparkline primitives for a mission-control stat feel. Rebuilt Projects: cards simplified to name + description + launch button (editing moved into detail), a new alphabetical All Apps list, and the old centered detail modal replaced with a full drill-in screen the clicked card morphs into via the View Transitions API. Iterated on board layout with Neil before landing: he rejected a single-page stacked-sections layout (didn't want to scroll past all of Building to reach Live), so kept the 3-column kanban but fixed a real bug in it \u2014 stage-cards was flex-direction:row, so Building's 11 cards rendered ~3400px wide in one row; now cards stack downward per column with independent capped scroll on desktop. Also added an optional `version` tag and moved the live URL to right after the description in detail, per Neil's explicit ask. Iterated with two rounds of interactive Artifact mockups (font choice, then full Projects vision) before writing any real code. Syntax-checked and smoke-tested locally (serve.sh + curl); could not visually verify in a real browser this session (no browser tool available) \u2014 Neil still needs to eyeball it on Mac + phone. sw cache v42."
+        },
         {
           "id": "log-hub-redesign-v1",
           "ts": "2026-07-09T22:41:22.000Z",
@@ -578,7 +583,7 @@
           "text": "Built and launched the hub \u2014 a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
       ],
-      "lastDid": "Shipped and deployed redesign v1: ambient-glass Home tab, new Business tab (Overview + Ventures), and a combined Growth tab (Timeline/Skills/Glossary/Resources). Neil reviewed on Mac + phone and approved."
+      "lastDid": "Shipped and deployed redesign v2 (same day, second pass \u2014 v1 still felt \u201clow-budget, like Notion\u201d). Added an app-wide identity layer: self-hosted Sora as the display face (headlines/titles/stat numbers), a low-opacity ambient gradient wash behind the whole shell instead of just Home, an inline SVG brand mark replacing the flat \u201cNP\u201d square, and StatTile/Sparkline primitives for a mission-control stat feel. Rebuilt Projects: cards simplified to name + description + launch button (editing moved into detail), a new alphabetical All Apps list, and the old centered detail modal replaced with a full drill-in screen the clicked card morphs into via the View Transitions API. Iterated on board layout with Neil before landing: he rejected a single-page stacked-sections layout (didn't want to scroll past all of Building to reach Live), so kept the 3-column kanban but fixed a real bug in it \u2014 stage-cards was flex-direction:row, so Building's 11 cards rendered ~3400px wide in one row; now cards stack downward per column with independent capped scroll on desktop. Also added an optional `version` tag and moved the live URL to right after the description in detail, per Neil's explicit ask. Iterated with two rounds of interactive Artifact mockups (font choice, then full Projects vision) before writing any real code. Syntax-checked and smoke-tested locally (serve.sh + curl); could not visually verify in a real browser this session (no browser tool available) \u2014 Neil still needs to eyeball it on Mac + phone. sw cache v42."
     },
     {
       "id": "6a403f0db2",
