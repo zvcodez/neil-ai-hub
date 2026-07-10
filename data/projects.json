@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T00:43:50.482628+00:00",
+  "updatedAt": "2026-07-10T00:54:49.970338+00:00",
   "data": [
     {
       "id": "idea-jot",
@@ -402,10 +402,15 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Decide whether to wire the new standard-odds picks + Yankees section into the actual iPhone app screens (still backend-only right now). Longer-term: build player prop bets if the Yankees section should cover more than just game-level bets; revisit the pick-selection weights once real bets have settled.",
-      "lastDid": "Picked back up the MLB model build after a mid-session restart. Added \"park factors\" so the model accounts for some ballparks being much easier to score in than others (found a real data bug along the way: a few parks got renamed mid-season by sponsors, which was quietly splitting one park's history in two -- fixed it). Locked in the best-performing settings from testing, then changed how picks get picked: now it only surfaces bets it thinks are genuinely more likely than not to win, at normal odds -- no more longshot-chasing -- and added a small \"3 strongest Yankees picks\" section. Ran it against today's real games: honestly, almost nothing qualified today under the stricter bar, which is the expected, correct behavior of being pickier, not a bug.",
+      "nextStep": "Decide whether to wire player props into the actual iPhone app screens (everything\u2019s still backend-only). Also worth a look once the odds budget resets Aug 1: whether the app can go back to checking for fresh odds more often.",
+      "lastDid": "Finished all four MLB player-prop types (Total Bases, Hits, Home Runs, Strikeouts) and wired them into the live picks board \u2014 the model now considers individual-player bets, not just game-level ones, everywhere it already recommends picks (Play of the Day, Next Best, the Yankees section). Strikeouts turned out to be the single strongest signal in the whole model. Along the way, checked the real odds-data budget and found it was on pace to run dry about two weeks before the monthly reset, so slowed down how often the app checks for fresh odds to make sure it lasts until then. One small thing intentionally left unverified for now (confirming the exact real-data shape for player props) to avoid spending more of that tight budget \u2014 it will get proven automatically the next time a real strong pick comes up.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-zve-props-complete",
+          "ts": "2026-07-10T00:54:56.784123+00:00",
+          "text": "Finished building player-prop bets (Total Bases, Hits, Home Runs, Strikeouts) and connected them into the same picks list the app already uses for Play of the Day, Next Best, and the Yankees section \u2014 individual-player bets now compete alongside team bets everywhere. Strikeout bets turned out to be the strongest signal found in the whole model so far. Also caught a real problem: the monthly odds-data allowance was on pace to run out about two weeks before it resets, so slowed down how often the app checks for fresh odds to make it last."
+        },
         {
           "id": "log-zve-mlb-parkfactors",
           "ts": "2026-07-09T22:23:13.000Z",
