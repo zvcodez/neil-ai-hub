@@ -98,7 +98,12 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; overflow-x: hidden; overscroll-behavior-y: none; }
+/* height: 100% is wrong in iOS standalone (Home Screen) mode — WebKit
+   miscalculates 100vh/100dvh there and leaves real blank space below fixed
+   elements that a normal browser tab doesn't have. -webkit-fill-available
+   is the known fix for that specific standalone-only bug; unsupported
+   browsers just ignore the line and keep the 100% above. */
+html, body { height: 100%; height: -webkit-fill-available; margin: 0; overflow-x: hidden; overscroll-behavior-y: none; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -128,7 +133,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 /* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; min-height: 100vh; min-height: 100dvh; position: relative; z-index: 1; }
+.app { display: flex; min-height: 100vh; min-height: 100dvh; min-height: -webkit-fill-available; position: relative; z-index: 1; }
 
 .sidebar {
   width: var(--sidebar-w);
