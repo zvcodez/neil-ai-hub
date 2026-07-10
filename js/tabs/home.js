@@ -27,10 +27,14 @@ function useQuickCounts() {
     const apps = loadStore('career-applications', []);
     const waiting = apps.filter((a) => !['To Apply', 'Did Not Apply', 'Offer', 'Rejected'].includes(a.status)).length;
     const ventures = loadStore('business-ventures', []);
+    const skills = loadStore('skills', []);
+    const timeline = loadStore('timeline', []);
+    const growthCount = skills.length + timeline.length;
     return {
       projects: projects.length ? `${projects.length} tracked · ${building} building` : 'Nothing tracked yet',
       career: apps.length ? `${waiting} in motion` : 'No applications yet',
       business: ventures.length ? `${ventures.length} venture${ventures.length === 1 ? '' : 's'}` : 'Start your first idea',
+      growth: growthCount ? `${skills.length} skill${skills.length === 1 ? '' : 's'} · ${timeline.length} milestone${timeline.length === 1 ? '' : 's'}` : 'Start your journey',
     };
   }, []);
 }
@@ -42,6 +46,7 @@ export function HomeTab({ onNavigate, theme, setTheme }) {
     { id: 'projects', label: 'Projects', sub: counts.projects, icon: 'projects', color: 'var(--home-blue)' },
     { id: 'career', label: 'Career', sub: counts.career, icon: 'career', color: 'var(--home-violet)' },
     { id: 'business', label: 'Business', sub: counts.business, icon: 'business', color: 'var(--home-amber)' },
+    { id: 'growth', label: 'Growth', sub: counts.growth, icon: 'skills', color: 'var(--home-teal)' },
   ];
 
   return html`<div class="home">
