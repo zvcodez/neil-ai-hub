@@ -926,6 +926,12 @@ select, .sort select {
     display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
     background: var(--bg-2); border-top: 1px solid var(--border);
     padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); overflow-x: auto;
+    /* iOS standalone mode sometimes fails to composite a fixed bottom:0
+       element onto the real screen edge, leaving a gap of page background
+       showing beneath it (a separate WebKit bug from the dvh one above).
+       Forcing it onto its own GPU layer is the documented workaround. */
+    transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
   }
   /* Home has no content-head, so it needs its own clearance above the fixed
      bottom nav (everything else gets it from .content-body's padding). */
