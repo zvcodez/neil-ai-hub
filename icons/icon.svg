@@ -6,9 +6,11 @@
     </radialGradient>
   </defs>
   <rect width="512" height="512" rx="112" fill="url(#glow)"/>
-  <!-- asymmetric hub grid: one tile per section of the app -->
-  <rect x="96"  y="96"  width="200" height="152" rx="34" fill="#4f7cff"/>
-  <rect x="312" y="96"  width="104" height="152" rx="26" fill="#9b6bff"/>
-  <rect x="96"  y="264" width="104" height="152" rx="26" fill="#f7b955"/>
-  <rect x="216" y="264" width="200" height="152" rx="34" fill="#14b8a6"/>
+  <!-- node-cluster mark: scaled-up version of the in-app sidebar brand mark -->
+  <line x1="176" y1="196" x2="342" y2="168" stroke="#5a6289" stroke-width="7" opacity="0.6"/>
+  <line x1="176" y1="196" x2="252" y2="346" stroke="#5a6289" stroke-width="7" opacity="0.6"/>
+  <line x1="342" y1="168" x2="252" y2="346" stroke="#5a6289" stroke-width="7" opacity="0.6"/>
+  <circle cx="176" cy="196" r="54" fill="#4f7cff"/>
+  <circle cx="342" cy="168" r="42" fill="#9b6bff"/>
+  <circle cx="252" cy="346" r="46" fill="#f7b955"/>
 </svg>
