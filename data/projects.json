@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T22:53:19.000Z",
+  "updatedAt": "2026-07-10T00:43:50.482628+00:00",
   "data": [
     {
       "id": "idea-jot",
@@ -294,8 +294,8 @@
       "folder": "~/Claude/alcohol-scanner",
       "repoUrl": "",
       "liveUrl": "https://alcohol-scanner.vercel.app",
-      "nextStep": "Neil to retest: rescan Poland Spring (should now show mineral tile) and rescan a water bottle a few times to confirm barcode reads are clean.",
-      "lastDid": "Fixed 2 bugs found in live phone testing: water category regex (\\bwater\\b) never matched OFF's plural tags (en:waters), so Poland Spring/Evian never got the mineral tile; and barcode scanning had Codabar/Code39 formats enabled, which caused a blurry live UPC-A read to misdecode as garbage Codabar text. Narrowed formats to retail-only + added 2-read confirmation before acting on a scan. Deployed.",
+      "nextStep": "Neil to retest: scan the Good & Gather bottle again, then try quickly swapping between two different bottles to confirm results never mix up.",
+      "lastDid": "Fixed a race-condition bug from live testing: scanning a Good & Gather water bottle showed a stale Poland Spring result instead. Root cause was the camera continuing to decode while the Open Food Facts lookup was in flight, so an older scan's network response could resolve after a newer one and overwrite the result screen. Now the camera stops the instant a read is confirmed (before the lookup starts), plus a scan-token guard discards any late-arriving stale response. Bumped cache-busting version (v=2->v=3) and the service worker cache name so the fix actually reaches the phone instead of being served from cache. Deployed to production.",
       "notes": "\u2022 Scan a beer or spirit (barcode or photo of the label) and instantly get nutritional info: calories, sugar, carbs, ABV\n\u2022 Personal inventory \u2014 everything you scan gets logged so you have a history of what you've tried\n\u2022 Health ranking: scores each drink based on how healthy (or not) it is \u2014 e.g. low-cal beers rank higher than sugary cocktails\n\u2022 Review ranking: pulls in ratings/reviews from the web so you can see how popular or well-regarded a drink is\n\u2022 Great use case: standing in the liquor store comparing two bottles \u2014 scan both and see which scores better on health and reviews"
     },
     {
