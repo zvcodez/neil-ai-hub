@@ -101,11 +101,13 @@
 
 * { box-sizing: border-box; }
 /* height: 100% is wrong in iOS standalone (Home Screen) mode — WebKit
-   miscalculates 100vh/100dvh there and leaves real blank space below fixed
-   elements that a normal browser tab doesn't have. -webkit-fill-available
-   is the known fix for that specific standalone-only bug; unsupported
-   browsers just ignore the line and keep the 100% above. */
-html, body { height: 100%; height: -webkit-fill-available; margin: 0; overflow-x: hidden; overscroll-behavior-y: none; }
+   miscalculates it there and leaves real blank space below fixed elements
+   that a normal browser tab doesn't have (the bottom-nav "floats" above the
+   home indicator with a gap of bare background showing beneath it).
+   -webkit-fill-available was an old fix for that, but it must come BEFORE
+   dvh, not after: dvh is the standards-based unit that actually tracks the
+   real visible viewport on modern iOS (15.4+), so it has to win the cascade. */
+html, body { height: 100%; height: -webkit-fill-available; height: 100dvh; margin: 0; overflow-x: hidden; overscroll-behavior-y: none; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -135,7 +137,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 /* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; min-height: 100vh; min-height: 100dvh; min-height: -webkit-fill-available; position: relative; z-index: 1; }
+.app { display: flex; min-height: 100vh; min-height: -webkit-fill-available; min-height: 100dvh; position: relative; z-index: 1; }
 
 .sidebar {
   width: var(--sidebar-w);
