@@ -924,21 +924,29 @@ select, .sort select {
 
   .bottom-nav {
     display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
-    background: var(--bg-2); border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border);
     padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); overflow-x: auto;
-    /* iOS standalone mode sometimes fails to composite a fixed bottom:0
-       element onto the real screen edge, leaving a gap of page background
-       showing beneath it (a separate WebKit bug from the dvh one above).
-       Forcing it onto its own GPU layer is the documented workaround. */
     transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);
     will-change: transform;
+    /* Frosted/translucent instead of a flat solid block (same recipe as
+       .content-head above) so it reads as one glass bar over whatever tab
+       is behind it, instead of a visibly different-colored slab stacked
+       on top of the page — that color seam was reading as "floating". */
+    background: color-mix(in srgb, var(--bg-2) 82%, transparent);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   }
   /* Home has no content-head, so it needs its own clearance above the fixed
-     bottom nav (everything else gets it from .content-body's padding). */
-  .home-body { padding-bottom: 12px; }
+     bottom nav (everything else gets it from .content-body's padding).
+     justify-content:flex-start (overriding the desktop centering) plus
+     margin-top:auto on .home-foot keeps the greeting/cards anchored near
+     the top and collapses the leftover space into ONE gap directly above
+     the toggle row, instead of splitting it above AND below the content —
+     that split was the actual "dock looks stranded" cause, not a render bug. */
+  .home-body { padding-bottom: 12px; justify-content: flex-start; }
   .home-foot {
     display: flex; position: relative; z-index: 1; justify-content: center;
-    align-items: center; gap: 10px; padding: 0 24px calc(96px + env(safe-area-inset-bottom));
+    align-items: center; gap: 10px; margin-top: auto;
+    padding: 0 24px calc(96px + env(safe-area-inset-bottom));
   }
   .bottom-item {
     flex: 1; min-width: 60px; display: flex; flex-direction: column; align-items: center; gap: 3px;
