@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T04:01:24.403308+00:00",
+  "updatedAt": "2026-07-14T23:29:23.222624Z",
   "data": [
     {
       "id": "idea-dock-issue",
@@ -153,16 +153,21 @@
       "_created": "2026-07-02T18:30:00.000Z",
       "_stagedAt": "2026-07-02T19:30:00.000Z",
       "name": "Reel — personalized movie/TV app (Letterboxd, but for you)",
-      "description": "A film and TV tracking app like Letterboxd, but built around your personal taste — rate what you've seen and it learns your leanings, then ranks everything unseen against your profile with a 'why we picked this' reason.",
+      "description": "A film and TV tracking iPhone PWA like Letterboxd, but built around your personal taste — rate what you've seen and it learns your leanings, then ranks everything unseen against your profile with a 'why we picked this' reason.",
       "stage": "Building",
       "chatUrl": "",
       "folder": "~/Claude/movie-taste",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Neil: open ~/Claude/movie-taste/index.html and rate a few films to see the tailored picks. Then decide: wire the live TMDB catalogue (free API key) for the full library + real posters, or keep refining the taste engine.",
-      "lastDid": "Built a working v1 single-file web app 'Reel' and verified it in-browser: a curated 52-title offline library, a real taste engine (each rating pushes/pulls the genres, moods, decades & directors it carries; unseen titles scored by profile match), a For You ranking with match % + 'because you rate X highly' explanations, mood + film/series filters, a Your Taste visual panel, Browse and Watchlist. Confirmed: rating 3 dark/cerebral crime titles surfaced Fight Club, Dark, No Country, The Wire, Get Out at the top.",
-      "notes": "• Log, rate and review the movies/shows you watch, like Letterboxd — but the whole app bends around your taste\n• Builds a real taste profile from your ratings (favourite genres, directors, moods, decades) and gets sharper over time\n• Tailored recommendations: 'what to watch tonight' picks that actually fit you, not generic trending lists\n• Mood/context aware — pick a mood (cozy, intense, cerebral…) and it filters to that\n• Explains WHY it thinks you'll like something ('because you rate X and Y highly')\n• Still keep the fun social bits (friends, watchlists, reviews) but personalization is the headline\n• BUILT (v1): working offline prototype, no API key needed. Next: pull a live film DB (e.g. TMDB) for the full catalogue + posters",
+      "nextStep": "Neil: serve the folder over http(s) (file:// won't register a service worker — e.g. `python3 -m http.server` from ~/Claude/movie-taste, or deploy to Vercel like the alcohol-scanner app) and Add to Home Screen on your iPhone to confirm it installs, opens standalone, and the bottom dock sits flush with no floating/rubber-band. Then decide: wire the live TMDB catalogue (free API key) for the full library + real posters, or keep refining the taste engine.",
+      "lastDid": "Picked a visual direction: showed 4 mockup directions (cinematic dark, warm editorial, clean & bright, refined-current), Neil chose cinematic dark with a light/dark toggle. Rebuilt the app on that identity — italic serif wordmark, single crimson accent, poster-forward cards (posters stay dark/film-stock-like in both themes), bottom icon tab bar, warm-cream light theme as the alternate (token-based, not a naive invert) with a persisted toggle. Converted it into a real installable PWA: manifest.json, service worker (self-updating, matching the fix already proven in Jot), generated app icons via an SVG film-reel mark rasterized with qlmanage/sips, full iOS meta tags. Applied the bulletproof-shell pattern from [[idea-dock-issue]]'s PWA-DOCK-BUG.md (pinned html/body, single .scrollarea scroll container, header/dock as flex siblings never position:fixed, JS visualViewport → --app-height) since the original build used the exact fixed-bottom-dock pattern that bug is about — verified via Playwright/real Chrome with iPhone 14 emulation that the shell fills the visual viewport exactly with zero float/overflow. Also fixed a real pre-existing bug found while screenshotting the Taste tab: director was read as r[6] on a 6-element row array (always undefined) instead of r[5].",
+      "notes": "• Log, rate and review the movies/shows you watch, like Letterboxd — but the whole app bends around your taste\n• Builds a real taste profile from your ratings (favourite genres, directors, moods, decades) and gets sharper over time\n• Tailored recommendations: 'what to watch tonight' picks that actually fit you, not generic trending lists\n• Mood/context aware — pick a mood (cozy, intense, cerebral…) and it filters to that\n• Explains WHY it thinks you'll like something ('because you rate X and Y highly')\n• Still keep the fun social bits (friends, watchlists, reviews) but personalization is the headline\n• Visual identity: cinematic dark (near-black, poster art forward, italic serif wordmark, single crimson accent) with a warm-cream light mode alternate, manual toggle persisted locally\n• Real installable iPhone PWA now (manifest + service worker + icons), not just an HTML file\n• BUILT (v1): working offline prototype, no API key needed. Next: pull a live film DB (e.g. TMDB) for the full catalogue + posters",
       "log": [
+        {
+          "id": "log-reel-2",
+          "ts": "2026-07-14T19:30:00.000Z",
+          "text": "Locked the visual direction (cinematic dark + light/dark toggle) via 4 side-by-side mockups, then rebuilt Reel as a real installable PWA in that identity: manifest, self-updating service worker, generated icons, iOS meta tags. Applied the bulletproof PWA-shell pattern from the dock-issue project so the bottom tab bar can't hit the same floating-dock bug Neil already fixed once in ZV's Edge and Jot — verified with Playwright + real Chrome under iPhone 14 emulation (exact viewport fill, no overflow, header/dock static through inner scroll). Also fixed a latent bug (director field always undefined due to an off-by-one array index) surfaced while screenshotting the Taste tab."
+        },
         {
           "id": "log-reel-1",
           "ts": "2026-07-02T19:30:00.000Z",
