@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T03:57:28.545993+00:00",
+  "updatedAt": "2026-07-14T04:01:24.403308+00:00",
   "data": [
     {
       "id": "idea-dock-issue",
@@ -415,15 +415,20 @@
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
       "description": "An AI sports betting app for my iPhone that helps spot good bets to make. Now fully focused on MLB (FIFA/Kalshi retired from the app, kept in the codebase for reuse).",
-      "stage": "Building",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Open the app (or run it locally) and take a look at the new icons/depth — if anything reads off on a real phone screen, flag it and I'll adjust. Once you're happy, say the word and I'll push + deploy to Railway/Vercel.",
-      "lastDid": "Gave the app a visual refresh at your request: replaced every emoji icon with a proper hand-drawn icon set, and added real depth (soft shadows, subtle gradients, gold glow on the headline card, smoother numbers) across the whole app. Same colors and layout as before, just more polished. Committed locally, not deployed yet.",
+      "nextStep": "Nothing to do until games resume (~Jul 17 after the All-Star break) — the 3pm ET pull then locks the first always-on Play of the Day. To see the new app icon, delete + re-add the app to the home screen. Credits: 40 left, budgeted to the Aug 1 reset.",
+      "lastDid": "Big overhaul, all deployed live: fixed a real credit leak (app opens no longer spend odds credits; snapshot persists across restarts; All-Star-break days cost 0), made the model always produce one Play of the Day (best win-probability at standard odds), backtested the policy (would have gone 44-29, 60.3%, one pick/day since May 1) and loosened the price floor to -200 based on that evidence. New glassy design with light/dark mode toggle, win-probability ring, streak flame, lock countdown, and a new ZVS EDGE app icon. Fixed the raised-dock iOS PWA bug (documented in the dock-issue project).",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
+        {
+          "id": "log-zve-glass-overhaul",
+          "ts": "2026-07-14T04:01:24.403308+00:00",
+          "text": "2026-07-13/14 session: credit-leak fix (page loads now free; snapshot persisted; break days skipped), always-a-play POTD with a 60.3% backtested one-pick-a-day policy (price floor -130 -> -200 on that evidence), glass redesign v3 with light mode + new ZVS EDGE icon, app-shell scrolling fix (no more whole-page rubber-band), and the raised-dock iOS PWA bug root-caused + fixed (writeup in ~/Claude/dock-issue). Backend on Railway + frontend on Vercel both deployed and verified; live URL confirmed: https://zvs-edge.vercel.app"
+        },
         {
           "id": "log-zve-visual-refresh",
           "ts": "2026-07-11T00:27:21.238235Z",
