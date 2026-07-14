@@ -9,6 +9,24 @@ import { CareerTab } from './tabs/career.js';
 import { BusinessTab } from './tabs/business.js';
 import { GrowthTab } from './tabs/growth.js';
 
+// iOS PWA cold start (fresh install/update/reload in standalone mode) can
+// report stale env(safe-area-inset-bottom)/100dvh values until something
+// forces a layout re-derive — the bottom nav floats above the home indicator
+// until that happens. Toggling viewport-fit and firing a synthetic resize
+// forces iOS to recompute both. Repeated with delays because env() can
+// populate late on cold start.
+function forceSafeAreaRecalc() {
+  const meta = document.querySelector('meta[name="viewport"]');
+  if (!meta) return;
+  const original = meta.getAttribute('content');
+  meta.setAttribute('content', original.replace('viewport-fit=cover', 'viewport-fit=auto'));
+  requestAnimationFrame(() => meta.setAttribute('content', original));
+  window.dispatchEvent(new Event('resize'));
+}
+forceSafeAreaRecalc();
+[100, 500, 1000].forEach((ms) => setTimeout(forceSafeAreaRecalc, ms));
+window.addEventListener('orientationchange', forceSafeAreaRecalc);
+
 // Canonical order — used for the sidebar (desktop) and as the source of truth
 // for every tab's identity/accent/icon.
 const TABS = [
