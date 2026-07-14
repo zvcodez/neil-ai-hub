@@ -1,6 +1,19 @@
 {
-  "updatedAt": "2026-07-13T00:00:00.000Z",
+  "updatedAt": "2026-07-14T03:57:28.545993+00:00",
   "data": [
+    {
+      "id": "idea-dock-issue",
+      "_created": "2026-07-14T03:57:28.545993+00:00",
+      "name": "Dock Issue — iOS PWA raised-dock fix",
+      "description": "Productize the fix for the recurring iOS PWA bug where the bottom nav dock floats above the screen bottom (and the app rubber-bands like a website). Root-caused + fixed live in ZV's Edge; full writeup in the project folder.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "~/Claude/dock-issue",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "Pick the first product slice: stylelint/CI rule vs drop-in AppShell component vs dockcheck screenshot CLI (see README product direction).",
+      "lastDid": "Root-caused the bug (iOS standalone misreports dynamic viewport units; fixed-vs-visual viewport mismatch), shipped the fix in ZV's Edge, and wrote the full reference doc PWA-DOCK-BUG.md with the 6-invariant bulletproof shell pattern."
+    },
     {
       "id": "idea-jot",
       "_created": "2026-07-08T03:43:36.749Z",
@@ -524,7 +537,7 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "lastDid": "Fixed iOS PWA bottom nav floating above the home indicator on cold start (fresh install/update/reload) — added a safe-area/dvh recalc trigger in main.js, bumped sw cache to v51, pushed live.",
+      "lastDid": "Shipped and deployed redesign v2 (same day, second pass — v1 still felt “low-budget, like Notion”). Added an app-wide identity layer: self-hosted Sora as the display face (headlines/titles/stat numbers), a low-opacity ambient gradient wash behind the whole shell instead of just Home, an inline SVG brand mark replacing the flat “NP” square, and StatTile/Sparkline primitives for a mission-control stat feel. Rebuilt Projects: cards simplified to name + description + launch button (editing moved into detail), a new alphabetical All Apps list, and the old centered detail modal replaced with a full drill-in screen the clicked card morphs into via the View Transitions API. Iterated on board layout with Neil before landing: he rejected a single-page stacked-sections layout (didn't want to scroll past all of Building to reach Live), so kept the 3-column kanban but fixed a real bug in it — stage-cards was flex-direction:row, so Building's 11 cards rendered ~3400px wide in one row; now cards stack downward per column with independent capped scroll on desktop. Also added an optional `version` tag and moved the live URL to right after the description in detail, per Neil's explicit ask. Iterated with two rounds of interactive Artifact mockups (font choice, then full Projects vision) before writing any real code. Syntax-checked and smoke-tested locally (serve.sh + curl); could not visually verify in a real browser this session (no browser tool available) — Neil still needs to eyeball it on Mac + phone. sw cache v42.",
       "nextStep": "Neil: test the iOS cold-start fix on his phone — delete the home screen icon + clear Safari site data, reinstall via Add to Home Screen, launch it fresh and confirm the bottom nav sits flush against the home indicator immediately (no float/snap). Also check after force-quit + relaunch and after rotating. If it still floats, next step is plugging the phone into the Mac and reading live env() values via Safari's remote Web Inspector.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
@@ -603,8 +616,7 @@
           "ts": "2026-06-27T21:22:21+00:00",
           "text": "Built and launched the hub — a personal dashboard to keep an eye on all my AI projects in one place. Live on GitHub Pages."
         }
-      ],
-      "lastDid": "Shipped and deployed redesign v2 (same day, second pass — v1 still felt “low-budget, like Notion”). Added an app-wide identity layer: self-hosted Sora as the display face (headlines/titles/stat numbers), a low-opacity ambient gradient wash behind the whole shell instead of just Home, an inline SVG brand mark replacing the flat “NP” square, and StatTile/Sparkline primitives for a mission-control stat feel. Rebuilt Projects: cards simplified to name + description + launch button (editing moved into detail), a new alphabetical All Apps list, and the old centered detail modal replaced with a full drill-in screen the clicked card morphs into via the View Transitions API. Iterated on board layout with Neil before landing: he rejected a single-page stacked-sections layout (didn't want to scroll past all of Building to reach Live), so kept the 3-column kanban but fixed a real bug in it — stage-cards was flex-direction:row, so Building's 11 cards rendered ~3400px wide in one row; now cards stack downward per column with independent capped scroll on desktop. Also added an optional `version` tag and moved the live URL to right after the description in detail, per Neil's explicit ask. Iterated with two rounds of interactive Artifact mockups (font choice, then full Projects vision) before writing any real code. Syntax-checked and smoke-tested locally (serve.sh + curl); could not visually verify in a real browser this session (no browser tool available) — Neil still needs to eyeball it on Mac + phone. sw cache v42."
+      ]
     },
     {
       "id": "6a403f0db2",
