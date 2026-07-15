@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T04:20:56.816Z",
+  "updatedAt": "2026-07-15T04:23:27.936Z",
   "data": [
     {
       "id": "app-ares-clientservices",
@@ -139,6 +139,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-14T23:55:20.347900+00:00"
+        },
+        {
+          "status": "Did Not Apply",
+          "at": "2026-07-15T04:23:27.928Z"
         }
       ],
       "company": "S&P Global",
@@ -150,7 +154,7 @@
       "salary": "Not stated",
       "deadline": "",
       "dateApplied": "",
-      "status": "To Apply",
+      "status": "Did Not Apply",
       "notes": "Posted 2026-07-10. Bachelor's required; 3 yrs is PREFERRED only. Documentation/data-governance seat at a major financial data firm; strong match to his documentation + Bloomberg data stewardship record.",
       "skills": [
         "Methodology and Process Documentation",
@@ -170,7 +174,9 @@
       ],
       "bulletsTD": "Produces highly structured investigation documents on every case, covering source data, analysis, and conclusions, held to second line quality review standards.\nWrote training guides, checklists, and reference documents adopted by colleagues and new analysts across the team.\nFlags gaps in standard operating procedures when documented processes fail to cover edge cases, contributing corrections back into the documentation.\nCompletes 20-25 fully documented reviews weekly against a 20 quota, roughly 1,000 since May 2025 with consistent quality scores.\nReconciles data across two systems per review, tagging every record in Excel trackers built for accuracy and repeatability.",
       "bulletsBloomberg": "Maintained data integrity across 650+ SMAs and CITs, identifying additions, terminations, and breaks in monthly governance cycles.\nExpanded the platform strategy library by 800+ entries, correcting listings that had gone stale for five to ten years through direct manager outreach.\nWrote how to guides for a new structured data submission format, supporting 400+ portfolio managers through a firm wide workflow migration.\nReconciled fund data against custodian and fund administrator records, escalating discrepancies to source teams for correction.\nUsed JIRA daily to manage documentation and data correction workflows across internal teams.",
-      "bulletsBC": "Built weekly client acquisition and retention reports in Excel, lifting client retention 10% and engagement 20%."
+      "bulletsBC": "Built weekly client acquisition and retention reports in Excel, lifting client retention 10% and engagement 20%.",
+      "noApplyReason": "i dont think the qiualifications apply to me the best for the role.",
+      "noApplyAt": "2026-07-15T04:23:27.928Z"
     },
     {
       "id": "app-evercore-ir-analyst",
