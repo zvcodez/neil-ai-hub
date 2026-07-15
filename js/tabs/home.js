@@ -18,6 +18,24 @@ function todayLabel() {
   return new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
 }
 
+// "Jot — all-in-one capture inbox" → "Jot": chips only have room for the
+// app's actual name, not the tagline half of the project title.
+function shortName(name) {
+  return String(name || '').split(/\s+[—–(]/)[0].trim() || name;
+}
+
+// Every project with a live URL, except the hub itself (a link to the page
+// you're already on). Live apps first, then building, alphabetical within.
+function useLiveApps() {
+  return useMemo(() => {
+    const here = location.href.replace(/\/+$/, '');
+    return loadStore('projects', [])
+      .filter((p) => p.liveUrl && here !== p.liveUrl.replace(/\/+$/, ''))
+      .map((p) => ({ id: p.id, name: shortName(p.name), url: p.liveUrl, live: p.stage === 'Live' }))
+      .sort((a, b) => (a.live === b.live ? a.name.localeCompare(b.name) : a.live ? -1 : 1));
+  }, []);
+}
+
 // Live counts read once on mount — enough to make the landing screen feel
 // like it's watching the hub, without wiring up full reactive stores here.
 function useQuickCounts() {
@@ -41,6 +59,7 @@ function useQuickCounts() {
 
 export function HomeTab({ onNavigate, theme, setTheme }) {
   const counts = useQuickCounts();
+  const apps = useLiveApps();
 
   const quick = [
     { id: 'projects', label: 'Projects', sub: counts.projects, icon: 'projects', color: 'var(--home-blue)' },
@@ -73,6 +92,20 @@ export function HomeTab({ onNavigate, theme, setTheme }) {
           </button>`
         )}
       </div>
+
+      ${apps.length > 0 &&
+      html`<div class="home-apps">
+        <p class="home-apps-label">Neil’s Apps</p>
+        <div class="home-apps-grid">
+          ${apps.map(
+            (a) => html`<a key=${a.id} class="home-app" href=${a.url} target="_blank" rel="noopener">
+              <span class=${`home-app-dot ${a.live ? 'is-live' : ''}`}></span>
+              <span class="home-app-name">${a.name}</span>
+              <span class="home-arrow">↗</span>
+            </a>`
+          )}
+        </div>
+      </div>`}
     </div>
 
     <div class="home-foot">
