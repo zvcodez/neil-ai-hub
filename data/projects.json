@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T23:29:23.222624Z",
+  "updatedAt": "2026-07-15T04:01:52.144516+00:00",
   "data": [
     {
       "id": "idea-dock-issue",
@@ -342,10 +342,15 @@
       "folder": "~/Claude/mithoos-adventure",
       "repoUrl": "https://github.com/zvcodez/Mithoos-Adventure",
       "liveUrl": "https://zvcodez.github.io/Mithoos-Adventure/",
-      "nextStep": "Ready to send to Diksha as-is. Optional: get her reaction, then decide if anything else needs polish.",
-      "lastDid": "Polish pass at Neil's request: removed the lifetime flights/flowers-passed tracker so only score and best score show; locked the background to always bright/sunny (no more day-to-sunset fade); rounded out the background people (Pragya, Diksha) from blocky rectangles to a softer rounded-cartoon look; recolored Gucci the dog from tan to light cream/off-white beige. Verified visually via headless Chrome screenshots, then committed and pushed — live site is updated.",
+      "nextStep": "Play a commute run on the iPhone; confirm the day/night sky is wanted back (was removed Jul 11) and tune berry frequency/medal tiers to taste.",
+      "lastDid": "Big commute-friendly upgrade pack: cache-first offline loading, auto-pause on app switch with 3-2-1 resume, post-crash tap lockout, bronze/silver/gold medals + New Best confetti, cosmetic unlock ladder (crown/scarf/shades/golden trail), score-based day-to-sunset-to-night sky (note: reintroduces the sky fade removed Jul 11), +2 berry collectibles, daily best score, and spacebar/rotation bug fixes. Smoke-tested headless, pushed live.",
       "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed",
       "log": [
+        {
+          "id": "c3e3510d78924f43b33f80067bbe4809",
+          "ts": "2026-07-15T04:01:52.144516+00:00",
+          "text": "Upgrade pack shipped: offline-first SW, auto-pause/resume countdown, death tap lockout, medals + new-best confetti, 4-tier cosmetic unlocks, day/night sky by score, berry collectibles (+2), daily best, input/rotation fixes."
+        },
         {
           "id": "06715a7e-cbe7-4f48-bd49-3d860bd6c237",
           "ts": "2026-07-01T03:09:39.360726Z",
