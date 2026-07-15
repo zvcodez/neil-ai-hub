@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T04:17:04.835Z",
+  "updatedAt": "2026-07-15T04:20:56.816Z",
   "data": [
     {
       "id": "app-ares-clientservices",
@@ -53,6 +53,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-14T23:55:20.347900+00:00"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-15T04:20:56.812Z"
         }
       ],
       "company": "Marathon Asset Management",
@@ -63,8 +67,8 @@
       "coverLetter": "Job Applications/2026-07-14/Neil_Patel_CoverLetter_Marathon.docx",
       "salary": "$70k-$150k",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-15",
+      "status": "Applied",
       "notes": "Posted 2026-07-09. Requirements are unusually Neil shaped: 'some prior experience in financial operations (not necessarily product specific)', Bloomberg beneficial (he used it daily), explicit interest in AI tools to streamline workflows (his real project). Repo product itself is new, owned in letter.",
       "skills": [
         "Daily Reconciliation",
