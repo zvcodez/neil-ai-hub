@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T23:55:20.347900+00:00",
+  "updatedAt": "2026-07-15T04:17:04.835Z",
   "data": [
     {
       "id": "app-ares-clientservices",
@@ -8,6 +8,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-14T23:55:20.347900+00:00"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-15T04:17:04.824Z"
         }
       ],
       "company": "Ares Management",
@@ -18,8 +22,8 @@
       "coverLetter": "Job Applications/2026-07-14/Neil_Patel_CoverLetter_Ares.docx",
       "salary": "Not stated",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-15",
+      "status": "Applied",
       "notes": "Posted 2026-07-08. 1-3 yrs ops/client services, advanced Excel required. Near perfect fit: overlapping processing cycles + client coordination mirrors Bloomberg PM support. Elite alternatives brand.",
       "skills": [
         "Institutional Client Support",
