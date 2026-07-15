@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T04:23:27.936Z",
+  "updatedAt": "2026-07-15T04:29:06.613Z",
   "data": [
     {
       "id": "app-ares-clientservices",
@@ -185,6 +185,10 @@
         {
           "status": "To Apply",
           "at": "2026-07-14T23:55:20.347900+00:00"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-07-15T04:29:06.606Z"
         }
       ],
       "company": "Evercore",
@@ -195,8 +199,8 @@
       "coverLetter": "Job Applications/2026-07-14/Neil_Patel_CoverLetter_Evercore.docx",
       "salary": "$90k-$120k",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-07-15",
+      "status": "Applied",
       "notes": "Posted 2026-07-09. 'Ideally 1+ years relevant analytical experience... financial services firms' qualifies him directly. Elite brand, salary on target. Corporate IR (public company) framing is new; letter leans on senior stakeholder poise.",
       "skills": [
         "Senior Stakeholder Communication",
