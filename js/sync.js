@@ -141,6 +141,35 @@ async function reconcile(key) {
   }
 }
 
+// ---- self-heal from deployed data --------------------------------------------
+// The data files are deployed with the site (GitHub Pages serves data/<key>.json
+// on this origin), so if the browser evicts localStorage — which also takes the
+// sync token with it — every store can reseed itself from those files and the
+// app never opens blank. Read-only until sync is re-enabled with a token.
+async function bootstrapKey(key) {
+  const local = loadStore(key, null);
+  const nonEmpty = Array.isArray(local) ? local.length > 0 : local && Object.keys(local).length > 0;
+  if (nonEmpty) return;
+  try {
+    const res = await fetch(`./data/${key}.json`, { cache: 'no-cache' });
+    if (!res.ok) return; // key has no deployed file yet
+    const parsed = await res.json();
+    if (!parsed || parsed.data == null) return;
+    applyExternalChange(key, parsed.data);
+    // Record the file's timestamp so enabling sync later sees this store as
+    // already in sync, instead of stamping it "new" and pushing it back up.
+    if (parsed.updatedAt) {
+      const m = getMeta();
+      m[key] = { ...(m[key] || {}), updatedAt: parsed.updatedAt };
+      setMeta(m);
+    }
+  } catch { /* offline or non-JSON response — nothing to heal from */ }
+}
+
+export function bootstrapFromDeployedData() {
+  return Promise.all(SYNC_KEYS.map(bootstrapKey));
+}
+
 let running = false;
 export async function syncAll() {
   if (!isEnabled() || !getToken() || running) return;
@@ -241,7 +270,11 @@ export function initSync() {
   // Periodic background pull while open.
   setInterval(() => { if (document.visibilityState === 'visible') syncAll(); }, 60000);
 
-  if (isEnabled() && getToken()) syncAll();
+  // Reseed any empty stores from the deployed data files first, then let the
+  // token-based sync take over (it skips stores the bootstrap just filled).
+  bootstrapFromDeployedData().then(() => {
+    if (isEnabled() && getToken()) syncAll();
+  });
 }
 
 // ---- UI ---------------------------------------------------------------------

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T04:53:40.945953+00:00",
+  "updatedAt": "2026-07-16T00:58:29.242252+00:00",
   "data": [
     {
       "id": "idea-diksha-resume",
@@ -574,10 +574,15 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "lastDid": "Added a Neil's Apps section to the Home screen: one-tap glass chips (built from every project's liveUrl) that open the latest deployed version of each app in the browser. Green dot = Live stage, amber = still Building.",
-      "nextStep": "Neil: open the hub on the phone, check the new Neil's Apps section on Home renders well and chips open apps in the browser (not inside the PWA).",
+      "lastDid": "Fixed the recurring phone wipe: app now self-heals — empty stores reseed from the deployed data/*.json files on startup, no token needed (token only needed to edit from phone).",
+      "nextStep": "Neil: open the hub on the phone — data should reappear on its own; then re-paste the GitHub token in the cloud button so phone edits sync again. Also check the Neil's Apps section on Home.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "a45e379cf3",
+          "ts": "2026-07-16T00:58:29.242252+00:00",
+          "text": "Diagnosed the 'everything gone on phone' issue: iOS evicts localStorage (taking the sync token with it). Added self-heal bootstrap in sync.js — empty stores now reseed from the site's own deployed data files on startup, so the app never opens blank again. SW cache bumped to v53."
+        },
         {
           "id": "log-hub-apps-2026-07-15",
           "ts": "2026-07-15T04:53:40.945953+00:00",
