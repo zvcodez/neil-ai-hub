@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-07-16T04:21:30+00:00",
+  "data": [
+    {
+      "id": "biz-zvtok",
+      "_created": "2026-07-16T04:21:30+00:00",
+      "_stagedAt": "2026-07-16T04:21:30+00:00",
+      "name": "ZVtok — AI TikTok studio",
+      "description": "TikTok content engine (Claude Code tips carousels + real bug-fix documentary videos) that sells ZVlabs digital products — Claude Code packs and workflow tooling — on Gumroad. First milestone: 10–20 organic sales.",
+      "stage": "Building",
+      "monthlyRevenue": 0,
+      "monthlyCost": 0,
+      "customers": 0,
+      "nextStep": "Session 1: Neil records the screen while Claude works the iOS PWA dock-bug fix arc (material in ~/Claude/dock-issue) — first documentary video + session notes. In parallel Claude drafts the first 6 tips carousels. Full plan in ~/Claude/zvtok/CLAUDE.md.",
+      "lastDid": "Went from strategy brief to a committed plan: viability assessed with market research (viable, but generic prompt packs are commoditized — our moat is video proof of real work; first product rescoped from a single dock-bug fix to a full iOS PWA polish kit). Project folder created at ~/Claude/zvtok with a complete CLAUDE.md handoff.",
+      "liveUrl": "",
+      "notes": "• Single account (existing ZVlabs TikTok), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers)\n• Track A: tips carousels 2–3×/week (growth) · Track B: documentary bug-fix videos, irregular (conversion)\n• Products: one-time Gumroad files ~$5–$15; first product = iOS PWA polish kit built on ~/Claude/dock-issue\n• Inbound only — no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n• Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2–4 hrs/wk)\n• Realistic expectations: 10–20 sales in ~2–3 months is the win condition, not big income",
+      "log": [
+        {
+          "id": "log-zvtok-1",
+          "ts": "2026-07-16T04:21:30+00:00",
+          "text": "Founded the venture. Reviewed the ZVlabs TikTok+Gumroad strategy brief, verified the market on Gumroad (competitor Claude Code packs exist; outcomes sell, collections don't), delivered the viability verdict (viable as low-risk build, not near-term income), and made two calls: keep the dock-bug as the first documentary video but sell the whole iOS PWA polish kit as the product, and cross-post videos to YouTube Shorts. Set up ~/Claude/zvtok (CLAUDE.md handoff + original brief + Claude Code launcher) and this hub entry."
+        }
+      ]
+    }
+  ]
+}
