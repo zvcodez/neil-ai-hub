@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T04:21:30+00:00",
+  "updatedAt": "2026-07-16T05:30:00+00:00",
   "data": [
     {
       "id": "biz-zvtok",
@@ -11,11 +11,16 @@
       "monthlyRevenue": 0,
       "monthlyCost": 0,
       "customers": 0,
-      "nextStep": "Session 1: Neil records the screen while Claude works the iOS PWA dock-bug fix arc (material in ~/Claude/dock-issue) — first documentary video + session notes. In parallel Claude drafts the first 6 tips carousels. Full plan in ~/Claude/zvtok/CLAUDE.md.",
-      "lastDid": "Went from strategy brief to a committed plan: viability assessed with market research (viable, but generic prompt packs are commoditized — our moat is video proof of real work; first product rescoped from a single dock-bug fix to a full iOS PWA polish kit). Project folder created at ~/Claude/zvtok with a complete CLAUDE.md handoff.",
+      "nextStep": "Neil posts the first carousel today (7 PNGs + caption in ~/Downloads/zvtok-2026-07-16-hidden-features/, checklist in the post's brief.md). Then draft carousels 2-3 reusing the same slide.css/render.sh template. Session 1 (documentary dock-bug film) still open whenever Neil's ready to record. Full plan in ~/Claude/zvtok/CLAUDE.md.",
+      "lastDid": "Shipped the first piece of content, skipping ahead of the documentary track since a tips post doesn't need to wait on filming. Used fable-planner to plan it, then built a reusable slide pipeline (HTML/CSS -> headless Chrome -> exact 1080x1440 PNGs, dark terminal aesthetic, numbered preview-dots for swipe-through) and produced the first carousel: \"5 Claude Code features most people never find,\" 7 slides, QA'd and delivered to Downloads with caption ready to post. Also confirmed Gumroad's fee structure at the source (free to list, 10%+$0.50/sale) and Payhip as a free-to-list backup option; decided to stay Gumroad-only for now since the bio link can't go live until ~1,000 followers anyway.",
       "liveUrl": "",
-      "notes": "• Single account (existing ZVlabs TikTok), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers)\n• Track A: tips carousels 2–3×/week (growth) · Track B: documentary bug-fix videos, irregular (conversion)\n• Products: one-time Gumroad files ~$5–$15; first product = iOS PWA polish kit built on ~/Claude/dock-issue\n• Inbound only — no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n• Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2–4 hrs/wk)\n• Realistic expectations: 10–20 sales in ~2–3 months is the win condition, not big income",
+      "notes": "• Single account (existing ZVlabs TikTok, @zvlabs), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers)\n• Track A: tips carousels 2–3×/week (growth) · Track B: documentary bug-fix videos, irregular (conversion)\n• Products: one-time Gumroad files ~$5–$15; first product = iOS PWA polish kit built on ~/Claude/dock-issue\n• Inbound only — no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n• Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2–4 hrs/wk)\n• Realistic expectations: 10–20 sales in ~2–3 months is the win condition, not big income\n• performance-log.md tracks per-post views/saves/shares/follows, reviewed weekly",
       "log": [
+        {
+          "id": "log-zvtok-2",
+          "ts": "2026-07-16T05:30:00+00:00",
+          "text": "Built and shipped the first Track A tips carousel (\"5 Claude Code features most people never find\") via fable-planner plan + execution: reusable HTML/CSS -> headless Chrome render pipeline, 7 QA'd 1080x1440 slides, caption, delivered to ~/Downloads ready to post. Verified Gumroad/Payhip fees at source; confirmed Gumroad-only for now is fine since bio link needs ~1,000 followers regardless. Set up performance-log.md."
+        },
         {
           "id": "log-zvtok-1",
           "ts": "2026-07-16T04:21:30+00:00",
