@@ -1,6 +1,649 @@
 {
-  "updatedAt": "2026-07-15T04:29:06.613Z",
+  "updatedAt": "2026-07-16T01:08:25.689729+00:00",
   "data": [
+    {
+      "id": "app-rbc-grm-marketrisk",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "RBC",
+      "jobTitle": "Analyst, GRM Market Risk (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4440907928",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_RBC.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_RBC.docx",
+      "salary": "$85,000-$145,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-14. No hard years requirement stated (SQL/Python and Fixed Income knowledge listed as preferred, not required). Counterparty credit risk and regulatory capital work maps directly to TD investigation/audit documentation background.",
+      "skills": [
+        "Market Risk Oversight",
+        "Counterparty Risk Assessment",
+        "Regulatory Capital Reporting",
+        "Transaction Investigation",
+        "Escalation & Governance",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Risk rate and monitor flagged accounts across a portfolio of roughly 1,000 cases, applying data driven analysis to flag material exposures for escalation.\nReconcile transaction and account data against internal and external sources, coordinating with stakeholders to resolve discrepancies before senior review.\nBuild Excel trackers with conditional formatting and pivot tables to surface transaction patterns such as volume spikes and repeated counterparties.\nCompile audit ready investigation documents covering transaction history, related party analysis, and conclusions that hold up to second line and internal audit review.\nVolunteer for high risk case backlog initiatives, working 50+ hours weekly to help the team clear a deadline driven queue.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting issues through direct communication and internal escalation.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records each month.\nBuild macros and use advanced Excel formulas to identify newly added or removed strategies across the SMA universe on a monthly basis.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams, supporting accurate downstream reporting.\nUse JIRA to manage workflow and track resolution of data quality issues in a high volume, deadline driven environment.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-citynational-tradinganalyst",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "City National Bank",
+      "jobTitle": "Trading Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4441403236",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_CityNationalBank.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_CityNationalBank.docx",
+      "salary": "$71,869-$114,797",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. Requires 2 years experience with an investment firm, hedge fund, or broker dealer, within threshold. Fixed income trade settlement and reconciliation, direct match to daily TD/Bloomberg reconciliation work. RBC subsidiary.",
+      "skills": [
+        "Trade Settlement",
+        "Trade Reconciliation",
+        "Order Verification",
+        "Broker Onboarding Support",
+        "Compliance Reporting",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "Microsoft Office Suite",
+        "JIRA"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources daily, verifying accuracy before trades are booked or reported.\nReview flagged account activity for suspicious or erroneous entries across a caseload of 20 to 25 reviews weekly, exceeding a 20 case quota.\nCompile investigation documents summarizing transaction history and findings, serving as point of contact for internal stakeholders on open items.\nBuild Excel trackers with formulas and conditional formatting to check hundreds of transactions for accuracy and flag exceptions for follow up.\nAuthor training guides and process documentation adopted by new analysts, improving team workflow and onboarding time.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records each month.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving trade and data issues through direct communication.\nDiagnose and resolve trade data upload errors during a portal migration, supporting portfolio managers through a new, more technically strict format.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams to keep downstream reporting accurate.\nAdjust account records for corporate actions including stock splits and dividend reinvestment across a 650+ fund universe.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-ardian-clientsolutions",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Ardian",
+      "jobTitle": "Client Solutions Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4438828095",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_Ardian.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_Ardian.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. Up to 1 year of relevant experience including internships/coursework. Private equity investor relations, investor reporting, and due diligence support. Elite global PE firm.",
+      "skills": [
+        "Investor Reporting",
+        "Fundraising Support",
+        "Due Diligence Support",
+        "Database Management",
+        "Client Inquiry Resolution",
+        "Advanced Excel (Financial Modeling",
+        "Pivot Tables)",
+        "PowerPoint",
+        "Bloomberg Terminal (BMC certified)",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Compile investigation documents summarizing transaction history, related party detail, and conclusions, serving as point of contact for internal and external stakeholders.\nReconcile transaction and account data against internal and external sources, coordinating with stakeholders to resolve discrepancies quickly.\nBuild Excel trackers with formulas, conditional formatting, and pivot tables to surface patterns across hundreds of records for reporting purposes.\nRespond to information requests from internal audit and regulatory stakeholders, pulling documentation and samples on tight timelines.\nAuthor training guides and reference documentation adopted by new analysts, improving team knowledge transfer.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, resolving reporting requests through direct communication and internal coordination.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach and relationship management.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing summaries for internal review.\nMaintain accurate fund and strategy data in Bloomberg systems, supporting downstream client and investor facing reporting.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-morganstanley-riskcapital",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Morgan Stanley",
+      "jobTitle": "Analyst, Risk Capital (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4424258852",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_MorganStanley.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_MorganStanley.docx",
+      "salary": "Not stated (Entry level tag)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. One year of related experience required, entry level tag confirmed. Counterparty credit risk and regulatory capital work for derivatives, repo, securities lending. SQL/Python listed as desired, not required.",
+      "skills": [
+        "Counterparty Credit Risk",
+        "Regulatory Capital Analysis",
+        "Risk Reporting",
+        "Transaction Investigation",
+        "Escalation & Governance",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Risk rate and monitor flagged accounts across a portfolio of roughly 1,000 cases, identifying material exposures for escalation to senior stakeholders.\nReconcile transaction and account data against internal and external sources, coordinating with stakeholders to resolve discrepancies.\nCompile audit ready investigation documents covering transaction history, related party analysis, and conclusions for internal audit review.\nRespond to information requests from internal audit and regulatory examiners, pulling documentation and samples on tight timelines.\nBuild Excel trackers with conditional formatting and pivot tables to surface patterns like volume spikes across hundreds of records.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting issues.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams, supporting accurate downstream reporting.\nBuild macros and use advanced Excel formulas to identify changes across a 650+ SMA universe on a monthly basis.\nUse JIRA to manage workflow and track resolution of data quality issues in a deadline driven environment.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-starr-regreporting",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Starr Insurance",
+      "jobTitle": "Senior Regulatory Reporting Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4372121538",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_StarrRegReporting.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_StarrRegReporting.docx",
+      "salary": "$78,000-$103,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. No hard years requirement, commercial insurance reporting experience preferred not required. Insurance regulatory filings plus light accounting functions.",
+      "skills": [
+        "Regulatory Filing Preparation",
+        "State Compliance Reporting",
+        "Data Extraction & Validation",
+        "Audit Documentation",
+        "Escalation & Governance",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Conditional Formatting)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Compile audit ready investigation documents covering transaction history, analysis, and conclusions, ensuring every filing holds up to second line and internal audit review.\nExtract and reconcile transaction and account data against internal and external sources, resolving discrepancies before reports are submitted.\nBuild Excel trackers with formulas and conditional formatting to validate hundreds of records and flag data quality issues for correction.\nRespond to information requests from internal audit and regulatory examiners, gathering documentation and samples on tight deadlines.\nAuthor training guides and process documentation adopted by new analysts, improving accuracy and reducing rework.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records each month.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting issues.\nDiagnose and correct data upload errors, helping portfolio managers adapt to a new, more technically strict reporting format.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing summaries for internal review.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams to keep reporting accurate.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-starr-propertyops",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Starr Insurance",
+      "jobTitle": "Property Operations Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4440869742",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_StarrPropertyOps.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_StarrPropertyOps.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 2+ years required in operations/business analysis or process improvement, within threshold.",
+      "skills": [
+        "Operations Analysis",
+        "Process Improvement",
+        "Business Analysis",
+        "Data Quality Review",
+        "Documentation & Controls",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Identify gaps in standard operating procedures and propose process improvements, contributing directly to team documentation.\nReconcile transaction and account data against internal and external sources, coordinating with stakeholders to resolve discrepancies quickly.\nReview flagged account activity across a caseload of 20 to 25 cases weekly, consistently exceeding a 20 case quota.\nBuild Excel trackers with formulas and conditional formatting to surface process breakdowns and data quality issues across hundreds of records.\nAuthor training guides and process documentation adopted by new analysts, improving team workflow and reducing onboarding time.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, resolving operational issues through direct communication and escalation.\nDiagnose and resolve data upload errors during a portal migration, supporting a system wide process change for over 400 users.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian records each month.\nBuild macros and use advanced Excel formulas to identify changes across a 650+ SMA universe on a monthly basis.\nProduce how to guides and reference documentation for new hires, supporting a smoother rollout of a new operating process.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-starr-propertyprocess",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Starr Insurance",
+      "jobTitle": "Property Process Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4440884325",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_StarrPropertyProcess.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_StarrPropertyProcess.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 2+ years required in process/business analysis, within threshold. Distinct req from Property Operations Analyst, same team.",
+      "skills": [
+        "Process Analysis",
+        "Business Process Improvement",
+        "Standard Operating Procedures",
+        "Data Quality Review",
+        "Documentation & Controls",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Identify gaps in standard operating procedures and contribute proposed fixes, working directly with team leadership on documentation updates.\nBuild Excel trackers with formulas and conditional formatting to surface process breakdowns and recurring exceptions across hundreds of records.\nReconcile transaction and account data against internal and external sources, coordinating with stakeholders to resolve process related discrepancies.\nAuthor training guides and process documentation adopted by new analysts, improving consistency across the team.\nReview flagged account activity across a caseload of 20 to 25 cases weekly, consistently exceeding a 20 case quota.",
+      "bulletsBloomberg": "Diagnose and resolve data upload errors during a portal migration, supporting a system wide process change for over 400 users.\nProduce how to guides and reference documentation for new hires, supporting a smoother rollout of a new operating process.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving operational issues through direct communication.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian records each month.\nBuild macros and use advanced Excel formulas to identify changes across a 650+ SMA universe on a monthly basis.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-smbc-creditportfolio",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "SMBC Group",
+      "jobTitle": "Credit Portfolio Risk Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4429965219",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_SMBCCreditPortfolio.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_SMBCCreditPortfolio.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 1 to 2 years of relevant experience in credit risk analytics or portfolio management.",
+      "skills": [
+        "Credit Risk Analytics",
+        "Portfolio Risk Monitoring",
+        "Risk Rating & Scoring",
+        "Transaction Investigation",
+        "Regulatory Documentation",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Risk rate accounts as low, medium, or high based on customer type, geography, and product usage, not just triggered activity.\nReconcile transaction and account data against internal and external sources, coordinating with stakeholders to resolve discrepancies.\nBuild Excel trackers with formulas and conditional formatting to surface risk patterns such as volume spikes across hundreds of records.\nCompile audit ready investigation documents covering transaction history, related party analysis, and conclusions for second line review.\nRespond to information requests from internal audit and regulatory examiners on tight deadlines.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting issues.\nAnalyze monthly performance and holdings data, identifying key drivers of change across a 650+ fund universe.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams to keep reporting accurate.\nBuild macros and use advanced Excel formulas to identify changes across the SMA universe on a monthly basis.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-smbc-creditanalytics",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "SMBC Group",
+      "jobTitle": "Credit Risk Analytics Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4440326162",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_SMBCCreditAnalytics.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_SMBCCreditAnalytics.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 0 to 3 years of experience in a financial institution. Distinct req from Credit Portfolio Risk Analyst.",
+      "skills": [
+        "Credit Risk Analysis",
+        "Financial Institution Reporting",
+        "Data Analysis",
+        "Project Coordination",
+        "Regulatory Documentation",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Build Excel trackers with formulas and conditional formatting to surface risk patterns across hundreds of transaction records.\nRisk rate accounts as low, medium, or high based on customer type, geography, and product usage.\nReconcile transaction and account data against internal and external sources, coordinating with cross functional stakeholders.\nCompile audit ready investigation documents covering transaction history and analysis for second line and audit review.\nContribute to and flag gaps in documented procedures when a case does not fit existing guidance.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing summaries for internal stakeholders.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting issues.\nUse JIRA to manage workflow and coordinate resolution of data quality issues across teams.\nBuild macros and use advanced Excel formulas to identify changes across a 650+ SMA universe on a monthly basis.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-deutschebank-productsolutions",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Deutsche Bank",
+      "jobTitle": "Product & Solutions Analyst, Trust & Estates (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4440395642",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_DeutscheBank.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_DeutscheBank.docx",
+      "salary": "$78,000-$110,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. No hard years requirement stated. Trust and estate account administration, hybrid schedule.",
+      "skills": [
+        "Account Maintenance",
+        "Trust Documentation Review",
+        "Client Communication",
+        "Transaction Processing",
+        "Escalation & Governance",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP)",
+        "Bloomberg Terminal (BMC certified)",
+        "Microsoft Office Suite",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Compile investigation documents summarizing account history and related party detail, serving as point of contact for internal stakeholders and reviewers.\nReconcile transaction and account data against internal and external sources daily, coordinating with stakeholders to resolve discrepancies.\nReview sensitive customer records including personal and financial information with discretion, following strict documentation standards.\nRespond to information requests from internal audit and regulatory examiners, gathering supporting documentation on tight deadlines.\nAuthor training guides and process documentation adopted by new analysts, improving accuracy and consistency across the team.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, resolving account and data issues through direct communication.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nAdjust account records for corporate actions including stock splits and dividend reinvestment across a 650+ fund universe.\nEscalate account discrepancies to portfolio managers and internal teams, maintaining accurate downstream records.\nDiagnose and resolve account data upload errors, supporting portfolio managers through a system transition.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-goldmansachs-acf-coinvestment",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Goldman Sachs",
+      "jobTitle": "Alternatives Capital Formation, Co-Investment Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4423942880",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_GoldmanSachsACF.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_GoldmanSachsACF.docx",
+      "salary": "Not stated (Entry level tag)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. Entry level tag confirmed, no hard years requirement. Explicitly asks for hands on generative AI tool experience, direct match to his Claude Code project, wove into resume Systems line and cover letter rather than a new resume section to protect one page layout.",
+      "skills": [
+        "Investor Reporting",
+        "Due Diligence Support",
+        "Client Engagement",
+        "Marketing & Syndication Support",
+        "Cross Functional Coordination",
+        "AI-Assisted Development (Claude",
+        "Claude Code)",
+        "Advanced Excel (Pivot Tables",
+        "Financial Modeling)",
+        "PowerPoint",
+        "Bloomberg Terminal (BMC certified)"
+      ],
+      "bulletsTD": "Compile audit ready investigation documents and internal reporting for stakeholder review, coordinating across teams to close out open items.\nReconcile transaction and account data against internal and external sources, resolving discrepancies before they reach senior stakeholders.\nPrepare client facing summaries and respond to information requests from internal audit and regulatory stakeholders on tight deadlines.\nBuild Excel trackers with formulas and conditional formatting to surface patterns across hundreds of records for reporting purposes.\nAuthor reference documentation adopted by colleagues and new analysts, improving team knowledge transfer.",
+      "bulletsBloomberg": "Serve as primary point of contact for 400+ institutional portfolio managers, resolving requests through direct communication and internal coordination.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nExpand the SMA strategy library by 800+ investment strategies through proactive portfolio manager outreach and relationship management.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing summaries for internal stakeholders.\nMaintain accurate fund and strategy data supporting downstream client and investor facing reporting.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-btig-opsgeneralist",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "BTIG",
+      "jobTitle": "Operations Generalist (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4432429098",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_BTIG.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_BTIG.docx",
+      "salary": "$100,000-$150,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 2+ years middle/back office experience at a buy or sell side firm required, within threshold. DTCC ALERT/CTM and WorkX/ORF knowledge listed but not confirmed as a hard platform gate.",
+      "skills": [
+        "Trade Booking & Allocation",
+        "Settlement Reconciliation",
+        "Account Onboarding",
+        "Fails & Exception Resolution",
+        "Corporate Actions Support",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "Microsoft Office Suite",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources daily, ensuring trades and positions are booked and recorded correctly.\nReview flagged account activity across a caseload of 20 to 25 cases weekly, consistently exceeding a 20 case quota.\nCoordinate with internal teams and external stakeholders to resolve settlement and documentation exceptions before deadlines.\nBuild Excel trackers with formulas and conditional formatting to check hundreds of records daily and flag exceptions for follow up.\nEscalate operational risks and control gaps to senior stakeholders, contributing to process improvements.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records each month.\nAdjust account records for corporate actions including stock splits and dividend reinvestment across a 650+ fund universe.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving trade and data issues.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams to keep downstream reporting accurate.\nUse JIRA to manage workflow and track resolution of open items across a fast paced, deadline driven environment.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-affirm-strategicfinance",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Affirm",
+      "jobTitle": "Strategic Finance Analyst II, Revenue (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4410401618",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_Affirm.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_Affirm.docx",
+      "salary": "$115,000-$165,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 2+ years required in fast paced analytical roles. Fintech strategic finance, works alongside an ML modeling team on revenue forecasting.",
+      "skills": [
+        "Financial Modeling",
+        "Forecasting & Variance Analysis",
+        "Dashboard Development",
+        "Cross Functional Partnership",
+        "Performance Reporting",
+        "Advanced Excel (Pivot Tables",
+        "Macros",
+        "Financial Modeling)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python",
+        "Forecasting)"
+      ],
+      "bulletsTD": "Build Excel trackers with formulas, macros, and conditional formatting to model and forecast trends across hundreds of transaction records.\nAnalyze large transaction datasets to identify anomalies and trends, presenting findings to stakeholders for decision making.\nReconcile transaction and account data against internal and external sources, coordinating with cross functional teams to resolve discrepancies.\nCompile audit ready analysis and reporting for senior stakeholders, translating complex data into clear conclusions.\nContribute to and flag gaps in documented procedures when a case does not fit existing guidance, driving process improvement.",
+      "bulletsBloomberg": "Analyze monthly performance and holdings data across 650+ funds, identifying key drivers of change and preparing summaries for stakeholders.\nBuild macros and use advanced Excel formulas to identify month over month changes across a 650+ SMA universe.\nReconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian records monthly.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting requests.\nUse JIRA to manage workflow and coordinate cross functional resolution of data quality issues.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-galaxy-tradingops",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Galaxy",
+      "jobTitle": "Trading Operations Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4420499651",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_Galaxy.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_Galaxy.docx",
+      "salary": "$100,000-$110,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 1 to 2 years experience in Operations required, entry level tag confirmed. Digital assets/crypto trading operations, OTC trade capture and reconciliation.",
+      "skills": [
+        "Trade Capture & Settlement",
+        "Daily Reconciliation",
+        "Counterparty & Custodian Support",
+        "Operational Process Documentation",
+        "Control Gap Identification",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources daily, ensuring accurate trade, position, and cash records.\nRespond to inquiries from counterparties and internal stakeholders, resolving operational issues across a high volume, deadline driven caseload.\nIdentify gaps in standard operating procedures and contribute proposed fixes, working directly with team leadership.\nBuild Excel trackers with formulas and conditional formatting to surface reconciliation breaks across hundreds of records daily.\nCompile documentation ensuring operational processes are fully supported and audit ready.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records each month.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving trade and data issues through direct communication.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams to keep records accurate.\nUse JIRA to manage workflow and track resolution of operational issues in a fast paced, high volume environment.\nAdjust account records for corporate actions including stock splits and dividend reinvestment across a 650+ fund universe.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-fanatics-juniorrisk",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "Fanatics",
+      "jobTitle": "Junior Risk Analyst, FCM Operational Risk (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4429408596",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_Fanatics.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_Fanatics.docx",
+      "salary": "Not stated (Entry level tag)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 1 or more years required, entry level tag confirmed. Operational risk for Fanatics Betting and Gaming's regulated Futures Commission Merchant entity, CFTC/NFA reporting support.",
+      "skills": [
+        "Operational Risk Monitoring",
+        "Risk Reporting",
+        "Settlement & Clearing Review",
+        "Regulatory Reporting Support",
+        "Escalation & Governance",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Produce daily and weekly risk reports summarizing flagged activity and key risk indicators for senior stakeholders.\nReconcile transaction and account data against internal and external sources, monitoring settlement and payment flows for discrepancies.\nLog and track operational incidents and exceptions, escalating risk limit breaches to senior stakeholders.\nRespond to information requests from internal audit and regulatory examiners, supporting regulatory reporting requirements on tight deadlines.\nBuild Excel trackers with formulas and conditional formatting to surface risk patterns across hundreds of transaction records.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and reporting issues.\nEscalate pricing and holdings discrepancies to portfolio managers and internal teams to keep downstream reporting accurate.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing summaries for stakeholders.\nAdjust account records for corporate actions including stock splits and dividend reinvestment across a 650+ fund universe.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-whitecap-compliance",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "WhiteCap Search",
+      "jobTitle": "Compliance Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4441251510",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_WhiteCapCompliance.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_WhiteCapCompliance.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. 1 to 4 years experience required. Recruiter placement at a bank in Midtown Manhattan, real time compliance across trading, operations, and investment products, not AML/KYC specific.",
+      "skills": [
+        "Regulatory Filing Preparation",
+        "Automated Compliance Monitoring",
+        "Policy Adherence Review",
+        "Cross Functional Coordination",
+        "Documentation & Controls",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "JIRA",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Compile audit ready investigation documents and compliance filings, ensuring accuracy before submission to internal and external reviewers.\nDesign and review data driven monitoring trackers in Excel, flagging exceptions across hundreds of records for compliance follow up.\nReconcile transaction and account data against internal and external sources, coordinating with trading, operations, and compliance stakeholders.\nRespond to information requests from internal audit and regulatory examiners, gathering documentation on tight deadlines.\nContribute to and flag gaps in documented compliance procedures, working long term projects to maintain evolving regulatory standards.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving data and compliance related issues.\nEscalate data discrepancies to portfolio managers and internal teams, maintaining accurate downstream compliance records.\nUse JIRA to manage workflow and track resolution of compliance related data issues across teams.\nAuthor reference documentation adopted by colleagues, supporting consistent compliance practices across the team.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
+    {
+      "id": "app-tfcornerstone-associate",
+      "_created": "2026-07-16T01:05:05.940320+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-16T01:05:05.940320+00:00"
+        }
+      ],
+      "company": "TF Cornerstone",
+      "jobTitle": "Associate, Family Office (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4439040943",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-15/Neil_Patel_Resume_TFCornerstone.docx",
+      "coverLetter": "Job Applications/2026-07-15/Neil_Patel_CoverLetter_TFCornerstone.docx",
+      "salary": "Not stated",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted within past week. Entry level tag confirmed, no hard years requirement. Family office investment and accounting support, includes KYC/AML documentation support embedded in a broader ops role, not a standalone AML seat.",
+      "skills": [
+        "Account Reconciliation",
+        "KYC & AML Documentation Support",
+        "Legal & Financial Document Preparation",
+        "Capital Call Processing",
+        "Confidential Records Management",
+        "Advanced Excel (Pivot Tables",
+        "VLOOKUP",
+        "Macros)",
+        "Bloomberg Terminal (BMC certified)",
+        "Microsoft Office Suite",
+        "AI/ML coursework (academic exposure: SQL",
+        "Python)"
+      ],
+      "bulletsTD": "Reconcile transaction and account data against internal and external sources daily, maintaining accurate general ledger and investment records.\nSupport KYC and enhanced due diligence documentation for new and existing relationships, coordinating with compliance stakeholders.\nCompile investigation documents and legal and financial records, serving as point of contact for internal reviewers.\nHandle sensitive customer and account information with discretion, following strict confidentiality and documentation standards.\nAuthor reference documentation adopted by colleagues, supporting consistent recordkeeping across investment and accounting functions.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and fund administrator records monthly.\nAdjust account records for corporate actions including stock splits and dividend reinvestment across a 650+ fund universe.\nServe as primary point of contact for 400+ institutional portfolio managers, resolving account and reporting requests.\nEscalate account discrepancies to portfolio managers and internal teams, maintaining accurate downstream records.\nAnalyze monthly performance and holdings data, preparing summaries for internal review and reporting.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention 10 percent through targeted market research and messaging."
+    },
     {
       "id": "app-ares-clientservices",
       "_created": "2026-07-14T23:55:20.347900+00:00",
@@ -2269,7 +2912,7 @@
       "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
       "gmailOutcome": "Will Be In Touch",
       "gmailSubject": "Thank you for applying to Optiver",
-      "gmailSummary": "Automated confirmation that Optiver received your application — no decision yet.",
+      "gmailSummary": "Automated confirmation that Optiver received your application \u2014 no decision yet.",
       "gmailThreadId": "19f363844900fa8f",
       "gmailCheckedAt": "2026-07-08"
     },
@@ -2318,7 +2961,7 @@
       "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
       "gmailOutcome": "Will Be In Touch",
       "gmailSubject": "Welcome to Whitecap! We've received your application for Investment Operations Associate",
-      "gmailSummary": "Automated ATS confirmation that Whitecap Search received your Investment Operations Associate application — no decision yet.",
+      "gmailSummary": "Automated ATS confirmation that Whitecap Search received your Investment Operations Associate application \u2014 no decision yet.",
       "gmailThreadId": "19f36372284dddff",
       "gmailCheckedAt": "2026-07-08"
     },
@@ -2507,7 +3150,7 @@
       "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%.",
       "gmailOutcome": "Will Be In Touch",
       "gmailSubject": "Your application was viewed by Carisbrook Partners",
-      "gmailSummary": "No email reply yet, but LinkedIn shows a recruiter at Carisbrook Partners actually opened/viewed your application on Jul 6 — a real engagement signal, though no decision yet.",
+      "gmailSummary": "No email reply yet, but LinkedIn shows a recruiter at Carisbrook Partners actually opened/viewed your application on Jul 6 \u2014 a real engagement signal, though no decision yet.",
       "gmailThreadId": "19f3708d1e8189fd",
       "gmailCheckedAt": "2026-07-08"
     },
@@ -2764,7 +3407,7 @@
       "link": "https://www.linkedin.com/jobs/view/operational-due-diligence-analyst-at-brown-advisory-4416905177",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_BrownAdvisory.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_BrownAdvisory.docx",
-      "salary": "$90,000–$130,000",
+      "salary": "$90,000\u2013$130,000",
       "deadline": "",
       "dateApplied": "2026-07-06",
       "status": "Received Response",
@@ -2813,7 +3456,7 @@
       "link": "https://www.linkedin.com/jobs/view/alternative-investments-accountant-at-u-s-bank-4375849291",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_USBank.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_USBank.docx",
-      "salary": "$81,345–$95,700",
+      "salary": "$81,345\u2013$95,700",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
@@ -2861,7 +3504,7 @@
       "link": "https://www.linkedin.com/jobs/view/capital-operations-analyst-at-affirm-4426632750",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_Affirm.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_Affirm.docx",
-      "salary": "$90,000–$110,000 (NY/NJ band)",
+      "salary": "$90,000\u2013$110,000 (NY/NJ band)",
       "deadline": "",
       "dateApplied": "2026-07-06",
       "status": "Received Response",
@@ -2913,7 +3556,7 @@
       "link": "https://www.linkedin.com/jobs/view/associate-investor-support-at-willow-wealth-4427132896",
       "resume": "Job Applications/2026-07-04/Neil_Patel_Resume_WillowWealth.docx",
       "coverLetter": "Job Applications/2026-07-04/Neil_Patel_CoverLetter_WillowWealth.docx",
-      "salary": "$85,000–$95,000",
+      "salary": "$85,000\u2013$95,000",
       "deadline": "",
       "dateApplied": "2026-07-06",
       "status": "Received Response",
@@ -2962,11 +3605,11 @@
       "jobTitle": "Securities & Derivatives Intermediate Analyst (Jersey City)",
       "link": "https://www.linkedin.com/jobs/view/securities-and-derivatives-intermediate-analyst-at-citi-4410486168",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Citi.docx",
-      "salary": "$78k–$109k",
+      "salary": "$78k\u2013$109k",
       "deadline": "2026-07-03",
       "dateApplied": "2026-07-02",
       "status": "Received Response",
-      "notes": "MOST URGENT — closes Jul 3. Trade-break resolution + reconciliation, 2–5 yrs, no programming required. Maps directly to your Bloomberg recon work. Jersey City = easy commute.",
+      "notes": "MOST URGENT \u2014 closes Jul 3. Trade-break resolution + reconciliation, 2\u20135 yrs, no programming required. Maps directly to your Bloomberg recon work. Jersey City = easy commute.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Citi.docx",
       "gmailOutcome": "Rejected",
       "gmailSubject": "Thank you for considering Citi!",
@@ -2991,11 +3634,11 @@
       "jobTitle": "SMA Operations Associate (NYC)",
       "link": "https://www.linkedin.com/jobs/view/sma-operations-associate-at-social-capital-resources-4434374193",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SMAOps.docx",
-      "salary": "$100k–$120k",
+      "salary": "$100k\u2013$120k",
       "deadline": "",
       "dateApplied": "2026-07-02",
       "status": "Applied",
-      "notes": "Literally SMA operations — account setup, restrictions, recon files. Your Bloomberg SMA/CIT work is the exact match. ALSO message the recruiter directly (outreach send #1).",
+      "notes": "Literally SMA operations \u2014 account setup, restrictions, recon files. Your Bloomberg SMA/CIT work is the exact match. ALSO message the recruiter directly (outreach send #1).",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SMAOps.docx"
     },
     {
@@ -3015,11 +3658,11 @@
       "jobTitle": "Reconciliation & Corporate Actions Analyst (NYC)",
       "link": "https://www.linkedin.com/jobs/view/reconciliation-corporate-actions-analyst-at-oppenheimer-co-inc-4405040511",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Oppenheimer.docx",
-      "salary": "$70k–$85k",
+      "salary": "$70k\u2013$85k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
-      "notes": "Highest-probability posting: asks for SMA reconciliation + Bloomberg platform proficiency by name. 141 applicants already — apply fast. Salary slightly under target.",
+      "notes": "Highest-probability posting: asks for SMA reconciliation + Bloomberg platform proficiency by name. 141 applicants already \u2014 apply fast. Salary slightly under target.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Oppenheimer.docx",
       "noApplyReason": "",
       "noApplyAt": "2026-07-02T05:26:56.945Z"
@@ -3038,14 +3681,14 @@
         }
       ],
       "company": "Goldman Sachs",
-      "jobTitle": "Associate, Settlements — Global Banking & Markets (NYC)",
+      "jobTitle": "Associate, Settlements \u2014 Global Banking & Markets (NYC)",
       "link": "https://www.linkedin.com/jobs/view/global-banking-markets-new-york-associate-settlements-9283349-at-goldman-sachs-4432698794",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_GoldmanSachs.docx",
-      "salary": "$97k–$126k",
+      "salary": "$97k\u2013$126k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
-      "notes": "Stretch: biggest brand, 2+ yrs ops + advanced Excel — you clear both, but settlements itself is new to you.",
+      "notes": "Stretch: biggest brand, 2+ yrs ops + advanced Excel \u2014 you clear both, but settlements itself is new to you.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_GoldmanSachs.docx",
       "noApplyReason": "it says: Prior experience must include two (2) years with: trade booking reviews; validating trade information (including asset class- and region-specific trade information), streamlining essential reporting, and knowledge sharing; communicating complex issues and concepts to a wide array of internal partners with differing levels of product experience",
       "noApplyAt": "2026-07-02T05:18:50.559Z"
@@ -3064,10 +3707,10 @@
         }
       ],
       "company": "Lord Abbett",
-      "jobTitle": "Analyst, Global Investor Services – Alternatives (Jersey City)",
+      "jobTitle": "Analyst, Global Investor Services \u2013 Alternatives (Jersey City)",
       "link": "https://www.wallstreetcareers.com/jobs/468329164-analyst-global-investor-services-alternatives",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_LordAbbett.docx",
-      "salary": "$80k–$95k",
+      "salary": "$80k\u2013$95k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
@@ -3093,11 +3736,11 @@
       "jobTitle": "Middle Office Operations Senior Analyst/Associate (NYC)",
       "link": "https://www.linkedin.com/jobs/view/middle-office-operations-senior-analyst-associate-at-neuberger-4415104503",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Neuberger.docx",
-      "salary": "$75k–$125k",
+      "salary": "$75k\u2013$125k",
       "deadline": "",
       "dateApplied": "",
       "status": "Did Not Apply",
-      "notes": "Stretch — wants derivatives/middle-office experience you don't have yet, but recon + PM point-of-contact fit is real.",
+      "notes": "Stretch \u2014 wants derivatives/middle-office experience you don't have yet, but recon + PM point-of-contact fit is real.",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Neuberger.docx",
       "noApplyReason": "it literally says: Preferred:\n\nKnowledge of technical side of new accounts, reporting and onboarding.\nStrong knowledge of BlackRock Aladdin.\nFamiliarity with SWIFT messaging and Eze.",
       "noApplyAt": "2026-07-02T05:17:41.553Z"
@@ -3125,7 +3768,7 @@
       "companyLink": "https://nb.wd1.myworkdayjobs.com/en-US/NBCareers/job/New-York-NY/Client-Associate_R0012334",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_NeubergerClient.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_NeubergerClient.docx",
-      "salary": "$80k–$100k",
+      "salary": "$80k\u2013$100k",
       "status": "Received Response",
       "notes": "TOP PICK. Posted 06/30, VERIFIED LIVE on NB Workday 07/02. Wants exactly 1 to 2 years experience; licenses sponsored in year one (resume already says willing). Institutional Client Group, RM/RFP support.",
       "skills": [
@@ -3176,7 +3819,7 @@
       "companyLink": "https://www.dtcc.com/careers/job-search",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_DTCC_CorpActions.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_DTCC_CorpActions.docx",
-      "salary": "TBD (DTCC band; Treasury peer role $90k–$115k)",
+      "salary": "TBD (DTCC band; Treasury peer role $90k\u2013$115k)",
       "status": "Did Not Apply",
       "notes": "Posted 07/01 (yesterday), accepting as of 07/02. Requires only a minimum of 2 years related experience, Bachelor preferred. Direct match to Bloomberg corporate actions bullet.",
       "skills": [
@@ -3220,7 +3863,7 @@
       "companyLink": "https://careers.jpmorgan.com/us/en/search-results",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_JPM_Reporting.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_JPM_Reporting.docx",
-      "salary": "$100.7k–$145k",
+      "salary": "$100.7k\u2013$145k",
       "status": "Received Response",
       "notes": "Posted 06/30, accepting as of 07/02. Requires 2+ years finance incl. exposure to accounting/financial statements/regulatory reporting; his TD regulatory casework + Bloomberg reporting cycles cover the exposure bar.",
       "skills": [
@@ -3314,7 +3957,7 @@
       "companyLink": "https://www.schroders.com/en-us/us/institutional/about-us/careers/",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_Schroders.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_Schroders.docx",
-      "salary": "$110k–$125k",
+      "salary": "$110k\u2013$125k",
       "status": "Received Response",
       "notes": "Posted 06/27, accepting as of 07/02 (46 applicants). No hard years requirement (\"previous operational experience\"). Rare posting where his KYC background is an explicit asset. Newly established team.",
       "skills": [
@@ -3365,12 +4008,12 @@
       "companyLink": "https://blueowl.wd1.myworkdayjobs.com/blueowl/job/New-York-City-NY/Global-Client-Engagement---Analyst_R-102270-1",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_BlueOwl.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_BlueOwl.docx",
-      "salary": "$85k–$100k",
+      "salary": "$85k\u2013$100k",
       "status": "Received Response",
       "notes": "Posted 07/01, VERIFIED LIVE on Blue Owl Workday 07/02 (posted yesterday there). 2 to 3 years preferred with investment products focus; salary $85k to $100k plus bonus. Fast-growing alternatives brand.",
       "dateApplied": "2026-07-04",
       "gmailOutcome": "Will Be In Touch",
-      "gmailSubject": "Application Received for Global Client Engagement – Analyst",
+      "gmailSubject": "Application Received for Global Client Engagement \u2013 Analyst",
       "gmailSummary": "Automated Workday confirmation, application is being processed.",
       "gmailThreadId": "19f2e31b949ef4ff",
       "gmailCheckedAt": "2026-07-08"
@@ -3398,7 +4041,7 @@
       "companyLink": "https://careers.smbcgroup.com/",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_SMBC.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SMBC.docx",
-      "salary": "$80k–$115k",
+      "salary": "$80k\u2013$115k",
       "status": "Received Response",
       "notes": "Posted 06/25, accepting as of 07/02. \"Recommended\" 3 years (not required); JIRA/Agile explicitly wanted and he has JIRA Service Management on his real skill list. $80k to $115k.",
       "skills": [
@@ -3448,7 +4091,7 @@
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_SCR_ClientServices.docx",
       "salary": "TBD (recruiter)",
       "status": "Did Not Apply",
-      "notes": "Posted 06/30, accepting as of 07/02. Recruiter Neil ALREADY has a live application with (SMA Ops role) — warm channel. Asks 1 to 5 years similar experience; Advent APX/Salesforce preferred only.",
+      "notes": "Posted 06/30, accepting as of 07/02. Recruiter Neil ALREADY has a live application with (SMA Ops role) \u2014 warm channel. Asks 1 to 5 years similar experience; Advent APX/Salesforce preferred only.",
       "noApplyReason": "job position closed",
       "noApplyAt": "2026-07-04T17:25:32.578Z"
     },
@@ -3471,7 +4114,7 @@
       "companyLink": "https://www.linkedin.com/jobs/view/middle-office-analyst-at-atlantic-group-4434790402",
       "resume": "Job Applications/2026-07-02/Neil_Patel_Resume_AtlanticGroup.docx",
       "coverLetter": "Job Applications/2026-07-02/Neil_Patel_CoverLetter_AtlanticGroup.docx",
-      "salary": "$115k–$150k + 20-25% bonus",
+      "salary": "$115k\u2013$150k + 20-25% bonus",
       "status": "Did Not Apply",
       "notes": "STRETCH, labeled honestly. Posted 06/29, accepting as of 07/02 (108 applicants). Range is 2 to 7 years and he sits at the floor; derivatives preferred not required. Recruiter channel, so worth the shot at $115k+.",
       "noApplyReason": "job position has  closed",

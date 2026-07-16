@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T23:55:20.347900+00:00",
+  "updatedAt": "2026-07-16T01:08:57.282762+00:00",
   "data": [
     {
       "id": "comp-bessemertrust",
@@ -141,7 +141,7 @@
       "size": "Enterprise",
       "location": "NYC",
       "website": "https://www.morganstanley.com/careers",
-      "why": "Big wealth/SMA platform (huge UMA business) — your SMA story fits their ops org.",
+      "why": "Big wealth/SMA platform (huge UMA business) \u2014 your SMA story fits their ops org.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -225,7 +225,7 @@
       "size": "Enterprise",
       "location": "NYC + Jersey City",
       "website": "https://jobs.rbc.com",
-      "why": "Large Jersey City ops center — settlements, recon, trade support.",
+      "why": "Large Jersey City ops center \u2014 settlements, recon, trade support.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -280,7 +280,7 @@
     {
       "id": "comp-socgen",
       "_created": "2026-07-02T05:00:00.000Z",
-      "name": "Société Générale",
+      "name": "Soci\u00e9t\u00e9 G\u00e9n\u00e9rale",
       "industry": "Boutique / Mid-Market Bank",
       "size": "Large",
       "location": "NYC + Jersey City",
@@ -309,7 +309,7 @@
       "size": "Large",
       "location": "NYC",
       "website": "https://jobs.td.com",
-      "why": "You already have TD on your resume — internal-adjacent brand familiarity helps.",
+      "why": "You already have TD on your resume \u2014 internal-adjacent brand familiarity helps.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -333,7 +333,7 @@
       "size": "Enterprise",
       "location": "NYC + Jersey City",
       "website": "https://www.bny.com/careers",
-      "why": "World's largest custodian — asset servicing analyst roles in volume; top target.",
+      "why": "World's largest custodian \u2014 asset servicing analyst roles in volume; top target.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -405,7 +405,7 @@
       "size": "Large",
       "location": "NYC",
       "website": "https://www.alliancebernstein.com/careers",
-      "why": "Big SMA/managed-accounts platform — direct fit for your Bloomberg experience.",
+      "why": "Big SMA/managed-accounts platform \u2014 direct fit for your Bloomberg experience.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -477,7 +477,7 @@
       "size": "Enterprise",
       "location": "Newark NJ",
       "website": "https://careers.pgim.com",
-      "why": "Huge AM next door in Newark — ops/investor services volume; NJ commute.",
+      "why": "Huge AM next door in Newark \u2014 ops/investor services volume; NJ commute.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -537,7 +537,7 @@
       "size": "Large",
       "location": "NYC",
       "website": "https://www.citadel.com/careers",
-      "why": "Top-of-market pay for ops talent; screens are demanding — stretch tier.",
+      "why": "Top-of-market pay for ops talent; screens are demanding \u2014 stretch tier.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -609,7 +609,7 @@
       "size": "Enterprise",
       "location": "Jersey City",
       "website": "https://careers.dtcc.com",
-      "why": "THE Jersey City employer for settlements/clearing knowledge — high seat count, great commute.",
+      "why": "THE Jersey City employer for settlements/clearing knowledge \u2014 high seat count, great commute.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -657,7 +657,7 @@
       "size": "Enterprise",
       "location": "NYC",
       "website": "https://careers.spglobal.com",
-      "why": "Market-data ops, index ops, client services — Bloomberg background translates directly.",
+      "why": "Market-data ops, index ops, client services \u2014 Bloomberg background translates directly.",
       "status": "Researching",
       "dateAdded": "2026-07-02"
     },
@@ -905,6 +905,126 @@
       "_created": "2026-07-14T23:55:20.347900+00:00",
       "status": "",
       "dateAdded": "2026-07-14"
+    },
+    {
+      "id": "comp-rbc",
+      "name": "RBC",
+      "industry": "Investment Bank",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://jobs.rbc.com",
+      "why": "Bulge bracket Canadian bank, GRM Market Risk group, strong entry level risk analyst pipeline.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-citynationalbank",
+      "name": "City National Bank",
+      "industry": "Commercial Bank",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.cnb.com/careers.html",
+      "why": "RBC subsidiary, fixed income trading desk with a direct trade reconciliation Analyst opening.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-ardian",
+      "name": "Ardian",
+      "industry": "Private Equity",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.ardian.com/careers",
+      "why": "Global private equity firm, Investor Relations/Client Solutions team hiring at the associate level.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-starrinsurance",
+      "name": "Starr Insurance",
+      "industry": "Insurance",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://starrcompanies.com/careers",
+      "why": "Global commercial insurer with regulatory reporting and property operations analyst openings, entry friendly.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-smbcgroup",
+      "name": "SMBC Group",
+      "industry": "Investment Bank",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.smbcgroup.com/americas/careers",
+      "why": "Japanese global banking group, credit risk analytics team hiring at 0-3 year level.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-btig",
+      "name": "BTIG",
+      "industry": "Broker-Dealer",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.btig.com/careers",
+      "why": "Institutional equities and prime brokerage firm, equity operations team with strong comp band.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-affirm",
+      "name": "Affirm",
+      "industry": "Fintech",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.affirm.com/careers",
+      "why": "Buy now pay later fintech, Strategic Finance/Revenue team, strong comp band and ML-adjacent finance work.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-galaxy",
+      "name": "Galaxy",
+      "industry": "Digital Assets",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.galaxy.com/careers",
+      "why": "Institutional digital assets platform, Trading Operations team, entry level with strong comp.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-fanatics",
+      "name": "Fanatics",
+      "industry": "Fintech / Betting & Gaming",
+      "size": "Enterprise",
+      "location": "New York, NY",
+      "website": "https://www.fanaticscareers.com",
+      "why": "Fanatics Betting & Gaming runs a regulated FCM entity with an Operational Risk function, real financial-services ops work.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
+    },
+    {
+      "id": "comp-tfcornerstone",
+      "name": "TF Cornerstone",
+      "industry": "Real Estate / Family Office",
+      "size": "Mid-size",
+      "location": "New York, NY",
+      "website": "https://tfcornerstone.com/careers",
+      "why": "Family owned real estate company's family office, investment and accounting support role.",
+      "status": "Researching",
+      "_created": "2026-07-16T01:08:57.282762+00:00",
+      "dateAdded": "2026-07-15"
     }
   ]
 }
