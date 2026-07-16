@@ -157,7 +157,10 @@ mission-control.
 
 ## Open items / TODO
 1. **Sync must be enabled on each device** (token pasted per device) for true
-   two-way sync. It's confirmed working (repo has `data/*.json`).
+   two-way sync. It's confirmed working (repo has `data/*.json`). Since
+   2026-07-15, reading no longer needs a token — empty stores self-heal from
+   the deployed data files (see Deploy checklist #6); the token is only needed
+   to *edit* from that device. Confirmed recovered on Neil's phone same day.
 2. **Repo is still PUBLIC.** User wants it private (career notes live in it).
    Caveat: private repos disable GitHub Pages on the free plan. Option on the
    table: split into a **public app repo + separate private data repo** (small
@@ -185,9 +188,34 @@ mission-control.
    correctly on iPhone Safari (tested locally on Mac before shipping; phone
    verification over LAN didn't happen this session).
 
+## Deploy checklist — the app must stay LIVE and CURRENT (do this every change)
+Neil uses the deployed PWA on his phone as his daily driver. Any session that
+touches this repo must leave the live site working and up to date:
+
+1. **Syntax-check every changed JS file** before committing (no Node here):
+   `/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc -e "checkModuleSyntax(readFile('js/foo.js'))"`
+   — it throws a SyntaxError on bad input, silence means OK. One broken module
+   blanks the whole app on his phone.
+2. **Bump `sw.js` CACHE version** whenever any app asset (JS/CSS/HTML/icons)
+   changes — without it, phones keep serving the old build.
+3. **Data edits**: top-level `updatedAt` in each edited `data/*.json` must be
+   set strictly newer (current ISO), or last-write-wins sync silently ignores
+   the change on devices.
+4. **Commit and push before ending the session** — an unpushed commit is
+   invisible to the phone. Deploy IS the push (GitHub Pages).
+5. **Verify it went live** (Pages takes ~a minute):
+   `curl -s https://zvcodez.github.io/neil-ai-hub/sw.js | head -4` and check
+   the CACHE version matches what you just pushed.
+6. **Never break the self-heal path**: `bootstrapFromDeployedData()` in
+   `js/sync.js` reseeds empty localStorage from the site's own `data/*.json`
+   (added 2026-07-15 after iOS storage eviction kept blanking Neil's phone —
+   the token lives in the same storage, so sync couldn't recover on its own).
+   It requires the `data/` files to stay deployed with the site. If data ever
+   moves (e.g. private data repo split), repoint the bootstrap in the same
+   change.
+
 ## Conventions
 - Match the existing buildless, vendored-module style. No new dependencies.
-- Bump the `sw.js` CACHE version whenever assets change so updates ship.
 - **When Neil signs off** ("okay that's all for now", "okay bye", or anything that
   means he's leaving to continue later), update the **Open items / TODO** section
   above with exactly where we left off and the next step, so the next fresh session
