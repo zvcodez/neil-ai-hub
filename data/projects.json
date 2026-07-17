@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T03:52:29.000Z",
+  "updatedAt": "2026-07-17T05:08:10.737Z",
   "data": [
     {
       "id": "idea-diksha-resume",
@@ -552,10 +552,15 @@
       "folder": "~/Claude/neil-ai-hub",
       "repoUrl": "https://github.com/zvcodez/neil-ai-hub",
       "liveUrl": "https://zvcodez.github.io/neil-ai-hub/",
-      "lastDid": "Fixed the recurring phone wipe: app now self-heals \u2014 empty stores reseed from the deployed data/*.json files on startup, no token needed (token only needed to edit from phone).",
-      "nextStep": "Neil: open the hub on the phone \u2014 data should reappear on its own; then re-paste the GitHub token in the cloud button so phone edits sync again. Also check the Neil's Apps section on Home.",
+      "lastDid": "Fixed several reported bugs in one session: Reel wasn't showing in Neil's Apps (stale localStorage that only ever self-healed when empty \u2014 now always re-checks committed data), apps weren't alphabetical, app links opened in an in-app Safari sheet instead of handing off, and rebuilt Home as a stats-forward \"mission control\" layout. The bottom dock float took three rounds to actually fix: round 1 restructured the CSS shell but also added a JS-measured --app-height var on the assumption visualViewport.height is trustworthy in standalone iOS -- it isn't (same WebKit bug as 100vh/100dvh) -- so that override was the actual bug, confirmed via a color-coded debug build on Neil's real device. Fixed by dropping the JS override and trusting the CSS position:fixed;inset:0 pin alone. Added a visible build stamp + live viewport/safe-area diagnostics in the sync panel so future rounds start from real device numbers instead of guessing from screenshots.",
+      "nextStep": "Neil: force-quit and reopen the Hub twice, confirm build v58 in the sync panel, and check the bottom dock sits flush with no dead strip below it. If it's still wrong, screenshot the sync panel's diagnostics readout first (standalone/innerHeight/vv height/safe-top/safe-bottom) before any more CSS changes \u2014 guessing without device numbers is what cost two earlier rounds. Once confirmed, Reel/alphabetical-order/link-handoff/Home redesign from the same session are done and don't need re-checking.",
       "notes": "One place to keep an eye on all my AI projects.",
       "log": [
+        {
+          "id": "log-hub-20260717050810",
+          "ts": "2026-07-17T05:08:10.737Z",
+          "text": "Fixed Reel-missing/alphabetical-order/link-handoff bugs, rebuilt Home as \"mission control\", and after three rounds found the real dock-float root cause: a JS-measured --app-height var was overriding the already-correct CSS pin with a value from a viewport API (visualViewport.height) that turns out to be just as unreliable in standalone iOS as 100vh/100dvh. Added a build stamp + on-device diagnostics readout in the sync panel so this doesn't require guessing blind again."
+        },
         {
           "id": "a45e379cf3",
           "ts": "2026-07-16T00:58:29.242252+00:00",
