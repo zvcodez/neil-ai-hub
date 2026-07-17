@@ -223,8 +223,15 @@ touches this repo must leave the live site working and up to date:
    `/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc -e "checkModuleSyntax(readFile('js/foo.js'))"`
    — it throws a SyntaxError on bad input, silence means OK. One broken module
    blanks the whole app on his phone.
-2. **Bump `sw.js` CACHE version** whenever any app asset (JS/CSS/HTML/icons)
-   changes — without it, phones keep serving the old build.
+2. **Bump `sw.js` CACHE version *and* `window.__BUILD__` in `index.html`'s
+   inline script together** whenever any app asset (JS/CSS/HTML/icons)
+   changes — without the CACHE bump, phones keep serving the old build; the
+   build stamp (visible in the sync panel, `js/sync.js`) is how a screenshot
+   from Neil can prove which build actually produced what's on screen, so
+   "the fix didn't work" and "you're looking at a stale cached build" stop
+   being indistinguishable. Also note `sw.js`'s fetch handler uses
+   `{ cache: 'no-store' }` — without it, "network-first" can still silently
+   serve an unexpired *HTTP*-cached response underneath the SW logic.
 3. **Data edits**: top-level `updatedAt` in each edited `data/*.json` must be
    set strictly newer (current ISO), or last-write-wins sync silently ignores
    the change on devices.
@@ -258,7 +265,19 @@ touches this repo must leave the live site working and up to date:
     nothing else scrolls independently except deliberate inner scrollers
     like `.stage-cards` or `.modal-backdrop`.
   - `index.html` has an inline script publishing `--app-height` from
-    `visualViewport` as a second line of defense on top of the CSS pin.
+    `visualViewport` as a second line of defense on top of the CSS pin — and
+    it re-runs on `visibilitychange`/`pageshow`, not just load/resize. This
+    matters: an unresolved iOS 17+ WebKit bug (Apple Developer Forums thread
+    744327, no official fix as of this writing) lets `position: fixed`
+    elements silently drift after the app sits backgrounded for a while and
+    is reopened — no resize event fires to say so, which is exactly why the
+    2026-07-16 fix still floated for Neil on first try. The script also
+    toggles `viewport-fit` cover→auto→cover to force WebKit to redo its
+    `env(safe-area-inset-*)` geometry pass (WebKit bug 191872: those values
+    aren't set until "some arbitrary time after page load" and can go
+    stale) — this is a documented, still-open platform bug, not something a
+    CSS-only fix can guarantee against. The recalc-on-foreground script is
+    the best available mitigation, not a proof it can never recur.
   - Before touching any of `html`/`body`/`#root`/`.app`/`.content`/
     `.content-body`/`.bottom-nav` sizing or positioning, re-read the doc above
     — every one of Neil's past regressions here looked like an innocuous

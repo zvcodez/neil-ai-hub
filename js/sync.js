@@ -380,6 +380,8 @@ function SyncPanel({ onClose }) {
       ${on ? html`Sync is <strong>on</strong> · last synced ${ago(s.lastSync)}` : 'Sync is off'}
     </div>
 
+    <p class="build-stamp muted-text">Build ${window.__BUILD__ || '?'}</p>
+
     <div class="form-actions">
       ${on
         ? html`<${Button} variant="ghost" onClick=${turnOff}>Turn off<//>

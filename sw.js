@@ -1,7 +1,11 @@
 // Service worker for Neil AI Hub.
 // Network-first for app assets so deployed updates show up immediately when
 // online, with a cached fallback so the app still works offline.
-const CACHE = 'neil-ai-hub-v54';
+// Bump this on every deploy, and keep BUILD_STAMP in index.html's inline
+// script matching it — the visible build stamp (sync panel) is how a
+// screenshot proves which build produced it, instead of "did the fix not
+// work, or am I looking at a stale cached build" being unanswerable.
+const CACHE = 'neil-ai-hub-v55';
 const ASSETS = [
   './',
   './index.html',
@@ -53,8 +57,13 @@ self.addEventListener('fetch', (e) => {
   if (url.origin !== self.location.origin) return;
 
   // Network-first: fresh content when online, cache fallback when offline.
+  // { cache: 'no-store' } bypasses the browser's own HTTP cache (not just this
+  // SW's cache) — without it, "network-first" can still silently resolve from
+  // an unexpired HTTP cache entry (GitHub Pages sets cache-control on static
+  // assets), which is exactly how a stale build can survive a "network-first"
+  // fetch and make a real fix look like it didn't ship.
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, { cache: 'no-store' })
       .then((res) => {
         if (res.ok) {
           const copy = res.clone();

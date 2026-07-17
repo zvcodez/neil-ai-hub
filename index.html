@@ -16,23 +16,63 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="./css/styles.css" />
     <script>
+      // Visible build stamp (also shown in the sync panel, js/sync.js) — bump
+      // together with sw.js's CACHE constant on every deploy. Without this,
+      // "the fix didn't work" and "you're looking at a stale cached build"
+      // are indistinguishable from a screenshot alone.
+      window.__BUILD__ = 'v55';
+
       // --app-height: the visualViewport is the one viewport API iOS reports
       // truthfully in standalone mode; publish it as a CSS var so the shell
       // (.app in css/styles.css) can use it as a second line of defense on
       // top of the position:fixed pin — see ~/Claude/dock-issue/PWA-DOCK-BUG.md.
+      //
+      // Recalc is also triggered on visibilitychange/pageshow, not just
+      // load/resize — an unresolved iOS 17+ WebKit bug (Apple Developer
+      // Forums thread 744327) lets position:fixed shells silently drift after
+      // the app sits backgrounded for a while and is reopened, with no
+      // resize event ever firing to say so. The viewport-fit toggle (cover →
+      // auto → cover) forces WebKit to redo its env(safe-area-inset-*)
+      // geometry pass even when no actual resize occurred (WebKit bug
+      // 191872: those values aren't set until "some arbitrary time after
+      // page load" and can go stale) — this is the one lever that's been
+      // reported to force it. Do not remove this in favor of the CSS pin
+      // alone; they fix different failures.
       (function () {
+        var meta = document.querySelector('meta[name="viewport"]');
+
         function setAppHeight() {
           var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
           document.documentElement.style.setProperty('--app-height', Math.round(h) + 'px');
         }
+
+        function forceRecalc() {
+          if (meta) {
+            var original = meta.getAttribute('content');
+            meta.setAttribute('content', original.replace('viewport-fit=cover', 'viewport-fit=auto'));
+            requestAnimationFrame(function () {
+              meta.setAttribute('content', original);
+              setAppHeight();
+            });
+          } else {
+            setAppHeight();
+          }
+        }
+
         setAppHeight();
         window.addEventListener('resize', setAppHeight);
-        window.addEventListener('orientationchange', function () { setTimeout(setAppHeight, 250); });
+        window.addEventListener('orientationchange', function () { setTimeout(forceRecalc, 250); });
         if (window.visualViewport) window.visualViewport.addEventListener('resize', setAppHeight);
-        // Standalone launch can hand over a stale height during the splash phase.
+        // Standalone launch can hand over a stale height/env() during the splash phase.
         window.addEventListener('load', function () {
-          [150, 500, 1200].forEach(function (ms) { setTimeout(setAppHeight, ms); });
+          [150, 500, 1200].forEach(function (ms) { setTimeout(forceRecalc, ms); });
         });
+        // The actual trigger for the "backgrounded for a while, reopened,
+        // dock has drifted" bug — re-assert on every foreground, not just launch.
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') forceRecalc();
+        });
+        window.addEventListener('pageshow', forceRecalc);
       })();
     </script>
   </head>
