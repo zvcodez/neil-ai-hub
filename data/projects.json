@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T01:47:44.000Z",
+  "updatedAt": "2026-07-17T03:52:29.000Z",
   "data": [
     {
       "id": "idea-diksha-resume",
@@ -47,10 +47,15 @@
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
       "liveUrl": "https://zvcodez.github.io/jot/",
-      "nextStep": "Neil: sign up at cron-job.org and add a job pinging https://jot-push.vercel.app/api/check?token=<CRON_SECRET> every 1-2 min (get CRON_SECRET from the Vercel dashboard) so closed-app push reminders actually arrive on time \u2014 GitHub Actions cadence cannot be trusted for this. Also worth a real end-to-end test once that's in place: set a reminder ~5 min out, force-quit the PWA, confirm the push notification arrives.",
+      "nextStep": "Neil: confirm the cron-job.org pinger is actually firing (check its execution history for 200s every 1-2min) and/or do the real test -- set a reminder ~5 min out, force-quit the app, confirm the push notification arrives. If that checks out, this fix pass is fully closed out.",
       "lastDid": "Fable-planner-led hard-fix pass, all live: (1) root-caused the log-page bunching bug to a CSS flexbox quirk (.swipe wrapper's overflow:hidden reset min-size to 0, so a full list got crushed instead of scrolling) \u2014 one-line fix, verified before/after with a headless-browser repro; (2) fixed the classifier misreading a bare \"7:15\" in an evening sentence (\"tonight 7:15\") as 7:15 AM the next day instead of 7:15 PM \u2014 root cause of the duplicate near-identical reminders Neil hit; (3) notification correctness batch: stale timers no longer refire after done/delete/retag, local notified flag only sets on an actual shown notification (so the push backend still gets a shot when permission is denied), guarded the Notification global for plain iOS Safari tabs, subscribe-to-push fires right after permission grant, one-time blocked-notifications toast; (4) new due-time editor \u2014 tap a reminder's time line in the Log view to set/change/clear it after capture, previously only settable at capture time; (5) audited the jot-push backend end to end and found the real headline problem: the GitHub Actions cron meant to ping /api/check every 2 min was actually only firing every 3-6 hours in practice (GitHub deprioritizes quiet high-frequency schedules), so closed-app push reminders were arriving hours late this whole time \u2014 also fixed check.js to stop permanently marking a reminder notified when zero pushes actually delivered. Backend redeployed, frontend committed and pushed to GitHub Pages.",
       "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
+        {
+          "id": "log-jot-9",
+          "ts": "2026-07-17T03:52:29.000Z",
+          "text": "Finished the push-reliability fix: CRON_SECRET was a Vercel \"Sensitive\" var (write-only, no dashboard reveal), so rotated it to a new value, redeployed jot-push, and verified the new token works live. Walked Neil through setting up cron-job.org as the real 1-2min pinger (GitHub Actions cadence was unreliable, per earlier finding). Setup complete on Neil's end; awaiting his confirmation the pings are firing / a live end-to-end notification test."
+        },
         {
           "id": "log-jot-8",
           "ts": "2026-07-17T01:47:44.000Z",
