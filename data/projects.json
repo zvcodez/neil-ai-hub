@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T05:08:10.737Z",
+  "updatedAt": "2026-07-17T06:26:50.417Z",
   "data": [
     {
       "id": "idea-diksha-resume",
@@ -33,8 +33,15 @@
       "folder": "~/Claude/dock-issue",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Pick the first product slice: stylelint/CI rule vs drop-in AppShell component vs dockcheck screenshot CLI (see README product direction).",
-      "lastDid": "Root-caused the bug (iOS standalone misreports dynamic viewport units; fixed-vs-visual viewport mismatch), shipped the fix in ZV's Edge, and wrote the full reference doc PWA-DOCK-BUG.md with the 6-invariant bulletproof shell pattern."
+      "nextStep": "Confirm with Neil: push+deploy the ZV's Edge fix (currently local-only per his standing no-push convention) and the Reel fix (committed, blocked from prod deploy by the safety classifier -- needs his explicit go-ahead given it's a live app with real friends about to use it). Then pick the first actual product slice per the README's product direction (drop-in shell+diagnostics package is the recommended one, since the diagnostics are what actually solved this bug and most competing blog-post fixes don't ship that part).",
+      "lastDid": "Actually root-caused this for real (2026-07-17), in the Neil AI Hub project. The 2026-07-13 ZV's Edge fix this doc used to describe was incomplete: it recommended pinning html/body with position:fixed;inset:0 and trusting a JS-measured --app-height (visualViewport.height) as \"the one number iOS reports truthfully in standalone mode.\" Both turned out to still be wrong on a real device (an iPhone Pro Max) -- confirmed via a color-coded debug build and on-device diagnostics that WebKit under-reports the standalone viewport height by a fixed ~38pt, and that defeats vh/dvh, visualViewport, innerHeight, AND position:fixed;inset:0 identically, since they all ask WebKit the same underlying question. The actual fix: stop trying to know the exact height at all -- normal document flow + position:sticky for the dock/header (sticky rides the browser's live scroll tracking instead of a reported-and-wrong metric). Rewrote PWA-DOCK-BUG.md to product-quality precision with the full account, then audited every existing app: fixed Neil AI Hub, ZV's Edge (committed locally only, not pushed -- Neil's standing instruction for that repo), and Reel (committed, prod deploy blocked by the safety classifier, needs Neil's go-ahead) with the full sticky-shell fix; added diagnostics + safe-area DOM-probe measurement (without a full rewrite) to Jot and Proof/alcohol-scanner, both of which have a real architectural reason (a native-feel page-per-view model, and a live camera-fill view) to keep an exact-height container; fixed The Gucci Gazette's simpler position:fixed navbar to sticky (found separately uncommitted mid-migration to a new stack, so left uncommitted on purpose). Confirmed Mithoo's Adventure/Gucci Run (games, no dock element) and Rendezvous (no bottom nav at all) aren't affected by this pattern. Also added a pointer in ~/.claude/CLAUDE.md and a memory entry so future sessions on any project check the doc before building a PWA shell.",
+      "log": [
+        {
+          "id": "log-dock-20260717062650",
+          "ts": "2026-07-17T06:26:50.417Z",
+          "text": "Found the real root cause (WebKit under-reports the standalone viewport height by a device-specific fixed amount, defeating even position:fixed;inset:0) after the original ZV's Edge fix turned out to be incomplete. Corrected PWA-DOCK-BUG.md to product-quality precision and audited/fixed every existing app against it."
+        }
+      ]
     },
     {
       "id": "idea-jot",
