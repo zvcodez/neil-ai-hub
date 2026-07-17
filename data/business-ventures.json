@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T20:08:30.899507+00:00",
+  "updatedAt": "2026-07-17T20:17:57.421986+00:00",
   "data": [
     {
       "id": "biz-zvtok",
@@ -11,11 +11,16 @@
       "monthlyRevenue": 0,
       "monthlyCost": 0,
       "customers": 0,
-      "nextStep": "Neil reviews the rendered c02-what-is-an-mcp v2 slides (Downloads/iCloud ZVLABS/c02-what-is-an-mcp/, old v1 PNGs overwritten) and, if approved, posts it as the next TikTok post. After that: real topic research (WebSearch) before locking the part-3 topic (context windows), and Track B (documentary bug-fix video) session 1 still hasn't been filmed. Also: design-variations/ subfolders in the delivery locations are now stale and need manual cleanup (a rm -rf there was blocked by the auto-mode classifier).",
-      "lastDid": "Neil decided to adopt paper-editorial-v2. Rebuilt all 6 slides of c02-what-is-an-mcp in it (3 reused from the approved preview, 3 new: 'connects to real things', 'anyone can build one', and a new CTA slide), pulling in 2 more Phosphor icons. Wired the pipeline properly instead of leaving it a one-off render loop: lint_dashes.py now takes an optional slides-subdir arg so it works for both v1 and v2 posts, and added render-v2.sh mirroring v1's fixed 2x-supersample render approach. Rendered and delivered to Downloads and iCloud, overwriting the old v1 renders (v1 never shipped).",
+      "nextStep": "Post c02-what-is-an-mcp (already rendered, in Downloads/iCloud ZVLABS/c02-what-is-an-mcp/, v2 style). Every post after this starts directly in paper-editorial-v2 (v1 retired). Then: real topic research (WebSearch) before locking the part-3 topic (context windows), and Track B (documentary bug-fix video) session 1 still hasn't been filmed.",
+      "lastDid": "Neil reviewed the rebuilt c02-what-is-an-mcp slide 1 on his phone and confirmed the paper-editorial-v2 style: 'i like this style so lets go with this for the next one.' Promoted v2 to the active template in the project doc, v1 paper-editorial is now legacy/reference only. The full 6-slide MCP post is done and delivered, ready to post.",
       "liveUrl": "",
       "notes": "\u2022 Single account (existing ZVlabs TikTok, @zvlabs), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers)\n\u2022 Track A: tips carousels 2\u20133\u00d7/week (growth) \u00b7 Track B: documentary bug-fix videos, irregular (conversion)\n\u2022 Products: one-time Gumroad files ~$5\u2013$15; first product = iOS PWA polish kit built on ~/Claude/dock-issue\n\u2022 Inbound only \u2014 no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n\u2022 Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2\u20134 hrs/wk)\n\u2022 Realistic expectations: 10\u201320 sales in ~2\u20133 months is the win condition, not big income\n\u2022 performance-log.md tracks per-post views/saves/shares/follows, reviewed weekly",
       "log": [
+        {
+          "id": "log-zvtok-6",
+          "ts": "2026-07-17T20:17:57.421986+00:00",
+          "text": "Neil approved paper-editorial-v2 after reviewing a rendered slide on his phone. Locked it in as the active template (v1 retired to reference-only) in the project CLAUDE.md so future posts default to it without re-asking."
+        },
         {
           "id": "log-zvtok-5",
           "ts": "2026-07-17T20:08:30.899507+00:00",
