@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T01:42:08.438Z",
+  "updatedAt": "2026-07-17T01:47:44.000Z",
   "data": [
     {
       "id": "idea-diksha-resume",
@@ -47,10 +47,15 @@
       "folder": "~/Claude/jot",
       "repoUrl": "https://github.com/zvcodez/jot",
       "liveUrl": "https://zvcodez.github.io/jot/",
-      "nextStep": "Neil: reload Jot once on your phone (this will be the last manual reload needed -- auto-update handles it from here on). Check: (1) log page cards have clean rounded corners with no red peeking through, (2) longer notes wrap fully, (3) page doesn't pan/bounce with the keyboard up, (4) no stray floating cursor. Also still pending: real push-notification delivery test (Add to Home Screen first, iOS requires standalone mode for Web Push).",
-      "lastDid": "Shipped two more fixes after the visual-bug pass: (1) service worker was letting GitHub Pages' max-age=600 HTTP cache serve stale JS/CSS after a deploy, so Neil sometimes saw old behavior even after reloading -- fixed by bypassing HTTP cache on fetch/install; (2) went further and built proper PWA auto-update (checks for a new service worker on foreground + every 60s, auto-reloads once it takes control) so Neil never has to manually clear cache again for any future update to land. Deployed; both are close-the-loop fixes on top of the red-bleed/text-clipping/scroll-lock bugs from the phone screenshots earlier tonight.",
+      "nextStep": "Neil: sign up at cron-job.org and add a job pinging https://jot-push.vercel.app/api/check?token=<CRON_SECRET> every 1-2 min (get CRON_SECRET from the Vercel dashboard) so closed-app push reminders actually arrive on time \u2014 GitHub Actions cadence cannot be trusted for this. Also worth a real end-to-end test once that's in place: set a reminder ~5 min out, force-quit the PWA, confirm the push notification arrives.",
+      "lastDid": "Fable-planner-led hard-fix pass, all live: (1) root-caused the log-page bunching bug to a CSS flexbox quirk (.swipe wrapper's overflow:hidden reset min-size to 0, so a full list got crushed instead of scrolling) \u2014 one-line fix, verified before/after with a headless-browser repro; (2) fixed the classifier misreading a bare \"7:15\" in an evening sentence (\"tonight 7:15\") as 7:15 AM the next day instead of 7:15 PM \u2014 root cause of the duplicate near-identical reminders Neil hit; (3) notification correctness batch: stale timers no longer refire after done/delete/retag, local notified flag only sets on an actual shown notification (so the push backend still gets a shot when permission is denied), guarded the Notification global for plain iOS Safari tabs, subscribe-to-push fires right after permission grant, one-time blocked-notifications toast; (4) new due-time editor \u2014 tap a reminder's time line in the Log view to set/change/clear it after capture, previously only settable at capture time; (5) audited the jot-push backend end to end and found the real headline problem: the GitHub Actions cron meant to ping /api/check every 2 min was actually only firing every 3-6 hours in practice (GitHub deprioritizes quiet high-frequency schedules), so closed-app push reminders were arriving hours late this whole time \u2014 also fixed check.js to stop permanently marking a reminder notified when zero pushes actually delivered. Backend redeployed, frontend committed and pushed to GitHub Pages.",
       "notes": "Deliberately buildless (vanilla JS, no React/bundler) since this app is much smaller in scope than the hub. Bottom-anchored composer (thumb zone) instead of top, matching chat-app ergonomics for fast one-handed capture throughout the day. Sync design: app code repo stays public (just code, no data) + a separate private data repo holds the actual JSON via GitHub Contents API \u2014 worth retrofitting onto neil-ai-hub's own sync (see its open TODO about the data repo currently being public).",
       "log": [
+        {
+          "id": "log-jot-8",
+          "ts": "2026-07-17T01:47:44.000Z",
+          "text": "Fable-planner hard-fix pass: root-caused + fixed the log-bunching CSS bug, the tonight-time misparse behind the duplicate-reminder screenshot, a batch of notification-correctness bugs, added a due-time editor, and found/fixed the real reason push reminders were arriving late (GitHub Actions cron running every 3-6h instead of 2min, not a code bug in the backend itself)."
+        },
         {
           "id": "log-jot-7",
           "ts": "2026-07-09T03:40:01.000Z",
