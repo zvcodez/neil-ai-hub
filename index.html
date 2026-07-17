@@ -20,25 +20,27 @@
       // together with sw.js's CACHE constant on every deploy. Without this,
       // "the fix didn't work" and "you're looking at a stale cached build"
       // are indistinguishable from a screenshot alone.
-      window.__BUILD__ = 'v58';
+      window.__BUILD__ = 'v59';
 
       // CONFIRMED 2026-07-17 via a color-coded debug build on Neil's actual
-      // device: .app's box was ending short of the true screen bottom, with
-      // plain body showing below it — i.e. the shell-restructure premise
-      // that "visualViewport.height is the one viewport API iOS reports
-      // truthfully in standalone mode" was WRONG. window.innerHeight and
-      // visualViewport.height are themselves subject to the same "computed
-      // as if browser chrome is still present" WebKit standalone bug that
-      // affects 100vh/100dvh directly (see ~/Claude/dock-issue/PWA-DOCK-BUG.md
-      // §2b) — they are not an independent, trustworthy source of truth. The
-      // --app-height custom property built from those values was therefore
-      // overriding the one thing that WAS already correct: .app's plain
-      // `height: 100%`, resolving against the position:fixed;inset:0 pin on
-      // html/body, which per every source is the one primitive WebKit gets
-      // right on every frame. That's why the dock kept floating through two
-      // rounds of "fixes" that only ever touched the JS layer. .app now uses
-      // plain height:100% (css/styles.css) — do not reintroduce a
-      // JS-measured height var for it without on-device proof it's needed.
+      // device (iPhone Pro/Pro Max, Standard zoom): window.innerHeight and
+      // visualViewport.height both read 894px, but that device's true
+      // logical height is 932px — WebKit under-reports the viewport by
+      // ~38pt in standalone mode. This isn't fixable by reading a
+      // *different* API: 100vh/100dvh, visualViewport, innerHeight, and
+      // even position:fixed;inset:0 on html/body (previously assumed to be
+      // "the one primitive WebKit always gets right") all ultimately trace
+      // back to the same internal, wrong number on this device. Two rounds
+      // of "fixes" here only ever touched which API fed a CSS height, which
+      // could never work while the underlying metric itself is wrong.
+      //
+      // Current fix (css/styles.css, same day): stop trying to know the
+      // exact viewport height at all. Normal document flow + .bottom-nav
+      // is position:sticky, which rides the browser's live compositor-
+      // tracked scroll position instead of a reported (and here, wrong)
+      // height value. Do not reintroduce a JS-measured or CSS vh/dvh-based
+      // *exact*-height shell without new on-device proof the underlying
+      // WebKit metric itself has been fixed.
       //
       // visualViewport/innerHeight are still recorded below in __DIAG__
       // purely as diagnostic numbers (to prove/track this exact

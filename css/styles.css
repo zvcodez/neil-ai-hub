@@ -100,28 +100,34 @@
 }
 
 * { box-sizing: border-box; }
-/* Bulletproof PWA shell — see ~/Claude/dock-issue/PWA-DOCK-BUG.md. iOS
-   standalone mode computes vh/dvh/svh against a stale "browser chrome
-   present" viewport that's never corrected (nothing ever collapses/expands
-   in standalone), so any shell sized with those units ends up shorter than
-   the real screen and anything anchored to its bottom (the dock) floats
-   above the home indicator. Fix: pin the document to the one viewport
-   primitive iOS gets right (position: fixed; inset: 0 tracks the true
-   visual viewport every frame), then chain plain height: 100% down through
-   #root/.app — no vh/dvh/svh anywhere in the shell. Do not "simplify" this
-   away; see the doc for why every line exists.
+/* PWA shell — see ~/Claude/dock-issue/PWA-DOCK-BUG.md for the general
+   pattern, BUT read this first: that doc's "pin html/body with
+   position:fixed;inset:0, clip to exactly one scroll container" approach
+   was tried here 2026-07-16/17 across three rounds and NEVER actually
+   fixed the floating dock on Neil's real device (iPhone Pro/Pro Max,
+   Standard zoom). Diagnostics proved why: window.innerHeight and
+   visualViewport.height both read 894px, but a Pro Max's true logical
+   height is 932px — WebKit is under-reporting the viewport by ~38pt on
+   this device, in standalone mode, and that's not something reading a
+   *different* API can route around: 100vh/100dvh, visualViewport,
+   innerHeight, and (it turns out) even position:fixed;inset:0 all
+   ultimately depend on the same internal "how tall is the viewport"
+   number, and that number itself is wrong here. There is no exact-height
+   CSS or JS value on this device that can be trusted.
 
-   CONFIRMED 2026-07-17 on Neil's device: do NOT feed .app's height from a
-   JS-measured value (visualViewport.height/innerHeight) — those APIs are
-   themselves subject to the same "computed as if browser chrome is still
-   present" bug as vh/dvh in standalone mode, so a JS override just locks
-   .app to the same wrong short number instead of letting height: 100%
-   resolve correctly against the position:fixed;inset:0 pin above. A
-   color-coded debug build proved .app was ending short of the true screen
-   bottom specifically because of this override — see index.html's inline
-   script comment for the full account. Plain height: 100% is the fix. */
-html, body { position: fixed; inset: 0; overflow: hidden; margin: 0; height: 100%; }
-#root { height: 100%; }
+   Fix (2026-07-17, later same day): stop trying to know the exact height
+   at all. Normal document flow (no position:fixed pin, no clipped single
+   scroller) + position:sticky for .bottom-nav. Sticky doesn't need an
+   a-priori height number — it rides the browser's live compositor-tracked
+   scroll position, which stays correct even when the reported CSS/JS
+   viewport metric is lying. min-height:100dvh is still used as a
+   best-effort "at least one screen" floor for short content, and CAN still
+   under-shoot by the same ~38pt on this device if content is shorter than
+   one screen — but that's a small, rare residual case instead of the dock
+   entirely detached from the bottom edge. Do not go back to the pinned/
+   clipped model without new on-device proof the underlying WebKit metric
+   itself has been fixed. */
+html, body { margin: 0; overscroll-behavior-y: none; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -151,7 +157,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 /* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; height: 100%; overflow: hidden; position: relative; z-index: 1; }
+.app { display: flex; min-height: 100dvh; position: relative; z-index: 1; }
 
 .sidebar {
   width: var(--sidebar-w);
@@ -161,6 +167,9 @@ h1 { font-family: var(--font-display); font-weight: 700; }
   display: flex;
   flex-direction: column;
   padding: 18px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow-y: auto;
 }
 .brand { display: flex; align-items: center; gap: 11px; padding: 6px 8px 18px; }
@@ -195,10 +204,10 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 .theme-toggle:hover { background: var(--surface-2); }
 .theme-toggle.compact { width: auto; padding: 9px; }
 
-.content { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.content { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .content-head {
   display: flex; align-items: center; justify-content: space-between;
-  flex: none;
+  position: sticky; top: 0;
   padding: 20px 28px; border-bottom: 1px solid var(--border);
   padding-top: calc(20px + var(--safe-top, env(safe-area-inset-top)));
   background: color-mix(in srgb, var(--bg) 85%, transparent);
@@ -207,14 +216,17 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 .head-title { display: flex; align-items: center; gap: 11px; color: var(--accent); }
 .head-title h1 { font-size: 21px; color: var(--text); }
 .content-head .theme-toggle.compact { display: none; }
-/* The app's single scroll container — the shell above is pinned/clipped
-   (see html/body/.app), so every tab's content scrolls in here and nowhere
-   else. Keep min-height: 0 or flexbox refuses to let this shrink and pushes
-   .bottom-nav off-screen instead of clipping this. */
-.content-body { padding: 24px 28px 60px; flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain; }
+/* The whole page scrolls normally (body, not a clipped inner container —
+   see the shell comment at the top of this file for why). .content-head
+   above stays pinned via position:sticky, not by being a flex sibling of a
+   separately-scrolling box. */
+.content-body { padding: 24px 28px 60px; flex: 1; }
 
-/* Bottom nav (mobile only) — a plain flex sibling at the end of .app, never
-   position: fixed (see the shell comment at the top of this file). */
+/* Bottom nav (mobile only) — position:sticky, not position:fixed. Sticky
+   doesn't need to know the true viewport height in advance; it rides the
+   browser's live scroll/compositor tracking, which stays correct even when
+   the reported viewport metric (vh/dvh/innerHeight/visualViewport) is
+   wrong — see the shell comment at the top of this file. */
 .bottom-nav { display: none; }
 
 /* ============================================================
@@ -224,7 +236,9 @@ h1 { font-family: var(--font-display); font-weight: 700; }
    ============================================================ */
 .content-body.home-active { padding: 0; }
 .home {
-  position: relative; min-height: 100%; overflow: hidden;
+  /* min-height:100% would need .content-body to have a definite height,
+     which it no longer does (body scrolls normally) — 100dvh direct. */
+  position: relative; min-height: 100dvh; overflow: hidden;
   background: var(--home-bg); color: var(--home-text);
   display: flex; flex-direction: column;
 }
@@ -998,7 +1012,7 @@ select, .sort select {
   .modal-body { padding: 16px; }
 
   .bottom-nav {
-    display: flex; flex: none; z-index: 20;
+    display: flex; flex: none; position: sticky; bottom: 0; z-index: 20;
     border-top: 1px solid var(--border);
     padding: 6px 4px calc(6px + var(--safe-bottom, env(safe-area-inset-bottom))); overflow-x: auto;
     /* Frosted/translucent instead of a flat solid block (same recipe as

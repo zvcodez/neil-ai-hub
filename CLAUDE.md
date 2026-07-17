@@ -214,18 +214,24 @@ mission-control.
    of an in-app sheet. Also merged/deleted a duplicate "Rendezvous" project
    entry in `data/projects.json` (an old empty Building-stage stub) into the
    real deployed one, folding its later log entries in rather than losing them.
-8. **Dock-float root cause actually found and fixed 2026-07-17** (the
-   2026-07-16 shell restructure above did not actually fix it — see
-   Conventions for the full account). Confirmed via a color-coded debug
-   build on Neil's real device that `.app`'s JS-measured `--app-height` var
-   was the bug, not the CSS shell shape. Fix: `.app` uses plain
-   `height: 100%` again, no JS override. **Not yet reconfirmed on-device**
-   since this exact fix (build v58) — next session or Neil directly: force-
-   quit/reopen twice, confirm build v58 in the sync panel, confirm the dock
-   sits flush with no dead strip below it. If it's still wrong, pull the
-   sync-panel diagnostics screenshot first before changing anything else —
-   guessing further without device numbers is what cost the two rounds
-   before this one.
+8. **Dock-float bug — three rounds on 2026-07-17, see Conventions for the
+   full account.** Round 1 (2026-07-16) restructured the CSS shell but also
+   added a JS-measured `--app-height` var, assumed safe — it wasn't. Round 2
+   removed that var, reverting `.app` to plain `height: 100%` against the
+   `position:fixed;inset:0` pin — still floated. A color-coded debug build
+   plus the sync-panel diagnostics (showing `innerHeight`/`visualViewport`
+   both reading 894px against a Pro Max's true 932px) revealed *even*
+   `position:fixed;inset:0` depends on the same broken internal WebKit
+   viewport number on Neil's device. Round 3 (build v59): dropped the
+   exact-height approach entirely — normal document scroll +
+   `position: sticky` for `.bottom-nav`/`.content-head`/`.sidebar`, which
+   don't need to know the true height in advance. **Not yet confirmed
+   on-device** — next session or Neil directly: force-quit/reopen twice,
+   confirm build v59 in the sync panel, confirm the dock sits flush with no
+   dead strip below it, and sanity-check that normal page scroll (not an
+   inner-container scroll) feels right and doesn't rubber-band oddly. If
+   it's *still* wrong, get the diagnostics screenshot and exact device
+   model first — do not attempt a 4th blind CSS change.
 
 ## Deploy checklist — the app must stay LIVE and CURRENT (do this every change)
 Neil uses the deployed PWA on his phone as his daily driver. Any session that
@@ -264,56 +270,61 @@ touches this repo must leave the live site working and up to date:
 
 ## Conventions
 - **PWA shell — do not reintroduce the "raised dock" bug.** This is the 5th
-  Neil project to hit it (after ZV's Edge, Jot, Reel); first fix attempt
-  2026-07-16, root cause actually found and fixed 2026-07-17. Full writeup
-  and the 8 invariants: `~/Claude/dock-issue/PWA-DOCK-BUG.md` — **that doc's
-  own §2c/§3 recommendation to add a `visualViewport`-driven `--app-height`
-  JS var is WRONG for this app and was the actual bug**, see below; treat
-  that specific recommendation as superseded here until the doc itself is
-  corrected.
-  - Never size the shell with `vh`/`dvh`/`svh`/`lvh` — `html, body` are
-    `position: fixed; inset: 0; overflow: hidden`, and `#root`/`.app` chain
-    **plain `height: 100%`** down from there. This part of the shell was
-    correct from 2026-07-16 onward.
-  - **Do NOT feed `.app`'s height from a JS-measured `visualViewport.height`/
-    `innerHeight` value.** The 2026-07-16 fix added exactly that (an
-    `--app-height` custom property) on the assumption that `visualViewport`
-    is "the one viewport API iOS reports truthfully in standalone mode." On
-    Neil's actual device that assumption was false: a color-coded debug
-    build (magenta body / cyan `.app` / green `.bottom-nav`) proved `.app`'s
-    box was ending short of the true screen bottom, with plain body-colored
-    dead space below it — `visualViewport.height`/`window.innerHeight` are
-    themselves subject to the same "computed as if browser chrome is still
-    present" WebKit standalone bug that affects `100vh`/`100dvh` directly,
-    so the JS override was locking `.app` to the same wrong short number
-    that plain `height: 100%` (resolving against the `position:fixed;inset:0`
-    pin) would have gotten right on its own. Two full rounds of "fixes" only
-    ever touched the JS layer and never worked, because the JS layer itself
-    was the bug. Confirmed fixed 2026-07-17 by simply reverting `.app` to
-    plain `height: 100%` and removing the JS override entirely.
-  - `.bottom-nav` is a plain flex sibling at the end of `.app`, never
-    `position: fixed`.
-  - `.content-body` is the app's *only* scroll container
-    (`overflow-y: auto; min-height: 0`) — every tab's content scrolls there,
-    nothing else scrolls independently except deliberate inner scrollers
-    like `.stage-cards` or `.modal-backdrop`.
-  - `index.html`'s inline script still measures `--safe-top`/`--safe-bottom`
-    (via a physical DOM probe, not raw CSS `env()`) — that part *is* still
-    legitimate and confirmed correct on-device (measured 62px/34px). WebKit
-    bug 191872/274773 (env() not set until "some arbitrary time after page
-    load," and can go stale) are real, just weren't this bug. Recalc still
-    runs on `visibilitychange`/`pageshow` in case of the separate unresolved
-    iOS 17+ `position: fixed` drift-after-backgrounding bug (Apple Developer
-    Forums thread 744327) — untested whether that one ever manifests here,
-    left in as a low-cost mitigation.
+  Neil project to hit it (after ZV's Edge, Jot, Reel); took until 2026-07-17
+  (three rounds) to actually find the root cause here. Background writeup:
+  `~/Claude/dock-issue/PWA-DOCK-BUG.md` — **that doc's core recommendation
+  ("pin html/body with `position:fixed;inset:0`, clip to exactly one scroll
+  container, optionally reinforce with a JS-measured `--app-height` var") is
+  WRONG for this app and was the actual bug for two of the three rounds.**
+  Treat that doc as background reading on the *symptom*, not as the fix to
+  copy — the fix that actually worked here is architecturally different.
+  - **Root cause, confirmed on Neil's real device (iPhone Pro/Pro Max,
+    Standard zoom):** `window.innerHeight` and `visualViewport.height` both
+    read 894px, but that device's true logical height is 932px — WebKit
+    under-reports the viewport by ~38pt in standalone mode. This is not
+    fixable by reading a *different* API: `100vh`/`100dvh`, `visualViewport`,
+    `innerHeight`, and — this is the part that cost two extra rounds —
+    even `position: fixed; inset: 0` on `html`/`body` (assumed to be "the
+    one primitive WebKit always gets right") all ultimately trace back to
+    the same wrong internal viewport number on this device. Any CSS or JS
+    mechanism that tries to compute/consume an *exact* full-screen height
+    is vulnerable here, no matter which API supplies the number.
+  - **The actual fix: don't try to know the exact height.** `html`/`body`
+    use normal document flow (no `position: fixed` pin, no `overflow:
+    hidden` clip) — the whole page scrolls normally, like an ordinary
+    website. `.app`/`.home` use `min-height: 100dvh` as a best-effort "at
+    least one screen" floor (can still under-shoot by the same ~38pt if a
+    tab's content is shorter than one screen — a much smaller, rarer
+    residual case than the dock being fully detached). `.bottom-nav` is
+    `position: sticky; bottom: 0`, not `fixed` and not a plain flex sibling
+    of a clipped shell — sticky rides the browser's live compositor-tracked
+    scroll position, which stays correct even when the *reported* viewport
+    metric is lying, because it doesn't need to know the total height in
+    advance. `.content-head`/`.sidebar` are `position: sticky; top: 0`
+    (desktop sidebar also keeps `height: 100vh` — desktop browsers don't
+    have this standalone-mode bug, only iOS home-screen PWAs do).
+  - `.stage-cards` and `.modal-backdrop` keep their own independent inner
+    scrollers (`overflow-y: auto`) — unaffected by the above, still fine.
+  - `index.html`'s inline script measures `--safe-top`/`--safe-bottom` via a
+    physical DOM probe (not raw CSS `env()`) — confirmed correct on-device
+    (62px/34px) and still legitimate; WebKit bugs 191872/274773 (`env()` not
+    set until "some arbitrary time after page load," can go stale) are
+    real, just weren't this particular bug. Recalc still runs on
+    `visibilitychange`/`pageshow` as a low-cost mitigation for a separate,
+    unresolved iOS 17+ `position: fixed` drift-after-backgrounding bug
+    (Apple Developer Forums thread 744327) — untested whether that one ever
+    manifests here.
   - `window.__DIAG__` + the sync panel's diagnostics readout (`js/sync.js`)
-    were what actually cracked this — before adding more shell "fixes" on
-    faith, get real numbers from Neil's device first next time.
+    are what actually cracked this, specifically by revealing the ~38pt gap
+    against the known device spec. Before changing the shell again on
+    faith, get real numbers from Neil's device (and his exact iPhone model)
+    first — two of the three rounds here were spent on plausible-sounding
+    fixes that had no on-device evidence behind them.
   - Before touching any of `html`/`body`/`#root`/`.app`/`.content`/
-    `.content-body`/`.bottom-nav` sizing or positioning, re-read this section
-    and the doc above — every one of Neil's past regressions here looked
-    like an innocuous one-line CSS change, including the one this section
-    itself just corrected.
+    `.content-body`/`.bottom-nav`/`.home` sizing or positioning, re-read this
+    section — every regression here looked like an innocuous one-line CSS
+    change, including the ones this section itself has already corrected
+    twice.
 - Match the existing buildless, vendored-module style. No new dependencies.
 - **When Neil signs off** ("okay that's all for now", "okay bye", or anything that
   means he's leaving to continue later), update the **Open items / TODO** section
