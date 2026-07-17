@@ -143,31 +143,57 @@ async function reconcile(key) {
 
 // ---- self-heal from deployed data --------------------------------------------
 // The data files are deployed with the site (GitHub Pages serves data/<key>.json
-// on this origin), so if the browser evicts localStorage — which also takes the
-// sync token with it — every store can reseed itself from those files and the
-// app never opens blank. Read-only until sync is re-enabled with a token.
+// on this origin), so every device can always read the latest committed data
+// with a plain unauthenticated fetch — no GitHub API, no token, no rate limit.
+// This runs on every load/focus/interval (see initSync below) and adopts the
+// deployed file whenever it's newer than what this device last saw, so a
+// device with no token configured (or one that's simply never had this key
+// touched locally) still stays current — it's not just a one-time empty-store
+// rescue anymore. Writing still requires a token (see syncAll/flush); this is
+// read-only self-healing.
 async function bootstrapKey(key) {
-  const local = loadStore(key, null);
-  const nonEmpty = Array.isArray(local) ? local.length > 0 : local && Object.keys(local).length > 0;
-  if (nonEmpty) return;
+  let parsed;
   try {
     const res = await fetch(`./data/${key}.json`, { cache: 'no-cache' });
     if (!res.ok) return; // key has no deployed file yet
-    const parsed = await res.json();
-    if (!parsed || parsed.data == null) return;
-    applyExternalChange(key, parsed.data);
-    // Record the file's timestamp so enabling sync later sees this store as
-    // already in sync, instead of stamping it "new" and pushing it back up.
-    if (parsed.updatedAt) {
-      const m = getMeta();
-      m[key] = { ...(m[key] || {}), updatedAt: parsed.updatedAt };
-      setMeta(m);
-    }
-  } catch { /* offline or non-JSON response — nothing to heal from */ }
+    parsed = await res.json();
+  } catch { return; } // offline or non-JSON response — nothing to heal from
+  if (!parsed || parsed.data == null) return;
+
+  const meta = getMeta();
+  const localUpdatedAt = (meta[key] && meta[key].updatedAt) || '';
+
+  let adopt;
+  if (parsed.updatedAt) {
+    adopt = parsed.updatedAt > localUpdatedAt;
+  } else {
+    // No timestamp on the deployed file (legacy) — only safe to adopt when
+    // there's nothing local to clobber.
+    const local = loadStore(key, null);
+    const nonEmpty = Array.isArray(local) ? local.length > 0 : local && Object.keys(local).length > 0;
+    adopt = !nonEmpty;
+  }
+  if (!adopt) return;
+
+  applyExternalChange(key, parsed.data);
+  // Record the file's timestamp so this counts as "already in sync" — a later
+  // token-based reconcile() won't treat it as a fresh local edit to push back.
+  if (parsed.updatedAt) {
+    const m = getMeta();
+    m[key] = { ...(m[key] || {}), updatedAt: parsed.updatedAt };
+    setMeta(m);
+  }
 }
 
-export function bootstrapFromDeployedData() {
-  return Promise.all(SYNC_KEYS.map(bootstrapKey));
+let bootRunning = false;
+export async function bootstrapFromDeployedData() {
+  if (bootRunning) return;
+  bootRunning = true;
+  try {
+    await Promise.all(SYNC_KEYS.map(bootstrapKey));
+  } finally {
+    bootRunning = false;
+  }
 }
 
 let running = false;
@@ -260,18 +286,22 @@ export function initSync() {
     timer = setTimeout(() => flush(false), 1500);
   });
 
-  // Pull when the tab regains focus (picks up edits from other devices).
+  // Pull when the tab regains focus (picks up edits from other devices, and
+  // self-heals from deployed data even on devices with no token configured).
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') syncAll();
+    if (document.visibilityState === 'visible') bootstrapFromDeployedData().then(syncAll);
     else flush(true); // best-effort push on hide
   });
-  window.addEventListener('online', () => syncAll());
+  window.addEventListener('online', () => bootstrapFromDeployedData().then(syncAll));
 
   // Periodic background pull while open.
-  setInterval(() => { if (document.visibilityState === 'visible') syncAll(); }, 60000);
+  setInterval(() => {
+    if (document.visibilityState === 'visible') bootstrapFromDeployedData().then(syncAll);
+  }, 60000);
 
-  // Reseed any empty stores from the deployed data files first, then let the
-  // token-based sync take over (it skips stores the bootstrap just filled).
+  // Reseed/refresh every store from the deployed data files first, then let
+  // token-based sync take over (it's a no-op on keys the bootstrap just
+  // brought current).
   bootstrapFromDeployedData().then(() => {
     if (isEnabled() && getToken()) syncAll();
   });

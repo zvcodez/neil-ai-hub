@@ -15,6 +15,26 @@
     <meta name="apple-mobile-web-app-title" content="Neil AI Hub" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script>
+      // --app-height: the visualViewport is the one viewport API iOS reports
+      // truthfully in standalone mode; publish it as a CSS var so the shell
+      // (.app in css/styles.css) can use it as a second line of defense on
+      // top of the position:fixed pin — see ~/Claude/dock-issue/PWA-DOCK-BUG.md.
+      (function () {
+        function setAppHeight() {
+          var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+          document.documentElement.style.setProperty('--app-height', Math.round(h) + 'px');
+        }
+        setAppHeight();
+        window.addEventListener('resize', setAppHeight);
+        window.addEventListener('orientationchange', function () { setTimeout(setAppHeight, 250); });
+        if (window.visualViewport) window.visualViewport.addEventListener('resize', setAppHeight);
+        // Standalone launch can hand over a stale height during the splash phase.
+        window.addEventListener('load', function () {
+          [150, 500, 1200].forEach(function (ms) { setTimeout(setAppHeight, ms); });
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

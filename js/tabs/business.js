@@ -3,7 +3,7 @@
 // business idea, with an Overview that rolls everything up. Modeled on
 // projects.js's pipeline + journal pattern, kept leaner (metrics instead of
 // code-launch integration) since the two tabs serve different jobs.
-import { html, useState, useMemo, useRef, useEffect, useStore, uid, fmtDate, matchesQuery } from '../core.js';
+import { html, useState, useMemo, useRef, useEffect, useStore, uid, fmtDate, matchesQuery, externalLinkProps } from '../core.js';
 import {
   Button, Badge, Icon, IconButton, SearchBox, Segmented, Modal, Form, EmptyState, useConfirm,
 } from '../components.js';
@@ -182,7 +182,7 @@ function VenturesTab({ accent }) {
       </div>
       ${v.nextStep && html`<div class="ppl-inline next"><span class="ppl-next-label">Next</span>${v.nextStep}</div>`}
       ${v.lastDid && html`<div class="ppl-inline did"><span class="ppl-next-label">Just did</span>${v.lastDid}</div>`}
-      ${v.liveUrl && html`<a class="ppl-link" href=${v.liveUrl} target="_blank" rel="noreferrer">
+      ${v.liveUrl && html`<a class="ppl-link" href=${v.liveUrl} ...${externalLinkProps()}>
         <${Icon} name="external" size=${14} /> Live<//>`}
     </div>`;
   };

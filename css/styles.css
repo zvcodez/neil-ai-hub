@@ -100,14 +100,20 @@
 }
 
 * { box-sizing: border-box; }
-/* height: 100% is wrong in iOS standalone (Home Screen) mode — WebKit
-   miscalculates it there and leaves real blank space below fixed elements
-   that a normal browser tab doesn't have (the bottom-nav "floats" above the
-   home indicator with a gap of bare background showing beneath it).
-   -webkit-fill-available was an old fix for that, but it must come BEFORE
-   dvh, not after: dvh is the standards-based unit that actually tracks the
-   real visible viewport on modern iOS (15.4+), so it has to win the cascade. */
-html, body { height: 100%; height: -webkit-fill-available; height: 100dvh; margin: 0; overflow-x: hidden; overscroll-behavior-y: none; }
+/* Bulletproof PWA shell — see ~/Claude/dock-issue/PWA-DOCK-BUG.md. iOS
+   standalone mode computes vh/dvh/svh against a stale "browser chrome
+   present" viewport that's never corrected (nothing ever collapses/expands
+   in standalone), so any shell sized with those units ends up shorter than
+   the real screen and anything anchored to its bottom (the dock) floats
+   above the home indicator. Fix: pin the document to the one viewport
+   primitive iOS gets right (position: fixed; inset: 0 tracks the true
+   visual viewport every frame), then chain plain height: 100% down through
+   #root/.app — no vh/dvh/svh anywhere in the shell. Do not "simplify" this
+   away; see the doc for why every line exists. --app-height (set by the
+   inline script in index.html from visualViewport) is consumed by .app as
+   an extra layer of defense on top of this. */
+html, body { position: fixed; inset: 0; overflow: hidden; margin: 0; height: 100%; }
+#root { height: 100%; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -137,7 +143,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 /* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; min-height: 100vh; min-height: -webkit-fill-available; min-height: 100dvh; position: relative; z-index: 1; }
+.app { display: flex; height: var(--app-height, 100%); overflow: hidden; position: relative; z-index: 1; }
 
 .sidebar {
   width: var(--sidebar-w);
@@ -147,9 +153,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
   display: flex;
   flex-direction: column;
   padding: 18px 14px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  overflow-y: auto;
 }
 .brand { display: flex; align-items: center; gap: 11px; padding: 6px 8px 18px; }
 .brand-mark { flex: none; display: block; }
@@ -183,20 +187,26 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 .theme-toggle:hover { background: var(--surface-2); }
 .theme-toggle.compact { width: auto; padding: 9px; }
 
-.content { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.content { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
 .content-head {
   display: flex; align-items: center; justify-content: space-between;
+  flex: none;
   padding: 20px 28px; border-bottom: 1px solid var(--border);
   padding-top: calc(20px + env(safe-area-inset-top));
-  position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 85%, transparent);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); z-index: 5;
 }
 .head-title { display: flex; align-items: center; gap: 11px; color: var(--accent); }
 .head-title h1 { font-size: 21px; color: var(--text); }
 .content-head .theme-toggle.compact { display: none; }
-.content-body { padding: 24px 28px 60px; flex: 1; }
+/* The app's single scroll container — the shell above is pinned/clipped
+   (see html/body/.app), so every tab's content scrolls in here and nowhere
+   else. Keep min-height: 0 or flexbox refuses to let this shrink and pushes
+   .bottom-nav off-screen instead of clipping this. */
+.content-body { padding: 24px 28px 60px; flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain; }
 
-/* Bottom nav (mobile only) */
+/* Bottom nav (mobile only) — a plain flex sibling at the end of .app, never
+   position: fixed (see the shell comment at the top of this file). */
 .bottom-nav { display: none; }
 
 /* ============================================================
@@ -239,28 +249,49 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 }
 .home-greet-sub { font-size: 14.5px; color: var(--home-muted); text-align: center; margin: 0; }
 
-.home-quick { display: flex; flex-direction: column; gap: 11px; min-width: 0; }
-.home-quick button {
-  display: flex; align-items: center; gap: 13px; padding: 15px 17px; border-radius: 18px;
+/* Mission-control stat grid — 2x2 tappable cards reusing the .stat-num/
+   .stat-lbl typography from components.js's StatTile, restyled glass to
+   match Home's aesthetic instead of the plain surface those use elsewhere. */
+.home-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.home-stat-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  padding: 14px 15px; border-radius: 18px; text-align: left;
   background: var(--home-glass); border: 1px solid var(--home-glass-brd); color: var(--home-text);
-  font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; min-width: 0;
+  font: inherit; cursor: pointer; width: 100%; min-width: 0;
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
-.home-quick button:hover {
+.home-stat-card:hover {
   background: color-mix(in srgb, var(--home-glass) 70%, var(--home-text) 8%);
   transform: translateY(-1px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-.home-quick button .icon { color: var(--qcolor, var(--home-blue)); flex: none; }
-.home-quick button .home-arrow { margin-left: auto; opacity: 0.45; flex: none; }
-.home-quick-label { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; min-width: 0; overflow-wrap: break-word; }
-.home-quick-label small { font-weight: 500; font-size: 12px; color: var(--home-muted); }
+.home-stat-top { display: flex; align-items: center; gap: 7px; width: 100%; color: var(--qcolor, var(--home-blue)); }
+.home-stat-name { font-size: 12.5px; font-weight: 600; color: var(--home-text); }
+.home-stat-top .home-arrow { margin-left: auto; opacity: 0.45; flex: none; color: var(--home-muted); }
+.home-stat-card .stat-num { color: var(--qcolor, var(--home-text)); }
+.home-stat-card .stat-lbl { color: var(--home-muted); margin-top: 0; }
+
+/* Activity — one full-width glass card, only rendered once there's real
+   journal history across projects to show (see useActivity in home.js). */
+.home-activity-card {
+  background: var(--home-glass); border: 1px solid var(--home-glass-brd); border-radius: 18px;
+  padding: 14px 16px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+.home-activity-card .stat-lbl { color: var(--home-muted); margin-bottom: 10px; }
+.home-activity-card .spark { height: 34px; }
+.home-activity-sub { font-size: 12.5px; color: var(--home-muted); margin: 10px 0 0; }
+.home-activity-sub strong { color: var(--home-text); font-weight: 600; }
 
 /* Neil's Apps — one-tap launchers to every project's live URL. Anchors, not
-   buttons: target=_blank from the installed PWA is what hands the app off to
-   the real browser. */
+   buttons. In an installed standalone PWA, target="_blank" actually opens an
+   in-app Safari sheet on iOS rather than handing off to the real browser —
+   home.js drops the target attribute when IS_STANDALONE so the tap fully
+   exits to Safari instead. (No API lets a webpage launch a *different*
+   origin's installed home-screen PWA on iOS — this is the best available
+   hand-off.) */
 .home-apps { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .home-apps-label {
   font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--home-muted);
@@ -717,7 +748,7 @@ select, .sort select {
 .stage-group.empty .stage-cards { min-height: 90px; border: 1.5px dashed var(--border); border-radius: 12px; }
 .projects-board.dragging .stage-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 45%, transparent); outline-offset: 5px; border-radius: 12px; }
 @media (min-width: 761px) {
-  .stage-cards { max-height: calc(100vh - 300px); overflow-y: auto; overflow-x: hidden; padding-right: 6px; padding-bottom: 4px; }
+  .stage-cards { max-height: calc(var(--app-height, 100vh) - 300px); overflow-y: auto; overflow-x: hidden; padding-right: 6px; padding-bottom: 4px; }
 }
 
 /* Card */
@@ -934,7 +965,7 @@ select, .sort select {
 @media (max-width: 760px) {
   .sidebar { display: none; }
   .app { flex-direction: column; }
-  .content-body { padding: 18px 16px calc(90px + env(safe-area-inset-bottom)); }
+  .content-body { padding: 18px 16px 24px; }
   .content-head { padding: 16px; padding-top: calc(16px + env(safe-area-inset-top)); }
   .content-head .theme-toggle.compact { display: inline-flex; }
   .form-grid { grid-template-columns: 1fr; }
@@ -953,11 +984,9 @@ select, .sort select {
   .modal-body { padding: 16px; }
 
   .bottom-nav {
-    display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+    display: flex; flex: none; z-index: 20;
     border-top: 1px solid var(--border);
     padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); overflow-x: auto;
-    transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);
-    will-change: transform;
     /* Frosted/translucent instead of a flat solid block (same recipe as
        .content-head above) so it reads as one glass bar over whatever tab
        is behind it, instead of a visibly different-colored slab stacked
@@ -965,18 +994,17 @@ select, .sort select {
     background: color-mix(in srgb, var(--bg-2) 82%, transparent);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   }
-  /* Home has no content-head, so it needs its own clearance above the fixed
-     bottom nav (everything else gets it from .content-body's padding).
+  /* Home has no content-head, so it needs its own clearance above the dock
+     (everything else gets it from .content-body's padding).
      justify-content:flex-start (overriding the desktop centering) plus
      margin-top:auto on .home-foot keeps the greeting/cards anchored near
      the top and collapses the leftover space into ONE gap directly above
-     the toggle row, instead of splitting it above AND below the content —
-     that split was the actual "dock looks stranded" cause, not a render bug. */
+     the toggle row, instead of splitting it above AND below the content. */
   .home-body { padding-bottom: 12px; justify-content: flex-start; }
   .home-foot {
     display: flex; position: relative; z-index: 1; justify-content: center;
     align-items: center; gap: 10px; margin-top: auto;
-    padding: 0 24px calc(96px + env(safe-area-inset-bottom));
+    padding: 0 24px 16px;
   }
   .bottom-item {
     flex: 1; min-width: 60px; display: flex; flex-direction: column; align-items: center; gap: 3px;

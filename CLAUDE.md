@@ -157,10 +157,16 @@ mission-control.
 
 ## Open items / TODO
 1. **Sync must be enabled on each device** (token pasted per device) for true
-   two-way sync. It's confirmed working (repo has `data/*.json`). Since
-   2026-07-15, reading no longer needs a token — empty stores self-heal from
-   the deployed data files (see Deploy checklist #6); the token is only needed
-   to *edit* from that device. Confirmed recovered on Neil's phone same day.
+   two-way *writes*. Since 2026-07-16, **reads no longer need a token at all,
+   and no longer need an empty store either**: `bootstrapFromDeployedData()`
+   in `js/sync.js` re-checks the deployed `data/<key>.json` files against
+   `sync-meta` on every load, focus, and 60s tick, and adopts them whenever
+   their `updatedAt` is newer — a device just gets to see whatever's
+   committed, sync token or not. (Previously it only reseeded a store the
+   *first* time it was completely empty, which is why a newly-committed
+   project like Reel silently never showed up on Neil's phone until this
+   fix.) The token is still only needed to *push* local edits from that
+   device.
 2. **Repo is still PUBLIC.** User wants it private (career notes live in it).
    Caveat: private repos disable GitHub Pages on the free plan. Option on the
    table: split into a **public app repo + separate private data repo** (small
@@ -187,6 +193,27 @@ mission-control.
 6. Confirm on Neil's next visit that the Sora font and ambient wash render
    correctly on iPhone Safari (tested locally on Mac before shipping; phone
    verification over LAN didn't happen this session).
+7. **Home redesign ("Mission control") + dock/sync fixes shipped 2026-07-16.**
+   Neil reported Reel missing from Neil's Apps, apps not sorted alphabetically,
+   the bottom dock floating again, wanted app links to leave the app cleanly,
+   and asked for a more engaging Home. Fixed: the sync self-heal gap (see TODO
+   #1), strict alphabetical sort in `useLiveApps()`, the full PWA-shell
+   restructure (see Conventions), standalone-aware external links
+   (`externalLinkProps()`/`IS_STANDALONE` in `core.js`, applied in
+   home/projects/business tabs), and rebuilt Home with a 2x2 stat-card grid +
+   an all-projects activity sparkline above the Apps grid — approved direction
+   was "Mission control" (stats-forward), always-pinned shell (not mobile-only).
+   Verified locally via headless Chrome at phone width (390-500px) and desktop
+   (1400px): dock flush at bottom, Reel appears, apps alphabetical, stat cards
+   and sparkline render with real data. **Not yet verified on Neil's actual
+   installed iPhone PWA** — per the dock-bug doc's own caveats, iOS standalone
+   viewport behavior can't be fully confirmed from a Mac. Next session (or
+   Neil directly): open the installed Hub icon (not Safari), confirm the dock
+   sits flush with no dead strip below it, pull-to-refresh doesn't rubber-band
+   the whole app, and tapping an app in Neil's Apps hands off to Safari instead
+   of an in-app sheet. Also merged/deleted a duplicate "Rendezvous" project
+   entry in `data/projects.json` (an old empty Building-stage stub) into the
+   real deployed one, folding its later log entries in rather than losing them.
 
 ## Deploy checklist — the app must stay LIVE and CURRENT (do this every change)
 Neil uses the deployed PWA on his phone as his daily driver. Any session that
@@ -207,14 +234,35 @@ touches this repo must leave the live site working and up to date:
    `curl -s https://zvcodez.github.io/neil-ai-hub/sw.js | head -4` and check
    the CACHE version matches what you just pushed.
 6. **Never break the self-heal path**: `bootstrapFromDeployedData()` in
-   `js/sync.js` reseeds empty localStorage from the site's own `data/*.json`
+   `js/sync.js` keeps every store current from the site's own `data/*.json`
    (added 2026-07-15 after iOS storage eviction kept blanking Neil's phone —
-   the token lives in the same storage, so sync couldn't recover on its own).
-   It requires the `data/` files to stay deployed with the site. If data ever
-   moves (e.g. private data repo split), repoint the bootstrap in the same
-   change.
+   the token lives in the same storage, so sync couldn't recover on its own;
+   extended 2026-07-16 from a one-time empty-store rescue into an always-on
+   freshness check, since a non-empty but stale store had the same silent-gap
+   problem). It requires the `data/` files to stay deployed with the site. If
+   data ever moves (e.g. private data repo split), repoint the bootstrap in
+   the same change.
 
 ## Conventions
+- **PWA shell — do not reintroduce the "raised dock" bug.** This is the 5th
+  Neil project to hit it (after ZV's Edge, Jot, Reel); fixed here 2026-07-16.
+  Full writeup and the 8 invariants: `~/Claude/dock-issue/PWA-DOCK-BUG.md`.
+  The short version, all enforced in `css/styles.css` + `index.html`:
+  - Never size the shell with `vh`/`dvh`/`svh`/`lvh` — `html, body` are
+    `position: fixed; inset: 0; overflow: hidden`, and `#root`/`.app` chain
+    plain `height: 100%` (or `var(--app-height, 100%)`) down from there.
+  - `.bottom-nav` is a plain flex sibling at the end of `.app`, never
+    `position: fixed`.
+  - `.content-body` is the app's *only* scroll container
+    (`overflow-y: auto; min-height: 0`) — every tab's content scrolls there,
+    nothing else scrolls independently except deliberate inner scrollers
+    like `.stage-cards` or `.modal-backdrop`.
+  - `index.html` has an inline script publishing `--app-height` from
+    `visualViewport` as a second line of defense on top of the CSS pin.
+  - Before touching any of `html`/`body`/`#root`/`.app`/`.content`/
+    `.content-body`/`.bottom-nav` sizing or positioning, re-read the doc above
+    — every one of Neil's past regressions here looked like an innocuous
+    one-line CSS change.
 - Match the existing buildless, vendored-module style. No new dependencies.
 - **When Neil signs off** ("okay that's all for now", "okay bye", or anything that
   means he's leaving to continue later), update the **Open items / TODO** section

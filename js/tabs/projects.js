@@ -1,7 +1,7 @@
 // Projects pipeline: every project (even ones still in planning/discussion with
 // Claude) tracked as a card that flows left→right across stages. Each card can
 // deep-link to its Claude chat and launch Claude Code in its local folder.
-import { html, useState, useMemo, useEffect, useRef, useStore, uid, fmtDate, relativeDate, matchesQuery, ReactDOM } from '../core.js';
+import { html, useState, useMemo, useEffect, useRef, useStore, uid, fmtDate, relativeDate, matchesQuery, externalLinkProps, IS_STANDALONE, ReactDOM } from '../core.js';
 import {
   Button, Badge, Icon, IconButton, SearchBox, Segmented, Modal, Form, EmptyState, useConfirm, StatTile, Sparkline,
 } from '../components.js';
@@ -230,7 +230,7 @@ export function ProjectsTab({ accent }) {
   const card = (p) => {
     const stage = normStage(p);
     const menuItems = [
-      p.repoUrl && { label: 'Open repo on GitHub', icon: 'github', onClick: () => window.open(p.repoUrl, '_blank', 'noreferrer') },
+      p.repoUrl && { label: 'Open repo on GitHub', icon: 'github', onClick: () => window.open(p.repoUrl, IS_STANDALONE ? '_self' : '_blank', 'noreferrer') },
       p.folder && { label: 'Copy terminal command', icon: 'shortcuts', onClick: () => navigator.clipboard?.writeText(shellCommand(p.folder)) },
       { label: 'Edit', icon: 'edit', onClick: () => setModal({ editing: p }) },
       { divider: true },
@@ -376,13 +376,13 @@ function ProjectDetail({ project: p, accent, heroTransitioning, onClose, onEdit,
       : html`<p class="pd-hero-desc muted-text">No description yet.</p>`}
 
     <div class="pd-actions">
-      ${p.liveUrl && html`<a class="pd-abtn live" href=${p.liveUrl} target="_blank" rel="noreferrer">
+      ${p.liveUrl && html`<a class="pd-abtn live" href=${p.liveUrl} ...${externalLinkProps()}>
         <${Icon} name="external" size=${15} /> ${prettyUrl(p.liveUrl)}<//>`}
       ${p.folder
         ? html`<a class="pd-abtn launch" href=${resumeUrl(p.folder)}><${Icon} name="shortcuts" size=${15} /> Open in Claude Code<//>`
         : html`<a class="pd-abtn launch" href=${startUrl(p)}><${Icon} name="shortcuts" size=${15} /> Start in Claude Code<//>`}
-      ${p.repoUrl && html`<a class="pd-abtn" href=${p.repoUrl} target="_blank" rel="noreferrer"><${Icon} name="github" size=${15} /> Repo<//>`}
-      ${p.chatUrl && html`<a class="pd-abtn" href=${p.chatUrl} target="_blank" rel="noreferrer"><${Icon} name="ideas" size=${15} /> Chat<//>`}
+      ${p.repoUrl && html`<a class="pd-abtn" href=${p.repoUrl} ...${externalLinkProps()}><${Icon} name="github" size=${15} /> Repo<//>`}
+      ${p.chatUrl && html`<a class="pd-abtn" href=${p.chatUrl} ...${externalLinkProps()}><${Icon} name="ideas" size=${15} /> Chat<//>`}
       <button class="pd-abtn" onClick=${onEdit}><${Icon} name="edit" size=${15} /> Edit</button>
     </div>
 

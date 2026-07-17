@@ -135,3 +135,18 @@ export function matchesQuery(query, ...fields) {
   const q = query.toLowerCase();
   return fields.some((f) => (f || '').toString().toLowerCase().includes(q));
 }
+
+// True when running as an installed home-screen PWA (iOS `navigator.standalone`
+// or the standards `display-mode: standalone` media feature).
+export const IS_STANDALONE =
+  (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+  window.navigator.standalone === true;
+
+// Anchor props for links that should leave the app entirely (live URLs, repos,
+// chats). In an installed standalone PWA, target="_blank" opens an in-app
+// Safari sheet on iOS instead of handing off to the real browser, so drop the
+// target there; a plain top-level navigation is what actually exits. In a
+// normal browser tab, target="_blank" is correct (keeps the Hub tab intact).
+export function externalLinkProps() {
+  return IS_STANDALONE ? {} : { target: '_blank', rel: 'noopener' };
+}
