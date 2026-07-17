@@ -340,11 +340,27 @@ export function SyncButton({ compact }) {
   </>`;
 }
 
+// Live viewport/safe-area numbers (window.__DIAG__, populated by the inline
+// script in index.html) so a screenshot of this panel can show hard numbers
+// instead of us guessing blind at what's happening on Neil's actual phone —
+// see the PWA-shell notes in CLAUDE.md. Forces one fresh measurement on open
+// rather than showing whatever was last recorded.
+function useDiag() {
+  const [diag, setDiag] = useState(null);
+  useEffect(() => {
+    if (typeof window.__recalcDiag__ === 'function') window.__recalcDiag__();
+    const t = setTimeout(() => setDiag(window.__DIAG__ || null), 60);
+    return () => clearTimeout(t);
+  }, []);
+  return diag;
+}
+
 function SyncPanel({ onClose }) {
   const s = useSyncStatus();
   const [token, setTok] = useState(getToken());
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const diag = useDiag();
   const on = isEnabled();
 
   const enable = async () => {
@@ -381,6 +397,15 @@ function SyncPanel({ onClose }) {
     </div>
 
     <p class="build-stamp muted-text">Build ${window.__BUILD__ || '?'}</p>
+    ${diag && html`<div class="diag-block mono">
+      <span>standalone: ${String(diag.standalone)}</span>
+      <span>innerHeight: ${diag.innerHeight}</span>
+      <span>vv height: ${diag.vvHeight}</span>
+      <span>--app-height: ${diag.appHeight}</span>
+      <span>safe-top: ${diag.safeTop}</span>
+      <span>safe-bottom: ${diag.safeBottom}</span>
+      <span>dpr: ${diag.dpr}</span>
+    </div>`}
 
     <div class="form-actions">
       ${on

@@ -20,30 +20,76 @@
       // together with sw.js's CACHE constant on every deploy. Without this,
       // "the fix didn't work" and "you're looking at a stale cached build"
       // are indistinguishable from a screenshot alone.
-      window.__BUILD__ = 'v55';
+      window.__BUILD__ = 'v56';
 
-      // --app-height: the visualViewport is the one viewport API iOS reports
-      // truthfully in standalone mode; publish it as a CSS var so the shell
-      // (.app in css/styles.css) can use it as a second line of defense on
-      // top of the position:fixed pin — see ~/Claude/dock-issue/PWA-DOCK-BUG.md.
+      // --app-height / --safe-top / --safe-bottom: measured, not trusted from
+      // raw CSS env()/visualViewport reads — see
+      // ~/Claude/dock-issue/PWA-DOCK-BUG.md and the two WebKit bugs below.
+      // window.__DIAG__ mirrors the last measurement so the sync panel
+      // (js/sync.js) can show live numbers instead of us guessing blind from
+      // a screenshot.
       //
-      // Recalc is also triggered on visibilitychange/pageshow, not just
-      // load/resize — an unresolved iOS 17+ WebKit bug (Apple Developer
-      // Forums thread 744327) lets position:fixed shells silently drift after
-      // the app sits backgrounded for a while and is reopened, with no
-      // resize event ever firing to say so. The viewport-fit toggle (cover →
-      // auto → cover) forces WebKit to redo its env(safe-area-inset-*)
-      // geometry pass even when no actual resize occurred (WebKit bug
-      // 191872: those values aren't set until "some arbitrary time after
-      // page load" and can go stale) — this is the one lever that's been
-      // reported to force it. Do not remove this in favor of the CSS pin
-      // alone; they fix different failures.
+      // Recalc runs on visibilitychange/pageshow, not just load/resize — an
+      // unresolved iOS 17+ WebKit bug (Apple Developer Forums thread 744327)
+      // lets position:fixed shells silently drift after the app sits
+      // backgrounded for a while and is reopened, with no resize event ever
+      // firing to say so.
+      //
+      // Safe-area insets are measured with a physical DOM probe
+      // (offsetHeight forces a real layout, giving the resolved pixel value)
+      // rather than read as a raw env()/CSS-custom-property value — WebKit
+      // bug 274773 documents the custom-property bridge returning stale or
+      // zero values; WebKit bug 191872 documents env() itself not being set
+      // until "some arbitrary time after page load." A direct `env()` in a
+      // stylesheet rule can freeze at whatever it resolved to on first
+      // layout and never get invalidated by later reflows/resizes, which is
+      // the leading suspect for the dock still floating after the shell
+      // restructure (2026-07-16) and the recalc-trigger fix (2026-07-16
+      // later same day) — neither actually changes what a plain CSS env()
+      // reference already latched onto. --safe-top/--safe-bottom (consumed
+      // via var(--safe-bottom, env(safe-area-inset-bottom)) throughout
+      // css/styles.css) force a fresh re-read on every trigger below instead.
       (function () {
         var meta = document.querySelector('meta[name="viewport"]');
+        var probe = null;
 
         function setAppHeight() {
           var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
           document.documentElement.style.setProperty('--app-height', Math.round(h) + 'px');
+          return h;
+        }
+
+        function measureSafeArea() {
+          if (!document.body) return null;
+          if (!probe) {
+            probe = document.createElement('div');
+            probe.style.cssText = 'position:fixed;top:0;left:0;width:0;visibility:hidden;pointer-events:none;';
+            document.body.appendChild(probe);
+          }
+          probe.style.height = 'env(safe-area-inset-bottom)';
+          // getBoundingClientRect forces layout, so this is the browser's
+          // actual resolved value right now, not a possibly-stale one.
+          var bottom = probe.getBoundingClientRect().height;
+          probe.style.height = 'env(safe-area-inset-top)';
+          var top = probe.getBoundingClientRect().height;
+          document.documentElement.style.setProperty('--safe-bottom', bottom + 'px');
+          document.documentElement.style.setProperty('--safe-top', top + 'px');
+          return { top: top, bottom: bottom };
+        }
+
+        function recordDiag(appH, safe) {
+          window.__DIAG__ = {
+            ts: new Date().toISOString(),
+            standalone: (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true,
+            innerHeight: window.innerHeight,
+            innerWidth: window.innerWidth,
+            vvHeight: window.visualViewport && Math.round(window.visualViewport.height),
+            vvWidth: window.visualViewport && Math.round(window.visualViewport.width),
+            appHeight: Math.round(appH),
+            safeTop: safe ? Math.round(safe.top) : null,
+            safeBottom: safe ? Math.round(safe.bottom) : null,
+            dpr: window.devicePixelRatio,
+          };
         }
 
         function forceRecalc() {
@@ -52,17 +98,25 @@
             meta.setAttribute('content', original.replace('viewport-fit=cover', 'viewport-fit=auto'));
             requestAnimationFrame(function () {
               meta.setAttribute('content', original);
-              setAppHeight();
+              var h = setAppHeight();
+              var safe = measureSafeArea();
+              recordDiag(h, safe);
             });
           } else {
-            setAppHeight();
+            var h = setAppHeight();
+            var safe = measureSafeArea();
+            recordDiag(h, safe);
           }
         }
 
-        setAppHeight();
-        window.addEventListener('resize', setAppHeight);
+        recordDiag(setAppHeight(), measureSafeArea());
+        // Exposed so the sync panel (js/sync.js) can force one fresh
+        // measurement the instant it's opened, instead of showing whatever
+        // __DIAG__ happened to be from the last trigger.
+        window.__recalcDiag__ = forceRecalc;
+        window.addEventListener('resize', forceRecalc);
         window.addEventListener('orientationchange', function () { setTimeout(forceRecalc, 250); });
-        if (window.visualViewport) window.visualViewport.addEventListener('resize', setAppHeight);
+        if (window.visualViewport) window.visualViewport.addEventListener('resize', forceRecalc);
         // Standalone launch can hand over a stale height/env() during the splash phase.
         window.addEventListener('load', function () {
           [150, 500, 1200].forEach(function (ms) { setTimeout(forceRecalc, ms); });

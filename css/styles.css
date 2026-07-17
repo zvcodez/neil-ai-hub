@@ -192,7 +192,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
   display: flex; align-items: center; justify-content: space-between;
   flex: none;
   padding: 20px 28px; border-bottom: 1px solid var(--border);
-  padding-top: calc(20px + env(safe-area-inset-top));
+  padding-top: calc(20px + var(--safe-top, env(safe-area-inset-top)));
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); z-index: 5;
 }
@@ -237,7 +237,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 .home-body {
   position: relative; z-index: 1; flex: 1; width: 100%; max-width: 460px; min-width: 0; margin: 0 auto;
   display: flex; flex-direction: column; justify-content: center; gap: 32px;
-  padding: calc(40px + env(safe-area-inset-top)) 24px calc(40px + env(safe-area-inset-bottom));
+  padding: calc(40px + var(--safe-top, env(safe-area-inset-top))) 24px calc(40px + var(--safe-bottom, env(safe-area-inset-bottom)));
 }
 .home-greet-eyebrow {
   font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--home-muted);
@@ -466,7 +466,7 @@ select, .sort select {
   position: fixed; inset: 0; background: rgba(8, 8, 20, 0.55);
   -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
   display: flex; align-items: flex-start; justify-content: center;
-  padding: calc(7vh + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));
+  padding: calc(7vh + var(--safe-top, env(safe-area-inset-top))) 20px calc(20px + var(--safe-bottom, env(safe-area-inset-bottom)));
   z-index: 50; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
 }
 .modal {
@@ -945,6 +945,11 @@ select, .sort select {
 .theme-toggle.sync-err { color: #ef4444; border-color: color-mix(in srgb, #ef4444 40%, var(--border)); }
 .sync-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin: 4px 0 2px; }
 .build-stamp { font-size: 11px; opacity: 0.6; }
+.diag-block {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px;
+  font-size: 10.5px; color: var(--text-muted); opacity: 0.7;
+  margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);
+}
 .sync-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--text-muted); }
 .sync-dot.on { background: #10b981; }
 .sync-dot.err { background: #ef4444; }
@@ -967,7 +972,7 @@ select, .sort select {
   .sidebar { display: none; }
   .app { flex-direction: column; }
   .content-body { padding: 18px 16px 24px; }
-  .content-head { padding: 16px; padding-top: calc(16px + env(safe-area-inset-top)); }
+  .content-head { padding: 16px; padding-top: calc(16px + var(--safe-top, env(safe-area-inset-top))); }
   .content-head .theme-toggle.compact { display: inline-flex; }
   .form-grid { grid-template-columns: 1fr; }
 
@@ -980,14 +985,14 @@ select, .sort select {
 
   /* Modals: use the width, keep clear of the notch and home indicator. */
   .modal-backdrop {
-    padding: calc(14px + env(safe-area-inset-top)) 12px calc(14px + env(safe-area-inset-bottom));
+    padding: calc(14px + var(--safe-top, env(safe-area-inset-top))) 12px calc(14px + var(--safe-bottom, env(safe-area-inset-bottom)));
   }
   .modal-body { padding: 16px; }
 
   .bottom-nav {
     display: flex; flex: none; z-index: 20;
     border-top: 1px solid var(--border);
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); overflow-x: auto;
+    padding: 6px 4px calc(6px + var(--safe-bottom, env(safe-area-inset-bottom))); overflow-x: auto;
     /* Frosted/translucent instead of a flat solid block (same recipe as
        .content-head above) so it reads as one glass bar over whatever tab
        is behind it, instead of a visibly different-colored slab stacked
