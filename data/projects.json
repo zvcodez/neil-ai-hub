@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-07-17T06:26:50.417Z",
+  "updatedAt": "2026-07-17T19:54:21.000Z",
   "data": [
+    {
+      "id": "idea-screenshot-optimizer",
+      "_created": "2026-07-17T19:54:21.000Z",
+      "_stagedAt": "2026-07-17T19:54:21.000Z",
+      "name": "Screenshot Optimizer",
+      "description": "Streamline getting iPhone screenshots to Claude Code without manual AirDrop/drag, and without cluttering Photos — auto-mirror to a staging folder that syncs to the Mac and self-cleans.",
+      "stage": "Idea",
+      "chatUrl": "",
+      "folder": "",
+      "repoUrl": "",
+      "liveUrl": "",
+      "nextStep": "Build the iOS Shortcuts 'Screenshot Taken' automation (Save to Files -> an iCloud Drive staging folder, toggle off 'Ask Before Running'), then a Mac-side fswatch LaunchAgent that copies each new image straight to the clipboard, plus a scheduled cleanup job that purges the staging folder after ~24-48h.",
+      "lastDid": "Talked through the idea: iPhone screenshots pile up because getting them into Claude Code currently means AirDrop + drag + remembering to delete. Landed on a no-API design: an iOS Shortcuts automation mirrors every screenshot to Photos (unchanged, stays permanent) AND to an iCloud Drive staging folder; iCloud Drive syncs that folder to the Mac for free (no service/API); a small fswatch-based LaunchAgent watches the folder and copies new images to the clipboard for pasting into Claude Code; a separate scheduled job auto-deletes anything in the staging folder older than ~24-48h so it never becomes clutter. Nothing built yet.",
+      "notes": "• Problem: screenshot → AirDrop → drag → forget to delete → Photos clutter\n• No API/paid service needed — just iOS Shortcuts + iCloud Drive (already-synced) + a local watcher script\n• Photos stays untouched/permanent; the iCloud staging folder is disposable scratch space that self-purges, so personal screenshots are never at risk\n• Pieces to build: (1) Shortcuts 'Screenshot Taken' automation with 'Ask Before Running' off, (2) fswatch LaunchAgent on the Mac to clipboard-copy new images, (3) scheduled cleanup job for the staging folder"
+    },
     {
       "id": "idea-diksha-resume",
       "_created": "2026-07-15T04:48:38.825172+00:00",
