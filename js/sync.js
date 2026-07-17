@@ -401,7 +401,6 @@ function SyncPanel({ onClose }) {
       <span>standalone: ${String(diag.standalone)}</span>
       <span>innerHeight: ${diag.innerHeight}</span>
       <span>vv height: ${diag.vvHeight}</span>
-      <span>--app-height: ${diag.appHeight}</span>
       <span>safe-top: ${diag.safeTop}</span>
       <span>safe-bottom: ${diag.safeBottom}</span>
       <span>dpr: ${diag.dpr}</span>

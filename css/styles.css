@@ -109,9 +109,17 @@
    primitive iOS gets right (position: fixed; inset: 0 tracks the true
    visual viewport every frame), then chain plain height: 100% down through
    #root/.app — no vh/dvh/svh anywhere in the shell. Do not "simplify" this
-   away; see the doc for why every line exists. --app-height (set by the
-   inline script in index.html from visualViewport) is consumed by .app as
-   an extra layer of defense on top of this. */
+   away; see the doc for why every line exists.
+
+   CONFIRMED 2026-07-17 on Neil's device: do NOT feed .app's height from a
+   JS-measured value (visualViewport.height/innerHeight) — those APIs are
+   themselves subject to the same "computed as if browser chrome is still
+   present" bug as vh/dvh in standalone mode, so a JS override just locks
+   .app to the same wrong short number instead of letting height: 100%
+   resolve correctly against the position:fixed;inset:0 pin above. A
+   color-coded debug build proved .app was ending short of the true screen
+   bottom specifically because of this override — see index.html's inline
+   script comment for the full account. Plain height: 100% is the fix. */
 html, body { position: fixed; inset: 0; overflow: hidden; margin: 0; height: 100%; }
 #root { height: 100%; }
 body {
@@ -143,7 +151,7 @@ h1 { font-family: var(--font-display); font-weight: 700; }
 /* ============================================================
    App layout
    ============================================================ */
-.app { display: flex; height: var(--app-height, 100%); overflow: hidden; position: relative; z-index: 1; }
+.app { display: flex; height: 100%; overflow: hidden; position: relative; z-index: 1; }
 
 .sidebar {
   width: var(--sidebar-w);
@@ -748,7 +756,7 @@ select, .sort select {
 .stage-group.empty .stage-cards { min-height: 90px; border: 1.5px dashed var(--border); border-radius: 12px; }
 .projects-board.dragging .stage-cards { outline: 1.5px dashed color-mix(in srgb, var(--stage) 45%, transparent); outline-offset: 5px; border-radius: 12px; }
 @media (min-width: 761px) {
-  .stage-cards { max-height: calc(var(--app-height, 100vh) - 300px); overflow-y: auto; overflow-x: hidden; padding-right: 6px; padding-bottom: 4px; }
+  .stage-cards { max-height: calc(100vh - 300px); overflow-y: auto; overflow-x: hidden; padding-right: 6px; padding-bottom: 4px; }
 }
 
 /* Card */
@@ -1068,14 +1076,3 @@ select, .sort select {
 }
 .net-copy:hover { border-color: var(--accent); color: var(--accent); }
 .net-copy.done { border-color: #10b981; color: #10b981; }
-
-/* TEMPORARY DEBUG PASS — 2026-07-17. Loud colors to visually localize the
-   flat black band below the mobile dock: is it html/body showing through
-   below .app (meaning .app is short), or .app showing through below
-   .bottom-nav (meaning the dock's own padding is short)? Revert immediately
-   once we have the answer — see CLAUDE.md TODO. */
-html, body { background: #ff00ff !important; }
-.app { background: #00e5ff !important; }
-@media (max-width: 760px) {
-  .bottom-nav { background: #39ff14 !important; }
-}

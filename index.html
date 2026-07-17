@@ -20,44 +20,50 @@
       // together with sw.js's CACHE constant on every deploy. Without this,
       // "the fix didn't work" and "you're looking at a stale cached build"
       // are indistinguishable from a screenshot alone.
-      window.__BUILD__ = 'v57-DEBUG';
+      window.__BUILD__ = 'v58';
 
-      // --app-height / --safe-top / --safe-bottom: measured, not trusted from
-      // raw CSS env()/visualViewport reads — see
-      // ~/Claude/dock-issue/PWA-DOCK-BUG.md and the two WebKit bugs below.
-      // window.__DIAG__ mirrors the last measurement so the sync panel
-      // (js/sync.js) can show live numbers instead of us guessing blind from
-      // a screenshot.
+      // CONFIRMED 2026-07-17 via a color-coded debug build on Neil's actual
+      // device: .app's box was ending short of the true screen bottom, with
+      // plain body showing below it — i.e. the shell-restructure premise
+      // that "visualViewport.height is the one viewport API iOS reports
+      // truthfully in standalone mode" was WRONG. window.innerHeight and
+      // visualViewport.height are themselves subject to the same "computed
+      // as if browser chrome is still present" WebKit standalone bug that
+      // affects 100vh/100dvh directly (see ~/Claude/dock-issue/PWA-DOCK-BUG.md
+      // §2b) — they are not an independent, trustworthy source of truth. The
+      // --app-height custom property built from those values was therefore
+      // overriding the one thing that WAS already correct: .app's plain
+      // `height: 100%`, resolving against the position:fixed;inset:0 pin on
+      // html/body, which per every source is the one primitive WebKit gets
+      // right on every frame. That's why the dock kept floating through two
+      // rounds of "fixes" that only ever touched the JS layer. .app now uses
+      // plain height:100% (css/styles.css) — do not reintroduce a
+      // JS-measured height var for it without on-device proof it's needed.
       //
-      // Recalc runs on visibilitychange/pageshow, not just load/resize — an
-      // unresolved iOS 17+ WebKit bug (Apple Developer Forums thread 744327)
-      // lets position:fixed shells silently drift after the app sits
-      // backgrounded for a while and is reopened, with no resize event ever
-      // firing to say so.
+      // visualViewport/innerHeight are still recorded below in __DIAG__
+      // purely as diagnostic numbers (to prove/track this exact
+      // discrepancy over time) — they must never again feed a layout-
+      // critical CSS value.
       //
-      // Safe-area insets are measured with a physical DOM probe
-      // (offsetHeight forces a real layout, giving the resolved pixel value)
-      // rather than read as a raw env()/CSS-custom-property value — WebKit
-      // bug 274773 documents the custom-property bridge returning stale or
-      // zero values; WebKit bug 191872 documents env() itself not being set
-      // until "some arbitrary time after page load." A direct `env()` in a
-      // stylesheet rule can freeze at whatever it resolved to on first
-      // layout and never get invalidated by later reflows/resizes, which is
-      // the leading suspect for the dock still floating after the shell
-      // restructure (2026-07-16) and the recalc-trigger fix (2026-07-16
-      // later same day) — neither actually changes what a plain CSS env()
-      // reference already latched onto. --safe-top/--safe-bottom (consumed
-      // via var(--safe-bottom, env(safe-area-inset-bottom)) throughout
-      // css/styles.css) force a fresh re-read on every trigger below instead.
+      // Safe-area insets (--safe-top/--safe-bottom) are a separate, still-
+      // legitimate mechanism: measured with a physical DOM probe
+      // (getBoundingClientRect forces a real layout, giving the resolved
+      // pixel value) rather than read as a raw env()/CSS-custom-property
+      // value — WebKit bug 274773 documents the custom-property bridge
+      // returning stale or zero values; WebKit bug 191872 documents env()
+      // itself not being set until "some arbitrary time after page load."
+      // These measured correctly (34px/62px) on Neil's device, unlike the
+      // height value above — recalc'd on the same triggers for safety.
+      //
+      // Recalc (for safe-area + diagnostics) still runs on
+      // visibilitychange/pageshow, not just load/resize — an unresolved iOS
+      // 17+ WebKit bug (Apple Developer Forums thread 744327) lets
+      // position:fixed shells silently drift after the app sits backgrounded
+      // for a while and is reopened, with no resize event ever firing to
+      // say so.
       (function () {
         var meta = document.querySelector('meta[name="viewport"]');
         var probe = null;
-
-        function setAppHeight() {
-          var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
-          document.documentElement.style.setProperty('--app-height', Math.round(h) + 'px');
-          return h;
-        }
 
         function measureSafeArea() {
           if (!document.body) return null;
@@ -77,7 +83,7 @@
           return { top: top, bottom: bottom };
         }
 
-        function recordDiag(appH, safe) {
+        function recordDiag(safe) {
           window.__DIAG__ = {
             ts: new Date().toISOString(),
             standalone: (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true,
@@ -85,7 +91,6 @@
             innerWidth: window.innerWidth,
             vvHeight: window.visualViewport && Math.round(window.visualViewport.height),
             vvWidth: window.visualViewport && Math.round(window.visualViewport.width),
-            appHeight: Math.round(appH),
             safeTop: safe ? Math.round(safe.top) : null,
             safeBottom: safe ? Math.round(safe.bottom) : null,
             dpr: window.devicePixelRatio,
@@ -98,18 +103,14 @@
             meta.setAttribute('content', original.replace('viewport-fit=cover', 'viewport-fit=auto'));
             requestAnimationFrame(function () {
               meta.setAttribute('content', original);
-              var h = setAppHeight();
-              var safe = measureSafeArea();
-              recordDiag(h, safe);
+              recordDiag(measureSafeArea());
             });
           } else {
-            var h = setAppHeight();
-            var safe = measureSafeArea();
-            recordDiag(h, safe);
+            recordDiag(measureSafeArea());
           }
         }
 
-        recordDiag(setAppHeight(), measureSafeArea());
+        recordDiag(measureSafeArea());
         // Exposed so the sync panel (js/sync.js) can force one fresh
         // measurement the instant it's opened, instead of showing whatever
         // __DIAG__ happened to be from the last trigger.

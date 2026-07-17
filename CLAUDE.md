@@ -214,6 +214,18 @@ mission-control.
    of an in-app sheet. Also merged/deleted a duplicate "Rendezvous" project
    entry in `data/projects.json` (an old empty Building-stage stub) into the
    real deployed one, folding its later log entries in rather than losing them.
+8. **Dock-float root cause actually found and fixed 2026-07-17** (the
+   2026-07-16 shell restructure above did not actually fix it — see
+   Conventions for the full account). Confirmed via a color-coded debug
+   build on Neil's real device that `.app`'s JS-measured `--app-height` var
+   was the bug, not the CSS shell shape. Fix: `.app` uses plain
+   `height: 100%` again, no JS override. **Not yet reconfirmed on-device**
+   since this exact fix (build v58) — next session or Neil directly: force-
+   quit/reopen twice, confirm build v58 in the sync panel, confirm the dock
+   sits flush with no dead strip below it. If it's still wrong, pull the
+   sync-panel diagnostics screenshot first before changing anything else —
+   guessing further without device numbers is what cost the two rounds
+   before this one.
 
 ## Deploy checklist — the app must stay LIVE and CURRENT (do this every change)
 Neil uses the deployed PWA on his phone as his daily driver. Any session that
@@ -252,36 +264,56 @@ touches this repo must leave the live site working and up to date:
 
 ## Conventions
 - **PWA shell — do not reintroduce the "raised dock" bug.** This is the 5th
-  Neil project to hit it (after ZV's Edge, Jot, Reel); fixed here 2026-07-16.
-  Full writeup and the 8 invariants: `~/Claude/dock-issue/PWA-DOCK-BUG.md`.
-  The short version, all enforced in `css/styles.css` + `index.html`:
+  Neil project to hit it (after ZV's Edge, Jot, Reel); first fix attempt
+  2026-07-16, root cause actually found and fixed 2026-07-17. Full writeup
+  and the 8 invariants: `~/Claude/dock-issue/PWA-DOCK-BUG.md` — **that doc's
+  own §2c/§3 recommendation to add a `visualViewport`-driven `--app-height`
+  JS var is WRONG for this app and was the actual bug**, see below; treat
+  that specific recommendation as superseded here until the doc itself is
+  corrected.
   - Never size the shell with `vh`/`dvh`/`svh`/`lvh` — `html, body` are
     `position: fixed; inset: 0; overflow: hidden`, and `#root`/`.app` chain
-    plain `height: 100%` (or `var(--app-height, 100%)`) down from there.
+    **plain `height: 100%`** down from there. This part of the shell was
+    correct from 2026-07-16 onward.
+  - **Do NOT feed `.app`'s height from a JS-measured `visualViewport.height`/
+    `innerHeight` value.** The 2026-07-16 fix added exactly that (an
+    `--app-height` custom property) on the assumption that `visualViewport`
+    is "the one viewport API iOS reports truthfully in standalone mode." On
+    Neil's actual device that assumption was false: a color-coded debug
+    build (magenta body / cyan `.app` / green `.bottom-nav`) proved `.app`'s
+    box was ending short of the true screen bottom, with plain body-colored
+    dead space below it — `visualViewport.height`/`window.innerHeight` are
+    themselves subject to the same "computed as if browser chrome is still
+    present" WebKit standalone bug that affects `100vh`/`100dvh` directly,
+    so the JS override was locking `.app` to the same wrong short number
+    that plain `height: 100%` (resolving against the `position:fixed;inset:0`
+    pin) would have gotten right on its own. Two full rounds of "fixes" only
+    ever touched the JS layer and never worked, because the JS layer itself
+    was the bug. Confirmed fixed 2026-07-17 by simply reverting `.app` to
+    plain `height: 100%` and removing the JS override entirely.
   - `.bottom-nav` is a plain flex sibling at the end of `.app`, never
     `position: fixed`.
   - `.content-body` is the app's *only* scroll container
     (`overflow-y: auto; min-height: 0`) — every tab's content scrolls there,
     nothing else scrolls independently except deliberate inner scrollers
     like `.stage-cards` or `.modal-backdrop`.
-  - `index.html` has an inline script publishing `--app-height` from
-    `visualViewport` as a second line of defense on top of the CSS pin — and
-    it re-runs on `visibilitychange`/`pageshow`, not just load/resize. This
-    matters: an unresolved iOS 17+ WebKit bug (Apple Developer Forums thread
-    744327, no official fix as of this writing) lets `position: fixed`
-    elements silently drift after the app sits backgrounded for a while and
-    is reopened — no resize event fires to say so, which is exactly why the
-    2026-07-16 fix still floated for Neil on first try. The script also
-    toggles `viewport-fit` cover→auto→cover to force WebKit to redo its
-    `env(safe-area-inset-*)` geometry pass (WebKit bug 191872: those values
-    aren't set until "some arbitrary time after page load" and can go
-    stale) — this is a documented, still-open platform bug, not something a
-    CSS-only fix can guarantee against. The recalc-on-foreground script is
-    the best available mitigation, not a proof it can never recur.
+  - `index.html`'s inline script still measures `--safe-top`/`--safe-bottom`
+    (via a physical DOM probe, not raw CSS `env()`) — that part *is* still
+    legitimate and confirmed correct on-device (measured 62px/34px). WebKit
+    bug 191872/274773 (env() not set until "some arbitrary time after page
+    load," and can go stale) are real, just weren't this bug. Recalc still
+    runs on `visibilitychange`/`pageshow` in case of the separate unresolved
+    iOS 17+ `position: fixed` drift-after-backgrounding bug (Apple Developer
+    Forums thread 744327) — untested whether that one ever manifests here,
+    left in as a low-cost mitigation.
+  - `window.__DIAG__` + the sync panel's diagnostics readout (`js/sync.js`)
+    were what actually cracked this — before adding more shell "fixes" on
+    faith, get real numbers from Neil's device first next time.
   - Before touching any of `html`/`body`/`#root`/`.app`/`.content`/
-    `.content-body`/`.bottom-nav` sizing or positioning, re-read the doc above
-    — every one of Neil's past regressions here looked like an innocuous
-    one-line CSS change.
+    `.content-body`/`.bottom-nav` sizing or positioning, re-read this section
+    and the doc above — every one of Neil's past regressions here looked
+    like an innocuous one-line CSS change, including the one this section
+    itself just corrected.
 - Match the existing buildless, vendored-module style. No new dependencies.
 - **When Neil signs off** ("okay that's all for now", "okay bye", or anything that
   means he's leaving to continue later), update the **Open items / TODO** section
