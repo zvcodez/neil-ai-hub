@@ -5,7 +5,7 @@
 // script matching it — the visible build stamp (sync panel) is how a
 // screenshot proves which build produced it, instead of "did the fix not
 // work, or am I looking at a stale cached build" being unanswerable.
-const CACHE = 'neil-ai-hub-v56';
+const CACHE = 'neil-ai-hub-v57';
 const ASSETS = [
   './',
   './index.html',

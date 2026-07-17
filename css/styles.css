@@ -1068,3 +1068,14 @@ select, .sort select {
 }
 .net-copy:hover { border-color: var(--accent); color: var(--accent); }
 .net-copy.done { border-color: #10b981; color: #10b981; }
+
+/* TEMPORARY DEBUG PASS — 2026-07-17. Loud colors to visually localize the
+   flat black band below the mobile dock: is it html/body showing through
+   below .app (meaning .app is short), or .app showing through below
+   .bottom-nav (meaning the dock's own padding is short)? Revert immediately
+   once we have the answer — see CLAUDE.md TODO. */
+html, body { background: #ff00ff !important; }
+.app { background: #00e5ff !important; }
+@media (max-width: 760px) {
+  .bottom-nav { background: #39ff14 !important; }
+}
