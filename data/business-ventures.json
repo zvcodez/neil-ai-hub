@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T05:30:00+00:00",
+  "updatedAt": "2026-07-17T00:51:40.416416+00:00",
   "data": [
     {
       "id": "biz-zvtok",
@@ -11,11 +11,16 @@
       "monthlyRevenue": 0,
       "monthlyCost": 0,
       "customers": 0,
-      "nextStep": "Neil posts the first carousel today (7 PNGs + caption in ~/Downloads/zvtok-2026-07-16-hidden-features/, checklist in the post's brief.md). Then draft carousels 2-3 reusing the same slide.css/render.sh template. Session 1 (documentary dock-bug film) still open whenever Neil's ready to record. Full plan in ~/Claude/zvtok/CLAUDE.md.",
-      "lastDid": "Shipped the first piece of content, skipping ahead of the documentary track since a tips post doesn't need to wait on filming. Used fable-planner to plan it, then built a reusable slide pipeline (HTML/CSS -> headless Chrome -> exact 1080x1440 PNGs, dark terminal aesthetic, numbered preview-dots for swipe-through) and produced the first carousel: \"5 Claude Code features most people never find,\" 7 slides, QA'd and delivered to Downloads with caption ready to post. Also confirmed Gumroad's fee structure at the source (free to list, 10%+$0.50/sale) and Payhip as a free-to-list backup option; decided to stay Gumroad-only for now since the bio link can't go live until ~1,000 followers anyway.",
+      "nextStep": "Neil picks a visual direction from the two hook-slide options in ~/Downloads/zvtok-design-review/ (Option A = new Paper Editorial template, Option B = bolder black+coral). Once picked, the full first post (c01-what-is-claude-code, 6 slides + caption, already built and delivered to ~/Downloads/zvtok-c01-what-is-claude-code/ and iCloud ZVLABS/) gets posted. Then: real topic research via WebSearch for the rest of the fundamentals series, code-example/screenshot slide types, and a short video-aid pilot.",
+      "lastDid": "Neil gave real feedback on the first two live posts (too generic, template read as basic, dashes had leaked in) and asked for a fresh start. Used fable-planner (with Neil's go-ahead) to plan a content/design overhaul, then archived all 9 old posts (2 live, 7 unposted) to content/_archive-2026-07-16/ rather than deleting them. Built a new template system (templates/<name>/) starting with 'Paper Editorial' (cream halftone background, bold condensed type, red accent) modeled on a competitor post Neil liked. Added a hard dash-lint gate to the render pipeline so the no-dash rule can't be violated silently again. Opened a new Track C (beginner fundamentals, separate from tips and documentary) and built its first post, 'What is Claude Code, and what is it used for?', fully rendered and QA'd. Also rendered a second hook-slide option in a bolder black+coral look so Neil can compare before committing.",
       "liveUrl": "",
       "notes": "• Single account (existing ZVlabs TikTok, @zvlabs), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers)\n• Track A: tips carousels 2–3×/week (growth) · Track B: documentary bug-fix videos, irregular (conversion)\n• Products: one-time Gumroad files ~$5–$15; first product = iOS PWA polish kit built on ~/Claude/dock-issue\n• Inbound only — no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n• Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2–4 hrs/wk)\n• Realistic expectations: 10–20 sales in ~2–3 months is the win condition, not big income\n• performance-log.md tracks per-post views/saves/shares/follows, reviewed weekly",
       "log": [
+        {
+          "id": "log-zvtok-3",
+          "ts": "2026-07-17T00:51:40.414618+00:00",
+          "text": "Fresh-start pivot per Neil's feedback: archived the old 9-post batch (not deleted), rebuilt the template system with a real design system dir and a hard automated dash-lint gate, opened a new Track C for beginner fundamentals content, and built + QA'd its first post ('What is Claude Code?') in a new Paper Editorial visual template plus one alternate black+coral option for Neil to choose between."
+        },
         {
           "id": "log-zvtok-2",
           "ts": "2026-07-16T05:30:00+00:00",
