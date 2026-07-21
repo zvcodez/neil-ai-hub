@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T00:00:00.000000+00:00",
+  "updatedAt": "2026-07-21T04:46:42+00:00",
   "data": [
     {
       "id": "biz-zvtok",
@@ -11,8 +11,8 @@
       "monthlyRevenue": 0,
       "monthlyCost": 0,
       "customers": 0,
-      "nextStep": "iOS PWA Polish Kit is built, QA'd, and packaged (zip in ~/Downloads, Gumroad copy + cover image ready in ~/Claude/zvtok/product/gumroad/). Waiting on Neil to create the Gumroad account and publish the listing himself, on his own timeline, not blocked on Claude. Once live, update this entry's liveUrl and update the TikTok bio text. Then Session B: owned landing page (GitHub Pages) + X account + wire YouTube description links. Then Session C: dock-bug technical writeup launched to HN/Reddit. Track B (documentary bug-fix video) session 1 still hasn't been filmed; feeds both the TikTok funnel and the service-offer credibility. Optional: dogfood the skill against Jot, which still has the old broken viewport pattern.",
-      "lastDid": "Built the iOS PWA Polish Kit product end to end (planned with fable-planner), then QA'd the delivered zip as a first-time buyer would use it: unzipped fresh, walked through the README cold, and copy-tested the CSS fix against a toy broken app. Found and fixed 2 real issues (misaligned file-tree formatting, and shell.css/pwa-diagnostics.js not being flagged as needing to be installed together for the safe-area fix to be fully reliable). Re-packaged and re-delivered to Downloads.",
+      "nextStep": "Neil reviews both new decks on his phone and posts. c04-subagents-vs-agents is also still built and delivered, not yet posted, from a prior session. After posting catches up, run a fresh topic-research pass before picking the next post. Gumroad listing for the iOS PWA Polish Kit still not published by Neil; Track B documentary video still not filmed.",
+      "lastDid": "Built 2 new TikTok decks: c05-context-window (Track C explainer, 6 slides, the 50%-not-100%% context quality hook) and a02-claude-code-tricks (Track A listicle, 5 slides on CLAUDE.md/slash commands/hooks/plan mode/compacting, the last trick deliberately ties back to c05). Both rendered clean through the dash lint gate, delivered to Downloads and iCloud ZVLABS, not yet posted.",
       "liveUrl": "",
       "notes": "\u2022 Single account (existing ZVlabs TikTok, @zvlabs), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers, but no longer the only monetization path)\n\u2022 Track A: tips carousels 2-3x/week (growth) . Track B: documentary bug-fix videos, irregular (conversion)\n\u2022 Products: one-time Gumroad files ~$5-$15; first product = iOS PWA polish kit, built and packaged, based on ~/Claude/dock-issue\n\u2022 Monetization stack (2026-07-17): polish kit + Gumroad page first, then owned landing page, X/Twitter, YouTube Shorts description links, Gumroad Discover, a dock-bug HN/Reddit writeup, and a small flat-fee PWA-fix service offer, all parallel, not sequential\n\u2022 Inbound only, no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n\u2022 Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2-4 hrs/wk)\n\u2022 Realistic expectations: 10-20 sales in ~2-3 months is the win condition, not big income\n\u2022 performance-log.md tracks per-post views/saves/shares/follows, reviewed weekly",
       "log": [
