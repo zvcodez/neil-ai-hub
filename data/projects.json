@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-17T19:54:21.000Z",
+  "updatedAt": "2026-07-24T01:45:07.493663Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
       "_created": "2026-07-17T19:54:21.000Z",
       "_stagedAt": "2026-07-17T19:54:21.000Z",
       "name": "Screenshot Optimizer",
-      "description": "Streamline getting iPhone screenshots to Claude Code without manual AirDrop/drag, and without cluttering Photos — auto-mirror to a staging folder that syncs to the Mac and self-cleans.",
+      "description": "Streamline getting iPhone screenshots to Claude Code without manual AirDrop/drag, and without cluttering Photos \u2014 auto-mirror to a staging folder that syncs to the Mac and self-cleans.",
       "stage": "Idea",
       "chatUrl": "",
       "folder": "",
@@ -14,7 +14,7 @@
       "liveUrl": "",
       "nextStep": "Build the iOS Shortcuts 'Screenshot Taken' automation (Save to Files -> an iCloud Drive staging folder, toggle off 'Ask Before Running'), then a Mac-side fswatch LaunchAgent that copies each new image straight to the clipboard, plus a scheduled cleanup job that purges the staging folder after ~24-48h.",
       "lastDid": "Talked through the idea: iPhone screenshots pile up because getting them into Claude Code currently means AirDrop + drag + remembering to delete. Landed on a no-API design: an iOS Shortcuts automation mirrors every screenshot to Photos (unchanged, stays permanent) AND to an iCloud Drive staging folder; iCloud Drive syncs that folder to the Mac for free (no service/API); a small fswatch-based LaunchAgent watches the folder and copies new images to the clipboard for pasting into Claude Code; a separate scheduled job auto-deletes anything in the staging folder older than ~24-48h so it never becomes clutter. Nothing built yet.",
-      "notes": "• Problem: screenshot → AirDrop → drag → forget to delete → Photos clutter\n• No API/paid service needed — just iOS Shortcuts + iCloud Drive (already-synced) + a local watcher script\n• Photos stays untouched/permanent; the iCloud staging folder is disposable scratch space that self-purges, so personal screenshots are never at risk\n• Pieces to build: (1) Shortcuts 'Screenshot Taken' automation with 'Ask Before Running' off, (2) fswatch LaunchAgent on the Mac to clipboard-copy new images, (3) scheduled cleanup job for the staging folder"
+      "notes": "\u2022 Problem: screenshot \u2192 AirDrop \u2192 drag \u2192 forget to delete \u2192 Photos clutter\n\u2022 No API/paid service needed \u2014 just iOS Shortcuts + iCloud Drive (already-synced) + a local watcher script\n\u2022 Photos stays untouched/permanent; the iCloud staging folder is disposable scratch space that self-purges, so personal screenshots are never at risk\n\u2022 Pieces to build: (1) Shortcuts 'Screenshot Taken' automation with 'Ask Before Running' off, (2) fswatch LaunchAgent on the Mac to clipboard-copy new images, (3) scheduled cleanup job for the staging folder"
     },
     {
       "id": "idea-diksha-resume",
@@ -284,13 +284,13 @@
       "_stagedAt": "2026-07-01T12:01:00+00:00",
       "name": "The Gucci Gazette",
       "description": "A shared photo album app for Gucci \u2014 snap a photo, get an AI caption, send it to Diksha (or vice versa) with a push notification; every photo is kept in a cozy-scrapbook-style shared feed organized by month.",
-      "stage": "Building",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/gucci-app",
       "repoUrl": "",
-      "liveUrl": "https://gucci-app-zv-edge.vercel.app",
-      "nextStep": "Neil adds ANTHROPIC_API_KEY via 'vercel env add' (the one manual step for AI captions to work), then both phones do the PIN + ntfy setup from HANDOFF.md.",
-      "lastDid": "Discovered an earlier, unfinished build (Gucci \u2014 Moments) already existed and replaced it end to end in place: cozy-scrapbook design (polaroid cards, tap-to-expand full photo), bidirectional sending, Vercel Blob photo storage, Claude-vision AI captions, ntfy push, shared-PIN access. Deployed to the same Vercel project/URL.",
+      "liveUrl": "https://gucci-app-ebon.vercel.app",
+      "nextStep": "Neil to do the real walkthrough on his phone: install to home screen, force-quit and reopen twice to confirm the bottom dock stays glued to the bottom (this needs a real device, can't be verified from the machine), then take the first real photo and confirm Diksha gets the push notification and it opens the app correctly.",
+      "lastDid": "Full bug sweep before go-live: found and fixed a real lost-update race (simultaneous posts from both phones could silently erase each other), made posts idempotent, fixed the push notification's tap-through link (was pointing at an SSO-protected dead end), fixed a rubber-band scroll bug and a service-worker cache bug, added a standalone local photo backup script (npm run backup) plus automatic in-Blob snapshots as a safety net. Then found the real reason nothing had ever actually gone live in 3 weeks: every deploy was silently blocked by Vercel (git commit author email didn't match a verified GitHub account) -- fixed global git identity and it's now genuinely live and verified working end-to-end (auth, feed, captions all confirmed via direct requests). Neil and Diksha opted to skip AI captions for now (cost/setup) in favor of tappable quick-caption presets instead.",
       "notes": "\u2022 Open the app and instantly take a photo or video of Gucci\n\u2022 Everything saves automatically into his personal gallery\n\u2022 Organized into albums (e.g. by date, location, or mood/activity)\n\u2022 Built entirely around him \u2014 his name, his photos, his vibe\n\u2022 A dedicated place to collect every cute moment, all in one spot"
     },
     {
