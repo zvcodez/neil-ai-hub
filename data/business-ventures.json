@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T04:46:42+00:00",
+  "updatedAt": "2026-07-25T01:25:00+00:00",
   "data": [
     {
       "id": "biz-zvtok",
@@ -11,11 +11,16 @@
       "monthlyRevenue": 0,
       "monthlyCost": 0,
       "customers": 0,
-      "nextStep": "Neil reviews both new decks on his phone and posts. c04-subagents-vs-agents is also still built and delivered, not yet posted, from a prior session. After posting catches up, run a fresh topic-research pass before picking the next post. Gumroad listing for the iOS PWA Polish Kit still not published by Neil; Track B documentary video still not filmed.",
-      "lastDid": "Built 2 new TikTok decks: c05-context-window (Track C explainer, 6 slides, the 50%-not-100%% context quality hook) and a02-claude-code-tricks (Track A listicle, 5 slides on CLAUDE.md/slash commands/hooks/plan mode/compacting, the last trick deliberately ties back to c05). Both rendered clean through the dash lint gate, delivered to Downloads and iCloud ZVLABS, not yet posted.",
+      "nextStep": "Neil creates the Gumroad account and publishes the iOS PWA Polish Kit listing using ~/Downloads/zvtok-gumroad-listing/ (copy.md + cover.png) and ~/Downloads/ios-pwa-polish-kit.zip, all finalized and waiting. After that: update TikTok bio, then Session B (landing page, X/YouTube links). Separately: Neil reviews both pending TikTok decks (c04-subagents-vs-agents, c05-context-window/a02-claude-code-tricks) and posts; Track B documentary video still not filmed.",
+      "lastDid": "Neil asked to see top-selling comparable Gumroad listings before finalizing, then to finalize. Researched Gumroad discover pages via Claude in Chrome (no direct competitor found for iOS PWA fixes specifically), pulled two patterns from the strongest comp (Aakash Gupta's $49 'Job Search OS in Claude Code', 4.8 stars): outcome-driven headline instead of a feature list, and a designed diagram as the hero image instead of a photo/recording (Neil doesn't want to film or photograph anything). Rebuilt the listing: new landscape cover (illustrated phone diagram of the actual bug, built in the existing paper-editorial-v2 visual language, no photography), new title, and a new 'problem you're living with' section. Delivered to ~/Downloads/zvtok-gumroad-listing/.",
       "liveUrl": "",
       "notes": "\u2022 Single account (existing ZVlabs TikTok, @zvlabs), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers, but no longer the only monetization path)\n\u2022 Track A: tips carousels 2-3x/week (growth) . Track B: documentary bug-fix videos, irregular (conversion)\n\u2022 Products: one-time Gumroad files ~$5-$15; first product = iOS PWA polish kit, built and packaged, based on ~/Claude/dock-issue\n\u2022 Monetization stack (2026-07-17): polish kit + Gumroad page first, then owned landing page, X/Twitter, YouTube Shorts description links, Gumroad Discover, a dock-bug HN/Reddit writeup, and a small flat-fee PWA-fix service offer, all parallel, not sequential\n\u2022 Inbound only, no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n\u2022 Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2-4 hrs/wk)\n\u2022 Realistic expectations: 10-20 sales in ~2-3 months is the win condition, not big income\n\u2022 performance-log.md tracks per-post views/saves/shares/follows, reviewed weekly",
       "log": [
+        {
+          "id": "log-zvtok-12",
+          "ts": "2026-07-25T01:25:00+00:00",
+          "text": "Neil asked to see what top-selling comparable Gumroad products look like, then to finalize the listing using that research (explicit go-ahead, no filming/photography). Browsed Gumroad discover via Claude in Chrome, confirmed no direct competitor sells iOS PWA bug fixes specifically, and pulled 2 transferable patterns from the strongest comp found (Aakash Gupta's 'Job Search OS in Claude Code', $49, 4.8 stars): an outcome-driven headline instead of a feature list, and a designed hero graphic instead of a real photo/screen recording. Rebuilt the cover as a new 1600x900 illustrated phone diagram showing the actual bug (same paper-editorial-v2 cream/coral visual language, pure CSS/SVG, no photography), rewrote the title and added an explicit 'problem you're living with' section to the copy, and added a price-anchor line. Delivered to ~/Downloads/zvtok-gumroad-listing/. Nothing blocked on Claude; Neil still needs to create the Gumroad account himself."
+        },
         {
           "id": "log-zvtok-11",
           "ts": "2026-07-19T00:00:00.000000+00:00",
