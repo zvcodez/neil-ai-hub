@@ -1,21 +1,26 @@
 {
-  "updatedAt": "2026-07-25T01:25:00+00:00",
+  "updatedAt": "2026-07-25T04:35:00+00:00",
   "data": [
     {
       "id": "biz-zvtok",
       "_created": "2026-07-16T04:21:30+00:00",
-      "_stagedAt": "2026-07-16T04:21:30+00:00",
+      "_stagedAt": "2026-07-25T04:35:00+00:00",
       "name": "ZVtok \u2014 AI TikTok studio",
-      "description": "TikTok content engine (Claude Code tips carousels + real bug-fix documentary videos) selling ZVlabs digital products: Claude Code packs and workflow tooling. Multi-surface monetization plan (2026-07-17): own landing page, X/YouTube links, Gumroad Discover, a technical writeup aimed at HN/Reddit, and a small service offer, so revenue isn't solely gated on TikTok's 1,000-follower bio link. First milestone: 10-20 organic sales.",
-      "stage": "Building",
+      "description": "TikTok content engine (Claude Code tips carousels + real bug-fix documentary videos) selling ZVlabs digital products: Claude Code packs and workflow tooling. Multi-surface monetization plan (2026-07-17): own landing page, X/YouTube links, Gumroad Discover, a technical writeup aimed at HN/Reddit, and a small service offer, so revenue isn't solely gated on TikTok's 1,000-follower bio link. First product live 2026-07-24. First milestone: 10-20 organic sales.",
+      "stage": "Live",
       "monthlyRevenue": 0,
       "monthlyCost": 0,
       "customers": 0,
-      "nextStep": "Neil creates the Gumroad account and publishes the iOS PWA Polish Kit listing using ~/Downloads/zvtok-gumroad-listing/ (copy.md + cover.png) and ~/Downloads/ios-pwa-polish-kit.zip, all finalized and waiting. After that: update TikTok bio, then Session B (landing page, X/YouTube links). Separately: Neil reviews both pending TikTok decks (c04-subagents-vs-agents, c05-context-window/a02-claude-code-tricks) and posts; Track B documentary video still not filmed.",
-      "lastDid": "Neil asked to see top-selling comparable Gumroad listings before finalizing, then to finalize. Researched Gumroad discover pages via Claude in Chrome (no direct competitor found for iOS PWA fixes specifically), pulled two patterns from the strongest comp (Aakash Gupta's $49 'Job Search OS in Claude Code', 4.8 stars): outcome-driven headline instead of a feature list, and a designed diagram as the hero image instead of a photo/recording (Neil doesn't want to film or photograph anything). Rebuilt the listing: new landscape cover (illustrated phone diagram of the actual bug, built in the existing paper-editorial-v2 visual language, no photography), new title, and a new 'problem you're living with' section. Delivered to ~/Downloads/zvtok-gumroad-listing/.",
-      "liveUrl": "",
+      "nextStep": "Neil updates the TikTok bio with the Gumroad link and watches Sales for the first purchase. Track B (documentary bug-fix video) is the next real lever per the plan, stronger than the listing page itself. Separately: Neil reviews both pending TikTok decks (c04-subagents-vs-agents, c05-context-window/a02-claude-code-tricks) and posts; then Session B of the monetization plan (landing page, X/YouTube links).",
+      "lastDid": "Published the iOS PWA Polish Kit, the first sellable product, live on Gumroad. Neil created the account and drove native file uploads (cover image, product zip); Claude typed every text field directly in a Claude-in-Chrome-controlled tab (Description, Summary, Additional details), since Gumroad's editor only auto-formats markdown syntax on real keystrokes, not paste. Hit and recovered from a two-tab desync twice (Neil's own tab and Claude's automated tab both autosaving the same record, last write silently overwriting the other) before landing on a rule: Claude owns text fields, Neil owns file pickers only. Set pricing as $10 base with an auto-applied 50%-off discount code (Neil's idea) so buyers see $10 struck through to $5, a sale rather than a flat cheap price, same $5 actually collected. Also fixed the seller display name (was defaulting to 'Neil', changed to 'ZVlabs' in Gumroad profile settings). Verified the live public page renders correctly end to end.",
+      "liveUrl": "https://zvlabs.gumroad.com/l/umuzn",
       "notes": "\u2022 Single account (existing ZVlabs TikTok, @zvlabs), personal not business (keeps trending sounds; bio link unlocks at ~1,000 followers, but no longer the only monetization path)\n\u2022 Track A: tips carousels 2-3x/week (growth) . Track B: documentary bug-fix videos, irregular (conversion)\n\u2022 Products: one-time Gumroad files ~$5-$15; first product = iOS PWA polish kit, built and packaged, based on ~/Claude/dock-issue\n\u2022 Monetization stack (2026-07-17): polish kit + Gumroad page first, then owned landing page, X/Twitter, YouTube Shorts description links, Gumroad Discover, a dock-bug HN/Reddit writeup, and a small flat-fee PWA-fix service offer, all parallel, not sequential\n\u2022 Inbound only, no ads, no cold outreach; cross-post videos to YouTube Shorts as a free hedge\n\u2022 Claude leads writing/engineering/slides/analytics; Neil records, voices, posts (~2-4 hrs/wk)\n\u2022 Realistic expectations: 10-20 sales in ~2-3 months is the win condition, not big income\n\u2022 performance-log.md tracks per-post views/saves/shares/follows, reviewed weekly",
       "log": [
+        {
+          "id": "log-zvtok-13",
+          "ts": "2026-07-25T04:35:00+00:00",
+          "text": "iOS PWA Polish Kit published live on Gumroad (https://zvlabs.gumroad.com/l/umuzn). Neil created the account and handled native file uploads; Claude typed all text fields directly via Claude in Chrome. Recovered twice from a two-tab desync (Neil's tab and Claude's automated tab overwriting each other's unsaved edits on save) by having Claude own text fields and Neil own file pickers only. Priced at $10 with an auto-applied 50% off discount code so it displays as a sale ($10 struck through, $5 real price), Neil's idea. Fixed the seller display name from 'Neil' to 'ZVlabs'. Verified the live public page end to end before calling it done. Stage bumped to Live."
+        },
         {
           "id": "log-zvtok-12",
           "ts": "2026-07-25T01:25:00+00:00",
