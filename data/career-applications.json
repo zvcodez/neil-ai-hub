@@ -1,6 +1,531 @@
 {
-  "updatedAt": "2026-07-16T01:08:25.689729+00:00",
+  "updatedAt": "2026-07-29T04:20:28.662794+00:00",
   "data": [
+    {
+      "id": "app-addepar-addepar",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Addepar",
+      "jobTitle": "Portfolio Data Operations Analyst",
+      "link": "https://www.linkedin.com/jobs/view/4446342703",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Addepar.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Addepar.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch. Sourced via LinkedIn."
+    },
+    {
+      "id": "app-alchelyst-alchelyst",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Alchelyst",
+      "jobTitle": "Global Wealth, Onboarding Analyst (NYC)",
+      "link": "https://www.linkedin.com/jobs/view/4444329726",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Alchelyst.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Alchelyst.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-atlantic-group-atlanticgroupfixedincome",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Atlantic Group",
+      "jobTitle": "Operations Analyst (Fixed Income)",
+      "link": "https://www.linkedin.com/jobs/view/4445256160",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_AtlanticGroupFixedIncome.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_AtlanticGroupFixedIncome.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch. Staffing firm placement."
+    },
+    {
+      "id": "app-bbva-bbva",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "BBVA",
+      "jobTitle": "Client Lifecycle Management Associate",
+      "link": "https://www.linkedin.com/jobs/view/4445197221",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_BBVA.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_BBVA.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-bessemer-trust-bessemertrust",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Bessemer Trust",
+      "jobTitle": "Client Advisor Solutions Analyst",
+      "link": "https://www.linkedin.com/jobs/view/4442378216",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_BessemerTrust.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_BessemerTrust.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-broadridge-broadridge",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Broadridge",
+      "jobTitle": "Business Operations Analyst (Hybrid - NYC)",
+      "link": "https://www.linkedin.com/jobs/view/4445208064",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Broadridge.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Broadridge.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-capital-one-capitalonepremium",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Capital One",
+      "jobTitle": "Sr. Business Analyst, Premium Products",
+      "link": "https://www.linkedin.com/jobs/view/4436354059",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_CapitalOnePremium.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_CapitalOnePremium.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-capital-one-capitalonetreasury",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Capital One",
+      "jobTitle": "Sr. Business Analyst, Commercial Treasury Management Product Analytics",
+      "link": "https://www.linkedin.com/jobs/view/4427073519",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_CapitalOneTreasury.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_CapitalOneTreasury.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-chronograph-chronograph",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Chronograph",
+      "jobTitle": "Private Equity Data Operations Analyst (Brooklyn/NYC, Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4443960504",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Chronograph.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Chronograph.docx",
+      "salary": "Base Salary $66,300",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-citi-citivoluntarycorpactions",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Citi",
+      "jobTitle": "Voluntary Corporate Actions - Asset Servicing Intermediate Associate Analyst (Jersey City, NJ, Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4444377258",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_CitiVoluntaryCorpActions.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_CitiVoluntaryCorpActions.docx",
+      "salary": "$78,320 - $109,280",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch. Anticipated posting close date Jul 30, 2026."
+    },
+    {
+      "id": "app-concertiv-concertiv",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Concertiv",
+      "jobTitle": "Onboarding Analyst, Market Data Services",
+      "link": "https://www.linkedin.com/jobs/view/4444355972",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Concertiv.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Concertiv.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-galaxy-galaxy",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Galaxy",
+      "jobTitle": "Analyst, Investor Relations",
+      "link": "https://www.linkedin.com/jobs/view/4444725451",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Galaxy.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Galaxy.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-kbra-kroll-bond-rating-agency-kbra",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "KBRA (Kroll Bond Rating Agency)",
+      "jobTitle": "Financial Planning & Analysis - Senior Analyst / Associate (NY, Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4446188281",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_KBRA.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_KBRA.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-landing-point-landingpoint",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Landing Point",
+      "jobTitle": "Associate, Investment Operations",
+      "link": "https://www.linkedin.com/jobs/view/4445958431",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_LandingPoint.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_LandingPoint.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-lockton-lockton",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Lockton",
+      "jobTitle": "Risk Analyst",
+      "link": "https://www.linkedin.com/jobs/view/4445298333",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_Lockton.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_Lockton.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-mission-staffing-missionstaffing",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Mission Staffing",
+      "jobTitle": "Private Wealth Operations Analyst/Associate (NY, Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4446349238",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_MissionStaffing.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_MissionStaffing.docx",
+      "salary": "$24/hr - $27/hr",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch. Staffing firm placement."
+    },
+    {
+      "id": "app-nomura-nomurastrategy",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Nomura",
+      "jobTitle": "Wholesale Strategy Analyst",
+      "link": "https://www.linkedin.com/jobs/view/4444037373",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_NomuraStrategy.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_NomuraStrategy.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-rockefeller-capital-management-rockefellercapitalmanagement",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Rockefeller Capital Management",
+      "jobTitle": "Alternative Investments Reporting Operations",
+      "link": "https://www.linkedin.com/jobs/view/4443897193",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_RockefellerCapitalManagement.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_RockefellerCapitalManagement.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-savvy-wealth-savvywealth",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Savvy Wealth",
+      "jobTitle": "Client Transition Specialist",
+      "link": "https://www.linkedin.com/jobs/view/4441557467",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_SavvyWealth.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_SavvyWealth.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-tbg-the-bachrach-group-tbghedgefundops",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "TBG | The Bachrach Group",
+      "jobTitle": "Operations Analyst, Hedge Fund (NY, Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4442886243",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_TBGHedgeFundOps.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_TBGHedgeFundOps.docx",
+      "salary": "Base salary $90K-$100K + bonus",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch. Staffing firm placement."
+    },
+    {
+      "id": "app-tishman-speyer-tishmanspeyer",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Tishman Speyer",
+      "jobTitle": "Associate, FP&A",
+      "link": "https://www.linkedin.com/jobs/view/4414742399",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_TishmanSpeyer.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_TishmanSpeyer.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-vdart-vdartcorporateaction",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "VDart",
+      "jobTitle": "Corporate Action Analyst",
+      "link": "https://www.linkedin.com/jobs/view/4444360961",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_VDartCorporateAction.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_VDartCorporateAction.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-vanbarton-group-llc-vanbartongroup",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Vanbarton Group LLC",
+      "jobTitle": "Investor Relations Analyst",
+      "link": "https://www.linkedin.com/jobs/view/4443947033",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_VanbartonGroup.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_VanbartonGroup.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-verition-fund-management-llc-veritionfundmanagement",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Verition Fund Management LLC",
+      "jobTitle": "Operations Analyst/Associate - Post-Trade Support (Fixed Income Operations), NY On-site",
+      "link": "https://www.linkedin.com/jobs/view/4443933967",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_VeritionFundManagement.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_VeritionFundManagement.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
+    {
+      "id": "app-wellington-management-wellingtonmanagement",
+      "_created": "2026-07-29T04:20:28.662794+00:00",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-07-29T04:20:28.662794+00:00"
+        }
+      ],
+      "company": "Wellington Management",
+      "jobTitle": "Investor Services Analyst (NY, Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4444969515",
+      "companyLink": "",
+      "resume": "Job Applications/2026-07-28/Neil_Patel_Resume_WellingtonManagement.docx",
+      "coverLetter": "Job Applications/2026-07-28/Neil_Patel_CoverLetter_WellingtonManagement.docx",
+      "salary": "USD $80,000 - $150,000 (base)",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Posted 2026-07-28 batch."
+    },
     {
       "id": "app-rbc-grm-marketrisk",
       "_created": "2026-07-16T01:05:05.940320+00:00",
