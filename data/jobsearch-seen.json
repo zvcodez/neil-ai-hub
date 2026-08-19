@@ -1,6 +1,1878 @@
 {
-  "updatedAt": "2026-07-16T01:08:25.689729+00:00",
+  "updatedAt": "2026-08-19T02:23:56.000Z",
   "data": [
+    {
+      "id": "cerberus-capital-management-fund-compliance-operations-analyst-associate-547961",
+      "company": "Cerberus Capital Management",
+      "title": "Fund Compliance Operations Analyst/Associate",
+      "url": "https://www.linkedin.com/jobs/view/4443547961/",
+      "date": "2026-08-18",
+      "note": "Kept: Neil sent this exact posting directly. Posted about 1 month ago (older than usual freshness bar) but still open (Easy Apply, no closed banner) so kept on explicit request. 2-5 yrs required (floor is 2, within range), no excluded platform, no AML flavor, NYC metro hybrid, $100k-$125k. Real gap: no direct PE/credit/RE fund experience, flagged honestly in the cover letter."
+    },
+    {
+      "id": "lord-abbett-associate-credit-research-analyst-u-s-bank--378295",
+      "company": "Lord Abbett",
+      "title": "Associate Credit Research Analyst (U.S. Bank Loans)",
+      "url": "https://www.linkedin.com/jobs/view/4444378295",
+      "date": "2026-07-28",
+      "note": "Dropped: specialized credit research/financial modeling background required (2-3 yrs), not a fit for Neil's ops/data background"
+    },
+    {
+      "id": "rapp-data-analyst-751142",
+      "company": "RAPP",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443751142",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "child-mind-institute-data-analyst-mobi-321575",
+      "company": "Child Mind Institute",
+      "title": "Data Analyst, MoBI",
+      "url": "https://www.linkedin.com/jobs/view/4425321575",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "clay-data-analyst-524915",
+      "company": "Clay",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4366524915",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "vizio-usa-data-analyst-ii-039859",
+      "company": "VIZIO",
+      "title": "(USA) Data Analyst II",
+      "url": "https://www.linkedin.com/jobs/view/4414039859",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "cartier-temporary-client-data-insights-analyst-875051",
+      "company": "Cartier",
+      "title": "Temporary Client Data & Insights Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4417875051",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "burjline-builders-data-analyst-007931",
+      "company": "Burjline Builders",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444007931",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "gusto-payment-operations-330047",
+      "company": "Gusto",
+      "title": "Payment Operations",
+      "url": "https://www.linkedin.com/jobs/view/4435330047",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "princeton-it-services-inc-senior-business-analyst-218036",
+      "company": "Princeton IT Services, Inc",
+      "title": "Senior Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444218036",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "capital-one-sr-business-analyst-premium-products-354059",
+      "company": "Capital One",
+      "title": "Sr. Business Analyst, Premium Products",
+      "url": "https://www.linkedin.com/jobs/view/4436354059",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "pwc-internal-audit-sox-business-controls-senior-associa-174759",
+      "company": "PwC",
+      "title": "Internal Audit/SOX Business Controls -  Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4443174759",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "capital-one-sr-business-analyst-commercial-treasury-man-073519",
+      "company": "Capital One",
+      "title": "Sr. Business Analyst, Commercial Treasury Management Product Analytics",
+      "url": "https://www.linkedin.com/jobs/view/4427073519",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "marchon-partners-data-engineer-896982",
+      "company": "Marchon Partners",
+      "title": "Data Engineer",
+      "url": "https://www.linkedin.com/jobs/view/4435896982",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "evolutioniq-business-analyst-270035",
+      "company": "EvolutionIQ",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4436270035",
+      "date": "2026-07-28",
+      "note": "Dropped: 5+ years required; strong applied Python/SQL required as core job function"
+    },
+    {
+      "id": "candid-health-data-analyst-977385",
+      "company": "Candid Health",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443977385",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "curbwaste-analytics-engineer-997921",
+      "company": "CurbWaste",
+      "title": "Analytics Engineer",
+      "url": "https://www.linkedin.com/jobs/view/4443997921",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "deloitte-onestream-consultant-710760",
+      "company": "Deloitte",
+      "title": "OneStream Consultant",
+      "url": "https://www.linkedin.com/jobs/view/4445710760",
+      "date": "2026-07-28",
+      "note": "Dropped: OneStream named-platform experience required, Neil lacks it (confirmed pattern from a prior run)"
+    },
+    {
+      "id": "capgemini-business-analyst-liquidity-risk-015589",
+      "company": "Capgemini",
+      "title": "Business Analyst - Liquidity Risk",
+      "url": "https://www.linkedin.com/jobs/view/4443015589",
+      "date": "2026-07-28",
+      "note": "Dropped: 4-6 years required; must-have Tableau/SQL/Alteryx/Power BI as required tools"
+    },
+    {
+      "id": "jpmorganchase-global-banking-intelligence-growth-strate-523175",
+      "company": "JPMorganChase",
+      "title": "Global Banking Intelligence & Growth Strategy, Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4342523175",
+      "date": "2026-07-28",
+      "note": "Dropped: 5+ years required, CS/Statistics degree required"
+    },
+    {
+      "id": "ropes-gray-llp-pricing-strategy-analyst-386502",
+      "company": "Ropes & Gray LLP",
+      "title": "Pricing Strategy Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444386502",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "bessemer-trust-client-advisor-solutions-analyst-378216",
+      "company": "Bessemer Trust",
+      "title": "Client Advisor Solutions Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4442378216",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "jpmorganchase-payments-strategy-and-transformation-seni-242254",
+      "company": "JPMorganChase",
+      "title": "Payments Strategy and Transformation-Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4420242254",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years management consulting/IB experience required"
+    },
+    {
+      "id": "daisy-product-operations-associate-862717",
+      "company": "Daisy",
+      "title": "Product Operations Associate",
+      "url": "https://www.linkedin.com/jobs/view/4442862717",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "robinhood-product-operations-manager-crypto-237416",
+      "company": "Robinhood",
+      "title": "Product Operations Manager, Crypto",
+      "url": "https://www.linkedin.com/jobs/view/4443237416",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years crypto operations experience specifically required"
+    },
+    {
+      "id": "blockchain-com-business-analyst-904145",
+      "company": "Blockchain.com",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4436904145",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "anonymous-product-manager-automation-933438",
+      "company": "Anonymous",
+      "title": "Product Manager, Automation",
+      "url": "https://www.linkedin.com/jobs/view/4443933438",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "guac-strategy-operations-452918",
+      "company": "Guac",
+      "title": "Strategy & Operations",
+      "url": "https://www.linkedin.com/jobs/view/4444452918",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "insomnia-cookies-537062",
+      "company": "Insomnia Cookies",
+      "title": "FP&A Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446537062",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "rangam-507103",
+      "company": "Rangam",
+      "title": "RCI-PG-15365-1 Financial Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446507103",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "varo-bank-023241",
+      "company": "Varo Bank",
+      "title": "FP&A Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444023241",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years progressive finance experience required"
+    },
+    {
+      "id": "tropicana-brands-group-100363",
+      "company": "Tropicana Brands Group",
+      "title": "Commercial Finance Analyst-Metro New York",
+      "url": "https://www.linkedin.com/jobs/view/4427100363",
+      "date": "2026-07-28",
+      "note": "Dropped: Whitestone, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "dsv-global-transport-and-logistics-846922",
+      "company": "DSV - Global Transport and Logistics",
+      "title": "Financial and Data Analyst, Contract Logistics North America",
+      "url": "https://www.linkedin.com/jobs/view/4425846922",
+      "date": "2026-07-28",
+      "note": "Dropped: Wayne, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "nrg-energy-310838",
+      "company": "NRG Energy",
+      "title": "Financial Analyst, FP&A",
+      "url": "https://www.linkedin.com/jobs/view/4425310838",
+      "date": "2026-07-28",
+      "note": "Dropped: Princeton, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "weil-gotshal-manges-llp-485066",
+      "company": "Weil, Gotshal & Manges LLP",
+      "title": "Coordinator, Financial Analysis & Reporting",
+      "url": "https://www.linkedin.com/jobs/view/4444485066",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "ametek-258663",
+      "company": "AMETEK",
+      "title": "FP&A Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4369258663",
+      "date": "2026-07-28",
+      "note": "Dropped: Garden City, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "pinterest-222916",
+      "company": "Pinterest",
+      "title": "Financial Analyst II - Sales",
+      "url": "https://www.linkedin.com/jobs/view/4444222916",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "northbound-executive-search-872042",
+      "company": "Northbound Executive Search",
+      "title": "Senior Financial Analyst (FP&A)",
+      "url": "https://www.linkedin.com/jobs/view/4442872042",
+      "date": "2026-07-28",
+      "note": "Dropped: 6+ years of financial services experience required"
+    },
+    {
+      "id": "solomonedwards-728399",
+      "company": "SolomonEdwards",
+      "title": "Part-Time (ABS) Reconciliation & Cash Reporting Capital Markets Analyst (12-16  Hours per Week)",
+      "url": "https://www.linkedin.com/jobs/view/4445728399",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "neuberger-182237",
+      "company": "Neuberger",
+      "title": "Private Markets Data Analyst/Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4445182237",
+      "date": "2026-07-28",
+      "note": "Dropped: SQL and Python both listed as strongly preferred core skills for this data role, beyond Neil's academic-only exposure"
+    },
+    {
+      "id": "nbcuniversal-814273",
+      "company": "NBCUniversal",
+      "title": "Senior Financial Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4435814273",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "kbra-188281",
+      "company": "KBRA",
+      "title": "Financial Planning & Analysis - Senior Analyst / Associate (NY)",
+      "url": "https://www.linkedin.com/jobs/view/4446188281",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "cbre-165449",
+      "company": "CBRE",
+      "title": "Commercial Real Estate Senior Financial Analyst- Capital Markets",
+      "url": "https://www.linkedin.com/jobs/view/4445165449",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "atlantic-health-759199",
+      "company": "Atlantic Health",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445759199",
+      "date": "2026-07-28",
+      "note": "Dropped: Morristown, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "deluxe-359892",
+      "company": "Deluxe",
+      "title": "Data Driven Marketing Analyst - Audience Design",
+      "url": "https://www.linkedin.com/jobs/view/4413359892",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "apex-systems-256298",
+      "company": "Apex Systems",
+      "title": "Data Management Analyst - Remote",
+      "url": "https://www.linkedin.com/jobs/view/4445256298",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "fifth-third-bank-393149",
+      "company": "Fifth Third Bank",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444393149",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "hired-by-matrix-inc-149407",
+      "company": "Hired by Matrix, Inc",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4442149407",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "new-york-post-311970",
+      "company": "New York Post",
+      "title": "Commerce Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445311970",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "atlas-search-047910",
+      "company": "Atlas Search",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4441047910",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "nomura-037373",
+      "company": "Nomura",
+      "title": "Wholesale Strategy Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444037373",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "trepp-inc-668497",
+      "company": "Trepp, Inc.",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4438668497",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "addepar-342703",
+      "company": "Addepar",
+      "title": "Portfolio Data Operations Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446342703",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "new-york-life-investment-management-181534",
+      "company": "New York Life Investment Management",
+      "title": "Investment Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4435181534",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years quantitative role required, named-platform (Aladdin/FactSet) experience required, advanced SQL required"
+    },
+    {
+      "id": "bridgewater-associates-738071",
+      "company": "Bridgewater Associates",
+      "title": "Commodities Research Associate",
+      "url": "https://www.linkedin.com/jobs/view/4444738071",
+      "date": "2026-07-28",
+      "note": "Dropped: actual role is a Data Engineer on a trading desk requiring quant/data-engineering skills and a STEM background, not an ops/data-analyst fit"
+    },
+    {
+      "id": "bridgewater-associates-usa-792199",
+      "company": "Bridgewater Associates-USA",
+      "title": "Commodities Research Associate",
+      "url": "https://www.linkedin.com/jobs/view/4444792199",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "jane-street-890029",
+      "company": "Jane Street",
+      "title": "Power Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4222890029",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "metlife-717526",
+      "company": "MetLife",
+      "title": "MIM - Analyst - Investment Operations",
+      "url": "https://www.linkedin.com/jobs/view/4444717526",
+      "date": "2026-07-28",
+      "note": "Dropped: Whippany, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "selby-jennings-233395",
+      "company": "Selby Jennings",
+      "title": "Senior Reference Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444233395",
+      "date": "2026-07-28",
+      "note": "Dropped: 5+ years reference data/securities ops experience required"
+    },
+    {
+      "id": "state-street-139129",
+      "company": "State Street",
+      "title": "Alpha Data Services \u2013 EDM Implementation Support (Trading Data: Security Master, Reference Data, Transactions Lifecycle) (US) \u2013 AVP",
+      "url": "https://www.linkedin.com/jobs/view/4442139129",
+      "date": "2026-07-28",
+      "note": "Dropped: Clifton, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "selby-jennings-743217",
+      "company": "Selby Jennings",
+      "title": "Index Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444743217",
+      "date": "2026-07-28",
+      "note": "Dropped: specialized index/quant research role, 2+ yrs index research required, advanced Python required, STEM degree required"
+    },
+    {
+      "id": "bessemer-trust-367288",
+      "company": "Bessemer Trust",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4442367288",
+      "date": "2026-07-28",
+      "note": "Dropped: Woodbridge, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "fortitude-re-462476",
+      "company": "Fortitude Re",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444462476",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "fortitude-re-465327",
+      "company": "Fortitude Re",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444465327",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "cbre-investment-management-008949",
+      "company": "CBRE Investment Management",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444008949",
+      "date": "2026-07-28",
+      "note": "Dropped: New City, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "majesty-brands-367002",
+      "company": "Majesty Brands",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446367002",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "concertiv-355972",
+      "company": "Concertiv",
+      "title": "Onboarding Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444355972",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "alchelyst-329726",
+      "company": "Alchelyst",
+      "title": "Global Wealth, Onboarding Analyst, NYC",
+      "url": "https://www.linkedin.com/jobs/view/4444329726",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "atrium-302835",
+      "company": "Atrium",
+      "title": "1st Line Support Analyst (Part-Time) - 403386",
+      "url": "https://www.linkedin.com/jobs/view/4446302835",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "bbva-197221",
+      "company": "BBVA",
+      "title": "Client Lifecycle Management Associate",
+      "url": "https://www.linkedin.com/jobs/view/4445197221",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "savvy-wealth-557467",
+      "company": "Savvy Wealth",
+      "title": "Client Transition Specialist",
+      "url": "https://www.linkedin.com/jobs/view/4441557467",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "windcave-434027",
+      "company": "Windcave",
+      "title": "Customer Management Specialist",
+      "url": "https://www.linkedin.com/jobs/view/4445434027",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "mission-staffing-349238",
+      "company": "Mission Staffing",
+      "title": "Private Wealth Operations Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446349238",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "onepoint-bfg-wealth-partners-200197",
+      "company": "OnePoint BFG Wealth Partners",
+      "title": "Client Services Associate",
+      "url": "https://www.linkedin.com/jobs/view/4445200197",
+      "date": "2026-07-28",
+      "note": "Dropped: Parsippany, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "icapital-268469",
+      "company": "iCapital",
+      "title": "Client Delivery Specialist - Associate",
+      "url": "https://www.linkedin.com/jobs/view/4387268469",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "atlas-search-043986",
+      "company": "Atlas Search",
+      "title": "Portfolio Reporting Associate",
+      "url": "https://www.linkedin.com/jobs/view/4441043986",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "wellington-management-969515",
+      "company": "Wellington Management",
+      "title": "Investor Services Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444969515",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "ares-management-874772",
+      "company": "Ares Management",
+      "title": "Analyst, US Client Services",
+      "url": "https://www.linkedin.com/jobs/view/4442874772",
+      "date": "2026-07-28",
+      "note": "Dropped: duplicate of app-ares-clientservices already Applied (same title/company/location)"
+    },
+    {
+      "id": "bnp-paribas-asset-management-293476",
+      "company": "BNP Paribas Asset Management",
+      "title": "Junior Performance Analyst / Operations",
+      "url": "https://www.linkedin.com/jobs/view/4445293476",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years fixed income operations/middle office experience required"
+    },
+    {
+      "id": "bnp-paribas-262013",
+      "company": "BNP Paribas",
+      "title": "Junior Performance Analyst / Operations",
+      "url": "https://www.linkedin.com/jobs/view/4445262013",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "atlas-search-537524",
+      "company": "Atlas Search",
+      "title": "Performance Analysis Associate, Wealth Management (Stamford, CT)",
+      "url": "https://www.linkedin.com/jobs/view/4441537524",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "intelligentsia-capital-424587",
+      "company": "Intelligentsia Capital",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445424587",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "talentally-651493",
+      "company": "TalentAlly",
+      "title": "Investor Services Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444651493",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "vanbarton-group-llc-947033",
+      "company": "Vanbarton Group LLC",
+      "title": "Investor Relations Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443947033",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "galaxy-725451",
+      "company": "Galaxy",
+      "title": "Analyst, Investor Relations",
+      "url": "https://www.linkedin.com/jobs/view/4444725451",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "brand-shop-ttl-trading-private-limited-thoppumpady-915087",
+      "company": "(Brand Shop) Ttl Trading Private Limited- Thoppumpady",
+      "title": "Analyst, Investor Relations",
+      "url": "https://www.linkedin.com/jobs/view/4444915087",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "coda-search-staffing-206052",
+      "company": "Coda Search\u2502Staffing",
+      "title": "Investor Relations Analyst/Associate",
+      "url": "https://www.linkedin.com/jobs/view/4393206052",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "dexian-185873",
+      "company": "Dexian",
+      "title": "Loan IQ Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445185873",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "visionary-innovative-technology-solutions-llc-478653",
+      "company": "Visionary Innovative Technology Solutions LLC",
+      "title": "Full Time Only: Business Analyst (Repo Trade)",
+      "url": "https://www.linkedin.com/jobs/view/4440478653",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "appcard-inc-482712",
+      "company": "AppCard, Inc.",
+      "title": "CPG Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4440482712",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "swits-digital-private-limited-304639",
+      "company": "SWITS DIGITAL Private Limited",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446304639",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "goldman-sachs-210772",
+      "company": "Goldman Sachs",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4427210772",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "goldman-sachs-196632",
+      "company": "Goldman Sachs",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4416196632",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "wealthbridge-financial-group-991452",
+      "company": "WealthBridge Financial Group",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444991452",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "goldman-sachs-021787",
+      "company": "Goldman Sachs",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444021787",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "selby-jennings-226462",
+      "company": "Selby Jennings",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444226462",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "everet-marsh-964730",
+      "company": "Everet Marsh",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445964730",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "wealthbridge-financial-group-983800",
+      "company": "WealthBridge Financial Group",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444983800",
+      "date": "2026-07-28",
+      "note": "Dropped: Valley Stream, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "charles-schwab-810739",
+      "company": "Charles Schwab",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4441810739",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "goldman-sachs-781409",
+      "company": "Goldman Sachs",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445781409",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "equitable-advisors-488976",
+      "company": "Equitable Advisors",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444488976",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "rockefeller-capital-management-817277",
+      "company": "Rockefeller Capital Management",
+      "title": "Regional Operations and Service Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4439817277",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "rockefeller-capital-management-897193",
+      "company": "Rockefeller Capital Management",
+      "title": "Alternative Investments Reporting Operations",
+      "url": "https://www.linkedin.com/jobs/view/4443897193",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "intelligentsia-capital-442413",
+      "company": "Intelligentsia Capital",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445442413",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "american-express-371673",
+      "company": "American Express",
+      "title": "Analyst-Risk Management",
+      "url": "https://www.linkedin.com/jobs/view/4444371673",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "social-capital-resources-775797",
+      "company": "Social Capital Resources",
+      "title": "Operational Risk Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445775797",
+      "date": "2026-07-28",
+      "note": "Dropped: Mandarin or Cantonese language fluency required"
+    },
+    {
+      "id": "dexian-010558",
+      "company": "Dexian",
+      "title": "Operational Risk Specialist",
+      "url": "https://www.linkedin.com/jobs/view/4444010558",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "lockton-298333",
+      "company": "Lockton",
+      "title": "Risk Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445298333",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "grasshopper-bank-322128",
+      "company": "Grasshopper Bank",
+      "title": "Fintech Risk Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4438322128",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "alpaca-967253",
+      "company": "Alpaca",
+      "title": "Cyber & AI Risk Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445967253",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "alignerr-169837",
+      "company": "Alignerr",
+      "title": "Governance, Risk & Compliance (GRC) Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446169837",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "ferrero-064378",
+      "company": "Ferrero",
+      "title": "Governance, Risk and Compliance (GRC) Specialist, North America",
+      "url": "https://www.linkedin.com/jobs/view/4427064378",
+      "date": "2026-07-28",
+      "note": "Dropped: Parsippany, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "morgan-stanley-009199",
+      "company": "Morgan Stanley",
+      "title": "Risk Management and Internal Controls \u2013 Investment Solutions Products",
+      "url": "https://www.linkedin.com/jobs/view/4429009199",
+      "date": "2026-07-28",
+      "note": "Dropped: Purchase, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "jpmorganchase-472837",
+      "company": "JPMorganChase",
+      "title": "Control Manager - Associate",
+      "url": "https://www.linkedin.com/jobs/view/4387472837",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years financial services controls/compliance/audit experience required"
+    },
+    {
+      "id": "american-express-001442",
+      "company": "American Express",
+      "title": "Analyst of Issues, Events & Remediation",
+      "url": "https://www.linkedin.com/jobs/view/4444001442",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "infosys-071723",
+      "company": "Infosys",
+      "title": "GRC Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444071723",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "broadridge-108801",
+      "company": "Broadridge",
+      "title": "Compliance Analyst (Hybrid- Newark, NJ)",
+      "url": "https://www.linkedin.com/jobs/view/4427108801",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "fox-corporation-007434",
+      "company": "Fox Corporation",
+      "title": "Senior Analyst, Corporate Audit",
+      "url": "https://www.linkedin.com/jobs/view/4417007434",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "bloomberg-175487",
+      "company": "Bloomberg",
+      "title": "Senior Analyst, Technology Control Management for Finance & Accounting Systems",
+      "url": "https://www.linkedin.com/jobs/view/4423175487",
+      "date": "2026-07-28",
+      "note": "Dropped: 7+ years IT controls experience required"
+    },
+    {
+      "id": "confidential-880221",
+      "company": "Confidential",
+      "title": "Sarbanes Oxley Consultant",
+      "url": "https://www.linkedin.com/jobs/view/4442880221",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "spectrum-245804",
+      "company": "Spectrum",
+      "title": "Business Planning Financial Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445245804",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "canon-usa-716476",
+      "company": "Canon USA",
+      "title": "Financial Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4427716476",
+      "date": "2026-07-28",
+      "note": "Dropped: Melville, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "city-of-new-york-298907",
+      "company": "City of New York",
+      "title": "Budget Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443298907",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "new-york-institute-of-technology-438294",
+      "company": "New York Institute of Technology",
+      "title": "Financial Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445438294",
+      "date": "2026-07-28",
+      "note": "Dropped: Old Westbury, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "bridgewater-associates-385432",
+      "company": "Bridgewater Associates",
+      "title": "Finance Associate, Business Planning & Analysis",
+      "url": "https://www.linkedin.com/jobs/view/4446385432",
+      "date": "2026-07-28",
+      "note": "Dropped: Westport, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "ing-americas-861877",
+      "company": "ING Americas",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4443861877",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "h-c-wainwright-co-llc-302197",
+      "company": "H.C. Wainwright & Co., LLC",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446302197",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "midcap-financial-987946",
+      "company": "MidCap Financial",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445987946",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "jetblue-546097",
+      "company": "JetBlue",
+      "title": "Analyst Financial Planning and Analysis",
+      "url": "https://www.linkedin.com/jobs/view/4441546097",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "adore-me-951264",
+      "company": "Adore Me",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445951264",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "jetblue-531743",
+      "company": "JetBlue",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4441531743",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "atlas-search-826220",
+      "company": "Atlas Search",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4441826220",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "lg-electronics-016001",
+      "company": "LG Electronics",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444016001",
+      "date": "2026-07-28",
+      "note": "Dropped: Englewood Cliffs, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "rent-the-runway-499296",
+      "company": "Rent The Runway",
+      "title": "Senior Analyst, Finance",
+      "url": "https://www.linkedin.com/jobs/view/4399499296",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "mission-staffing-360041",
+      "company": "Mission Staffing",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446360041",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "zocdoc-983721",
+      "company": "Zocdoc",
+      "title": "FP&A Associate",
+      "url": "https://www.linkedin.com/jobs/view/4426983721",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "tishman-speyer-742399",
+      "company": "Tishman Speyer",
+      "title": "Associate, FP&A",
+      "url": "https://www.linkedin.com/jobs/view/4414742399",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "abacus-group-llc-312937",
+      "company": "Abacus Group, LLC",
+      "title": "Financial Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446312937",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "cambio-110931",
+      "company": "Cambio",
+      "title": "Business Operations Associate (NYC or SF)",
+      "url": "https://www.linkedin.com/jobs/view/4446110931",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "broadridge-208064",
+      "company": "Broadridge",
+      "title": "Business Operations Analyst (Hybrid - NYC)",
+      "url": "https://www.linkedin.com/jobs/view/4445208064",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "google-013030",
+      "company": "Google",
+      "title": "Central Strategy and Operations Analyst, YouTube",
+      "url": "https://www.linkedin.com/jobs/view/4444013030",
+      "date": "2026-07-28",
+      "note": "Dropped: 4 years consulting/strategy experience and 2 years applied SQL/data analysis required"
+    },
+    {
+      "id": "assured-413169",
+      "company": "Assured",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4443413169",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "roku-117200",
+      "company": "Roku",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446117200",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "tata-consultancy-services-000135",
+      "company": "Tata Consultancy Services",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446000135",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "kiss-beauty-group-093439",
+      "company": "Kiss Beauty Group",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4407093439",
+      "date": "2026-07-28",
+      "note": "Dropped: Port Washington, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "selective-insurance-839664",
+      "company": "Selective Insurance",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4435839664",
+      "date": "2026-07-28",
+      "note": "Dropped: Short Hills, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "cara-165138",
+      "company": "Cara",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445165138",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "shelf-646166",
+      "company": "Shelf",
+      "title": "Associate, GTM Operations",
+      "url": "https://www.linkedin.com/jobs/view/4443646166",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "burjline-builders-019041",
+      "company": "Burjline Builders",
+      "title": "Remote Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444019041",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "nyc-campaign-finance-board-675074",
+      "company": "NYC Campaign Finance Board",
+      "title": "Strategic Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4423675074",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "google-916556",
+      "company": "Google",
+      "title": "Strategy and Operations Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4376916556",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "doordash-561336",
+      "company": "DoorDash",
+      "title": "Associate, New Verticals - Flex Strategy & Operations",
+      "url": "https://www.linkedin.com/jobs/view/4441561336",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "linkedin-205466",
+      "company": "LinkedIn",
+      "title": "Senior Associate, Sales Operations",
+      "url": "https://www.linkedin.com/jobs/view/4444205466",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "hillmont-group-983266",
+      "company": "Hillmont Group",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445983266",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "tbg-the-bachrach-group-888342",
+      "company": "TBG | The Bachrach Group",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4442888342",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "affirm-041537",
+      "company": "Affirm",
+      "title": "Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444041537",
+      "date": "2026-07-28",
+      "note": "Dropped: requires applied SQL and Python as a core job function, not just a plus"
+    },
+    {
+      "id": "flatiron-health-112714",
+      "company": "Flatiron Health",
+      "title": "Data Analyst - Product Data Science",
+      "url": "https://www.linkedin.com/jobs/view/4446112714",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "marchon-partners-797609",
+      "company": "Marchon Partners",
+      "title": "Technical Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4437797609",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "marchon-partners-807219",
+      "company": "Marchon Partners",
+      "title": "Technical Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4437807219",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "chronograph-960504",
+      "company": "Chronograph",
+      "title": "Private Equity Data Operations Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443960504",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "riveron-931830",
+      "company": "Riveron",
+      "title": "Transaction Services - Data Analytics Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4324931830",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "med-metrix-112018",
+      "company": "Med-Metrix",
+      "title": "Senior Power BI Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446112018",
+      "date": "2026-07-28",
+      "note": "Dropped: Troy Hills, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "innovee-consulting-llc-366113",
+      "company": "Innovee Consulting LLC",
+      "title": "Technical Business Analyst ( Need Locals to NY/NJ )",
+      "url": "https://www.linkedin.com/jobs/view/4446366113",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "dynamics-executive-search-450488",
+      "company": "Dynamics Executive Search",
+      "title": "Senior Business Analyst \u2013 Client Data & Analytics",
+      "url": "https://www.linkedin.com/jobs/view/4444450488",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "valley-bank-272729",
+      "company": "Valley Bank",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445272729",
+      "date": "2026-07-28",
+      "note": "Dropped: Morristown, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "j-crew-140080",
+      "company": "J.Crew",
+      "title": "Business Systems Analyst - Enterprise Merchandising & Supply Chain Systems",
+      "url": "https://www.linkedin.com/jobs/view/4446140080",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "natixis-corporate-investment-banking-754468",
+      "company": "Natixis Corporate & Investment Banking",
+      "title": "Business Analyst \u2013 IT Global Banking",
+      "url": "https://www.linkedin.com/jobs/view/4434754468",
+      "date": "2026-07-28",
+      "note": "Dropped: named required platform experience (FBTI, Loan IQ) Neil lacks; role is IT application support, not finance ops"
+    },
+    {
+      "id": "soft-inc-334509",
+      "company": "SOFT Inc.",
+      "title": "IT Business Relationship Manager",
+      "url": "https://www.linkedin.com/jobs/view/4446334509",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "orion-worldwide-730002",
+      "company": "Orion Worldwide",
+      "title": "Senior Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444730002",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "princeton-it-services-inc-936231",
+      "company": "Princeton IT Services, Inc",
+      "title": "Analysts - Business Systems Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443936231",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "teachers-federal-credit-union-830652",
+      "company": "Teachers Federal Credit Union",
+      "title": "Systems Application Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4441830652",
+      "date": "2026-07-28",
+      "note": "Dropped: Hauppauge, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "nyc-department-of-social-services-829288",
+      "company": "NYC Department of Social Services",
+      "title": "SYSTEMS SPECIALIST",
+      "url": "https://www.linkedin.com/jobs/view/4442829288",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "teachers-federal-credit-union-145845",
+      "company": "Teachers Federal Credit Union",
+      "title": "Product Owner Payments",
+      "url": "https://www.linkedin.com/jobs/view/4423145845",
+      "date": "2026-07-28",
+      "note": "Dropped: Hauppauge, NY is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "city-of-new-york-551299",
+      "company": "City of New York",
+      "title": "Sr Systems Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4441551299",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "1199seiu-benefit-and-pension-funds-211776",
+      "company": "1199SEIU Benefit and Pension Funds",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445211776",
+      "date": "2026-07-28",
+      "note": "Dropped: CS degree required, technical database/QA-flavored BA role at a healthcare benefits fund, not a finance ops fit"
+    },
+    {
+      "id": "colgate-palmolive-880855",
+      "company": "Colgate-Palmolive",
+      "title": "Digital Content Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4425880855",
+      "date": "2026-07-28",
+      "note": "Dropped: Piscataway, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "rwjbarnabas-health-745611",
+      "company": "RWJBarnabas Health",
+      "title": "Application Analyst I",
+      "url": "https://www.linkedin.com/jobs/view/4445745611",
+      "date": "2026-07-28",
+      "note": "Dropped: Oceanport, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "mjh-life-sciences-196182",
+      "company": "MJH Life Sciences\u00ae",
+      "title": "Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4340196182",
+      "date": "2026-07-28",
+      "note": "Dropped: Cranbury, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "rwjbarnabas-health-726088",
+      "company": "RWJBarnabas Health",
+      "title": "Data and Business Business Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4394726088",
+      "date": "2026-07-28",
+      "note": "Dropped: Oceanport, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "alignerr-521460",
+      "company": "Alignerr",
+      "title": "Quantitative Finance Forecasting Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446521460",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "munich-re-specialty-north-america-907525",
+      "company": "Munich Re Specialty - North America",
+      "title": "Transformation & Engagement Analyst Sr",
+      "url": "https://www.linkedin.com/jobs/view/4443907525",
+      "date": "2026-07-28",
+      "note": "Dropped: Princeton, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "raymond-james-200593",
+      "company": "Raymond James",
+      "title": "Experience Team Analyst I (New York or St. Petersburg)",
+      "url": "https://www.linkedin.com/jobs/view/4443200593",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "jpmorganchase-338805",
+      "company": "JPMorganChase",
+      "title": "Strategy & Process Improvement, Senior Associate",
+      "url": "https://www.linkedin.com/jobs/view/4421338805",
+      "date": "2026-07-28",
+      "note": "Dropped: 6+ years management consulting experience required"
+    },
+    {
+      "id": "deloitte-320194",
+      "company": "Deloitte",
+      "title": "Global Business Services (GBS) - Strategy - Senior Consultant",
+      "url": "https://www.linkedin.com/jobs/view/4428320194",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "deloitte-328067",
+      "company": "Deloitte",
+      "title": "Global Business Services (GBS) - Strategy - Senior Consultant",
+      "url": "https://www.linkedin.com/jobs/view/4428328067",
+      "date": "2026-07-28",
+      "note": "Dropped: Morristown, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "jpmorganchase-718814",
+      "company": "JPMorganChase",
+      "title": "Client Onboarding & Documentation Business Manager - Associate",
+      "url": "https://www.linkedin.com/jobs/view/4437718814",
+      "date": "2026-07-28",
+      "note": "Dropped: 5+ years financial data analysis experience required"
+    },
+    {
+      "id": "publicis-groupe-406405",
+      "company": "Publicis Groupe",
+      "title": "Manager, Business Transformation (Business Optimization & Enablement)",
+      "url": "https://www.linkedin.com/jobs/view/4435406405",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "turner-townsend-756463",
+      "company": "Turner & Townsend",
+      "title": "Digital Construction Project Analyst \u2013 Graduate Development Program",
+      "url": "https://www.linkedin.com/jobs/view/4445756463",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "orion-worldwide-255613",
+      "company": "Orion Worldwide",
+      "title": "Data Analyst - Product",
+      "url": "https://www.linkedin.com/jobs/view/4445255613",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "nomura-017722",
+      "company": "Nomura",
+      "title": "Prime Production Services Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444017722",
+      "date": "2026-07-28",
+      "note": "Dropped: strong SQL and Linux scripting/automation required; IT production-support role, not a fit"
+    },
+    {
+      "id": "shrinq-consulting-group-inc-008756",
+      "company": "ShrinQ Consulting Group Inc",
+      "title": "Data Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444008756",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "jpmorganchase-819487",
+      "company": "JPMorganChase",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4207819487",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "jpmorganchase-763773",
+      "company": "JPMorganChase",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4380763773",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "state-street-339705",
+      "company": "State Street",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446339705",
+      "date": "2026-07-28",
+      "note": "Dropped: Princeton, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "state-street-340698",
+      "company": "State Street",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4446340698",
+      "date": "2026-07-28",
+      "note": "Dropped: Clifton, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "pelham-berkeley-search-467848",
+      "company": "Pelham Berkeley Search",
+      "title": "Operations Associate",
+      "url": "https://www.linkedin.com/jobs/view/4444467848",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "green-key-resources-964338",
+      "company": "Green Key Resources",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445964338",
+      "date": "2026-07-28",
+      "note": "Dropped: Greenwich, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "arrow-search-partners-625831",
+      "company": "Arrow Search Partners",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4308625831",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "vdart-360961",
+      "company": "VDart",
+      "title": "Corporate Action Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444360961",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "tbg-the-bachrach-group-886243",
+      "company": "TBG | The Bachrach Group",
+      "title": "Operations Analyst - Hedge Fund",
+      "url": "https://www.linkedin.com/jobs/view/4442886243",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "jpmorganchase-934015",
+      "company": "JPMorganChase",
+      "title": "Asset Management - Private Equity Client Operations Associate - Associate",
+      "url": "https://www.linkedin.com/jobs/view/4379934015",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years private equity accounting experience required, accounting degree specifically required"
+    },
+    {
+      "id": "landing-point-958431",
+      "company": "Landing Point",
+      "title": "Associate, Investment Operations",
+      "url": "https://www.linkedin.com/jobs/view/4445958431",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "atlantic-group-256160",
+      "company": "Atlantic Group",
+      "title": "Operations Analyst (Fixed Income)",
+      "url": "https://www.linkedin.com/jobs/view/4445256160",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "atlantic-group-957438",
+      "company": "Atlantic Group",
+      "title": "Compliance Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4442957438",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "rqd-clearing-718589",
+      "company": "RQD* Clearing",
+      "title": "Operations Associate, Clearance & Settlement",
+      "url": "https://www.linkedin.com/jobs/view/4444718589",
+      "date": "2026-07-28",
+      "note": "Dropped: 3-5 years clearing/settlement operations experience required"
+    },
+    {
+      "id": "verition-fund-management-llc-933967",
+      "company": "Verition Fund Management LLC",
+      "title": "Operations Analyst/Associate - Post-Trade Support (Fixed Income Operations)",
+      "url": "https://www.linkedin.com/jobs/view/4443933967",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "savvy-wealth-063830",
+      "company": "Savvy Wealth",
+      "title": "Investment Operations Associate",
+      "url": "https://www.linkedin.com/jobs/view/4441063830",
+      "date": "2026-07-28",
+      "note": "Dropped: 3-5 years investment operations experience required"
+    },
+    {
+      "id": "bank-of-china-usa-977565",
+      "company": "Bank of China USA",
+      "title": "Operation Service Department-Custody Associate/AVP",
+      "url": "https://www.linkedin.com/jobs/view/4433977565",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "verition-fund-management-llc-932994",
+      "company": "Verition Fund Management LLC",
+      "title": "Operations Associate - Cash & Position Reconciliations",
+      "url": "https://www.linkedin.com/jobs/view/4443932994",
+      "date": "2026-07-28",
+      "note": "Dropped: 3+ years operations/financial services experience required"
+    },
+    {
+      "id": "mitsubishi-ufj-trust-and-banking-corporation-new-york-branch-749074",
+      "company": "Mitsubishi UFJ Trust and Banking Corporation, New York Branch",
+      "title": "Collateral Management Operations - Lead Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4444749074",
+      "date": "2026-07-28",
+      "note": "Dropped: SWIFT MX Payment Messages named-platform experience required"
+    },
+    {
+      "id": "russell-tobin-166158",
+      "company": "Russell Tobin",
+      "title": "Mutual Fund Representative",
+      "url": "https://www.linkedin.com/jobs/view/4443166158",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "cyperus-group-llc-399514",
+      "company": "Cyperus Group LLC",
+      "title": "Operations Associate",
+      "url": "https://www.linkedin.com/jobs/view/4444399514",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "bank-of-america-137827",
+      "company": "Bank of America",
+      "title": "Transaction Management Ops Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4446137827",
+      "date": "2026-07-28",
+      "note": "Dropped: Pennington, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "citi-377258",
+      "company": "Citi",
+      "title": "Voluntary Corporate Actions - Asset Servicing Intermediate Associate Analyst Hybrid",
+      "url": "https://www.linkedin.com/jobs/view/4444377258",
+      "date": "2026-07-28",
+      "note": "Kept: full text read, survives all hard filters"
+    },
+    {
+      "id": "finch-273648",
+      "company": "Finch",
+      "title": "Product Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4445273648",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "current-264451",
+      "company": "Current",
+      "title": "Workforce Operations Analyst (Contract)",
+      "url": "https://www.linkedin.com/jobs/view/4438264451",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "nyc-citywide-administrative-services-464118",
+      "company": "NYC Citywide Administrative Services",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444464118",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "bbva-281654",
+      "company": "BBVA",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4433281654",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "goldman-sachs-783405",
+      "company": "Goldman Sachs",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4445783405",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "barclays-878618",
+      "company": "Barclays",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4441878618",
+      "date": "2026-07-28",
+      "note": "Dropped: Whippany, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "success-academy-charter-schools-952786",
+      "company": "Success Academy Charter Schools",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4416952786",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "city-of-new-york-537858",
+      "company": "City of New York",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4441537858",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "nyc-health-hospitals-682135",
+      "company": "NYC Health + Hospitals",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4416682135",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "censis-technologies-inc-706270",
+      "company": "Censis Technologies, Inc.",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4444706270",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "mitchell-martin-inc-568038",
+      "company": "Mitchell Martin Inc.",
+      "title": "",
+      "url": "https://www.linkedin.com/jobs/view/4441568038",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "courier-health-092079",
+      "company": "Courier Health",
+      "title": "Customer Engineer",
+      "url": "https://www.linkedin.com/jobs/view/4374092079",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "state-street-295153",
+      "company": "State Street",
+      "title": "Consultant, Officer",
+      "url": "https://www.linkedin.com/jobs/view/4441295153",
+      "date": "2026-07-28",
+      "note": "Dropped: Princeton, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "state-street-281568",
+      "company": "State Street",
+      "title": "Consultant, Officer",
+      "url": "https://www.linkedin.com/jobs/view/4441281568",
+      "date": "2026-07-28",
+      "note": "Dropped: Stamford, CT is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "airtable-000482",
+      "company": "Airtable",
+      "title": "Delivery Consultant",
+      "url": "https://www.linkedin.com/jobs/view/4446000482",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "rwjbarnabas-health-737207",
+      "company": "RWJBarnabas Health",
+      "title": "MyChart Application Analyst II",
+      "url": "https://www.linkedin.com/jobs/view/4437737207",
+      "date": "2026-07-28",
+      "note": "Dropped: West Orange, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "tech-jobs-for-good-491054",
+      "company": "Tech Jobs for Good",
+      "title": "Deployment Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4443491054",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "michael-page-914648",
+      "company": "Michael Page",
+      "title": "Business Analyst/ERP Specialist",
+      "url": "https://www.linkedin.com/jobs/view/4443914648",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
+    {
+      "id": "speakcore-524919",
+      "company": "Speakcore",
+      "title": "Jr. Software Implementation Specialist",
+      "url": "https://www.linkedin.com/jobs/view/4443524919",
+      "date": "2026-07-28",
+      "note": "Dropped: Pennington, NJ is outside NYC/Jersey City metro (location filter)"
+    },
+    {
+      "id": "asseta-955155",
+      "company": "Asseta",
+      "title": "Implementation Consultant",
+      "url": "https://www.linkedin.com/jobs/view/4443955155",
+      "date": "2026-07-28",
+      "note": "Deferred: title/company triaged as lower priority this run, not read in full; revisit if a future run has capacity"
+    },
     {
       "id": "arrow-tradesupport-stamford",
       "company": "Arrow Search Partners",

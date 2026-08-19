@@ -1,6 +1,41 @@
 {
-  "updatedAt": "2026-07-29T04:20:28.662794+00:00",
+  "updatedAt": "2026-08-19T02:23:48.000Z",
   "data": [
+    {
+      "id": "app-cerberus-fundcompliance",
+      "_created": "2026-08-19T02:23:48.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-08-19T02:23:48.000Z"
+        }
+      ],
+      "company": "Cerberus Capital Management",
+      "jobTitle": "Fund Compliance Operations Analyst/Associate (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4443547961/",
+      "companyLink": "https://www.cerberus.com/careers/",
+      "resume": "Job Applications/2026-08-18/Neil_Patel_Resume_Cerberus.docx",
+      "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_Cerberus.docx",
+      "salary": "$100,000-$125,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Neil sent this specific posting directly (2026-08-18), not from a sourcing run. Posted about 1 month ago per LinkedIn (older than the usual 14 day freshness bar) but still accepting applications (Easy Apply, no closed banner), so kept on his explicit request. Requires 2-5 years in compliance/investment ops/fund ops (Neil's TD + Bloomberg combined experience is close to the low end). Real gap: no direct PE/credit/RE fund experience, framed honestly as a stretch in the cover letter rather than papered over. Strong overlap: reconciliation, flagged account investigation/escalation, Bloomberg Terminal (BMC certified, posting names it directly), guideline/documentation work.",
+      "skills": [
+        "Compliance Monitoring & Guideline Review",
+        "Transaction & Cash Reconciliation",
+        "Cross Team Coordination",
+        "Documentation & Exception Review",
+        "Deadline Driven Delivery",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "SAS & Oracle Based Systems",
+        "JIRA (academic exposure: SQL, Python)"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations daily to resolve exceptions and maintain a clear audit trail.\nMaintain detailed investigation documentation and standard operating procedures, ensuring daily monitoring activity aligns with internal policy checklists and control requirements.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
     {
       "id": "app-addepar-addepar",
       "_created": "2026-07-29T04:20:28.662794+00:00",

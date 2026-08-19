@@ -1,6 +1,23 @@
 {
-  "updatedAt": "2026-07-16T01:08:25.689729+00:00",
+  "updatedAt": "2026-08-19T02:23:48.000Z",
   "data": [
+    {
+      "id": "net-cerberus-fundcompliance",
+      "_created": "2026-08-19T02:23:48.000Z",
+      "company": "Cerberus Capital Management",
+      "role": "Fund Compliance Operations Analyst/Associate",
+      "appLink": "https://www.linkedin.com/jobs/view/4443547961/",
+      "contactName": "Melissa Cebula",
+      "contactUrl": "https://www.linkedin.com/in/melissa-cebula/",
+      "whoToFind": "Fund Compliance Operations team lead or Talent Acquisition at Cerberus Capital Management",
+      "findUrl": "https://www.linkedin.com/search/results/people/?keywords=Cerberus%20Capital%20Management%20Fund%20Compliance%20Operations",
+      "message": "Hi Melissa, I just applied to the Fund Compliance Operations Analyst role at Cerberus. I reconcile flagged accounts and transaction data daily at TD Bank and want to bring that discipline to your compliance team. Would you have 15 minutes to talk about the role?",
+      "messageLong": "Hi Melissa, I wanted to reach out directly after applying to the Fund Compliance Operations Analyst/Associate role. At TD Bank I investigate and reconcile flagged accounts against internal and external sources every day, running a 20 case weekly quota as high as 33, and at Bloomberg L.P. I reconciled cash, custody, and trade level data for 650 plus managed accounts on Bloomberg Terminal, BMC certified, which I saw the team already runs on. Private equity and credit funds would be new territory for me specifically, but the reconciliation, documentation, and cross team escalation discipline is exactly what I do now. I would value 15 minutes to learn more about the Fund Compliance Operations team, or a first conversation if there is a fit.",
+      "cadence": "send Tue to Thu morning. If no reply, one polite bump after 5 to 7 days, then stop. Never attach the resume in the first message.",
+      "status": "To Contact",
+      "contactedAt": "",
+      "noContactReason": ""
+    },
     {
       "id": "net-rbc-grm-marketrisk",
       "_created": "2026-07-16T01:06:25.442302+00:00",
