@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T03:30:26.814Z",
+  "updatedAt": "2026-08-19T03:33:44.581Z",
   "data": [
     {
       "id": "app-deshaw-compliance",
@@ -125,6 +125,10 @@
         {
           "status": "To Apply",
           "at": "2026-08-19T03:07:37.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-08-19T03:33:44.576Z"
         }
       ],
       "company": "William Blair",
@@ -135,8 +139,8 @@
       "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_WilliamBlair.docx",
       "salary": "$100,000-$115,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-08-19",
+      "status": "Applied",
       "notes": "Sourced 2026-08-18. In office 3x/week (Chicago-based CCO oversight). Requires 1-3 years compliance experience for RIAs/registered investment companies/CITs/UCITS/private funds, bachelor's degree. Neil's Bloomberg SMA/CIT reconciliation background is a strong direct match. No AML-primary flavor (AML requests are one of several compliance inquiry types), no excluded platforms.",
       "skills": [
         "Post Trade Compliance Monitoring",
