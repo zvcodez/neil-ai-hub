@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T03:22:09.965Z",
+  "updatedAt": "2026-08-19T03:27:21.299Z",
   "data": [
     {
       "id": "app-deshaw-compliance",
@@ -47,6 +47,10 @@
         {
           "status": "To Apply",
           "at": "2026-08-19T03:07:37.000Z"
+        },
+        {
+          "status": "Applied",
+          "at": "2026-08-19T03:27:21.293Z"
         }
       ],
       "company": "DC Advisory",
@@ -57,8 +61,8 @@
       "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_DCAdvisory.docx",
       "salary": "$80,000-$100,000",
       "deadline": "",
-      "dateApplied": "",
-      "status": "To Apply",
+      "dateApplied": "2026-08-19",
+      "status": "Applied",
       "notes": "Sourced 2026-08-18. International investment bank, hybrid 4 days onsite Mon-Thu. Requires at least 2 years of compliance experience (at the edge of Neil's sweet spot given TD's compliance-flavored investigation work). Broad compliance workstreams: Code of Ethics, Restricted List, AML/KYC guidance (embedded in broader compliance, not primarily AML), FINRA U4/U5 filings, personal trading program, onboarding/training support.",
       "skills": [
         "Policy & Code of Ethics Review",
