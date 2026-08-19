@@ -1,6 +1,181 @@
 {
-  "updatedAt": "2026-08-19T02:23:48.000Z",
+  "updatedAt": "2026-08-19T03:07:37.000Z",
   "data": [
+    {
+      "id": "app-deshaw-compliance",
+      "_created": "2026-08-19T03:07:37.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-08-19T03:07:37.000Z"
+        }
+      ],
+      "company": "The D. E. Shaw Group",
+      "jobTitle": "Compliance Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4346362562",
+      "companyLink": "https://www.deshaw.com/careers",
+      "resume": "Job Applications/2026-08-18/Neil_Patel_Resume_DEShaw.docx",
+      "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_DEShaw.docx",
+      "salary": "$110,000-$130,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Sourced 2026-08-18. Elite quantitative hedge fund. 1-4 years experience, prior compliance/paralegal/accounting/financial ops/investment management background beneficial but explicitly not required. Bachelor's required. Prepares regulatory filings and designs automated compliance monitoring reports, good match for Neil's Excel macro and reconciliation background.",
+      "skills": [
+        "Automated Compliance Reporting",
+        "Regulatory Filings Support",
+        "Documentation & Exception Review",
+        "Cross Team Coordination",
+        "Deadline Driven Delivery",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "SAS & Oracle Based Systems",
+        "JIRA (academic exposure: SQL, Python)"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations daily to resolve exceptions and maintain a clear audit trail.\nMaintain detailed investigation documentation and standard operating procedures, ensuring daily monitoring activity aligns with internal policy checklists and control requirements.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-dcadvisory-compliance",
+      "_created": "2026-08-19T03:07:37.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-08-19T03:07:37.000Z"
+        }
+      ],
+      "company": "DC Advisory",
+      "jobTitle": "Compliance Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4454576304",
+      "companyLink": "https://www.dcadvisory.com/",
+      "resume": "Job Applications/2026-08-18/Neil_Patel_Resume_DCAdvisory.docx",
+      "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_DCAdvisory.docx",
+      "salary": "$80,000-$100,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Sourced 2026-08-18. International investment bank, hybrid 4 days onsite Mon-Thu. Requires at least 2 years of compliance experience (at the edge of Neil's sweet spot given TD's compliance-flavored investigation work). Broad compliance workstreams: Code of Ethics, Restricted List, AML/KYC guidance (embedded in broader compliance, not primarily AML), FINRA U4/U5 filings, personal trading program, onboarding/training support.",
+      "skills": [
+        "Policy & Code of Ethics Review",
+        "Regulatory Filings Support",
+        "Employee Onboarding & Training",
+        "Cross Team Coordination",
+        "Deadline Driven Delivery",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "SAS & Oracle Based Systems",
+        "JIRA (academic exposure: SQL, Python)"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations daily to resolve exceptions and maintain a clear audit trail.\nMaintain detailed investigation documentation and standard operating procedures, ensuring daily monitoring activity aligns with internal policy checklists and control requirements.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-americanexpress-regulatorygovernance",
+      "_created": "2026-08-19T03:07:37.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-08-19T03:07:37.000Z"
+        }
+      ],
+      "company": "American Express",
+      "jobTitle": "Analyst, Regulatory Governance (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4453386917",
+      "companyLink": "https://about.americanexpress.com/careers",
+      "resume": "Job Applications/2026-08-18/Neil_Patel_Resume_AmericanExpress.docx",
+      "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_AmericanExpress.docx",
+      "salary": "$65,500-$102,500",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Sourced 2026-08-18. Corporate Functions Governance & Control (CFG&C) team, Laws/Rules/Regulations inventory maintenance. 1-3 years compliance/legal/regulatory/risk/project coordination preferred, not required. Bachelor's required. Strong match for TD's documentation and standard operating procedure work.",
+      "skills": [
+        "Policy & Procedure Maintenance",
+        "Attestation & Compliance Tracking",
+        "Cross Team Coordination",
+        "Documentation & Reporting",
+        "Deadline Driven Delivery",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "SAS & Oracle Based Systems",
+        "JIRA (academic exposure: SQL, Python)"
+      ],
+      "bulletsTD": "Maintain detailed investigation documentation and standard operating procedures, ensuring daily monitoring activity aligns with internal policy checklists and control requirements.\nIdentify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations daily to resolve exceptions and maintain a clear audit trail.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-williamblair-compliance",
+      "_created": "2026-08-19T03:07:37.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-08-19T03:07:37.000Z"
+        }
+      ],
+      "company": "William Blair",
+      "jobTitle": "Compliance Analyst, William Blair Investment Management (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4452839765",
+      "companyLink": "https://www.williamblair.com/",
+      "resume": "Job Applications/2026-08-18/Neil_Patel_Resume_WilliamBlair.docx",
+      "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_WilliamBlair.docx",
+      "salary": "$100,000-$115,000",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Sourced 2026-08-18. In office 3x/week (Chicago-based CCO oversight). Requires 1-3 years compliance experience for RIAs/registered investment companies/CITs/UCITS/private funds, bachelor's degree. Neil's Bloomberg SMA/CIT reconciliation background is a strong direct match. No AML-primary flavor (AML requests are one of several compliance inquiry types), no excluded platforms.",
+      "skills": [
+        "Post Trade Compliance Monitoring",
+        "Regulatory Filings Support",
+        "Code of Ethics Review",
+        "Cross Team Coordination",
+        "Deadline Driven Delivery",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced Excel (Pivot Tables, VLOOKUP, Macros)",
+        "SAS & Oracle Based Systems",
+        "JIRA (academic exposure: SQL, Python)"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations daily to resolve exceptions and maintain a clear audit trail.\nMaintain detailed investigation documentation and standard operating procedures, ensuring daily monitoring activity aligns with internal policy checklists and control requirements.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
+    {
+      "id": "app-goldmansachs-compliance-ficc",
+      "_created": "2026-08-19T03:07:37.000Z",
+      "statusHistory": [
+        {
+          "status": "To Apply",
+          "at": "2026-08-19T03:07:37.000Z"
+        }
+      ],
+      "company": "Goldman Sachs",
+      "jobTitle": "Compliance, Global Banking & Markets Public Compliance, FICC, Analyst (New York, NY)",
+      "link": "https://www.linkedin.com/jobs/view/4454441138",
+      "companyLink": "https://www.goldmansachs.com/careers/",
+      "resume": "Job Applications/2026-08-18/Neil_Patel_Resume_GoldmanSachs.docx",
+      "coverLetter": "Job Applications/2026-08-18/Neil_Patel_CoverLetter_GoldmanSachs.docx",
+      "salary": "",
+      "deadline": "",
+      "dateApplied": "",
+      "status": "To Apply",
+      "notes": "Sourced 2026-08-18 in a Compliance Analyst focused batch. Posted 1 day ago, over 100 clicked apply. 0-3 years experience required (strong fit), bachelor's degree, MS Office proficiency. Second line of defense compliance coverage for FICC Commodities. No AML flavor, no excluded platforms, no accounting degree required. Salary not disclosed on posting.",
+      "skills": [
+        "Trade Surveillance Escalation",
+        "Regulatory Risk Investigation",
+        "Policy & Procedure Support",
+        "Cross Team Coordination",
+        "Deadline Driven Delivery",
+        "Bloomberg Terminal (BMC certified)",
+        "Advanced MS Office (Excel, PowerPoint, Word, Outlook)",
+        "SAS & Oracle Based Systems",
+        "JIRA (academic exposure: SQL, Python)"
+      ],
+      "bulletsTD": "Identify and monitor operational, regulatory, and reputational risk across flagged accounts, completing detailed investigations against a 20 case weekly quota (20-25 completed, peak of 33).\nReconcile transaction and account data against internal and external sources, coordinating with Compliance and Operations daily to resolve exceptions and maintain a clear audit trail.\nMaintain detailed investigation documentation and standard operating procedures, ensuring daily monitoring activity aligns with internal policy checklists and control requirements.\nCompile comprehensive investigation documents and serve as point of contact for stakeholders requesting case status, findings, and supporting evidence.\nAuthor training guides and process documentation adopted by new analysts, improving team wide onboarding speed and consistency.",
+      "bulletsBloomberg": "Reconcile cash, custody, and trade level position data for 650+ SMAs and CITs against custodian and administrator records, resolving breaks daily.\nServe as primary point of contact for 400+ institutional portfolio managers, collecting, validating, onboarding, and maintaining reference and transactional data.\nAnalyze monthly performance and holdings data, identifying key drivers of change and preparing account level reporting ahead of investor updates.\nAdjust account records for corporate actions including stock splits and dividend reinvestments, ensuring accurate downstream performance calculations.\nExpand the SMA strategy library by 800+ investment strategies through direct portfolio manager outreach, strengthening platform coverage and relationships.",
+      "bulletsBC": "Generate weekly client acquisition and retention reports using CRM data, increasing client retention by 10%."
+    },
     {
       "id": "app-cerberus-fundcompliance",
       "_created": "2026-08-19T02:23:48.000Z",

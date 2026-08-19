@@ -1,6 +1,94 @@
 {
-  "updatedAt": "2026-08-19T02:23:56.000Z",
+  "updatedAt": "2026-08-19T03:07:56.000Z",
   "data": [
+    {
+      "id": "tential-solutions-regulatory-compliance-analyst-161170",
+      "company": "Tential Solutions (staffing)",
+      "title": "Regulatory Compliance Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4453161170",
+      "date": "2026-08-18",
+      "note": "Dropped: Contract position (not full-time) with a significant Bank Secrecy Act (BSA) program management component, AML-flavored."
+    },
+    {
+      "id": "neuberger-compliance-analyst-649083",
+      "company": "Neuberger",
+      "title": "Compliance Analyst (Mutual Funds)",
+      "url": "https://www.linkedin.com/jobs/view/4444649083",
+      "date": "2026-08-18",
+      "note": "Deferred: full description would not render on LinkedIn after repeated reloads (off-platform listing); revisit next run."
+    },
+    {
+      "id": "mondrian-alpha-compliance-officer-hedge-fund-263476",
+      "company": "Mondrian Alpha (staffing, hedge fund client)",
+      "title": "Compliance Officer - Leading Global Hedge Fund",
+      "url": "https://www.linkedin.com/jobs/search/?currentJobId=4451263476",
+      "date": "2026-08-18",
+      "note": "Dropped: requires 3-5 years experience."
+    },
+    {
+      "id": "artisan-partners-portfolio-oversight-analyst-investment-compliance-076745",
+      "company": "Artisan Partners",
+      "title": "Portfolio Oversight Analyst - Investment Compliance",
+      "url": "https://www.linkedin.com/jobs/view/4443076745",
+      "date": "2026-08-18",
+      "note": "Dropped: 5+ yrs preferred, Aladdin by BlackRock order management system preferred (excluded platform), heavy SQL/Python."
+    },
+    {
+      "id": "millennium-compliance-analyst-936286",
+      "company": "Millennium",
+      "title": "Compliance Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4432936286",
+      "date": "2026-08-18",
+      "note": "Dropped: requires 3+ years surveillance/compliance experience."
+    },
+    {
+      "id": "millennium-compliance-analyst-control-room-131518",
+      "company": "Millennium",
+      "title": "Compliance Analyst - Control Room",
+      "url": "https://www.linkedin.com/jobs/view/4449131518",
+      "date": "2026-08-18",
+      "note": "Dropped: requires 3-5+ years relevant compliance/surveillance experience."
+    },
+    {
+      "id": "de-shaw-group-compliance-analyst-362562",
+      "company": "The D. E. Shaw Group",
+      "title": "Compliance Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4346362562",
+      "date": "2026-08-18",
+      "note": "Kept: 1-4 yrs, prior compliance background explicitly not required."
+    },
+    {
+      "id": "dc-advisory-compliance-analyst-576304",
+      "company": "DC Advisory",
+      "title": "Compliance Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4454576304",
+      "date": "2026-08-18",
+      "note": "Kept: 2 yrs compliance required (edge of sweet spot given TD's compliance-flavored work), broad compliance workstreams."
+    },
+    {
+      "id": "american-express-analyst-regulatory-governance-386917",
+      "company": "American Express",
+      "title": "Analyst, Regulatory Governance",
+      "url": "https://www.linkedin.com/jobs/view/4453386917",
+      "date": "2026-08-18",
+      "note": "Kept: 1-3 yrs preferred not required, strong documentation match."
+    },
+    {
+      "id": "william-blair-compliance-analyst-839765",
+      "company": "William Blair",
+      "title": "Compliance Analyst (WBIM)",
+      "url": "https://www.linkedin.com/jobs/view/4452839765",
+      "date": "2026-08-18",
+      "note": "Kept: 1-3 yrs compliance for RIAs/CITs/private funds, direct match to Bloomberg SMA/CIT background."
+    },
+    {
+      "id": "goldman-sachs-compliance-gbm-public-compliance-ficc-analyst-441138",
+      "company": "Goldman Sachs",
+      "title": "Compliance-Global Banking & Markets Public Compliance-FICC-Analyst",
+      "url": "https://www.linkedin.com/jobs/view/4454441138",
+      "date": "2026-08-18",
+      "note": "Kept: 0-3 yrs required, strong fit, second line compliance."
+    },
     {
       "id": "cerberus-capital-management-fund-compliance-operations-analyst-associate-547961",
       "company": "Cerberus Capital Management",
