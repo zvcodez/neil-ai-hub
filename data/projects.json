@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T02:34:24Z",
+  "updatedAt": "2026-08-31T00:55:00Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
@@ -457,8 +457,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Wire the new NFL picks engine into the API routes + frontend, and add the daily lock/cron layer (nothing is scheduled or saved yet, it only computes on demand). Biggest quality win after that: a depth-chart / snap-share feed, since prop projections currently don't know if a player changed teams or role \u2014 the weak spot for Week 1. Season opens Sept 10.",
-      "lastDid": "Connected the NFL model to live sportsbook odds and built the picks engine end to end. Player props are the real find: backtested properly (tuned on 2024, validated on held-out 2025) and all five prop markets genuinely beat their baselines, so the app's headline pick is now a prop. Team bets (moneyline/spread/total) are deliberately turned almost all the way down, because the earlier testing showed the model has no real advantage there. Verified against real live odds: a live run returned a real Play of the Day (Rashid Shaheed under 2.5 catches, +7.7% edge) and costs 0 odds credits to view. Found and fixed a few real bugs along the way, including one that would have silently stopped the app buying prop odds forever. 474 of 500 credits left; resets Sept 1.",
+      "nextStep": "Frontend rebuild is the only thing left before this can ship \u2014 building it in order: Home + Tracker first, then League + Standings, then News, then Fantasy last. Fantasy also needs Neil's real Sleeper username + league ID before it can connect (nothing to do until then, it just shows 'not connected'). Season opens Sept 9-10.",
+      "lastDid": "Finished the entire backend: the app now locks a real Play of the Day every day it pulls odds (3x/week, timed to the NFL's actual injury-report schedule, not a flat daily pull, to save credits), tracks whether Neil placed it, and \u2014 unlike the MLB version \u2014 can actually grade player-prop bets against real final stats once games finish, since props are this app's main pick type. Also built the other four tabs' data feeds (live scores/schedule, full AFC/NFC standings, injury/news digest, Sleeper-synced fantasy roster with start/sit advice from the app's own model) \u2014 all tested against real live data. Everything backend-side is done and working; only the actual screens are left to build.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
         {
