@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T00:55:00Z",
+  "updatedAt": "2026-09-05T20:00:00Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
@@ -457,8 +457,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Frontend rebuild is the only thing left before this can ship \u2014 building it in order: Home + Tracker first, then League + Standings, then News, then Fantasy last. Fantasy also needs Neil's real Sleeper username + league ID before it can connect (nothing to do until then, it just shows 'not connected'). Season opens Sept 9-10.",
-      "lastDid": "Finished the entire backend: the app now locks a real Play of the Day every day it pulls odds (3x/week, timed to the NFL's actual injury-report schedule, not a flat daily pull, to save credits), tracks whether Neil placed it, and \u2014 unlike the MLB version \u2014 can actually grade player-prop bets against real final stats once games finish, since props are this app's main pick type. Also built the other four tabs' data feeds (live scores/schedule, full AFC/NFC standings, injury/news digest, Sleeper-synced fantasy roster with start/sit advice from the app's own model) \u2014 all tested against real live data. Everything backend-side is done and working; only the actual screens are left to build.",
+      "nextStep": "The app itself is fully built and tested locally \u2014 what's left is purely getting it live: turn off the old MLB version, deploy the new one to Railway + Vercel, and do one final check against the real Week 1 slate once the season starts. Season opens Sept 9-10, so this needs to happen in the next few days.",
+      "lastDid": "Finished building the entire app, all 6 tabs, end to end. Home shows a real daily pick (mostly player props, since that's where the actual edge is), Tracker shows a real win/loss record, and the four new tabs are live: League (real scores/schedule with real team logos), Standings (full AFC/NFC), News (injury reports + a digest feed), and Fantasy (synced to Neil's real Sleeper account \u2014 he's in 7 leagues, built a switcher so he can flip between them). Tested every screen in a real browser against real live data, not just placeholders. Caught and fixed two real bugs along the way: one where the fantasy screen would time out loading (it was doing unnecessary work for a league that hasn't drafted yet), and one where an undefeated team's win percentage would've displayed as \".000\" instead of \"1.000\".",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
         {
