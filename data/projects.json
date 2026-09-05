@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T20:00:00Z",
+  "updatedAt": "2026-09-05T20:20:00Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
@@ -451,14 +451,14 @@
       "id": "7b51e2c9f4",
       "_created": "2026-06-28T21:40:46Z",
       "name": "ZV's Edge",
-      "description": "An AI sports betting app for my iPhone that helps spot good bets to make. Being rebuilt around NFL 2026 with player-prop-led picks (MLB/FIFA/Kalshi retired from the app, kept in the codebase for reuse). The live URL is still the MLB version until the NFL rebuild ships.",
+      "description": "An AI sports betting app for my iPhone that helps spot good bets to make. Rebuilt around NFL 2026 with player-prop-led picks, live and deployed (MLB/FIFA/Kalshi retired from the app, kept in the codebase for reuse).",
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "The app itself is fully built and tested locally \u2014 what's left is purely getting it live: turn off the old MLB version, deploy the new one to Railway + Vercel, and do one final check against the real Week 1 slate once the season starts. Season opens Sept 9-10, so this needs to happen in the next few days.",
-      "lastDid": "Finished building the entire app, all 6 tabs, end to end. Home shows a real daily pick (mostly player props, since that's where the actual edge is), Tracker shows a real win/loss record, and the four new tabs are live: League (real scores/schedule with real team logos), Standings (full AFC/NFC), News (injury reports + a digest feed), and Fantasy (synced to Neil's real Sleeper account \u2014 he's in 7 leagues, built a switcher so he can flip between them). Tested every screen in a real browser against real live data, not just placeholders. Caught and fixed two real bugs along the way: one where the fantasy screen would time out loading (it was doing unnecessary work for a league that hasn't drafted yet), and one where an undefeated team's win percentage would've displayed as \".000\" instead of \"1.000\".",
+      "nextStep": "Live and working \u2014 nothing left to build for launch. Watch it over the next few days as real Week 1 odds/props come in (season opens Sept 9-10) and see how the real picks look. Biggest quality gap already known and documented: player-prop projections don't yet know about depth-chart/role changes (a just-traded or newly-featured player gets judged on his old team's usage), which matters most exactly in Week 1.",
+      "lastDid": "Deployed the whole rebuilt app live. Along the way found the app was already down (Railway's free trial had quietly expired) \u2014 Neil upgraded to the $5/mo paid plan (checked his real past usage first: about $2.25 in his heaviest month, so $5 has real room to spare) and it's now his own account, not a workaround. The actual deploy then hit three real dependency conflicts that only show up on Railway's server (not on this Mac) \u2014 tracked each down and fixed them properly rather than papering over them, and double-checked the fix in a clean simulated copy of Railway's exact setup before trying again. Confirmed live and working: pulled real Week 1 odds in production, got a real graded pick back, and the site loads correctly at the usual link.",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
       "log": [
         {
