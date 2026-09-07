@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T20:20:00Z",
+  "updatedAt": "2026-09-06T00:00:00Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
@@ -459,8 +459,13 @@
       "liveUrl": "https://zvs-edge.vercel.app",
       "nextStep": "Live and working \u2014 nothing left to build for launch. Watch it over the next few days as real Week 1 odds/props come in (season opens Sept 9-10) and see how the real picks look. Biggest quality gap already known and documented: player-prop projections don't yet know about depth-chart/role changes (a just-traded or newly-featured player gets judged on his old team's usage), which matters most exactly in Week 1.",
       "lastDid": "Deployed the whole rebuilt app live. Along the way found the app was already down (Railway's free trial had quietly expired) \u2014 Neil upgraded to the $5/mo paid plan (checked his real past usage first: about $2.25 in his heaviest month, so $5 has real room to spare) and it's now his own account, not a workaround. The actual deploy then hit three real dependency conflicts that only show up on Railway's server (not on this Mac) \u2014 tracked each down and fixed them properly rather than papering over them, and double-checked the fix in a clean simulated copy of Railway's exact setup before trying again. Confirmed live and working: pulled real Week 1 odds in production, got a real graded pick back, and the site loads correctly at the usual link.",
-      "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). Now backed up to GitHub.",
+      "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). NFL 2026 rebuild is deployed and live as of 2026-09-05.",
       "log": [
+        {
+          "id": "log-zve-nfl-rebuild-deployed",
+          "ts": "2026-09-05T20:20:00Z",
+          "text": "The full NFL 2026 rebuild, start to finish, across several sessions: built a real two-stage prediction model (team EPA ratings + a margin/total regression), backtested it honestly against real closing sportsbook lines rather than just claiming it works — the team model (moneyline/spread/total) turned out to have NO real edge over the market, so those bets are intentionally toned way down. Player props, on the other hand, showed genuine skill in testing, so those became the app's headline pick. Built the full picks engine around that finding, wired it to live odds on a 3x/week schedule (Thu/Sat/Mon, timed to the NFL's real injury-report rhythm) that costs only a few dollars a month in API credits. Built out the four new tabs — League (live scores), Standings (full conference tables), News (injury reports + a digest feed), and Fantasy (synced to Neil's real Sleeper account, 7 leagues, with a switcher) — and redesigned the whole app's look. Then deployed it for real: found Railway's free trial had quietly expired (unrelated outage, not caused by this work) — Neil upgraded to the $5/mo paid plan after checking his real historical usage ($2.25 in his heaviest month) to confirm that's plenty. The deploy itself then failed twice for real, fixable reasons (library version conflicts that only show up on Railway's actual server, not on this Mac) — tracked both down properly and verified the fixes before trying again rather than guessing. Confirmed live and working with a real production test: pulled real Week 1 odds, got back an actual graded pick. Live URL unchanged (zvs-edge.vercel.app). One known gap for later: player-prop projections don't yet account for depth-chart/role changes, which matters most in Week 1 for a just-traded or newly-featured player."
+        },
         {
           "id": "log-zve-glass-overhaul",
           "ts": "2026-07-14T04:01:24.403308+00:00",
