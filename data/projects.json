@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T00:00:00Z",
+  "updatedAt": "2026-09-06T18:00:00Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
@@ -457,8 +457,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Live and working \u2014 nothing left to build for launch. Watch it over the next few days as real Week 1 odds/props come in (season opens Sept 9-10) and see how the real picks look. Biggest quality gap already known and documented: player-prop projections don't yet know about depth-chart/role changes (a just-traded or newly-featured player gets judged on his old team's usage), which matters most exactly in Week 1.",
-      "lastDid": "Deployed the whole rebuilt app live. Along the way found the app was already down (Railway's free trial had quietly expired) \u2014 Neil upgraded to the $5/mo paid plan (checked his real past usage first: about $2.25 in his heaviest month, so $5 has real room to spare) and it's now his own account, not a workaround. The actual deploy then hit three real dependency conflicts that only show up on Railway's server (not on this Mac) \u2014 tracked each down and fixed them properly rather than papering over them, and double-checked the fix in a clean simulated copy of Railway's exact setup before trying again. Confirmed live and working: pulled real Week 1 odds in production, got a real graded pick back, and the site loads correctly at the usual link.",
+      "nextStep": "Live and working. Watch it over the next few days as real Week 1 odds/props come in (season opens Sept 9-10) and see how the real picks look. Biggest quality gap already known and documented: player-prop projections don't yet know about depth-chart/role changes, which matters most exactly in Week 1.",
+      "lastDid": "Neil tested the live app on his actual phone and found several real bugs \u2014 fixed all of them and redeployed. The Fantasy tab's start/sit advice was completely broken (Sleeper's player IDs and the model's own player IDs were never actually connected to each other, so nothing ever matched); now shows real numbers for his actual drafted roster. Team defense slots showed as \"Unknown\"; injury news was basically sorted at random; the News tab wasn't recognizing his own fantasy players. Also found and fixed the exact 'floating bottom bar' bug \u2014 turned out to be a different, new bug than the one already fixed and documented, not a failure of that old fix, and updated the shared writeup so it's covered for next time too. Rearranged the News tab per Neil's request (headline news first, injuries collapsed by default so it's not one long scroll).",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). NFL 2026 rebuild is deployed and live as of 2026-09-05.",
       "log": [
         {
