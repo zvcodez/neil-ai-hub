@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T18:00:00Z",
+  "updatedAt": "2026-09-08T22:35:00Z",
   "data": [
     {
       "id": "idea-screenshot-optimizer",
@@ -457,8 +457,8 @@
       "folder": "~/zvs-edge",
       "repoUrl": "https://github.com/zvcodez/zvs-edge",
       "liveUrl": "https://zvs-edge.vercel.app",
-      "nextStep": "Live and working. Watch it over the next few days as real Week 1 odds/props come in (season opens Sept 9-10) and see how the real picks look. Biggest quality gap already known and documented: player-prop projections don't yet know about depth-chart/role changes, which matters most exactly in Week 1.",
-      "lastDid": "Neil tested the live app on his actual phone and found several real bugs \u2014 fixed all of them and redeployed. The Fantasy tab's start/sit advice was completely broken (Sleeper's player IDs and the model's own player IDs were never actually connected to each other, so nothing ever matched); now shows real numbers for his actual drafted roster. Team defense slots showed as \"Unknown\"; injury news was basically sorted at random; the News tab wasn't recognizing his own fantasy players. Also found and fixed the exact 'floating bottom bar' bug \u2014 turned out to be a different, new bug than the one already fixed and documented, not a failure of that old fix, and updated the shared writeup so it's covered for next time too. Rearranged the News tab per Neil's request (headline news first, injuries collapsed by default so it's not one long scroll).",
+      "nextStep": "Real season opener is tomorrow (Wed Sept 9-10, Seahawks @ Patriots) with a real prop pick already showing. Watch how the picks look over the real Week 1 slate. Known gap: player-prop projections don't yet know about depth-chart/role changes, which matters most exactly in Week 1.",
+      "lastDid": "Neil caught a real, serious one the day before the season opener: the app's daily pick wasn't even for the first game of the season. Real bug, not a fluke \u2014 this year's opener is an unusual Wednesday game, and the automatic refresh schedule had a genuine gap that skipped Wednesdays entirely. Fixed the schedule so that can't happen again, and immediately force-refreshed the live app so tonight's actual pick is now a real one for the opener. Before that, tested the live app on his actual phone and found several other real bugs \u2014 fixed all of them and redeployed. The Fantasy tab's start/sit advice was completely broken (Sleeper's player IDs and the model's own player IDs were never actually connected to each other, so nothing ever matched); now shows real numbers for his actual drafted roster. Team defense slots showed as \"Unknown\"; injury news was basically sorted at random; the News tab wasn't recognizing his own fantasy players. Also found and fixed the exact 'floating bottom bar' bug \u2014 turned out to be a different, new bug than the one already fixed and documented, not a failure of that old fix, and updated the shared writeup so it's covered for next time too. Rearranged the News tab per Neil's request (headline news first, injuries collapsed by default so it's not one long scroll).",
       "notes": "Live and feature-rich (picks, locked POTD + switch flow, live tracker, push). NFL 2026 rebuild is deployed and live as of 2026-09-05.",
       "log": [
         {
