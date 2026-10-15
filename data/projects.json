@@ -1,20 +1,25 @@
 {
-  "updatedAt": "2026-10-15T02:24:15.471Z",
+  "updatedAt": "2026-10-15T02:54:52.210Z",
   "data": [
     {
       "id": "idea-cambio",
       "_created": "2026-10-15T01:36:29.703Z",
       "name": "Cambio — calm card game app",
       "description": "A relaxing, low-stimulation PWA for the Cambio card game: solo vs Easy/Medium/Hard bots, play-with-friends (next), lifetime scores, quick 2–3 minute games, and a tap-for-reference cheat sheet. House rules: stick (own or others', 1-card penalty), Cambio only at turn start after everyone's had a turn, caller locked, custom tie rules, Quick / Rounds / To 100 with sudden death.",
-      "stage": "Building",
+      "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/cambio",
       "repoUrl": "",
-      "liveUrl": "",
-      "nextStep": "Neil to OK deploying to Vercel, then play real hands on the iPhone home-screen app; after that, friends mode (room codes).",
-      "lastDid": "Design pass: Minimal look with player-color outlines (pick yours at setup), card backs that follow whoever holds the card, random unique bot names, tap-card-then-pile sticking with a 5s Stick bar (1s owner-only grace, 3s pickup), power hints, clear turn highlight, cleaner results screen. Tested in browser; still not deployed.",
-      "notes": "Stack: Vite + React + TypeScript, no backend yet (localStorage). Friends mode plan: lightweight relay (PartyKit/Supabase Realtime), no accounts, room codes; anti-cheat deliberately out of scope per Neil.",
+      "liveUrl": "https://cambio-phi-nine.vercel.app",
+      "nextStep": "Neil: add to iPhone home screen and play real hands. Next build: friends mode — usernames + password, room codes, synced groups, 'Keep score?' prompt after friends games (Supabase).",
+      "lastDid": "Built the Scores page (private groups, quick multi-win entry, fix-scores screen, streaks, drag to reorder) and deployed to Vercel production for the first time.",
+      "notes": "Stack: Vite + React + TypeScript, no backend yet (localStorage). Friends mode plan: lightweight relay (PartyKit/Supabase Realtime), no accounts, room codes; anti-cheat deliberately out of scope per Neil. Vercel project 'cambio' (team zv-edge); production alias https://cambio-phi-nine.vercel.app. Deploy: `vercel deploy --prod --yes` from ~/Claude/cambio.",
       "log": [
+        {
+          "id": "log-cambio-3",
+          "ts": "2026-10-15T02:54:52.210Z",
+          "text": "Scores page built; first production deploy to https://cambio-phi-nine.vercel.app."
+        },
         {
           "id": "log-cambio-2",
           "ts": "2026-10-15T02:24:15.471Z",
