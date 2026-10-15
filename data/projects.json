@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T01:36:29.703Z",
+  "updatedAt": "2026-10-15T02:24:15.471Z",
   "data": [
     {
       "id": "idea-cambio",
@@ -11,10 +11,15 @@
       "folder": "~/Claude/cambio",
       "repoUrl": "",
       "liveUrl": "",
-      "nextStep": "Deploy to Vercel and play a few real hands on the iPhone home-screen app; then Phase 2/3 — friends mode (room codes) and a manual scorekeeper for physical games.",
-      "lastDid": "Built Phase 1 end-to-end: tested rules engine (all house rules + tie/sudden-death logic), Easy/Medium/Hard bots that only use what they've seen, solo play with stick/give, powers, two-tap Cambio, Quick/Rounds/To-100 modes, autosave/resume, lifetime stats, reference sheet, light/dark. Verified in browser; not deployed yet.",
+      "nextStep": "Neil to OK deploying to Vercel, then play real hands on the iPhone home-screen app; after that, friends mode (room codes).",
+      "lastDid": "Design pass: Minimal look with player-color outlines (pick yours at setup), card backs that follow whoever holds the card, random unique bot names, tap-card-then-pile sticking with a 5s Stick bar (1s owner-only grace, 3s pickup), power hints, clear turn highlight, cleaner results screen. Tested in browser; still not deployed.",
       "notes": "Stack: Vite + React + TypeScript, no backend yet (localStorage). Friends mode plan: lightweight relay (PartyKit/Supabase Realtime), no accounts, room codes; anti-cheat deliberately out of scope per Neil.",
       "log": [
+        {
+          "id": "log-cambio-2",
+          "ts": "2026-10-15T02:24:15.471Z",
+          "text": "Design pass done (colors, tap-to-stick, stick window, hints, results)."
+        },
         {
           "id": "log-cambio-1",
           "ts": "2026-10-15T01:36:29.703Z",
