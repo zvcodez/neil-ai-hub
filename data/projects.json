@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T02:31:30.929740+00:00",
+  "updatedAt": "2026-10-16T03:28:01.465122+00:00",
   "data": [
     {
       "id": "idea-cambio",
@@ -12,9 +12,14 @@
       "repoUrl": "https://github.com/zvcodez/cambio",
       "liveUrl": "https://cambio-phi-nine.vercel.app",
       "nextStep": "Neil picks the Play with Friends layout (A/B/C), then set up Supabase and build accounts + rooms",
-      "lastDid": "Friends mode preview updated: real names (no handles), colour + 10 animal avatars, request dropdown, friends in order added",
+      "lastDid": "Friends preview: avatar animals set to Neil's 10 (puppy, panda, turtle, bird, monkey, butterfly, kangaroo, bunny, dolphin, peacock)",
       "notes": "START HERE (code + docs backed up privately at https://github.com/zvcodez/cambio): ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, no backend yet (localStorage; keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
       "log": [
+        {
+          "id": "log-cambio-11",
+          "ts": "2026-10-16T03:28:01.465122+00:00",
+          "text": "Avatar animals picked"
+        },
         {
           "id": "log-cambio-10",
           "ts": "2026-10-16T02:31:30.929740+00:00",
