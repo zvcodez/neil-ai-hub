@@ -16,7 +16,7 @@
       "notes": "START HERE (code + docs backed up privately at https://github.com/zvcodez/cambio): ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, no backend yet (localStorage; keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
       "log": [
         {
-          "id": "log-cambio-8",
+          "id": "log-cambio-9",
           "ts": "2026-10-16T02:14:57.756649+00:00",
           "text": "Friends mode mockup published (3 layouts for the Play with Friends page); waiting on Neil's pick"
         },
