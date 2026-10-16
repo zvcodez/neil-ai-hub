@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:16:37.264414+00:00",
+  "updatedAt": "2026-10-16T04:19:04.463706+00:00",
   "data": [
     {
       "id": "idea-cambio",
@@ -460,10 +460,20 @@
       "folder": "~/Claude/mithoos-adventure",
       "repoUrl": "https://github.com/zvcodez/Mithoos-Adventure",
       "liveUrl": "https://zvcodez.github.io/Mithoos-Adventure/",
-      "nextStep": "Neil to verify on his installed iPhone home-screen icon: force-quit and reopen twice, confirm no gap/strip top or bottom, and confirm Best/Today only track on the installed app (not the plain web link). Then revisit day/night sky keep-or-revert and berry/medal tuning to taste.",
-      "lastDid": "Bug sweep after Neil spotted a visible layout gap on his phone: fixed a real full-bleed viewport bug (game-wrap had safe-area padding stacked on an exact 100dvh height, which both pushed the pipes down from the true top edge and, on iOS, could leave the raw page background exposed as a mismatched blue strip below the ground -- switched to position:fixed;inset:0 with no padding plus a sky-to-ground gradient fallback so any residual shortfall blends in). Also fixed best/daily score persisting even when just opening the plain web link (e.g. from this hub) -- now only the installed home-screen app reads/writes localStorage, so Neil and Diksha each get their own score on their own installed phone, and casually opening the link is always a fresh game. Stopped ambience audio from bleeding into the game-over screen. Bumped SW cache to v4 and pushed live.",
+      "nextStep": "Neil to confirm fresh: (1) on the installed iPhone home-screen icon -- force-quit and reopen twice, confirm no white strip top or bottom; (2) via the hub's own link -- if still stale, fully close that Safari tab and reopen, or Settings > Safari > Advanced > Website Data > zvcodez.github.io to force-clear. Also confirm the two background people and the dog are gone (just the house left). Then revisit day/night sky keep-or-revert and berry/medal tuning to taste.",
+      "lastDid": "Fixed the white-edge bug for real: the 2026-07-24 fix only removed html/body's exact height but left #game-wrap itself pinned with position:fixed;inset:0 -- the dock-bug doc's own flagged 'same bug one layer removed' pattern, still asking WebKit for the under-reported standalone viewport height, so the canvas kept coming up short of the true bottom edge. Switched game-wrap to normal flow (flex column, min-height:100dvh as a floor) with canvas as flex:1 instead of height:100%, and made resize() measure the canvas's real laid-out box via getBoundingClientRect() instead of window.innerWidth/innerHeight. Also removed the two background people (Pragya, Diksha) and the dog from the scrolling scenery per Neil's request -- the house stays. Bumped SW cache to v7 and verified directly against the deployed sw.js/style.css/game.js that it's live. When Neil reported the white edge still showing right after the first push, traced it to a stale service-worker cache in that specific browsing context (the SW is cache-first) rather than a real regression -- the server-side code was already correct.",
       "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed",
       "log": [
+        {
+          "id": "log-mithoo-20261016-2",
+          "ts": "2026-10-16T04:30:00.000000Z",
+          "text": "Removed the two background people (Pragya, Diksha) and the dog from the scrolling scenery -- house stays. Bumped SW cache to v7 to ship it."
+        },
+        {
+          "id": "log-mithoo-20261016-1",
+          "ts": "2026-10-16T04:00:00.000000Z",
+          "text": "Fixed the white-edge bug for real: #game-wrap was still position:fixed;inset:0 (the same under-reported-viewport bug html/body used to have, one layer deeper). Switched to normal flow + min-height:100dvh floor + canvas flex:1, and resize() now measures the canvas's real box instead of window.innerWidth/innerHeight. Bumped SW cache to v7."
+        },
         {
           "id": "a92faff3cb834ef0b46bb962a20a0212",
           "ts": "2026-07-24T22:20:45.642712Z",
