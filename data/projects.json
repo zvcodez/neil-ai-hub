@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T01:49:50.801Z",
+  "updatedAt": "2026-10-16T01:52:36.006Z",
   "data": [
     {
       "id": "idea-cambio",
@@ -9,11 +9,11 @@
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/cambio",
-      "repoUrl": "",
+      "repoUrl": "https://github.com/zvcodez/cambio",
       "liveUrl": "https://cambio-phi-nine.vercel.app",
       "nextStep": "Start a new Claude Code session in ~/Claude/cambio and build friends mode: answer the open questions in docs/ROADMAP.md first (async play? friend requests? bots in friend games?), then Supabase accounts (username + password), rooms, synced groups.",
       "lastDid": "Wrote full handoff docs in the repo (CLAUDE.md + docs/: rules, architecture, design, decisions, roadmap, testing, mockups) so new sessions can continue safely. Before that: big polish pass (game over screen, smarter bots, action log, names, animations).",
-      "notes": "START HERE: ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, no backend yet (localStorage; keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
+      "notes": "START HERE (code + docs backed up privately at https://github.com/zvcodez/cambio): ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, no backend yet (localStorage; keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
       "log": [
         {
           "id": "log-cambio-5",
