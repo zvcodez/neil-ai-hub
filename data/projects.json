@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T02:54:52.210Z",
+  "updatedAt": "2026-10-16T00:31:39.006Z",
   "data": [
     {
       "id": "idea-cambio",
@@ -11,10 +11,15 @@
       "folder": "~/Claude/cambio",
       "repoUrl": "",
       "liveUrl": "https://cambio-phi-nine.vercel.app",
-      "nextStep": "Neil: add to iPhone home screen and play real hands. Next build: friends mode — usernames + password, room codes, synced groups, 'Keep score?' prompt after friends games (Supabase).",
-      "lastDid": "Built the Scores page (private groups, quick multi-win entry, fix-scores screen, streaks, drag to reorder) and deployed to Vercel production for the first time.",
+      "nextStep": "Friends mode: usernames + password, room codes, synced score groups, 'Keep score?' prompt after friends games (Supabase).",
+      "lastDid": "Big polish pass, all deployed: game-over screen with stats + rematch, smarter bots (never ditch known good cards, human-like memory), full action log, player names, bot speed, card motion animations, new home (hand logo, ink colors, catchphrases), returning rival bots, zoom lock, missed-Cambio +10.",
       "notes": "Stack: Vite + React + TypeScript, no backend yet (localStorage). Friends mode plan: lightweight relay (PartyKit/Supabase Realtime), no accounts, room codes; anti-cheat deliberately out of scope per Neil. Vercel project 'cambio' (team zv-edge); production alias https://cambio-phi-nine.vercel.app. Deploy: `vercel deploy --prod --yes` from ~/Claude/cambio.",
       "log": [
+        {
+          "id": "log-cambio-4",
+          "ts": "2026-10-16T00:31:39.006Z",
+          "text": "Polish pass: game over screen, better bots, action log, names, animations, new home."
+        },
         {
           "id": "log-cambio-3",
           "ts": "2026-10-15T02:54:52.210Z",
