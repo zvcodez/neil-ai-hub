@@ -1,20 +1,25 @@
 {
-  "updatedAt": "2026-10-16T00:31:39.006Z",
+  "updatedAt": "2026-10-16T01:49:50.801Z",
   "data": [
     {
       "id": "idea-cambio",
       "_created": "2026-10-15T01:36:29.703Z",
       "name": "Cambio — calm card game app",
-      "description": "A relaxing, low-stimulation PWA for the Cambio card game: solo vs Easy/Medium/Hard bots, play-with-friends (next), lifetime scores, quick 2–3 minute games, and a tap-for-reference cheat sheet. House rules: stick (own or others', 1-card penalty), Cambio only at turn start after everyone's had a turn, caller locked, custom tie rules, Quick / Rounds / To 100 with sudden death.",
+      "description": "Relaxing, minimal PWA for the Cambio card game with Neil's house rules: solo vs Easy/Medium/Hard bots (done), friends mode with usernames and room codes (next), and private score groups (e.g. 'Me & her', 'Friday crew') with no global leaderboard.",
       "stage": "Live",
       "chatUrl": "",
       "folder": "~/Claude/cambio",
       "repoUrl": "",
       "liveUrl": "https://cambio-phi-nine.vercel.app",
-      "nextStep": "Friends mode: usernames + password, room codes, synced score groups, 'Keep score?' prompt after friends games (Supabase).",
-      "lastDid": "Big polish pass, all deployed: game-over screen with stats + rematch, smarter bots (never ditch known good cards, human-like memory), full action log, player names, bot speed, card motion animations, new home (hand logo, ink colors, catchphrases), returning rival bots, zoom lock, missed-Cambio +10.",
-      "notes": "Stack: Vite + React + TypeScript, no backend yet (localStorage). Friends mode plan: lightweight relay (PartyKit/Supabase Realtime), no accounts, room codes; anti-cheat deliberately out of scope per Neil. Vercel project 'cambio' (team zv-edge); production alias https://cambio-phi-nine.vercel.app. Deploy: `vercel deploy --prod --yes` from ~/Claude/cambio.",
+      "nextStep": "Start a new Claude Code session in ~/Claude/cambio and build friends mode: answer the open questions in docs/ROADMAP.md first (async play? friend requests? bots in friend games?), then Supabase accounts (username + password), rooms, synced groups.",
+      "lastDid": "Wrote full handoff docs in the repo (CLAUDE.md + docs/: rules, architecture, design, decisions, roadmap, testing, mockups) so new sessions can continue safely. Before that: big polish pass (game over screen, smarter bots, action log, names, animations).",
+      "notes": "START HERE: ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, no backend yet (localStorage; keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
       "log": [
+        {
+          "id": "log-cambio-5",
+          "ts": "2026-10-16T01:49:50.801Z",
+          "text": "Handoff docs written (CLAUDE.md + docs/) for future sessions."
+        },
         {
           "id": "log-cambio-4",
           "ts": "2026-10-16T00:31:39.006Z",
