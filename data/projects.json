@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T01:54:58.239Z",
+  "updatedAt": "2026-10-16T02:01:08.554Z",
   "data": [
     {
       "id": "idea-cambio",
@@ -12,9 +12,14 @@
       "repoUrl": "https://github.com/zvcodez/cambio",
       "liveUrl": "https://cambio-phi-nine.vercel.app",
       "nextStep": "Start a new Claude Code session in ~/Claude/cambio and build friends mode: answer the open questions in docs/ROADMAP.md first (async play? friend requests? bots in friend games?), then Supabase accounts (username + password), rooms, synced groups.",
-      "lastDid": "Set up hands-off upkeep: private GitHub backup (zvcodez/cambio), handoff docs, a 'definition of done' in CLAUDE.md, and project hooks that pull + brief on session start and make Claude commit/document/push/deploy before finishing.",
+      "lastDid": "Moved the action log off the table: one fixed status line (no more shifting cards) + a Log button by the '?'. Docs, GitHub and deploy all updated.",
       "notes": "START HERE (code + docs backed up privately at https://github.com/zvcodez/cambio): ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, no backend yet (localStorage; keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
       "log": [
+        {
+          "id": "log-cambio-7",
+          "ts": "2026-10-16T02:01:08.554Z",
+          "text": "Log button in header; single fixed status line on the table."
+        },
         {
           "id": "log-cambio-6",
           "ts": "2026-10-16T01:54:58.239Z",
