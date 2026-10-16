@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:07:48.894048+00:00",
+  "updatedAt": "2026-10-16T04:16:37.264414+00:00",
   "data": [
     {
       "id": "idea-cambio",
@@ -12,9 +12,14 @@
       "repoUrl": "https://github.com/zvcodez/cambio",
       "liveUrl": "https://cambio-phi-nine.vercel.app",
       "nextStep": "Sync score groups to accounts (makes \"save your scores\" true) + \"Keep score?\" after friends games",
-      "lastDid": "Deleted Neil's accidental account; added Delete account (password re-check), Sign out from Play with Friends, \"Sign in to save your scores\"",
+      "lastDid": "To 100: winning Cambio call now −5 off your total (wrong/tied still +10)",
       "notes": "START HERE (code + docs backed up privately at https://github.com/zvcodez/cambio): ~/Claude/cambio/CLAUDE.md (auto-loaded when Claude Code runs in that folder) and ~/Claude/cambio/docs/. Rules are Neil's house rules in docs/RULES.md; never 'fix' them to standard Cambio. Stack: Vite + React + TypeScript 7, solo = localStorage; friends mode = Supabase via Vercel Marketplace (cambio-db, free plan) + api/ functions; (localStorage keys listed in docs/ARCHITECTURE.md hold real scores, don't rename without migration). Vercel project 'cambio' (team zv-edge), production alias https://cambio-phi-nine.vercel.app, deploy with `vercel deploy --prod --yes`. Friends mode plan: Supabase Auth (username + password via synthetic email) + Postgres + Realtime, row-based game sync with version checks.",
       "log": [
+        {
+          "id": "log-cambio-16",
+          "ts": "2026-10-16T04:16:37.264414+00:00",
+          "text": "To 100 Cambio bonus −5"
+        },
         {
           "id": "log-cambio-15",
           "ts": "2026-10-16T04:07:48.894048+00:00",
