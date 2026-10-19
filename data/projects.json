@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:19:04.463706+00:00",
+  "updatedAt": "2026-10-19T23:39:34.998823+00:00",
   "data": [
     {
       "id": "idea-cambio",
@@ -460,10 +460,15 @@
       "folder": "~/Claude/mithoos-adventure",
       "repoUrl": "https://github.com/zvcodez/Mithoos-Adventure",
       "liveUrl": "https://zvcodez.github.io/Mithoos-Adventure/",
-      "nextStep": "Neil to confirm fresh: (1) on the installed iPhone home-screen icon -- force-quit and reopen twice, confirm no white strip top or bottom; (2) via the hub's own link -- if still stale, fully close that Safari tab and reopen, or Settings > Safari > Advanced > Website Data > zvcodez.github.io to force-clear. Also confirm the two background people and the dog are gone (just the house left). Then revisit day/night sky keep-or-revert and berry/medal tuning to taste.",
-      "lastDid": "Fixed the white-edge bug for real: the 2026-07-24 fix only removed html/body's exact height but left #game-wrap itself pinned with position:fixed;inset:0 -- the dock-bug doc's own flagged 'same bug one layer removed' pattern, still asking WebKit for the under-reported standalone viewport height, so the canvas kept coming up short of the true bottom edge. Switched game-wrap to normal flow (flex column, min-height:100dvh as a floor) with canvas as flex:1 instead of height:100%, and made resize() measure the canvas's real laid-out box via getBoundingClientRect() instead of window.innerWidth/innerHeight. Also removed the two background people (Pragya, Diksha) and the dog from the scrolling scenery per Neil's request -- the house stays. Bumped SW cache to v7 and verified directly against the deployed sw.js/style.css/game.js that it's live. When Neil reported the white edge still showing right after the first push, traced it to a stale service-worker cache in that specific browsing context (the SW is cache-first) rather than a real regression -- the server-side code was already correct.",
+      "nextStep": "Neil: force-quit and reopen the installed home-screen icon ONE more time -- this specific reopen is needed to let the new network-first service worker (v8) actually take over from the old cache-first one; every deploy after this should show up automatically with no manual cache-clearing. Then confirm the white strip is gone and the two background people/dog are gone (just the house left). After that, revisit day/night sky keep-or-revert and berry/medal tuning to taste.",
+      "lastDid": "Root-caused why the white-edge fix kept appearing not-to-work on Neil's phone even after the server-side code was verified correct twice: the service worker was cache-first ('serve instantly from cache, refresh in background for next time'), so a correct deploy could sit behind stale cached content indefinitely until the SW lifecycle fully cycled -- Neil kept seeing the pre-fix build regardless of what was actually deployed. Switched to network-first with cache:'no-store' (bypasses HTTP caching too), falling back to cache only when offline -- mirrors the exact fix Jot already shipped for the same problem on the same GitHub Pages hosting. Bumped SW cache to v8, verified it registers cleanly with no console errors, and confirmed it's live on GitHub Pages. This is a one-time transition: this next reopen still needs to clear the old cache-first SW, but every deploy after that will show up automatically going forward. (Earlier in this same thread: fixed the actual white-edge root cause -- #game-wrap was still position:fixed;inset:0, the dock-bug doc's flagged 'same bug one layer removed' pattern -- switched to normal flow + min-height:100dvh floor + canvas flex:1; and removed the two background people (Pragya, Diksha) and the dog from scrolling scenery, house stays.)",
       "notes": "• Tap to flap Mithoo through gaps between obstacles\n• Built as a little tribute to my bird — use his real colors/look for the character\n• Simple one-tap gameplay; score = obstacles passed, best score saved\n• Fun touches: a chirp sound on each flap, themed backgrounds\n• Can be a lightweight web/phone game — no app store needed",
       "log": [
+        {
+          "id": "log-mithoo-20261019-1",
+          "ts": "2026-10-19T00:00:00.000000Z",
+          "text": "Switched the service worker from cache-first to network-first (cache:'no-store') so deploys show up immediately instead of hiding behind stale cached content -- root cause of the white-edge fix appearing not to take even after being verified correct server-side. Bumped SW cache to v8."
+        },
         {
           "id": "log-mithoo-20261016-2",
           "ts": "2026-10-16T04:30:00.000000Z",
