@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T23:39:34.998823+00:00",
+  "updatedAt": "2026-10-21T19:50:01.917122+00:00",
   "data": [
     {
       "id": "idea-cambio",
@@ -909,6 +909,27 @@
           "id": "log-rendezvous-1",
           "ts": "2026-07-08T04:48:10.824Z",
           "text": "Scaffolded and built v1 end-to-end on the free API stack (no Google Maps). Friends CRUD, meetup planner, fairness-scored results with map, all working except the two free API keys (ORS + Yelp) still need to be added."
+        }
+      ]
+    },
+    {
+      "id": "idea-deal",
+      "_created": "2026-10-21T19:50:01.917122+00:00",
+      "name": "Deal — Monopoly Deal app",
+      "description": "Animated phone PWA of the Monopoly Deal card game, official rules exactly (all 106 cards), for Neil and his closest friends. Solo vs Easy/Medium/Hard bots now; online with friends next.",
+      "stage": "Live",
+      "chatUrl": "",
+      "folder": "~/Claude/deal",
+      "repoUrl": "https://github.com/zvcodez/deal",
+      "liveUrl": "https://deal-two-fawn.vercel.app",
+      "nextStep": "Neil plays it on his iPhone (install to home screen) and sends feedback; then online play with friends + a stronger Hard bot",
+      "lastDid": "Built it: rules engine + tests (500 bot games), bots, full animated UI (flying cards, banners, NO! stamp, coins, confetti), PWA, deployed",
+      "notes": "START HERE: ~/Claude/deal/CLAUDE.md and docs/ (RULES.md = official rules + FAQ rulings, never invent rules). Stack: Vite + React + TS 7 + motion; local only (localStorage deal.save.v1). Vercel project 'deal' (team zv-edge), deploy with `vercel deploy --prod --yes`.",
+      "log": [
+        {
+          "id": "log-deal-1",
+          "ts": "2026-10-21T19:50:01.917122+00:00",
+          "text": "Monopoly Deal built and deployed"
         }
       ]
     }
