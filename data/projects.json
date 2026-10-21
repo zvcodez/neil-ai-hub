@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T19:50:01.917122+00:00",
+  "updatedAt": "2026-10-21T21:49:37.297784+00:00",
   "data": [
     {
       "id": "idea-cambio",
@@ -922,16 +922,23 @@
       "folder": "~/Claude/deal",
       "repoUrl": "https://github.com/zvcodez/deal",
       "liveUrl": "https://deal-two-fawn.vercel.app",
-      "nextStep": "Neil plays it on his iPhone (install to home screen) and sends feedback; then online play with friends + a stronger Hard bot",
-      "lastDid": "Built it: rules engine + tests (500 bot games), bots, full animated UI (flying cards, banners, NO! stamp, coins, confetti), PWA, deployed",
-      "notes": "START HERE: ~/Claude/deal/CLAUDE.md and docs/ (RULES.md = official rules + FAQ rulings, never invent rules). Stack: Vite + React + TS 7 + motion; local only (localStorage deal.save.v1). Vercel project 'deal' (team zv-edge), deploy with `vercel deploy --prod --yes`.",
+      "nextStep": "Try the Soft Pop preview on the phone, give feedback, then approve it to go live (merge soft-pop → main + deploy)",
+      "lastDid": "Design round: Neil picked Soft Pop (B), kept the original cards; built it on branch soft-pop as a preview. Handoff saved.",
+      "notes": "START HERE: ~/Claude/deal/docs/HANDOFF.md (then CLAUDE.md). Links: live (old look) https://deal-two-fawn.vercel.app · Soft Pop preview https://deal-4l1v0zm67-zv-edge.vercel.app (Vercel login) · design canvas https://claude.ai/artifact/3pyEy5Q5ns6Xwi2PCc6TLz · handoff https://github.com/zvcodez/deal/blob/soft-pop/docs/HANDOFF.md. Rules: docs/RULES.md (official, never invent rules). Always show design options before building UI. Stack: Vite + React + TS 7 + motion, local only; deploy `vercel deploy --prod --yes` (team zv-edge).",
       "log": [
+        {
+          "id": "log-deal-2",
+          "ts": "2026-10-21T21:49:37.297784+00:00",
+          "text": "Picked Soft Pop design (B), kept original cards; built on soft-pop branch as preview; handoff written"
+        },
         {
           "id": "log-deal-1",
           "ts": "2026-10-21T19:50:01.917122+00:00",
           "text": "Monopoly Deal built and deployed"
         }
-      ]
+      ],
+      "_stagedAt": "2026-10-21T19:50:01.917122+00:00",
+      "version": "v0.2 Soft Pop (preview)"
     }
   ]
 }
